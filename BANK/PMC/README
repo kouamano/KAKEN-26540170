@@ -26,8 +26,11 @@ cd /BANK/PMC/20140724/articles.fname/20.check/exec_command
 
 
 #TASK(0): pmidのチェック
+##TASK(0.1): PMC-XMLよりpmidを抽出
 cd /BANK/PMC/20140724/articles.pmid/exec_command
 ./jour-split.pmid.aa.sh
+##TASK(0.2): RIKEN-BRC利用者成果よりpmidを抽出(作業中)
+##TASK(0.3): RIKEN-BRC利用者成果pmid　PMC-XML_pmid　をマッチング
 
 
 #TASK(1): 既知リソース名・機関名の決定と検索タームの決定
@@ -90,6 +93,7 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/exec_comm
 /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/exec_command/match_pos_AllResNames_Jour-au.sh
 
 =====新サーバで実行中=====
+2014.07.30 1700
 
 
 ### 2. マテリアルメソッドセクションにあるか<手順正しいか確認中:サブセクションを想定した処理が行なわれていない?  行なわれている>
