@@ -1,7 +1,7 @@
 #[リソース名共出現解析][kaken-26540170]
 
 #NOTE
-##開始インデックスまとめ
+##開始インデックス(イタレータ)まとめ
 ##C: 0
 ##perl: 0
 ##ただし、他のプログラムのためにインデクスを計算する場合、この限りでない。
@@ -16,17 +16,20 @@
 -- ファイル名リスト作成
 cd /BANK/PMC/20140724/articles
 find ./ -name *.nxml > /BANK/PMC/20140724/articles.fname/20/Jour-All.fname
---- 分割
+-- 分割
 cd /BANK/PMC/20140724/articles.fname/20
 split -l 42183 Jour-All.fname Jour-split
 ##TASK(data.1):PMCファイルのチェック
 cd /BANK/PMC/20140724/articles.fname/20.check/exec_command
 ./jour-check.aa.sh
+##エラーゼロを確認。
 
+
+#TASK(0): pmidのチェック
 
 
 #TASK(1): 既知リソース名・機関名の決定と検索タームの決定
-# THEME[リソース名共出現解析][kaken-26540170]
+#THEME[リソース名共出現解析][kaken-26540170]
 ##TASK(1.1): RIKEN-BRC
 - リソース
 --対象: RIKEN BRC (利用者成果)
