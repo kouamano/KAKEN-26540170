@@ -26,6 +26,8 @@ cd /BANK/PMC/20140724/articles.fname/20.check/exec_command
 
 
 #TASK(0): pmidのチェック
+cd /BANK/PMC/20140724/articles.pmid/exec_command
+./jour-split.pmid.aa.sh
 
 
 #TASK(1): 既知リソース名・機関名の決定と検索タームの決定
