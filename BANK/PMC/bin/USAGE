@@ -1,0 +1,4 @@
+skelton.py <ファイル名>
+streamcut span=<n1>-<n2> if=<ファイル名>
+elementPos_sec.pl 'Animal_2013_May_11_7(5)_729-735.nxml' | sort -n
+#ソートしたのち、sとeのタグのペアを考慮すれば、sec-typeの範囲が解る。
