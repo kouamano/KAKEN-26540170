@@ -1,0 +1,230 @@
+#[リソース名共出現解析][kaken-26540170]
+
+#NOTE
+##開始インデックスまとめ
+##C: 0
+##perl: 0
+##ただし、他のプログラムのためにインデクスを計算する場合、この限りでない。
+##Mathematica: 1
+##Matlab: 1
+
+
+#TASK(0): 既知リソース名・機関名の決定と検索タームの決定
+# THEME[リソース名共出現解析][kaken-26540170]
+##TASK(0.1): RIKEN-BRC
+- リソース
+--対象: RIKEN BRC (利用者成果)
+--リソース名: /BANK/BioResource/Organization/RIKEN-BRC_2012/RAW_cited-resource/All.name.sort.uniq.tsv.rev
+--検索ターム: /BANK/BioResource/Organization/RIKEN-BRC_2012/cited-resource/All.name.sort.uniq.tsv.esc
+- 機関名
+--検索ターム: /BANK/Organiztion/RIKEN-BRC_2012/organization-name/org.name.only
+##TASK(0.2): JCRB
+- リソース
+--対象: JCRB (オンラインカタログ)
+--リソース名: /BANK/BioResource/Organization/JCRB_2014/RAW_catalogue/All.name.sort.uniq.tsv
+--検索ターム: /BANK/BioResource/Organization/JCRB_2014/catalogue/All.name.sort.uniq.tsv.esc.rev
+- 機関名
+--検索ターム: /BANK/Organiztion/JCRB_2014/organization-name/org.name.only
+##TASK(0.3): NITE-NBRC (未検索)
+- リソース
+--対象: 正規表現パターン
+--検索ターム: /BANK/BioResource/Organization/NITE-NBRC_2014/catalogue/All.patt
+- 機関名
+--検索ターム: /BANK/Organization/NITE-NBRC_2014/organization-name/org.name.only
+##TASK(0.4): DSMZ (未検索)
+- リソース
+-- 対象: 正規表現パターン
+-- 検索ターム: /BANK/BioResource/Organization/DSMZ_2014/catalogue/All.patt
+- 機関名
+-- 検索ターム: /BANK/Organization/DSMZ_2014/organization-name/org.name.only
+##TASK(0.4): WDCM (未検索)
+- リソース
+-- 対象: 正規表現パターン
+-- 検索ターム: /BANK/BioResource/Organization/WDCM_2014/catalogue/All.patt
+- 機関名
+-- 検索ターム: /BANK/Organization/WDCM_2014/organization-name/org.name.only
+##TASK(0.5): ATCC (未検索)
+- リソース
+-- 対象: 正規表現パターン
+-- 検索ターム: /BANK/BioResource/Organization/ATCC_2014/catalogue/All.patt
+- 機関名
+-- 検索ターム: /BANK/Organization/ATCC_2014/organization-name/org.name.only
+
+
+#TASK(1): 既知リソース名検索
+#THEME[リソース名共出現解析][kaken-26540170]
+#TASK(1.1): RIKEN-BRC:利用者成果からのリソース名の共起よりリソース同士の結びつきを定量化
+##条件・範囲: リソース名の両側のスペース、カンマ、ブラケットを考慮してXML全体を検索、のちにpositionをもとに materials|methods 内の範囲に絞る。 
+##method: match_position_ex_RE.pl コマンドを使用
+##ファイル群の分割 21ファイルに分割し並行処理、1ファイルが他よりも小さいサイズになるようにすれば、これをテストに使える。
+cd /BANK/PMC/20130909/articles.fname/20
+split -l 33216 Jour-All.fname Jour-split.
+##コマンドフロー:
+### 1. タームの検索
+### 1.0 利用者成果よりタームを抽出: /BANK/BioResource/Organization/RIKEN-BRC_2012/cited-resource/All.name.sort.uniq.tsv
+### 1.1 正規表現検索用に予約文字をエスケープ:
+escape_char sf=/BANK/BioResource/Organization/RIKEN-BRC_2012/RAW_cited-resource/All.name.sort.uniq.tsv lf=/usr/local/var/perl_esc.list
+###検索ターム(正規表現): /BANK/BioResource/Organization/RIKEN-BRC_2012/cited-resource/All.name.sort.uniq.tsv.esc
+### 1.2 検索
+###プログラム: /BANK/PMC/bin/match_position
+###プログラム: /home/kamano/gitsrc/utility/match_position_ex_RE.pl
+cd /BANK/PMC/20130909/Matching/BioResource/Organization/RIKEN-BRC_2012/
+###/BANK/PMC/20130909/Matching/BioResource/Organization/RIKEN-BRC_2012/exec_command/match_Res_betSP_Jour-au.sh
+/BANK/PMC/20130909/Matching/BioResource/Organization/RIKEN-BRC_2012/exec_command/match_pos_AllResNames_Jour-au.sh
+### 2. マテリアルメソッドセクションにあるか<手順正しいか確認中:サブセクションを想定した処理が行なわれていない?  行なわれている>
+#### 2.1 マテリアルメソッドセクションの領域抽出(!!wait発生!!)
+####プログラム: /BANK/PMC/bin/elementPos_sec.pl
+cd /BANK/PMC/20130909/elements/sec
+/BANK/PMC/20130909/elements/sec/exec_command/sec_pos-au.sh
+#### 2.2 マテリアルメソッドセクションの領域とヒット領域を比較 
+####プログラム: /BANK/BioResource/bin/check_res_sec-MMs.pl : ポジションでソートしているのでOK
+cd /BANK/PMC/20130909/Matching/BioResource/Organization/RIKEN-BRC_2012/
+#/BANK/PMC/20130909/Matching/BioResource/Organization/RIKEN-BRC_2012/exec_commandcheck_Res_betSP_sec-MMs_Jour-aa.sh
+/BANK/PMC/20130909/Matching/BioResource/Organization/RIKEN-BRC_2012/exec_command/check_pos_MMs_AllResNames_Jour-au.sh
+### THEME[リソース名共出現解析]
+### 3 チェック済み結果をカウント
+### 3.0 チェック用ターム: All.name.sort.uniq.tsv
+###検索タームがリテラルでない場合、一旦検索結果からチェック用タームを作る。
+### 3.1 インデックス付き行列
+###プログラム: /BANK/BioResource/bin/count_Res-Art_in_check.pl
+###プログラム: TODO: 正規表現検索結果用をつくること[OK] -> テスト中[OK] -> 修正プログラムで再度カウント[実行済み]。
+cd /BANK/PMC/20130909/Matching/BioResource/Organization/RIKEN-BRC_2012/analisys/count/
+/BANK/PMC/20130909/Matching/BioResource/Organization/RIKEN-BRC_2012/analisys/count/exec_command/count_pos_MMs_AllResNames_Jour-aa.sh
+/BANK/PMC/20130909/Matching/BioResource/Organization/RIKEN-BRC_2012/analisys/count/exec_command/count_pos_MMs_AllResNames-U_Jour-aa.sh
+### 3.2 スパース行列(matlab形式)を直接出力
+###準備中:作り中、TODO:最初の行にサイズを出力。-> OK
+sparse-count_Res-Art_in_check.pl
+### 4. インデックス付き行列 -> 数値のみ行列
+###プログラム: /home/kamano/gitsrc/utility/drop_1ST-line_1ST-col_from_TSV.pl
+cd /BANK/PMC/20130909/Matching/BioResource/Organization/RIKEN-BRC_2012/analisys/count
+/BANK/PMC/20130909/Matching/BioResource/Organization/RIKEN-BRC_2012/analisys/count/exec_command/drop_index_count_pos_MMs_AllResNames_Jour-aa.sh
+/BANK/PMC/20130909/Matching/BioResource/Organization/RIKEN-BRC_2012/analisys/count/exec_command/drop_index_count_pos_MMs_AllResNames-U_Jour-aa.sh
+###逐次一括処理
+for file in count_pos_MMs_AllResNames-U_Jour-a*.res; do /home/kamano/gitsrc/utility/drop_1ST-line_1ST-col_from_TSV.pl $file > $file.numonly; done
+### (不要)5. 数値行列のゼロ要素以外を1に置換 (1 articleにおける共起を1とカウントするため)
+###プログラム: /BANK/PMC/bin/numOnly_to_hitOnly.pl
+cd /BANK/PMC/20130909/Matching/BioResource/Organization/RIKEN-BRC_2012/analisys/count
+/BANK/PMC/20130909/Matching/BioResource/Organization/RIKEN-BRC_2012/analisys/count/exec_command/numOnly_to_hitOnly_Res_betSP_sec-MMs_Jour-aa.sh
+### 6. 数値行列をスパース形式に変換 
+cd /BANK/PMC/20130909/Matching/BioResource_AND_Organization/RIKEN-BRC_2012/analisys/count
+#### 6.1 Mathematicaスパース形式
+####プログラム: /home/kamano/gitsrc/utility/mk_MMA-SPA_from_numtable.pl
+####インデックスはmatlab用に1からスタート
+#### 6.2 Matlab data 形式 (読み込んだ後にさらに変換が必要)
+####プログラム: /home/kamano/gitsrc/utility/mk_MatlabSparse_from_numtable.pl
+/BANK/PMC/20130909/Matching/BioResource/Organization/RIKEN-BRC_2012/analisys/count/exec_command/hitOnly_to_MatlabSparse_Res_betSP_sec-MMs_Jour-aa.sh
+/BANK/PMC/20130909/Matching/BioResource/Organization/RIKEN-BRC_2012/analisys/count/exec_command/numonly_to_sptbl_from_count_pos_MMs_AllResNames_Jour-aa.sh
+/BANK/PMC/20130909/Matching/BioResource/Organization/RIKEN-BRC_2012/analisys/count/exec_command/numonly_to_sptbl_from_count_pos_MMs_AllResNames-U_Jour-aa.sh
+####逐次一括処理(遅い)
+for file in count_pos_MMs_AllResNames-U_Jour-a*.res.numonly; do  /home/kamano/gitsrc/utility/mk_MatlabSparse_from_numtable.pl $file > $file.sptbl; done
+#### 6.3 Matrix Market 形式
+####プログラム: /home/kamano/gitsrc/utility/mk_MatMarket_from_numtable.pl
+### 7. カウント
+#### 7.0 n005に対象ファイルを転送
+ssh n005
+[n005] scp sassc-net:/BANK/PMC/20130909/Matching/BioResource/Organization/RIKEN-BRC_2012/analisys/count/*.sptbl ./
+#### 7.2 Matlab形式よりリソース名共起をカウント(6.2に対応)
+cd /BANK/PMC/20130909/Matching/BioResource/Organization/RIKEN-BRC_2012/analisys/count/
+[n005] matlab&
+####matlabに読み込み
+cd('/BANK/PMC/20130909/Matching/BioResource/Organization/RIKEN-BRC_2012/analisys/count')
+####全ファイルの読み込み
+files = (dir('*.sptbl'))
+for i=1:length(files); load(files(i).name); end
+####または、
+files = (dir('*.sptbl'))
+for i=1:length(files); tmpstr(i)=strcat(genvarname(strrep(regexp(files(i).name,'-a[a-z]','match'),'-','')),' = ','load(files(',num2str(i),').name)');eval(tmpstr{i}); end
+####ファイルを読み込むと同時にスパース配列に変換、一つの行列に連結。
+files = (dir('*-U*.sptbl'))
+for i=1:length(files); SpCount{i}=spconvert(load(files(i).name)); end
+SpCountCat=vertcat(SpCount{:});
+####出現カウントをヒットカウントに
+SpCountCatHit(SpCountCatHit>0)=1
+####SpCountCat=[]; for i=1:length(SpCount); SpCountCat=vertcat(SpCountCat,SpCount{i}); end
+####リソースネームの総出現数カウントの結果ファイル(csv)
+/BANK/PMC/20130909/Matching/BioResource/Organization/RIKEN-BRC_2012/analisys/count/count_total_AllResNames.full.tsv
+####対応するリソース名ファイル
+/BANK/BioResource/Organization/RIKEN-BRC_2012/cited-resource/ALL.name.sort.uniq.tsv
+### 8. リソース名(term)がマッチした箇所とファイル名の情報(1.)をRDBMSに入れる。リソース名から検索してファイル名と箇所を探せるように。(検討中)
+### DB start
+pg_ctl start -D /BANK/pgsql
+### DB connect
+psql term_region
+### 8.1 対象ファイル
+/BANK/PMC/20130909/Matching/BioResource_AND_Organization/RIKEN-BRC_2012/check_Res_betSP_sec-MMs_Jour-[A-Z].res
+### 8.2 テーブル構造
+DB:<term_region>:
+Table0:<elementname>: <elementname> <annotation>
+Table1:<region_type>: <region_type> <annotation> <element> #ex. tag, content ... 
+Table2:<region_type_property>: <region_type> <property_target> <property_valur>
+#<region_type>は、region_type.region_typeのプロパティ付与。複数の<region_type_atom>のプロパティが付与されると、region_type.complex_or_single はcomplex。
+#<region_type_atom>は、少なくともその条件を満たしている。
+#
+Table4:<element_region>: <filename> <resourcename> <region_type> <region_start> <region_end>
+Table5:<resourcename_region>: <filename> <resourcename> <region_type> <region_start> <region_end>
+Table6:<organizationname_region>: <filename> <organizationname> <region_type> <region_start> <region_end>
+Table7:<affriationname_region>: <filename> <affriationname> <region_type> <region_start> <region_end>
+Table8:<...>: ... 
+
+
+#TASK(1.2): JCRBカタログからリソース名を検索
+#THEME[kaken-26540170]
+##条件・範囲: リソース名の両側のスペース、カンマ、ブラケットを考慮してXML全体を検索、のちにpositionをもとに materials|methods 内の範囲に絞る。 
+##method: match_position_ex_RE.pl コマンドを使用
+##ファイル群の分割 21ファイルに分割し並行処理、1ファイルが他よりも小さいサイズになるようにすれば、これをテストに使える。
+cd /BANK/PMC/20130909/articles.fname/20
+split -l 33216 Jour-All.fname Jour-split.
+##コマンドフロー:
+### 1. タームの検索
+### 1.0 カタログよりリソース名とリソース番号を得る: /BANK/BioResource/Organization/JCRB_2014/RAW_catalogue/All.name.sort.uniq.tsv
+### 1.1 正規表現検索用に予約文字をスケープ: /BANK/BioResource/Organization/JCRB_2014/catalogue/All.name.sort.uniq.tsv.esc
+### 1.2  検索
+###プログラム: /home/kamano/gitsrc/utility/match_position_ex_RE.pl
+cd /BANK/PMC/20130909/Matching/BioResource/Organization/JCRB_2014
+/BANK/PMC/20130909/Matching/BioResource/Organization/JCRB_2014/exec_command/match_pos_AllResNames_Jour-au.sh
+### 2. マテリアルメソッドセクションにあるか<手順正しいか確認中:サブセクションを想定した処理が行なわれていない?  行なわれている>
+#### 2.1 マテリアルメソッドセクションの領域抽出(!!wait発生!!)
+####プログラム: /BANK/PMC/bin/elementPos_sec.pl
+cd /BANK/PMC/20130909/elements/sec
+/BANK/PMC/20130909/elements/sec/exec_command/sec_pos-au.sh
+#### 2.2 マテリアルメソッドセクションの領域とヒット領域を比較 
+####プログラム: /BANK/BioResource/bin/check_res_sec-MMs.pl : ポジションでソートしているのでOK
+cd /BANK/PMC/20130909/Matching/BioResource/Organization/JCRB_2014/
+/BANK/PMC/20130909/Matching/BioResource/Organization/JCRB_2014/exec_command/check_pos_MMs_AllResNames_Jour-All.sh
+#-----ここまで終了-----#
+### THEME[リソース名共出現解析]
+### 3 チェック済み結果をカウント
+### 3.0 チェック用ターム: All.name.sort.uniq.tsv
+###検索タームがリテラルでない場合、一旦検索結果からチェック用タームを作る。
+### 3.1 インデックス付き行列
+###プログラム: /BANK/BioResource/bin/count_Res-Art_in_check.pl
+###プログラム: TODO: 正規表現検索結果用をつくること[OK] -> テスト中[OK] -> 修正プログラムで再度カウント[実行済み]。
+cd /BANK/PMC/20130909/Matching/BioResource/Organization/RIKEN-BRC_2012/analisys/count/
+/BANK/PMC/20130909/Matching/BioResource/Organization/RIKEN-BRC_2012/analisys/count/exec_command/count_pos_MMs_AllResNames_Jour-aa.sh
+/BANK/PMC/20130909/Matching/BioResource/Organization/RIKEN-BRC_2012/analisys/count/exec_command/count_pos_MMs_AllResNames-U_Jour-aa.sh
+
+
+
+
+#TASK(2): 既知機関名の検索 THEME[kaken-26540170]
+##TASK(2.1) RIKEN-BRC :
+##既知機関名のリスト
+##検索ターム: /BANK/Organiztion/RIKEN-BRC_2012/organization-name/org.name.only
+##既知機関名の検索
+cd /BANK/PMC/20130909/Matching/BioResource/Organization/RIKEN-BRC_2012/
+##検索コマンド
+/home/kamano/gitsrc/utility/match_position
+/BANK/PMC/20130909/Matching/BioResource/Organization/RIKEN-BRC_2012/exec_command/match_pos_SynonOrgNames_Jour-au.sh
+#TASK(2.2) JCRB :
+##既知機関名のリスト
+##検索ターム: /BANK/Organiztion/JCRB_2014/organization-name/org.name.only
+##既知機関名の検索
+cd /BANK/PMC/20130909/Matching/BioResource/Organization/JCRB_2014/
+/BANK/PMC/20130909/Matching/BioResource/Organization/JCRB_2014/exec_command/match_pos_SynonOrgNames_Jour-au.sh
+#-----ここまで終了-----#
+
+
+#TASK(4): 既知機関名vs.既知リソース名対の決定
+# THEME[kaken-26540170]
+## DB作成
+
