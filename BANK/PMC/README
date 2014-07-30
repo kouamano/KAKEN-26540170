@@ -37,13 +37,13 @@
 -- 検索ターム: /BANK/BioResource/Organization/DSMZ_2014/catalogue/All.patt
 - 機関名
 -- 検索ターム: /BANK/Organization/DSMZ_2014/organization-name/org.name.only
-##TASK(0.4): WDCM (未検索)
+##TASK(0.5): WDCM (未検索)
 - リソース
 -- 対象: 正規表現パターン
 -- 検索ターム: /BANK/BioResource/Organization/WDCM_2014/catalogue/All.patt
 - 機関名
 -- 検索ターム: /BANK/Organization/WDCM_2014/organization-name/org.name.only
-##TASK(0.5): ATCC (未検索)
+##TASK(0.6): ATCC (未検索)
 - リソース
 -- 対象: 正規表現パターン
 -- 検索ターム: /BANK/BioResource/Organization/ATCC_2014/catalogue/All.patt
