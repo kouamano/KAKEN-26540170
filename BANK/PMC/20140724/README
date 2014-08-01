@@ -249,7 +249,7 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/JCRB_2014/
 -- 検索コマンド:
 /home/kamano/gitsrc/utility/match_position
 /BANK/PMC/20140724/Matching/BioResource/Organization/JCRB_2014/exec_command/match_pos_SynonOrgNames_Jour-au.sh
-##TASK(2.3): NITE-NBRC
+##TASK(3.3): NITE-NBRC
 ##既知機関名のリストの検索
 - 既知機関名の検索
 -- 検索ターム: /BANK/Organization/NITE-NBRC_2014/organization-name/org.name.only
@@ -257,7 +257,7 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NITE-NBRC_2014/
 -- 検索コマンド:
 /home/kamano/gitsrc/utility/match_position
 /BANK/PMC/20140724/Matching/BioResource/Organization/NITE-NBRC_2014/exec_command/match_pos_SynonOrgNames_Jour-au.sh
-##TASK(2.4): DSMZ
+##TASK(3.4): DSMZ
 ##既知機関名のリストの検索
 - 既知機関名の検索
 -- 検索ターム: /BANK/Organization/DSMZ_2014/organization-name/org.name.only
@@ -265,9 +265,7 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/DSMZ_2014/
 -- 検索コマンド:
 /home/kamano/gitsrc/utility/match_position
 /BANK/PMC/20140724/Matching/BioResource/Organization/DSMZ_2014/exec_command/match_pos_SynonOrgNames_Jour-au.sh
-#-----ここまで終了-----#
-
-##TASK(2.4): WDCM
+##TASK(3.5): WDCM
 ##既知機関名のリストの検索
 - 既知機関名の検索
 -- 検索ターム: /BANK/Organization/WDCM_2014/organization-name/org.name.only
@@ -275,6 +273,8 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/WDCM_2014/
 -- 検索コマンド:
 /home/kamano/gitsrc/utility/match_position
 /BANK/PMC/20140724/Matching/BioResource/Organization/WDCM_2014/exec_command/match_pos_SynonOrgNames_Jour-au.sh
+#-----ここまで終了-----#
+##TASK(3.6): ATCC
 
 #TASK(4): 既知機関名vs.既知リソース名対の決定
 # THEME[kaken-26540170]
