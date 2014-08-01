@@ -243,13 +243,13 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/
 - 検索コマンド:
 /home/kamano/gitsrc/utility/match_position
 /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/exec_command/match_pos_SynonOrgNames_Jour-au.sh
+#-----ここまで終了-----#
 #TASK(3.2) JCRB :
 ##既知機関名のリスト
-- 検索ターム: /BANK/Organiztion/JCRB_2014/organization-name/org.name.only
+- 検索ターム: /BANK/Organization/JCRB_2014/organization-name/org.name.only
 - 既知機関名の検索
-cd /BANK/PMC/20130909/Matching/BioResource/Organization/JCRB_2014/
-/BANK/PMC/20130909/Matching/BioResource/Organization/JCRB_2014/exec_command/match_pos_SynonOrgNames_Jour-au.sh
-#-----ここまで終了-----#
+cd /BANK/PMC/20140724/Matching/BioResource/Organization/JCRB_2014/
+/BANK/PMC/20140724/Matching/BioResource/Organization/JCRB_2014/exec_command/match_pos_SynonOrgNames_Jour-au.sh
 
 
 #TASK(4): 既知機関名vs.既知リソース名対の決定
