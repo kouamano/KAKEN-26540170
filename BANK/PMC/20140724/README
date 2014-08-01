@@ -237,12 +237,12 @@ cd /BANK/PMC/20130909/Matching/BioResource/Organization/RIKEN-BRC_2012/analisys/
 #TASK(3): 既知機関名の検索 THEME[kaken-26540170]
 ##TASK(3.1) RIKEN-BRC :
 ##既知機関名のリスト
-- 検索ターム: /BANK/Organiztion/RIKEN-BRC_2012/organization-name/org.name.only
+- 検索ターム: /BANK/Organization/RIKEN-BRC_2012/organization-name/org.name.only
 - 既知機関名の検索
-cd /BANK/PMC/20130909/Matching/BioResource/Organization/RIKEN-BRC_2012/
+cd /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/
 - 検索コマンド:
 /home/kamano/gitsrc/utility/match_position
-/BANK/PMC/20130909/Matching/BioResource/Organization/RIKEN-BRC_2012/exec_command/match_pos_SynonOrgNames_Jour-au.sh
+/BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/exec_command/match_pos_SynonOrgNames_Jour-au.sh
 #TASK(3.2) JCRB :
 ##既知機関名のリスト
 - 検索ターム: /BANK/Organiztion/JCRB_2014/organization-name/org.name.only
