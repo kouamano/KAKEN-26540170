@@ -275,6 +275,13 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/WDCM_2014/
 /BANK/PMC/20140724/Matching/BioResource/Organization/WDCM_2014/exec_command/match_pos_SynonOrgNames_Jour-au.sh
 #-----ここまで終了-----#
 ##TASK(3.6): ATCC
+##既知機関名のリストの検索
+- 既知機関名の検索
+-- 検索ターム: /BANK/Organization/ATCC_2014/organization-name/org.name.only
+cd /BANK/PMC/20140724/Matching/BioResource/Organization/ATCC_2014/
+-- 検索コマンド:
+/home/kamano/gitsrc/utility/match_position
+/BANK/PMC/20140724/Matching/BioResource/Organization/ATCC_2014/exec_command/match_pos_SynonOrgNames_Jour-au.sh
 
 #TASK(4): 既知機関名vs.既知リソース名対の決定
 # THEME[kaken-26540170]
