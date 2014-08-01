@@ -53,25 +53,25 @@ cd /BANK/PMC/20140724/articles.pmid/exec_command
 --検索ターム: /BANK/BioResource/Organization/JCRB_2014/catalogue/All.name.sort.uniq.tsv.esc.rev
 - 機関名
 --検索ターム: /BANK/Organiztion/JCRB_2014/organization-name/org.name.only
-##TASK(1.3): NITE-NBRC (未検索)
+##TASK(1.3): NITE-NBRC
 - リソース
 --対象: 正規表現パターン
 --検索ターム: /BANK/BioResource/Organization/NITE-NBRC_2014/catalogue/All.patt
 - 機関名
 --検索ターム: /BANK/Organization/NITE-NBRC_2014/organization-name/org.name.only
-##TASK(1.4): DSMZ (未検索)
+##TASK(1.4): DSMZ
 - リソース
 -- 対象: 正規表現パターン
 -- 検索ターム: /BANK/BioResource/Organization/DSMZ_2014/catalogue/All.patt
 - 機関名
 -- 検索ターム: /BANK/Organization/DSMZ_2014/organization-name/org.name.only
-##TASK(1.5): WDCM (未検索)
+##TASK(1.5): WDCM
 - リソース
 -- 対象: 正規表現パターン
 -- 検索ターム: /BANK/BioResource/Organization/WDCM_2014/catalogue/All.patt
 - 機関名
 -- 検索ターム: /BANK/Organization/WDCM_2014/organization-name/org.name.only
-##TASK(1.6): ATCC (未検索)
+##TASK(1.6): ATCC
 - リソース
 -- 対象: 正規表現パターン
 -- 検索ターム: /BANK/BioResource/Organization/ATCC_2014/catalogue/All.patt
@@ -81,18 +81,19 @@ cd /BANK/PMC/20140724/articles.pmid/exec_command
 
 #TASK(2): 既知リソース名検索
 #THEME[リソース名共出現解析][kaken-26540170]
-#TASK(2.1): RIKEN-BRC:利用者成果からのリソース名の共起よりリソース同士の結びつきを定量化
-##条件・範囲: リソース名の両側のスペース、カンマ、ブラケットを考慮してXML全体を検索、のちにpositionをもとに materials|methods 内の範囲に絞る。 
-##method: match_position_ex_RE.pl コマンドを使用
-##コマンドフロー:
-### 1. タームの検索
-### 1.0 利用者成果よりタームを抽出: /BANK/BioResource/Organization/RIKEN-BRC_2012/cited-resource/All.name.sort.uniq.tsv
-### 1.1 正規表現検索用に予約文字をエスケープ:
+##TASK(2.1): RIKEN-BRC
+- リソース
+-- 条件・範囲: リソース名の両側のスペース、カンマ、ブラケットを考慮してXML全体を検索、のちにpositionをもとに materials|methods 内の範囲に絞る。 
+-- method: match_position_ex_RE.pl コマンドを使用
+- コマンドフロー:
+1. タームの検索
+1.0 利用者成果よりタームを抽出: /BANK/BioResource/Organization/RIKEN-BRC_2012/cited-resource/All.name.sort.uniq.tsv
+1.1 正規表現検索用に予約文字をエスケープ:
 escape_char sf=/BANK/BioResource/Organization/RIKEN-BRC_2012/RAW_cited-resource/All.name.sort.uniq.tsv lf=/usr/local/var/perl_esc.list
-###検索ターム(正規表現): /BANK/BioResource/Organization/RIKEN-BRC_2012/cited-resource/All.name.sort.uniq.tsv.esc
-### 1.2 検索
-###プログラム: /BANK/PMC/bin/match_position
-###プログラム: /home/kamano/gitsrc/utility/match_position_ex_RE.pl
+-- 検索ターム(正規表現): /BANK/BioResource/Organization/RIKEN-BRC_2012/cited-resource/All.name.sort.uniq.tsv.esc
+1.2 検索
+-- プログラム: /BANK/PMC/bin/match_position
+-- プログラム: /home/kamano/gitsrc/utility/match_position_ex_RE.pl
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/exec_command
 /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/exec_command/match_pos_AllResNames_Jour-au.sh
 
