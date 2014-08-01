@@ -111,7 +111,6 @@ cd /BANK/PMC/20130909/elements/sec
 cd /BANK/PMC/20130909/Matching/BioResource/Organization/RIKEN-BRC_2012/
 /BANK/PMC/20130909/Matching/BioResource/Organization/RIKEN-BRC_2012/exec_commandcheck_Res_betSP_sec-MMs_Jour-aa.sh
 /BANK/PMC/20130909/Matching/BioResource/Organization/RIKEN-BRC_2012/exec_command/check_pos_MMs_AllResNames_Jour-au.sh
-
 ### THEME[リソース名共出現解析]
 ### 3. チェック済み結果をカウント
 ### 3.0 チェック用ターム: All.name.sort.uniq.tsv
@@ -197,7 +196,7 @@ Table7:<affriationname_region>: <filename> <affriationname> <region_type> <regio
 Table8:<...>: ... 
 
 
-##TASK(2.2): JCRBカタログからリソース名を検索
+##TASK(2.2): JCRBカタログからリソース名を検索 (未検索)
 ##THEME[kaken-26540170]
 - 条件・範囲: リソース名の両側のスペース、カンマ、ブラケットを考慮してXML全体を検索、のちにpositionをもとに materials|methods 内の範囲に絞る。 
 - method: match_position_ex_RE.pl コマンドを使用
@@ -220,7 +219,6 @@ cd /BANK/PMC/20130909/elements/sec
 ---- プログラム: /BANK/BioResource/bin/check_res_sec-MMs.pl : ポジションでソートしているのでOK
 cd /BANK/PMC/20130909/Matching/BioResource/Organization/JCRB_2014/
 /BANK/PMC/20130909/Matching/BioResource/Organization/JCRB_2014/exec_command/check_pos_MMs_AllResNames_Jour-All.sh
-#-----ここまで終了-----#
 ### THEME[リソース名共出現解析]
 ### 3 チェック済み結果をカウント
 ### 3.0 チェック用ターム: All.name.sort.uniq.tsv
@@ -251,7 +249,6 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/JCRB_2014/
 -- 検索コマンド:
 /home/kamano/gitsrc/utility/match_position
 /BANK/PMC/20140724/Matching/BioResource/Organization/JCRB_2014/exec_command/match_pos_SynonOrgNames_Jour-au.sh
-#-----ここまで終了-----#
 ##TASK(2.3): NITE-NBRC
 ##既知機関名のリストの検索
 - 既知機関名の検索
@@ -260,7 +257,24 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NITE-NBRC_2014/
 -- 検索コマンド:
 /home/kamano/gitsrc/utility/match_position
 /BANK/PMC/20140724/Matching/BioResource/Organization/NITE-NBRC_2014/exec_command/match_pos_SynonOrgNames_Jour-au.sh
+##TASK(2.4): DSMZ
+##既知機関名のリストの検索
+- 既知機関名の検索
+-- 検索ターム: /BANK/Organization/DSMZ_2014/organization-name/org.name.only
+cd /BANK/PMC/20140724/Matching/BioResource/Organization/DSMZ_2014/
+-- 検索コマンド:
+/home/kamano/gitsrc/utility/match_position
+/BANK/PMC/20140724/Matching/BioResource/Organization/DSMZ_2014/exec_command/match_pos_SynonOrgNames_Jour-au.sh
+#-----ここまで終了-----#
 
+##TASK(2.4): WDCM
+##既知機関名のリストの検索
+- 既知機関名の検索
+-- 検索ターム: /BANK/Organization/WDCM_2014/organization-name/org.name.only
+cd /BANK/PMC/20140724/Matching/BioResource/Organization/WDCM_2014/
+-- 検索コマンド:
+/home/kamano/gitsrc/utility/match_position
+/BANK/PMC/20140724/Matching/BioResource/Organization/WDCM_2014/exec_command/match_pos_SynonOrgNames_Jour-au.sh
 
 #TASK(4): 既知機関名vs.既知リソース名対の決定
 # THEME[kaken-26540170]
