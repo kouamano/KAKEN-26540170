@@ -32,7 +32,9 @@ cd /BANK/PMC/20140724/articles.pmid/exec_command
 -対象: /BANK/PMC/20140724/articles.pmid/
 ##TASK(0.2): RIKEN-BRC利用者成果よりpmidを抽出
 -対象: /BANK/BioResource/Organization/RIKEN-BRC_2012/user-data/PMID/ALL.pmid.sort.uniq
-##TASK(0.3): RIKEN-BRC利用者成果pmid　PMC-XML_pmid　をマッチング(作業中)
+##TASK(0.3): RIKEN-BRC利用者成果pmid　PMC-XML_pmid　をマッチング
+- ツール: Mathematica
+- 結果: /BANK/BioResource/Organization/RIKEN-BRC_2012/user-data/PMID/ALL.pmid.sort.uniq.in_pmc
 
 
 #TASK(1): 既知リソース名・機関名の決定と検索タームの決定
