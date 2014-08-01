@@ -236,20 +236,30 @@ cd /BANK/PMC/20130909/Matching/BioResource/Organization/RIKEN-BRC_2012/analisys/
 
 #TASK(3): 既知機関名の検索 THEME[kaken-26540170]
 ##TASK(3.1) RIKEN-BRC :
-##既知機関名のリスト
-- 検索ターム: /BANK/Organization/RIKEN-BRC_2012/organization-name/org.name.only
+##既知機関名のリストの検索
 - 既知機関名の検索
+-- 検索ターム: /BANK/Organization/RIKEN-BRC_2012/organization-name/org.name.only
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/
-- 検索コマンド:
+-- 検索コマンド:
 /home/kamano/gitsrc/utility/match_position
 /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/exec_command/match_pos_SynonOrgNames_Jour-au.sh
-#-----ここまで終了-----#
 #TASK(3.2) JCRB :
-##既知機関名のリスト
-- 検索ターム: /BANK/Organization/JCRB_2014/organization-name/org.name.only
+##既知機関名のリスト検索
 - 既知機関名の検索
+-- 検索ターム: /BANK/Organization/JCRB_2014/organization-name/org.name.only
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/JCRB_2014/
+-- 検索コマンド:
+/home/kamano/gitsrc/utility/match_position
 /BANK/PMC/20140724/Matching/BioResource/Organization/JCRB_2014/exec_command/match_pos_SynonOrgNames_Jour-au.sh
+#-----ここまで終了-----#
+##TASK(2.3): NITE-NBRC
+##既知機関名のリストの検索
+- 既知機関名の検索
+-- 検索ターム: /BANK/Organization/NITE-NBRC_2014/organization-name/org.name.only
+cd /BANK/PMC/20140724/Matching/BioResource/Organization/NITE-NBRC_2014/
+-- 検索コマンド:
+/home/kamano/gitsrc/utility/match_position
+/BANK/PMC/20140724/Matching/BioResource/Organization/NITE-NBRC_2014/exec_command/match_pos_SynonOrgNames_Jour-au.sh
 
 
 #TASK(4): 既知機関名vs.既知リソース名対の決定
