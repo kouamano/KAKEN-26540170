@@ -4,7 +4,6 @@
 ##開始インデックス(イタレータ)まとめ
 ##C: 0
 ##perl: 0
-##ただし、他のプログラムのためにインデクスを計算する場合、この限りでない。
 ##Mathematica: 1
 ##Matlab: 1
 
@@ -27,9 +26,9 @@ cd /BANK/PMC/20140724/articles.fname/20.check/exec_command
 
 #TASK(0): pmidのチェック
 ##TASK(0.1): PMC-XMLよりpmidを抽出
+- 対象: /BANK/PMC/20140724/articles.pmid/
 cd /BANK/PMC/20140724/articles.pmid/exec_command
 ./jour-split.pmid.aa.sh
-- 対象: /BANK/PMC/20140724/articles.pmid/
 ##TASK(0.2): RIKEN-BRC利用者成果よりpmidを抽出
 - 対象: /BANK/BioResource/Organization/RIKEN-BRC_2012/user-data/PMID/ALL.pmid.sort.uniq
 ##TASK(0.3): RIKEN-BRC利用者成果pmid　PMC-XML_pmid　をマッチング
@@ -83,6 +82,7 @@ cd /BANK/PMC/20140724/articles.pmid/exec_command
 #THEME[リソース名共出現解析][kaken-26540170]
 ##TASK(2.1): RIKEN-BRC
 ### 1. リソース名検索
+- 検索リソース名パターン作成:
 -- 対象: 利用者成果
 -- リソース名: /BANK/BioResource/Organization/RIKEN-BRC_2012/RAW_cited-resource/All.name.sort.uniq.tsv.rev
 -- 検索ターム: /BANK/BioResource/Organization/RIKEN-BRC_2012/cited-resource/All.name.sort.uniq.tsv.esc
