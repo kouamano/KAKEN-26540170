@@ -98,7 +98,8 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/exec_comm
 /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/exec_command/match_pos_AllResNames_Jour-au.sh
 ==========================
 =====新サーバで実行中=====
-=====2014.07.30 1700======
+===2014.07.30 1700 開始===
+===2014.08.02 1925 終了===
 ==========================
 ### 2. マテリアルメソッドセクションにあるか<手順正しいか確認中:サブセクションを想定した処理が行なわれていない?  行なわれている>
 #### 2.1 マテリアルメソッドセクションの領域抽出(!!wait発生!!)
