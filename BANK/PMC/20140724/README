@@ -102,10 +102,17 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/exec_comm
 ===2014.08.02 1925 終了===
 ==========================
 ### 2. マテリアルメソッドセクションにあるか (手順正しいか確認中:サブセクションを想定した処理が行なわれていない? ->  行なわれている)
-#### 2.1 マテリアルメソッドセクションの領域抽出 (1回やればOK -> 完了)
+#### 2.1 マテリアルメソッドセクションの領域を抽出 (1回やればOK)
+##### 2.1.1 <sec>タグ領域を抽出 (NEW) (完了)
 - プログラム: /BANK/PMC/bin/elementPos_sec.pl
 cd /BANK/PMC/20140724/elements/sec
 /BANK/PMC/20140724/elements/sec/exec_command/sec_pos-au.sh
+##### 2.1.2 抽出された<sec>タグ領域 を sort (NEW) (完了)
+- プログラム: /home/kamano/gitsrc/KAKEN-26540170/BANK/PMC/bin/region-sort_from_sec_pos.pl
+cd /BANK/PMC/20140724/elements/sec
+for file in *reg; do  /home/kamano/gitsrc/KAKEN-26540170/BANK/PMC/bin/region-sort_from_sec_pos.pl $file > ${file}_sort; done
+##### 2.1.3 sort済みの抽出された<sec>タグ領域file　から　マテリアルメソッドセクションの領域を抽出 (NEW)
+
 #### 2.2 マテリアルメソッドセクションの領域とヒット領域を比較 
 - プログラム: /BANK/PMC/bin/check_res_sec-MMs.pl
  : ポジションでソートしているのでOK
