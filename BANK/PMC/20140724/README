@@ -107,7 +107,7 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/exec_comm
 cd /BANK/PMC/20140724/elements/sec
 /BANK/PMC/20140724/elements/sec/exec_command/sec_pos-au.sh
 #### 2.2 マテリアルメソッドセクションの領域とヒット領域を比較 
-- プログラム: /BANK/BioResource/bin/check_res_sec-MMs.pl
+- プログラム: /BANK/PMC/bin/check_res_sec-MMs.pl
  : ポジションでソートしているのでOK
 cd /BANK/PMC/20130909/Matching/BioResource/Organization/RIKEN-BRC_2012/
 /BANK/PMC/20130909/Matching/BioResource/Organization/RIKEN-BRC_2012/exec_commandcheck_Res_betSP_sec-MMs_Jour-aa.sh
