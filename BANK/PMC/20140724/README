@@ -207,8 +207,9 @@ Table7:<affriationname_region>: <filename> <affriationname> <region_type> <regio
 Table8:<...>: ... 
 
 
-##TASK(2.2): JCRB (未検索)
+##TASK(2.2): JCRB (検索中)
 ##THEME[kaken-26540170]
+### 1. リソース名検索
 - 条件・範囲: リソース名の両側のスペース、カンマ、ブラケットを考慮してXML全体を検索、のちにpositionをもとに materials|methods 内の範囲に絞る。 
 - method: match_position_ex_RE.pl コマンドを使用
 cd /BANK/PMC/20140724/articles.fname/20
@@ -226,18 +227,17 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/JCRB_2014
 ============================
 =====20140804 1400 開始=====
 ============================
-
--- マテリアルメソッドセクションにあるか
---- マテリアルメソッドセクションの領域抽出(!!wait発生!!)
----- プログラム: /BANK/PMC/bin/elementPos_sec.pl
+### 2. マテリアルメソッドセクションにあるか (新方式)
+- マテリアルメソッドセクションの領域抽出(!!wait発生!!)
+-- プログラム: /BANK/PMC/bin/elementPos_sec.pl
 cd /BANK/PMC/20130909/elements/sec
 /BANK/PMC/20130909/elements/sec/exec_command/sec_pos-au.sh
---- マテリアルメソッドセクションの領域とヒット領域を比較 
----- プログラム: /BANK/BioResource/bin/check_res_sec-MMs.pl : ポジションでソートしているのでOK
+- マテリアルメソッドセクションの領域とヒット領域を比較 
+-- プログラム: /BANK/BioResource/bin/check_res_sec-MMs.pl : ポジションでソートしているのでOK
 cd /BANK/PMC/20130909/Matching/BioResource/Organization/JCRB_2014/
 /BANK/PMC/20130909/Matching/BioResource/Organization/JCRB_2014/exec_command/check_pos_MMs_AllResNames_Jour-All.sh
 ### THEME[リソース名共出現解析]
-### 3 チェック済み結果をカウント
+### 3. チェック済み結果をカウント
 ### 3.0 チェック用ターム: All.name.sort.uniq.tsv
 ###検索タームがリテラルでない場合、一旦検索結果からチェック用タームを作る。
 ### 3.1 インデックス付き行列
