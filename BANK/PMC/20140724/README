@@ -101,11 +101,11 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/exec_comm
 ===2014.07.30 1700 開始===
 ===2014.08.02 1925 終了===
 ==========================
-### 2. マテリアルメソッドセクションにあるか<手順正しいか確認中:サブセクションを想定した処理が行なわれていない?  行なわれている>
-#### 2.1 マテリアルメソッドセクションの領域抽出(!!wait発生!!)
+### 2. マテリアルメソッドセクションにあるか (手順正しいか確認中:サブセクションを想定した処理が行なわれていない? ->  行なわれている)
+#### 2.1 マテリアルメソッドセクションの領域抽出 (1回やればOK -> 完了)
 - プログラム: /BANK/PMC/bin/elementPos_sec.pl
-cd /BANK/PMC/20130909/elements/sec
-/BANK/PMC/20130909/elements/sec/exec_command/sec_pos-au.sh
+cd /BANK/PMC/20140724/elements/sec
+/BANK/PMC/20140724/elements/sec/exec_command/sec_pos-au.sh
 #### 2.2 マテリアルメソッドセクションの領域とヒット領域を比較 
 - プログラム: /BANK/BioResource/bin/check_res_sec-MMs.pl
  : ポジションでソートしているのでOK
