@@ -132,7 +132,7 @@ cd /BANK/PMC/20130909/Matching/BioResource/Organization/RIKEN-BRC_2012/
 ### 検索タームがリテラルでない場合、一旦検索結果からチェック用タームを作る。
 ### 3.1 インデックス付き行列 (不要)
 ### 3.2 スパース行列(matlab形式)を直接出力
-- プログラム(作成中): 
+- プログラム(作成中): /home/kamano/gitsrc/KAKEN-26540170/BANK/PMC/bin/count_Res_in_Art.pl
 ===ここまで完了===
 ### 4. インデックス付き行列 -> 数値のみ行列 (不要)
 - プログラム: /home/kamano/gitsrc/utility/drop_1ST-line_1ST-col_from_TSV.pl
