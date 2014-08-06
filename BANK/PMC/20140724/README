@@ -115,7 +115,7 @@ for file in *reg; do  /home/kamano/gitsrc/KAKEN-26540170/BANK/PMC/bin/region-sor
 - プログラム(試用): /home/kamano/gitsrc/KAKEN-26540170/BANK/PMC/bin/region-MMs_from_reg_sort.pl
 cd /BANK/PMC/20140724/elements/sec
 /home/kamano/gitsrc/KAKEN-26540170/BANK/PMC/bin/region-MMs_from_reg_sort.pl sec_pos-au.reg_sort  | grep ^[^0-9] > sec_pos-au.reg-MMs
-#### 2.2 (NEW) マテリアルメソッドセクションの領域とヒット領域を比較 (実施中)
+#### 2.2 (NEW) マテリアルメソッドセクションの領域とヒット領域を比較 (完了)
 - プログラム(試用): /home/kamano/gitsrc/KAKEN-26540170/BANK/PMC/bin/check-region_from_pos.pl
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/exec_command
 ./check_pos_SynonOrgNames_Jour-au_inMMs.sh
@@ -130,10 +130,11 @@ cd /BANK/PMC/20130909/Matching/BioResource/Organization/RIKEN-BRC_2012/
 ### 3.0 チェック用ターム: All.name.sort.uniq.tsv
 ###検索タームがリテラルでない場合、一旦検索結果からチェック用タームを作る。
 ### 3.1 インデックス付き行列
-- プログラム: /BANK/BioResource/bin/count_Res-Art_in_check.pl
-- TODO: プログラム: 正規表現検索結果用をつくること[OK] -> テスト中[OK] -> 修正プログラムで再度カウント[実行済み]。
-cd /BANK/PMC/20130909/Matching/BioResource/Organization/RIKEN-BRC_2012/analisys/count/
-/BANK/PMC/20130909/Matching/BioResource/Organization/RIKEN-BRC_2012/analisys/count/exec_command/count_pos_MMs_AllResNames_Jour-aa.sh
+- プログラム: /home/kamano/gitsrc/KAKEN-26540170/BANK/PMC/bin/count_Res-Art_in_check.pl
+- TODO: プログラム: 正規表現検索結果用をつくること[OK] -> テスト中[OK]。
+cd /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/analisys/count/
+===ここまで完了===
+/BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/analisys/count/exec_command/count_pos_MMs_AllResNames_Jour-aa.sh
 /BANK/PMC/20130909/Matching/BioResource/Organization/RIKEN-BRC_2012/analisys/count/exec_command/count_pos_MMs_AllResNames-U_Jour-aa.sh
 ### 3.2 スパース行列(matlab形式)を直接出力
 - プログラム: sparse-count_Res-Art_in_check.pl
