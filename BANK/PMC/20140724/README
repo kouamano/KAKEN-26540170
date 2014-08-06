@@ -132,21 +132,14 @@ cd /BANK/PMC/20130909/Matching/BioResource/Organization/RIKEN-BRC_2012/
 ### 検索タームがリテラルでない場合、一旦検索結果からチェック用タームを作る。
 ### 3.1 インデックス付き行列 (不要)
 ### 3.2 スパース行列(matlab形式)を直接出力
-- プログラム(作成中): /home/kamano/gitsrc/KAKEN-26540170/BANK/PMC/bin/count_Res_in_Art.pl
+- プログラム(試験中): /home/kamano/gitsrc/KAKEN-26540170/BANK/PMC/bin/count_Res_in_Art.pl
 ===ここまで完了===
+cd /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012
+/home/kamano/gitsrc/KAKEN-26540170/BANK/PMC/bin/count_Res_in_Art.pl rf=/BANK/BioResource/Organization/RIKEN-BRC_2012/cited-resource/ALL.name.sort.uniq.tsv  hf=/BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/match_pos_AllResNames_Jour-aa.res.inMMs
 ### 4. インデックス付き行列 -> 数値のみ行列 (不要)
-- プログラム: /home/kamano/gitsrc/utility/drop_1ST-line_1ST-col_from_TSV.pl
-cd /BANK/PMC/20130909/Matching/BioResource/Organization/RIKEN-BRC_2012/analisys/count
-/BANK/PMC/20130909/Matching/BioResource/Organization/RIKEN-BRC_2012/analisys/count/exec_command/drop_index_count_pos_MMs_AllResNames_Jour-aa.sh
-/BANK/PMC/20130909/Matching/BioResource/Organization/RIKEN-BRC_2012/analisys/count/exec_command/drop_index_count_pos_MMs_AllResNames-U_Jour-aa.sh
 ###逐次一括処理 (不要)
-for file in count_pos_MMs_AllResNames-U_Jour-a*.res; do /home/kamano/gitsrc/utility/drop_1ST-line_1ST-col_from_TSV.pl $file > $file.numonly; done
 ### (不要)5. 数値行列のゼロ要素以外を1に置換 (1 articleにおける共起を1とカウントするため)
-- プログラム: /BANK/PMC/bin/numOnly_to_hitOnly.pl
-cd /BANK/PMC/20130909/Matching/BioResource/Organization/RIKEN-BRC_2012/analisys/count
-/BANK/PMC/20130909/Matching/BioResource/Organization/RIKEN-BRC_2012/analisys/count/exec_command/numOnly_to_hitOnly_Res_betSP_sec-MMs_Jour-aa.sh
 ### 6. 数値行列をスパース形式に変換 
-cd /BANK/PMC/20130909/Matching/BioResource_AND_Organization/RIKEN-BRC_2012/analisys/count
 #### 6.1 Mathematicaスパース形式
 - プログラム: /home/kamano/gitsrc/utility/mk_MMA-SPA_from_numtable.pl
 ####インデックスはmatlab用に1からスタート
