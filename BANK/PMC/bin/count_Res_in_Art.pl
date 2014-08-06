@@ -11,7 +11,7 @@ $ie = 0;
 # subroutine
 sub _help {
 	print "USAGE:\n";
-	print " count_Res_in_Art.pl [-h] [-c] [-s] hf=<hit file> rf=<resource name file> \n"
+	print " count_Res_in_Art.pl [-h] [-c] [-s] hf=<hit file> rf=<resource name file> \n";
 	print "DESCRIPTION:\n";
 	print " indcies start at 1.\n";
 }
@@ -103,11 +103,11 @@ foreach(@arr){
 		$currResStr = uc($1);
 		$currResID = $reshash{$currResStr};
 		$coordline = "$currArtID\t$currResID";
-		print "$coordline\n";
+		#print "$coordline\n";
 		$count{$coordline}++;
 	}
 }
 ### print hash
 while(my ($key,$val) = each(%count)){
-	#print "$key\t$val\n";
+	print "$key\t$val\n";
 }
