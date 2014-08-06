@@ -134,7 +134,7 @@ cd /BANK/PMC/20130909/Matching/BioResource/Organization/RIKEN-BRC_2012/
 ### 3.2 スパース行列(matlab形式)を直接出力
 - プログラム: /home/kamano/gitsrc/KAKEN-26540170/BANK/PMC/bin/sparse-count_Res-Art_in_check.pl
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012
-/home/kamano/gitsrc/KAKEN-26540170/BANK/PMC/bin/sparse-count_Res-Art_in_check.pl cf=/BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/match_pos_AllResNames_Jour-au.res.inMMs rf=/BANK/BioResource/Organization/RIKEN-BRC_2012/cited-resource/ALL.name.sort.uniq.tsv -U > match_pos_AllResNames_Jour-au.res.inMMs.count.sp
+/home/kamano/gitsrc/KAKEN-26540170/BANK/PMC/bin/sparse-count_Res-Art_in_check.pl cf=/BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/match_pos_AllResNames_Jour-au.res.inMMs rf=/BANK/BioResource/Organization/RIKEN-BRC_2012/cited-resource/ALL.name.sort.uniq.tsv -U > match_pos_AllResNames_Jour-au.res.inMMs.count_U.sp
 ===ここまで完了===
 ### 4. インデックス付き行列 -> 数値のみ行列 (不要)
 - プログラム: /home/kamano/gitsrc/utility/drop_1ST-line_1ST-col_from_TSV.pl
