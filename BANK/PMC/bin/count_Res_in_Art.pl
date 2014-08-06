@@ -89,7 +89,7 @@ $ast = join('',@arr);
 $sizeArt = @arr;
 ### print first line (matrix size)
 print "$sizeArt\t$sizeRes\t0\n";
-### analize arr
+### analyze arr
 @count = ();
 foreach(@arr){
 	@subarr = split("\n",$_);
