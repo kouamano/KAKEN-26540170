@@ -115,8 +115,10 @@ for file in *reg; do  /home/kamano/gitsrc/KAKEN-26540170/BANK/PMC/bin/region-sor
 - プログラム(試用): /home/kamano/gitsrc/KAKEN-26540170/BANK/PMC/bin/region-MMs_from_reg_sort.pl
 cd /BANK/PMC/20140724/elements/sec
 /home/kamano/gitsrc/KAKEN-26540170/BANK/PMC/bin/region-MMs_from_reg_sort.pl sec_pos-au.reg_sort  | grep ^[^0-9] > sec_pos-au.reg-MMs
-#### 2.2 (NEW) マテリアルメソッドセクションの領域とヒット領域を比較
-- プログラム(作成中): /home/kamano/gitsrc/KAKEN-26540170/BANK/PMC/bin/check-region_from_pos.pl
+#### 2.2 (NEW) マテリアルメソッドセクションの領域とヒット領域を比較 (実施中)
+- プログラム(試用): /home/kamano/gitsrc/KAKEN-26540170/BANK/PMC/bin/check-region_from_pos.pl
+cd /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/exec_command
+./check_pos_SynonOrgNames_Jour-au_inMMs.sh
 #### 2.2 (OLD) マテリアルメソッドセクションの領域とヒット領域を比較 
 - プログラム: /BANK/PMC/bin/check_res_sec-MMs.pl
  : ポジションでソートしているのでOK
