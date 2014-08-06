@@ -110,7 +110,7 @@ foreach(@arr){
 			#print " $targetend";
 			#print "$regionstart < $targetstart && $regionend > $targetend";
 			if(($regionstart < $targetstart) && ($regionend > $targetend)){
-				print "$targetline\n";
+				print "$targetline\tin\t$regionstart\t$regionend\n";
 				break;
 			}
 		}
