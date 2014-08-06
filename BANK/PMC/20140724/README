@@ -133,9 +133,9 @@ cd /BANK/PMC/20130909/Matching/BioResource/Organization/RIKEN-BRC_2012/
 ### 3.1 インデックス付き行列 (不要)
 ### 3.2 スパース行列(matlab形式)を直接出力
 - プログラム(試験中): /home/kamano/gitsrc/KAKEN-26540170/BANK/PMC/bin/count_Res_in_Art.pl
-===ここまで完了===
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012
-/home/kamano/gitsrc/KAKEN-26540170/BANK/PMC/bin/count_Res_in_Art.pl rf=/BANK/BioResource/Organization/RIKEN-BRC_2012/cited-resource/ALL.name.sort.uniq.tsv  hf=/BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/match_pos_AllResNames_Jour-aa.res.inMMs
+/home/kamano/gitsrc/KAKEN-26540170/BANK/PMC/bin/count_Res_in_Art.pl rf=/BANK/BioResource/Organization/RIKEN-BRC_2012/cited-resource/ALL.name.sort.uniq.tsv  hf=/BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/match_pos_AllResNames_Jour-au.res.inMMs
+===ここまで完了===
 ### 4. インデックス付き行列 -> 数値のみ行列 (不要)
 ###逐次一括処理 (不要)
 ### (不要)5. 数値行列のゼロ要素以外を1に置換 (1 articleにおける共起を1とカウントするため)
