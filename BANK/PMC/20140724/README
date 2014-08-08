@@ -140,7 +140,6 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012
 - プログラム(作成中): /home/kamano/gitsrc/utility/SP_count2hit.pl
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012
 for file in count*; do  /home/kamano/gitsrc/utility/SP_count2hit.pl $file > hit${file#count}; done
-===ここまで完了===
 ### 4. インデックス付き行列 -> 数値のみ行列 (不要)
 ###逐次一括処理 (不要)
 ### (不要)5. 数値行列のゼロ要素以外を1に置換 (1 articleにおける共起を1とカウントするため)
@@ -168,17 +167,24 @@ for i=1:length(files); load(files(i).name); end
 ##### または、(不要)
 files = (dir('*.sptbl'))
 for i=1:length(files); tmpstr(i)=strcat(genvarname(strrep(regexp(files(i).name,'-a[a-z]','match'),'-','')),' = ','load(files(',num2str(i),').name)');eval(tmpstr{i}); end
-##### ファイルを読み込むと同時にスパース配列に変換、一つの行列に連結。
+##### カウントファイルを読み込むと同時にスパース配列に変換、一つの行列に連結。(不要)
 files = (dir('count*'))
 for i=1:length(files); SpCount{i}=spconvert(load(files(i).name)); end
 SpCountCat=vertcat(SpCount{:});
-##### 出現カウントをヒットカウントに
+##### 出現カウントをヒットカウントに (不要)
 SpCountCatHit=[];
 SpCountCatHit(SpCountCat>0)=1; %問題発生、問い合わせ中
-#### リソースネームの総出現数カウントの結果ファイル(csv)
-/BANK/PMC/20130909/Matching/BioResource/Organization/RIKEN-BRC_2012/analisys/count/count_total_AllResNames.full.tsv
-#### 対応するリソース名ファイル
-/BANK/BioResource/Organization/RIKEN-BRC_2012/cited-resource/ALL.name.sort.uniq.tsv
+##### ヒットファイルを読み込むと同時にスパース配列に変換、一つの行列に連結。
+files = (dir('hit*'))
+for i=1:length(files); SpCount{i}=spconvert(load(files(i).name)); end
+SpCountCat=vertcat(SpCount{:});
+##### リソースネームの総出現数カウントの結果ファイル(csv)
+SpCountCatSumRes=sum(SpCountCat);
+CountCatSumRes=full(SpCountCatSumRes);
+csvwrite('/BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/analisys/count/article-count_AllResNames.inMMs',CountCatSumRes)
+- ファイル: /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/analisys/count/article-count_AllResNames.inMMs
+- 対応するリソース名ファイル: /BANK/BioResource/Organization/RIKEN-BRC_2012/cited-resource/ALL.name.sort.uniq.tsv
+===ここまで完了===
 ### 8. リソース名(term)がマッチした箇所とファイル名の情報(1.)をRDBMSに入れる。リソース名から検索してファイル名と箇所を探せるように。(検討中)
 ### DB start
 pg_ctl start -D /BANK/pgsql
