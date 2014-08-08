@@ -84,14 +84,15 @@ cd /BANK/PMC/20140724/articles.pmid/exec_command
 ### 1. リソース名検索
 - 検索リソース名パターン作成:
 -- 対象: 利用者成果
--- リソース名: /BANK/BioResource/Organization/RIKEN-BRC_2012/RAW_cited-resource/All.name.sort.uniq.tsv.rev
+-- リソース名: /BANK/BioResource/Organization/RIKEN-BRC_2012/cited-resource/ALL.name.sort.uniq.tsv
 -- 検索ターム: /BANK/BioResource/Organization/RIKEN-BRC_2012/cited-resource/All.name.sort.uniq.tsv.esc
 -- 条件・範囲: リソース名の両側のスペース、カンマ、ブラケットを考慮してXML全体を検索、のちにpositionをもとに materials|methods 内の範囲に絞る。 
 -- method: match_position_ex_RE.pl コマンドを使用
 - コマンドフロー:
--- 利用者成果よりタームを抽出: /BANK/BioResource/Organization/RIKEN-BRC_2012/cited-resource/All.name.sort.uniq.tsv
+-- 利用者成果よりタームを抽出: /BANK/BioResource/Organization/RIKEN-BRC_2012/cited-resource/ALL.name.sort.uniq.tsv
 -- 正規表現検索用に予約文字をエスケープ:
-escape_char sf=/BANK/BioResource/Organization/RIKEN-BRC_2012/RAW_cited-resource/All.name.sort.uniq.tsv lf=/usr/local/var/perl_esc.list > /BANK/BioResource/Organization/RIKEN-BRC_2012/cited-resource/All.name.sort.uniq.tsv.esc
+escape_char sf=/BANK/BioResource/Organization/RIKEN-BRC_2012/RAW_cited-resource/All.name.sort.uniq.tsv lf=/usr/local/var/perl_esc.list > /BANK/BioResource/Organization/RIKEN-BRC_2012/RAW_cited-resource/All.name.sort.uniq.tsv.esc
+ln -s /BANK/BioResource/Organization/RIKEN-BRC_2012/RAW_cited-resource/All.name.sort.uniq.tsv.esc /BANK/BioResource/Organization/RIKEN-BRC_2012/cited-resource/All.name.sort.uniq.tsv.esc
 -- 検索
 --- プログラム: /home/kamano/gitsrc/utility/match_position_ex_RE.pl
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/exec_command
