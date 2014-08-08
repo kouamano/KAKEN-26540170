@@ -172,9 +172,10 @@ for i=1:length(files); tmpstr(i)=strcat(genvarname(strrep(regexp(files(i).name,'
 files = (dir('count*'))
 for i=1:length(files); SpCount{i}=spconvert(load(files(i).name)); end
 SpCountCat=vertcat(SpCount{:});
-##### 出現カウントをヒットカウントに (不要)
-SpCountCatHit=[];
-SpCountCatHit(SpCountCat>0)=1; %問題発生、問い合わせ中
+##### 出現カウントをヒットカウントに (不要) (問題発生 -> 回答あり)
+SpCountCatHit=[];	%ここが問題
+SpCountCatHit = sparse(843679,4023,0);	%たぶんこれで解決
+SpCountCatHit(SpCountCat>0)=1;
 ##### ヒットファイルを読み込むと同時にスパース配列に変換、一つの行列に連結。
 files = (dir('hit*'))
 for i=1:length(files); SpCount{i}=spconvert(load(files(i).name)); end
