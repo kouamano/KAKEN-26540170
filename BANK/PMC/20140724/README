@@ -246,7 +246,7 @@ cd /BANK/PMC/20130909/Matching/BioResource/Organization/RIKEN-BRC_2012/analisys/
 /BANK/PMC/20130909/Matching/BioResource/Organization/RIKEN-BRC_2012/analisys/count/exec_command/count_pos_MMs_AllResNames-U_Jour-aa.sh
 
 
-##TASK(2.3): NITE-NBRC(準備中)
+##TASK(2.3): NITE-NBRC(検索中)
 ##THEME[リソース名共出現解析][kaken-26540170]
 ### 1. リソース名検索
 - 検索リソース名パターン作成:
@@ -259,7 +259,7 @@ cd /BANK/PMC/20130909/Matching/BioResource/Organization/RIKEN-BRC_2012/analisys/
 -- 検索
 --- プログラム: /home/kamano/gitsrc/utility/match_position_ex_RE.pl
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/NITE-NBRC_2014/exec_command
-/BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/exec_command/match_pos_AllResNames_Jour-au.sh
+/BANK/PMC/20140724/Matching/BioResource/Organization/NITE-NBRC_2014/exec_command/match_pos_AllResNames_Jour-au.sh
 ========================
 ========実行中==========
 ===20140808 1833 開始===
