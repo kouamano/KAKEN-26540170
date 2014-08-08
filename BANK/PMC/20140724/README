@@ -213,7 +213,6 @@ Table6:<organizationname_region>: <filename> <organizationname> <region_type> <r
 Table7:<affriationname_region>: <filename> <affriationname> <region_type> <region_start> <region_end>
 Table8:<...>: ... 
 
-
 ##TASK(2.2): JCRB (検索完了)
 ##THEME[kaken-26540170]
 ### 1. リソース名検索
@@ -245,6 +244,44 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/JCRB_2014
 cd /BANK/PMC/20130909/Matching/BioResource/Organization/RIKEN-BRC_2012/analisys/count/
 /BANK/PMC/20130909/Matching/BioResource/Organization/RIKEN-BRC_2012/analisys/count/exec_command/count_pos_MMs_AllResNames_Jour-aa.sh
 /BANK/PMC/20130909/Matching/BioResource/Organization/RIKEN-BRC_2012/analisys/count/exec_command/count_pos_MMs_AllResNames-U_Jour-aa.sh
+
+
+##TASK(2.3): NITE-NBRC(準備中)
+##THEME[リソース名共出現解析][kaken-26540170]
+### 1. リソース名検索
+- 検索リソース名パターン作成:
+-- 対象: 利用者成果
+-- リソース名: 
+-- 検索ターム: /BANK/BioResource/Organization/NITE-NBRC_2014/catalogue/All.patt
+-- 条件・範囲: リソース名の両側のスペース、カンマ、ブラケットを考慮してXML全体を検索、のちにpositionをもとに materials|methods 内の範囲に絞る。 
+-- method: match_position_ex_RE.pl コマンドを使用
+- コマンドフロー:
+-- 検索
+--- プログラム: /home/kamano/gitsrc/utility/match_position_ex_RE.pl
+cd /BANK/PMC/20140724/Matching/BioResource/Organization/NITE-NBRC_2014/exec_command
+/BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/exec_command/match_pos_AllResNames_Jour-au.sh
+========================
+========実行中==========
+===20140808 1833 開始===
+========================
+### 2. マテリアルメソッドセクションにあるか (新方式)
+#### 2.1 マテリアルメソッドセクションの領域を抽出 (1回やればOK)
+##### 2.1.1 <sec>タグ領域を抽出 (NEW) (完了)
+- プログラム: /BANK/PMC/bin/elementPos_sec.pl
+cd /BANK/PMC/20140724/elements/sec
+/BANK/PMC/20140724/elements/sec/exec_command/sec_pos-au.sh
+##### 2.1.2 抽出された<sec>タグ領域 を sort (NEW) (完了)
+- プログラム: /home/kamano/gitsrc/KAKEN-26540170/BANK/PMC/bin/region-sort_from_reg.pl
+cd /BANK/PMC/20140724/elements/sec
+for file in *reg; do  /home/kamano/gitsrc/KAKEN-26540170/BANK/PMC/bin/region-sort_from_sec_pos.pl $file > ${file}_sort; done
+##### 2.1.3 sort済みの抽出された<sec>タグ領域file　から　マテリアルメソッドセクションの領域を抽出 (NEW) (完了)
+- プログラム(試用): /home/kamano/gitsrc/KAKEN-26540170/BANK/PMC/bin/region-MMs_from_reg_sort.pl
+cd /BANK/PMC/20140724/elements/sec
+/home/kamano/gitsrc/KAKEN-26540170/BANK/PMC/bin/region-MMs_from_reg_sort.pl sec_pos-au.reg_sort  | grep ^[^0-9] > sec_pos-au.reg-MMs
+#### 2.2 (NEW) マテリアルメソッドセクションの領域とヒット領域を比較 (完了)
+- プログラム(試用): /home/kamano/gitsrc/KAKEN-26540170/BANK/PMC/bin/check-region_from_pos.pl
+cd /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/exec_command
+./check_pos_SynonOrgNames_Jour-au_inMMs.sh
 
 
 
