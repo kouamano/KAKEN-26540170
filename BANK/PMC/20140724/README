@@ -132,34 +132,31 @@ cd /BANK/PMC/20130909/Matching/BioResource/Organization/RIKEN-BRC_2012/
 ### 検索タームがリテラルでない場合、一旦検索結果からチェック用タームを作る。
 ### 3.1 インデックス付き行列 (不要)
 ### 3.2 スパース行列(matlab形式)を直接出力
+### インデックスは1からスタート
 - プログラム(試験中): /home/kamano/gitsrc/KAKEN-26540170/BANK/PMC/bin/count_Res_in_Art.pl
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012
-/home/kamano/gitsrc/KAKEN-26540170/BANK/PMC/bin/count_Res_in_Art.pl rf=/BANK/BioResource/Organization/RIKEN-BRC_2012/cited-resource/ALL.name.sort.uniq.tsv  hf=/BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/match_pos_AllResNames_Jour-au.res.inMMs
-===ここまで完了===
+/home/kamano/gitsrc/KAKEN-26540170/BANK/PMC/bin/count_Res_in_Art.pl rf=/BANK/BioResource/Organization/RIKEN-BRC_2012/cited-resource/ALL.name.sort.uniq.tsv  hf=/BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/match_pos_AllResNames_Jour-au.res.inMMs > count_AllResNames_Jour-au.res.inMMs
 ### 4. インデックス付き行列 -> 数値のみ行列 (不要)
 ###逐次一括処理 (不要)
 ### (不要)5. 数値行列のゼロ要素以外を1に置換 (1 articleにおける共起を1とカウントするため)
-### 6. 数値行列をスパース形式に変換 
+### 6. 数値行列をスパース形式に変換 (不要)
 #### 6.1 Mathematicaスパース形式
 - プログラム: /home/kamano/gitsrc/utility/mk_MMA-SPA_from_numtable.pl
 ####インデックスはmatlab用に1からスタート
 #### 6.2 Matlab data 形式 (読み込んだ後にさらに変換が必要)
 - プログラム: /home/kamano/gitsrc/utility/mk_MatlabSparse_from_numtable.pl
-/BANK/PMC/20130909/Matching/BioResource/Organization/RIKEN-BRC_2012/analisys/count/exec_command/hitOnly_to_MatlabSparse_Res_betSP_sec-MMs_Jour-aa.sh
-/BANK/PMC/20130909/Matching/BioResource/Organization/RIKEN-BRC_2012/analisys/count/exec_command/numonly_to_sptbl_from_count_pos_MMs_AllResNames_Jour-aa.sh
-/BANK/PMC/20130909/Matching/BioResource/Organization/RIKEN-BRC_2012/analisys/count/exec_command/numonly_to_sptbl_from_count_pos_MMs_AllResNames-U_Jour-aa.sh
 ####逐次一括処理(遅い)
 for file in count_pos_MMs_AllResNames-U_Jour-a*.res.numonly; do  /home/kamano/gitsrc/utility/mk_MatlabSparse_from_numtable.pl $file > $file.sptbl; done
 #### 6.3 Matrix Market 形式
 - プログラム: /home/kamano/gitsrc/utility/mk_MatMarket_from_numtable.pl
+===ここまで完了===
 ### 7. カウント
 #### 7.0 n005に対象ファイルを転送
 ssh n005
 [n005] scp sassc-net:/BANK/PMC/20130909/Matching/BioResource/Organization/RIKEN-BRC_2012/analisys/count/*.sptbl ./
 #### 7.2 Matlab形式よりリソース名共起をカウント(6.2に対応)
-cd /BANK/PMC/20130909/Matching/BioResource/Organization/RIKEN-BRC_2012/analisys/count/
-[n005] matlab&
 ####matlabに読み込み
+$ matlab&
 cd('/BANK/PMC/20130909/Matching/BioResource/Organization/RIKEN-BRC_2012/analisys/count')
 ####全ファイルの読み込み
 files = (dir('*.sptbl'))
