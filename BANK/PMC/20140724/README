@@ -131,11 +131,16 @@ cd /BANK/PMC/20130909/Matching/BioResource/Organization/RIKEN-BRC_2012/
 /BANK/BioResource/Organization/RIKEN-BRC_2012/cited-resource/ALL.name.sort.uniq.tsv
 ### 検索タームがリテラルでない場合、一旦検索結果からチェック用タームを作る。
 ### 3.1 インデックス付き行列 (不要)
-### 3.2 スパース行列(matlab形式)を直接出力
+### 3.2 カウントスパース行列(matlab形式)を直接出力
 ### インデックスは1からスタート
 - プログラム(試験中): /home/kamano/gitsrc/KAKEN-26540170/BANK/PMC/bin/count_Res_in_Art.pl
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012
 /home/kamano/gitsrc/KAKEN-26540170/BANK/PMC/bin/count_Res_in_Art.pl rf=/BANK/BioResource/Organization/RIKEN-BRC_2012/cited-resource/ALL.name.sort.uniq.tsv  hf=/BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/match_pos_AllResNames_Jour-au.res.inMMs > count_AllResNames_Jour-au.res.inMMs
+### 3.3 カウントスパース行列　から　ヒットスパース行列へ
+- プログラム(作成中): /home/kamano/gitsrc/utility/SP_count2hit.pl
+cd /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012
+for file in count*; do  /home/kamano/gitsrc/utility/SP_count2hit.pl $file > hit${file#count}; done
+===ここまで完了===
 ### 4. インデックス付き行列 -> 数値のみ行列 (不要)
 ###逐次一括処理 (不要)
 ### (不要)5. 数値行列のゼロ要素以外を1に置換 (1 articleにおける共起を1とカウントするため)
@@ -170,7 +175,6 @@ SpCountCat=vertcat(SpCount{:});
 ##### 出現カウントをヒットカウントに
 SpCountCatHit=[];
 SpCountCatHit(SpCountCat>0)=1; %問題発生、問い合わせ中
-===ここまで完了===
 #### リソースネームの総出現数カウントの結果ファイル(csv)
 /BANK/PMC/20130909/Matching/BioResource/Organization/RIKEN-BRC_2012/analisys/count/count_total_AllResNames.full.tsv
 #### 対応するリソース名ファイル
