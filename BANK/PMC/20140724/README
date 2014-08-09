@@ -98,7 +98,6 @@ ln -s /BANK/BioResource/Organization/RIKEN-BRC_2012/RAW_cited-resource/All.name.
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/exec_command
 /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/exec_command/match_pos_AllResNames_Jour-au.sh
 ==========================
-=====新サーバで実行中=====
 ===2014.07.30 1700 開始===
 ===2014.08.02 1925 終了===
 ==========================
@@ -181,6 +180,7 @@ CountCatSumRes=full(SpCountCatSumRes);
 csvwrite('/BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/analisys/count/article-count_AllResNames.inMMs.csv',CountCatSumRes)
 - ファイル: /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/analisys/count/article-count_AllResNames.inMMs.csv
 - 対応するリソース名ファイル: /BANK/BioResource/Organization/RIKEN-BRC_2012/cited-resource/ALL.name.sort.uniq.tsv
+- 対応するリソース名ファイル(グループタグ付き): /BANK/BioResource/Organization/RIKEN-BRC_2012/RAW_cited-resource/All.name_group_org.sort.uniq.tsv
 #####  articleの総出現数カウントの結果ファイル(csv)
 TrSpCountCat = transpose(SpCountCat);
 TrSpCountCatSum = sum(TrSpCountCat);
