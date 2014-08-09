@@ -24,14 +24,20 @@ cd /BANK/PMC/20140724/articles.fname/20.check/exec_command
 ##エラーゼロを確認。
 
 
-#TASK(0): pmidのチェック (20140724 に完了)
-##TASK(0.1): PMC-XMLよりpmidを抽出
+#TASK(0): pmid/pmcidのチェック (20140724 に完了)
+##TASK(0.1): PMC-XMLよりpmcidを抽出
 - 対象: /BANK/PMC/20140724/articles.pmid/
+- プログラム: /home/kamano/gitsrc/KAKEN-26540170/BANK/PMC/bin/extract_pmcid.pl
 cd /BANK/PMC/20140724/articles.pmid/exec_command
-./jour-split.pmid.aa.sh
-##TASK(0.2): RIKEN-BRC利用者成果よりpmidを抽出
+/BANK/PMC/20140724/articles.pmid/exec_command/jour-split.pmcid.au.sh
+##TASK(0.2): PMC-XMLよりpmidを抽出
+- 対象: /BANK/PMC/20140724/articles.pmid/
+- プログラム: /home/kamano/gitsrc/KAKEN-26540170/BANK/PMC/bin/extract_pmid.pl
+cd /BANK/PMC/20140724/articles.pmid/exec_command
+/BANK/PMC/20140724/articles.pmid/exec_command/jour-split.pmid.aa.sh
+##TASK(0.3): RIKEN-BRC利用者成果よりpmidを抽出
 - 対象: /BANK/BioResource/Organization/RIKEN-BRC_2012/user-data/PMID/ALL.pmid.sort.uniq
-##TASK(0.3): RIKEN-BRC利用者成果pmid　PMC-XML_pmid　をマッチング
+##TASK(0.4): RIKEN-BRC利用者成果pmid　PMC-XML_pmid　をマッチング
 - ツール: Mathematica
 - 結果: /BANK/BioResource/Organization/RIKEN-BRC_2012/user-data/PMID/ALL.pmid.sort.uniq.in_pmc
 
