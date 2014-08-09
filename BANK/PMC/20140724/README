@@ -168,18 +168,13 @@ for i=1:length(files); load(files(i).name); end
 ##### または、(不要)
 files = (dir('*.sptbl'))
 for i=1:length(files); tmpstr(i)=strcat(genvarname(strrep(regexp(files(i).name,'-a[a-z]','match'),'-','')),' = ','load(files(',num2str(i),').name)');eval(tmpstr{i}); end
-##### カウントファイルを読み込むと同時にスパース配列に変換、一つの行列に連結。(不要)
+##### カウントファイルを読み込むと同時にスパース配列に変換、一つの行列に連結。
 files = (dir('count*'))
 for i=1:length(files); SpCount{i}=spconvert(load(files(i).name)); end
 SpCountCat=vertcat(SpCount{:});
-##### 出現カウントをヒットカウントに (不要) (問題発生 -> 回答あり)
-SpCountCatHit=[];	%ここが問題
-SpCountCatHit = sparse(843679,4023,0);	%たぶんこれで解決
+##### 出現カウントをヒットカウントに 
+SpCountCatHit = sparse(843679,4023,0);
 SpCountCatHit(SpCountCat>0)=1;
-##### ヒットファイルを読み込むと同時にスパース配列に変換、一つの行列に連結。
-files = (dir('hit*'))
-for i=1:length(files); SpCount{i}=spconvert(load(files(i).name)); end
-SpCountCat=vertcat(SpCount{:});
 ##### リソースネームの総出現数カウントの結果ファイル(csv)
 SpCountCatSumRes=sum(SpCountCat);
 CountCatSumRes=full(SpCountCatSumRes);
