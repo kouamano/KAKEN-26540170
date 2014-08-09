@@ -178,14 +178,14 @@ SpCountCatHit(SpCountCat>0)=1;
 SpCountCatSumRes=sum(SpCountCat);
 CountCatSumRes=full(SpCountCatSumRes);
 csvwrite('/BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/analisys/count/article-count_AllResNames.inMMs.csv',CountCatSumRes)
-- ファイル: /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/analisys/count/article-count_AllResNames.inMMs.csv
+- ファイル: /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/analisys/count/resource-count_AllResNames.inMMs.csv
 - 対応するリソース名ファイル: /BANK/BioResource/Organization/RIKEN-BRC_2012/cited-resource/ALL.name.sort.uniq.tsv
 - 対応するリソース名ファイル(グループタグ付き): /BANK/BioResource/Organization/RIKEN-BRC_2012/RAW_cited-resource/All.name_group_org.sort.uniq.tsv
 #####  articleの総出現数カウントの結果ファイル(csv)
 TrSpCountCat = transpose(SpCountCat);
 TrSpCountCatSum = sum(TrSpCountCat);
 csvwrite('/BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/analisys/count/resource-count_AllResNames.inMMs.csv',TrCountCatSum)
-- ファイル: /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/analisys/count/resource-count_AllResNames.inMMs.csv
+- ファイル: /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/analisys/count/article-count_AllResNames.inMMs.csv
 - 対応するarticle名ファイル(複数): /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/match_pos_AllResNames_Jour-a[a-u].res.inMMs
 ===ここまで完了===
 ### 8. リソース名(term)がマッチした箇所とファイル名の情報(1.)をRDBMSに入れる。リソース名から検索してファイル名と箇所を探せるように。(検討中)
