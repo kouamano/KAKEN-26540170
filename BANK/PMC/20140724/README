@@ -244,7 +244,7 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/JCRB_2014
 #### 2.2 (NEW) マテリアルメソッドセクションの領域とヒット領域を比較 (完了)
 - プログラム(試用): /home/kamano/gitsrc/KAKEN-26540170/BANK/PMC/bin/check-region_from_pos.pl
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/JCRB_2014/exec_command
-./check_pos_SynonOrgNames_Jour-au_inMMs.sh
+/BANK/PMC/20140724/Matching/BioResource/Organization/JCRB_2014/exec_command/check_pos_SynonOrgNames_Jour-au_inMMs.sh
 ===ここまで完了===
 ### 3. チェック済み結果をカウント
 ### THEME[リソース名共出現解析]
@@ -260,8 +260,8 @@ cd /BANK/PMC/20130909/Matching/BioResource/Organization/RIKEN-BRC_2012/analisys/
 ##TASK(2.3): NITE-NBRC(検索済み)
 ##THEME[リソース名共出現解析][kaken-26540170]
 ### 1. リソース名検索
-- 検索リソース名パターン作成:
--- 対象: 利用者成果
+- 検索リソース名パターン作成: -> 検索ターム
+-- 対象: カタログIDパターン
 -- リソース名: 
 -- 検索ターム: /BANK/BioResource/Organization/NITE-NBRC_2014/catalogue/All.patt
 -- 条件・範囲: リソース名の両側のスペース、カンマ、ブラケットを考慮してXML全体を検索、のちにpositionをもとに materials|methods 内の範囲に絞る。 
@@ -275,7 +275,6 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NITE-NBRC_2014/exec_comm
 ===20140808 1833 開始===
 ===20140808 1942 終了===
 ========================
-===ここまで完了===
 ### 2. マテリアルメソッドセクションにあるか (新方式)
 #### 2.1 マテリアルメソッドセクションの領域を抽出 (1回やればOK -> 前TASKで完了)
 ##### 2.1.1 <sec>タグ領域を抽出 (NEW) (完了)
@@ -283,12 +282,38 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NITE-NBRC_2014/exec_comm
 ##### 2.1.3 sort済みの抽出された<sec>タグ領域file　から　マテリアルメソッドセクションの領域を抽出 (NEW) (完了)
 #### 2.2 (NEW) マテリアルメソッドセクションの領域とヒット領域を比較
 - プログラム(試用): /home/kamano/gitsrc/KAKEN-26540170/BANK/PMC/bin/check-region_from_pos.pl
-cd /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/exec_command
-./check_pos_SynonOrgNames_Jour-au_inMMs.sh
+cd /BANK/PMC/20140724/Matching/BioResource/Organization/NITE-NBRC_2014/exec_command
+/BANK/PMC/20140724/Matching/BioResource/Organization/NITE-NBRC_2014/exec_command/check_pos_SynonOrgNames_Jour-au_inMMs.sh
+===ここまで完了===
+
+##TASK(2.4): DSMZ (検索中)
+##THEME[リソース名共出現解析][kaken-26540170]
+### 1. リソース名検索
+- 検索リソース名パターン作成: -> 検索ターム
+-- 対象: カタログIDパターン
+-- リソース名: 
+-- 検索ターム: /BANK/BioResource/Organization/DSMZ_2014/catalogue/All.patt
+-- 条件・範囲: リソース名の両側のスペース、カンマ、ブラケットを考慮してXML全体を検索、のちにpositionをもとに materials|methods 内の範囲に絞る。 
+-- method: match_position_ex_RE.pl コマンドを使用
+- コマンドフロー:
+-- 検索
+--- プログラム: /home/kamano/gitsrc/utility/match_position_ex_RE.pl
+cd /BANK/PMC/20140724/Matching/BioResource/Organization/DSMZ_2014/exec_command
+/BANK/PMC/20140724/Matching/BioResource/Organization/DSMZ_2014/exec_command/match_pos_AllResNames_Jour-au.sh
+============================
+=====20140811 1014 開始=====
+============================
+### 2. マテリアルメソッドセクションにあるか (新方式)
+#### 2.1 マテリアルメソッドセクションの領域を抽出 (1回やればOK -> 前TASKで完了)
+##### 2.1.1 <sec>タグ領域を抽出 (NEW) (完了)
+##### 2.1.2 抽出された<sec>タグ領域 を sort (NEW) (完了)
+##### 2.1.3 sort済みの抽出された<sec>タグ領域file　から　マテリアルメソッドセクションの領域を抽出 (NEW) (完了)
+#### 2.2 (NEW) マテリアルメソッドセクションの領域とヒット領域を比較
+- プログラム(試用): /home/kamano/gitsrc/KAKEN-26540170/BANK/PMC/bin/check-region_from_pos.pl
+cd /BANK/PMC/20140724/Matching/BioResource/Organization/NITE-NBRC_2014/exec_command
+/BANK/PMC/20140724/Matching/BioResource/Organization/NITE-NBRC_2014/exec_command/check_pos_SynonOrgNames_Jour-au_inMMs.sh
 
 
-
-##TASK(2.4): DSMZ
 ##TASK(2.5): WDCM
 ##TASK(2.6): ATCC
 
