@@ -1,5 +1,6 @@
 #[リソース名共出現解析][kaken-26540170]
 
+
 #NOTE
 ##開始インデックス(イタレータ)まとめ
 ##C: 0
@@ -147,8 +148,8 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012
 for file in count*; do  /home/kamano/gitsrc/utility/SP_count2hit.pl $file > hit${file#count}; done
 ### 4. インデックス付き行列 -> 数値のみ行列 (不要)
-###逐次一括処理 (不要)
-### (不要)5. 数値行列のゼロ要素以外を1に置換 (1 articleにおける共起を1とカウントするため)
+### 逐次一括処理 (不要)
+### 5. 数値行列のゼロ要素以外を1に置換 (1 articleにおける共起を1とカウントするため)(不要)
 ### 6. 数値行列をスパース形式に変換 (不要)
 #### 6.1 Mathematicaスパース形式
 - プログラム: /home/kamano/gitsrc/utility/mk_MMA-SPA_from_numtable.pl
@@ -177,7 +178,7 @@ for i=1:length(files); tmpstr(i)=strcat(genvarname(strrep(regexp(files(i).name,'
 files = (dir('count*'))
 for i=1:length(files); SpCount{i}=spconvert(load(files(i).name)); end
 SpCountCat=vertcat(SpCount{:});
-##### 出現カウントをヒットカウントに 
+##### 出現カウントをヒットカウントに
 SpCountCatHit = sparse(843679,4023,0);
 SpCountCatHit(SpCountCat>0)=1;
 ##### リソースネームの総出現数カウントの結果ファイル(csv)
@@ -208,7 +209,6 @@ Table1:<region_type>: <region_type> <annotation> <element> #ex. tag, content ...
 Table2:<region_type_property>: <region_type> <property_target> <property_valur>
 #<region_type>は、region_type.region_typeのプロパティ付与。複数の<region_type_atom>のプロパティが付与されると、region_type.complex_or_single はcomplex。
 #<region_type_atom>は、少なくともその条件を満たしている。
-#
 Table4:<element_region>: <filename> <resourcename> <region_type> <region_start> <region_end>
 Table5:<resourcename_region>: <filename> <resourcename> <region_type> <region_start> <region_end>
 Table6:<organizationname_region>: <filename> <organizationname> <region_type> <region_start> <region_end>
@@ -302,7 +302,9 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/DSMZ_2014/exec_command
 /BANK/PMC/20140724/Matching/BioResource/Organization/DSMZ_2014/exec_command/match_pos_AllResNames_Jour-au.sh
 ============================
 =====20140811 1014 開始=====
+=====20140811 1029 終了=====
 ============================
+===ここまで完了===
 ### 2. マテリアルメソッドセクションにあるか (新方式)
 #### 2.1 マテリアルメソッドセクションの領域を抽出 (1回やればOK -> 前TASKで完了)
 ##### 2.1.1 <sec>タグ領域を抽出 (NEW) (完了)
@@ -369,7 +371,11 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/ATCC_2014/
 /BANK/PMC/20140724/Matching/BioResource/Organization/ATCC_2014/exec_command/match_pos_SynonOrgNames_Jour-au.sh
 ===ここまで完了===
 
-#TASK(4): 既知機関名vs.既知リソース名対の決定
+
+#TASK(4): XMLの分解 - バイオリソース名候補抜きだし
+
+
+#TASK(5): 既知機関名vs.既知リソース名対の決定
 # THEME[kaken-26540170]
 ## DB作成
 
