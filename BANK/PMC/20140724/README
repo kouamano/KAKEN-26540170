@@ -148,7 +148,7 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012
 for file in count*; do  /home/kamano/gitsrc/utility/SP_count2hit.pl $file > hit${file#count}; done
 ### 4. インデックス付き行列 -> 数値のみ行列 (不要)
-### 逐次一括処理 (不要)
+### 逐次一括処理
 ### 5. 数値行列のゼロ要素以外を1に置換 (1 articleにおける共起を1とカウントするため)(不要)
 ### 6. 数値行列をスパース形式に変換 (不要)
 #### 6.1 Mathematicaスパース形式
@@ -161,40 +161,28 @@ for file in count_pos_MMs_AllResNames-U_Jour-a*.res.numonly; do  /home/kamano/gi
 #### 6.3 Matrix Market 形式
 - プログラム: /home/kamano/gitsrc/utility/mk_MatMarket_from_numtable.pl
 ### 7. カウント
-#### 7.0 n005に対象ファイルを転送
-ssh n005
-[n005] scp sassc-net:/BANK/PMC/20130909/Matching/BioResource/Organization/RIKEN-BRC_2012/analisys/count/*.sptbl ./
-#### 7.2 Matlab形式よりリソース名共起をカウント(6.2に対応)
-##### matlabに読み込み
-$ matlab&
-cd('/BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/')
-##### 全ファイルの読み込み (不要)
-files = (dir('*.sptbl'))
-for i=1:length(files); load(files(i).name); end
-##### または、(不要)
-files = (dir('*.sptbl'))
-for i=1:length(files); tmpstr(i)=strcat(genvarname(strrep(regexp(files(i).name,'-a[a-z]','match'),'-','')),' = ','load(files(',num2str(i),').name)');eval(tmpstr{i}); end
-##### カウントファイルを読み込むと同時にスパース配列に変換、一つの行列に連結。
-files = (dir('count*'))
-for i=1:length(files); SpCount{i}=spconvert(load(files(i).name)); end
-SpCountCat=vertcat(SpCount{:});
-##### 出現カウントをヒットカウントに
-SpCountCatHit = sparse(843679,4023,0);
-SpCountCatHit(SpCountCat>0)=1;
-##### リソースネームの総出現数カウントの結果ファイル(csv)
-SpCountCatSumRes=sum(SpCountCat);
-CountCatSumRes=full(SpCountCatSumRes);
-csvwrite('/BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/analisys/count/article-count_AllResNames.inMMs.csv',CountCatSumRes)
+- ツール: matlab
+#### 7.1 ヒットファイルを読み込むと同時にスパース配列に変換、一つの行列に連結。
+>> cd('/BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/')
+>> files = (dir('hit*'))
+>> for i=1:length(files); SpCount{i}=spconvert(load(files(i).name)); end
+>> SpCountCat=vertcat(SpCount{:});
+##### 7.1.1 リソースネームの総出現数カウントの結果ファイル(csv)
+>> SpCountCatSumRes=sum(SpCountCat);
+>> CountCatSumRes=full(SpCountCatSumRes);
+>> csvwrite('/BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/analisys/count/resource-count_AllResNames.inMMs.csv',CountCatSumRes)
 - ファイル: /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/analisys/count/resource-count_AllResNames.inMMs.csv
 - 対応するリソース名ファイル: /BANK/BioResource/Organization/RIKEN-BRC_2012/cited-resource/ALL.name.sort.uniq.tsv
 - 対応するリソース名ファイル(グループタグ付き): /BANK/BioResource/Organization/RIKEN-BRC_2012/RAW_cited-resource/All.name_group_org.sort.uniq.tsv
-#####  articleの総出現数カウントの結果ファイル(csv)
-TrSpCountCat = transpose(SpCountCat);
-TrSpCountCatSum = sum(TrSpCountCat);
-csvwrite('/BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/analisys/count/resource-count_AllResNames.inMMs.csv',TrCountCatSum)
+##### 7.1.2 articleの総出現数カウントの結果ファイル(csv)
+>> TrSpCountCat = transpose(SpCountCat);
+>> TrSpCountCatSum = sum(TrSpCountCat);
+>> TrCountCatSum = full(TrSpCountCatSum);
+>> csvwrite('/BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/analisys/count/article-count_AllResNames.inMMs.csv',TrCountCatSum)
 - ファイル: /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/analisys/count/article-count_AllResNames.inMMs.csv
 - 対応するarticle名ファイル(複数): /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/match_pos_AllResNames_Jour-a[a-u].res.inMMs
 ===ここまで完了===
+
 ### 8. リソース名(term)がマッチした箇所とファイル名の情報(1.)をRDBMSに入れる。リソース名から検索してファイル名と箇所を探せるように。(検討中)
 ### DB start
 pg_ctl start -D /BANK/pgsql
