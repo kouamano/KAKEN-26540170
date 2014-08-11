@@ -236,25 +236,16 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/JCRB_2014
 =====20140804 1400 開始=====
 =====20140806 0743 終了=====
 ============================
-===ここまで完了===
 ### 2. マテリアルメソッドセクションにあるか (新方式)
-#### 2.1 マテリアルメソッドセクションの領域を抽出 (1回やればOK)
+#### 2.1 マテリアルメソッドセクションの領域を抽出 (1回やればOK ->  前TASKで完了)
 ##### 2.1.1 <sec>タグ領域を抽出 (NEW) (完了)
-- プログラム: /BANK/PMC/bin/elementPos_sec.pl
-cd /BANK/PMC/20140724/elements/sec
-/BANK/PMC/20140724/elements/sec/exec_command/sec_pos-au.sh
 ##### 2.1.2 抽出された<sec>タグ領域 を sort (NEW) (完了)
-- プログラム: /home/kamano/gitsrc/KAKEN-26540170/BANK/PMC/bin/region-sort_from_reg.pl
-cd /BANK/PMC/20140724/elements/sec
-for file in *reg; do  /home/kamano/gitsrc/KAKEN-26540170/BANK/PMC/bin/region-sort_from_sec_pos.pl $file > ${file}_sort; done
 ##### 2.1.3 sort済みの抽出された<sec>タグ領域file　から　マテリアルメソッドセクションの領域を抽出 (NEW) (完了)
-- プログラム(試用): /home/kamano/gitsrc/KAKEN-26540170/BANK/PMC/bin/region-MMs_from_reg_sort.pl
-cd /BANK/PMC/20140724/elements/sec
-/home/kamano/gitsrc/KAKEN-26540170/BANK/PMC/bin/region-MMs_from_reg_sort.pl sec_pos-au.reg_sort  | grep ^[^0-9] > sec_pos-au.reg-MMs
-#### 2.2 (NEW) マテリアルメソッドセクションの領域とヒット領域を比較
+#### 2.2 (NEW) マテリアルメソッドセクションの領域とヒット領域を比較 (完了)
 - プログラム(試用): /home/kamano/gitsrc/KAKEN-26540170/BANK/PMC/bin/check-region_from_pos.pl
-cd /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/exec_command
+cd /BANK/PMC/20140724/Matching/BioResource/Organization/JCRB_2014/exec_command
 ./check_pos_SynonOrgNames_Jour-au_inMMs.sh
+===ここまで完了===
 ### 3. チェック済み結果をカウント
 ### THEME[リソース名共出現解析]
 ### 3.0 チェック用ターム: All.name.sort.uniq.tsv
@@ -286,19 +277,10 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NITE-NBRC_2014/exec_comm
 ========================
 ===ここまで完了===
 ### 2. マテリアルメソッドセクションにあるか (新方式)
-#### 2.1 マテリアルメソッドセクションの領域を抽出 (1回やればOK)
+#### 2.1 マテリアルメソッドセクションの領域を抽出 (1回やればOK -> 前TASKで完了)
 ##### 2.1.1 <sec>タグ領域を抽出 (NEW) (完了)
-- プログラム: /BANK/PMC/bin/elementPos_sec.pl
-cd /BANK/PMC/20140724/elements/sec
-/BANK/PMC/20140724/elements/sec/exec_command/sec_pos-au.sh
 ##### 2.1.2 抽出された<sec>タグ領域 を sort (NEW) (完了)
-- プログラム: /home/kamano/gitsrc/KAKEN-26540170/BANK/PMC/bin/region-sort_from_reg.pl
-cd /BANK/PMC/20140724/elements/sec
-for file in *reg; do  /home/kamano/gitsrc/KAKEN-26540170/BANK/PMC/bin/region-sort_from_sec_pos.pl $file > ${file}_sort; done
 ##### 2.1.3 sort済みの抽出された<sec>タグ領域file　から　マテリアルメソッドセクションの領域を抽出 (NEW) (完了)
-- プログラム(試用): /home/kamano/gitsrc/KAKEN-26540170/BANK/PMC/bin/region-MMs_from_reg_sort.pl
-cd /BANK/PMC/20140724/elements/sec
-/home/kamano/gitsrc/KAKEN-26540170/BANK/PMC/bin/region-MMs_from_reg_sort.pl sec_pos-au.reg_sort  | grep ^[^0-9] > sec_pos-au.reg-MMs
 #### 2.2 (NEW) マテリアルメソッドセクションの領域とヒット領域を比較
 - プログラム(試用): /home/kamano/gitsrc/KAKEN-26540170/BANK/PMC/bin/check-region_from_pos.pl
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/exec_command
