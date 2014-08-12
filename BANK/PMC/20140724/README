@@ -361,18 +361,21 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/ATCC_2014/
 
 
 #TASK(4): XMLの分解 - バイオリソース名候補抜きだし
-##whole 
-### 1. 2word-phrase
-#### 1.1 切り出し
+## 1. whole 
+### 1.1 2word-phrase
+#### 1.1.1 切り出し
 - プログラム: /home/kamano/gitsrc/utility/extract_phrase2W.pl
 cd /BANK/PMC/20140724/terms/whole
 /BANK/PMC/20140724/terms/whole/exec_command/extract_2W_Jour-au.sh
 ===ここまで完了===
-#### 1.2 sort uniq count
+#### 1.1.2 sort uniq count
 cd /BANK/PMC/20140724/terms/whole
 sort phrase-2W_Jour-au | uniq -c > phrase-2W_Jour-au.sort.uniq
 /BANK/PMC/20140724/terms/whole/exec_command/sort-uniq_All.sh
-=== 実行中===
+===実行中===
+===メモリを多量に消費するので並行処理は無理===
+## 2. body
+## 3. acknowledgement
 
 #TASK(5): 既知機関名vs.既知リソース名対の決定
 # THEME[kaken-26540170]
