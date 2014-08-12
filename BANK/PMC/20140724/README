@@ -365,6 +365,7 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/ATCC_2014/
 - プログラム: /home/kamano/gitsrc/utility/extract_phrase2W.pl
 cd /BANK/PMC/20140724/terms/whole
 /BANK/PMC/20140724/terms/whole/exec_command/extract_2W_Jour-au.sh
+===実行中===
 
 
 #TASK(5): 既知機関名vs.既知リソース名対の決定
