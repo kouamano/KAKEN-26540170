@@ -370,7 +370,8 @@ cd /BANK/PMC/20140724/terms/whole
 ### 1.2 sort uniq count
 cd /BANK/PMC/20140724/terms/whole
 sort phrase-2W_Jour-au | uniq -c > phrase-2W_Jour-au.sort.uniq
-
+/BANK/PMC/20140724/terms/whole/exec_command/sort-uniq_All.sh
+=== 実行中===
 
 #TASK(5): 既知機関名vs.既知リソース名対の決定
 # THEME[kaken-26540170]
