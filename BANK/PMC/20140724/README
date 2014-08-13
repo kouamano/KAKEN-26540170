@@ -376,15 +376,15 @@ sort Word_Jour-au | uniq -c > Word_Jour-au.sort.uniq
 - プログラム: /home/kamano/gitsrc/utility/rep4count.pl
 cd /BANK/PMC/20140724/terms/whole
 for file in W*uniq; do /home/kamano/gitsrc/utility/rep4count.pl $file > $file.rep; done
-#####===ここまで完了===
 ##### 1.1.3.2 整形したものをmerge-sort
 cd /BANK/PMC/20140724/terms/whole
 cat Word*.sort.uniq.rep | sort -t ' ' -k2 > Word_Jour-All.merge
-#####===実行中===
+#####===ここまで完了===
 ##### 1.1.3.3 sort-merge-sortをcount
 - プログラム: /home/kamano/gitsrc/utility/sum_count_from_mixed_sort.pl
 cd /BANK/PMC/20140724/terms/whole
 /home/kamano/gitsrc/utility/sum_count_from_mixed_sort.pl Word_Jour-All.merge > Word_Jour-All.merge.count
+#####===実行中===
 
 ### 1.2 two-words-phrase
 #### 1.2.1 切り出し
