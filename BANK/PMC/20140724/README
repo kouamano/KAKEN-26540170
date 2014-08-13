@@ -397,7 +397,8 @@ for file in p*uniq; do /home/kamano/gitsrc/utility/rep4count.pl $file > $file.re
 #####===ここまで完了===
 ##### 1.2.3.2 整形したものをmerge-sort
 cd /BANK/PMC/20140724/terms/whole
-cat *2W_Jour*.sort.uniq | sort -t '	' -k2 -k3 > phrase-2W_Jour-All.merge
+cat *2W_Jour*.sort.uniq.rep | sort -t '	' -k2 -k3 > phrase-2W_Jour-All.merge
+#####===実行中===
 ##### 1.2.3.3 sort-merge-sortをcount
 - プログラム: /home/kamano/gitsrc/utility/sum_count_from_mixed_sort.pl
 ## 2. body
