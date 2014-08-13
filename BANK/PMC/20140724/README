@@ -371,17 +371,24 @@ cd /BANK/PMC/20140724/terms/whole/exec_command
 cd /BANK/PMC/20140724/terms/whole
 sort Word_Jour-au | uniq -c > Word_Jour-au.sort.uniq
 ####===実行中===
+#### 1.1.3 total count
 ### 1.2 2words-phrase
 #### 1.2.1 切り出し
 - プログラム: /home/kamano/gitsrc/utility/extract_phrase2W.pl
 cd /BANK/PMC/20140724/terms/whole
 /BANK/PMC/20140724/terms/whole/exec_command/extract_2W_Jour-au.sh
-####===ここまで完了===
 #### 1.2.2 sort uniq count
 cd /BANK/PMC/20140724/terms/whole
 sort phrase-2W_Jour-au | uniq -c > phrase-2W_Jour-au.sort.uniq
 /BANK/PMC/20140724/terms/whole/exec_command/sort-uniq_All.sh
 ####===ここまで完了===
+#### 1.2.3 total count
+##### 1.2.3.1 count済みを次のsort-countのためにさらに整形
+- プログラム count4sort.pl
+cd /BANK/PMC/20140724/terms/whole
+##### 1.2.3.2 整形したものをsort
+cd /BANK/PMC/20140724/terms/whole
+cat *2W_Jour*.sort.uniq | sort -t '	' -k2 -k3 > phrase-2W_Jour-All.merge
 ## 2. body
 ## 3. acknowledgement
 
