@@ -104,10 +104,10 @@ ln -s /BANK/BioResource/Organization/RIKEN-BRC_2012/RAW_cited-resource/All.name.
 --- プログラム: /home/kamano/gitsrc/utility/match_position_ex_RE.pl
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/exec_command
 /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/exec_command/match_pos_AllResNames_Jour-au.sh
-==========================
-===2014.07.30 1700 開始===
-===2014.08.02 1925 終了===
-==========================
+###==========================
+###===2014.07.30 1700 開始===
+###===2014.08.02 1925 終了===
+###==========================
 ### 2. マテリアルメソッドセクションにあるか (新方式)
 #### 2.1 マテリアルメソッドセクションの領域を抽出 (1回やればOK)
 ##### 2.1.1 <sec>タグ領域を抽出 (NEW) (完了)
@@ -181,7 +181,7 @@ for file in count_pos_MMs_AllResNames-U_Jour-a*.res.numonly; do  /home/kamano/gi
 >> csvwrite('/BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/analisys/count/article-count_AllResNames.inMMs.csv',TrCountCatSum)
 - ファイル: /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/analisys/count/article-count_AllResNames.inMMs.csv
 - 対応するarticle名ファイル(複数): /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/match_pos_AllResNames_Jour-a[a-u].res.inMMs
-===ここまで完了===
+###===ここまで完了===
 
 ### 8. リソース名(term)がマッチした箇所とファイル名の情報(1.)をRDBMSに入れる。リソース名から検索してファイル名と箇所を探せるように。(検討中)
 ### DB start
@@ -220,10 +220,10 @@ escape_char sf=/BANK/BioResource/Organization/JCRB_2014/RAW_catalogue/All.name.s
 ---- プログラム: /home/kamano/gitsrc/utility/match_position_ex_RE.pl
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/JCRB_2014
 /BANK/PMC/20140724/Matching/BioResource/Organization/JCRB_2014/exec_command/match_pos_AllResNames_Jour-au.sh
-============================
-=====20140804 1400 開始=====
-=====20140806 0743 終了=====
-============================
+###========================
+###===20140804 1400 開始===
+###===20140806 0743 終了===
+###========================
 ### 2. マテリアルメソッドセクションにあるか (新方式)
 #### 2.1 マテリアルメソッドセクションの領域を抽出 (1回やればOK ->  前TASKで完了)
 ##### 2.1.1 <sec>タグ領域を抽出 (NEW) (完了)
@@ -233,12 +233,12 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/JCRB_2014
 - プログラム(試用): /home/kamano/gitsrc/KAKEN-26540170/BANK/PMC/bin/check-region_from_pos.pl
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/JCRB_2014/exec_command
 /BANK/PMC/20140724/Matching/BioResource/Organization/JCRB_2014/exec_command/check_pos_SynonOrgNames_Jour-au_inMMs.sh
-===ここまで完了===
+###===ここまで完了===
 ### 3. チェック済み結果をカウント
 ### THEME[リソース名共出現解析]
-### 3.0 チェック用ターム: All.name.sort.uniq.tsv
-###検索タームがリテラルでない場合、一旦検索結果からチェック用タームを作る。
-### 3.1 インデックス付き行列
+#### 3.0 チェック用ターム: All.name.sort.uniq.tsv
+#### 検索タームがリテラルでない場合、一旦検索結果からチェック用タームを作る。
+#### 3.1 インデックス付き行列
 - プログラム: /BANK/BioResource/bin/count_Res-Art_in_check.pl
 cd /BANK/PMC/20130909/Matching/BioResource/Organization/RIKEN-BRC_2012/analisys/count/
 /BANK/PMC/20130909/Matching/BioResource/Organization/RIKEN-BRC_2012/analisys/count/exec_command/count_pos_MMs_AllResNames_Jour-aa.sh
@@ -259,10 +259,10 @@ cd /BANK/PMC/20130909/Matching/BioResource/Organization/RIKEN-BRC_2012/analisys/
 --- プログラム: /home/kamano/gitsrc/utility/match_position_ex_RE.pl
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/NITE-NBRC_2014/exec_command
 /BANK/PMC/20140724/Matching/BioResource/Organization/NITE-NBRC_2014/exec_command/match_pos_AllResNames_Jour-au.sh
-========================
-===20140808 1833 開始===
-===20140808 1942 終了===
-========================
+###========================
+###===20140808 1833 開始===
+###===20140808 1942 終了===
+###========================
 ### 2. マテリアルメソッドセクションにあるか (新方式)
 #### 2.1 マテリアルメソッドセクションの領域を抽出 (1回やればOK -> 前TASKで完了)
 ##### 2.1.1 <sec>タグ領域を抽出 (NEW) (完了)
@@ -272,7 +272,7 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NITE-NBRC_2014/exec_comm
 - プログラム(試用): /home/kamano/gitsrc/KAKEN-26540170/BANK/PMC/bin/check-region_from_pos.pl
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/NITE-NBRC_2014/exec_command
 /BANK/PMC/20140724/Matching/BioResource/Organization/NITE-NBRC_2014/exec_command/check_pos_SynonOrgNames_Jour-au_inMMs.sh
-===ここまで完了===
+###===ここまで完了===
 
 ##TASK(2.4): DSMZ (検索中)
 ##THEME[リソース名共出現解析][kaken-26540170]
@@ -288,11 +288,11 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NITE-NBRC_2014/exec_comm
 --- プログラム: /home/kamano/gitsrc/utility/match_position_ex_RE.pl
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/DSMZ_2014/exec_command
 /BANK/PMC/20140724/Matching/BioResource/Organization/DSMZ_2014/exec_command/match_pos_AllResNames_Jour-au.sh
-============================
-=====20140811 1014 開始=====
-=====20140811 1029 終了=====
-============================
-===ここまで完了===
+###========================
+###===20140811 1014 開始===
+###===20140811 1029 終了===
+###========================
+###===ここまで完了===
 ### 2. マテリアルメソッドセクションにあるか (新方式)
 #### 2.1 マテリアルメソッドセクションの領域を抽出 (1回やればOK -> 前TASKで完了)
 ##### 2.1.1 <sec>タグ領域を抽出 (NEW) (完了)
@@ -317,7 +317,7 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/
 -- 検索コマンド:
 /home/kamano/gitsrc/utility/match_position
 /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/exec_command/match_pos_SynonOrgNames_Jour-au.sh
-#TASK(3.2) JCRB :
+##TASK(3.2) JCRB :
 ##既知機関名のリスト検索
 - 既知機関名の検索
 -- 検索ターム: /BANK/Organization/JCRB_2014/organization-name/org.name.only
@@ -357,7 +357,7 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/ATCC_2014/
 -- 検索コマンド:
 /home/kamano/gitsrc/utility/match_position
 /BANK/PMC/20140724/Matching/BioResource/Organization/ATCC_2014/exec_command/match_pos_SynonOrgNames_Jour-au.sh
-===ここまで完了===
+#===ここまで完了===#
 
 
 #TASK(4): XMLの分解 - バイオリソース名候補抜きだし
@@ -367,21 +367,21 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/ATCC_2014/
 - プログラム: /home/kamano/gitsrc/utility/extract_Word.pl
 cd /BANK/PMC/20140724/terms/whole/exec_command
 /BANK/PMC/20140724/terms/whole/exec_command/extract_1W_Jour-au.sh
-=== ah まで実行中===
 #### 1.1.2 sort uniq count
-===まだ===
-### 1.2 2word-phrase
+cd /BANK/PMC/20140724/terms/whole
+sort Word_Jour-au | uniq -c > Word_Jour-au.sort.uniq
+####===実行中===
+### 1.2 2words-phrase
 #### 1.2.1 切り出し
 - プログラム: /home/kamano/gitsrc/utility/extract_phrase2W.pl
 cd /BANK/PMC/20140724/terms/whole
 /BANK/PMC/20140724/terms/whole/exec_command/extract_2W_Jour-au.sh
-===ここまで完了===
+####===ここまで完了===
 #### 1.2.2 sort uniq count
 cd /BANK/PMC/20140724/terms/whole
 sort phrase-2W_Jour-au | uniq -c > phrase-2W_Jour-au.sort.uniq
 /BANK/PMC/20140724/terms/whole/exec_command/sort-uniq_All.sh
-===実行中===
-===メモリを多量に消費するので並行処理は無理===
+####===ここまで完了===
 ## 2. body
 ## 3. acknowledgement
 
