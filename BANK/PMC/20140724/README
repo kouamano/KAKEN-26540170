@@ -133,13 +133,13 @@ cd /BANK/PMC/20130909/Matching/BioResource/Organization/RIKEN-BRC_2012/
 /BANK/PMC/20130909/Matching/BioResource/Organization/RIKEN-BRC_2012/exec_commandcheck_Res_betSP_sec-MMs_Jour-aa.sh
 /BANK/PMC/20130909/Matching/BioResource/Organization/RIKEN-BRC_2012/exec_command/check_pos_MMs_AllResNames_Jour-au.sh
 ### 3. チェック済み結果をカウント
-### THEME[リソース名共出現解析]
+###THEME[リソース名共出現解析]
 ### 3.0 チェック用ターム:
 /BANK/BioResource/Organization/RIKEN-BRC_2012/cited-resource/ALL.name.sort.uniq.tsv
-### 検索タームがリテラルでない場合、一旦検索結果からチェック用タームを作る。
+###検索タームがリテラルでない場合、一旦検索結果からチェック用タームを作る。
 ### 3.1 インデックス付き行列 (不要)
 ### 3.2 カウントスパース行列(matlab形式)を直接出力
-### インデックスは1からスタート
+###インデックスは1からスタート
 - プログラム(試験中): /home/kamano/gitsrc/KAKEN-26540170/BANK/PMC/bin/count_Res_in_Art.pl
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012
 /home/kamano/gitsrc/KAKEN-26540170/BANK/PMC/bin/count_Res_in_Art.pl rf=/BANK/BioResource/Organization/RIKEN-BRC_2012/cited-resource/ALL.name.sort.uniq.tsv  hf=/BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/match_pos_AllResNames_Jour-au.res.inMMs > count_AllResNames_Jour-au.res.inMMs
@@ -148,7 +148,7 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012
 for file in count*; do  /home/kamano/gitsrc/utility/SP_count2hit.pl $file > hit${file#count}; done
 ### 4. インデックス付き行列 -> 数値のみ行列 (不要)
-### 逐次一括処理
+###逐次一括処理
 ### 5. 数値行列のゼロ要素以外を1に置換 (1 articleにおける共起を1とカウントするため)(不要)
 ### 6. 数値行列をスパース形式に変換 (不要)
 #### 6.1 Mathematicaスパース形式
@@ -184,9 +184,9 @@ for file in count_pos_MMs_AllResNames-U_Jour-a*.res.numonly; do  /home/kamano/gi
 ###===ここまで完了===
 
 ### 8. リソース名(term)がマッチした箇所とファイル名の情報(1.)をRDBMSに入れる。リソース名から検索してファイル名と箇所を探せるように。(検討中)
-### DB start
+###DB start
 pg_ctl start -D /BANK/pgsql
-### DB connect
+###DB connect
 psql term_region
 ### 8.1 対象ファイル
 /BANK/PMC/20130909/Matching/BioResource_AND_Organization/RIKEN-BRC_2012/check_Res_betSP_sec-MMs_Jour-[A-Z].res
@@ -235,9 +235,9 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/JCRB_2014/exec_command
 /BANK/PMC/20140724/Matching/BioResource/Organization/JCRB_2014/exec_command/check_pos_SynonOrgNames_Jour-au_inMMs.sh
 ###===ここまで完了===
 ### 3. チェック済み結果をカウント
-### THEME[リソース名共出現解析]
+###THEME[リソース名共出現解析]
 #### 3.0 チェック用ターム: All.name.sort.uniq.tsv
-#### 検索タームがリテラルでない場合、一旦検索結果からチェック用タームを作る。
+####検索タームがリテラルでない場合、一旦検索結果からチェック用タームを作る。
 #### 3.1 インデックス付き行列
 - プログラム: /BANK/BioResource/bin/count_Res-Art_in_check.pl
 cd /BANK/PMC/20130909/Matching/BioResource/Organization/RIKEN-BRC_2012/analisys/count/
@@ -361,7 +361,7 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/ATCC_2014/
 
 
 #TASK(4): XMLの分解 - バイオリソース名候補抜きだし
-# 量が多いので分割したものをsort-count、すべてのsort-countをmerge-sort-count
+#量が多いので分割したものをsort-count、すべてのsort-countをmerge-sort-count
 ## 1. whole 
 ### 1.1 single word
 #### 1.1.1 切り出し
@@ -396,6 +396,6 @@ cat *2W_Jour*.sort.uniq | sort -t '	' -k2 -k3 > phrase-2W_Jour-All.merge
 ## 3. acknowledgement
 
 #TASK(5): 既知機関名vs.既知リソース名対の決定
-# THEME[kaken-26540170]
-## DB作成
+#THEME[kaken-26540170]
+##DB作成
 
