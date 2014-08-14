@@ -362,7 +362,7 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/ATCC_2014/
 
 #TASK(4): XMLの分解 - バイオリソース名候補抜きだし
 #量が多いので分割したものをsort-count、すべてのsort-countをmerge-sort-count
-## 1. whole 
+## 1. whole (2ワードフレーズまで完了)
 ### 1.1 single word (完了)
 #### 1.1.1 切り出し
 - プログラム: /home/kamano/gitsrc/utility/extract_Word.pl
@@ -383,7 +383,7 @@ cat Word*.sort.uniq.rep | sort -t ' ' -k2 > Word_Jour-All.merge
 - プログラム: /home/kamano/gitsrc/utility/sum_count_from_mixed_sort.pl
 cd /BANK/PMC/20140724/terms/whole
 /home/kamano/gitsrc/utility/sum_count_from_mixed_sort.pl Word_Jour-All.merge > Word_Jour-All.merge.count
-### 1.2 two-words-phrase
+### 1.2 two-words-phrase (完了)
 #### 1.2.1 切り出し
 - プログラム: /home/kamano/gitsrc/utility/extract_phrase2W.pl
 cd /BANK/PMC/20140724/terms/whole
@@ -404,7 +404,7 @@ cat *2W_Jour*.sort.uniq.rep | sort -t '	' -k2 -k3 > phrase-2W_Jour-All.merge
 - プログラム: /home/kamano/gitsrc/utility/sum_count_from_mixed_sort.pl
 cd /BANK/PMC/20140724/terms/whole
 /home/kamano/gitsrc/utility/sum_count_from_mixed_sort.pl phrase-2W_Jour-All.merge > phrase-2W_Jour-All.merge.count
-#####===実行中===
+##===ここまで完了===
 ## 2. body
 ## 3. acknowledgement
 
