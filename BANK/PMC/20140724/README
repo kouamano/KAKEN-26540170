@@ -298,7 +298,7 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/DSMZ_2014/exec_command
 ##### 2.1.1 <sec>タグ領域を抽出 (NEW) (完了)
 ##### 2.1.2 抽出された<sec>タグ領域 を sort (NEW) (完了)
 ##### 2.1.3 sort済みの抽出された<sec>タグ領域file　から　マテリアルメソッドセクションの領域を抽出 (NEW) (完了)
-#### 2.2 (NEW) マテリアルメソッドセクションの領域とヒット領域を比較
+#### 2.2 (NEW) マテリアルメソッドセクションの領域とヒット領域を比較 (完了)
 - プログラム(試用): /home/kamano/gitsrc/KAKEN-26540170/BANK/PMC/bin/check-region_from_pos.pl
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/DSMZ_2014/exec_command
 /BANK/PMC/20140724/Matching/BioResource/Organization/DSMZ_2014/exec_command/check_pos_SynonOrgNames_Jour-au_inMMs.sh
