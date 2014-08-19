@@ -86,7 +86,7 @@ cd /BANK/PMC/20140724/articles.pmid/exec_command
 
 
 #TASK(2): 既知リソース名検索
-##TASK(2.1): RIKEN-BRC
+##TASK(2.1): RIKEN-BRC (検索完了、チェック完了)
 ##THEME[リソース名共出現解析][kaken-26540170]
 ### 1. リソース名検索
 - 検索リソース名パターン作成:
@@ -206,7 +206,7 @@ Table7:<affriationname_region>: <filename> <affriationname> <region_type> <regio
 Table8:<...>: ... 
 
 
-##TASK(2.2): JCRB (検索完了)
+##TASK(2.2): JCRB (検索完了、チェック完了)
 ##THEME[kaken-26540170]
 ### 1. リソース名検索
 - 条件・範囲: リソース名の両側のスペース、カンマ、ブラケットを考慮してXML全体を検索、のちにpositionをもとに materials|methods 内の範囲に絞る。 
@@ -238,8 +238,8 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/JCRB_2014/exec_command
 /BANK/PMC/20140724/Matching/BioResource/Organization/JCRB_2014/exec_command/check_pos_SynonOrgNames_Jour-au_inMMs.sh(err)
 ->
 /BANK/PMC/20140724/Matching/BioResource/Organization/JCRB_2014/exec_command/check_pos_AllResNames_Jour-au_inMMs.sh
-
 ###===ここまで完了===
+
 ### 3. チェック済み結果をカウント
 ###THEME[リソース名共出現解析]
 #### 3.0 チェック用ターム: All.name.sort.uniq.tsv
@@ -251,7 +251,7 @@ cd /BANK/PMC/20130909/Matching/BioResource/Organization/RIKEN-BRC_2012/analisys/
 /BANK/PMC/20130909/Matching/BioResource/Organization/RIKEN-BRC_2012/analisys/count/exec_command/count_pos_MMs_AllResNames-U_Jour-aa.sh
 
 
-##TASK(2.3): NITE-NBRC(検索完了)
+##TASK(2.3): NITE-NBRC(検索完了,チェック完了)
 ##THEME[リソース名共出現解析][kaken-26540170]
 ### 1. リソース名検索
 - 検索リソース名パターン作成: -> 検索ターム
@@ -282,7 +282,7 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NITE-NBRC_2014/exec_comm
 /BANK/PMC/20140724/Matching/BioResource/Organization/NITE-NBRC_2014/exec_command/check_pos_AllResNames_Jour-au_inMMs.sh
 ###===ここまで完了===
 
-##TASK(2.4): DSMZ (検索完了)
+##TASK(2.4): DSMZ (検索完了,チェック完了)
 ##THEME[リソース名共出現解析][kaken-26540170]
 ### 1. リソース名検索
 - 検索リソース名パターン作成: -> 検索ターム
@@ -300,7 +300,6 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/DSMZ_2014/exec_command
 ###===20140811 1014 開始===
 ###===20140811 1029 終了===
 ###========================
-###===ここまで完了===
 ### 2. マテリアルメソッドセクションにあるか (新方式)
 #### 2.1 マテリアルメソッドセクションの領域を抽出 (1回やればOK -> 前TASKで完了)
 ##### 2.1.1 <sec>タグ領域を抽出 (NEW) (完了)
@@ -312,6 +311,7 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/DSMZ_2014/exec_command
 /BANK/PMC/20140724/Matching/BioResource/Organization/DSMZ_2014/exec_command/check_pos_SynonOrgNames_Jour-au_inMMs.sh(err)
 ->
 /BANK/PMC/20140724/Matching/BioResource/Organization/DSMZ_2014/exec_command/check_pos_AllResNames_Jour-au_inMMs.sh
+###===ここまで完了===
 
 ##TASK(2.5): WDCM (対象外)
 ##THEME[リソース名共出現解析][kaken-26540170]
@@ -342,7 +342,7 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/WDCM_2014/exec_command
 #### 2.2 (NEW) マテリアルメソッドセクションの領域とヒット領域を比較 
 
 
-##TASK(2.6): ATCC (検索完了)
+##TASK(2.6): ATCC (検索完了、チェック完了)
 ##THEME[リソース名共出現解析][kaken-26540170]
 ### 1. リソース名検索
 ###ヒットしない -> データセンターなので、直接提供していない?
@@ -363,7 +363,6 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/ATCC_2014/exec_command
 ###===20140815 1330 終了===
 ###========================
 ###===n007に転送===
-###===ここまで完了===
 ### 2. マテリアルメソッドセクションにあるか (新方式)
 #### 2.1 マテリアルメソッドセクションの領域を抽出 (1回やればOK -> 前TASKで完了)
 ##### 2.1.1 <sec>タグ領域を抽出 (NEW) (完了)
@@ -373,8 +372,7 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/ATCC_2014/exec_command
 - プログラム(試用): /home/kamano/gitsrc/KAKEN-26540170/BANK/PMC/bin/check-region_from_pos.pl
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/ATCC_2014/exec_command
 /BANK/PMC/20140724/Matching/BioResource/Organization/ATCC_2014/exec_command/check_pos_AllResNames_Jour-au_inMMs.sh
-
-
+###===ここまで完了===
 
 #TASK(3): 既知機関名の検索 THEME[kaken-26540170] (6機関検索完了 20140801)
 ##TASK(3.1) RIKEN-BRC :
