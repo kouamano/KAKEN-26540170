@@ -371,6 +371,8 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/ATCC_2014/exec_command
 
 
 #TASK(3): 既知機関名の検索 THEME[kaken-26540170] (6機関検索完了 20140801)
+##TASK(3.0) 試験:ackより機関名検索 <- BMC bioinformatics
+##===開始===##
 ##TASK(3.1) RIKEN-BRC :
 ##既知機関名のリストの検索
 - 既知機関名の検索
@@ -419,7 +421,7 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/ATCC_2014/
 -- 検索コマンド:
 /home/kamano/gitsrc/utility/match_position
 /BANK/PMC/20140724/Matching/BioResource/Organization/ATCC_2014/exec_command/match_pos_SynonOrgNames_Jour-au.sh
-#===ここまで完了===#
+##===ここまで完了===##
 
 
 #TASK(4): XMLの分解 - バイオリソース名候補抜きだし
