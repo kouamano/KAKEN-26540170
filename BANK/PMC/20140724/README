@@ -375,16 +375,12 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/ATCC_2014/exec_command
 
 
 #TASK(3): 既知機関名の検索 THEME[kaken-26540170] (6機関検索完了 20140801)
-##TASK(3.0) 試験:ackより機関名検索 <- BMC bioinformatics
-##===完了===##
-##NITE等がターム中にマッチ -> タームの前後の文字を正規表現で制限
+##TASK(3.0) 試験:ackより機関名検索(5機関)(石川氏)
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/_All_/
 - 検索ソース: /BANK/PMC/20140724/terms/ack/BMC_Bioinformatics-ACK-v2.tsv
 - 検索ターム: /BANK/PMC/20140724/Matching/BioResource/Organization/_All_/5Orgs
-- 検索コマンド:
-/home/kamano/gitsrc/utility/match_lines.pl
-/BANK/PMC/20140724/Matching/BioResource/Organization/_All_/exec_command/extract_5Orgs_from_ack_BMC-bioinf.sh
-
+##===完了===##
+##データ配布はまだ
 ##TASK(3.1) RIKEN-BRC :
 ##既知機関名のリストの検索
 - 既知機関名の検索
