@@ -378,15 +378,17 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/ATCC_2014/exec_command
 ##TASK(3.0) 試験:ackより機関名検索(5機関)
 ##(石川氏)
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/_All_/
-- 検索ソース: /BANK/PMC/20140724/terms/ack/BMC_Bioinformatics-ACK-v2.tsv
+- ターゲット: PMC-20140724のすべての雑誌・論文
+- 検索ソース: 
 - 検索ターム: /BANK/PMC/20140724/Matching/BioResource/Organization/_All_/5Orgs
 ##===完了===##
-##(amano)
+##データ配布はまだ
+##(amano) "Bioinformatics" only
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/_All_
 - ターゲット: Bioinformatics
 - スクリプト: /BANK/PMC/20140724/Matching/BioResource/Organization/_All_/exec_command/extract_5Orgs_from_ack_BMC-bioinf.sh
 - 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/_All_/5Orgs_BMC-bioinf.inACK.hit
-##データ配布はまだ
+##===完了===##
 ##TASK(3.1) RIKEN-BRC :
 ##既知機関名のリストの検索
 - 既知機関名の検索
