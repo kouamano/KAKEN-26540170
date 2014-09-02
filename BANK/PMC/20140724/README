@@ -48,6 +48,12 @@ cd /BANK/PMC/20140724/articles.pmid/exec_command
 
 
 #TASK(tag): XMLのエレメントタグを抽出
+cd /BANK/PMC/20140724/elements/ALL
+- 対象: PMC-XML
+- プログラム: /home/kamano/gitsrc/XMLOP/elementPos_ALL.pl
+- スクリプト: /BANK/PMC/20140724/elements/ALL/exec_command/ALL_pos-au.sh
+#=====実行中=====#
+#=====20140902 1701 開始=====#
 
 
 #TASK(1): 既知リソース名・機関名の決定と検索タームの決定 (20140724 6機関を決定完了)
