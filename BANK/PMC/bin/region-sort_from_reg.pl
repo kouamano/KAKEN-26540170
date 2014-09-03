@@ -4,10 +4,10 @@ while(<>){
 	push(@arr,$_);
 }
 $astr = join('',@arr);
-@arr = split(/;;;\n/,$astr);
+@arr = split(/;;;\n/,$astr);	#regex or string ? ";;;\n"
 foreach (@arr) {
 	@subarr = ();
-	@subarr = split(/\n/,$_);
+	@subarr = split(/\n/,$_);	#regex or string ? "\n"
 	$fname = shift(@subarr);
 	@subsubarr = ();
 	foreach (@subarr) {
