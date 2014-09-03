@@ -6,6 +6,7 @@ while(<>){
 $astr = join('',@arr);
 @arr = split(";;;\n",$astr);
 foreach (@arr) {
+	@subarr = ();
 	@subarr = split("\n",$_);
 	$fname = shift(@subarr);
 	@subsubarr = ();
