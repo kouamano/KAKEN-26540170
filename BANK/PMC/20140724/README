@@ -54,12 +54,13 @@ cd /BANK/PMC/20140724/articles.pmid/exec_command
 #- スクリプト: /BANK/PMC/20140724/elements/ALL/exec_command/ALL_pos-au.sh
 ##TASK(tag.sort): 抽出したエレメントをpositionでソート
 ##POPSTACKエラー発生(中止) -> 新スクリプト開発中 -> TASK(tag.new)
-#TASK(tag.new): XMLのエレメントタグを抽出・ソート
+#TASK(tag.new): XMLのエレメントタグを抽出・ソート(完了)
 cd /BANK/PMC/20140724/elements/ALL
 - 対象: PMC-XML全件
 - プログラム: /home/kamano/gitsrc/XMLOP/elementPos_ALL_sort.pl
 - スクリプト: /BANK/PMC/20140724/elements/ALL/exec_command/ALL_sort_pos-au.sh
 #=====20140903 1539 開始=====#
+#=====20140903 1724 終了=====#
 
 
 
@@ -391,11 +392,11 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/ATCC_2014/exec_command
 
 
 #TASK(3): 既知機関名の検索 THEME[kaken-26540170] (6機関検索完了 20140801)
-##TASK(3.0) 試験:ackより機関名検索(5機関)
-##(石川氏)
+##TASK(3.0) 試験:ackより機関名検索(5機関) (石川氏)
 ### 1. acknowledgement エレメントの抽出
 - データ: /BANK/PMC/20140724/elements/acknowledgement/PMC-ACK-v2.tsv
 ##===完了===##
+### 2. エレメントから機関名を検索
 ##TASK(3.1) RIKEN-BRC :
 ##既知機関名のリストの検索
 - 既知機関名の検索
