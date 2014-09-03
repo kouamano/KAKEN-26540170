@@ -396,12 +396,6 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/ATCC_2014/exec_command
 ### 1. acknowledgement エレメントの抽出
 - データ: /BANK/PMC/20140724/elements/acknowledgement/PMC-ACK-v2.tsv
 ##===完了===##
-##(amano) "Bioinformatics" only
-cd /BANK/PMC/20140724/Matching/BioResource/Organization/_All_
-- ターゲット: Bioinformatics
-- スクリプト: /BANK/PMC/20140724/Matching/BioResource/Organization/_All_/exec_command/extract_5Orgs_from_ack_BMC-bioinf.sh
-- 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/_All_/5Orgs_BMC-bioinf.inACK.hit
-##===完了===##
 ##TASK(3.1) RIKEN-BRC :
 ##既知機関名のリストの検索
 - 既知機関名の検索
