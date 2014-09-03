@@ -57,6 +57,7 @@ cd /BANK/PMC/20140724/elements/ALL
 #=====20140902 1840 終了=====#
 #============================#
 ##TASK(tag.sort): 抽出したエレメントをpositionでソート
+##POPSTACKエラー発生(中止)
 - 対象: /BANK/PMC/20140724/elements/ALL/ALL_pos-au.reg
 - プログラム: /home/kamano/gitsrc/KAKEN-26540170/BANK/PMC/bin/region-sort_from_reg.pl
 - スクリプト: /BANK/PMC/20140724/elements/ALL/exec_command/region-sort_from_ALL_pos-all.sh
