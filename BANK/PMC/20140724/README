@@ -393,12 +393,9 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/ATCC_2014/exec_command
 #TASK(3): 既知機関名の検索 THEME[kaken-26540170] (6機関検索完了 20140801)
 ##TASK(3.0) 試験:ackより機関名検索(5機関)
 ##(石川氏)
-cd /BANK/PMC/20140724/Matching/BioResource/Organization/_All_/
-- ターゲット: PMC-20140724のすべての雑誌・論文
-- 検索ソース: 
-- 検索ターム: /BANK/PMC/20140724/Matching/BioResource/Organization/_All_/5Orgs
+### 1. acknowledgement エレメントの抽出
+- データ: /BANK/PMC/20140724/elements/acknowledgement/PMC-ACK-v2.tsv
 ##===完了===##
-##データ配布はまだ
 ##(amano) "Bioinformatics" only
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/_All_
 - ターゲット: Bioinformatics
