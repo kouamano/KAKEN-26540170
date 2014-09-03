@@ -49,11 +49,17 @@ cd /BANK/PMC/20140724/articles.pmid/exec_command
 
 #TASK(tag): XMLのエレメントタグを抽出
 cd /BANK/PMC/20140724/elements/ALL
-- 対象: PMC-XML
+- 対象: PMC-XML全件
 - プログラム: /home/kamano/gitsrc/XMLOP/elementPos_ALL.pl
 - スクリプト: /BANK/PMC/20140724/elements/ALL/exec_command/ALL_pos-au.sh
-#=====実行中=====#
+#============完了============#
 #=====20140902 1701 開始=====#
+#=====20140902 1840 終了=====#
+#============================#
+##TASK(tag.sort): 抽出したエレメントをpositionでソート
+- 対象: /BANK/PMC/20140724/elements/ALL/ALL_pos-au.reg
+- プログラム: /home/kamano/gitsrc/KAKEN-26540170/BANK/PMC/bin/region-sort_from_reg.pl
+- スクリプト: /BANK/PMC/20140724/elements/ALL/exec_command/region-sort_from_ALL_pos-all.sh
 
 
 #TASK(1): 既知リソース名・機関名の決定と検索タームの決定 (20140724 6機関を決定完了)
