@@ -396,7 +396,7 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/ATCC_2014/exec_command
 ### 1. acknowledgement エレメントの抽出(石川氏)
 - データ: /BANK/PMC/20140724/elements/acknowledgement/PMC-ACK-v2.tsv
 ###=====完了=====###
-### 2. エレメントから機関名を検索
+### 2. エレメントから機関名を検索(天野)
 ##TASK(3.2)全PMC-XMLより機関名を検索
 ###TASK(3.2.1) RIKEN-BRC :
 ###既知機関名のリストの検索
