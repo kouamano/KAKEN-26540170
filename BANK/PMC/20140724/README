@@ -21,7 +21,7 @@
 - 機関情報: /BANK/Organization/<機関名>/ 配下
 - バイオリソース情報: /BANK/BioResource/Organization/<機関名>/ 配下
 - マッチング(検索)結果: /BANK/PMC/<日付>/Matching/BioResource/Organization/<機関名>/ 配下
-- プログラム: 各 bin フォルダ、または、github
+- プログラム: root 以下の 各 bin フォルダ、または、github
 - 実行スクリプト: 各 exec_command フォルダ
 
 #TASK(data) (20140724 に完了)
