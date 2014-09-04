@@ -413,6 +413,7 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/_ALL_
 - 検索ターム: /BANK/Organization/_ALL_/organization-name/6orgs.name.only
 - プログラム: /home/kamano/gitsrc/utility/match_lines.pl
 - スクリプト: /BANK/PMC/20140724/Matching/BioResource/Organization/_ALL_/exec_command/6orgs_in_ack.sh
+###=====実行中=====###
 ##TASK(3.2)全PMC-XMLより機関名を検索
 ###TASK(3.2.1) RIKEN-BRC :
 ###既知機関名のリストの検索
