@@ -392,53 +392,54 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/ATCC_2014/exec_command
 
 
 #TASK(3): 既知機関名の検索 THEME[kaken-26540170] (6機関検索完了 20140801)
-##TASK(3.0) 試験:ackより機関名検索(5機関) (石川氏)
-### 1. acknowledgement エレメントの抽出
+##TASK(3.1) 試験:ackより機関名検索(5機関)
+### 1. acknowledgement エレメントの抽出(石川氏)
 - データ: /BANK/PMC/20140724/elements/acknowledgement/PMC-ACK-v2.tsv
-##===完了===##
+###=====完了=====###
 ### 2. エレメントから機関名を検索
-##TASK(3.1) RIKEN-BRC :
-##既知機関名のリストの検索
+##TASK(3.2)全PMC-XMLより機関名を検索
+###TASK(3.2.1) RIKEN-BRC :
+###既知機関名のリストの検索
 - 既知機関名の検索
 -- 検索ターム: /BANK/Organization/RIKEN-BRC_2012/organization-name/org.name.only
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/
 -- 検索コマンド:
 /home/kamano/gitsrc/utility/match_position
 /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/exec_command/match_pos_SynonOrgNames_Jour-au.sh
-##TASK(3.2) JCRB :
-##既知機関名のリスト検索
+###TASK(3.2.2) JCRB :
+###既知機関名のリスト検索
 - 既知機関名の検索
 -- 検索ターム: /BANK/Organization/JCRB_2014/organization-name/org.name.only
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/JCRB_2014/
 -- 検索コマンド:
 /home/kamano/gitsrc/utility/match_position
 /BANK/PMC/20140724/Matching/BioResource/Organization/JCRB_2014/exec_command/match_pos_SynonOrgNames_Jour-au.sh
-##TASK(3.3): NITE-NBRC
-##既知機関名のリストの検索
+###TASK(3.2.3): NITE-NBRC
+###既知機関名のリストの検索
 - 既知機関名の検索
 -- 検索ターム: /BANK/Organization/NITE-NBRC_2014/organization-name/org.name.only
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/NITE-NBRC_2014/
 -- 検索コマンド:
 /home/kamano/gitsrc/utility/match_position
 /BANK/PMC/20140724/Matching/BioResource/Organization/NITE-NBRC_2014/exec_command/match_pos_SynonOrgNames_Jour-au.sh
-##TASK(3.4): DSMZ
-##既知機関名のリストの検索
+###TASK(3.2.4): DSMZ
+###既知機関名のリストの検索
 - 既知機関名の検索
 -- 検索ターム: /BANK/Organization/DSMZ_2014/organization-name/org.name.only
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/DSMZ_2014/
 -- 検索コマンド:
 /home/kamano/gitsrc/utility/match_position
 /BANK/PMC/20140724/Matching/BioResource/Organization/DSMZ_2014/exec_command/match_pos_SynonOrgNames_Jour-au.sh
-##TASK(3.5): WDCM
-##既知機関名のリストの検索
+###TASK(3.2.5): WDCM
+###既知機関名のリストの検索
 - 既知機関名の検索
 -- 検索ターム: /BANK/Organization/WDCM_2014/organization-name/org.name.only
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/WDCM_2014/
 -- 検索コマンド:
 /home/kamano/gitsrc/utility/match_position
 /BANK/PMC/20140724/Matching/BioResource/Organization/WDCM_2014/exec_command/match_pos_SynonOrgNames_Jour-au.sh
-##TASK(3.6): ATCC
-##既知機関名のリストの検索
+###TASK(3.2.6): ATCC
+###既知機関名のリストの検索
 - 既知機関名の検索
 -- 検索ターム: /BANK/Organization/ATCC_2014/organization-name/org.name.only
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/ATCC_2014/
