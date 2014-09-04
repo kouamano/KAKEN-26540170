@@ -41,7 +41,7 @@ cd /BANK/PMC/20140724/articles.fname/20.check/exec_command
 ##エラーゼロを確認。
 
 
-#TASK(check): pmid/pmcidのチェック (20140724 に完了)
+#TASK(check): pmid/pmcidのチェック (20140724 に完了 -> ディレクトリ移動あり)
 ##TASK(check.pmcid): PMC-XMLよりpmcidを抽出
 - 対象: /BANK/PMC/20140724/articles.pmid/
 - プログラム: /home/kamano/gitsrc/KAKEN-26540170/BANK/PMC/bin/extract_pmcid.pl
@@ -52,11 +52,11 @@ cd /BANK/PMC/20140724/articles.pmid/exec_command
 - プログラム: /home/kamano/gitsrc/KAKEN-26540170/BANK/PMC/bin/extract_pmid.pl
 cd /BANK/PMC/20140724/articles.pmid/exec_command
 /BANK/PMC/20140724/articles.pmid/exec_command/jour-split.pmid.aa.sh
-##TASK(check.user-data-pmid): RIKEN-BRC利用者成果よりpmidを抽出
-- 対象: /BANK/BioResource/Organization/RIKEN-BRC_2012/user-data/PMID/ALL.pmid.sort.uniq
-##TASK(check.PMC_VS_user-data): RIKEN-BRC利用者成果pmid　PMC-XML_pmid　をマッチング
+##TASK(check.user-data-pmid): RIKEN-BRC利用者成果よりpmidを抽出(20140904 移動)
+- 対象: /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/user-data/PMID/ALL.pmid.sort.uniq
+##TASK(check.PMC_VS_user-data): RIKEN-BRC利用者成果pmid　PMC-XML_pmid　をマッチング(20140904 移動)
 - ツール: Mathematica
-- 結果: /BANK/BioResource/Organization/RIKEN-BRC_2012/user-data/PMID/ALL.pmid.sort.uniq.in_pmc
+- 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/user-data/PMID/ALL.pmid.sort.uniq.in_pmc
 
 
 #TASK(tag.old): XMLのエレメントタグを抽出 -> TASK(tag.new) に移行
