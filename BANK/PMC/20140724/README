@@ -410,9 +410,11 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/ATCC_2014/exec_command
 ### 2. エレメントから機関名を検索(天野)
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/_ALL_
 - 対象: /BANK/PMC/20140724/elements/acknowledgement/PMC-ACK-v2.tsv
-- 検索ターム: /BANK/Organization/_ALL_/organization-name/6orgs.name.only
+- 検索ターム: /BANK/Organization/_ALL_/organization-name/5orgs.name.only
 - プログラム: /home/kamano/gitsrc/utility/match_lines.pl
-- スクリプト: /BANK/PMC/20140724/Matching/BioResource/Organization/_ALL_/exec_command/6orgs_in_ack.sh
+- スクリプト:
+ /BANK/PMC/20140724/Matching/BioResource/Organization/_ALL_/exec_command/5orgs_in_ack.sh
+ /BANK/PMC/20140724/Matching/BioResource/Organization/_ALL_/exec_command/5orgs_extract_hit.sh
 ###=====実行中=====###
 ##TASK(3.2)全PMC-XMLより機関名を検索
 ###TASK(3.2.1) RIKEN-BRC :
