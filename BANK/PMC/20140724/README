@@ -59,6 +59,11 @@ cd /BANK/PMC/20140724/articles.pmid/exec_command
 - 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/user-data/PMID/ALL.pmid.sort.uniq.in_pmc
 
 
+#TASK(element-tree)
+#XMLのエレメント木を作成
+- 結果: /BANK/PMC/20140724/elements/SKELTON/*res
+
+
 #TASK(tag.old): XMLのエレメントタグを抽出 -> TASK(tag.new) に移行
 #cd /BANK/PMC/20140724/elements/ALL
 #- 対象: PMC-XML全件
@@ -403,7 +408,8 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/ATCC_2014/exec_command
 
 
 #TASK(3): 既知機関名の検索 THEME[kaken-26540170]
-##TASK(3.1): ack領域より機関名検索(5機関)(抽出もれあり、再抽出 20140904)
+##TASK(3.1): ack領域より機関名検索(5機関)(抽出もれあり、再抽出 20140905)
+##!=====実行環境:n003=====!##
 ### 1. acknowledgement エレメントの抽出(石川氏)
 - データ: /BANK/PMC/20140724/elements/acknowledgement/PMC-ACK-v2.tsv
 ###=====完了=====###
