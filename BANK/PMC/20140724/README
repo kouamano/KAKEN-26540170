@@ -420,8 +420,8 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/_ALL_
 - プログラム: /home/kamano/gitsrc/utility/match_lines.pl
 - スクリプト:
  /BANK/PMC/20140724/Matching/BioResource/Organization/_ALL_/exec_command/5orgs_in_ack.sh
- /BANK/PMC/20140724/Matching/BioResource/Organization/_ALL_/exec_command/5orgs_extract_hit.sh
-- 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/user-data/PMID/ALL.pmidVSfilename.sort.uniq.in_pmc.hit
+ /BANK/PMC/20140724/Matching/BioResource/Organization/_ALL_/exec_command/5org_extract_hit.sh
+- 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/_ALL_/5orgs_in_ack.hit
 ###=====完了=====###
 ### 3. 機関名抽出法の検討(角田氏)(検討中)
 ##TASK(3.2)全PMC-XMLより機関名を検索(20140801 完了)
