@@ -402,8 +402,8 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/ATCC_2014/exec_command
 ###===ここまで完了===
 
 
-#TASK(3): 既知機関名の検索 THEME[kaken-26540170] (6機関検索完了 20140801)
-##TASK(3.1): ack領域より機関名検索(5機関)
+#TASK(3): 既知機関名の検索 THEME[kaken-26540170]
+##TASK(3.1): ack領域より機関名検索(5機関)(抽出もれあり、再抽出 20140904)
 ### 1. acknowledgement エレメントの抽出(石川氏)
 - データ: /BANK/PMC/20140724/elements/acknowledgement/PMC-ACK-v2.tsv
 ###=====完了=====###
@@ -418,7 +418,7 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/_ALL_
 - 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/user-data/PMID/ALL.pmidVSfilename.sort.uniq.in_pmc.hit
 ###=====完了=====###
 ### 3. 機関名抽出法の検討(角田氏)(検討中)
-##TASK(3.2)全PMC-XMLより機関名を検索
+##TASK(3.2)全PMC-XMLより機関名を検索(20140801 完了)
 ###TASK(3.2.1) RIKEN-BRC :
 ###既知機関名のリストの検索
 - 既知機関名の検索
