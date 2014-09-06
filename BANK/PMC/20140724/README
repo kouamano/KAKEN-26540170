@@ -411,18 +411,18 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/ATCC_2014/exec_command
 ##TASK(3.1): ack領域より機関名検索(5機関)(抽出もれあり、再抽出 20140905)
 ##!=====実行環境:n003=====!##
 ### 1. acknowledgement エレメントの抽出(石川氏)
-- データ: /BANK/PMC/20140724/elements/acknowledgement/PMC-ACK-v5_pmid.tsv
+- データ: /BANK/PMC/20140724/elements/acknowledgement/PMC-ACK-v6_pmid.tsv
 ###=====完了=====###
 ### 2. エレメントから機関名を検索(天野)(実行中)
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/_ALL_
-- 対象: /BANK/PMC/20140724/elements/acknowledgement/PMC-ACK-v5_pmid.tsv
+- 対象: /BANK/PMC/20140724/elements/acknowledgement/PMC-ACK-v6_pmid.tsv
 - 検索ターム: /BANK/Organization/_ALL_/organization-name/5orgs.name.only
 - プログラム: /home/kamano/gitsrc/utility/match_lines.pl
 - スクリプト:
  /BANK/PMC/20140724/Matching/BioResource/Organization/_ALL_/exec_command/5orgs_in_ack.sh
  /BANK/PMC/20140724/Matching/BioResource/Organization/_ALL_/exec_command/5org_extract_hit.sh
 - 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/_ALL_/5orgs_in_ack.hit
-###=====完了=====###
+###=====実行中=====###
 ### 3. 機関名抽出法の検討(角田氏)(検討中)
 ##TASK(3.2)全PMC-XMLより機関名を検索(20140801 完了)
 ###TASK(3.2.1) RIKEN-BRC :
