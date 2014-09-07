@@ -413,7 +413,7 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/ATCC_2014/exec_command
 ### 1. acknowledgement エレメントの抽出(石川氏)
 - データ: /BANK/PMC/20140724/elements/acknowledgement/PMC-ACK-v6_pmid.tsv
 ###=====完了=====###
-### 2. エレメントから機関名を検索(天野)(実行中)
+### 2. エレメントから機関名を検索(天野)(完了)
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/_ALL_
 - 対象: /BANK/PMC/20140724/elements/acknowledgement/PMC-ACK-v6_pmid.tsv
 - 検索ターム: /BANK/Organization/_ALL_/organization-name/5orgs.name.only
@@ -422,7 +422,8 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/_ALL_
  /BANK/PMC/20140724/Matching/BioResource/Organization/_ALL_/exec_command/5orgs_in_ack.sh
  /BANK/PMC/20140724/Matching/BioResource/Organization/_ALL_/exec_command/5org_extract_hit.sh
 - 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/_ALL_/5orgs_in_ack.hit
-###=====実行中=====###
+- PMID付きPMC-BRC利用者成果(118件) AND 結果: (30件) : /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/user-data/PMID/pmid_5orgs_AND_BRCuser_inACK
+###=====完了=====###
 ### 3. 機関名抽出法の検討(角田氏)(検討中)
 ##TASK(3.2)全PMC-XMLより機関名を検索(20140801 完了)
 ###TASK(3.2.1) RIKEN-BRC :
