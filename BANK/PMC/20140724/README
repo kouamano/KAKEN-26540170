@@ -59,9 +59,18 @@ cd /BANK/PMC/20140724/articles.pmid/exec_command
 - 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/user-data/PMID/ALL.pmid.sort.uniq.in_pmc
 
 
-#TASK(element-tree)(実行中)
-#XMLのエレメント木を作成
+#TASK(element-tree)
+##XMLのエレメント木を作成
 - 結果: /BANK/PMC/20140724/elements/SKELTON/*res
+##各ジャーナルグループごとにタグをカウント
+- 結果: /BANK/PMC/20140724/elements/SKELTON/*res.tag-count
+##マージのために余計なスペースを除去
+- 結果: /BANK/PMC/20140724/elements/SKELTON/*res.tag-count.rep
+##マージソート
+- 結果: skelton-ALL.res.tag-count.rep.merge-sort
+##マージソートをカウント
+- 結果: skelton-ALL.res.tag-count.rep.merge-sort.count
+
 
 
 #TASK(tag.old): XMLのエレメントタグを抽出 -> TASK(tag.new) に移行
