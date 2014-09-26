@@ -434,8 +434,16 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/_ALL_
 - PMID付きPMC-BRC利用者成果(118件) AND 結果: (30件) : /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/user-data/PMID/pmid_5orgs_AND_BRCuser_inACK
 ###=====完了=====###
 ### 3. 機関名抽出法の検討(角田氏)(検討中)
-##TASK(3.2)全PMC-XMLより機関名を検索(20140801 完了)
-###TASK(3.2.1) RIKEN-BRC :
+##TASK(3.2): aff領域より機関名検索(5機関)
+### 1. acknowledgement エレメントの抽出(石川氏)
+#### 1.1 ラフ抽出(BMC BIoinformatics誌)
+- 結果ファイル
+/BANK/PMC/20140724/elements/aff/PMC-AFF-BMC_Bio.tsv
+/BANK/PMC/20140724/elements/aff/PMC-AFF-BMC_Bio.txt
+####=====完了 20140925=====####
+#### 1.2 全抽出(石川氏)(未完)
+##TASK(3.3): 全PMC-XMLより機関名を検索(20140801 完了)
+###TASK(3.3.1) RIKEN-BRC :
 ###既知機関名のリストの検索
 - 既知機関名の検索
 -- 検索ターム: /BANK/Organization/RIKEN-BRC_2012/organization-name/org.name.only
@@ -443,7 +451,7 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/
 -- 検索コマンド:
 /home/kamano/gitsrc/utility/match_position
 /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/exec_command/match_pos_SynonOrgNames_Jour-au.sh
-###TASK(3.2.2) JCRB :
+###TASK(3.3.2) JCRB :
 ###既知機関名のリスト検索
 - 既知機関名の検索
 -- 検索ターム: /BANK/Organization/JCRB_2014/organization-name/org.name.only
@@ -451,7 +459,7 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/JCRB_2014/
 -- 検索コマンド:
 /home/kamano/gitsrc/utility/match_position
 /BANK/PMC/20140724/Matching/BioResource/Organization/JCRB_2014/exec_command/match_pos_SynonOrgNames_Jour-au.sh
-###TASK(3.2.3): NITE-NBRC
+###TASK(3.3.3): NITE-NBRC
 ###既知機関名のリストの検索
 - 既知機関名の検索
 -- 検索ターム: /BANK/Organization/NITE-NBRC_2014/organization-name/org.name.only
@@ -459,7 +467,7 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NITE-NBRC_2014/
 -- 検索コマンド:
 /home/kamano/gitsrc/utility/match_position
 /BANK/PMC/20140724/Matching/BioResource/Organization/NITE-NBRC_2014/exec_command/match_pos_SynonOrgNames_Jour-au.sh
-###TASK(3.2.4): DSMZ
+###TASK(3.3.4): DSMZ
 ###既知機関名のリストの検索
 - 既知機関名の検索
 -- 検索ターム: /BANK/Organization/DSMZ_2014/organization-name/org.name.only
@@ -467,7 +475,7 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/DSMZ_2014/
 -- 検索コマンド:
 /home/kamano/gitsrc/utility/match_position
 /BANK/PMC/20140724/Matching/BioResource/Organization/DSMZ_2014/exec_command/match_pos_SynonOrgNames_Jour-au.sh
-###TASK(3.2.5): WDCM
+###TASK(3.3.5): WDCM
 ###既知機関名のリストの検索
 - 既知機関名の検索
 -- 検索ターム: /BANK/Organization/WDCM_2014/organization-name/org.name.only
@@ -475,7 +483,7 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/WDCM_2014/
 -- 検索コマンド:
 /home/kamano/gitsrc/utility/match_position
 /BANK/PMC/20140724/Matching/BioResource/Organization/WDCM_2014/exec_command/match_pos_SynonOrgNames_Jour-au.sh
-###TASK(3.2.6): ATCC
+###TASK(3.3.6): ATCC
 ###既知機関名のリストの検索
 - 既知機関名の検索
 -- 検索ターム: /BANK/Organization/ATCC_2014/organization-name/org.name.only
