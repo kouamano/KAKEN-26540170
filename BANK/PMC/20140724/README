@@ -25,6 +25,10 @@
 - 実行スクリプト: 各 exec_command フォルダ
 
 
+#PMC概観
+- /BANK/PMC/20140724/articles : 54G, 843679 files
+
+
 #TASK(data) (20140724 に完了)
 ##TASK(data.1):PMCファイルの展開
 - 展開先: /BANK/PMC/20140724/articles
