@@ -184,49 +184,49 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/exec_comm
 cd /BANK/PMC/20130909/Matching/BioResource/Organization/RIKEN-BRC_2012/
 /BANK/PMC/20130909/Matching/BioResource/Organization/RIKEN-BRC_2012/exec_commandcheck_Res_betSP_sec-MMs_Jour-aa.sh
 /BANK/PMC/20130909/Matching/BioResource/Organization/RIKEN-BRC_2012/exec_command/check_pos_MMs_AllResNames_Jour-au.sh
-### 3. チェック済み結果をカウント
-###THEME[リソース名共出現解析]
-### 3.0 チェック用ターム:
+#### 2.3. チェック済み結果をカウント
+#####THEME[リソース名共出現解析]
+##### 2.3.0 チェック用ターム:
 /BANK/BioResource/Organization/RIKEN-BRC_2012/cited-resource/ALL.name.sort.uniq.tsv
-###検索タームがリテラルでない場合、一旦検索結果からチェック用タームを作る。
-### 3.1 インデックス付き行列 (不要)
-### 3.2 カウントスパース行列(matlab形式)を直接出力
-###インデックスは1からスタート
+#####検索タームがリテラルでない場合、一旦検索結果からチェック用タームを作る。
+##### 2.3.1 インデックス付き行列 (不要)
+##### 2.3.2 カウントスパース行列(matlab形式)を直接出力
+#####インデックスは1からスタート
 - プログラム(試験中): /home/kamano/gitsrc/KAKEN-26540170/BANK/PMC/bin/count_Res_in_Art.pl
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012
 /home/kamano/gitsrc/KAKEN-26540170/BANK/PMC/bin/count_Res_in_Art.pl rf=/BANK/BioResource/Organization/RIKEN-BRC_2012/cited-resource/ALL.name.sort.uniq.tsv  hf=/BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/match_pos_AllResNames_Jour-au.res.inMMs > count_AllResNames_Jour-au.res.inMMs
-### 3.3 カウントスパース行列　から　ヒットスパース行列へ
+##### 2.3.3 カウントスパース行列　から　ヒットスパース行列へ
 - プログラム: /home/kamano/gitsrc/utility/SP_count2hit.pl
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012
 for file in count*; do  /home/kamano/gitsrc/utility/SP_count2hit.pl $file > hit${file#count}; done
-### 4. インデックス付き行列 -> 数値のみ行列 (不要)
-###逐次一括処理
-### 5. 数値行列のゼロ要素以外を1に置換 (1 articleにおける共起を1とカウントするため)(不要)
-### 6. 数値行列をスパース形式に変換 (不要)
-#### 6.1 Mathematicaスパース形式
+#### 2.4. インデックス付き行列 -> 数値のみ行列 (不要)
+####逐次一括処理
+#### 2.5. 数値行列のゼロ要素以外を1に置換 (1 articleにおける共起を1とカウントするため)(不要)
+#### 2.6. 数値行列をスパース形式に変換 (不要)
+##### 2.6.1 Mathematicaスパース形式
 - プログラム: /home/kamano/gitsrc/utility/mk_MMA-SPA_from_numtable.pl
-####インデックスはmatlab用に1からスタート
-#### 6.2 Matlab data 形式 (読み込んだ後にさらに変換が必要)
+#####インデックスはmatlab用に1からスタート
+##### 2.6.2 Matlab data 形式 (読み込んだ後にさらに変換が必要)
 - プログラム: /home/kamano/gitsrc/utility/mk_MatlabSparse_from_numtable.pl
-####逐次一括処理(遅い)
+#####逐次一括処理(遅い)
 for file in count_pos_MMs_AllResNames-U_Jour-a*.res.numonly; do  /home/kamano/gitsrc/utility/mk_MatlabSparse_from_numtable.pl $file > $file.sptbl; done
-#### 6.3 Matrix Market 形式
+##### 2.6.3 Matrix Market 形式
 - プログラム: /home/kamano/gitsrc/utility/mk_MatMarket_from_numtable.pl
-### 7. カウント
+#### 2.7. カウント
 - ツール: matlab
-#### 7.1 ヒットファイルを読み込むと同時にスパース配列に変換、一つの行列に連結。
+##### 2.7.1 ヒットファイルを読み込むと同時にスパース配列に変換、一つの行列に連結。
 >> cd('/BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/')
 >> files = (dir('hit*'))
 >> for i=1:length(files); SpCount{i}=spconvert(load(files(i).name)); end
 >> SpCountCat=vertcat(SpCount{:});
-##### 7.1.1 リソースネームの総出現数カウントの結果ファイル(csv)
+###### 2.7.1.1 リソースネームの総出現数カウントの結果ファイル(csv)
 >> SpCountCatSumRes=sum(SpCountCat);
 >> CountCatSumRes=full(SpCountCatSumRes);
 >> csvwrite('/BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/analisys/count/resource-count_AllResNames.inMMs.csv',CountCatSumRes)
 - ファイル: /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/analisys/count/resource-count_AllResNames.inMMs.csv
 - 対応するリソース名ファイル: /BANK/BioResource/Organization/RIKEN-BRC_2012/cited-resource/ALL.name.sort.uniq.tsv
 - 対応するリソース名ファイル(グループタグ付き): /BANK/BioResource/Organization/RIKEN-BRC_2012/RAW_cited-resource/All.name_group_org.sort.uniq.tsv
-##### 7.1.2 articleの総出現数カウントの結果ファイル(csv)
+###### 2.7.1.2 articleの総出現数カウントの結果ファイル(csv)
 >> TrSpCountCat = transpose(SpCountCat);
 >> TrSpCountCatSum = sum(TrSpCountCat);
 >> TrCountCatSum = full(TrSpCountCatSum);
@@ -234,14 +234,14 @@ for file in count_pos_MMs_AllResNames-U_Jour-a*.res.numonly; do  /home/kamano/gi
 - ファイル: /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/analisys/count/article-count_AllResNames.inMMs.csv
 - 対応するarticle名ファイル(複数): /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/match_pos_AllResNames_Jour-a[a-u].res.inMMs
 ###===ここまで完了===
-### 8. リソース名(term)がマッチした箇所とファイル名の情報(1.)をRDBMSに入れる。リソース名から検索してファイル名と箇所を探せるように。(検討中)
-###DB start
+#### 2.8. リソース名(term)がマッチした箇所とファイル名の情報(1.)をRDBMSに入れる。リソース名から検索してファイル名と箇所を探せるように。(検討中)
+####DB start
 pg_ctl start -D /BANK/pgsql
-###DB connect
+####DB connect
 psql term_region
-### 8.1 対象ファイル
+##### 2.8.1 対象ファイル
 /BANK/PMC/20130909/Matching/BioResource_AND_Organization/RIKEN-BRC_2012/check_Res_betSP_sec-MMs_Jour-[A-Z].res
-### 8.2 テーブル構造
+##### 2.8.2 テーブル構造
 DB:<term_region>:
 Table0:<elementname>: <elementname> <annotation>
 Table1:<region_type>: <region_type> <annotation> <element> #ex. tag, content ... 
