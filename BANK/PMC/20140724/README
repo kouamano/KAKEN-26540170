@@ -29,6 +29,7 @@
 - /BANK/PMC/20140724/articles : 54G, 843679 files
 - /BANK/PMC/20140724/elements/SKELTON/skelton-ALL.res.tag-count.rep.merge-sort.count : 282タグ
 
+
 #TASK(data) (20140724 に完了)
 ##TASK(data.1):PMCファイルの展開
 - 展開先: /BANK/PMC/20140724/articles
@@ -43,7 +44,6 @@ split -l 42183 Jour-All.fname Jour-split
 cd /BANK/PMC/20140724/articles.fname/20.check/exec_command
 ./jour-check.aa.sh
 ##エラーゼロを確認。
-
 
 #TASK(check): pmid/pmcidのチェック (20140724 に完了 -> ディレクトリ移動あり)
 ##TASK(check.pmcid): PMC-XMLよりpmcidを抽出
@@ -62,7 +62,6 @@ cd /BANK/PMC/20140724/articles.pmid/exec_command
 - ツール: Mathematica
 - 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/user-data/PMID/ALL.pmid.sort.uniq.in_pmc
 
-
 #TASK(element-tree)
 ##XMLのエレメント木を作成
 - 結果: /BANK/PMC/20140724/elements/SKELTON/*res
@@ -74,8 +73,6 @@ cd /BANK/PMC/20140724/articles.pmid/exec_command
 - 結果: skelton-ALL.res.tag-count.rep.merge-sort
 ##マージソートをカウント
 - 結果: skelton-ALL.res.tag-count.rep.merge-sort.count
-
-
 
 #TASK(tag.old): XMLのエレメントタグを抽出 -> TASK(tag.new) に移行
 #cd /BANK/PMC/20140724/elements/ALL
@@ -92,6 +89,27 @@ cd /BANK/PMC/20140724/elements/ALL
 #=====20140903 1539 開始=====#
 #=====20140903 1724 終了=====#
 
+#TASK(extract)
+## 1. extract acknowledgement
+### -> 石川氏
+- file: /BANK/PMC/20140724/elements/acknowledgement/PMC-ACK-v6_pmid.tsv
+## 2. extract affiliation
+### -> 石川氏
+## 3. extract material|method
+## 参考: TASK(2.1)-2
+### 3.1 <sec>の領域を抽出
+- プログラム: /BANK/PMC/bin/elementPos_sec.pl
+cd /BANK/PMC/20140724/elements/sec
+/BANK/PMC/20140724/elements/sec/exec_command/sec_pos-au.sh
+#### 3.2 抽出された<sec>タグ領域 を sort (NEW) (完了)
+- プログラム: /home/kamano/gitsrc/KAKEN-26540170/BANK/PMC/bin/region-sort_from_reg.pl
+cd /BANK/PMC/20140724/elements/sec
+for file in *reg; do  /home/kamano/gitsrc/KAKEN-26540170/BANK/PMC/bin/region-sort_from_sec_pos.pl $file > ${file}_sort; done
+#### 3.3 sort済みの抽出された<sec>タグ領域file　から　マテリアルメソッドセクションの領域を抽出 (NEW) (完了)
+- プログラム(試用): /home/kamano/gitsrc/KAKEN-26540170/BANK/PMC/bin/region-MMs_from_reg_sort.pl
+cd /BANK/PMC/20140724/elements/sec
+/home/kamano/gitsrc/KAKEN-26540170/BANK/PMC/bin/region-MMs_from_reg_sort.pl sec_pos-au.reg_sort  | grep ^[^0-9] > sec_pos-au.reg-MMs
+#### 3.4 sec_pos-au.reg-MMs をもとにテキストを抽出、改行はスペースに変換(未完)
 
 #TASK(1): 既知リソース名・機関名の決定と検索タームの決定 (20140724 6機関を決定完了)
 #THEME[リソース名共出現解析][kaken-26540170]
