@@ -97,19 +97,26 @@ cd /BANK/PMC/20140724/elements/ALL
 ### -> 石川氏
 ## 3. extract material|method
 ## 参考: TASK(2.1)-2
-### 3.1 <sec>の領域を抽出
+## 件数:
+## <sec ...> : 502994
+## <supplementary-material> : 700187
+## <inline-supplementary-material> : 1511
+### 3.1 <sec ... material> セクションの抽出(未完)
+#### 3.1.1 <sec>の領域を抽出
 - プログラム: /BANK/PMC/bin/elementPos_sec.pl
 cd /BANK/PMC/20140724/elements/sec
 /BANK/PMC/20140724/elements/sec/exec_command/sec_pos-au.sh
-#### 3.2 抽出された<sec>タグ領域 を sort (NEW) (完了)
+#### 3.1.2 抽出された<sec>タグ領域 を sort (NEW) (完了)
 - プログラム: /home/kamano/gitsrc/KAKEN-26540170/BANK/PMC/bin/region-sort_from_reg.pl
 cd /BANK/PMC/20140724/elements/sec
 for file in *reg; do  /home/kamano/gitsrc/KAKEN-26540170/BANK/PMC/bin/region-sort_from_sec_pos.pl $file > ${file}_sort; done
-#### 3.3 sort済みの抽出された<sec>タグ領域file　から　マテリアルメソッドセクションの領域を抽出 (NEW) (完了)
+#### 3.1.3 sort済みの抽出された<sec>タグ領域file　から　マテリアルメソッドセクションの領域を抽出 (NEW) (完了)
 - プログラム(試用): /home/kamano/gitsrc/KAKEN-26540170/BANK/PMC/bin/region-MMs_from_reg_sort.pl
 cd /BANK/PMC/20140724/elements/sec
 /home/kamano/gitsrc/KAKEN-26540170/BANK/PMC/bin/region-MMs_from_reg_sort.pl sec_pos-au.reg_sort  | grep ^[^0-9] > sec_pos-au.reg-MMs
-#### 3.4 sec_pos-au.reg-MMs をもとにテキストを抽出、改行はスペースに変換(未完)
+#### 3.1.4 sec_pos-au.reg-MMs をもとにテキストを抽出、改行はスペースに変換(未完)
+### 3.2 <supplementary-material> セクションの抽出(未完)
+
 
 #TASK(1): 既知リソース名・機関名の決定と検索タームの決定 (20140724 6機関を決定完了)
 #THEME[リソース名共出現解析][kaken-26540170]
