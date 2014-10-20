@@ -115,7 +115,7 @@ for file in *reg; do  /home/kamano/gitsrc/KAKEN-26540170/BANK/PMC/bin/region-sor
 cd /BANK/PMC/20140724/elements/sec
 /home/kamano/gitsrc/KAKEN-26540170/BANK/PMC/bin/region-MMs_from_reg_sort.pl sec_pos-au.reg_sort  | grep ^[^0-9] > sec_pos-au.reg-MMs
 #### 3.1.4 sec_pos-au.reg-MMs をもとにテキストを抽出、改行はスペースに変換(未完)
-### 3.2 <supplementary-material> セクションの抽出(未完)
+### 3.2 <...supplementary-material> セクションの抽出(未完)
 
 
 #TASK(1): 既知リソース名・機関名の決定と検索タームの決定 (20140724 6機関を決定完了)
