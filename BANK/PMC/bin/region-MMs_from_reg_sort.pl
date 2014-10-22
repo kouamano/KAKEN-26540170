@@ -17,53 +17,26 @@ foreach (@arr) {
 	$startMM = 0;
 	$endMM = 0;
 	foreach (@subarr) {
-		print $_;
-		if(($_ =~ /.*sec-type=\".*materials.*/i) || ($_ =~ /.*sec-type=\".*methods.*/i)){
-			if($INMMS > 0){
-				$PrevINMMS = $INMMS;
-				$INMMS++;
-				$startDetect++;
-			}else{
-				$PrevINMMS = 0;
-				$INMMS = 1;
-				$startDetect = 1;
-			}
-			print "\[$PrevINMMS,$INMMS\]";
-		}elsif($_ =~ /.*<sec .*/){
-			if($INMMS > 0){
-				$PrevINMMS = $INMMS;
-				$INMMS++;
-			}else{
-				$INMMS++;
-			}
-			print "\[$PrevINMMS,$INMMS\]";
-		}elsif($_ =~ /.*:e:.*/){
-			if($INMMS > 0){
-				$PrevINMMS = $INMMS;
-				$INMMS = ($INMMS - 1);
-			}else{
-				$INMMS = ($INMMS - 1);
-			}
-			print "\[$PrevINMMS,$INMMS\]";
-		}
-		print "\n";
-		if($PrevINMMS == 0 && $INMMS == 1){
-			@tmparr = split('-',$_);
-			$startMM = shift(@tmparr);
-			$endDetect = 0;
-		}
-		if($PrevINMMS == 1 && $INMMS == 0 && $endDetect == 0){
-			@tmparr = split('-',$_);
-			shift(@tmparr);
-			$endMM = shift(@tmparr);
-			$endMM =~ s/[^0-9]+$//;
-			$endDetect++;
-			if($startDetect == 1){
-				print "region-MMs:$startMM-$endMM\n";
-			}else{
-				#print "region-MMs:\n";
-			}
-			$startDetect--;
+		#print $_;
+		if((($_ =~ /.*sec-type=\".*material.*/i) || ($_ =~ /.*sec-type=\".*method.*/i)) && ($INMMS == 0)){
+		#if(( ($_ =~ /.*sec-type=\".*material.*/i) ) && ($INMMS == 0)){
+			$INMMS = 1;
+			#print $_;
+			@tmp = split("-",$_);
+			print "region-MMs:$tmp[0]-";
+			#print "\[$INMMS\] START\n";
+		}elsif(($_ =~ /.*<sec.*/) && ($INMMS > 0)){
+			$INMMS++;
+			#print "\[$INMMS\]";
+		}elsif(($_ =~ /.*:e:.*/) && ($INMMS == 1)){
+			$INMMS--;
+			#print $_;
+			@tmp=split(/[-:]/,$_);
+			print "$tmp[1]\n";
+			#print "\[$INMMS\] END\n";
+		}elsif(($_ =~ /.*:e:.*/) && ($INMMS > 1)){
+			$INMMS--;
+			#print "\[$INMMS\]";
 		}
 	}
 	print ";;;\n";
