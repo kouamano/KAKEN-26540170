@@ -104,7 +104,10 @@ cd /BANK/PMC/20140724/elements/sec-type
 ## method領域は抽出しない
 ## 参考: TASK(2.1)-2
 ## 件数:
-## <sec sec-type=".*materiali.*"> : 502994
+## <sec sec-type=".*material.*"> : 502994
+## <sec sec-type="materials|methods"> : 227009
+## <sec sec-type="material.*"> : 約23万
+## <sec sec-type="supplementary.*materials*"> : 約19万
 ## <supplementary-material> : 700187
 ## <inline-supplementary-material> : 1511
 ## 考え中: <sec sec-type=".*material.*"> で抽出した領域内に
