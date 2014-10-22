@@ -107,6 +107,8 @@ cd /BANK/PMC/20140724/elements/ALL
 ## 二重抽出にならないようにする必要がある。
 ## ->
 ## /BANK/PMC/20140724/elements/ALL/*reg より materialをgrepして調べる。
+## まず、<sec sec-type="material.*">領域を抽出
+## つぎに、<supplementaly-material>領域を抽出
 ### 1. <sec sec-type=".*material.*"> セクションの抽出(未完)(保留)
 #### 1.1 <sec>の領域を抽出()
 - プログラム: /BANK/PMC/bin/elementPos_sec.pl
