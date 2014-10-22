@@ -102,8 +102,11 @@ cd /BANK/PMC/20140724/elements/ALL
 ## <sec sec-type=".*materiali.*"> : 502994
 ## <supplementary-material> : 700187
 ## <inline-supplementary-material> : 1511
-### 1. <sec sec-type=".*materiali.*"> セクションの抽出(未完)
-#### 1.1 <sec>の領域を抽出
+## 考え中: <sec sec-type=".*material.*"> で抽出した領域内に
+## <supplementary-material> を含むものがある。
+## 二重抽出にならないようにする必要がある。
+### 1. <sec sec-type=".*material.*"> セクションの抽出(未完)(保留)
+#### 1.1 <sec>の領域を抽出()
 - プログラム: /BANK/PMC/bin/elementPos_sec.pl
 cd /BANK/PMC/20140724/elements/sec
 /BANK/PMC/20140724/elements/sec/exec_command/sec_pos-au.sh
@@ -116,6 +119,7 @@ for file in *reg; do  /home/kamano/gitsrc/KAKEN-26540170/BANK/PMC/bin/region-sor
 cd /BANK/PMC/20140724/elements/sec
 /home/kamano/gitsrc/KAKEN-26540170/BANK/PMC/bin/region-MMs_from_reg_sort.pl sec_pos-au.reg_sort > sec_pos-au.reg-Material
 #### 1.4 sec_pos-au.reg-MMs をもとにテキストを抽出、改行はスペースに変換(未完)
+### 2. <supplementary-material> セクションの抽出(保留)
 
 
 #TASK(1): 既知リソース名・機関名の決定と検索タームの決定 (20140724 6機関を決定完了)
