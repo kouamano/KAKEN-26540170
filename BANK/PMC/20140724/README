@@ -88,6 +88,11 @@ cd /BANK/PMC/20140724/elements/ALL
 - スクリプト: /BANK/PMC/20140724/elements/ALL/exec_command/ALL_sort_pos-au.sh
 #=====20140903 1539 開始=====#
 #=====20140903 1724 終了=====#
+#TASK(sec-type): sec-typeの種類を抽出
+- ソース: /BANK/PMC/20140724/elements/sec/sec_pos-a[a-u].reg_sort
+- プログラム: /home/kamano/gitsrc/KAKEN-26540170/BANK/PMC/bin/grep-sec-type.pl
+cd /BANK/PMC/20140724/elements/sec-type
+/home/kamano/gitsrc/KAKEN-26540170/BANK/PMC/bin/extract_sec-types.pl *reg_sort | sort | uniq -c > ALL_sec-type.sort.count
 
 #TASK(extract)
 ##TASK(extract.ack) :  extract acknowledgement
