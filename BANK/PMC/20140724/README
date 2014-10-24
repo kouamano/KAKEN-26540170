@@ -121,16 +121,15 @@ cd /BANK/PMC/20140724/elements/sec-type
 ## つぎに、両者をマージ
 ## つぎに、かぶる領域を削除 <- より大きい領域を採用
 ### 1. <sec sec-type=".*material.*"> セクションの抽出(完了)
-#### 1.1 <sec>タグの領域を抽出済みのソート済み全タグ領域より抽出(NEW)
+#### 1.1 <sec>タグの領域を抽出済みのソート済み全タグ領域より抽出(NEW)(完了)
 - プログラム: /home/kamano/gitsrc/XMLOP/elementPos_sec_from_ALL.pl
 - スクリプト: /BANK/PMC/20140724/elements/sec/exec_command/sec_pos_from_ALL-au.sh- 結果: /BANK/PMC/20140724/elements/sec/sec_sort_pos-au.reg
-
-#### 1.3 抽出されたソート済み<sec>タグ領域　から　マテリアルセクションの領域を抽出 (NEW) (未完)
-- プログラム: /home/kamano/gitsrc/KAKEN-26540170/BANK/PMC/bin/region-Material_from_reg_sort.pl
+#### 1.2 抽出されたソート済み<sec>タグ領域　から　マテリアルセクションの領域を抽出(NEW)(完了)
+- プログラム: /home/kamano/gitsrc/XMLOP/region-Material_from_reg_sort.pl
 cd /BANK/PMC/20140724/elements/sec
-/home/kamano/gitsrc/KAKEN-26540170/BANK/PMC/bin/region-Material_from_reg_sort.pl sec_sort_pos-au.reg > sec_sort_pos-au.reg-Material
-#### 1.4 sec_pos-au.reg-MMs をもとにテキストを抽出、改行はスペースに変換(未完)
+/home/kamano/gitsrc/XMLOP/region-Material_from_reg_sort.pl sec_sort_pos-au.reg > sec_sort_pos-au.reg-Material
 ### 2. <supplementary-material> セクションの抽出(保留)
+#### 3 sec_pos-au.reg-MMs をもとにテキストを抽出、改行はスペースに変換(未完)
 
 
 #TASK(1): 既知リソース名・機関名の決定と検索タームの決定 (20140724 6機関を決定完了)
