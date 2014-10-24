@@ -231,9 +231,9 @@ cd /BANK/PMC/20130909/Matching/BioResource/Organization/RIKEN-BRC_2012/
 ##### 2.3.1 インデックス付き行列 (不要)
 ##### 2.3.2 カウントスパース行列(matlab形式)を直接出力
 #####インデックスは1からスタート
-- プログラム(試験中): /home/kamano/gitsrc/KAKEN-26540170/BANK/PMC/bin/count_Res_in_Art.pl
+- プログラム(試験中): /home/kamano/gitsrc/XMLOP/count_Res_in_Art.pl
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012
-/home/kamano/gitsrc/KAKEN-26540170/BANK/PMC/bin/count_Res_in_Art.pl rf=/BANK/BioResource/Organization/RIKEN-BRC_2012/cited-resource/ALL.name.sort.uniq.tsv  hf=/BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/match_pos_AllResNames_Jour-au.res.inMMs > count_AllResNames_Jour-au.res.inMMs
+/home/kamano/gitsrc/XMLOP/count_Res_in_Art.pl rf=/BANK/BioResource/Organization/RIKEN-BRC_2012/cited-resource/ALL.name.sort.uniq.tsv  hf=/BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/match_pos_AllResNames_Jour-au.res.inMMs > count_AllResNames_Jour-au.res.inMMs
 ##### 2.3.3 カウントスパース行列　から　ヒットスパース行列へ
 - プログラム: /home/kamano/gitsrc/utility/SP_count2hit.pl
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012
@@ -320,10 +320,8 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/JCRB_2014
 ##### 2.1.2 抽出された<sec>タグ領域 を sort (NEW) (完了)
 ##### 2.1.3 sort済みの抽出された<sec>タグ領域file　から　マテリアルメソッドセクションの領域を抽出 (NEW) (完了)
 #### 2.2 (NEW) マテリアルメソッドセクションの領域とヒット領域を比較 (完了)
-- プログラム(試用): /home/kamano/gitsrc/KAKEN-26540170/BANK/PMC/bin/check-region_from_pos.pl
+- プログラム(試用): /home/kamano/gitsrc/XMLOP/check-region_from_pos.pl
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/JCRB_2014/exec_command
-/BANK/PMC/20140724/Matching/BioResource/Organization/JCRB_2014/exec_command/check_pos_SynonOrgNames_Jour-au_inMMs.sh(err)
-->
 /BANK/PMC/20140724/Matching/BioResource/Organization/JCRB_2014/exec_command/check_pos_AllResNames_Jour-au_inMMs.sh
 ###===ここまで完了===
 ### 3. チェック済み結果をカウント
@@ -360,10 +358,8 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NITE-NBRC_2014/exec_comm
 ##### 2.1.2 抽出された<sec>タグ領域 を sort (NEW) (完了)
 ##### 2.1.3 sort済みの抽出された<sec>タグ領域file　から　マテリアルメソッドセクションの領域を抽出 (NEW) (完了)
 #### 2.2 (NEW) マテリアルメソッドセクションの領域とヒット領域を比較
-- プログラム(試用): /home/kamano/gitsrc/KAKEN-26540170/BANK/PMC/bin/check-region_from_pos.pl
+- プログラム(試用): /home/kamano/gitsrc/XMLOP/check-region_from_pos.pl
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/NITE-NBRC_2014/exec_command
-/BANK/PMC/20140724/Matching/BioResource/Organization/NITE-NBRC_2014/exec_command/check_pos_SynonOrgNames_Jour-au_inMMs.sh(err)
-->
 /BANK/PMC/20140724/Matching/BioResource/Organization/NITE-NBRC_2014/exec_command/check_pos_AllResNames_Jour-au_inMMs.sh
 ###===ここまで完了===
 
@@ -391,10 +387,8 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/DSMZ_2014/exec_command
 ##### 2.1.2 抽出された<sec>タグ領域 を sort (NEW) (完了)
 ##### 2.1.3 sort済みの抽出された<sec>タグ領域file　から　マテリアルメソッドセクションの領域を抽出 (NEW) (完了)
 #### 2.2 (NEW) マテリアルメソッドセクションの領域とヒット領域を比較 (完了)
-- プログラム(試用): /home/kamano/gitsrc/KAKEN-26540170/BANK/PMC/bin/check-region_from_pos.pl
+- プログラム(試用): /home/kamano/gitsrc/XMLOP/check-region_from_pos.pl
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/DSMZ_2014/exec_command
-/BANK/PMC/20140724/Matching/BioResource/Organization/DSMZ_2014/exec_command/check_pos_SynonOrgNames_Jour-au_inMMs.sh(err)
-->
 /BANK/PMC/20140724/Matching/BioResource/Organization/DSMZ_2014/exec_command/check_pos_AllResNames_Jour-au_inMMs.sh
 ###===ここまで完了===
 
@@ -453,7 +447,7 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/ATCC_2014/exec_command
 ##### 2.1.2 抽出された<sec>タグ領域 を sort (NEW) (完了)
 ##### 2.1.3 sort済みの抽出された<sec>タグ領域file　から　マテリアルメソッドセクションの領域を抽出 (NEW) (完了)
 #### 2.2 (NEW) マテリアルメソッドセクションの領域とヒット領域を比較 
-- プログラム(試用): /home/kamano/gitsrc/KAKEN-26540170/BANK/PMC/bin/check-region_from_pos.pl
+- プログラム(試用): /home/kamano/gitsrc/XMLOP/check-region_from_pos.pl
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/ATCC_2014/exec_command
 /BANK/PMC/20140724/Matching/BioResource/Organization/ATCC_2014/exec_command/check_pos_AllResNames_Jour-au_inMMs.sh
 ###===ここまで完了===
