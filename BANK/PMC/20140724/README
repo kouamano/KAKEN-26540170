@@ -45,6 +45,7 @@ cd /BANK/PMC/20140724/articles.fname/20.check/exec_command
 ./jour-check.aa.sh
 ##エラーゼロを確認。
 
+
 #TASK(check): pmid/pmcidのチェック (20140724 に完了 -> ディレクトリ移動あり)
 ##TASK(check.pmcid): PMC-XMLよりpmcidを抽出
 - 対象: /BANK/PMC/20140724/articles.pmid/
@@ -62,17 +63,27 @@ cd /BANK/PMC/20140724/articles.pmid/exec_command
 - ツール: Mathematica
 - 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/user-data/PMID/ALL.pmid.sort.uniq.in_pmc
 
+
 #TASK(element-tree)
 ##XMLのエレメント木を作成
+- プログラム: /home/kamano/gitsrc/XMLOP/skelton.py
 - 結果: /BANK/PMC/20140724/elements/SKELTON/*res
 ##各ジャーナルグループごとにタグをカウント
+- プログラム: /home/kamano/gitsrc/utility/drop_colon.pl
+- スクリプト: /BANK/PMC/20140724/elements/SKELTON/exec_command/tag-count-au.sh
 - 結果: /BANK/PMC/20140724/elements/SKELTON/*res.tag-count
 ##マージのために余計なスペースを除去
+- プログラム: /home/kamano/gitsrc/utility/rep4count.pl
+- スクリプト: /BANK/PMC/20140724/elements/SKELTON/exec_command/rep_all.sh
 - 結果: /BANK/PMC/20140724/elements/SKELTON/*res.tag-count.rep
 ##マージソート
+- スクリプト: /BANK/PMC/20140724/elements/SKELTON/exec_command/merge-sort.sh
 - 結果: skelton-ALL.res.tag-count.rep.merge-sort
 ##マージソートをカウント
+- プログラム: /home/kamano/gitsrc/utility/sum_count_from_mixed_sort.pl
+- スクリプト: /BANK/PMC/20140724/elements/SKELTON/exec_command/count_merge.sh
 - 結果: skelton-ALL.res.tag-count.rep.merge-sort.count
+
 
 #TASK(tag.old): XMLのエレメントタグを抽出 -> TASK(tag.new) に移行
 #cd /BANK/PMC/20140724/elements/ALL
@@ -93,6 +104,7 @@ cd /BANK/PMC/20140724/elements/ALL
 - プログラム: /home/kamano/gitsrc/XMLOP/grep-sec-type.pl
 cd /BANK/PMC/20140724/elements/sec-type
 /home/kamano/gitsrc/XMLOP/extract_sec-types.pl *reg_sort | sort | uniq -c > ALL_sec-type.sort.count
+
 
 #TASK(extract)
 ##TASK(extract.ack) :  extract acknowledgement
@@ -130,6 +142,7 @@ cd /BANK/PMC/20140724/elements/sec
 /home/kamano/gitsrc/XMLOP/region-Material_from_reg_sort.pl sec_sort_pos-au.reg > sec_sort_pos-au.reg-Material
 ### 2. <supplementary-material> セクションの抽出(保留)
 #### 3 sec_pos-au.reg-MMs をもとにテキストを抽出、改行はスペースに変換(未完)
+
 
 
 #TASK(1): 既知リソース名・機関名の決定と検索タームの決定 (20140724 6機関を決定完了)
