@@ -48,12 +48,12 @@ cd /BANK/PMC/20140724/articles.fname/20.check/exec_command
 #TASK(check): pmid/pmcidのチェック (20140724 に完了 -> ディレクトリ移動あり)
 ##TASK(check.pmcid): PMC-XMLよりpmcidを抽出
 - 対象: /BANK/PMC/20140724/articles.pmid/
-- プログラム: /home/kamano/gitsrc/KAKEN-26540170/BANK/PMC/bin/extract_pmcid.pl
+- プログラム: /home/kamano/gitsrc/XMLOP/extract_pmcid.pl
 cd /BANK/PMC/20140724/articles.pmid/exec_command
 /BANK/PMC/20140724/articles.pmid/exec_command/jour-split.pmcid.au.sh
 ##TASK(check.pmid): PMC-XMLよりpmidを抽出
 - 対象: /BANK/PMC/20140724/articles.pmid/
-- プログラム: /home/kamano/gitsrc/KAKEN-26540170/BANK/PMC/bin/extract_pmid.pl
+- プログラム: /home/kamano/gitsrc/XMLOP/extract_pmid.pl
 cd /BANK/PMC/20140724/articles.pmid/exec_command
 /BANK/PMC/20140724/articles.pmid/exec_command/jour-split.pmid.aa.sh
 ##TASK(check.user-data-pmid): RIKEN-BRC利用者成果よりpmidを抽出(20140904 移動)
@@ -80,7 +80,7 @@ cd /BANK/PMC/20140724/articles.pmid/exec_command
 #- プログラム: /home/kamano/gitsrc/XMLOP/elementPos_ALL.pl
 #- スクリプト: /BANK/PMC/20140724/elements/ALL/exec_command/ALL_pos-au.sh
 ##TASK(tag.sort): 抽出したエレメントをpositionでソート
-##POPSTACKエラー発生(中止) -> 新スクリプト開発中 -> TASK(tag.new)
+##POPSTACKエラー発生(中止) -> 新スクリプト開発中 -> OK -> TASK(tag.new)
 #TASK(tag.new): XMLのエレメントタグを抽出・ソート(完了)
 cd /BANK/PMC/20140724/elements/ALL
 - 対象: PMC-XML全件
@@ -90,9 +90,9 @@ cd /BANK/PMC/20140724/elements/ALL
 #=====20140903 1724 終了=====#
 #TASK(sec-type): sec-typeの種類を抽出
 - ソース: /BANK/PMC/20140724/elements/sec/sec_pos-a[a-u].reg_sort
-- プログラム: /home/kamano/gitsrc/KAKEN-26540170/BANK/PMC/bin/grep-sec-type.pl
+- プログラム: /home/kamano/gitsrc/XMLOP/grep-sec-type.pl
 cd /BANK/PMC/20140724/elements/sec-type
-/home/kamano/gitsrc/KAKEN-26540170/BANK/PMC/bin/extract_sec-types.pl *reg_sort | sort | uniq -c > ALL_sec-type.sort.count
+/home/kamano/gitsrc/XMLOP/extract_sec-types.pl *reg_sort | sort | uniq -c > ALL_sec-type.sort.count
 
 #TASK(extract)
 ##TASK(extract.ack) :  extract acknowledgement
@@ -115,21 +115,20 @@ cd /BANK/PMC/20140724/elements/sec-type
 ## 二重抽出にならないようにする必要がある。
 ## ->
 ## /BANK/PMC/20140724/elements/ALL/*reg より materialをgrepして調べる。
+## ->
 ## まず、<sec sec-type="material.*">領域を抽出 <- materials|methodsもmaterialがさきにくる模様。
 ## つぎに、<supplementaly-material>領域を抽出
-### 1. <sec sec-type=".*material.*"> セクションの抽出(未完)(保留)
-#### 1.1 <sec>の領域を抽出()
-- プログラム: /BANK/PMC/bin/elementPos_sec.pl
+## つぎに、両者をマージ
+## つぎに、かぶる領域を削除 <- より大きい領域を採用
+### 1. <sec sec-type=".*material.*"> セクションの抽出(完了)
+#### 1.1 <sec>タグの領域を抽出済みのソート済み全タグ領域より抽出(NEW)
+- プログラム: /home/kamano/gitsrc/XMLOP/elementPos_sec_from_ALL.pl
+- スクリプト: /BANK/PMC/20140724/elements/sec/exec_command/sec_pos_from_ALL-au.sh- 結果: /BANK/PMC/20140724/elements/sec/sec_sort_pos-au.reg
+
+#### 1.3 抽出されたソート済み<sec>タグ領域　から　マテリアルセクションの領域を抽出 (NEW) (未完)
+- プログラム: /home/kamano/gitsrc/KAKEN-26540170/BANK/PMC/bin/region-Material_from_reg_sort.pl
 cd /BANK/PMC/20140724/elements/sec
-/BANK/PMC/20140724/elements/sec/exec_command/sec_pos-au.sh
-#### 1.2 抽出された<sec>領域 を sort (NEW) (完了)
-- プログラム: /home/kamano/gitsrc/KAKEN-26540170/BANK/PMC/bin/region-sort_from_reg.pl
-cd /BANK/PMC/20140724/elements/sec
-for file in *reg; do  /home/kamano/gitsrc/KAKEN-26540170/BANK/PMC/bin/region-sort_from_sec_pos.pl $file > ${file}_sort; done
-#### 1.3 sort済みの抽出された<sec>タグ領域file　から　マテリアルセクションの領域を抽出 (NEW) (未完)
-- プログラム(試用): /home/kamano/gitsrc/KAKEN-26540170/BANK/PMC/bin/region-Material_from_reg_sort.pl
-cd /BANK/PMC/20140724/elements/sec
-/home/kamano/gitsrc/KAKEN-26540170/BANK/PMC/bin/region-MMs_from_reg_sort.pl sec_pos-au.reg_sort > sec_pos-au.reg-Material
+/home/kamano/gitsrc/KAKEN-26540170/BANK/PMC/bin/region-Material_from_reg_sort.pl sec_sort_pos-au.reg > sec_sort_pos-au.reg-Material
 #### 1.4 sec_pos-au.reg-MMs をもとにテキストを抽出、改行はスペースに変換(未完)
 ### 2. <supplementary-material> セクションの抽出(保留)
 
@@ -199,8 +198,10 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/exec_comm
 ###===2014.07.30 1700 開始===
 ###===2014.08.02 1925 終了===
 ###==========================
-### 2. マテリアルメソッドセクションにあるか (新方式)
+### 2. マテリアルメソッドセクションにあるか (新方式)(確認必要)
 #### 2.1 マテリアルメソッドセクションの領域を抽出 (1回やればOK)
+##### 2.1.1 <sec>タグ領域を抽出済みのタグ領域から抽出 (NEW NEW)
+
 ##### 2.1.1 <sec>タグ領域を抽出 (NEW) (完了)
 - プログラム: /BANK/PMC/bin/elementPos_sec.pl
 cd /BANK/PMC/20140724/elements/sec
