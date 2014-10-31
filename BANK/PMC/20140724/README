@@ -22,8 +22,15 @@
 /mnt/EDB200/BANK/PMC/20140724/articles - ÂÐ¾Ý³°
 /mnt/EDB200/BANK/PMC/20140724/articles.fname - OK
 /mnt/EDB200/BANK/PMC/20140724/articles.pmid - OK
-/mnt/EDB200/BANK/PMC/20140724/elements :
-/mnt/EDB200/BANK/PMC/20140724/elements/sec/ :
+/mnt/EDB200/BANK/PMC/20140724/elements/ :
+/mnt/EDB200/BANK/PMC/20140724/elements/ALL/ :
+/mnt/EDB200/BANK/PMC/20140724/elements/MERGED - OK
+/mnt/EDB200/BANK/PMC/20140724/elements/SKELTON/ :
+/mnt/EDB200/BANK/PMC/20140724/elements/acknowledgement - OK
+/mnt/EDB200/BANK/PMC/20140724/elements/aff - OK
+/mnt/EDB200/BANK/PMC/20140724/elements/sec - OK
+/mnt/EDB200/BANK/PMC/20140724/elements/sec-type - OK
+/mnt/EDB200/BANK/PMC/20140724/elements/supplementary-material - OK
 
 
 
