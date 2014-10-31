@@ -137,6 +137,7 @@ cd /BANK/PMC/20140724/elements/sec-type
 - プログラム: /home/kamano/gitsrc/XMLOP/elementPos_sec_from_ALL.pl
 - スクリプト: /BANK/PMC/20140724/elements/sec/exec_command/sec_pos_from_ALL-au.sh
 - 結果: /BANK/PMC/20140724/elements/sec/sec_sort_pos-au.reg
+#### revに対して同じ結果なのでこのままでOK
 #### 1.2 抽出されたソート済み<sec>タグ領域　から　マテリアルセクションの領域を抽出(NEW)(完了)
 - プログラム: /home/kamano/gitsrc/XMLOP/region-Material_from_reg_sort.pl
 cd /BANK/PMC/20140724/elements/sec
