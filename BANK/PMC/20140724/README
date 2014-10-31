@@ -3,8 +3,11 @@
 
 #TODO:
 ##check:
-##/BANK/PMC/20140724/Matching/BioResource/Organization/ATCC_2014
-##match_pos_AllResNames_Jour-ao.res がない。-> OK
+###/BANK/PMC/20140724/Matching/BioResource/Organization/ATCC_2014 -> OK
+###match_pos_AllResNames_Jour-ao.res がない。-> OK
+##プログラムの整理: gitsrc/KAKEN-26540170/BANK/PMC/bin を使わないようにする
+##データのバックアップ
+## As of 20141013
 
 
 #NOTE:
