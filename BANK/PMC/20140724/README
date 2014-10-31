@@ -22,15 +22,16 @@
 /mnt/EDB200/BANK/PMC/20140724/articles - 対象外
 /mnt/EDB200/BANK/PMC/20140724/articles.fname - OK
 /mnt/EDB200/BANK/PMC/20140724/articles.pmid - OK
-/mnt/EDB200/BANK/PMC/20140724/elements/ :
-/mnt/EDB200/BANK/PMC/20140724/elements/ALL/ :
+/mnt/EDB200/BANK/PMC/20140724/elements - OK
+/mnt/EDB200/BANK/PMC/20140724/elements/ALL - OK
 /mnt/EDB200/BANK/PMC/20140724/elements/MERGED - OK
-/mnt/EDB200/BANK/PMC/20140724/elements/SKELTON/ :
+/mnt/EDB200/BANK/PMC/20140724/elements/SKELTON - OK
 /mnt/EDB200/BANK/PMC/20140724/elements/acknowledgement - OK
 /mnt/EDB200/BANK/PMC/20140724/elements/aff - OK
 /mnt/EDB200/BANK/PMC/20140724/elements/sec - OK
 /mnt/EDB200/BANK/PMC/20140724/elements/sec-type - OK
 /mnt/EDB200/BANK/PMC/20140724/elements/supplementary-material - OK
+/mnt/EDB200/BANK/PMC/20140724/terms/ :
 
 
 
@@ -45,8 +46,8 @@
 #ディレクトリ構成
 - root: /BANK/
 - XML情報: /BANK/PMC/<日付>/ 配下
-- 機関情報: /BANK/Organization/<機関名>/ 配下
-- バイオリソース情報: /BANK/BioResource/Organization/<機関名>/ 配下
+- 機関情報: /BANK/Organization/<機関名_日付>/ 配下
+- バイオリソース情報: /BANK/BioResource/Organization/<機関名_日付>/ 配下
 - マッチング(検索)結果: /BANK/PMC/<日付>/Matching/BioResource/Organization/<機関名>/ 配下
 - プログラム: root 以下の 各 bin フォルダ、または、github
 - 実行スクリプト: 各 exec_command フォルダ
