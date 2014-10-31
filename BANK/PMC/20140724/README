@@ -153,7 +153,8 @@ cd /BANK/PMC/20140724/elements/sec
 cd /BANK/PMC/20140724/elements/supplementary-material
 /home/kamano/gitsrc/XMLOP/region-sup-Material_from_reg_sort.pl sup-material_sort_pos-au.reg > sup-material_sort_pos-au.reg-sup-Material
 ### 3. reg-Material と reg-sup-Matarial をマージ
-### /BANK/PMC/20140724/elements/MERGED/ 配下を利用
+#### 3.1  ターゲットの決定
+- ファイル: /BANK/PMC/20140724/elements/MERGED/Materials/target.txt
 ### 4. sec_pos-au.reg-MMs をもとにテキストを抽出、改行はスペースに変換(未完)
 
 
