@@ -8,6 +8,23 @@
 ##プログラムの整理: gitsrc/KAKEN-26540170/BANK/PMC/bin を使わないようにする
 ##データのバックアップ
 ## As of 20141013
+/mnt/EDB200/BANK/BioResource - OK
+/mnt/EDB200/BANK/Organization - OK
+/mnt/EDB200/BANK/PMC/20140724/ :
+/mnt/EDB200/BANK/PMC/20140724/Matching - OK
+/mnt/EDB200/BANK/PMC/20140724/Matching/BioResource/Organization/ATCC_2014 - OK
+/mnt/EDB200/BANK/PMC/20140724/Matching/BioResource/Organization/DSMZ_2014 - OK
+/mnt/EDB200/BANK/PMC/20140724/Matching/BioResource/Organization/JCRB_2014 - OK
+/mnt/EDB200/BANK/PMC/20140724/Matching/BioResource/Organization/NITE-NBRC_2014 -OK
+/mnt/EDB200/BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012 - OK
+/mnt/EDB200/BANK/PMC/20140724/Matching/BioResource/Organization/WDCM_2014 - 対象外
+/mnt/EDB200/BANK/PMC/20140724/TAR - OK
+/mnt/EDB200/BANK/PMC/20140724/articles - 対象外
+/mnt/EDB200/BANK/PMC/20140724/articles.fname - OK
+/mnt/EDB200/BANK/PMC/20140724/articles.pmid - OK
+/mnt/EDB200/BANK/PMC/20140724/elements :
+/mnt/EDB200/BANK/PMC/20140724/elements/sec/ :
+
 
 
 #NOTE:
