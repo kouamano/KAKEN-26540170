@@ -7,10 +7,10 @@
 ###match_pos_AllResNames_Jour-ao.res がない。-> OK
 ##プログラムの整理: gitsrc/KAKEN-26540170/BANK/PMC/bin を使わないようにする
 ##データのバックアップ
-## As of 20141013
+##As of 20141013 -> OK
 /mnt/EDB200/BANK/BioResource - OK
 /mnt/EDB200/BANK/Organization - OK
-/mnt/EDB200/BANK/PMC/20140724/ :
+/mnt/EDB200/BANK/PMC/20140724 - OK
 /mnt/EDB200/BANK/PMC/20140724/Matching - OK
 /mnt/EDB200/BANK/PMC/20140724/Matching/BioResource/Organization/ATCC_2014 - OK
 /mnt/EDB200/BANK/PMC/20140724/Matching/BioResource/Organization/DSMZ_2014 - OK
@@ -31,7 +31,7 @@
 /mnt/EDB200/BANK/PMC/20140724/elements/sec - OK
 /mnt/EDB200/BANK/PMC/20140724/elements/sec-type - OK
 /mnt/EDB200/BANK/PMC/20140724/elements/supplementary-material - OK
-/mnt/EDB200/BANK/PMC/20140724/terms/ :
+/mnt/EDB200/BANK/PMC/20140724/terms - OK
 
 
 
