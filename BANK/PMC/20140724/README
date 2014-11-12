@@ -185,7 +185,10 @@ cd /BANK/PMC/20140724/elements/supplementary-material
 ####====20141024 終了====####
 ### 3. reg-Material と reg-sup-Matarial をマージ
 ### プログラム作成中
-- プログラム: /home/kamano/gitsrc/XMLOP/merge_region.pl
+- プログラム: /home/kamano/gitsrc/XMLOP/merge_region-Material.pl
+- スクリプト: /BANK/PMC/20140724/elements/MERGED/Materials/exec_command/merge_region-material.sh
+- 結果ディレクトリ: /BANK/PMC/20140724/elements/MERGED/Materials/
+- 結果: /BANK/PMC/20140724/elements/MERGED/Materials/au.merge-reg-material
 ### 4. sec_pos-au.reg-MMs をもとにテキストを抽出、改行はスペースに変換(未完)
 
 
