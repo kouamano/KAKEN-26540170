@@ -189,7 +189,8 @@ cd /BANK/PMC/20140724/elements/supplementary-material
 - スクリプト: /BANK/PMC/20140724/elements/MERGED/Materials/exec_command/merge_region-material.sh
 - 結果ディレクトリ: /BANK/PMC/20140724/elements/MERGED/Materials/
 - 結果: /BANK/PMC/20140724/elements/MERGED/Materials/au.merge-reg-material
-### 4. sec_pos-au.reg-MMs をもとにテキストを抽出、改行はスペースに変換(未完)
+### 4. マージ結果をもとにテキストを抽出、改行はスペースに変換(未完)
+- プログラム: /home/kamano/gitsrc/XMLOP/extract_content_from_region.pl
 
 
 
