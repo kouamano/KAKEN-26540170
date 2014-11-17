@@ -142,6 +142,7 @@ cd /BANK/PMC/20140724/elements/sec-type
 - file: /BANK/PMC/20140724/elements/acknowledgement/PMC-ACK-v6_pmid.tsv
 ##TAST(extract.aff) : extract affiliation
 ## -> 石川氏
+- file: /BANK/PMC/20140724/elements/aff/PMC-AFF-v1.tsv (20141114)
 ##TASK(extract.material) : extract material
 ## method領域は抽出しない
 ## 参考: TASK(2.1)-2
@@ -194,7 +195,7 @@ cd /BANK/PMC/20140724/elements/supplementary-material
 - 結果: /BANK/PMC/20140724/elements/MERGED/Materials/au.merge-reg-material.cont.tsv
 ###===20141114 1130 開始===###
 ### 並列化
-###===20141114 xxxx 終了===###
+###===20141114 1250 終了===###
 
 
 #TASK(1): 既知リソース名・機関名の決定と検索タームの決定 (20140724 6機関を決定完了)
