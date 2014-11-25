@@ -203,6 +203,7 @@ cd /BANK/PMC/20140724/elements/supplementary-material
 #大型機関に絞って行なうこととする。
 ##TASK(1.0): 対象機関の決定
 ##条件: 大学以外、もしくはセンター
+##方法: インターネット検索 + 
 - riken brc
 - nig
 - nite nbrc
