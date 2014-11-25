@@ -203,14 +203,24 @@ cd /BANK/PMC/20140724/elements/supplementary-material
 #大型機関に絞って行なうこととする。
 ##TASK(1.0): 対象機関の決定
 ##条件: 大学以外、もしくはセンター
-##方法: インターネット検索 + 
-- riken brc
-- nig
-- nite nbrc
-- jcrb
-- dsmz
-- atcc
-- addgene
+##方法: インターネット検索
+##アスタリスク(*)が今回の対象
+日本:
+-* riken brc
+-* nig
+-* nite nbrc
+-* jcrb
+- がん研究センター(biobank:2011)
+- 循環器病研究センター(biobank:2011)
+- 精神・神経医療研究センター(biobank:2011)
+- 国際医療研究センター(biobank:?)
+- 生育医療研究センター(biobank:?)
+- 長寿医療研究センター(biobank:?)
+海外:
+-* dsmz
+-* atcc
+-* addgene
+- jackson lab
 ##TASK(1.1): RIKEN-BRC
 - リソース
 -- 対象: RIKEN BRC (利用者成果)
