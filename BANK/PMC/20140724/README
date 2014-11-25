@@ -202,6 +202,13 @@ cd /BANK/PMC/20140724/elements/supplementary-material
 #THEME[リソース名共出現解析][kaken-26540170]
 #大型機関に絞って行なうこととする。
 ##TASK(1.0): 対象機関の決定
+##条件: 大学以外、もしくはセンター
+- riken brc
+- nig
+- nite nbrc
+- jcrb
+- dsmz
+- atcc
 ##TASK(1.1): RIKEN-BRC
 - リソース
 -- 対象: RIKEN BRC (利用者成果)
