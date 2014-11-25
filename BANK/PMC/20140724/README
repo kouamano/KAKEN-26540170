@@ -209,6 +209,7 @@ cd /BANK/PMC/20140724/elements/supplementary-material
 - jcrb
 - dsmz
 - atcc
+- addgene
 ##TASK(1.1): RIKEN-BRC
 - リソース
 -- 対象: RIKEN BRC (利用者成果)
