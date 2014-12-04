@@ -138,7 +138,15 @@ cd /BANK/PMC/20140724/elements/sec-type
 
 
 #TASK(term-count): 出現タームのカウント
-#
+##タグの除去とsplit
+- プログラム:
+-- /home/kamano/gitsrc/XMLOP/drop_tag-text.pl
+-- /home/kamano/gitsrc/XMLOP/splitter3.pl
+- スクリプト: /BANK/PMC/20140724/terms/whole/patt.3/exec_command/split_Word_Jour-ALL.sh
+- 出力ファイル: /BANK/PMC/20140724/terms/whole/patt.3/Word_Jour-au
+##分割ファイルのソート
+
+
 
 #TASK(extract)
 ##TASK(extract.ack) :  extract acknowledgement
