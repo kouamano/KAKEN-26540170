@@ -144,6 +144,7 @@ cd /BANK/PMC/20140724/elements/sec-type
 -- /home/kamano/gitsrc/XMLOP/splitter3.pl
 - スクリプト: /BANK/PMC/20140724/terms/whole/patt.3/exec_command/split_Word_Jour-ALL.sh
 - 出力ファイル: /BANK/PMC/20140724/terms/whole/patt.3/Word_Jour-au
+###==20141204 1129 開始==###
 ##分割ファイルのソート
 
 
