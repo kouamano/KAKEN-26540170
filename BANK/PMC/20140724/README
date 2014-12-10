@@ -210,7 +210,7 @@ cd /BANK/PMC/20140724/elements/supplementary-material
 - スクリプト: /BANK/PMC/20140724/elements/x+ref+p/exec_command/content_xrefINp_Jour-ALL.sh
 - 結果: /BANK/PMC/20140724/elements/x+ref+p/content_xrefINp_Jour-au
 ### 2. 対応するref領域のextract
-誤って実行中。終わるのを待って再実行。
+誤って実行中。終わるのを待って再実行。-> 再実行中
 対象ファイル: content_ref_Jour-a*
 - プログラム: /home/kamano/gitsrc/XMLOP/region-ref_from_XML.pl
 - スクリプト: /BANK/PMC/20140724/elements/x+ref+p/exec_command/content_ref_Jour-ALL.sh
