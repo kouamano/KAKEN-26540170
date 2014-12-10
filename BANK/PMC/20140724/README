@@ -1,4 +1,4 @@
-#[リソース名共出現解析][kaken-26540170]
+#[リソース名共出現解析][kaken-26540170][引用解析]
 
 
 #TODO:
@@ -53,11 +53,9 @@
 - プログラム: root 以下の 各 bin フォルダ、または、github
 - 実行スクリプト: 各 exec_command フォルダ
 
-
 #PMC概観
 - /BANK/PMC/20140724/articles : 54G, 843679 files
 - /BANK/PMC/20140724/elements/SKELTON/skelton-ALL.res.tag-count.rep.merge-sort.count : 282タグ
-
 
 #TASK(data) (20140724 に完了)
 ##TASK(data.1):PMCファイルの展開
@@ -73,7 +71,6 @@ split -l 42183 Jour-All.fname Jour-split
 cd /BANK/PMC/20140724/articles.fname/20.check/exec_command
 ./jour-check.aa.sh
 ##エラーゼロを確認。
-
 
 #TASK(check): pmid/pmcidのチェック (20140724 に完了 -> ディレクトリ移動あり)
 ##TASK(check.pmcid): PMC-XMLよりpmcidを抽出
@@ -91,7 +88,6 @@ cd /BANK/PMC/20140724/articles.pmid/exec_command
 ##TASK(check.PMC_VS_user-data): RIKEN-BRC利用者成果pmid　PMC-XML_pmid　をマッチング(20140904 移動)
 - ツール: Mathematica
 - 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/user-data/PMID/ALL.pmid.sort.uniq.in_pmc
-
 
 #TASK(element-tree)
 ##XMLのエレメント木を作成
@@ -113,16 +109,6 @@ cd /BANK/PMC/20140724/articles.pmid/exec_command
 - スクリプト: /BANK/PMC/20140724/elements/SKELTON/exec_command/count_merge.sh
 - 結果: skelton-ALL.res.tag-count.rep.merge-sort.count
 
-
-#TASK(tag.old): XMLのエレメントタグを抽出 -> TASK(tag.new) に移行
-#cd /BANK/PMC/20140724/elements/ALL
-#- 対象: PMC-XML全件
-#- プログラム: /home/kamano/gitsrc/XMLOP/elementPos_ALL.pl
-#- スクリプト: /BANK/PMC/20140724/elements/ALL/exec_command/ALL_pos-au.sh
-##TASK(tag.sort): 抽出したエレメントをpositionでソート
-##POPSTACKエラー発生(中止) -> 新スクリプト開発中 -> OK -> TASK(tag.new)
-
-
 #TASK(tag.new): XMLのエレメントタグを抽出・ソート(完了)
 cd /BANK/PMC/20140724/elements/ALL
 - 対象: PMC-XML全件
@@ -137,6 +123,17 @@ cd /BANK/PMC/20140724/elements/sec-type
 /home/kamano/gitsrc/XMLOP/extract_sec-types.pl *reg_sort | sort | uniq -c > ALL_sec-type.sort.count
 
 
+
+#TASK(tag.old): XMLのエレメントタグを抽出 -> TASK(tag.new) に移行
+#cd /BANK/PMC/20140724/elements/ALL
+#- 対象: PMC-XML全件
+#- プログラム: /home/kamano/gitsrc/XMLOP/elementPos_ALL.pl
+#- スクリプト: /BANK/PMC/20140724/elements/ALL/exec_command/ALL_pos-au.sh
+##TASK(tag.sort): 抽出したエレメントをpositionでソート
+##POPSTACKエラー発生(中止) -> 新スクリプト開発中 -> OK -> TASK(tag.new)
+
+
+
 #TASK(term-count): 出現タームのカウント
 ##タグの除去とsplit
 - プログラム:
@@ -146,8 +143,6 @@ cd /BANK/PMC/20140724/elements/sec-type
 - 出力ファイル: /BANK/PMC/20140724/terms/whole/patt.3/Word_Jour-au
 ###==20141204 1129 開始==###
 ##分割ファイルのソート
-
-
 
 #TASK(extract)
 ##TASK(extract.ack) :  extract acknowledgement
@@ -209,6 +204,13 @@ cd /BANK/PMC/20140724/elements/supplementary-material
 ###===20141114 1130 開始===###
 ### 並列化
 ###===20141114 1250 終了===###
+##TASK(extract.ref) : xrefを含むp領域のextract、対応するref領域のextract
+### 1. xrefを含むp領域のextract
+- プログラム: /home/kamano/gitsrc/XMLOP/region-xrefINp_from_XML.pl
+- スクリプト: /BANK/PMC/20140724/elements/x+ref+p/exec_command/content_xrefINp_Jour-ALL.sh
+- 結果: /BANK/PMC/20140724/elements/x+ref+p/content_xrefINp_Jour-au
+### 2. 対応するref領域のextract
+
 
 
 #TASK(1): 既知リソース名・機関名の決定と検索タームの決定 (20140724 6機関を決定完了)
