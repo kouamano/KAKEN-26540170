@@ -212,6 +212,9 @@ cd /BANK/PMC/20140724/elements/supplementary-material
 ### 2. 対応するref領域のextract
 誤って実行中。終わるのを待って再実行。
 対象ファイル: content_ref_Jour-a*
+- プログラム: /home/kamano/gitsrc/XMLOP/region-ref_from_XML.pl
+- スクリプト: /BANK/PMC/20140724/elements/x+ref+p/exec_command/content_ref_Jour-ALL.sh
+- 結果: /BANK/PMC/20140724/elements/x+ref+p/content_ref_Jour-au
 
 
 
