@@ -219,6 +219,8 @@ cd /BANK/PMC/20140724/elements/supplementary-material
 content_xrefINp_Jour-au を content_ref_Jour-au にあてる。
 content_xrefINp_Jour-au のリストが唯一でない。
 - 案1: <xref></xref>につづけて<ref></ref>を挿入
+-- content_ref_Jour-au をハッシュ
+-- ハッシュに対して、content_xrefINp_Jour-au より <xref rid=$RID></xref> の$RIDをあてる。
 
 
 #TASK(1): 既知リソース名・機関名の決定と検索タームの決定 (20140724 6機関を決定完了)
