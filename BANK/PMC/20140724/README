@@ -216,7 +216,8 @@ cd /BANK/PMC/20140724/elements/supplementary-material
 - 結果: /BANK/PMC/20140724/elements/x+ref+p/content_ref_Jour-au
 ### 3. ペアリング
 ### 考え中
-
+content_xrefINp_Jour-au を content_ref_Jour-au にあてる。
+content_xrefINp_Jour-au のリストが唯一でない。
 
 
 #TASK(1): 既知リソース名・機関名の決定と検索タームの決定 (20140724 6機関を決定完了)
