@@ -289,7 +289,7 @@ content_xrefINp_Jour-au のリストが唯一でない。
 -- 検索ターム: /BANK/Organization/ATCC_2014/organization-name/org.name.only
 
 
-#TASK(2): 既知リソース名検索
+#TASK(2): 既知リソース名検索:!!TASK(3)よりあとに行なう!!
 ##TASK(2.1): RIKEN-BRC (検索完了、チェック完了)
 ##THEME[リソース名共出現解析][kaken-26540170]
 ### 1. リソース名検索
