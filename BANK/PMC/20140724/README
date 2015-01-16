@@ -87,7 +87,7 @@ cd /BANK/PMC/20140724/articles.pmid/exec_command
 - 対象: /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/user-data/PMID/ALL.pmid.sort.uniq
 ##TASK(check.PMC_VS_user-data): RIKEN-BRC利用者成果pmid　PMC-XML_pmid　をマッチング(20140904 移動)
 - ツール: Mathematica
-- 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/user-data/PMID/ALL.pmid.sort.uniq.in_pmc
+- 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/user-data/PMID/ALL.pmid.sort.uniq.in_pmc.hit
 
 #TASK(element-tree)
 ##XMLのエレメント木を作成
