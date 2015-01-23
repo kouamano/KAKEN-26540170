@@ -224,11 +224,12 @@ content_xrefINp_Jour-au のリストが唯一でない。
 - プログラム: ln
 - スクリプト: /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/user-data/XML/exec_command/mklink.sh
 - 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/user-data/XML/
-## 3. 対象ファイルに対して機関名をgrep検索
+## 3 検索
+### 3.1 対象ファイルに対して機関名をgrep検索(RIKEN BRC)
 - プログラム: grep
 - スクリプト: /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/user-data/exec-command/grep-orgnames.sh
 - 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/user-data/grep-orgnames.out
-
+### 3.2 対象ファイルに対して機関名をgrep検索(RIKEN)
 
 
 #TASK(1): 既知リソース名・機関名の決定と検索タームの決定 (20140724 6機関を決定完了)
