@@ -124,16 +124,6 @@ cd /BANK/PMC/20140724/elements/sec-type
 
 
 
-#TASK(tag.old): XMLのエレメントタグを抽出 -> TASK(tag.new) に移行
-#cd /BANK/PMC/20140724/elements/ALL
-#- 対象: PMC-XML全件
-#- プログラム: /home/kamano/gitsrc/XMLOP/elementPos_ALL.pl
-#- スクリプト: /BANK/PMC/20140724/elements/ALL/exec_command/ALL_pos-au.sh
-##TASK(tag.sort): 抽出したエレメントをpositionでソート
-##POPSTACKエラー発生(中止) -> 新スクリプト開発中 -> OK -> TASK(tag.new)
-
-
-
 #TASK(term-count): 出現タームのカウント
 ##タグの除去とsplit
 - プログラム:
@@ -224,6 +214,21 @@ content_xrefINp_Jour-au のリストが唯一でない。
 -- content_ref_Jour-au をハッシュ
 -- ハッシュに対して、content_xrefINp_Jour-au より <xref rid=$RID></xref> の$RIDをあてる。
 -- content_xrefINp_Jour-au に content_ref_Jour-au を挿入。
+
+
+#TASK(check-correct): 正解データに対して機関名検索を行いカバレッジを確認 (20150123)
+## 1. 対象ファイルの決定
+## XMLと正解データのPMIDをマッチさせる
+- 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/user-data/PMID/ALL.pmidVSfilename.sort.uniq.in_pmc.hit
+## 2. 対象ファイルを抜きだし(リンク作成)
+- プログラム: ln
+- スクリプト: /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/user-data/XML/exec_command/mklink.sh
+- 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/user-data/XML/
+## 3. 対象ファイルに対して機関名をgrep検索
+- プログラム: grep
+- スクリプト: /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/user-data/exec-command/grep-orgnames.sh
+- 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/user-data/grep-orgnames.out
+
 
 
 #TASK(1): 既知リソース名・機関名の決定と検索タームの決定 (20140724 6機関を決定完了)
