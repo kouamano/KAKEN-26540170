@@ -233,7 +233,9 @@ content_xrefINp_Jour-au のリストが唯一でない。
 - プログラム: grep
 - スクリプト: /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/user-data/exec-command/grep-RIKEN.sh
 - 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/user-data/grep-RIKEN.out
-
+## 4 文献チェック
+- チェックすべきPrimary番号リスト(利用者成果エクセル表に対応): /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/user-data/PMID/artgrNoHitPrimaryInPMC.tsv
+- 上記チェック文献リストの根拠(作業記録): /BANK/BioResource/Organization/RIKEN-BRC_2012/user-data/UserArticles.nb
 
 #TASK(1): 既知リソース名・機関名の決定と検索タームの決定 (20140724 6機関を決定完了)
 #THEME[リソース名共出現解析][kaken-26540170]
