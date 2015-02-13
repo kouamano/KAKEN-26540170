@@ -583,14 +583,13 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/ATCC_2014/exec_command
 
 
 #TASK(3): 既知機関名の検索 THEME[kaken-26540170]
-##TASK(3.1): aff領域より機関名検索(9機関)(参考)
+##TASK(3.1): aff領域より機関名検索(8機関)(参考)
 ### 1. aff エレメントの抽出(石川氏)
 - 結果ファイル
 /BANK/PMC/20140724/elements/aff/PMC-AFF-v1.tsv
-#### 1.3 機関名(9機関)検索(石川氏)(20141225)
+#### 1.3 機関名(8機関)検索(石川氏)(20141225)
 - 結果ファイル
 /BANK/PMC/20140724/Matching/BioResource/Orgnanization/_ALL_/PMC-AFF-plain-10_ORG.txt
-
 ##TASK(3.2): ack領域より機関名検索
 ### 1. acknowledgement エレメントの抽出(石川氏)
 - データ: /BANK/PMC/20140724/elements/acknowledgement/PMC-ACK-v6_pmid.tsv
