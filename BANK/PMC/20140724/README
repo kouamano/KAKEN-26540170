@@ -237,14 +237,15 @@ content_xrefINp_Jour-au のリストが唯一でない。
 - チェックすべきPrimary番号リスト(利用者成果エクセル表に対応): /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/user-data/PMID/artgrNoHitPrimaryInPMC.tsv
 - 上記チェック文献リストの根拠(作業記録): /BANK/BioResource/Organization/RIKEN-BRC_2012/user-data/UserArticles.nb
 
-#TASK(1): 既知リソース名・機関名の決定と検索タームの決定 (20140724 6機関を決定完了)
+
+#TASK(1): 既知リソース名・機関名の決定と検索タームの決定 (8機関を決定完了)
 #THEME[リソース名共出現解析][kaken-26540170]
 #大型機関に絞って行なうこととする。
-###TASK(1.0.1): 対象機関の決定 -> 8機関に決定
+##TASK(1.0): 対象機関の決定 -> 8機関に決定
 - ファイル: /BANK/Organization/_ALL_/organization-name/8orgs.name.only
-###条件: 大学以外、もしくはセンター
-###方法: インターネット検索
-###アスタリスク(*)が今回の対象
+##条件: 大学以外、もしくはセンター
+##方法: インターネット検索
+##アスタリスク(*)が今回の対象
 日本:
 -* riken brc
 -* nig
@@ -261,41 +262,40 @@ content_xrefINp_Jour-au のリストが唯一でない。
 -* atcc
 -* addgene
 -* jackson lab
-###TASK(1.0.2): 対象リソース名の決定:8機関からさらに十分なリソースリストが得られる機関に限定(未完)。
-
-##TASK(1.1): RIKEN-BRC
+##TASK(1.1): 対象リソース名の決定:8機関からさらに十分なリソースリストが得られる機関に限定(未完)。
+###TASK(1.1.1): RIKEN-BRC
 - リソース
 -- 対象: RIKEN BRC (利用者成果)
 -- リソース名: /BANK/BioResource/Organization/RIKEN-BRC_2012/RAW_cited-resource/All.name.sort.uniq.tsv.rev
 -- 検索ターム: /BANK/BioResource/Organization/RIKEN-BRC_2012/cited-resource/All.name.sort.uniq.tsv.esc
 - 機関名
 -- 検索ターム: /BANK/Organiztion/RIKEN-BRC_2012/organization-name/org.name.only
-##TASK(1.2): JCRB
+###TASK(1.1.2): JCRB
 - リソース
 -- 対象: JCRB (オンラインカタログ)
 -- リソース名: /BANK/BioResource/Organization/JCRB_2014/RAW_catalogue/All.name.sort.uniq.tsv
 -- 検索ターム: /BANK/BioResource/Organization/JCRB_2014/catalogue/All.name.sort.uniq.tsv.esc.rev
 - 機関名
 -- 検索ターム: /BANK/Organiztion/JCRB_2014/organization-name/org.name.only
-##TASK(1.3): NITE-NBRC
+###TASK(1.1.3): NITE-NBRC
 - リソース
 -- 対象: 正規表現パターン
 -- 検索ターム: /BANK/BioResource/Organization/NITE-NBRC_2014/catalogue/All.patt
 - 機関名
 -- 検索ターム: /BANK/Organization/NITE-NBRC_2014/organization-name/org.name.only
-##TASK(1.4): DSMZ
+###TASK(1.1.4): DSMZ
 - リソース
 -- 対象: 正規表現パターン
 -- 検索ターム: /BANK/BioResource/Organization/DSMZ_2014/catalogue/All.patt
 - 機関名
 -- 検索ターム: /BANK/Organization/DSMZ_2014/organization-name/org.name.only
-##TASK(1.5): WDCM
+###TASK(1.1.5): WDCM
 - リソース
 -- 対象: 正規表現パターン
 -- 検索ターム: /BANK/BioResource/Organization/WDCM_2014/catalogue/All.patt
 - 機関名
 -- 検索ターム: /BANK/Organization/WDCM_2014/organization-name/org.name.only
-##TASK(1.6): ATCC
+###TASK(1.1.6): ATCC
 - リソース
 -- 対象: 正規表現パターン
 -- 検索ターム: /BANK/BioResource/Organization/ATCC_2014/catalogue/All.patt
