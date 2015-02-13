@@ -196,6 +196,7 @@ cd /BANK/PMC/20140724/elements/supplementary-material
 ###===20141114 1130 開始===###
 ### 並列化
 ###===20141114 1250 終了===###
+
 ##TASK(extract.ref) : xrefを含むp領域のextract、対応するref領域のextract
 ### 1. xrefを含むp領域のextract
 - プログラム: /home/kamano/gitsrc/XMLOP/region-xrefINp_from_XML.pl
