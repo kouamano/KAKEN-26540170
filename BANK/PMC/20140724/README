@@ -305,9 +305,11 @@ content_xrefINp_Jour-au のリストが唯一でない。
 
 
 #TASK(2): 既知リソース名検索:!!TASK(3)よりあとに行なう!!
-##TASK(2.1): RIKEN-BRC (検索完了、チェック完了)
+##TASK(2.1): RIKEN-BRC
 ##THEME[リソース名共出現解析][kaken-26540170]
-### 1. リソース名検索
+### 0. リソース名検索のためのリソース名 vs. リソース番号リストを作成する(NEW)
+### ===いまここ===
+### old:1. リソース名検索
 - 検索リソース名パターン作成:
 -- 対象: 利用者成果
 -- リソース名: /BANK/BioResource/Organization/RIKEN-BRC_2012/cited-resource/ALL.name.sort.uniq.tsv
@@ -327,7 +329,7 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/exec_comm
 ###===2014.07.30 1700 開始===
 ###===2014.08.02 1925 終了===
 ###==========================
-### 2. マテリアルメソッドセクションにあるか (新方式)(確認必要)
+### old:2. マテリアルメソッドセクションにあるか (新方式)(確認必要)
 #### 2.1 マテリアルメソッドセクションの領域を抽出 (1回やればOK)
 #### -> 参照: TASK(extract.material) 1.
 ##### 2.1.1 <sec>タグ領域を抽出 (NEW) (完了)
