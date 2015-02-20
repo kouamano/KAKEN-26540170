@@ -308,6 +308,17 @@ content_xrefINp_Jour-au のリストが唯一でない。
 ##TASK(2.1): RIKEN-BRC
 ##THEME[リソース名共出現解析][kaken-26540170]
 ### 0. リソース名検索のためのリソース名 vs. リソース番号リストを作成する(NEW)
+- 対象: /BANK/BioResource/Organization/RIKEN-BRC_2012/RAW_cited-resource/riyousha_seika.2012.xls
+- プログラム: Mathematica
+- スクリプト: /BANK/BioResource/Organization/RIKEN-BRC_2012/RAW_cited-resource/all.seika-matome.nb
+- 検索ターム
+-- Mus: リソース番号 + リソース名
+-- Plt: リソース番号のみ
+-- Cell: リソース番号 + リソース名
+-- Mic: リソース番号のみ
+-- DNA: リソース番号のみs
+-- すべてまとめたファイル: All.name
+-- ソートユニークエスケープした検索タームファイル: All.name.sort.uniq.tsv.esc
 ### ===いまここ===
 ### old:1. リソース名検索
 - 検索リソース名パターン作成:
