@@ -319,6 +319,7 @@ content_xrefINp_Jour-au のリストが唯一でない。
 -- DNA: リソース番号のみs
 -- すべてまとめたファイル: All.name
 -- ソートユニークエスケープした検索タームファイル: All.name.sort.uniq.tsv.esc
+- プログラム: /Users/amanokou/gitsrc/utility/match_lines.pl
 ### ===いまここ===
 ### old:1. リソース名検索
 - 検索リソース名パターン作成:
