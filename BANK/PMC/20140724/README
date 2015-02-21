@@ -319,7 +319,8 @@ content_xrefINp_Jour-au のリストが唯一でない。
 -- DNA: リソース番号のみs
 -- すべてまとめたファイル: All.name
 -- ソートユニークエスケープした検索タームファイル: All.name.sort.uniq.tsv.esc
-- プログラム: /Users/amanokou/gitsrc/utility/match_lines.pl を改良すべし -> 結果出力部分の区切りをユーザーしていできるように。
+- プログラム: /Users/amanokou/gitsrc/utility/match_lines.pl
+-- 例: match_lines.pl sf=au.merge-reg-material.cont.tsv qf=/BANK/BioResource/Organization/RIKEN-BRC_2012/RAW_cited-resource/All.name.sort.uniq.tsv.esc > res4
 
 ### ===いまここ===
 ### old:1. リソース名検索
