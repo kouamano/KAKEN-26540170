@@ -317,8 +317,9 @@ content_xrefINp_Jour-au のリストが唯一でない。
 -- Cell: リソース番号 + リソース名
 -- Mic: リソース番号のみ
 -- DNA: リソース番号のみs
--- すべてまとめたファイル: All.name
--- ソートユニークエスケープした検索タームファイル: All.name.sort.uniq.tsv.esc
+-- すべてまとめたファイル: /BANK/BioResource/Organization/RIKEN-BRC_2012/RAW_cited-resource/All.name
+-- ソートユニークエスケープした検索タームファイル: /BANK/BioResource/Organization/RIKEN-BRC_2012/RAW_cited-resource/All.name.sort.uniq.tsv.esc
+### 1. 検索
 - プログラム: /Users/amanokou/gitsrc/utility/match_lines.pl
 -- 例: match_lines.pl sf=au.merge-reg-material.cont.tsv qf=/BANK/BioResource/Organization/RIKEN-BRC_2012/RAW_cited-resource/All.name.sort.uniq.tsv.esc > res4
 
