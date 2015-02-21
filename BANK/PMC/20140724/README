@@ -323,7 +323,8 @@ content_xrefINp_Jour-au のリストが唯一でない。
 - プログラム: /Users/amanokou/gitsrc/utility/match_lines.pl
 -- 例: match_lines.pl sf=au.merge-reg-material.cont.tsv qf=/BANK/BioResource/Organization/RIKEN-BRC_2012/RAW_cited-resource/All.name.sort.uniq.tsv.esc > res4
 - スクリプト(1): /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/exec_command/matchResNameLines_merge-reg-material.au.sh
-- スクリプト(2): /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/exec_command/matchResNameLines_merge-reg-material.All.sh
+- スクリプト(2)(20150221実行): /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/exec_command/matchResNameLines_merge-reg-material.All.sh
+- 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/au.resName_merge-reg-material.cont.res
 ### ===いまここ===
 
 ### old:1. リソース名検索
