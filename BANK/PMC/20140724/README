@@ -332,6 +332,8 @@ content_xrefINp_Jour-au のリストが唯一でない。
 - 検索結果まとめ(リソース名のみ、タブ区切り、最終的に欲しい形の結果): All.resNameOnly_merge-reg-material.tab
 -- 上記の実行スクリプト: sed -e "s/^               //" All.resNameOnly_merge-reg-material > All.resNameOnly_merge-reg-material.tab
 - 出現リソース名と対応する論文名のリスト
+-- スクリプト: awk -F'   ' '{print $1"   "$2}' aa.resName_merge-reg-material.cont.res > aa.artName_merge-reg-material
+-- スクリプト: matome_artNameOnly.sh
 ### ===いまここ===
 
 ### old:1. リソース名検索
