@@ -320,7 +320,7 @@ content_xrefINp_Jour-au のリストが唯一でない。
 -- すべてまとめたファイル: /BANK/BioResource/Organization/RIKEN-BRC_2012/RAW_cited-resource/All.name
 -- ソートユニークエスケープした検索タームファイル: /BANK/BioResource/Organization/RIKEN-BRC_2012/RAW_cited-resource/All.name.sort.uniq.tsv.esc
 ### 1. 検索
-- プログラム: /Users/amanokou/gitsrc/utility/match_lines.pl
+- プログラム: /home/kamano/gitsrc/utility/match_lines.pl
 -- 例: match_lines.pl sf=au.merge-reg-material.cont.tsv qf=/BANK/BioResource/Organization/RIKEN-BRC_2012/RAW_cited-resource/All.name.sort.uniq.tsv.esc > res4
 - スクリプト(1): /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/exec_command/matchResNameLines_merge-reg-material.au.sh
 - スクリプト(2)(20150221実行): /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/exec_command/matchResNameLines_merge-reg-material.All.sh
