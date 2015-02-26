@@ -227,7 +227,7 @@ content_xrefINp_Jour-au のリストが唯一でない。
 -- content_xrefINp_Jour-au に content_ref_Jour-au を挿入。
 
 ##TASK(extract.title)
-##アーティクルタイトルの抽出
+##アーティクルタイトルの抽出(20150226)
 - プログラム: /home/kamano/gitsrc/XMLOP/extract_art-title_in_front.pl
 - スクリプト: /BANK/PMC/20140724/articles.title/exec_command/jour-split.title.All.sh
 - 結果: /BANK/PMC/20140724/articles.title/jour-split.title.au
