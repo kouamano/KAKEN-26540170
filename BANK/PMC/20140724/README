@@ -1,6 +1,7 @@
 #[リソース名共出現解析][kaken-26540170][引用解析]
 
 
+
 #TODO:
 ##check: OK
 ###/BANK/PMC/20140724/Matching/BioResource/Organization/ATCC_2014 -> OK
@@ -44,6 +45,7 @@
 ##Matlab: 1
 
 
+
 #ディレクトリ構成
 - root: /BANK/
 - XML情報: /BANK/PMC/<日付>/ 配下
@@ -52,6 +54,8 @@
 - マッチング(検索)結果: /BANK/PMC/<日付>/Matching/BioResource/Organization/<機関名>/ 配下
 - プログラム: root 以下の 各 bin フォルダ、または、github
 - 実行スクリプト: 各 exec_command フォルダ
+
+
 
 #PMC概観
 - /BANK/PMC/20140724/articles : 54G, 843679 files
@@ -72,6 +76,8 @@ cd /BANK/PMC/20140724/articles.fname/20.check/exec_command
 ./jour-check.aa.sh
 ##エラーゼロを確認。
 
+
+
 #TASK(check): pmid/pmcidのチェック (20140724 に完了 -> ディレクトリ移動あり)
 ##TASK(check.pmcid): PMC-XMLよりpmcidを抽出
 - 対象: /BANK/PMC/20140724/articles.pmid/
@@ -88,6 +94,8 @@ cd /BANK/PMC/20140724/articles.pmid/exec_command
 ##TASK(check.PMC_VS_user-data): RIKEN-BRC利用者成果pmid　PMC-XML_pmid　をマッチング(20140904 移動)
 - ツール: Mathematica
 - 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/user-data/PMID/ALL.pmid.sort.uniq.in_pmc.hit
+
+
 
 #TASK(element-tree)
 ##XMLのエレメント木を作成
@@ -108,6 +116,8 @@ cd /BANK/PMC/20140724/articles.pmid/exec_command
 - プログラム: /home/kamano/gitsrc/utility/sum_count_from_mixed_sort.pl
 - スクリプト: /BANK/PMC/20140724/elements/SKELTON/exec_command/count_merge.sh
 - 結果: skelton-ALL.res.tag-count.rep.merge-sort.count
+
+
 
 #TASK(tag.new): XMLのエレメントタグを抽出・ソート(完了)
 cd /BANK/PMC/20140724/elements/ALL
@@ -207,7 +217,7 @@ cd /BANK/PMC/20140724/elements/supplementary-material
 - プログラム: /home/kamano/gitsrc/XMLOP/region-ref_from_XML.pl
 - スクリプト: /BANK/PMC/20140724/elements/x+ref+p/exec_command/content_ref_Jour-ALL.sh
 - 結果: /BANK/PMC/20140724/elements/x+ref+p/content_ref_Jour-au
-### 3. ペアリング
+### 3. ペアリング ->  柴田さん
 ### 考え中
 content_xrefINp_Jour-au を content_ref_Jour-au にあてる。
 content_xrefINp_Jour-au のリストが唯一でない。
@@ -215,6 +225,10 @@ content_xrefINp_Jour-au のリストが唯一でない。
 -- content_ref_Jour-au をハッシュ
 -- ハッシュに対して、content_xrefINp_Jour-au より <xref rid=$RID></xref> の$RIDをあてる。
 -- content_xrefINp_Jour-au に content_ref_Jour-au を挿入。
+
+##TASK(extract.title)
+##== 必要 ==##
+
 
 
 #TASK(check-correct): 正解データに対して機関名検索を行いカバレッジを確認 (20150123)
@@ -237,6 +251,7 @@ content_xrefINp_Jour-au のリストが唯一でない。
 ## 4 文献チェック
 - チェックすべきPrimary番号リスト(利用者成果エクセル表に対応): /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/user-data/PMID/artgrNoHitPrimaryInPMC.tsv
 - 上記チェック文献リストの根拠(作業記録): /BANK/BioResource/Organization/RIKEN-BRC_2012/user-data/UserArticles.nb
+
 
 
 #TASK(1): 既知リソース名・機関名の決定と検索タームの決定 (8機関を決定完了)
@@ -304,6 +319,7 @@ content_xrefINp_Jour-au のリストが唯一でない。
 -- 検索ターム: /BANK/Organization/ATCC_2014/organization-name/org.name.only
 
 
+
 #TASK(2): 既知リソース名検索:!!TASK(3)よりあとに行なう!!
 ##TASK(2.1): RIKEN-BRC
 ##THEME[リソース名共出現解析][kaken-26540170]
@@ -334,6 +350,7 @@ content_xrefINp_Jour-au のリストが唯一でない。
 - 出現リソース名と対応する論文名のリスト
 -- スクリプト: awk -F'   ' '{print $1"   "$2}' aa.resName_merge-reg-material.cont.res > aa.artName_merge-reg-material
 -- スクリプト: matome_artNameOnly.sh
+### TODO: 論文タイトル必要 -> TASK(extract.title) ###
 ### ===いまここ===
 
 ### old:1. リソース名検索
@@ -444,8 +461,8 @@ DB:<term_region>:
 Table0:<elementname>: <elementname> <annotation>
 Table1:<region_type>: <region_type> <annotation> <element> #ex. tag, content ... 
 Table2:<region_type_property>: <region_type> <property_target> <property_valur>
-#<region_type>は、region_type.region_typeのプロパティ付与。複数の<region_type_atom>のプロパティが付与されると、region_type.complex_or_single はcomplex。
-#<region_type_atom>は、少なくともその条件を満たしている。
+#####<region_type>は、region_type.region_typeのプロパティ付与。複数の<region_type_atom>のプロパティが付与されると、region_type.complex_or_single はcomplex。
+#####<region_type_atom>は、少なくともその条件を満たしている。
 Table4:<element_region>: <filename> <resourcename> <region_type> <region_start> <region_end>
 Table5:<resourcename_region>: <filename> <resourcename> <region_type> <region_start> <region_end>
 Table6:<organizationname_region>: <filename> <organizationname> <region_type> <region_start> <region_end>
@@ -612,6 +629,7 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/ATCC_2014/exec_command
 ###===ここまで完了===
 
 
+
 #TASK(3): 既知機関名の検索 THEME[kaken-26540170]
 ##TASK(3.1): aff領域より機関名検索(8機関)(参考)
 ### 1. aff エレメントの抽出(石川氏)
@@ -689,6 +707,7 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/ATCC_2014/
 ##===ここまで完了===##
 
 
+
 #TASK(4): XMLの分解 - バイオリソース名候補抜きだし
 #量が多いので分割したものをsort-count、すべてのsort-countをmerge-sort-count
 ## 1. whole (2ワードフレーズまで完了)
@@ -736,6 +755,7 @@ cd /BANK/PMC/20140724/terms/whole
 ##===ここまで完了===
 ## 2. body
 ## 3. acknowledgement
+
 
 
 #TASK(5): 既知機関名vs.既知リソース名対の決定
