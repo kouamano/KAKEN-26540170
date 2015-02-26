@@ -342,7 +342,7 @@ content_xrefINp_Jour-au のリストが唯一でない。
 - プログラム: /home/kamano/gitsrc/utility/match_lines.pl
 -- 例: match_lines.pl sf=/BANK/PMC/20140724/elements/MERGED/Materials/au.merge-reg-material.cont.tsv qf=/BANK/BioResource/Organization/RIKEN-BRC_2012/RAW_cited-resource/All.name.sort.uniq.tsv.esc > res4
 - スクリプト(1): /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/exec_command/matchResNameLines_merge-reg-material.au.sh
-- スクリプト(2)(20150225実行): /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/exec_command/matchResNameLines_merge-reg-material.All.sh
+- スクリプト(2)(20150226実行): /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/exec_command/matchResNameLines_merge-reg-material.All.sh
 - 結果(最終産物ではない): /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/au.resName_merge-reg-material.cont.res
 - 結果からリソース名のみを抜き出す
 -- スクリプト: awk -F"<  >" '{print $2}' aa.resName_merge-reg-material.cont.res > aa.resNameOnly_merge-reg-material
