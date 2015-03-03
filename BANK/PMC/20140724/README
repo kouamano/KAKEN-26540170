@@ -362,6 +362,8 @@ content_xrefINp_Jour-au のリストが唯一でない。
 #### 2.1 検索
 - プログラム: /home/kamano/gitsrc/utility/match_lines.pl
 - スクリプト(2): /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/exec_command/matchResNameLines_merge-reg-material.All-KO.sh
+- 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/aa.resName_merge-reg-material.cont.KO.res
+- 結果(まとめ): /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/All.resName_merge-reg-material.cont.KO.res
 ### ===いまここ===
 
 ### old:1. リソース名検索
