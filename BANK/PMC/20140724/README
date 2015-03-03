@@ -364,6 +364,7 @@ content_xrefINp_Jour-au のリストが唯一でない。
 - スクリプト(2): /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/exec_command/matchResNameLines_merge-reg-material.All-KO.sh
 - 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/aa.resName_merge-reg-material.cont.KO.res
 - 結果(まとめ): /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/All.resName_merge-reg-material.cont.KO.res
+- 結果の加工(リソース名のみを抜き出す): awk -F"<  >" '{print $2}' All.resName_merge-reg-material.cont.KO.res | sed -e "s/^                //" > All.resNameOnly_merge-reg-material.cont.KO.res.tsv
 ### ===いまここ===
 
 ### old:1. リソース名検索
