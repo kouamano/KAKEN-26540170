@@ -338,7 +338,7 @@ content_xrefINp_Jour-au のリストが唯一でない。
 -- DNA: リソース番号のみs
 -- すべてまとめたファイル: /BANK/BioResource/Organization/RIKEN-BRC_2012/RAW_cited-resource/All.name
 -- ソートユニークエスケープした検索タームファイル: /BANK/BioResource/Organization/RIKEN-BRC_2012/RAW_cited-resource/All.name.sort.uniq.tsv.esc
-### 1. 検索(タグをKOしない)
+### 1. 検索(タグをKOしない:不採択)
 - プログラム: /home/kamano/gitsrc/utility/match_lines.pl
 -- 例: match_lines.pl sf=/BANK/PMC/20140724/elements/MERGED/Materials/au.merge-reg-material.cont.tsv qf=/BANK/BioResource/Organization/RIKEN-BRC_2012/RAW_cited-resource/All.name.sort.uniq.tsv.esc > res4
 - スクリプト(1): /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/exec_command/matchResNameLines_merge-reg-material.au.sh
@@ -353,7 +353,7 @@ content_xrefINp_Jour-au のリストが唯一でない。
 - 出現リソース名と対応する論文名のリスト
 -- スクリプト: awk -F'   ' '{print $1"   "$2}' aa.resName_merge-reg-material.cont.res > aa.artName_merge-reg-material
 -- スクリプト: matome_artNameOnly.sh
-### 2. 検索(タグをKO)
+### 2. 検索(タグをKO:採択)
 #### 2.0-a 検索ソースのタグをKO(スペース置き換え)
 - プログラム: /home/kamano/gitsrc/XMLOP/tag-KO
 - スクリプト:
