@@ -354,12 +354,17 @@ content_xrefINp_Jour-au のリストが唯一でない。
 -- スクリプト: awk -F'   ' '{print $1"   "$2}' aa.resName_merge-reg-material.cont.res > aa.artName_merge-reg-material
 -- スクリプト: matome_artNameOnly.sh
 ### 2. 検索(タグをKO)
-#### 2.0 検索ソースのタグをKO
+#### 2.0-a 検索ソースのタグをKO(スペース置き換え)
+- プログラム: /home/kamano/gitsrc/XMLOP/tag-KO
+- スクリプト:
+cd /BANK/PMC/20140724/elements/MERGED/Materials
+/home/kamano/gitsrc/XMLOP/tag-KO if=aa.merge-reg-material.cont.tsv > aa.merge-reg-material.cont.tsv.KO
+#### 2.0-b 検索ソースのタグをKO(シュリンク)
 #### <[^<>]*>のパターンを<数字>のパターンに変換。数字は<>を含めた文字数。
-- プログラム: /home/kamano/gitsrc/XMLOP/KO-tag.pl
-- スクリプト: /home/kamano/gitsrc/XMLOP/KO-tag.pl aa.merge-reg-material.cont.tsv > aa.merge-reg-material.cont.tsv.KO
+- プログラム(シュリンク): /home/kamano/gitsrc/XMLOP/KO-tag.pl
+- スクリプト(シュリンク): /home/kamano/gitsrc/XMLOP/KO-tag.pl aa.merge-reg-material.cont.tsv > aa.merge-reg-material.cont.tsv.KO
 - 結果: /BANK/PMC/20140724/elements/MERGED/Materials/aa.merge-reg-material.cont.tsv.KO
-#### 2.1 検索
+#### 2.1-b 検索(シュリンク)
 - プログラム: /home/kamano/gitsrc/utility/match_lines.pl
 - スクリプト(2): /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/exec_command/matchResNameLines_merge-reg-material.All-KO.sh
 - 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/aa.resName_merge-reg-material.cont.KO.res
