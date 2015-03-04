@@ -261,7 +261,7 @@ content_xrefINp_Jour-au のリストが唯一でない。
 #THEME[リソース名共出現解析][kaken-26540170]
 #大型機関に絞って行なうこととする。
 ##TASK(1.0): 対象機関の決定 -> 8機関に決定
-- ファイル: /BANK/Organization/_ALL_/organization-name/8orgs.name.only
+- ファイル: /BANK/Organization/_ALL_/organization-name/8orgs.name.list
 ##条件: 大学以外、もしくはセンター
 ##方法: インターネット検索
 ##アスタリスク(*)が今回の対象
