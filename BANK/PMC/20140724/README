@@ -782,7 +782,9 @@ cd /BANK/PMC/20140724/terms/whole
 - スクリプト:
 cd /BANK/PMC/20140724/elements/MERGED/Materials
 for file in *KO; do  /home/kamano/gitsrc/XMLOP/tag-KOSP.pl $file >  ${file}SP; done
-### 4.2 termをsplit
+### 4.2 ヘッダ情報を削除
+for file in *KOSP; do awk -F'  '  '{for(i=3;i<=NF;i++){printf("%s ",$i)}}' $file > $file.drophead; done
+### 4.3 termをsplit
 - スクリプト: /BANK/PMC/20140724/terms/MERGED/Materials/patt.3/exec_command/split_Word.au.sh
 
 
