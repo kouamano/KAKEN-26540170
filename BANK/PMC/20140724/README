@@ -189,7 +189,8 @@ cd /BANK/PMC/20140724/elements/sec-type
 #### 1.2 抽出されたソート済み<sec>タグ領域　から　マテリアルセクションの領域を抽出(NEW)(完了)
 - プログラム: /home/kamano/gitsrc/XMLOP/region-Material_from_reg_sort.pl
 cd /BANK/PMC/20140724/elements/sec
-/home/kamano/gitsrc/XMLOP/region-Material_from_reg_sort.pl sec_sort_pos-au.reg > sec_sort_pos-au.reg-Material
+- スクリプト: /home/kamano/gitsrc/XMLOP/region-Material_from_reg_sort.pl sec_sort_pos-au.reg > sec_sort_pos-au.reg-Material
+- 結果: /BANK/PMC/20140724/elements/sec/sec_sort_pos-au.reg-Material
 ### 2. <supplementary-material> セクションの抽出
 #### 2.1 <supplementary-material>タグの領域を抽出済みのソート済み全タグ領域より抽出(NEW)(完了)
 - プログラム: /home/kamano/gitsrc/XMLOP/elementPos_sup-material_from_ALL.pl
@@ -198,8 +199,10 @@ cd /BANK/PMC/20140724/elements/sec
 ####====20141024 終了====####
 #### 2.2 抽出されたソート済み<supplementary-material>タグ領域からマテリアルセクションの領域を>抽出(NEW)
 - プログラム: /home/kamano/gitsrc/XMLOP/region-sup-Material_from_reg_sort.pl
+- スクリプト:
 cd /BANK/PMC/20140724/elements/supplementary-material
 /home/kamano/gitsrc/XMLOP/region-sup-Material_from_reg_sort.pl sup-material_sort_pos-au.reg > sup-material_sort_pos-au.reg-sup-Material
+- 結果: /BANK/PMC/20140724/elements/supplementary-material/sup-material_sort_pos-au.reg-sup-Material
 ####====20141024 終了====####
 ### 3. reg-Material と reg-sup-Matarial をマージ
 - プログラム: /home/kamano/gitsrc/XMLOP/merge_region-Material.pl
