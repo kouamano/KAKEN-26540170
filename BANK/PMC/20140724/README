@@ -732,7 +732,7 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/ATCC_2014/
 
 #TASK(4): XMLの分解 - バイオリソース名候補抜きだし
 #量が多いので分割したものをsort-count、すべてのsort-countをmerge-sort-count
-## 1. whole (2ワードフレーズまで完了)
+## 1. ALL: KOなし (2ワードフレーズまで完了)
 ### 1.1 single word (完了)
 #### 1.1.1 切り出し
 - プログラム: /home/kamano/gitsrc/utility/extract_Word.pl
@@ -777,6 +777,14 @@ cd /BANK/PMC/20140724/terms/whole
 ##===ここまで完了===
 ## 2. body
 ## 3. acknowledgement
+## 4. MERGED/Materials: KOSP タグをスペースにKO
+### 4.1 タグをKO、スペースに
+- スクリプト:
+cd /BANK/PMC/20140724/elements/MERGED/Materials
+for file in *KO; do  /home/kamano/gitsrc/XMLOP/tag-KOSP.pl $file >  ${file}SP; done
+### 4.2 termをsplit
+- スクリプト: /BANK/PMC/20140724/terms/MERGED/Materials/patt.3/exec_command/split_Word.au.sh
+
 
 
 
