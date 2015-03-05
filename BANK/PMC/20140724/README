@@ -2,6 +2,11 @@
 
 
 
+#検討事項:
+##正解論文を集めてそこからパターンを抽出することを検討
+
+
+
 #TODO:
 ##check: OK
 ###/BANK/PMC/20140724/Matching/BioResource/Organization/ATCC_2014 -> OK
@@ -60,6 +65,8 @@
 #PMC概観
 - /BANK/PMC/20140724/articles : 54G, 843679 files
 - /BANK/PMC/20140724/elements/SKELTON/skelton-ALL.res.tag-count.rep.merge-sort.count : 282タグ
+
+
 
 #TASK(data) (20140724 に完了)
 ##TASK(data.1):PMCファイルの展開
@@ -778,6 +785,7 @@ cd /BANK/PMC/20140724/terms/whole
 ## 2. body
 ## 3. acknowledgement
 ## 4. MERGED/Materials: KOSP タグをスペースにKO
+## patt.3 と patt.5 で実行
 ### 4.1 タグをKO、スペースに
 - スクリプト:
 cd /BANK/PMC/20140724/elements/MERGED/Materials
