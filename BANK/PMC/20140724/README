@@ -373,7 +373,7 @@ cd /BANK/PMC/20140724/elements/MERGED/Materials
 - 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/aa.resName_merge-reg-material.cont.KO.res
 - 結果(まとめ): /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/All.resName_merge-reg-material.cont.KO.res
 - 結果の加工(リソース名のみを抜き出す): awk -F"<  >" '{print $2}' All.resName_merge-reg-material.cont.KO.res | sed -e "s/^                //" > All.resNameOnly_merge-reg-material.cont.KO.res.tsv
-### ===いまここ===
+### ===完了===
 
 ### old:1. リソース名検索
 - 検索リソース名パターン作成:
@@ -786,7 +786,7 @@ for file in *KO; do  /home/kamano/gitsrc/XMLOP/tag-KOSP.pl $file >  ${file}SP; d
 for file in *KOSP; do awk -F'  '  '{for(i=3;i<=NF;i++){printf("%s ",$i)}}' $file > $file.drophead; done
 ### 4.3 termをsplit
 - スクリプト: /BANK/PMC/20140724/terms/MERGED/Materials/patt.3/exec_command/split_Word.au.sh
-
+### ===いまここ=== 
 
 
 
