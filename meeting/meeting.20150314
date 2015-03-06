@@ -20,11 +20,14 @@
 1.2.3 material : 直接の検索対象領域[C]
 - 結果: /BANK/PMC/20140724/elements/MERGED/Materials/au.merge-reg-material.cont.tsv
 
-1.3 検索対象に対する機関名検索[I]
+1.3 検索対象に対する機関名検索[C]
 1.3.1 aff 領域よりの機関名検索(石川氏)[C]
-- 結果ファイル:  /BANK/PMC/20140724/Matching/BioResource/Organization/_ALL_/PMC-AFF-plain-10_ORG.txt
-1.3.2 ack 領域よりの機関名検索(石川氏)[I]
-1.3.3 material領域よりの機関名検索(天野)[I]
+- 結果ファイル:  /BANK/PMC/20140724/Matching/BioResource/Organization/_ALL_/aff/PMC-AFF-plain-10_ORG.txt
+1.3.2 ack 領域よりの機関名検索(石川氏)[C]
+2015.03.05にメールに添付ファイルあり。
+- 結果ファイル: /BANK/PMC/20140724/Matching/BioResource/Organization/_ALL_/acknowledgement/8orgs-OUTPUT
+1.3.3 material領域よりの機関名検索(石川氏)[C]
+- 結果ファイル: /BANK/PMC/20140724/Matching/BioResource/Organization/_ALL_/MERGED/Materials/OUTPUT2
 
 1.4 機関ごとのリソース名リストを得る[I] -> 議題5
 厳密には、機関名がヒットした論文に対してリソース名検索。
@@ -35,16 +38,12 @@
 
 
 議題2. 26年度残りの作業の確認
+- 検索プログラム移植 -> 議題3
 - 1.1.2 8機関の検索用シノニムを確認 -> 議題4
-- 1.3.2 ack 領域よりの機関名検索 -> 議題3
-速報はあったがファイルをもらっていない?
-- 1.3.3 material領域よりの機関名検索 -> 議題3
--- 検索プログラムの受け渡し:石川氏->天野 -> 議題3
--- 検索プログラムで検索(天野)
 
 
 
-議題3. aff、ackに対する検索結果の報告とmaterialに対しても同様の方法で検索出きるようにするための打ち合わせ
+議題3. aff、ack、materialに対する検索結果の報告と他のシステムでも同様の方法で検索出きるようにするための打ち合わせ。
 
 
 
