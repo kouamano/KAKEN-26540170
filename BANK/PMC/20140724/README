@@ -363,7 +363,7 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/_ALL_
 - 検索ターム: /BANK/Organization/_ALL_/organization-name/8orgs.name.terms
 - 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/_ALL_/acknowledgement/8orgs-OUTPUT
 
-##TASK(3.3): material領域より機関名を検索(石川氏)
+##TASK(3.3): material領域より機関名を検索(石川氏)(20150306)
 - 対象領域: /BANK/PMC/20140724/elements/MERGED/Materials/au.merge-reg-material.cont.tsv
 - 検索ターム: /BANK/Organization/_ALL_/organization-name/8orgs.name.terms
 - 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/_ALL_/MERGED/Materials/OUTPUT2
