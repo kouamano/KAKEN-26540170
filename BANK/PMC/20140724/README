@@ -336,6 +336,17 @@ content_xrefINp_Jour-au のリストが唯一でない。
 
 
 
+#TASK(5): 機関名候補検索 THEME[kaken-26540170]
+#aff領域より得られた機関名(住所つき)をmaterial、ack領域に対して検索、存在を確認。
+- 各ファイル:
+-- 所属抽出結果: /BANK/PMC/20140724/elements/aff/PMC-AFF-v1.tsv
+-- 所属抽出結果より不要なタグ等を取り除きユニークソート: /BANK/PMC/20140724/elements/aff/PMC-AFF-plain-v4
+-- 上記データをカンマ区切りで切り出した第2カラムのデータ: /BANK/PMC/20140724/elements/aff/PMC-AFF-tag2
+##TASK(5.1): 謝辞 vs. 機関名候補検索
+##==確認中==##
+
+
+
 #TASK(3): 既知機関名の検索 THEME[kaken-26540170]
 ##TASK(3.1): aff領域より機関名検索(8機関)
 ### 1. aff エレメントの抽出(石川氏)
@@ -820,7 +831,7 @@ cd /BANK/PMC/20140724/terms/MERGED/Materials/patt.3
 
 
 
-#TASK(5): 既知機関名vs.既知リソース名対の決定
+#TASK(6): 既知機関名vs.既知リソース名対の決定
 #THEME[kaken-26540170]
 ##DB作成
 
