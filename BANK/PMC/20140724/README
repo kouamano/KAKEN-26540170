@@ -342,6 +342,7 @@ content_xrefINp_Jour-au のリストが唯一でない。
 -- 所属抽出結果: /BANK/PMC/20140724/elements/aff/PMC-AFF-v1.tsv
 -- 所属抽出結果より不要なタグ等を取り除きユニークソート: /BANK/PMC/20140724/elements/aff/PMC-AFF-plain-v4
 -- 上記データをカンマ区切りで切り出した第2カラムのデータ: /BANK/PMC/20140724/elements/aff/PMC-AFF-tag2
+-- 上記各ファイルの解説: /BANK/PMC/20140724/elements/aff/README.Gmail(2015-03-14).pdf
 ##TASK(5.1): 謝辞 vs. 機関名候補検索
 ##==確認中==##
 
