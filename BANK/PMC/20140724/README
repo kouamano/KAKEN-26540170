@@ -160,6 +160,9 @@ cd /BANK/PMC/20140724/elements/sec-type
 ##TAST(extract.aff) : extract affiliation
 ## -> 石川氏
 - 対象領域: /BANK/PMC/20140724/elements/aff/PMC-AFF-v1.tsv (20141114)
+##TASK(extract.material;new) : extract material 新方式
+##==いまここ==##
+
 ##TASK(extract.material) : extract material
 ## method領域は抽出しない
 ## 参考: TASK(2.1)-2
