@@ -161,6 +161,8 @@ cd /BANK/PMC/20140724/elements/sec-type
 ## -> 石川氏
 - 対象領域: /BANK/PMC/20140724/elements/aff/PMC-AFF-v1.tsv (20141114)
 ##TASK(extract.material;new) : extract material 新方式
+- 作成中スクリプト: /home/kamano/gitsrc/XMLOP/extract_pos-tag-allmaterials.pl
+ <*material*></>のリージョンを一発で取り出すスクリプト
 ##==いまここ==##
 
 ##TASK(extract.material) : extract material
