@@ -161,10 +161,16 @@ cd /BANK/PMC/20140724/elements/sec-type
 ## -> 石川氏
 - 対象領域: /BANK/PMC/20140724/elements/aff/PMC-AFF-v1.tsv (20141114)
 ##TASK(extract.material;new) : extract material 新方式
+### 領域のポインター情報作成
 - 作成中スクリプト(一応完了): /home/kamano/gitsrc/XMLOP/extract_pos-tag-allmaterials.pl
- <*material*></>のリージョンを一発で取り出すスクリプト
+ <*material*></>のリージョンを一発で取り出すスクリプト。
 - 対象: /BANK/PMC/20140724/elements/ALL/ALL_sort_pos_rev-au.reg
-##==いまここ==##
+### 抽出領域の決定
+- 作成中スクリプト: /home/kamano/gitsrc/XMLOP/mk-region_from-extracted-pos-tag.pl
+ extract_pos-tag-allmaterials.pl の出力から、対象領域の範囲を取り出す。
+- 対象: /home/kamano/gitsrc/XMLOP/extract_pos-tag-allmaterials.pl の出力
+###==いまここ==###
+### 領域の抽出
 
 ##TASK(extract.material) : extract material
 ## method領域は抽出しない
