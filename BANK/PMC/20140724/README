@@ -237,7 +237,7 @@ cd /BANK/PMC/20140724/elements/supplementary-material
 ##TASK(extract.xref-pos): xrefのポジションとその上位のsec-typeを抜き出す。
 ## <body> <sec> <p> <xref>
 - 対象: /BANK/PMC/20140724/elements/ALL/ALL_sort_pos_rev-au.reg+lv
-- プログラム(作成中): /home/kamano/gitsrc/XMLOP/extract_pos_xref_in_body.pl
+- プログラム(作成完): /home/kamano/gitsrc/XMLOP/extract_pos_xref_in_body.pl
 
 ##TASK(extract.ref) : xrefを含むp領域のextract、対応するref領域のextract
 ### 1. xrefを含むp領域のextract
