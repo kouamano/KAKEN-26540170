@@ -130,7 +130,8 @@ cd /BANK/PMC/20140724/articles.pmid/exec_command
 cd /BANK/PMC/20140724/elements/ALL
 - 対象: PMC-XML全件
 - プログラム: /home/kamano/gitsrc/XMLOP/elementPos_ALL_sort.pl
-- スクリプト: /BANK/PMC/20140724/elements/ALL/exec_command/ALL_sort_pos-au.sh
+- スクリプト: /BANK/PMC/20140724/elements/ALL/exec_command/ALL_sort_pos_rev-au.sh
+- 結果 : /BANK/PMC/20140724/elements/ALL/ALL_sort_pos_rev-au.reg
 #=====20140903 1539 開始=====#
 #=====20140903 1724 終了=====#
 #TASK(sec-type): sec-typeの種類を抽出
