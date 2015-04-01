@@ -136,7 +136,7 @@ cd /BANK/PMC/20140724/elements/ALL
 #TASK(add-level): エレメントタグにレベルを付与
 - 対象: /BANK/PMC/20140724/elements/ALL/ALL_sort_pos_rev-au.reg
 - プログラム: /home/kamano/gitsrc/XMLOP/add-level_to_sort_pos.pl
-- スクリプト(作成中): /BANK/PMC/20140724/elements/ALL/exec_command/add_level.sh
+- スクリプト: /BANK/PMC/20140724/elements/ALL/exec_command/add_level.sh
 - 結果: /BANK/PMC/20140724/elements/ALL/ALL_sort_pos_rev-au.reg+lv
 #TASK(sec-type): sec-typeの種類を抽出
 - ソース: /BANK/PMC/20140724/elements/sec/sec_pos-a[a-u].reg_sort
@@ -234,9 +234,10 @@ cd /BANK/PMC/20140724/elements/supplementary-material
 ### 並列化
 ###===20141114 1250 終了===###
 
-##TASK(extract.ref-pos): xrefのポジションとその上位のsec-typeを抜き出す。
+##TASK(extract.xref-pos): xrefのポジションとその上位のsec-typeを抜き出す。
 - 対象: /BANK/PMC/20140724/elements/ALL/ALL_sort_pos_rev-au.reg+lv
-- プログラム
+- プログラム(作成中): /home/kamano/gitsrc/XMLOP/extract_pos_xref_in_body.pl
+### body sec xref
 
 ##TASK(extract.ref) : xrefを含むp領域のextract、対応するref領域のextract
 ### 1. xrefを含むp領域のextract
