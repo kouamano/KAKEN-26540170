@@ -248,8 +248,10 @@ cd /BANK/PMC/20140724/elements/supplementary-material
 - プログラム: /home/kamano/gitsrc/XMLOP/extract_reg-p_from_xref-p-sec.pl
 - スクリプト: /BANK/PMC/20140724/elements/x+ref+p/exec_command/extract_c-reg_from_xref-p-sec.sh
 - 結果: /BANK/PMC/20140724/elements/x+ref+p/reg_xref-p-sec_in_body-au.creg
-  余分な出力による不完全な範囲が生じる -> チェックして無視する。
+  1での余分な出力による不完全な範囲が生じる -> チェックして無視する。
+- チェック: grep ';;;' /BANK/PMC/20140724/elements/x+ref+p/reg_xref-p-sec_in_body-au.creg | sort | uniq
 ### 3. 決定されたコンテンツの領域をもとにコンテンツを抽出
+### 不完全な領域をチェックして無視する機能を入れること。
 ###===いまここ===###
 
 ##TASK(extract.ref) : xrefを含むp領域のextract、対応するref領域のextract
