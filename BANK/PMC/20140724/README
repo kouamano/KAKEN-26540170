@@ -243,6 +243,9 @@ cd /BANK/PMC/20140724/elements/supplementary-material
 - スクリプト: /BANK/PMC/20140724/elements/x+ref+p/exec_command/extract_reg_xref-p-sec_in_body.sh
 - 結果: /BANK/PMC/20140724/elements/x+ref+p/reg_xref-p-sec_in_body-au
 ### 2. ポジション情報をもとにコンテンツの領域を決定
+- 対象: /BANK/PMC/20140724/elements/x+ref+p/reg_xref-p-sec_in_body-au
+- プログラム: /home/kamano/gitsrc/XMLOP/extract_reg-p_from_xref-p-sec.pl
+- スクリプト: /BANK/PMC/20140724/elements/x+ref+p/exec_command/extract_c-reg_from_xref-p-sec.sh
 ###===いまここ===###
 ### 3. 決定されたコンテンツの領域をもとにコンテンツを抽出
 
