@@ -247,8 +247,8 @@ cd /BANK/PMC/20140724/elements/supplementary-material
 - プログラム: /home/kamano/gitsrc/XMLOP/extract_reg-p_from_xref-p-sec.pl
 - スクリプト: /BANK/PMC/20140724/elements/x+ref+p/exec_command/extract_c-reg_from_xref-p-sec.sh
 - 結果: /BANK/PMC/20140724/elements/x+ref+p/reg_xref-p-sec_in_body-au.creg
-###===いまここ===###
 ### 3. 決定されたコンテンツの領域をもとにコンテンツを抽出
+###===いまここ===###
 
 ##TASK(extract.ref) : xrefを含むp領域のextract、対応するref領域のextract
 ### 1. xrefを含むp領域のextract
@@ -261,13 +261,6 @@ cd /BANK/PMC/20140724/elements/supplementary-material
 - スクリプト: /BANK/PMC/20140724/elements/x+ref+p/exec_command/content_ref_Jour-ALL.sh
 - 結果: /BANK/PMC/20140724/elements/x+ref+p/content_ref_Jour-au
 ### 3. ペアリング ->  柴田さん
-### 考え中
-content_xrefINp_Jour-au を content_ref_Jour-au にあてる。
-content_xrefINp_Jour-au のリストが唯一でない。
-- 案1: <xref></xref>につづけて<ref></ref>を挿入
--- content_ref_Jour-au をハッシュ
--- ハッシュに対して、content_xrefINp_Jour-au より <xref rid=$RID></xref> の$RIDをあてる。
--- content_xrefINp_Jour-au に content_ref_Jour-au を挿入。
 
 ##TASK(extract.title)
 ##アーティクルタイトルの抽出(20150226)
