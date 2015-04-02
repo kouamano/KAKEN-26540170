@@ -243,7 +243,7 @@ cd /BANK/PMC/20140724/elements/supplementary-material
  <xref>が<p></p>内にあることを前提としており、<p></p>内にないとき、領域終端が取れず、不完全な領域を生じる。具体的には、パラグラフの開閉のレベルが違う、パラグラフのクローズがない、など。
 - スクリプト: /BANK/PMC/20140724/elements/x+ref+p/exec_command/extract_reg_xref-p-sec_in_body.sh
 - 結果: /BANK/PMC/20140724/elements/x+ref+p/reg_xref-p-sec_in_body-au
-### 2. ポジション情報をもとにコンテンツの領域を決定
+### 2. ポジション情報をもとにコンテンツの領域を決定(20150402)
 - 対象: /BANK/PMC/20140724/elements/x+ref+p/reg_xref-p-sec_in_body-au
 - プログラム: /home/kamano/gitsrc/XMLOP/extract_reg-p_from_xref-p-sec.pl
 - スクリプト: /BANK/PMC/20140724/elements/x+ref+p/exec_command/extract_c-reg_from_xref-p-sec.sh
