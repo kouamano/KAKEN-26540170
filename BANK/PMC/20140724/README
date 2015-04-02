@@ -235,12 +235,16 @@ cd /BANK/PMC/20140724/elements/supplementary-material
 ### 並列化
 ###===20141114 1250 終了===###
 
-##TASK(extract.xref-pos): xrefのポジションとその上位のsec-typeを抜き出す。(20150402)
-## <body> <sec> <p> <xref>
+##TASK(extract.xref-pos): xrefを含むpとその上位のsec-typeを抜き出す。
+### 1. xrefとpのポジションを抜き出す(20150402)
+### <body> <sec> <p> <xref>
 - 対象: /BANK/PMC/20140724/elements/ALL/ALL_sort_pos_rev-au.reg+lv
 - プログラム: /home/kamano/gitsrc/XMLOP/extract_pos_xref_in_body.pl
 - スクリプト: /BANK/PMC/20140724/elements/x+ref+p/exec_command/extract_reg_xref-p-sec_in_body.sh
 - 結果: /BANK/PMC/20140724/elements/x+ref+p/reg_xref-p-sec_in_body-au
+### 2. ポジション情報をもとにコンテンツの領域を決定
+###===いまここ===###
+### 3. 決定されたコンテンツの領域をもとにコンテンツを抽出
 
 ##TASK(extract.ref) : xrefを含むp領域のextract、対応するref領域のextract
 ### 1. xrefを含むp領域のextract
