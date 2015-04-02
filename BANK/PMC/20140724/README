@@ -229,7 +229,8 @@ cd /BANK/PMC/20140724/elements/supplementary-material
 ### 4. マージ結果をもとにテキストを抽出、改行はスペースに変換
 - プログラム: /home/kamano/gitsrc/XMLOP/extract_content_from_region.pl
 - スクリプト: /BANK/PMC/20140724/elements/MERGED/Materials/exec_command/extract.sh
-- 対象領域: /BANK/PMC/20140724/elements/MERGED/Materials/au.merge-reg-material.cont.tsv
+- 領域定義ファイル: /BANK/PMC/20140724/elements/MERGED/Materials/au.merge-reg-material
+- 結果: /BANK/PMC/20140724/elements/MERGED/Materials/au.merge-reg-material.cont.tsv
 ###===20141114 1130 開始===###
 ### 並列化
 ###===20141114 1250 終了===###
