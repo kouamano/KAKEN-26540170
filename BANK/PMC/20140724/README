@@ -252,6 +252,9 @@ cd /BANK/PMC/20140724/elements/supplementary-material
 #### 1.2.1 xrefとpのポジションよりbibrを抜き出す (20150404)
 - 対象: /BANK/PMC/20140724/elements/x+ref+p/reg-lv_xref-p-sec_in_body-au
 - プログラム: /home/kamano/gitsrc/XMLOP/extract_bibr_from_pos_xref_lv.pl
+- スクリプト: /BANK/PMC/20140724/elements/x+ref+p/exec_command/extract_bibr_from_xref-p-sec.sh
+- 結果: /BANK/PMC/20140724/elements/x+ref+p/reg-lv_xref-p-sec_in_body-au.bibr
+####====いまここ====####
 ### 2. ポジション情報をもとにコンテンツの領域を決定(20150402)
 - 対象: /BANK/PMC/20140724/elements/x+ref+p/reg_xref-p-sec_in_body-au
 - プログラム: /home/kamano/gitsrc/XMLOP/extract_reg-p_from_xref-p-sec.pl
