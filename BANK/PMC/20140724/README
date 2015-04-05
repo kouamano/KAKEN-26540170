@@ -259,15 +259,23 @@ cd /BANK/PMC/20140724/elements/supplementary-material
 - 対象: /BANK/PMC/20140724/elements/x+ref+p/reg-lv_xref-p-sec_in_body-au.bibr
 - プログラム: /home/kamano/gitsrc/XMLOP/exclude_from_rev-lv.pl
 - スクリプト: /BANK/PMC/20140724/elements/x+ref+p/exec_command/exclude_from_rev-lv-bibr.sh
+- スクリプト(2): /BANK/PMC/20140724/elements/x+ref+p/exec_command/exclude_from_rev-lv-bibr.ao.sh
+####====実行中 20150405====####
 - 結果: /BANK/PMC/20140724/elements/x+ref+p/reg-lv_xref-p-sec_in_body-au.bibr.exc
 #### 1.2.4 対象論文を article-type で絞る
-##### 1.2.4.1 articletypeの摘出
+##### 1.2.4.1 articletypeの摘出(20150405)
 - 対象: /BANK/PMC/20140724/articles/*/*.nxml
 - 対象ファイルリスト: /BANK/PMC/20140724/articles.fname/20/Jour-split.a[a-u]
 - プログラム: /home/kamano/gitsrc/XMLOP/extract_art-type.pl
 - スクリプト: /BANK/PMC/20140724/articles.type/exec_command/extract_art-type.ALL.sh
 - 結果: /BANK/PMC/20140724/articles.type/Jour-split.arttype.au
-####===いまここ===####
+##### 1.2.4.1 issnの摘出(20150405)
+- 対象: /BANK/PMC/20140724/articles/*/*.nxml
+- 対象ファイルリスト: /BANK/PMC/20140724/articles.fname/20/Jour-split.a[a-u]
+- プログラム: /home/kamano/gitsrc/XMLOP/extract_issn.pl
+- スクリプト: /BANK/PMC/20140724/articles.issn/exec_command/extract_issn.ALL.sh
+- 結果: /BANK/PMC/20140724/articles.issn/Jour-split.issn.au
+#####===いまここ===#####
 ### 2. ポジション情報をもとにコンテンツの領域を決定(20150402)
 - 対象: /BANK/PMC/20140724/elements/x+ref+p/reg_xref-p-sec_in_body-au
 - プログラム: /home/kamano/gitsrc/XMLOP/extract_reg-p_from_xref-p-sec.pl
