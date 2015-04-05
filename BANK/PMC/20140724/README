@@ -244,22 +244,28 @@ cd /BANK/PMC/20140724/elements/supplementary-material
 - スクリプト: /BANK/PMC/20140724/elements/x+ref+p/exec_command/extract_reg_xref-p-sec_in_body.sh
 - 結果: /BANK/PMC/20140724/elements/x+ref+p/reg_xref-p-sec_in_body-au
 ### 1.2 xrefと直上タグのポジションを抜き出し、必要なxref部分を決定する ver.2 (20150404)
-#### 1.2.0 xrefと直上タグのポジションを抜き出す (20150404)
+#### 1.2.1 xrefと直上タグのポジションを抜き出す (20150404)
 - 対象: /BANK/PMC/20140724/elements/ALL/ALL_sort_pos_rev-au.reg+lv
 - プログラム: /home/kamano/gitsrc/XMLOP/extract_pos_xref_lv_in_body.pl /BANK/PMC/20140724/elements/ALL/ALL_sort_pos_rev-au.reg+lv
  タグが正しく閉じられるかの情報をプリント。
 - スクリプト: /BANK/PMC/20140724/elements/x+ref+p/exec_command/extract_reg-lv_xref-p-sec_in_body.sh
 - 結果: /BANK/PMC/20140724/elements/x+ref+p/reg-lv_xref-p-sec_in_body-au
-#### 1.2.1 xrefと直上タグのポジションよりbibrを抜き出す (20150404)
+#### 1.2.2 xrefと直上タグのポジションよりbibrを抜き出す (20150404)
 - 対象: /BANK/PMC/20140724/elements/x+ref+p/reg-lv_xref-p-sec_in_body-au
 - プログラム: /home/kamano/gitsrc/XMLOP/extract_bibr_from_pos_xref_lv.pl
 - スクリプト: /BANK/PMC/20140724/elements/x+ref+p/exec_command/extract_bibr_from_xref-p-sec.sh
 - 結果: /BANK/PMC/20140724/elements/x+ref+p/reg-lv_xref-p-sec_in_body-au.bibr
-#### 1.2.2 xrefと直上タグのポジションとbibr情報より除外すべきデータを除外する (20150405)
+#### 1.2.3 xrefと直上タグのポジションとbibr情報より除外すべきデータを除外する (20150405)
 - 対象: /BANK/PMC/20140724/elements/x+ref+p/reg-lv_xref-p-sec_in_body-au.bibr
 - プログラム: /home/kamano/gitsrc/XMLOP/exclude_from_rev-lv.pl
 - スクリプト: /BANK/PMC/20140724/elements/x+ref+p/exec_command/exclude_from_rev-lv-bibr.sh
 - 結果: /BANK/PMC/20140724/elements/x+ref+p/reg-lv_xref-p-sec_in_body-au.bibr.exc
+#### 1.2.4 対象論文を article-type で絞る
+##### 1.2.4.1 articletypeの摘出
+- 対象: /BANK/PMC/20140724/articles/*/*.nxml
+- 対象ファイルリスト: /BANK/PMC/20140724/articles.fname/20/Jour-split.a[a-u]
+- プログラム: /home/kamano/gitsrc/XMLOP/extract_art-type.pl
+- スクリプト: /BANK/PMC/20140724/articles.type/exec_command/extract_art-type.ALL.sh
 ####===いまここ===####
 ### 2. ポジション情報をもとにコンテンツの領域を決定(20150402)
 - 対象: /BANK/PMC/20140724/elements/x+ref+p/reg_xref-p-sec_in_body-au
