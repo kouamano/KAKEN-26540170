@@ -266,6 +266,7 @@ cd /BANK/PMC/20140724/elements/supplementary-material
 - 対象ファイルリスト: /BANK/PMC/20140724/articles.fname/20/Jour-split.a[a-u]
 - プログラム: /home/kamano/gitsrc/XMLOP/extract_art-type.pl
 - スクリプト: /BANK/PMC/20140724/articles.type/exec_command/extract_art-type.ALL.sh
+- 結果: /BANK/PMC/20140724/articles.type/Jour-split.arttype.au
 ####===いまここ===####
 ### 2. ポジション情報をもとにコンテンツの領域を決定(20150402)
 - 対象: /BANK/PMC/20140724/elements/x+ref+p/reg_xref-p-sec_in_body-au
