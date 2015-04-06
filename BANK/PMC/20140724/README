@@ -255,12 +255,11 @@ cd /BANK/PMC/20140724/elements/supplementary-material
 - プログラム: /home/kamano/gitsrc/XMLOP/extract_bibr_from_pos_xref_lv.pl
 - スクリプト: /BANK/PMC/20140724/elements/x+ref+p/exec_command/extract_bibr_from_xref-p-sec.sh
 - 結果: /BANK/PMC/20140724/elements/x+ref+p/reg-lv_xref-p-sec_in_body-au.bibr
-#### 1.2.3 xrefと直上タグのポジションとbibr情報より除外すべきデータを除外する (20150405)
+#### 1.2.3 xrefと直上タグのポジションとbibr情報より除外すべきデータを除外する (20150406)
 - 対象: /BANK/PMC/20140724/elements/x+ref+p/reg-lv_xref-p-sec_in_body-au.bibr
 - プログラム: /home/kamano/gitsrc/XMLOP/exclude_from_rev-lv.pl
 - スクリプト: /BANK/PMC/20140724/elements/x+ref+p/exec_command/exclude_from_rev-lv-bibr.sh
 - スクリプト(2): /BANK/PMC/20140724/elements/x+ref+p/exec_command/exclude_from_rev-lv-bibr.ao.sh
-####====実行中 20150405====####
 - 結果: /BANK/PMC/20140724/elements/x+ref+p/reg-lv_xref-p-sec_in_body-au.bibr.exc
 #### 1.2.4 対象論文を article-type で絞る
 ##### 1.2.4.1 articletypeの摘出(20150405)
