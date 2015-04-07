@@ -263,7 +263,6 @@ cd /BANK/PMC/20140724/elements/supplementary-material
 
 ##TASK(extract.xref): xrefを含む直上位のレベルを抜き出す。
 ### [old] 1-(1) xrefとpのポジションを抜き出す ver.1 (20150402) -> 1.2 を行えば必要ない?
-### <body> <sec> <p> <xref>
 - 対象: /BANK/PMC/20140724/elements/ALL/ALL_sort_pos_rev-au.reg+lv
 - プログラム: /home/kamano/gitsrc/XMLOP/extract_pos_xref_in_body.pl
  <xref>が<p></p>内にあることを前提としており、<p></p>内にないとき、領域終端が取れず、不完全な領域を生じる。具体的には、パラグラフの開閉のレベルが違う、パラグラフのクローズがない、など。
