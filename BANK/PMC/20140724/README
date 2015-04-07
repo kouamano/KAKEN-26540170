@@ -236,55 +236,57 @@ cd /BANK/PMC/20140724/elements/supplementary-material
 ###===20141114 1250 終了===###
 
 ##TASK(extract.xref-pos): xrefを含むpとその上位のsec-typeを抜き出す。
-### [old] 1.1 xrefとpのポジションを抜き出す ver.1 (20150402) -> 1.2 を行えば必要ない?
+### [old] 1-(1) xrefとpのポジションを抜き出す ver.1 (20150402) -> 1.2 を行えば必要ない?
 ### <body> <sec> <p> <xref>
 - 対象: /BANK/PMC/20140724/elements/ALL/ALL_sort_pos_rev-au.reg+lv
 - プログラム: /home/kamano/gitsrc/XMLOP/extract_pos_xref_in_body.pl
  <xref>が<p></p>内にあることを前提としており、<p></p>内にないとき、領域終端が取れず、不完全な領域を生じる。具体的には、パラグラフの開閉のレベルが違う、パラグラフのクローズがない、など。
 - スクリプト: /BANK/PMC/20140724/elements/x+ref+p/exec_command/extract_reg_xref-p-sec_in_body.sh
 - 結果: /BANK/PMC/20140724/elements/x+ref+p/reg_xref-p-sec_in_body-au
-### 1.2 xrefと直上タグのポジションを抜き出し、必要なxref部分を決定する ver.2 (20150404)
-#### 1.2.1 xrefと直上タグのポジションを抜き出す (20150404)
+### 1-(2) xrefと直上タグのポジションを抜き出し、必要なxref部分を特定、特定領域をプリント ver.2 (20150404)
+#### 1-(2).1 xrefと直上タグのポジションを抜き出す (20150404)
 - 対象: /BANK/PMC/20140724/elements/ALL/ALL_sort_pos_rev-au.reg+lv
 - プログラム: /home/kamano/gitsrc/XMLOP/extract_pos_xref_lv_in_body.pl /BANK/PMC/20140724/elements/ALL/ALL_sort_pos_rev-au.reg+lv
  タグが正しく閉じられるかの情報をプリント。
 - スクリプト: /BANK/PMC/20140724/elements/x+ref+p/exec_command/extract_reg-lv_xref-p-sec_in_body.sh
 - 結果: /BANK/PMC/20140724/elements/x+ref+p/reg-lv_xref-p-sec_in_body-au
-#### 1.2.2 xrefと直上タグのポジションよりbibrを抜き出す (20150404)
+#### 1-(2).2 xrefと直上タグのポジションよりbibrを抜き出す (20150404)
 - 対象: /BANK/PMC/20140724/elements/x+ref+p/reg-lv_xref-p-sec_in_body-au
 - プログラム: /home/kamano/gitsrc/XMLOP/extract_bibr_from_pos_xref_lv.pl
 - スクリプト: /BANK/PMC/20140724/elements/x+ref+p/exec_command/extract_bibr_from_xref-p-sec.sh
 - 結果: /BANK/PMC/20140724/elements/x+ref+p/reg-lv_xref-p-sec_in_body-au.bibr
-#### 1.2.3 xrefと直上タグのポジションとbibr情報より除外すべきデータを除外する (20150406)
+#### 1-(2).3 xrefと直上タグのポジションとbibr情報より除外すべきデータを除外する (20150406)
 - 対象: /BANK/PMC/20140724/elements/x+ref+p/reg-lv_xref-p-sec_in_body-au.bibr
 - プログラム: /home/kamano/gitsrc/XMLOP/exclude_from_rev-lv.pl
 - スクリプト: /BANK/PMC/20140724/elements/x+ref+p/exec_command/exclude_from_rev-lv-bibr.sh
 - スクリプト(2): /BANK/PMC/20140724/elements/x+ref+p/exec_command/exclude_from_rev-lv-bibr.ao.sh
 - 結果: /BANK/PMC/20140724/elements/x+ref+p/reg-lv_xref-p-sec_in_body-au.bibr.exc
-#### 1.2.4 対象論文を article-type で絞る
-##### 1.2.4.1 articletypeの摘出(20150405)
+#### 1-(2).4 対象領域の抜きだし
+- 対象: /BANK/PMC/20140724/articles/*/*.nxml
+- 対象ファイルリスト: Jour-split.a[a-u]
+- 領域情報: /BANK/PMC/20140724/elements/x+ref+p/reg-lv_xref-p-sec_in_body-au.bibr.exc
+####===いまここ===####
+### 2. 対象論文を article-type で絞る
+#### 2.1 articletypeの摘出(20150405)
 - 対象: /BANK/PMC/20140724/articles/*/*.nxml
 - 対象ファイルリスト: /BANK/PMC/20140724/articles.fname/20/Jour-split.a[a-u]
 - プログラム: /home/kamano/gitsrc/XMLOP/extract_art-type.pl
 - スクリプト: /BANK/PMC/20140724/articles.type/exec_command/extract_art-type.ALL.sh
 - 結果: /BANK/PMC/20140724/articles.type/Jour-split.arttype.au
-##### 1.2.4.1 issnの摘出(20150405)
+#### 2.2 issnの摘出(20150405)
 - 対象: /BANK/PMC/20140724/articles/*/*.nxml
 - 対象ファイルリスト: /BANK/PMC/20140724/articles.fname/20/Jour-split.a[a-u]
 - プログラム: /home/kamano/gitsrc/XMLOP/extract_issn.pl
 - スクリプト: /BANK/PMC/20140724/articles.issn/exec_command/extract_issn.ALL.sh
 - 結果: /BANK/PMC/20140724/articles.issn/Jour-split.issn.au
-#####===いまここ===#####
-### 2. ポジション情報をもとにコンテンツの領域を決定(20150402)
+####===いまここ===####
+### [old] 2. ポジション情報をもとにコンテンツの領域を決定(20150402)
 - 対象: /BANK/PMC/20140724/elements/x+ref+p/reg_xref-p-sec_in_body-au
 - プログラム: /home/kamano/gitsrc/XMLOP/extract_reg-p_from_xref-p-sec.pl
 - スクリプト: /BANK/PMC/20140724/elements/x+ref+p/exec_command/extract_c-reg_from_xref-p-sec.sh
 - 結果: /BANK/PMC/20140724/elements/x+ref+p/reg_xref-p-sec_in_body-au.creg
   1.により不完全な範囲が生じる -> チェックして無視する。
 - チェック: grep ';;;' /BANK/PMC/20140724/elements/x+ref+p/reg_xref-p-sec_in_body-au.creg | sort | uniq
-### 3. 決定されたコンテンツの領域をもとにコンテンツを抽出
-### 不完全な領域をチェックして無視する機能を入れること。
-###===いまここ===###
 
 ##TASK(extract.ref) : xrefを含むp領域のextract、対応するref領域のextract
 ### 1. xrefを含むp領域のextract
