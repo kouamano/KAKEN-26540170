@@ -68,7 +68,7 @@
 
 
 
-#TASK(data) (20140724 に完了)
+#TASK(data) (随時更新) : データの基本情報をまとめる
 ##TASK(data.1):PMCファイルの展開
 - 展開先: /BANK/PMC/20140724/articles
 - check:
@@ -82,6 +82,32 @@ split -l 42183 Jour-All.fname Jour-split
 cd /BANK/PMC/20140724/articles.fname/20.check/exec_command
 ./jour-check.aa.sh
 ##エラーゼロを確認。
+##TASK(data.fname): ファイルネームのリスト作成
+- dir : /BANK/PMC/20140724/articles.fname/20
+##TASK(data.issn): ファイル vs. issn情報
+- dir : /BANK/PMC/20140724/articles.issn
+### 1. issnの摘出(20150405)
+- 対象: /BANK/PMC/20140724/articles/*/*.nxml
+- 対象ファイルリスト: /BANK/PMC/20140724/articles.fname/20/Jour-split.a[a-u]
+- プログラム: /home/kamano/gitsrc/XMLOP/extract_issn.pl
+- スクリプト: /BANK/PMC/20140724/articles.issn/exec_command/extract_issn.ALL.sh
+- 結果: /BANK/PMC/20140724/articles.issn/Jour-split.issn.au
+##TASK(data.pmid): ファイル vs. pmid情報
+- dir : /BANK/PMC/20140724/articles.pmid
+##TASK(data.title):  ファイル vs. title
+- dir : /BANK/PMC/20140724/articles.title
+### 1. アーティクルタイトルの抽出(20150226)
+- プログラム: /home/kamano/gitsrc/XMLOP/extract_art-title_in_front.pl
+- スクリプト: /BANK/PMC/20140724/articles.title/exec_command/jour-split.title.All.sh
+- 結果: /BANK/PMC/20140724/articles.title/jour-split.title.au
+##TASK(data.type):  ファイル vs. article-type
+- dir : /BANK/PMC/20140724/articles.type
+### 1. articletypeの摘出(20150405)
+- 対象: /BANK/PMC/20140724/articles/*/*.nxml
+- 対象ファイルリスト: /BANK/PMC/20140724/articles.fname/20/Jour-split.a[a-u]
+- プログラム: /home/kamano/gitsrc/XMLOP/extract_art-type.pl
+- スクリプト: /BANK/PMC/20140724/articles.type/exec_command/extract_art-type.ALL.sh
+- 結果: /BANK/PMC/20140724/articles.type/Jour-split.arttype.au
 
 
 
@@ -235,7 +261,7 @@ cd /BANK/PMC/20140724/elements/supplementary-material
 ### 並列化
 ###===20141114 1250 終了===###
 
-##TASK(extract.xref-pos): xrefを含むpとその上位のsec-typeを抜き出す。
+##TASK(extract.xref): xrefを含む直上位のレベルを抜き出す。
 ### [old] 1-(1) xrefとpのポジションを抜き出す ver.1 (20150402) -> 1.2 を行えば必要ない?
 ### <body> <sec> <p> <xref>
 - 対象: /BANK/PMC/20140724/elements/ALL/ALL_sort_pos_rev-au.reg+lv
@@ -261,7 +287,7 @@ cd /BANK/PMC/20140724/elements/supplementary-material
 - スクリプト: /BANK/PMC/20140724/elements/x+ref+p/exec_command/exclude_from_rev-lv-bibr.sh
 - スクリプト(2): /BANK/PMC/20140724/elements/x+ref+p/exec_command/exclude_from_rev-lv-bibr.ao.sh
 - 結果: /BANK/PMC/20140724/elements/x+ref+p/reg-lv_xref-p-sec_in_body-au.bibr.exc
-#### 1-(2).4 対象領域の抜きだし
+#### 1-(2).4 対象領域の抜きだし(20150407)
 - 対象: /BANK/PMC/20140724/articles/*/*.nxml
 - 対象ファイルリスト: Jour-split.a[a-u]
 - 領域情報: /BANK/PMC/20140724/elements/x+ref+p/reg-lv_xref-p-sec_in_body-au.bibr.exc
@@ -275,21 +301,7 @@ cd /BANK/PMC/20140724/elements/supplementary-material
 --- 作成されたファイルを対象にした特別なスクリプトを作成: /BANK/PMC/20140724/elements/x+ref+p/exec_command/extract_content_xref_from_reg-lv.ae.sh
 --- 結果: /BANK/PMC/20140724/elements/x+ref+p/reg-lv_xref-p-sec_in_body-ae.bibr.exc.cont
 - 結果: /BANK/PMC/20140724/elements/x+ref+p/reg-lv_xref-p-sec_in_body-au.bibr.exc.cont
-####===実行中(20150407)===####
-####===いまここ===####
 ### 2. 対象論文を article-type で絞る
-#### 2.1 articletypeの摘出(20150405)
-- 対象: /BANK/PMC/20140724/articles/*/*.nxml
-- 対象ファイルリスト: /BANK/PMC/20140724/articles.fname/20/Jour-split.a[a-u]
-- プログラム: /home/kamano/gitsrc/XMLOP/extract_art-type.pl
-- スクリプト: /BANK/PMC/20140724/articles.type/exec_command/extract_art-type.ALL.sh
-- 結果: /BANK/PMC/20140724/articles.type/Jour-split.arttype.au
-#### 2.2 issnの摘出(20150405)
-- 対象: /BANK/PMC/20140724/articles/*/*.nxml
-- 対象ファイルリスト: /BANK/PMC/20140724/articles.fname/20/Jour-split.a[a-u]
-- プログラム: /home/kamano/gitsrc/XMLOP/extract_issn.pl
-- スクリプト: /BANK/PMC/20140724/articles.issn/exec_command/extract_issn.ALL.sh
-- 結果: /BANK/PMC/20140724/articles.issn/Jour-split.issn.au
 ####===いまここ===####
 ### [old] 2. ポジション情報をもとにコンテンツの領域を決定(20150402)
 - 対象: /BANK/PMC/20140724/elements/x+ref+p/reg_xref-p-sec_in_body-au
@@ -297,6 +309,7 @@ cd /BANK/PMC/20140724/elements/supplementary-material
 - スクリプト: /BANK/PMC/20140724/elements/x+ref+p/exec_command/extract_c-reg_from_xref-p-sec.sh
 - 結果: /BANK/PMC/20140724/elements/x+ref+p/reg_xref-p-sec_in_body-au.creg
   1.により不完全な範囲が生じる -> チェックして無視する。
+--> rm (20150407)
 - チェック: grep ';;;' /BANK/PMC/20140724/elements/x+ref+p/reg_xref-p-sec_in_body-au.creg | sort | uniq
 
 ##TASK(extract.ref) : xrefを含むp領域のextract、対応するref領域のextract
@@ -311,11 +324,6 @@ cd /BANK/PMC/20140724/elements/supplementary-material
 - 結果: /BANK/PMC/20140724/elements/x+ref+p/content_ref_Jour-au
 ### 3. ペアリング ->  柴田さん
 
-##TASK(extract.title)
-##アーティクルタイトルの抽出(20150226)
-- プログラム: /home/kamano/gitsrc/XMLOP/extract_art-title_in_front.pl
-- スクリプト: /BANK/PMC/20140724/articles.title/exec_command/jour-split.title.All.sh
-- 結果: /BANK/PMC/20140724/articles.title/jour-split.title.au
 
 
 
