@@ -265,6 +265,8 @@ cd /BANK/PMC/20140724/elements/supplementary-material
 - 対象: /BANK/PMC/20140724/articles/*/*.nxml
 - 対象ファイルリスト: Jour-split.a[a-u]
 - 領域情報: /BANK/PMC/20140724/elements/x+ref+p/reg-lv_xref-p-sec_in_body-au.bibr.exc
+-  プログラム: /home/kamano/gitsrc/XMLOP/extract_content_xref_from_reg-lv.pl
+-- プログラム中で呼び出される外部プログラム: /usr/local/bin/streamcut
 ####===いまここ===####
 ### 2. 対象論文を article-type で絞る
 #### 2.1 articletypeの摘出(20150405)
