@@ -420,13 +420,19 @@ cd /BANK/PMC/20140724/elements/supplementary-material
 
 #TASK(5): 機関名候補検索 THEME[kaken-26540170]
 #aff領域より得られた機関名(住所つき)をmaterial、ack領域に対して検索、存在を確認。
+#所属をカンマで区切り、各フレーズを対象領域に対してマッチング。
+#<tag1>,<tag2>,<tag3>
 - 各ファイル:
 -- 所属抽出結果: /BANK/PMC/20140724/elements/aff/PMC-AFF-v1.tsv
 -- 所属抽出結果より不要なタグ等を取り除きユニークソート: /BANK/PMC/20140724/elements/aff/PMC-AFF-plain-v4
 -- 上記データをカンマ区切りで切り出した第2カラムのデータ: /BANK/PMC/20140724/elements/aff/PMC-AFF-tag2
 -- 上記各ファイルの解説: /BANK/PMC/20140724/elements/aff/README.Gmail(2015-03-14).pdf
 ##TASK(5.1): 謝辞 vs. 機関名候補検索
-##==確認中==##
+### 謝辞 vs. tag2 (石川氏)
+- 検索ターム(機関名候補): /BANK/PMC/20140724/elements/aff/PMC-AFF-tag2
+- 検索対象データ(どこにあるか確認すべし): PMC-ACK-v6 (/BANK/PMC/20140724/elements/acknowledgement/PMC-ACK-v6_pmid.tsv)
+- 結果ファイル: /BANK/PMC/20140724/Matching/BioResource/Organization/_ALL_/aff/AFFvsACK/AFFvsACK.tsv
+##TASK(5.2): material vs. 機関名候補検索
 
 
 
@@ -437,7 +443,6 @@ cd /BANK/PMC/20140724/elements/supplementary-material
 ### 2. 機関名(8機関)検索(石川氏)(20141225)
 - 検索ターム: /BANK/Organization/_ALL_/organization-name/8orgs.name.terms
 - 結果ファイル:  /BANK/PMC/20140724/Matching/BioResource/Organization/_ALL_/aff/PMC-AFF-plain-10_ORG.txt
-
 ##TASK(3.2): ack領域より機関名検索
 ### 1. acknowledgement エレメントの抽出(石川氏)
 - 対象領域: /BANK/PMC/20140724/elements/acknowledgement/PMC-ACK-v6_pmid.tsv
