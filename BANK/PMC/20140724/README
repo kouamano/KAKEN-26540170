@@ -200,8 +200,10 @@ cd /BANK/PMC/20140724/elements/sec-type
 - 結果: /BANK/PMC/20140724/elements/MERGED/allmaterials/allmaterials.au.reg
 ### 領域抽出
 - 対象: /BANK/PMC/20140724/elements/MERGED/allmaterials/allmaterials.au.reg
-- 作成中プログラム: /home/kamano/gitsrc/XMLOP/mk-region_from-extracted-pos-tag.pl
- extract_pos-tag-allmaterials.pl の出力から、対象領域の範囲を取り出す。
+- プログラム: /home/kamano/gitsrc/XMLOP/extract_content_from_reg_allmaterial.pl
+ extract_pos-tag-allmaterials.pl の出力から、直接対象領域を取り出す。
+-- example: /home/kamano/gitsrc/XMLOP/extract_content_from_reg_allmaterial.pl /BANK/PMC/20140724/articles /BANK/PMC/20140724/elements/MERGED/allmaterials/allmaterials.au.reg
+- スクリプト: /BANK/PMC/20140724/elements/MERGED/allmaterials/exec_command/extract_cont_from_reg.au.sh
 ###==いまここ==###
 ### 領域の抽出
 
