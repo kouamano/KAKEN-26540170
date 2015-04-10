@@ -193,13 +193,15 @@ cd /BANK/PMC/20140724/elements/sec-type
 - 対象領域: /BANK/PMC/20140724/elements/aff/PMC-AFF-v1.tsv (20141114)
 ##TASK(extract.material;new) : extract material 新方式
 ### 領域のポインター情報作成
-- 作成中スクリプト(一応完了): /home/kamano/gitsrc/XMLOP/extract_pos-tag-allmaterials.pl
- <*material*></>のリージョンを一発で取り出すスクリプト。
 - 対象: /BANK/PMC/20140724/elements/ALL/ALL_sort_pos_rev-au.reg
-### 抽出領域の決定
-- 作成中スクリプト: /home/kamano/gitsrc/XMLOP/mk-region_from-extracted-pos-tag.pl
- extract_pos-tag-allmaterials.pl の出力から、対象領域の範囲を取り出す。
+- プログラム: /home/kamano/gitsrc/XMLOP/extract_pos-tag-allmaterials.pl
+ <*material*></>のリージョンを一発で取り出すスクリプト。
+- スクリプト: /BANK/PMC/20140724/elements/MERGED/allmaterials/exec_command/
+- 結果: /BANK/PMC/20140724/elements/MERGED/allmaterials/
+### 領域抽出
 - 対象: /home/kamano/gitsrc/XMLOP/extract_pos-tag-allmaterials.pl の出力
+- 作成中プログラム: /home/kamano/gitsrc/XMLOP/mk-region_from-extracted-pos-tag.pl
+ extract_pos-tag-allmaterials.pl の出力から、対象領域の範囲を取り出す。
 ###==いまここ==###
 ### 領域の抽出
 
@@ -430,8 +432,9 @@ cd /BANK/PMC/20140724/elements/supplementary-material
 ##TASK(5.1): 謝辞 vs. 機関名候補検索
 ### 謝辞 vs. tag2 (石川氏)
 - 検索ターム(機関名候補): /BANK/PMC/20140724/elements/aff/PMC-AFF-tag2
-- 検索対象データ(どこにあるか確認すべし): PMC-ACK-v6 (/BANK/PMC/20140724/elements/acknowledgement/PMC-ACK-v6_pmid.tsv)
+- 検索対象データ: /BANK/PMC/20140724/elements/acknowledgement/PMC-ACK-v6_pmid.tsv (PMC-ACK-v6)
 - 結果ファイル: /BANK/PMC/20140724/Matching/BioResource/Organization/_ALL_/aff/AFFvsACK/AFFvsACK.tsv
+- 結果ファイル(0hit削除): /BANK/PMC/20140724/Matching/BioResource/Organization/_ALL_/aff/AFFvsACK/AFFvsACK-del0.tsv
 ##TASK(5.2): material vs. 機関名候補検索
 
 
