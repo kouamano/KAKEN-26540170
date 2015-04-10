@@ -197,9 +197,9 @@ cd /BANK/PMC/20140724/elements/sec-type
 - プログラム: /home/kamano/gitsrc/XMLOP/extract_pos-tag-allmaterials.pl
  <*material*></>のリージョンを一発で取り出すスクリプト。
 - スクリプト: /BANK/PMC/20140724/elements/MERGED/allmaterials/exec_command/
-- 結果: /BANK/PMC/20140724/elements/MERGED/allmaterials/
+- 結果: /BANK/PMC/20140724/elements/MERGED/allmaterials/allmaterials.au.reg
 ### 領域抽出
-- 対象: /home/kamano/gitsrc/XMLOP/extract_pos-tag-allmaterials.pl の出力
+- 対象: /BANK/PMC/20140724/elements/MERGED/allmaterials/allmaterials.au.reg
 - 作成中プログラム: /home/kamano/gitsrc/XMLOP/mk-region_from-extracted-pos-tag.pl
  extract_pos-tag-allmaterials.pl の出力から、対象領域の範囲を取り出す。
 ###==いまここ==###
