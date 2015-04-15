@@ -352,7 +352,13 @@ cd /BANK/PMC/20140724/elements/supplementary-material
 
 
 
-#TASK(1): 既知リソース名・機関名の決定と検索タームの決定 (8機関を決定完了)
+#TASK(1 ver.2): 既知リソース名・機関名の決定と検索タームの決定 (NBRP)
+##TASK(1.1): NBRC利用者成果からバイオリソース名+請求番号を抜き出す(201404)
+- 利用者成果ファイル: /BANK/BioResource/Organization/NBRP_2015/user-data/reference_list.tsv
+- Resource name カラムを抜き出したもの: /BANK/BioResource/Organization/NBRP_2015/user-data/Resnames.line
+- さらに、カンマを改行にしたもの: /BANK/BioResource/Organization/NBRP_2015/user-data/Resnames
+
+#TASK(1 ver.1): 既知リソース名・機関名の決定と検索タームの決定 (8機関を決定完了)
 #THEME[リソース名共出現解析][kaken-26540170]
 #大型機関に絞って行なうこととする。
 ##TASK(1.0): 対象機関の決定 -> 8機関に決定
