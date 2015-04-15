@@ -356,9 +356,13 @@ cd /BANK/PMC/20140724/elements/supplementary-material
 ##TASK(1.1): NBRC利用者成果からバイオリソース名+請求番号を抜き出す(201404)
 - 利用者成果ファイル: /BANK/BioResource/Organization/NBRP_2015/user-data/reference_list.tsv
 - Resource name カラムを抜き出したもの: /BANK/BioResource/Organization/NBRP_2015/user-data/Resnames.line
-- さらに個別のリソースに分割:
+- さらに個別のリソースに分割: /BANK/BioResource/Organization/NBRP_2015/user-data/Resnames
 -- ", " (<カンマ><スペース>)で区切る
 -- "; " (<セミコロン><スペース>)で区切る
+-- プログラム: /home/kamano/gitsrc/utility/CM-SP_SC-SP_to_LF.pl
+-- "," カッコ内でなければ(<カンマ>)で区切る
+-- プログラムソース: /home/kamano/gitsrc/utility/CM_to_LF_out_Bracket.c
+-- スクリプト: /home/kamano/gitsrc/utility/CM-SP_SC-SP_to_LF.pl Resnames.line | /home/kamano/gitsrc/utility/CM_to_LF_out_Bracket if=/dev/stdin > Resnames
 
 #TASK(1 ver.1): 既知リソース名・機関名の決定と検索タームの決定 (8機関を決定完了)
 #THEME[リソース名共出現解析][kaken-26540170]
