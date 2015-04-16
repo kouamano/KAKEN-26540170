@@ -152,19 +152,10 @@ cd /BANK/PMC/20140724/articles.pmid/exec_command
 
 
 
-#TASK(tag.new): XMLのエレメントタグを抽出・ソート・レベル付与(20150416完了)
-## 抽出・ソート
-cd /BANK/PMC/20140724/elements/ALL
-- 対象: PMC-XML全件
-- プログラム: /home/kamano/gitsrc/XMLOP/elementPos_ALL_sort.pl
-- スクリプト: /BANK/PMC/20140724/elements/ALL/exec_command/ALL_sort_pos_rev-au.sh
-#=====20150416 1230 開始(修正版)=====#
-#=====20150416 1425 終了=====#
-## レベル付与
-- 対象: /BANK/PMC/20140724/elements/ALL/ALL_sort_pos_rev-au.reg
-- プログラム: /home/kamano/gitsrc/XMLOP/add-level_to_sort_pos.pl
-- スクリプト: /BANK/PMC/20140724/elements/ALL/exec_command/add_level.sh
-- 結果: /BANK/PMC/20140724/elements/ALL/ALL_sort_pos_rev-au.reg+lv
+#TASK(tag.new): XMLのエレメントタグを抽出・ソート・レベル付与(20150416やりなおし)
+- 対象: PMC-XML全件 (/BANK/PMC/20140724/articles/*/*nxml)
+- プログラム: /home/kamano/gitsrc/XMLOP/elementPos_sequence_flag-lv.pl
+- スクリプト: /BANK/PMC/20140724/elements/ALL/exec_command/ALL_sort_pos_lv_rev-au.sh
 
 
 
@@ -276,6 +267,7 @@ cd /BANK/PMC/20140724/elements/supplementary-material
  タグが正しく閉じられるかの情報をプリント。
 - スクリプト: /BANK/PMC/20140724/elements/x+ref+p/exec_command/extract_reg-lv_xref-p-sec_in_body.sh
 - 結果: /BANK/PMC/20140724/elements/x+ref+p/reg-lv_xref-p-sec_in_body-au
+####===いまここ プログラムに不正発覚 もともとのレベル計算に不正あり===####
 #### 1-(2).2 xrefと直上タグのポジションよりbibrを抜き出す (20150404)
 - 対象: /BANK/PMC/20140724/elements/x+ref+p/reg-lv_xref-p-sec_in_body-au
 - プログラム: /home/kamano/gitsrc/XMLOP/extract_bibr_from_pos_xref_lv.pl
@@ -302,7 +294,6 @@ cd /BANK/PMC/20140724/elements/supplementary-material
 --- 結果: /BANK/PMC/20140724/elements/x+ref+p/reg-lv_xref-p-sec_in_body-ae.bibr.exc.cont
 - 結果: /BANK/PMC/20140724/elements/x+ref+p/reg-lv_xref-p-sec_in_body-au.bibr.exc.cont
 ### 2. 対象論文を article-type で絞る
-####===いまここ===####
 
 ##TASK(extract.ref) : xrefを含むp領域のextract、対応するref領域のextract
 ### 1. xrefを含むp領域のextract
