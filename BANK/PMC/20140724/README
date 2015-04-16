@@ -156,6 +156,8 @@ cd /BANK/PMC/20140724/articles.pmid/exec_command
 - 対象: PMC-XML全件 (/BANK/PMC/20140724/articles/*/*nxml)
 - プログラム: /home/kamano/gitsrc/XMLOP/elementPos_sequence_flag-lv.pl
 - スクリプト: /BANK/PMC/20140724/elements/ALL/exec_command/ALL_sort_pos_lv_rev-au.sh
+- 結果: /BANK/PMC/20140724/elements/ALL/ALL_sort_pos_rev-au.reg+lv
+#=いまここ　実行中=#
 
 
 
