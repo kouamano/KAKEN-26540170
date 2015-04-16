@@ -269,13 +269,7 @@ cd /BANK/PMC/20140724/elements/supplementary-material
 ###===20141114 1250 終了===###
 
 ##TASK(extract.xref): xrefを含む直上位のレベルを抜き出す。
-### [old] 1-(1) xrefとpのポジションを抜き出す ver.1 (20150402) -> 1.2 を行えば必要ない?
-- 対象: /BANK/PMC/20140724/elements/ALL/ALL_sort_pos_rev-au.reg+lv
-- プログラム: /home/kamano/gitsrc/XMLOP/extract_pos_xref_in_body.pl
- <xref>が<p></p>内にあることを前提としており、<p></p>内にないとき、領域終端が取れず、不完全な領域を生じる。具体的には、パラグラフの開閉のレベルが違う、パラグラフのクローズがない、など。
-- スクリプト: /BANK/PMC/20140724/elements/x+ref+p/exec_command/extract_reg_xref-p-sec_in_body.sh
-- 結果: /BANK/PMC/20140724/elements/x+ref+p/reg_xref-p-sec_in_body-au
-### 1-(2) xrefと直上タグのポジションを抜き出し、必要なxref部分を特定、特定領域をプリント ver.2 (20150404)
+### 1-(2) xrefと直上タグのポジションを抜き出し、必要なxref部分を特定、特定領域をプリント ver.2 (20150416)
 #### 1-(2).1 xrefと直上タグのポジションを抜き出す (20150404)
 - 対象: /BANK/PMC/20140724/elements/ALL/ALL_sort_pos_rev-au.reg+lv
 - プログラム: /home/kamano/gitsrc/XMLOP/extract_pos_xref_lv_in_body.pl /BANK/PMC/20140724/elements/ALL/ALL_sort_pos_rev-au.reg+lv
@@ -309,14 +303,6 @@ cd /BANK/PMC/20140724/elements/supplementary-material
 - 結果: /BANK/PMC/20140724/elements/x+ref+p/reg-lv_xref-p-sec_in_body-au.bibr.exc.cont
 ### 2. 対象論文を article-type で絞る
 ####===いまここ===####
-### [old] 2. ポジション情報をもとにコンテンツの領域を決定(20150402)
-- 対象: /BANK/PMC/20140724/elements/x+ref+p/reg_xref-p-sec_in_body-au
-- プログラム: /home/kamano/gitsrc/XMLOP/extract_reg-p_from_xref-p-sec.pl
-- スクリプト: /BANK/PMC/20140724/elements/x+ref+p/exec_command/extract_c-reg_from_xref-p-sec.sh
-- 結果: /BANK/PMC/20140724/elements/x+ref+p/reg_xref-p-sec_in_body-au.creg
-  1.により不完全な範囲が生じる -> チェックして無視する。
---> rm (20150407)
-- チェック: grep ';;;' /BANK/PMC/20140724/elements/x+ref+p/reg_xref-p-sec_in_body-au.creg | sort | uniq
 
 ##TASK(extract.ref) : xrefを含むp領域のextract、対応するref領域のextract
 ### 1. xrefを含むp領域のextract
