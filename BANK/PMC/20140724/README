@@ -152,18 +152,22 @@ cd /BANK/PMC/20140724/articles.pmid/exec_command
 
 
 
-#TASK(tag.new): XMLのエレメントタグを抽出・ソート(完了)
+#TASK(tag.new): XMLのエレメントタグを抽出・ソート・レベル付与(20150416完了)
+## 抽出・ソート
 cd /BANK/PMC/20140724/elements/ALL
 - 対象: PMC-XML全件
 - プログラム: /home/kamano/gitsrc/XMLOP/elementPos_ALL_sort.pl
 - スクリプト: /BANK/PMC/20140724/elements/ALL/exec_command/ALL_sort_pos_rev-au.sh
 #=====20150416 1230 開始(修正版)=====#
-#=いまここ=#
-#TASK(add-level): エレメントタグにレベルを付与
+#=====20150416 1425 終了=====#
+## レベル付与
 - 対象: /BANK/PMC/20140724/elements/ALL/ALL_sort_pos_rev-au.reg
 - プログラム: /home/kamano/gitsrc/XMLOP/add-level_to_sort_pos.pl
 - スクリプト: /BANK/PMC/20140724/elements/ALL/exec_command/add_level.sh
 - 結果: /BANK/PMC/20140724/elements/ALL/ALL_sort_pos_rev-au.reg+lv
+
+
+
 #TASK(sec-type): sec-typeの種類を抽出
 - ソース: /BANK/PMC/20140724/elements/sec/sec_pos-a[a-u].reg_sort
 - プログラム: /home/kamano/gitsrc/XMLOP/grep-sec-type.pl
