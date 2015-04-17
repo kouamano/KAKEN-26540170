@@ -206,7 +206,7 @@ cd /BANK/PMC/20140724/elements/sec-type
 - old dir: /BANK/PMC/20140724/elements/MERGED/Materials
  使用しないこと。
  かわりに、/BANK/PMC/20140724/elements/MERGED/allmaterials/ 配下のデータを使用すべし。
-## [特別タスク] TASK(extract.xref): xrefを含む直上位のレベルを抜き出す。
+## TASK(extract.xref): xrefを含む直上位のレベルを抜き出す。
 ### 1. xrefと直上タグのポジションを抜き出し、必要なxref部分を特定、特定領域をプリント ver.2 (20150417)
 #### 1.1 xrefと直上タグのポジションを抜き出す (20150417)
 - 対象: /BANK/PMC/20140724/elements/ALL/ALL_sort_pos_rev-au.reg+lv
@@ -233,7 +233,8 @@ cd /BANK/PMC/20140724/elements/sec-type
 - スクリプト: /BANK/PMC/20140724/elements/x+ref+p/exec_command/extract_content_xref_from_reg-lv.sh
 ####===いまここ 修正版で再計算(20140417)===####
 - 結果: /BANK/PMC/20140724/elements/x+ref+p/reg-lv_xref-p-sec_in_body-au.bibr.exc.cont
-### 2. 対象論文を article-type で絞る
+### [特別タスク] 2. 対象論文を article-type で絞る
+### [特別タスク] 3. 対象論文を 雑誌で絞る
 
 
 
