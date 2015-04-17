@@ -207,8 +207,8 @@ cd /BANK/PMC/20140724/elements/sec-type
  使用しないこと。
  かわりに、/BANK/PMC/20140724/elements/MERGED/allmaterials/ 配下のデータを使用すべし。
 ## [特別タスク] TASK(extract.xref): xrefを含む直上位のレベルを抜き出す。
-### 1. xrefと直上タグのポジションを抜き出し、必要なxref部分を特定、特定領域をプリント ver.2 (20150416)
-#### 1.1 xrefと直上タグのポジションを抜き出す (20150404)
+### 1. xrefと直上タグのポジションを抜き出し、必要なxref部分を特定、特定領域をプリント ver.2 (20150417)
+#### 1.1 xrefと直上タグのポジションを抜き出す (20150417)
 - 対象: /BANK/PMC/20140724/elements/ALL/ALL_sort_pos_rev-au.reg+lv
 - プログラム: /home/kamano/gitsrc/XMLOP/extract_pos_xref_lv_in_body.pl /BANK/PMC/20140724/elements/ALL/ALL_sort_pos_rev-au.reg+lv
  タグが正しく閉じられるかの情報をプリント。
