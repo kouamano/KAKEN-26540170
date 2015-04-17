@@ -194,7 +194,6 @@ cd /BANK/PMC/20140724/elements/sec-type
 - プログラム: /home/kamano/gitsrc/XMLOP/extract_pos-tag-allmaterials.pl
  <*material*></>のリージョンを一発で取り出すスクリプト。
 - スクリプト: /BANK/PMC/20140724/elements/MERGED/allmaterials/exec_command/extract_all-materials-reg_from_reg.sh
-###===いまここ 実行中===###
 - 結果: /BANK/PMC/20140724/elements/MERGED/allmaterials/allmaterials.au.reg
 ### 領域抽出(20150410)
 - 対象: /BANK/PMC/20140724/elements/MERGED/allmaterials/allmaterials.au.reg
@@ -202,6 +201,7 @@ cd /BANK/PMC/20140724/elements/sec-type
  extract_pos-tag-allmaterials.pl の出力から、直接対象領域を取り出す。
 -- example: /home/kamano/gitsrc/XMLOP/extract_content_from_reg_allmaterial.pl /BANK/PMC/20140724/articles /BANK/PMC/20140724/elements/MERGED/allmaterials/allmaterials.au.reg
 - スクリプト: /BANK/PMC/20140724/elements/MERGED/allmaterials/exec_command/extract_cont_from_reg.au.sh
+###===いまここ 実行中===###
 - 結果: /BANK/PMC/20140724/elements/MERGED/allmaterials/allmaterials.au.reg.cont
 
 ##TASK(extract.material) : extract material
