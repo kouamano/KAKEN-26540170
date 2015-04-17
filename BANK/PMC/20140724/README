@@ -152,13 +152,12 @@ cd /BANK/PMC/20140724/articles.pmid/exec_command
 
 
 
-#TASK(tag.new): XMLのエレメントタグを抽出・ソート・レベル付与(20150417やりなおし)
+#TASK(tag.new): XMLのエレメントタグを抽出・ソート・レベル付与(20150417完了)
 - 対象: PMC-XML全件 (/BANK/PMC/20140724/articles/*/*nxml)
 -- コメント中にタグがあるのでコメントを空白列に置き換える必要アリ。
 - プログラム: /home/kamano/gitsrc/XMLOP/elementPos_sequence_flag-lv.pl
 - スクリプト: /BANK/PMC/20140724/elements/ALL/exec_command/ALL_sort_pos_lv_rev-au.sh
 - 結果: /BANK/PMC/20140724/elements/ALL/ALL_sort_pos_rev-au.reg+lv
-#=いまここ　実行中=#
 
 
 
@@ -189,12 +188,13 @@ cd /BANK/PMC/20140724/elements/sec-type
 ##TAST(extract.aff) : extract affiliation
 ## -> 石川氏
 - 対象領域: /BANK/PMC/20140724/elements/aff/PMC-AFF-v1.tsv (20141114)
-##TASK(extract.material;new) : extract material 新方式
+##TASK(extract.material;new) : extract material 新方式(20140417)
 ### 領域のポインター情報作成
-- 対象: /BANK/PMC/20140724/elements/ALL/ALL_sort_pos_rev-au.reg
+- 対象: /BANK/PMC/20140724/elements/ALL/ALL_sort_pos_rev-au.reg+lv
 - プログラム: /home/kamano/gitsrc/XMLOP/extract_pos-tag-allmaterials.pl
  <*material*></>のリージョンを一発で取り出すスクリプト。
-- スクリプト: /BANK/PMC/20140724/elements/MERGED/allmaterials/exec_command/
+- スクリプト: /BANK/PMC/20140724/elements/MERGED/allmaterials/exec_command/extract_all-materials-reg_from_reg.sh
+###===いまここ 実行中===###
 - 結果: /BANK/PMC/20140724/elements/MERGED/allmaterials/allmaterials.au.reg
 ### 領域抽出(20150410)
 - 対象: /BANK/PMC/20140724/elements/MERGED/allmaterials/allmaterials.au.reg
