@@ -162,7 +162,7 @@ cd /BANK/PMC/20140724/articles.pmid/exec_command
 --- 対象ソースファイル: /BANK/PMC/20140724/articles/Acta_Biomater/Acta_Biomater_2012_Jul_8(7)_2419-2433.nxml
 --- 対象箇所: 2890-2915:s:<pub-date pub-type="ppub">: 5
 -- 原因: <pub-date> のタグが閉じられていない? -> コメント中にタグがあるため。
--- 修正: XMLに起因するので、事実上無理。
+-- 修正: xml_COM_to_SP.pl を流用。
 - スクリプト: /BANK/PMC/20140724/elements/ALL/exec_command/ALL_sort_pos_lv_rev-au.sh
 - 結果: /BANK/PMC/20140724/elements/ALL/ALL_sort_pos_rev-au.reg+lv
 #=いまここ　実行中=#
