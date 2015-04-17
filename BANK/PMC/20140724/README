@@ -235,6 +235,8 @@ cd /BANK/PMC/20140724/elements/sec-type
 - 結果: /BANK/PMC/20140724/elements/x+ref+p/reg-lv_xref-p-sec_in_body-au.bibr.exc.cont
 ### 2. 対象論文を article-type で絞る
 
+
+
 ##TASK(extract.ref) : xrefを含むp領域のextract、対応するref領域のextract
 ### 1. xrefを含むp領域のextract
 - プログラム: /home/kamano/gitsrc/XMLOP/region-xrefINp_from_XML.pl
