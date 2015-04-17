@@ -68,7 +68,7 @@
 
 
 
-#TASK(data) (20140724 に完了)
+#TASK(data) (随時更新) : データの基本情報をまとめる
 ##TASK(data.1):PMCファイルの展開
 - 展開先: /BANK/PMC/20140724/articles
 - check:
@@ -82,6 +82,32 @@ split -l 42183 Jour-All.fname Jour-split
 cd /BANK/PMC/20140724/articles.fname/20.check/exec_command
 ./jour-check.aa.sh
 ##エラーゼロを確認。
+##TASK(data.fname): ファイルネームのリスト作成
+- dir : /BANK/PMC/20140724/articles.fname/20
+##TASK(data.issn): ファイル vs. issn情報
+- dir : /BANK/PMC/20140724/articles.issn
+### 1. issnの摘出(20150405)
+- 対象: /BANK/PMC/20140724/articles/*/*.nxml
+- 対象ファイルリスト: /BANK/PMC/20140724/articles.fname/20/Jour-split.a[a-u]
+- プログラム: /home/kamano/gitsrc/XMLOP/extract_issn.pl
+- スクリプト: /BANK/PMC/20140724/articles.issn/exec_command/extract_issn.ALL.sh
+- 結果: /BANK/PMC/20140724/articles.issn/Jour-split.issn.au
+##TASK(data.pmid): ファイル vs. pmid情報
+- dir : /BANK/PMC/20140724/articles.pmid
+##TASK(data.title):  ファイル vs. title
+- dir : /BANK/PMC/20140724/articles.title
+### 1. アーティクルタイトルの抽出(20150226)
+- プログラム: /home/kamano/gitsrc/XMLOP/extract_art-title_in_front.pl
+- スクリプト: /BANK/PMC/20140724/articles.title/exec_command/jour-split.title.All.sh
+- 結果: /BANK/PMC/20140724/articles.title/jour-split.title.au
+##TASK(data.type):  ファイル vs. article-type
+- dir : /BANK/PMC/20140724/articles.type
+### 1. articletypeの摘出(20150405)
+- 対象: /BANK/PMC/20140724/articles/*/*.nxml
+- 対象ファイルリスト: /BANK/PMC/20140724/articles.fname/20/Jour-split.a[a-u]
+- プログラム: /home/kamano/gitsrc/XMLOP/extract_art-type.pl
+- スクリプト: /BANK/PMC/20140724/articles.type/exec_command/extract_art-type.ALL.sh
+- 結果: /BANK/PMC/20140724/articles.type/Jour-split.arttype.au
 
 
 
@@ -126,6 +152,7 @@ cd /BANK/PMC/20140724/articles.pmid/exec_command
 
 
 
+<<<<<<< HEAD
 #TASK(tag.new): XMLのエレメントタグを抽出・ソート(完了)
 cd /BANK/PMC/20140724/elements/ALL
 - 対象: PMC-XML全件
@@ -138,7 +165,17 @@ cd /BANK/PMC/20140724/elements/ALL
 - 対象: /BANK/PMC/20140724/elements/ALL/ALL_sort_pos_rev-au.reg
 - プログラム: /home/kamano/gitsrc/XMLOP/add-level_to_sort_pos.pl
 - スクリプト: /BANK/PMC/20140724/elements/ALL/exec_command/add_level.sh
+=======
+#TASK(tag.new): XMLのエレメントタグを抽出・ソート・レベル付与(20150416やりなおし)
+- 対象: PMC-XML全件 (/BANK/PMC/20140724/articles/*/*nxml)
+- プログラム: /home/kamano/gitsrc/XMLOP/elementPos_sequence_flag-lv.pl
+- スクリプト: /BANK/PMC/20140724/elements/ALL/exec_command/ALL_sort_pos_lv_rev-au.sh
+>>>>>>> 2924f7d82b00ca3620b3c79cb231a0551f0188a1
 - 結果: /BANK/PMC/20140724/elements/ALL/ALL_sort_pos_rev-au.reg+lv
+#=いまここ　実行中=#
+
+
+
 #TASK(sec-type): sec-typeの種類を抽出
 - ソース: /BANK/PMC/20140724/elements/sec/sec_pos-a[a-u].reg_sort
 - プログラム: /home/kamano/gitsrc/XMLOP/grep-sec-type.pl
@@ -168,15 +205,18 @@ cd /BANK/PMC/20140724/elements/sec-type
 - 対象領域: /BANK/PMC/20140724/elements/aff/PMC-AFF-v1.tsv (20141114)
 ##TASK(extract.material;new) : extract material 新方式
 ### 領域のポインター情報作成
-- 作成中スクリプト(一応完了): /home/kamano/gitsrc/XMLOP/extract_pos-tag-allmaterials.pl
- <*material*></>のリージョンを一発で取り出すスクリプト。
 - 対象: /BANK/PMC/20140724/elements/ALL/ALL_sort_pos_rev-au.reg
-### 抽出領域の決定
-- 作成中スクリプト: /home/kamano/gitsrc/XMLOP/mk-region_from-extracted-pos-tag.pl
- extract_pos-tag-allmaterials.pl の出力から、対象領域の範囲を取り出す。
-- 対象: /home/kamano/gitsrc/XMLOP/extract_pos-tag-allmaterials.pl の出力
-###==いまここ==###
-### 領域の抽出
+- プログラム: /home/kamano/gitsrc/XMLOP/extract_pos-tag-allmaterials.pl
+ <*material*></>のリージョンを一発で取り出すスクリプト。
+- スクリプト: /BANK/PMC/20140724/elements/MERGED/allmaterials/exec_command/
+- 結果: /BANK/PMC/20140724/elements/MERGED/allmaterials/allmaterials.au.reg
+### 領域抽出(20150410)
+- 対象: /BANK/PMC/20140724/elements/MERGED/allmaterials/allmaterials.au.reg
+- プログラム: /home/kamano/gitsrc/XMLOP/extract_content_from_reg_allmaterial.pl
+ extract_pos-tag-allmaterials.pl の出力から、直接対象領域を取り出す。
+-- example: /home/kamano/gitsrc/XMLOP/extract_content_from_reg_allmaterial.pl /BANK/PMC/20140724/articles /BANK/PMC/20140724/elements/MERGED/allmaterials/allmaterials.au.reg
+- スクリプト: /BANK/PMC/20140724/elements/MERGED/allmaterials/exec_command/extract_cont_from_reg.au.sh
+- 結果: /BANK/PMC/20140724/elements/MERGED/allmaterials/allmaterials.au.reg.cont
 
 ##TASK(extract.material) : extract material
 ## method領域は抽出しない
@@ -230,15 +270,47 @@ cd /BANK/PMC/20140724/elements/supplementary-material
 ### 4. マージ結果をもとにテキストを抽出、改行はスペースに変換
 - プログラム: /home/kamano/gitsrc/XMLOP/extract_content_from_region.pl
 - スクリプト: /BANK/PMC/20140724/elements/MERGED/Materials/exec_command/extract.sh
-- 対象領域: /BANK/PMC/20140724/elements/MERGED/Materials/au.merge-reg-material.cont.tsv
+- 領域定義ファイル: /BANK/PMC/20140724/elements/MERGED/Materials/au.merge-reg-material
+- 結果: /BANK/PMC/20140724/elements/MERGED/Materials/au.merge-reg-material.cont.tsv
 ###===20141114 1130 開始===###
 ### 並列化
 ###===20141114 1250 終了===###
 
-##TASK(extract.xref-pos): xrefのポジションとその上位のsec-typeを抜き出す。
-## <body> <sec> <p> <xref>
+##TASK(extract.xref): xrefを含む直上位のレベルを抜き出す。
+### 1-(2) xrefと直上タグのポジションを抜き出し、必要なxref部分を特定、特定領域をプリント ver.2 (20150416)
+#### 1-(2).1 xrefと直上タグのポジションを抜き出す (20150404)
 - 対象: /BANK/PMC/20140724/elements/ALL/ALL_sort_pos_rev-au.reg+lv
-- プログラム(作成中): /home/kamano/gitsrc/XMLOP/extract_pos_xref_in_body.pl
+- プログラム: /home/kamano/gitsrc/XMLOP/extract_pos_xref_lv_in_body.pl /BANK/PMC/20140724/elements/ALL/ALL_sort_pos_rev-au.reg+lv
+ タグが正しく閉じられるかの情報をプリント。
+- スクリプト: /BANK/PMC/20140724/elements/x+ref+p/exec_command/extract_reg-lv_xref-p-sec_in_body.sh
+- 結果: /BANK/PMC/20140724/elements/x+ref+p/reg-lv_xref-p-sec_in_body-au
+####===いまここ プログラムに不正発覚 もともとのレベル計算に不正あり===####
+#### 1-(2).2 xrefと直上タグのポジションよりbibrを抜き出す (20150404)
+- 対象: /BANK/PMC/20140724/elements/x+ref+p/reg-lv_xref-p-sec_in_body-au
+- プログラム: /home/kamano/gitsrc/XMLOP/extract_bibr_from_pos_xref_lv.pl
+- スクリプト: /BANK/PMC/20140724/elements/x+ref+p/exec_command/extract_bibr_from_xref-p-sec.sh
+- 結果: /BANK/PMC/20140724/elements/x+ref+p/reg-lv_xref-p-sec_in_body-au.bibr
+#### 1-(2).3 xrefと直上タグのポジションとbibr情報より除外すべきデータを除外する (20150406)
+- 対象: /BANK/PMC/20140724/elements/x+ref+p/reg-lv_xref-p-sec_in_body-au.bibr
+- プログラム: /home/kamano/gitsrc/XMLOP/exclude_from_rev-lv.pl
+- スクリプト: /BANK/PMC/20140724/elements/x+ref+p/exec_command/exclude_from_rev-lv-bibr.sh
+- スクリプト(2): /BANK/PMC/20140724/elements/x+ref+p/exec_command/exclude_from_rev-lv-bibr.ao.sh
+- 結果: /BANK/PMC/20140724/elements/x+ref+p/reg-lv_xref-p-sec_in_body-au.bibr.exc
+#### 1-(2).4 対象領域の抜きだし(20150407)
+- 対象: /BANK/PMC/20140724/articles/*/*.nxml
+- 対象ファイルリスト: Jour-split.a[a-u]
+- 領域情報: /BANK/PMC/20140724/elements/x+ref+p/reg-lv_xref-p-sec_in_body-au.bibr.exc
+- プログラム: /home/kamano/gitsrc/XMLOP/extract_content_xref_from_reg-lv.pl
+-- プログラム中で呼び出される外部プログラム: /usr/local/bin/streamcut
+- スクリプト: /BANK/PMC/20140724/elements/x+ref+p/exec_command/extract_content_xref_from_reg-lv.sh
+-- 問題発生: Can't open /BANK/PMC/20140724/elements/x+ref+p/reg-lv_xref-p-sec_in_body-ae.bibr.exc : ファイルが作成されていない。
+---  まず、ターゲットとなるファイルを作成
+---- 特別なスクリプトを作成: /BANK/PMC/20140724/elements/x+ref+p/exec_command/exclude_from_rev-lv-bibr.ae.sh
+---- 結果: /BANK/PMC/20140724/elements/x+ref+p/reg-lv_xref-p-sec_in_body-ae.bibr.exc
+--- 作成されたファイルを対象にした特別なスクリプトを作成: /BANK/PMC/20140724/elements/x+ref+p/exec_command/extract_content_xref_from_reg-lv.ae.sh
+--- 結果: /BANK/PMC/20140724/elements/x+ref+p/reg-lv_xref-p-sec_in_body-ae.bibr.exc.cont
+- 結果: /BANK/PMC/20140724/elements/x+ref+p/reg-lv_xref-p-sec_in_body-au.bibr.exc.cont
+### 2. 対象論文を article-type で絞る
 
 ##TASK(extract.ref) : xrefを含むp領域のextract、対応するref領域のextract
 ### 1. xrefを含むp領域のextract
@@ -251,19 +323,7 @@ cd /BANK/PMC/20140724/elements/supplementary-material
 - スクリプト: /BANK/PMC/20140724/elements/x+ref+p/exec_command/content_ref_Jour-ALL.sh
 - 結果: /BANK/PMC/20140724/elements/x+ref+p/content_ref_Jour-au
 ### 3. ペアリング ->  柴田さん
-### 考え中
-content_xrefINp_Jour-au を content_ref_Jour-au にあてる。
-content_xrefINp_Jour-au のリストが唯一でない。
-- 案1: <xref></xref>につづけて<ref></ref>を挿入
--- content_ref_Jour-au をハッシュ
--- ハッシュに対して、content_xrefINp_Jour-au より <xref rid=$RID></xref> の$RIDをあてる。
--- content_xrefINp_Jour-au に content_ref_Jour-au を挿入。
 
-##TASK(extract.title)
-##アーティクルタイトルの抽出(20150226)
-- プログラム: /home/kamano/gitsrc/XMLOP/extract_art-title_in_front.pl
-- スクリプト: /BANK/PMC/20140724/articles.title/exec_command/jour-split.title.All.sh
-- 結果: /BANK/PMC/20140724/articles.title/jour-split.title.au
 
 
 
@@ -290,7 +350,25 @@ content_xrefINp_Jour-au のリストが唯一でない。
 
 
 
-#TASK(1): 既知リソース名・機関名の決定と検索タームの決定 (8機関を決定完了)
+#TASK(1 ver.2): 既知リソース名・機関名の決定と検索タームの決定 (NBRP)
+##TASK(1.1): NBRC利用者成果からバイオリソース名+請求番号を抜き出す(20140416)
+- 利用者成果ファイル: /BANK/BioResource/Organization/NBRP_2015/user-data/reference_list.tsv
+- Resource name カラムを抜き出したもの: /BANK/BioResource/Organization/NBRP_2015/user-data/Resnames.line
+- さらに個別のリソースに分割: /BANK/BioResource/Organization/NBRP_2015/user-data/Resnames
+-- ", " (<カンマ><スペース>)で区切る
+-- "; " (<セミコロン><スペース>)で区切る
+-- プログラム: /home/kamano/gitsrc/utility/CM-SP_SC-SP_to_LF.pl
+-- "," カッコ内でなければ(<カンマ>)で区切る
+-- プログラムソース: /home/kamano/gitsrc/utility/CM_to_LF_out_Bracket.c
+-- スクリプト: /home/kamano/gitsrc/utility/CM-SP_SC-SP_to_LF.pl Resnames.line | /home/kamano/gitsrc/utility/CM_to_LF_out_Bracket if=/dev/stdin > Resnames
+-- リフォーム:  sed -e 's/^\s+//' Resnames | sed -e 's/\s+$//' > Resnames.re
+- リストをリソースネーム vs. リソース番号の形に整形
+-- プログラム(作成中): /home/kamano/gitsrc/utility/divide_lastBRK.pl
+-- 結果: /BANK/BioResource/Organization/NBRP_2015/user-data/ResnameVSid
+
+
+
+#TASK(1 ver.1): 既知リソース名・機関名の決定と検索タームの決定 (8機関を決定完了)
 #THEME[リソース名共出現解析][kaken-26540170]
 #大型機関に絞って行なうこととする。
 ##TASK(1.0): 対象機関の決定 -> 8機関に決定
@@ -361,13 +439,20 @@ content_xrefINp_Jour-au のリストが唯一でない。
 
 #TASK(5): 機関名候補検索 THEME[kaken-26540170]
 #aff領域より得られた機関名(住所つき)をmaterial、ack領域に対して検索、存在を確認。
+#所属をカンマで区切り、各フレーズを対象領域に対してマッチング。
+#<tag1>,<tag2>,<tag3>
 - 各ファイル:
 -- 所属抽出結果: /BANK/PMC/20140724/elements/aff/PMC-AFF-v1.tsv
 -- 所属抽出結果より不要なタグ等を取り除きユニークソート: /BANK/PMC/20140724/elements/aff/PMC-AFF-plain-v4
 -- 上記データをカンマ区切りで切り出した第2カラムのデータ: /BANK/PMC/20140724/elements/aff/PMC-AFF-tag2
 -- 上記各ファイルの解説: /BANK/PMC/20140724/elements/aff/README.Gmail(2015-03-14).pdf
 ##TASK(5.1): 謝辞 vs. 機関名候補検索
-##==確認中==##
+### 謝辞 vs. tag2 (石川氏)
+- 検索ターム(機関名候補): /BANK/PMC/20140724/elements/aff/PMC-AFF-tag2
+- 検索対象データ: /BANK/PMC/20140724/elements/acknowledgement/PMC-ACK-v6_pmid.tsv (PMC-ACK-v6)
+- 結果ファイル: /BANK/PMC/20140724/Matching/BioResource/Organization/_ALL_/aff/AFFvsACK/AFFvsACK.tsv
+- 結果ファイル(0hit削除): /BANK/PMC/20140724/Matching/BioResource/Organization/_ALL_/aff/AFFvsACK/AFFvsACK-del0.tsv
+##TASK(5.2): material vs. 機関名候補検索
 
 
 
@@ -378,7 +463,6 @@ content_xrefINp_Jour-au のリストが唯一でない。
 ### 2. 機関名(8機関)検索(石川氏)(20141225)
 - 検索ターム: /BANK/Organization/_ALL_/organization-name/8orgs.name.terms
 - 結果ファイル:  /BANK/PMC/20140724/Matching/BioResource/Organization/_ALL_/aff/PMC-AFF-plain-10_ORG.txt
-
 ##TASK(3.2): ack領域より機関名検索
 ### 1. acknowledgement エレメントの抽出(石川氏)
 - 対象領域: /BANK/PMC/20140724/elements/acknowledgement/PMC-ACK-v6_pmid.tsv
