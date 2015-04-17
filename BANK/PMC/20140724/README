@@ -154,15 +154,8 @@ cd /BANK/PMC/20140724/articles.pmid/exec_command
 
 #TASK(tag.new): XMLのエレメントタグを抽出・ソート・レベル付与(20150417やりなおし)
 - 対象: PMC-XML全件 (/BANK/PMC/20140724/articles/*/*nxml)
+-- コメント中にタグがあるのでコメントを空白列に置き換える必要アリ。
 - プログラム: /home/kamano/gitsrc/XMLOP/elementPos_sequence_flag-lv.pl
--- なんかおかしい
--- ALL_sort_pos_rev-aa.reg+lv の例  
---- とりがー: 184171-184180:e:</article>:     2
---- 対象ファイル: ALL_sort_pos_rev-aa.reg+lv
---- 対象ソースファイル: /BANK/PMC/20140724/articles/Acta_Biomater/Acta_Biomater_2012_Jul_8(7)_2419-2433.nxml
---- 対象箇所: 2890-2915:s:<pub-date pub-type="ppub">: 5
--- 原因: <pub-date> のタグが閉じられていない? -> コメント中にタグがあるため。
--- 修正: xml_COM_to_SP.pl を流用。
 - スクリプト: /BANK/PMC/20140724/elements/ALL/exec_command/ALL_sort_pos_lv_rev-au.sh
 - 結果: /BANK/PMC/20140724/elements/ALL/ALL_sort_pos_rev-au.reg+lv
 #=いまここ　実行中=#
