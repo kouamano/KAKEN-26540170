@@ -157,10 +157,12 @@ cd /BANK/PMC/20140724/articles.pmid/exec_command
 - プログラム: /home/kamano/gitsrc/XMLOP/elementPos_sequence_flag-lv.pl
 -- なんかおかしい
 -- ALL_sort_pos_rev-aa.reg+lv の例  
---- 対象ファイル: ./ACS_Appl_Mater_Interfaces/ACS_Appl_Mater_Interfaces_2010_Feb_24_2(2)_366-374.nxml
---- 対象箇所: 3329-3424:s:<graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="am-2009-00932z_0005" id="tgr1"/>:   6
--- 原因: 空要素の判定
--- 修正(20140417)
+--- とりがー: 184171-184180:e:</article>:     2
+--- 対象ファイル: ALL_sort_pos_rev-aa.reg+lv
+--- 対象ソースファイル: ./Acta_Biomater/Acta_Biomater_2012_Jul_8(7)_2419-2433.nxml
+--- 対象箇所: 
+-- 原因: 
+-- 修正
 - スクリプト: /BANK/PMC/20140724/elements/ALL/exec_command/ALL_sort_pos_lv_rev-au.sh
 - 結果: /BANK/PMC/20140724/elements/ALL/ALL_sort_pos_rev-au.reg+lv
 #=いまここ　実行中=#
