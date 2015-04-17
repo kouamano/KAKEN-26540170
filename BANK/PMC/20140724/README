@@ -223,21 +223,15 @@ cd /BANK/PMC/20140724/elements/sec-type
 - 対象: /BANK/PMC/20140724/elements/x+ref+p/reg-lv_xref-p-sec_in_body-au.bibr
 - プログラム: /home/kamano/gitsrc/XMLOP/exclude_from_rev-lv.pl
 - スクリプト: /BANK/PMC/20140724/elements/x+ref+p/exec_command/exclude_from_rev-lv-bibr.sh
-####===いまここ 修正版で再計算(20140417)===####
 - 結果: /BANK/PMC/20140724/elements/x+ref+p/reg-lv_xref-p-sec_in_body-au.bibr.exc
-#### 1.4 対象領域の抜きだし(20150407)
+#### 1.4 対象領域の抜きだし(20150417)
 - 対象: /BANK/PMC/20140724/articles/*/*.nxml
 - 対象ファイルリスト: Jour-split.a[a-u]
 - 領域情報: /BANK/PMC/20140724/elements/x+ref+p/reg-lv_xref-p-sec_in_body-au.bibr.exc
 - プログラム: /home/kamano/gitsrc/XMLOP/extract_content_xref_from_reg-lv.pl
 -- プログラム中で呼び出される外部プログラム: /usr/local/bin/streamcut
 - スクリプト: /BANK/PMC/20140724/elements/x+ref+p/exec_command/extract_content_xref_from_reg-lv.sh
--- 問題発生: Can't open /BANK/PMC/20140724/elements/x+ref+p/reg-lv_xref-p-sec_in_body-ae.bibr.exc : ファイルが作成されていない。
----  まず、ターゲットとなるファイルを作成
----- 特別なスクリプトを作成: /BANK/PMC/20140724/elements/x+ref+p/exec_command/exclude_from_rev-lv-bibr.ae.sh
----- 結果: /BANK/PMC/20140724/elements/x+ref+p/reg-lv_xref-p-sec_in_body-ae.bibr.exc
---- 作成されたファイルを対象にした特別なスクリプトを作成: /BANK/PMC/20140724/elements/x+ref+p/exec_command/extract_content_xref_from_reg-lv.ae.sh
---- 結果: /BANK/PMC/20140724/elements/x+ref+p/reg-lv_xref-p-sec_in_body-ae.bibr.exc.cont
+####===いまここ 修正版で再計算(20140417)===####
 - 結果: /BANK/PMC/20140724/elements/x+ref+p/reg-lv_xref-p-sec_in_body-au.bibr.exc.cont
 ### 2. 対象論文を article-type で絞る
 
