@@ -153,6 +153,7 @@ cd /BANK/PMC/20140724/articles.pmid/exec_command
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #TASK(tag.new): XMLのエレメントタグを抽出・ソート(完了)
 cd /BANK/PMC/20140724/elements/ALL
 - 対象: PMC-XML全件
@@ -167,12 +168,15 @@ cd /BANK/PMC/20140724/elements/ALL
 - スクリプト: /BANK/PMC/20140724/elements/ALL/exec_command/add_level.sh
 =======
 #TASK(tag.new): XMLのエレメントタグを抽出・ソート・レベル付与(20150416やりなおし)
+=======
+#TASK(tag.new): XMLのエレメントタグを抽出・ソート・レベル付与(20150417完了)
+>>>>>>> b4770d1cc6d90762da1f3a71964890b46be2be72
 - 対象: PMC-XML全件 (/BANK/PMC/20140724/articles/*/*nxml)
+-- コメント中にタグがあるのでコメントを空白列に置き換える必要アリ。
 - プログラム: /home/kamano/gitsrc/XMLOP/elementPos_sequence_flag-lv.pl
 - スクリプト: /BANK/PMC/20140724/elements/ALL/exec_command/ALL_sort_pos_lv_rev-au.sh
 >>>>>>> 2924f7d82b00ca3620b3c79cb231a0551f0188a1
 - 結果: /BANK/PMC/20140724/elements/ALL/ALL_sort_pos_rev-au.reg+lv
-#=いまここ　実行中=#
 
 
 
@@ -203,114 +207,55 @@ cd /BANK/PMC/20140724/elements/sec-type
 ##TAST(extract.aff) : extract affiliation
 ## -> 石川氏
 - 対象領域: /BANK/PMC/20140724/elements/aff/PMC-AFF-v1.tsv (20141114)
-##TASK(extract.material;new) : extract material 新方式
-### 領域のポインター情報作成
-- 対象: /BANK/PMC/20140724/elements/ALL/ALL_sort_pos_rev-au.reg
+##TASK(extract.material;new) 新方式(20140417)
+### 領域のポインター情報作成(20140417)
+- 対象: /BANK/PMC/20140724/elements/ALL/ALL_sort_pos_rev-au.reg+lv
 - プログラム: /home/kamano/gitsrc/XMLOP/extract_pos-tag-allmaterials.pl
  <*material*></>のリージョンを一発で取り出すスクリプト。
-- スクリプト: /BANK/PMC/20140724/elements/MERGED/allmaterials/exec_command/
+- スクリプト: /BANK/PMC/20140724/elements/MERGED/allmaterials/exec_command/extract_all-materials-reg_from_reg.sh
 - 結果: /BANK/PMC/20140724/elements/MERGED/allmaterials/allmaterials.au.reg
-### 領域抽出(20150410)
+### 領域抽出(20150417)
 - 対象: /BANK/PMC/20140724/elements/MERGED/allmaterials/allmaterials.au.reg
 - プログラム: /home/kamano/gitsrc/XMLOP/extract_content_from_reg_allmaterial.pl
  extract_pos-tag-allmaterials.pl の出力から、直接対象領域を取り出す。
 -- example: /home/kamano/gitsrc/XMLOP/extract_content_from_reg_allmaterial.pl /BANK/PMC/20140724/articles /BANK/PMC/20140724/elements/MERGED/allmaterials/allmaterials.au.reg
 - スクリプト: /BANK/PMC/20140724/elements/MERGED/allmaterials/exec_command/extract_cont_from_reg.au.sh
 - 結果: /BANK/PMC/20140724/elements/MERGED/allmaterials/allmaterials.au.reg.cont
-
-##TASK(extract.material) : extract material
-## method領域は抽出しない
-## 参考: TASK(2.1)-2
-## 件数:
-## <sec sec-type=".*material.*"> : 502994
-## <sec sec-type="materials|methods"> : 227009
-## <sec sec-type="material.*"> : 約23万
-## <sec sec-type="supplementary.*materials*"> : 約19万
-## <supplementary-material> : 700187
-## <inline-supplementary-material> : 1511
-## 考え中: <sec sec-type=".*material.*"> で抽出した領域内に
-## <supplementary-material> を含むものがある。
-## 二重抽出にならないようにする必要がある。
-## ->
-## /BANK/PMC/20140724/elements/ALL/*reg より materialをgrepして調べる。
-## ->
-## まず、<sec sec-type="material.*">領域を抽出 <- materials|methodsもmaterialがさきにくる模様。
-## つぎに、<supplementaly-material>領域を抽出
-## つぎに、両者をマージ
-## つぎに、かぶる領域を削除 <- より大きい領域を採用
-### 1. <sec sec-type=".*material.*"> セクションの抽出(完了)
-#### 1.1 <sec>タグの領域を抽出済みのソート済み全タグ領域より抽出(NEW)(完了)
-- プログラム: /home/kamano/gitsrc/XMLOP/elementPos_sec_from_ALL.pl
-- スクリプト: /BANK/PMC/20140724/elements/sec/exec_command/sec_pos_from_ALL-au.sh
-- 結果: /BANK/PMC/20140724/elements/sec/sec_sort_pos-au.reg
-#### revに対して同じ結果なのでこのままでOK
-#### 1.2 抽出されたソート済み<sec>タグ領域　から　マテリアルセクションの領域を抽出(NEW)(完了)
-- プログラム: /home/kamano/gitsrc/XMLOP/region-Material_from_reg_sort.pl
-cd /BANK/PMC/20140724/elements/sec
-- スクリプト: /home/kamano/gitsrc/XMLOP/region-Material_from_reg_sort.pl sec_sort_pos-au.reg > sec_sort_pos-au.reg-Material
-- 結果: /BANK/PMC/20140724/elements/sec/sec_sort_pos-au.reg-Material
-### 2. <supplementary-material> セクションの抽出
-#### 2.1 <supplementary-material>タグの領域を抽出済みのソート済み全タグ領域より抽出(NEW)(完了)
-- プログラム: /home/kamano/gitsrc/XMLOP/elementPos_sup-material_from_ALL.pl
-- スクリプト: /BANK/PMC/20140724/elements/supplementary-material/exec_command/sup-material_pos_from_ALL-au.sh
-- 結果: /BANK/PMC/20140724/elements/supplementary-material/sup-material_sort_pos-au.reg
-####====20141024 終了====####
-#### 2.2 抽出されたソート済み<supplementary-material>タグ領域からマテリアルセクションの領域を>抽出(NEW)
-- プログラム: /home/kamano/gitsrc/XMLOP/region-sup-Material_from_reg_sort.pl
-- スクリプト:
-cd /BANK/PMC/20140724/elements/supplementary-material
-/home/kamano/gitsrc/XMLOP/region-sup-Material_from_reg_sort.pl sup-material_sort_pos-au.reg > sup-material_sort_pos-au.reg-sup-Material
-- 結果: /BANK/PMC/20140724/elements/supplementary-material/sup-material_sort_pos-au.reg-sup-Material
-####====20141024 終了====####
-### 3. reg-Material と reg-sup-Matarial をマージ
-- プログラム: /home/kamano/gitsrc/XMLOP/merge_region-Material.pl
-- スクリプト: /BANK/PMC/20140724/elements/MERGED/Materials/exec_command/merge_region-material.sh
-- 結果ディレクトリ: /BANK/PMC/20140724/elements/MERGED/Materials/
-- 結果: /BANK/PMC/20140724/elements/MERGED/Materials/au.merge-reg-material
-### 4. マージ結果をもとにテキストを抽出、改行はスペースに変換
-- プログラム: /home/kamano/gitsrc/XMLOP/extract_content_from_region.pl
-- スクリプト: /BANK/PMC/20140724/elements/MERGED/Materials/exec_command/extract.sh
-- 領域定義ファイル: /BANK/PMC/20140724/elements/MERGED/Materials/au.merge-reg-material
-- 結果: /BANK/PMC/20140724/elements/MERGED/Materials/au.merge-reg-material.cont.tsv
-###===20141114 1130 開始===###
-### 並列化
-###===20141114 1250 終了===###
-
-##TASK(extract.xref): xrefを含む直上位のレベルを抜き出す。
-### 1-(2) xrefと直上タグのポジションを抜き出し、必要なxref部分を特定、特定領域をプリント ver.2 (20150416)
-#### 1-(2).1 xrefと直上タグのポジションを抜き出す (20150404)
+## [old] TASK(extract.material) : extract material
+- old dir: /BANK/PMC/20140724/elements/MERGED/Materials
+ 使用しないこと。
+ かわりに、/BANK/PMC/20140724/elements/MERGED/allmaterials/ 配下のデータを使用すべし。
+## TASK(extract.xref): xrefを含む直上位のレベルを抜き出す。
+### 1. xrefと直上タグのポジションを抜き出し、必要なxref部分を特定、特定領域をプリント ver.2 (20150417)
+#### 1.1 xrefと直上タグのポジションを抜き出す (20150417)
 - 対象: /BANK/PMC/20140724/elements/ALL/ALL_sort_pos_rev-au.reg+lv
 - プログラム: /home/kamano/gitsrc/XMLOP/extract_pos_xref_lv_in_body.pl /BANK/PMC/20140724/elements/ALL/ALL_sort_pos_rev-au.reg+lv
  タグが正しく閉じられるかの情報をプリント。
 - スクリプト: /BANK/PMC/20140724/elements/x+ref+p/exec_command/extract_reg-lv_xref-p-sec_in_body.sh
 - 結果: /BANK/PMC/20140724/elements/x+ref+p/reg-lv_xref-p-sec_in_body-au
-####===いまここ プログラムに不正発覚 もともとのレベル計算に不正あり===####
-#### 1-(2).2 xrefと直上タグのポジションよりbibrを抜き出す (20150404)
+#### 1.2 xrefと直上タグのポジションよりbibrを抜き出す (20150417)
 - 対象: /BANK/PMC/20140724/elements/x+ref+p/reg-lv_xref-p-sec_in_body-au
 - プログラム: /home/kamano/gitsrc/XMLOP/extract_bibr_from_pos_xref_lv.pl
 - スクリプト: /BANK/PMC/20140724/elements/x+ref+p/exec_command/extract_bibr_from_xref-p-sec.sh
 - 結果: /BANK/PMC/20140724/elements/x+ref+p/reg-lv_xref-p-sec_in_body-au.bibr
-#### 1-(2).3 xrefと直上タグのポジションとbibr情報より除外すべきデータを除外する (20150406)
+#### 1.3 xrefと直上タグのポジションとbibr情報より除外すべきデータを除外する (20150417)
 - 対象: /BANK/PMC/20140724/elements/x+ref+p/reg-lv_xref-p-sec_in_body-au.bibr
 - プログラム: /home/kamano/gitsrc/XMLOP/exclude_from_rev-lv.pl
 - スクリプト: /BANK/PMC/20140724/elements/x+ref+p/exec_command/exclude_from_rev-lv-bibr.sh
-- スクリプト(2): /BANK/PMC/20140724/elements/x+ref+p/exec_command/exclude_from_rev-lv-bibr.ao.sh
 - 結果: /BANK/PMC/20140724/elements/x+ref+p/reg-lv_xref-p-sec_in_body-au.bibr.exc
-#### 1-(2).4 対象領域の抜きだし(20150407)
+#### 1.4 対象領域の抜きだし(20150417)
 - 対象: /BANK/PMC/20140724/articles/*/*.nxml
 - 対象ファイルリスト: Jour-split.a[a-u]
 - 領域情報: /BANK/PMC/20140724/elements/x+ref+p/reg-lv_xref-p-sec_in_body-au.bibr.exc
 - プログラム: /home/kamano/gitsrc/XMLOP/extract_content_xref_from_reg-lv.pl
 -- プログラム中で呼び出される外部プログラム: /usr/local/bin/streamcut
 - スクリプト: /BANK/PMC/20140724/elements/x+ref+p/exec_command/extract_content_xref_from_reg-lv.sh
--- 問題発生: Can't open /BANK/PMC/20140724/elements/x+ref+p/reg-lv_xref-p-sec_in_body-ae.bibr.exc : ファイルが作成されていない。
----  まず、ターゲットとなるファイルを作成
----- 特別なスクリプトを作成: /BANK/PMC/20140724/elements/x+ref+p/exec_command/exclude_from_rev-lv-bibr.ae.sh
----- 結果: /BANK/PMC/20140724/elements/x+ref+p/reg-lv_xref-p-sec_in_body-ae.bibr.exc
---- 作成されたファイルを対象にした特別なスクリプトを作成: /BANK/PMC/20140724/elements/x+ref+p/exec_command/extract_content_xref_from_reg-lv.ae.sh
---- 結果: /BANK/PMC/20140724/elements/x+ref+p/reg-lv_xref-p-sec_in_body-ae.bibr.exc.cont
+####===いまここ 修正版で再計算(20140417)===####
 - 結果: /BANK/PMC/20140724/elements/x+ref+p/reg-lv_xref-p-sec_in_body-au.bibr.exc.cont
-### 2. 対象論文を article-type で絞る
+### [特別タスク] 2. 対象論文を article-type で絞る
+### [特別タスク] 3. 対象論文を 雑誌で絞る
+
+
 
 ##TASK(extract.ref) : xrefを含むp領域のextract、対応するref領域のextract
 ### 1. xrefを含むp領域のextract
