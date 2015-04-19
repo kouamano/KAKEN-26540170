@@ -231,10 +231,9 @@ cd /BANK/PMC/20140724/elements/sec-type
 - プログラム: /home/kamano/gitsrc/XMLOP/extract_content_xref_from_reg-lv.pl
 -- プログラム中で呼び出される外部プログラム: /usr/local/bin/streamcut
 - スクリプト: /BANK/PMC/20140724/elements/x+ref+p/exec_command/extract_content_xref_from_reg-lv.sh
-####===いまここ 修正版で再計算(20140417)===####
 - 結果: /BANK/PMC/20140724/elements/x+ref+p/reg-lv_xref-p-sec_in_body-au.bibr.exc.cont
-### [特別タスク] 2. 対象論文を article-type で絞る
-### [特別タスク] 3. 対象論文を 雑誌で絞る
+### [特別タスク] 2. 対象論文を 雑誌(心臓病学)とarticle-type(原著論文)で絞る
+- 結果: /BANK/PMC/20140724/elements/x+ref+p/targeted/target_cont.au
 
 
 
