@@ -286,13 +286,13 @@ cd /BANK/PMC/20140724/elements/sec-type
 -- プログラムソース: /home/kamano/gitsrc/utility/CM_to_LF_out_Bracket_line.c
 -- スクリプト: /home/kamano/gitsrc/utility/CM-SP_SC-SP_to_LF.pl Resnames.line | /home/kamano/gitsrc/utility/CM_to_LF_out_Bracket_line if=/dev/stdin > Resnames
 -- リフォーム: sed -e 's/^\s+//' Resnames | sed -e 's/\s+$//' > Resnames.re
-##==いまここ==##
 - リストをリソースネーム vs. リソース番号の形に整形
 -- プログラム: /home/kamano/gitsrc/utility/divide_lastBRK.pl
 -- 結果: /BANK/BioResource/Organization/NBRP_2015/user-data/ResnameVSid
 ##TASK(1.2.1): 既知バイオリソースシノニム決定
 -- 結果: /BANK/BioResource/Organization/NBRP_2015/user-data/ResnameVSid
  第二カラムがid、第一カラムが名前(シノニム)。
+##==いまここ 確認中==##
 
 
 
