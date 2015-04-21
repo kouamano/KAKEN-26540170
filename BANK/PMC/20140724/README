@@ -244,12 +244,24 @@ cd /BANK/PMC/20140724/elements/sec-type
 -- /home/kamano/gitsrc/XMLOP/splitter3.pl
 - スクリプト: /BANK/PMC/20140724/terms/whole/patt.3/exec_command/split_Word_Jour-ALL.sh
 - 出力ファイル: /BANK/PMC/20140724/terms/whole/patt.3/Word_Jour-au
-##TASK(term-count.allmaterials; patt.4) 
+##TASK(term-count.allmaterials; patt.4)(20150421完了)
+###各ファイルのsplit, sort, uniq, count
+- cd /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.4
 - プログラム:
 -- /home/kamano/gitsrc/utility/drop_1ST-col_from_TSV.pl
 -- /home/kamano/gitsrc/XMLOP/drop_tag-text.pl
 -- /home/kamano/gitsrc/XMLOP/splitter4.pl
-
+- スクリプト例: /home/kamano/gitsrc/utility/drop_1ST-col_from_TSV.pl /BANK/PMC/20140724/elements/MERGED/allmaterials/allmaterials.au.reg.cont | /home/kamano/gitsrc/XMLOP/drop_tag-text.pl | /home/kamano/gitsrc/XMLOP/splitter4.pl | tr ' ' '\n' | sort |uniq -c > /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.4/allmaterials.au.sort.uniq.count
+- スクリプト: /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.4/split-sort-count.sh
+###すべてのファイルのcount結果をマージ
+####すべてのファイルをマージ、タームでソート
+- プログラム: /home/kamano/gitsrc/utility/rep4count.pl
+- スクリプト: cat /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.4/allmaterials.*.sort.uniq.count | /home/kamano/gitsrc/utility/rep4count.pl | sort -t '	' -k2 > /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.4/ALL.merge
+####マージ結果を集計
+- プログラム: /home/kamano/gitsrc/utility/sum_count_from_mixed_sort.pl
+- スクリプト: /home/kamano/gitsrc/utility/sum_count_from_mixed_sort.pl /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.4/ALL.merge > /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.4/ALL.merge.sort.count
+##
+- 結果: /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.4/ALL.merge.sort.count
 
 #TASK(check-correct): 正解データに対して機関名検索を行いカバレッジを確認 (20150123)
 ## 1. 対象ファイルの決定
