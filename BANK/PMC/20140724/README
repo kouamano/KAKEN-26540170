@@ -315,6 +315,19 @@ cd /BANK/PMC/20140724/elements/sec-type
 - 文頭の空タームを除去: /BANK/BioResource/Organization/NBRP_2015/user-data/ResnameVSid.sort.uniq.count.re
 ###TASK(1.2.3): 既知バイオリソース検索タームの絞り込み
 ###materialおよびacknowledgementの出現タームを既知バイオリソース検索シノニムにヒットさせ、ヒットとなったバイオリソースを実際の検索タームとする。
+###出現タームがリソース名のサブストリングであることを期待している。
+####バイオリソース検索タームの決定
+- cd /BANK/BioResource/Organization/NBRP_2015/user-data
+- awk -F'	' '{print $2}' ResnameVSid.sort.uniq.count.re > resterms.search.pre
+- awk -F'	' '{print $3}' ResnameVSid.sort.uniq.count.re >> resterms.search.pre
+- ./exec_command/reform_resterms.pl resterms.search.pre > resterms.search.pre.re
+- sort resterms.search.pre.re | uniq > resterms.sort.uniq
+- 検索ターム: /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq
+####===いまここ===####
+####material検索タームの決定
+####本文の出現ターム
+####acknowledgement検索タームの決定
+####本文の出現ターム
 
 
 
