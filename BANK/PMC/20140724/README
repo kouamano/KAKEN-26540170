@@ -275,7 +275,7 @@ cd /BANK/PMC/20140724/elements/sec-type
 ##TASK(1.1): 既知機関名決定 -> 石川氏
 ###TASK(1.1.1): 既知機関シノニム決定 -> 石川氏
 ##TASK(1.2): 既知バイオリソース名決定
-## NBRC利用者成果からバイオリソース名+請求番号を抜き出す(20140420)
+###TASK(1.2.1) NBRC利用者成果からバイオリソース名+請求番号を抜き出す(20140420)
 - 利用者成果ファイル: /BANK/BioResource/Organization/NBRP_2015/user-data/reference_list.tsv
 - Resource name カラムを抜き出したもの: /BANK/BioResource/Organization/NBRP_2015/user-data/Resnames.line
 - さらに個別のリソースに分割: /BANK/BioResource/Organization/NBRP_2015/user-data/Resnames
@@ -289,10 +289,12 @@ cd /BANK/PMC/20140724/elements/sec-type
 - リストをリソースネーム vs. リソース番号の形に整形
 -- プログラム: /home/kamano/gitsrc/utility/divide_lastBRK.pl
 -- 結果: /BANK/BioResource/Organization/NBRP_2015/user-data/ResnameVSid
-##TASK(1.2.1): 既知バイオリソースシノニム決定
--- 結果: /BANK/BioResource/Organization/NBRP_2015/user-data/ResnameVSid
- 第二カラムがid、第一カラムが名前(シノニム)。
-##==いまここ 確認中==##
+###TASK(1.2.2): 既知バイオリソース検索シノニム決定
+- 対象: /BANK/BioResource/Organization/NBRP_2015/user-data/ResnameVSid
+- ソートユニークカウント: /BANK/BioResource/Organization/NBRP_2015/user-data/ResnameVSid.sort.uniq.count
+- リフォーム: ./reform_sort-uniq-count.pl ResnameVSid.sort.uniq.count > ResnameVSid.sort.uniq.count.re
+- 文頭の空タームを除去: /BANK/BioResource/Organization/NBRP_2015/user-data/ResnameVSid.sort.uniq.count.re
+###==いまここ==###
 
 
 
