@@ -169,18 +169,6 @@ cd /BANK/PMC/20140724/elements/sec-type
 
 
 
-#TASK(term-count): 出現タームのカウント
-##タグの除去とsplit
-- プログラム:
--- /home/kamano/gitsrc/XMLOP/drop_tag-text.pl
--- /home/kamano/gitsrc/XMLOP/splitter3.pl
-- スクリプト: /BANK/PMC/20140724/terms/whole/patt.3/exec_command/split_Word_Jour-ALL.sh
-- 出力ファイル: /BANK/PMC/20140724/terms/whole/patt.3/Word_Jour-au
-###==20141204 1129 開始==###
-##分割ファイルのソート
-
-
-
 #TASK(extract)
 ##TASK(extract.ack) :  extract acknowledgement
 ## -> 石川氏
@@ -246,6 +234,21 @@ cd /BANK/PMC/20140724/elements/sec-type
 - 結果: /BANK/PMC/20140724/elements/x+ref+p/content_ref_Jour-au
 ### 3. ペアリング ->  柴田さん
 
+
+
+#TASK(term-count): 出現タームのカウント
+##TASK(term-count.ALL)
+###タグの除去とsplit
+- プログラム:
+-- /home/kamano/gitsrc/XMLOP/drop_tag-text.pl
+-- /home/kamano/gitsrc/XMLOP/splitter3.pl
+- スクリプト: /BANK/PMC/20140724/terms/whole/patt.3/exec_command/split_Word_Jour-ALL.sh
+- 出力ファイル: /BANK/PMC/20140724/terms/whole/patt.3/Word_Jour-au
+##TASK(term-count.allmaterials; patt.4) 
+- プログラム:
+-- /home/kamano/gitsrc/utility/drop_1ST-col_from_TSV.pl
+-- /home/kamano/gitsrc/XMLOP/drop_tag-text.pl
+-- /home/kamano/gitsrc/XMLOP/splitter4.pl
 
 
 #TASK(check-correct): 正解データに対して機関名検索を行いカバレッジを確認 (20150123)
