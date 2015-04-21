@@ -265,6 +265,8 @@ cd /BANK/PMC/20140724/elements/sec-type
 ##
 - 結果: /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.4/ALL.merge.sort.count
 
+
+
 #TASK(check-correct): 正解データに対して機関名検索を行いカバレッジを確認 (20150123)
 ## 1. 対象ファイルの決定
 ## XMLと正解データのPMIDをマッチさせる
@@ -311,7 +313,8 @@ cd /BANK/PMC/20140724/elements/sec-type
 - ソートユニークカウント: /BANK/BioResource/Organization/NBRP_2015/user-data/ResnameVSid.sort.uniq.count
 - リフォーム: ./reform_sort-uniq-count.pl ResnameVSid.sort.uniq.count > ResnameVSid.sort.uniq.count.re
 - 文頭の空タームを除去: /BANK/BioResource/Organization/NBRP_2015/user-data/ResnameVSid.sort.uniq.count.re
-###==いまここ==###
+###TASK(1.2.3): 既知バイオリソース検索タームの絞り込み
+###materialおよびacknowledgementの出現タームを既知バイオリソース検索シノニムにヒットさせ、ヒットとなったバイオリソースを実際の検索タームとする。
 
 
 
