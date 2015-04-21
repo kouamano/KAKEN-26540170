@@ -260,6 +260,8 @@ cd /BANK/PMC/20140724/elements/sec-type
 ####マージ結果を集計
 - プログラム: /home/kamano/gitsrc/utility/sum_count_from_mixed_sort.pl
 - スクリプト: /home/kamano/gitsrc/utility/sum_count_from_mixed_sort.pl /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.4/ALL.merge > /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.4/ALL.merge.sort.count
+###空文字列を削除
+- /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.4/ALL.merge.sort.count
 ##
 - 結果: /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.4/ALL.merge.sort.count
 
