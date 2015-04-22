@@ -340,7 +340,10 @@ cd /BANK/PMC/20140724/elements/sec-type
 - 検索ターム: /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.1
 ####===いまここ===####
 ####material出現タームがサブ文字列になっているバイオリソースネーム
+- 対象: /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.1
+- サブ文字列: /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.4/terms.search.esc
 - プログラム: /home/kamano/gitsrc/utility/match_substr.pl
+- スクリプト: /home/kamano/gitsrc/utility/match_substr.pl /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.1 /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.4/terms.search.esc > /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.1.allmaterials-hit
 ####acknowledgement出現タームがサブ文字列になっているバイオリソースネーム
 
 
