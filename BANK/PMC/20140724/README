@@ -328,6 +328,7 @@ cd /BANK/PMC/20140724/elements/sec-type
 ###TASK(1.2.3): 既知バイオリソース検索タームの絞り込み
 ###materialおよびacknowledgementの出現タームを既知バイオリソース検索シノニムにヒットさせ、ヒットとなったバイオリソースを実際の検索タームとする。
 ###出現タームがリソース名のサブストリングであることを期待している。
+###結局、ほとんどすべてのサブストリングにマッチしてしまい、意味が無かった。(20140422)
 ####バイオリソース検索タームの決定
 - cd /BANK/BioResource/Organization/NBRP_2015/user-data
 - awk -F'	' '{print $2}' ResnameVSid.sort.uniq.count.re > resterms.search.pre
@@ -338,12 +339,12 @@ cd /BANK/PMC/20140724/elements/sec-type
 ####極端に短い、長いネームを除去
 - プログラム: /BANK/BioResource/Organization/NBRP_2015/user-data/exec_command/drop_suspicius-length.pl
 - 検索ターム: /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.1
-####===いまここ===####
 ####material出現タームがサブ文字列になっているバイオリソースネーム
 - 対象: /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.1
 - サブ文字列: /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.4/terms.search.esc
 - プログラム: /home/kamano/gitsrc/utility/match_substr.pl
 - スクリプト: /home/kamano/gitsrc/utility/match_substr.pl /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.1 /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.4/terms.search.esc > /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.1.allmaterials-hit
+####===いまここ===####
 ####acknowledgement出現タームがサブ文字列になっているバイオリソースネーム
 
 
