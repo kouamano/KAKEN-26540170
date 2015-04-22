@@ -245,7 +245,7 @@ cd /BANK/PMC/20140724/elements/sec-type
 - スクリプト: /BANK/PMC/20140724/terms/whole/patt.3/exec_command/split_Word_Jour-ALL.sh
 - 出力ファイル: /BANK/PMC/20140724/terms/whole/patt.3/Word_Jour-au
 ##TASK(term-count.allmaterials; patt.4)(20150421完了)
-###各ファイルのsplit, sort, uniq, count
+###各ファイルのtag除去, split, sort, uniq, count
 - cd /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.4
 - プログラム:
 -- /home/kamano/gitsrc/utility/drop_1ST-col_from_TSV.pl
@@ -264,7 +264,7 @@ cd /BANK/PMC/20140724/elements/sec-type
 - /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.4/ALL.merge.sort.count
 ##
 - 結果: /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.4/ALL.merge.sort.count
-
+##TASK(term-count.acknowledgement; patt.4)
 
 
 #TASK(check-correct): 正解データに対して機関名検索を行いカバレッジを確認 (20150123)
