@@ -323,11 +323,11 @@ cd /BANK/PMC/20140724/elements/sec-type
 - ./exec_command/reform_resterms.pl resterms.search.pre > resterms.search.pre.re
 - sort resterms.search.pre.re | uniq > resterms.sort.uniq
 - 検索ターム: /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq
+####極端に短い、長いネームを除去
+- 検索ターム: /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq
 ####===いまここ===####
-####material検索タームの決定
-####本文の出現ターム
-####acknowledgement検索タームの決定
-####本文の出現ターム
+####material出現タームがサブ文字列になっているネーム
+####acknowledgement出現タームがサブ文字列になっているネーム
 
 
 
