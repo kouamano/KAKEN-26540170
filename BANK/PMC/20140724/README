@@ -264,6 +264,18 @@ cd /BANK/PMC/20140724/elements/sec-type
 - /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.4/ALL.merge.sort.count
 ##
 - 結果: /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.4/ALL.merge.sort.count
+## perl検索用のターム作成
+- 対象: /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.4/ALL.merge.sort.count
+### カウントを消去
+- スクリプト:  sed -e 's/^[^ ]* //;' ALL.merge.sort.count > terms.search.pre
+### 1文字、極端に長いタームを削除
+- プログラム: /home/kamano/gitsrc/utility/drop_suspicius-length.pl
+- スクリプト: /home/kamano/gitsrc/utility/drop_suspicius-length.pl terms.search.pre > terms.search
+### 特殊文字をエスケープ
+- プログラム: escape_char
+- スクリプト: escape_char sf=/BANK/PMC/20140724/terms/MERGED/allmaterials/patt.4/terms.search lf=/usr/local/var/perl_esc.list > /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.4/terms.search.esc
+##
+- 結果: /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.4/terms.search.esc
 ##TASK(term-count.acknowledgement; patt.4)
 
 
@@ -327,8 +339,9 @@ cd /BANK/PMC/20140724/elements/sec-type
 - プログラム: /BANK/BioResource/Organization/NBRP_2015/user-data/exec_command/drop_suspicius-length.pl
 - 検索ターム: /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.1
 ####===いまここ===####
-####material出現タームがサブ文字列になっているネーム
-####acknowledgement出現タームがサブ文字列になっているネーム
+####material出現タームがサブ文字列になっているバイオリソースネーム
+- プログラム: /home/kamano/gitsrc/utility/match_substr.pl
+####acknowledgement出現タームがサブ文字列になっているバイオリソースネーム
 
 
 
