@@ -344,8 +344,8 @@ cd /BANK/PMC/20140724/elements/sec-type
 - サブ文字列: /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.4/terms.search.esc
 - プログラム: /home/kamano/gitsrc/utility/match_substr.pl
 - スクリプト: /home/kamano/gitsrc/utility/match_substr.pl /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.1 /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.4/terms.search.esc > /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.1.allmaterials-hit
-####===いまここ===####
 ####acknowledgement出現タームがサブ文字列になっているバイオリソースネーム
+####行なわない
 
 
 
