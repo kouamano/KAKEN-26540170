@@ -1,12 +1,14 @@
 #[リソース名共出現解析][kaken-26540170][引用解析]
 
-
+#NOTE:
+##開始インデックス(イタレータ)まとめ
+##C: 0
+##perl: 0
+##Mathematica: 1
+##Matlab: 1
 
 #検討事項:
 ##正解論文を集めてそこからパターンを抽出することを検討
-
-
-
 #TODO:
 ##check: OK
 ###/BANK/PMC/20140724/Matching/BioResource/Organization/ATCC_2014 -> OK
@@ -39,18 +41,6 @@
 /mnt/EDB200/BANK/PMC/20140724/elements/sec-type - OK
 /mnt/EDB200/BANK/PMC/20140724/elements/supplementary-material - OK
 /mnt/EDB200/BANK/PMC/20140724/terms - OK
-
-
-
-#NOTE:
-##開始インデックス(イタレータ)まとめ
-##C: 0
-##perl: 0
-##Mathematica: 1
-##Matlab: 1
-
-
-
 #ディレクトリ構成
 - root: /BANK/
 - XML情報: /BANK/PMC/<日付>/ 配下
@@ -59,9 +49,6 @@
 - マッチング(検索)結果: /BANK/PMC/<日付>/Matching/BioResource/Organization/<機関名>/ 配下
 - プログラム: root 以下の 各 bin フォルダ、または、github
 - 実行スクリプト: 各 exec_command フォルダ
-
-
-
 #PMC概観
 - /BANK/PMC/20140724/articles : 54G, 843679 files
 - /BANK/PMC/20140724/elements/SKELTON/skelton-ALL.res.tag-count.rep.merge-sort.count : 282タグ
@@ -279,33 +266,12 @@ cd /BANK/PMC/20140724/elements/sec-type
 ##TASK(term-count.acknowledgement; patt.4)
 
 
-#TASK(check-correct): 正解データに対して機関名検索を行いカバレッジを確認 (20150123)
-## 1. 対象ファイルの決定
-## XMLと正解データのPMIDをマッチさせる
-- 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/user-data/PMID/ALL.pmidVSfilename.sort.uniq.in_pmc.hit
-## 2. 対象ファイルを抜きだし(リンク作成)
-- プログラム: ln
-- スクリプト: /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/user-data/XML/exec_command/mklink.sh
-- 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/user-data/XML/
-## 3 検索
-### 3.1 対象ファイルに対して機関名をgrep検索(RIKEN BRC)
-- プログラム: grep
-- スクリプト: /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/user-data/exec-command/grep-orgnames.sh
-- 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/user-data/grep-orgnames.out
-### 3.2 対象ファイルに対して機関名をgrep検索(RIKEN)
-- プログラム: grep
-- スクリプト: /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/user-data/exec-command/grep-RIKEN.sh
-- 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/user-data/grep-RIKEN.out
-## 4 文献チェック
-- チェックすべきPrimary番号リスト(利用者成果エクセル表に対応): /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/user-data/PMID/artgrNoHitPrimaryInPMC.tsv
-- 上記チェック文献リストの根拠(作業記録): /BANK/BioResource/Organization/RIKEN-BRC_2012/user-data/UserArticles.nb
-
 
 
 #TASK(1 ver.2): 既知バイオリソース名・機関名の決定と検索タームの定義 (NBRP)
 ##TASK(1.1): 既知機関名決定 -> 石川氏
 ###TASK(1.1.1): 既知機関シノニム決定 -> 石川氏
-##TASK(1.2): 既知バイオリソース名決定
+##TASK(1.2): 既知バイオリソース名決定(20140423)
 ###TASK(1.2.1) NBRC利用者成果からバイオリソース名+請求番号を抜き出す(20140420)
 - 利用者成果ファイル: /BANK/BioResource/Organization/NBRP_2015/user-data/reference_list.tsv
 - Resource name カラムを抜き出したもの: /BANK/BioResource/Organization/NBRP_2015/user-data/Resnames.line
@@ -347,8 +313,61 @@ cd /BANK/PMC/20140724/elements/sec-type
 - スクリプト: /home/kamano/gitsrc/utility/match_substr.pl /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.1 /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.4/terms.search.esc > /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.1.allmaterials-hit
 ####acknowledgement出現タームがサブ文字列になっているバイオリソースネーム
 ####行なわない
-###最終的につかう検索ターム
+##最終的につかうバイオリソース検索ターム
 - 検索ターム: /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.1
+
+
+
+#TASK(2 ver.2): 既知バイオリソース名・機関名の検索とパターン定義 (NBRP)
+
+
+
+#TASK(5): 評価対象機関名候補決定 THEME[kaken-26540170]
+#aff領域より得られた機関名(住所つき)をmaterial、ack領域に対して検索、存在を確認。
+#所属をカンマで区切り、各フレーズを対象領域に対してマッチング。
+#<tag1>,<tag2>,<tag3>
+- 各ファイル:
+-- 所属抽出結果: /BANK/PMC/20140724/elements/aff/PMC-AFF-v1.tsv
+-- 所属抽出結果より不要なタグ等を取り除きユニークソート: /BANK/PMC/20140724/elements/aff/PMC-AFF-plain-v4
+-- 上記データをカンマ区切りで切り出した第2カラムのデータ: /BANK/PMC/20140724/elements/aff/PMC-AFF-tag2
+-- 上記各ファイルの解説: /BANK/PMC/20140724/elements/aff/README.Gmail(2015-03-14).pdf
+##TASK(5.1): 謝辞 vs. 機関名候補検索
+### 謝辞 vs. tag2 (石川氏)
+- 検索ターム(機関名候補): /BANK/PMC/20140724/elements/aff/PMC-AFF-tag2
+- 検索対象データ: /BANK/PMC/20140724/elements/acknowledgement/PMC-ACK-v6_pmid.tsv (PMC-ACK-v6)
+- 結果ファイル: /BANK/PMC/20140724/Matching/BioResource/Organization/_ALL_/aff/AFFvsACK/AFFvsACK.tsv
+- 結果ファイル(0hit削除): /BANK/PMC/20140724/Matching/BioResource/Organization/_ALL_/aff/AFFvsACK/AFFvsACK-del0.tsv
+##TASK(5.2): material vs. 機関名候補検索
+
+
+
+
+
+
+#=ここから旧手順=#
+
+
+
+#TASK(check-correct): 正解データに対して機関名検索を行いカバレッジを確認 (20150123)
+## 1. 対象ファイルの決定
+## XMLと正解データのPMIDをマッチさせる
+- 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/user-data/PMID/ALL.pmidVSfilename.sort.uniq.in_pmc.hit
+## 2. 対象ファイルを抜きだし(リンク作成)
+- プログラム: ln
+- スクリプト: /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/user-data/XML/exec_command/mklink.sh
+- 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/user-data/XML/
+## 3 検索
+### 3.1 対象ファイルに対して機関名をgrep検索(RIKEN BRC)
+- プログラム: grep
+- スクリプト: /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/user-data/exec-command/grep-orgnames.sh
+- 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/user-data/grep-orgnames.out
+### 3.2 対象ファイルに対して機関名をgrep検索(RIKEN)
+- プログラム: grep
+- スクリプト: /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/user-data/exec-command/grep-RIKEN.sh
+- 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/user-data/grep-RIKEN.out
+## 4 文献チェック
+- チェックすべきPrimary番号リスト(利用者成果エクセル表に対応): /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/user-data/PMID/artgrNoHitPrimaryInPMC.tsv
+- 上記チェック文献リストの根拠(作業記録): /BANK/BioResource/Organization/RIKEN-BRC_2012/user-data/UserArticles.nb
 
 
 
@@ -419,24 +438,6 @@ cd /BANK/PMC/20140724/elements/sec-type
 - 機関名
 -- 検索ターム: /BANK/Organization/ATCC_2014/organization-name/org.name.only
 
-
-
-#TASK(5): 機関名候補決定 THEME[kaken-26540170]
-#aff領域より得られた機関名(住所つき)をmaterial、ack領域に対して検索、存在を確認。
-#所属をカンマで区切り、各フレーズを対象領域に対してマッチング。
-#<tag1>,<tag2>,<tag3>
-- 各ファイル:
--- 所属抽出結果: /BANK/PMC/20140724/elements/aff/PMC-AFF-v1.tsv
--- 所属抽出結果より不要なタグ等を取り除きユニークソート: /BANK/PMC/20140724/elements/aff/PMC-AFF-plain-v4
--- 上記データをカンマ区切りで切り出した第2カラムのデータ: /BANK/PMC/20140724/elements/aff/PMC-AFF-tag2
--- 上記各ファイルの解説: /BANK/PMC/20140724/elements/aff/README.Gmail(2015-03-14).pdf
-##TASK(5.1): 謝辞 vs. 機関名候補検索
-### 謝辞 vs. tag2 (石川氏)
-- 検索ターム(機関名候補): /BANK/PMC/20140724/elements/aff/PMC-AFF-tag2
-- 検索対象データ: /BANK/PMC/20140724/elements/acknowledgement/PMC-ACK-v6_pmid.tsv (PMC-ACK-v6)
-- 結果ファイル: /BANK/PMC/20140724/Matching/BioResource/Organization/_ALL_/aff/AFFvsACK/AFFvsACK.tsv
-- 結果ファイル(0hit削除): /BANK/PMC/20140724/Matching/BioResource/Organization/_ALL_/aff/AFFvsACK/AFFvsACK-del0.tsv
-##TASK(5.2): material vs. 機関名候補検索
 
 
 
@@ -920,10 +921,3 @@ cat *sort.uniq | /home/kamano/gitsrc/utility/rep4count.pl | sort -t '     ' -k2 
 cd /BANK/PMC/20140724/terms/MERGED/Materials/patt.3
  /home/kamano/gitsrc/utility/sum_count_from_mixed_sort.pl Word.ALL.presort > Word.ALL.sort.count
 ### ===完了=== 
-
-
-
-#TASK(6): 既知機関名vs.既知リソース名対の決定
-#THEME[kaken-26540170]
-##DB作成
-
