@@ -320,7 +320,7 @@ cd /BANK/PMC/20140724/elements/sec-type
 - リストをリソースネーム vs. リソース番号の形に整形
 -- プログラム: /home/kamano/gitsrc/utility/divide_lastBRK.pl
 -- 結果: /BANK/BioResource/Organization/NBRP_2015/user-data/ResnameVSid
-###TASK(1.2.2): 既知バイオリソース検索シノニム決定
+###TASK(1.2.2): 既知バイオリソース検索シノニム+ID決定
 - 対象: /BANK/BioResource/Organization/NBRP_2015/user-data/ResnameVSid
 - ソートユニークカウント: /BANK/BioResource/Organization/NBRP_2015/user-data/ResnameVSid.sort.uniq.count
 - リフォーム: ./reform_sort-uniq-count.pl ResnameVSid.sort.uniq.count > ResnameVSid.sort.uniq.count.re
@@ -329,7 +329,7 @@ cd /BANK/PMC/20140724/elements/sec-type
 ###materialおよびacknowledgementの出現タームを既知バイオリソース検索シノニムにヒットさせ、ヒットとなったバイオリソースを実際の検索タームとする。
 ###出現タームがリソース名のサブストリングであることを期待している。
 ###結局、ほとんどすべてのサブストリングにマッチしてしまい、意味が無かった。(20140422)
-####バイオリソース検索タームの決定
+####シノニム+IDを検索タームにばらす
 - cd /BANK/BioResource/Organization/NBRP_2015/user-data
 - awk -F'	' '{print $2}' ResnameVSid.sort.uniq.count.re > resterms.search.pre
 - awk -F'	' '{print $3}' ResnameVSid.sort.uniq.count.re >> resterms.search.pre
@@ -339,13 +339,16 @@ cd /BANK/PMC/20140724/elements/sec-type
 ####極端に短い、長いネームを除去
 - プログラム: /BANK/BioResource/Organization/NBRP_2015/user-data/exec_command/drop_suspicius-length.pl
 - 検索ターム: /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.1
-####material出現タームがサブ文字列になっているバイオリソースネーム
+####====いまここ====####
+####material出現タームがサブ文字列になっているバイオリソースネーム(いみなし)
 - 対象: /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.1
 - サブ文字列: /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.4/terms.search.esc
 - プログラム: /home/kamano/gitsrc/utility/match_substr.pl
 - スクリプト: /home/kamano/gitsrc/utility/match_substr.pl /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.1 /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.4/terms.search.esc > /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.1.allmaterials-hit
 ####acknowledgement出現タームがサブ文字列になっているバイオリソースネーム
 ####行なわない
+###最終的につかう検索ターム
+- 検索ターム: /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.1
 
 
 
