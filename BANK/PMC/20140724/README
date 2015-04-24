@@ -337,6 +337,8 @@ cd /BANK/PMC/20140724/elements/sec-type
 - 検索対象データ: /BANK/PMC/20140724/elements/acknowledgement/PMC-ACK-v6_pmid.tsv (PMC-ACK-v6)
 - 結果ファイル: /BANK/PMC/20140724/Matching/BioResource/Organization/_ALL_/aff/AFFvsACK/AFFvsACK.tsv
 - 結果ファイル(0hit削除): /BANK/PMC/20140724/Matching/BioResource/Organization/_ALL_/aff/AFFvsACK/AFFvsACK-del0.tsv
+### 謝辞 vs. tag1, tag2 and tag3 (石川氏)
+- ヒット結果（ゴミ含む）: /BANK/PMC/20140724/elements/aff/AFFvsACK.log-tagALL-uniqsort
 ##TASK(5.2): material vs. 機関名候補検索
 
 
