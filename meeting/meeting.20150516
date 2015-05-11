@@ -10,7 +10,7 @@ NBRPの利用者成果をダウンロード(2015年4月)した。
 フォーマットが統一されていないため、まず間違いなくリソース名であるというタームを選択する。
 現在、ターム候補まで抽出済みである。
 以下は、作業の簡単な報告。
-- ターム候補: /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.1
+-- ターム候補: /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.1
 約5万ターム。
 ACKとMaterialよりタームを抽出しこれをバイオリソースに当てる「逆引き」を行なってみたがほとんどにヒットし、削減効果はなかった。
 バイオリソース名候補を本文に当てる「正引き」は、バイオリソース名候補にマルチバイト文字が含まれるため、まだ行なっていない。
