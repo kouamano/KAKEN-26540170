@@ -275,8 +275,9 @@ cd /BANK/PMC/20140724/elements/sec-type
 ###TASK(1.1.1): 既知機関英名シノニム決定 -> 石川氏
 ###石川氏 -> 水野氏に指示 (20150610)
 - 日本語機関名リスト: /BANK/Organization/NBRP_2015/nbrp.organization-names.J.20150409
-- 機関名和英対応表のURL: http://www.nistep.go.jp/research/scisip/randd-on-university
+- 機関名和英対応表のURL(NISTEP): http://www.nistep.go.jp/research/scisip/randd-on-university
 - 実際に使用する和英対応表ファイル(WoS): /BANK/NISTEP/name_variations_WoS_Ver2014_1.xlsx
+- 実際に使用する和英対応表ファイル(WoS): /BANK/NISTEP/name_variations_WoS_Ver2014_1.utf8.txt
 - 実際に使用する和英対応表ファイル(scopus): /BANK/NISTEP/name_variations_scopus_ver_2013_1.utf8.csv
 ##TASK(1.2): 既知バイオリソース名決定(20140423)
 ###TASK(1.2.1) NBRC利用者成果からバイオリソース名+請求番号を抜き出す(20140420)
