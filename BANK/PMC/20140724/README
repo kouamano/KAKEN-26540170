@@ -340,12 +340,14 @@ cd /BANK/PMC/20140724/elements/sec-type
 -- 所属抽出結果より不要なタグ等を取り除きユニークソート: /BANK/PMC/20140724/elements/aff/PMC-AFF-plain-v4
 -- 上記データをカンマ区切りで切り出した第2カラムのデータ: /BANK/PMC/20140724/elements/aff/PMC-AFF-tag2
 -- 上記各ファイルの解説: /BANK/PMC/20140724/elements/aff/README.Gmail(2015-03-14).pdf
-##TASK(5.1): 謝辞 vs. 機関名候補検索(20150508)
+##TASK(3.1): 謝辞 vs. 機関名候補検索(20150508)
 ### 謝辞 vs. tag1, tag2 and tag3 (石川氏)
 - ヒット結果（ゴミ含む）: /BANK/PMC/20140724/elements/aff/AFFvsACK/AFFvsACK.log-tagALL-uniqsort
-##TASK(5.2): material vs. 機関名候補検索(20150508)
+- 大文字小文字スペース以外を含むフレーズファイル: /BANK/PMC/20140724/elements/aff/WIKIvsAFFvsACK+MAT/tokusyu-list/AFFvsACK.log-tagALL-tokusyu-list
+##TASK(3.2): material vs. 機関名候補検索(20150508)
 ### material vs. tag1, tag2 and tag3 (石川氏)
 - ヒット結果（ゴミ含む）: /BANK/PMC/20140724/elements/aff/AFFvsMAT/AFFvsMAT.log-tagALL-uniqsort
+- 大文字小文字スペース以外を含むフレーズファイル: /BANK/PMC/20140724/elements/aff/WIKIvsAFFvsACK+MAT/tokusyu-list/AFFvsMAT.log-tagALL-tokusyu-list
 
 
 
