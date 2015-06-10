@@ -272,6 +272,10 @@ cd /BANK/PMC/20140724/elements/sec-type
 
 #TASK(1 ver.2): 既知バイオリソース名・機関名の決定と検索タームの定義 (NBRP)
 ##TASK(1.1): 既知機関名決定 -> 石川氏
+##石川氏 -> 水野氏に指示
+- 日本語機関名リスト: /BANK/Organization/NBRP_2015/nbrp.organization-names.J.20150409
+- 機関名和英対応表のURL: http://www.nistep.go.jp/research/scisip/randd-on-university
+- 実際に使用する和英対応表ファイル: 
 ###TASK(1.1.1): 既知機関シノニム決定 -> 石川氏
 ##TASK(1.2): 既知バイオリソース名決定(20140423)
 ###TASK(1.2.1) NBRC利用者成果からバイオリソース名+請求番号を抜き出す(20140420)
