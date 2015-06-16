@@ -275,13 +275,14 @@ cd /BANK/PMC/20140724/elements/sec-type
 ###TASK(1.1.1): 既知機関英名シノニム決定 -> 石川氏
 ###石川氏 -> 水野氏に指示 (20150610)
 - 日本語機関名リスト(NBRPオリジナル): /BANK/Organization/NBRP_2015/nbrp.organization-names.J.20150409
-- 日本語正式機関名リスト(水野氏):
+- 日本語正式機関名リスト(水野氏): /BANK/Organization/NBRP_2015/orgnames-jp_eng.csv
+- 上ファイルのsortuniq(20150616): /BANK/Organization/NBRP_2015/orgname_jp.sort.uniq
 - 機関名和英対応表のURL(NISTEP): http://www.nistep.go.jp/research/scisip/randd-on-university
-- 実際に使用する和英対応表ファイル(WoS): /BANK/NISTEP/name_variations_WoS_Ver2014_1.xlsx
 - 実際に使用する和英対応表ファイル(WoS): /BANK/NISTEP/name_variations_WoS_Ver2014_1.utf8.txt
 - 実際に使用する和英対応表ファイル(scopus): /BANK/NISTEP/name_variations_scopus_ver_2013_1.utf8.csv
+- 日本語正式名にマッチさせるスクリプト: while read ln ; do grep $ln /BANK/NISTEP/name_variations_WoS_Ver2014_1.utf8.txt; done < orgname_jp.sort.uniq > /BANK/Organization/NBRP_2015/18toporg_in_WoS.csv
 - WoSより日本名マッチした18機関: /BANK/Organization/NBRP_2015/18toporg_in_WoS.csv
-- scopusより日本名マッチした18機関: /BANK/Organization/NBRP_2015/18toporg_in_WoS.csv
+- scopusより日本名マッチした18機関: /BANK/Organization/NBRP_2015/18toporg_in_scopus.csv
 ##TASK(1.2): 既知バイオリソース名決定(20140423)
 ###TASK(1.2.1) NBRC利用者成果からバイオリソース名+請求番号を抜き出す(20140420)
 - 利用者成果ファイル: /BANK/BioResource/Organization/NBRP_2015/user-data/reference_list.tsv
