@@ -292,9 +292,9 @@ while read org ; do grep $org organization_dictionary_ver_2014_1.utf8.insTAB.txt
 -- IDのみ抽出:
 awk -F'   ' '{print $1}' NBRP-IDvsOrg > NBRP-ID
 -- NBRP-IDをもとに英名を抜きだし:
-grep "\t" NBRP-IDvsEnName > NBRP-IDvsEnName_fromDict.dropEMP (最終ファイル)
+grep "\t" NBRP-IDvsEnName > /BANK/Organization/NBRP_2015/NBRP-IDvsEnName_fromDict.dropEMP (最終ファイル)
 - (2) 下部機関リスト(86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt)より下部機関含むNBRP機関英名抽出:
-while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; done < /BANK/Organization/NBRP_2015/orgname_jp.sort.uniq > extractNBRPname_fromSheet2 (最終ファイル)
+while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; done < /BANK/Organization/NBRP_2015/orgname_jp.sort.uniq > /BANK/Organization/NBRP_2015/extractNBRPname_fromSheet2 (最終ファイル)
 
 ##TASK(1.2): 既知バイオリソース名決定(20140423)
 ###TASK(1.2.1) NBRC利用者成果からバイオリソース名+請求番号を抜き出す(20140420)
