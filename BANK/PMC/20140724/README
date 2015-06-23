@@ -295,6 +295,12 @@ awk -F'   ' '{print $1}' NBRP-IDvsOrg > NBRP-ID
 grep "\t" NBRP-IDvsEnName > /BANK/Organization/NBRP_2015/NBRP-IDvsEnName_fromDict.dropEMP (最終ファイル)
 - (2) 下部機関リスト(86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt)より下部機関含むNBRP機関英名抽出:
 while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; done < /BANK/Organization/NBRP_2015/orgname_jp.sort.uniq > /BANK/Organization/NBRP_2015/extractNBRPname_fromSheet2 (最終ファイル)
+- 水野氏中間ファイル(20150623): /BANK/Organization/NBRP_2015/3OK 17toporg_in_scopus.WoS.dic.m.s.ods
+- 上記ファイルより重複英名を削除、他のカラムに違う値が入っている場合はどれかを残す
+-- スクリプト: /BANK/Organization/NBRP_2015/drop_multi_name.pl
+-- 結果(ソートなし): /BANK/Organization/NBRP_2015/17toporg_in_scopus.WoS.dic.m.s.csv.dropDup
+-- 結果(5からむ目でソート): /BANK/Organization/NBRP_2015/17toporg_in_scopus.WoS.dic.m.s.csv.sort.dropDup
+
 
 ##TASK(1.2): 既知バイオリソース名決定(20140423)
 ###TASK(1.2.1) NBRC利用者成果からバイオリソース名+請求番号を抜き出す(20140420)
