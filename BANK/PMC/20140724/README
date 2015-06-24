@@ -300,8 +300,6 @@ while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; d
 -- スクリプト: /BANK/Organization/NBRP_2015/drop_multi_name.pl
 -- 結果(ソートなし): /BANK/Organization/NBRP_2015/17toporg_in_scopus.WoS.dic.m.s.csv.dropDup
 -- 結果(5からむ目でソート): /BANK/Organization/NBRP_2015/17toporg_in_scopus.WoS.dic.m.s.csv.sort.dropDup
-
-
 ##TASK(1.2): 既知バイオリソース名決定(20140423)
 ###TASK(1.2.1) NBRC利用者成果からバイオリソース名+請求番号を抜き出す(20140420)
 - 利用者成果ファイル: /BANK/BioResource/Organization/NBRP_2015/user-data/reference_list.tsv
@@ -354,7 +352,7 @@ while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; d
 
 
 
-#TASK(3): 評価対象機関名候補決定 THEME[kaken-26540170]
+#TASK(3): 評価対象機関名候補決定(/BANK/PMC/20140724/elements/aff) THEME[kaken-26540170]
 #aff領域より得られた機関名(住所つき)をmaterial、ack領域に対して検索、存在を確認。
 #所属をカンマで区切り、各フレーズを対象領域に対してマッチング。
 #<tag1>,<tag2>,<tag3>
@@ -367,12 +365,14 @@ while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; d
 ### 謝辞 vs. tag1, tag2 and tag3 (石川氏)
 - ヒット結果（ゴミ含む）: /BANK/PMC/20140724/elements/aff/AFFvsACK/AFFvsACK.log-tagALL-uniqsort
 - 大文字小文字スペース以外を含むフレーズファイル: /BANK/PMC/20140724/elements/aff/WIKIvsAFFvsACK+MAT/tokusyu-list/AFFvsACK.log-tagALL-tokusyu-list
+### 機関名候補のwiki見出し語による確認
+- ファイル: /BANK/PMC/20140724/elements/aff/WIKIvsAFFvsACK/AFFvsACK.log-tagALL-wikifilterd
 ##TASK(3.2): material vs. 機関名候補検索(20150508)
 ### material vs. tag1, tag2 and tag3 (石川氏)
 - ヒット結果（ゴミ含む）: /BANK/PMC/20140724/elements/aff/AFFvsMAT/AFFvsMAT.log-tagALL-uniqsort
 - 大文字小文字スペース以外を含むフレーズファイル: /BANK/PMC/20140724/elements/aff/WIKIvsAFFvsACK+MAT/tokusyu-list/AFFvsMAT.log-tagALL-tokusyu-list
-
-
+### 機関名候補のwiki見出し語による確認
+- ファイル: /BANK/PMC/20140724/elements/aff/WIKIvsAFFvsMAT/AFFvsMAT.log-tagALL-wikifilterd
 
 
 #TASK(4)対象機関名を含むパターン検索
