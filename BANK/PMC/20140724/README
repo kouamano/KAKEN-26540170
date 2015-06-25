@@ -301,6 +301,9 @@ while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; d
 -- 結果(ソートなし): /BANK/Organization/NBRP_2015/17toporg_in_scopus.WoS.dic.m.s.csv.dropDup
 -- スクリプト(5からむ目でソート): sort -t'	' '3OK 17toporg_in_scopus.WoS.dic.m.s.csv' -k4 | /BANK/Organization/NBRP_2015/drop_multi_name.pl > /BANK/Organization/NBRP_2015/17toporg_in_scopus.WoS.dic.m.s.csv.sort.dropDup
 -- 結果(5からむ目でソート): /BANK/Organization/NBRP_2015/17toporg_in_scopus.WoS.dic.m.s.csv.sort.dropDup
+-- 上記に対してさらに別からむでソートドロップ 
+-- スクリプト: sort -t'       ' -k2 /BANK/Organization/NBRP_2015/17toporg_in_scopus.WoS.dic.m.s.csv.sort.dropDup | /BANK/Organization/NBRP_2015/drop_multi_name.pl > /BANK/Organization/NBRP_2015/17toporg_in_scopus.WoS.dic.m.s.csv.sort.dropDupx2
+-- 結果ファイル: /BANK/Organization/NBRP_2015/17toporg_in_scopus.WoS.dic.m.s.csv.sort.dropDupx2
 ##TASK(1.2): 既知バイオリソース名決定(20140423)
 ###TASK(1.2.1) NBRC利用者成果からバイオリソース名+請求番号を抜き出す(20140420)
 - 利用者成果ファイル: /BANK/BioResource/Organization/NBRP_2015/user-data/reference_list.tsv
