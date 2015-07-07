@@ -271,7 +271,7 @@ cd /BANK/PMC/20140724/elements/sec-type
 
 
 #TASK(1 ver.2): 既知バイオリソース名・機関名の決定と検索タームの定義 (NBRP機関とする)
-##TASK(1.1): 既知機関名決定 -> 石川氏
+##TASK(1.1): パターン定義用既知機関名決定 -> 石川氏
 ###TASK(1.1.1): 既知機関英名シノニム決定 -> 石川氏
 ###石川氏 -> 水野氏に指示 (20150610)
 - 日本語機関名リスト(NBRPオリジナル): /BANK/Organization/NBRP_2015/nbrp.organization-names.J.20150409
@@ -293,6 +293,7 @@ while read org ; do grep $org organization_dictionary_ver_2014_1.utf8.insTAB.txt
 awk -F'   ' '{print $1}' NBRP-IDvsOrg > NBRP-ID
 -- NBRP-IDをもとに英名を抜きだし:
 grep "\t" NBRP-IDvsEnName > /BANK/Organization/NBRP_2015/NBRP-IDvsEnName_fromDict.dropEMP (最終ファイル)
+-- 辞書、WoS、Scopusを合わせた最上位機関名vs機関ID(20150707): /BANK/Organization/NBRP_2015/IDtopd9oksotods7okodssort17toporg_in_scopus.WoS.dic.m.s.csv.sort.csv
 - (2) 下部機関リスト(86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt)より下部機関含むNBRP機関英名抽出:
 while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; done < /BANK/Organization/NBRP_2015/orgname_jp.sort.uniq > /BANK/Organization/NBRP_2015/extractNBRPname_fromSheet2 (最終ファイル)
 - 水野氏中間ファイル(20150623): /BANK/Organization/NBRP_2015/3OK 17toporg_in_scopus.WoS.dic.m.s.ods
@@ -305,7 +306,8 @@ while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; d
 -- スクリプト: sort -t'       ' -k2 /BANK/Organization/NBRP_2015/17toporg_in_scopus.WoS.dic.m.s.csv.sort.dropDup | /BANK/Organization/NBRP_2015/drop_multi_name.pl > /BANK/Organization/NBRP_2015/17toporg_in_scopus.WoS.dic.m.s.csv.sort.dropDupx2
 -- 結果ファイル: /BANK/Organization/NBRP_2015/17toporg_in_scopus.WoS.dic.m.s.csv.sort.dropDupx2
 -- 上記に対してハンドサーチで上位機関名決定(20150702): /BANK/Organization/NBRP_2015/9oksotods17toporg_in_scopus.WoS.dic.m.s.csv.sort.dropDupx2
-##TASK(1.2): 既知バイオリソース名決定(20140423)
+
+##TASK(1.2): パターン定義用既知バイオリソース名決定(20140423)
 ###TASK(1.2.1) NBRC利用者成果からバイオリソース名+請求番号を抜き出す(20140420)
 - 利用者成果ファイル: /BANK/BioResource/Organization/NBRP_2015/user-data/reference_list.tsv
 - Resource name カラムを抜き出したもの: /BANK/BioResource/Organization/NBRP_2015/user-data/Resnames.line
