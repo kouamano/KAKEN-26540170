@@ -293,7 +293,7 @@ while read org ; do grep $org organization_dictionary_ver_2014_1.utf8.insTAB.txt
 awk -F'   ' '{print $1}' NBRP-IDvsOrg > NBRP-ID
 -- NBRP-IDをもとに英名を抜きだし:
 grep "\t" NBRP-IDvsEnName > /BANK/Organization/NBRP_2015/NBRP-IDvsEnName_fromDict.dropEMP (最終ファイル)
--- 辞書、WoS、Scopusを合わせた最上位機関名vs機関ID(20150707): /BANK/Organization/NBRP_2015/IDtopd9oksotods7okodssort17toporg_in_scopus.WoS.dic.m.s.csv.sort.csv
+-- 辞書、WoS、Scopusを合わせた最上位機関英名シノニムvs機関ID(20150707): /BANK/Organization/NBRP_2015/IDtopd9oksotods7okodssort17toporg_in_scopus.WoS.dic.m.s.csv.sort.csv
 - (2) 下部機関リスト(86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt)より下部機関含むNBRP機関英名抽出:
 while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; done < /BANK/Organization/NBRP_2015/orgname_jp.sort.uniq > /BANK/Organization/NBRP_2015/extractNBRPname_fromSheet2 (最終ファイル)
 - 水野氏中間ファイル(20150623): /BANK/Organization/NBRP_2015/3OK 17toporg_in_scopus.WoS.dic.m.s.ods
