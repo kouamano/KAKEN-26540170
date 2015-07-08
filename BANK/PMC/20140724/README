@@ -363,8 +363,12 @@ while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; d
 ###TASK(2.1.1)既知機関名inACK
 - 検索対象: /BANK/PMC/20140724/elements/acknowledgement/PMC-ACK-v6_pmid.tsv
 3カラムめに対して検索
-- 検索ターム: /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt
-##==いまここ==##
+- 検索ターム(元): /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt
+- エスケープコマンド: escape_char sf=/BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt lf=/usr/local/var/perl_esc.list > /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt.esc
+- 検索ターム(スケープ): /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt.esc
+- プログラム: /home/kamano/gitsrc/utility/hit_least.pl
+- スクリプト: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/hit_Org_from_ACK.sh
+##==実行中==##
 ##TASK(2.2)既知バイオリソース名(NBRP)検索
 ##TASK(2.3)既知バイオリソース名と既知機関名のポジション検索
 - プログラム: /home/kamano/gitsrc/utility/match_position
