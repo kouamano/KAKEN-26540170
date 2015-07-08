@@ -363,7 +363,7 @@ while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; d
 - 検索対象: /BANK/PMC/20140724/elements/acknowledgement/PMC-ACK-v6_pmid.tsv
 3カラムめに対して検索
 - 検索ターム: /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt
-- プログラム: match_position
+- プログラム: /home/kamano/gitsrc/utility/match_position
 
 
 #TASK(3): 評価対象機関名候補決定(/BANK/PMC/20140724/elements/aff) THEME[kaken-26540170]
