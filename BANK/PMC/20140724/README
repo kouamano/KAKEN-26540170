@@ -344,7 +344,7 @@ while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; d
 - 検索ターム: /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq
 ####極端に短い、長いネームを除去
 - プログラム: /BANK/BioResource/Organization/NBRP_2015/user-data/exec_command/drop_suspicius-length.pl
-- 検索ターム: /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.1
+- 検索ターム候補: /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.1
 ####====いまここ====####
 ####material出現タームがサブ文字列になっているバイオリソースネーム(いみなし)
 - 対象: /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.1
@@ -375,8 +375,9 @@ while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; d
 - 検索ターム(スケープ済み): /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt.esc
 - プログラム: /home/kamano/gitsrc/utility/hit_least.pl
 - スクリプト: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/hit_Org_from_Mat.sh
-##==実行中==##
+- 結果(20150708): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_Org_from_Mat.au.tsv
 ##TASK(2.2)既知バイオリソース名(NBRP)検索
+##==水野さんが検索タームをまとめ中==##
 ##TASK(2.3)既知バイオリソース名と既知機関名のポジション検索
 - プログラム: /home/kamano/gitsrc/utility/match_position
 
