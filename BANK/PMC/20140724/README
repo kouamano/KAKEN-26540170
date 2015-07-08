@@ -308,7 +308,7 @@ while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; d
 --- 結果ファイル: /BANK/Organization/NBRP_2015/17toporg_in_scopus.WoS.dic.m.s.csv.sort.dropDupx2
 -- 上記に対してハンドサーチで上位機関名決定(20150702): /BANK/Organization/NBRP_2015/9oksotods17toporg_in_scopus.WoS.dic.m.s.csv.sort.dropDupx2
 -- 上記に対して第5カラムを抜粋: /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm
--- 上記に対して先頭と末尾のスペースを除去: /home/kamano/gitsrc/utility/drop_headtailSP.pl 17topOrgNameSearchTerm > 17topOrgNameSearchTerm.txt
+-- 上記に対して先頭と末尾のスペースを除去: /home/kamano/gitsrc/utility/drop_headtailSP.pl 17topOrgNameSearchTerm > /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt
 -- 最終的に検索するターム(20150708): /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt
 
 ##TASK(1.2): パターン定義用既知バイオリソース名決定(20140423)
