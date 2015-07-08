@@ -280,7 +280,7 @@ cd /BANK/PMC/20140724/elements/sec-type
 - 機関名和英対応表のURL(NISTEP): http://www.nistep.go.jp/research/scisip/randd-on-university
 - 実際に使用する和英対応表ファイル(WoS): /BANK/NISTEP/name_variations_WoS_Ver2014_1.utf8.txt
 - 実際に使用する和英対応表ファイル(scopus): /BANK/NISTEP/name_variations_scopus_ver_2013_1.utf8.csv
-- 日本語正式名にマッチさせるスクリプト: while read ln ; do grep $ln /BANK/NISTEP/name_variations_WoS_Ver2014_1.utf8.txt; done < orgname_jp.sort.uniq > /BANK/Organization/NBRP_2015/18toporg_in_WoS.csv
+- 日本語正式名にマッチさせるスクリプト: while read ln ; do grep $ln /BANK/NISTEP/name_variations_WoS_Ver2014_1.utf8.txt; done < orgname_jp.sort.uniq > /BANK/Organization/NBRP_2015/17toporg_in_WoS.csv
 - WoSより日本名マッチした17機関: /BANK/Organization/NBRP_2015/17toporg_in_WoS.csv
 - scopusより日本名マッチした17機関: /BANK/Organization/NBRP_2015/17toporg_in_scopus.csv
 - (1) dictionaly(organization_dictionary_ver_2014_1.utf8.insTAB.txt)より下部機関含むNBRP機関英名抽出:
@@ -292,19 +292,20 @@ while read org ; do grep $org organization_dictionary_ver_2014_1.utf8.insTAB.txt
 -- IDのみ抽出:
 awk -F'   ' '{print $1}' NBRP-IDvsOrg > NBRP-ID
 -- NBRP-IDをもとに英名を抜きだし:
-grep "\t" NBRP-IDvsEnName > /BANK/Organization/NBRP_2015/NBRP-IDvsEnName_fromDict.dropEMP (最終ファイル)
--- 辞書、WoS、Scopusを合わせた最上位機関英名シノニムvs機関ID(20150707): /BANK/Organization/NBRP_2015/IDtopd9oksotods7okodssort17toporg_in_scopus.WoS.dic.m.s.csv.sort.csv
+grep "\t" NBRP-IDvsEnName > /BANK/Organization/NBRP_2015/NBRP-IDvsEnName_fromDict.dropEMP
+-- 辞書、WoS、Scopusを合わせた最上位機関英名シノニムvs機関ID(20150707)(最終ファイル): /BANK/Organization/NBRP_2015/IDtopd9oksotods7okodssort17toporg_in_scopus.WoS.dic.m.s.csv.sort.csv
 - (2) 下部機関リスト(86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt)より下部機関含むNBRP機関英名抽出:
 while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; done < /BANK/Organization/NBRP_2015/orgname_jp.sort.uniq > /BANK/Organization/NBRP_2015/extractNBRPname_fromSheet2 (最終ファイル)
-- 水野氏中間ファイル(20150623): /BANK/Organization/NBRP_2015/3OK 17toporg_in_scopus.WoS.dic.m.s.ods
-- 上記ファイルより重複英名を削除、他のカラムに違う値が入っている場合はどれかを残す
--- プログラム: /BANK/Organization/NBRP_2015/drop_multi_name.pl
--- 結果(ソートなし): /BANK/Organization/NBRP_2015/17toporg_in_scopus.WoS.dic.m.s.csv.dropDup
--- スクリプト(5からむ目でソート): sort -t'	' '3OK 17toporg_in_scopus.WoS.dic.m.s.csv' -k4 | /BANK/Organization/NBRP_2015/drop_multi_name.pl > /BANK/Organization/NBRP_2015/17toporg_in_scopus.WoS.dic.m.s.csv.sort.dropDup
--- 結果(5からむ目でソート): /BANK/Organization/NBRP_2015/17toporg_in_scopus.WoS.dic.m.s.csv.sort.dropDup
--- 上記に対してさらに別からむでソートドロップ 
--- スクリプト: sort -t'       ' -k2 /BANK/Organization/NBRP_2015/17toporg_in_scopus.WoS.dic.m.s.csv.sort.dropDup | /BANK/Organization/NBRP_2015/drop_multi_name.pl > /BANK/Organization/NBRP_2015/17toporg_in_scopus.WoS.dic.m.s.csv.sort.dropDupx2
--- 結果ファイル: /BANK/Organization/NBRP_2015/17toporg_in_scopus.WoS.dic.m.s.csv.sort.dropDupx2
+- (3) 検索ターム
+-- 依頼: 水野氏中間ファイル(20150623): /BANK/Organization/NBRP_2015/3OK 17toporg_in_scopus.WoS.dic.m.s.ods
+-- 依頼: 上記ファイルより重複英名を削除、他のカラムに違う値が入っている場合はどれかを残す
+--- プログラム: /BANK/Organization/NBRP_2015/drop_multi_name.pl
+--- 結果(ソートなし): /BANK/Organization/NBRP_2015/17toporg_in_scopus.WoS.dic.m.s.csv.dropDup
+--- スクリプト(5からむ目でソート): sort -t'	' '3OK 17toporg_in_scopus.WoS.dic.m.s.csv' -k4 | /BANK/Organization/NBRP_2015/drop_multi_name.pl > /BANK/Organization/NBRP_2015/17toporg_in_scopus.WoS.dic.m.s.csv.sort.dropDup
+--- 結果(5からむ目でソート): /BANK/Organization/NBRP_2015/17toporg_in_scopus.WoS.dic.m.s.csv.sort.dropDup
+--- 上記に対してさらに別からむでソートドロップ 
+--- スクリプト: sort -t'       ' -k2 /BANK/Organization/NBRP_2015/17toporg_in_scopus.WoS.dic.m.s.csv.sort.dropDup | /BANK/Organization/NBRP_2015/drop_multi_name.pl > /BANK/Organization/NBRP_2015/17toporg_in_scopus.WoS.dic.m.s.csv.sort.dropDupx2
+--- 結果ファイル: /BANK/Organization/NBRP_2015/17toporg_in_scopus.WoS.dic.m.s.csv.sort.dropDupx2
 -- 上記に対してハンドサーチで上位機関名決定(20150702): /BANK/Organization/NBRP_2015/9oksotods17toporg_in_scopus.WoS.dic.m.s.csv.sort.dropDupx2
 -- 上記に対して第5カラムを抜粋: /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm
 -- 上記に対して先頭と末尾のスペースを除去: /home/kamano/gitsrc/utility/drop_headtailSP.pl 17topOrgNameSearchTerm > 17topOrgNameSearchTerm.txt
