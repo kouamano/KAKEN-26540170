@@ -270,7 +270,7 @@ cd /BANK/PMC/20140724/elements/sec-type
 
 
 
-#TASK(1 ver.2): 既知バイオリソース名・機関名の決定と検索タームの定義 (NBRP機関とする)
+#TASK(1): 既知バイオリソース名・機関名の決定と検索タームの定義 (NBRP機関とする)
 ##TASK(1.1): パターン定義用既知機関名決定 -> 石川氏
 ###TASK(1.1.1): 既知機関英名シノニム決定 -> 石川氏
 ###石川氏 -> 水野氏に指示 (20150610)
@@ -357,9 +357,13 @@ while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; d
 
 
 
-#TASK(2 ver.2): 既知バイオリソース名・機関名の検索とパターン定義 (NBRP)
-#未実行
-
+#TASK(2): 既知バイオリソース名・機関名の検索とパターン定義(NBRP)
+##TASK(2.1)既知機関名(NBRP)検索
+###TASK(2.1.1)既知機関名inACK
+- 検索対象: /BANK/PMC/20140724/elements/acknowledgement/PMC-ACK-v6_pmid.tsv
+3カラムめに対して検索
+- 検索ターム: /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt
+- プログラム: match_position
 
 
 #TASK(3): 評価対象機関名候補決定(/BANK/PMC/20140724/elements/aff) THEME[kaken-26540170]
