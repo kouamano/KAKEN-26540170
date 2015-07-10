@@ -357,15 +357,13 @@ while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; d
 ####検索ターム候補のチューニング <n>E、<n>Dのサフィクスを使用、<n>は番号、Eはextract、Dはdelete
 - 作業詳細: /BANK/BioResource/Organization/NBRP_2015/user-data/README
  生物種名については全て残す。
-- 0. cd /BANK/BioResource/Organization/NBRP_2015/user-data
-- 1. JCM
--- grep JCM resterms.sort.uniq.1 > resterms.sort.uniq.2E
--- grep -v JCM resterms.sort.uniq.1 > resterms.sort.uniq.2D
+-- 作業対象ファイル: /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.1
+-- 結果ファイル: /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_3
 
 
 
 #TASK(2): 既知バイオリソース名・機関名の検索とパターン定義(NBRP)
-#3段階の検索を行なう:1.機関名が出現する行を抽出 2.さらにバイオリソース名が出現する行を抽出 3.抽出結果に対して、機関名ポジションとバイオリソース名ポジションを検索
+#3段階の検索を行なう:1.機関名が出現する行を抽出(20150708) 2.さらにバイオリソース名が出現する行を抽出 3.抽出結果に対して、機関名ポジションとバイオリソース名ポジションを検索
 ##TASK(2.1)既知機関名(NBRP)検索
 ###TASK(2.1.1)既知機関名inACK
 - 検索対象: /BANK/PMC/20140724/elements/acknowledgement/PMC-ACK-v6_pmid.tsv
@@ -383,7 +381,16 @@ while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; d
 - スクリプト: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/hit_Org_from_Mat.sh
 - 結果(20150708): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_Org_from_Mat.au.tsv
 ##TASK(2.2)既知バイオリソース名(NBRP)検索
-##==水野さんが検索タームをまとめ中(TASK 1.2.3)==##
+###TASK(2.2.1)既知バイオリソース名inACK with 既知機関名
+- 検索対象: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_Org_from_ACK.tsv
+- 検索ターム(元): /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_3
+- 検索ターム(UTF8)を数値文字参照に変換: utf8_to_ncr resterms.sort.uniq.select_3 > resterms.sort.uniq.select_3.ncr
+- perl検索用にエスケープ: escape_char sf=resterms.sort.uniq.select_3.ncr lf=/usr/local/var/perl_esc.list > sf=resterms.sort.uniq.select_3.ncr.esc
+- 検索ターム(エスケープ): /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_3.ncr.esc
+- プログラム: /home/kamano/gitsrc/utility/hit_least.pl
+- スクリプト: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/hit_ResOrg_from_ACK.sh
+###TASK(2.2.2)既知バイオリソース名inMat with 既知機関名
+
 ##TASK(2.3)既知バイオリソース名と既知機関名のポジション検索
 - プログラム: /home/kamano/gitsrc/utility/match_position
 
