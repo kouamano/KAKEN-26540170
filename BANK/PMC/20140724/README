@@ -180,9 +180,8 @@ cd /BANK/PMC/20140724/elements/sec-type
 - スクリプト: /BANK/PMC/20140724/elements/MERGED/allmaterials/exec_command/extract_cont_from_reg.au.sh
 - 結果: /BANK/PMC/20140724/elements/MERGED/allmaterials/allmaterials.au.reg.cont
 ## [old] TASK(extract.material) : extract material
-- old dir: /BANK/PMC/20140724/elements/MERGED/Materials
- 使用しないこと。
- かわりに、/BANK/PMC/20140724/elements/MERGED/allmaterials/ 配下のデータを使用すべし。
+## old dir: /BANK/PMC/20140724/elements/MERGED/Materials は使用しないこと。
+## かわりに、/BANK/PMC/20140724/elements/MERGED/allmaterials/ 配下のデータを使用すべし。
 ## TASK(extract.xref): xrefを含む直上位のレベルを抜き出す。
 ### 1. xrefと直上タグのポジションを抜き出し、必要なxref部分を特定、特定領域をプリント ver.2 (20150417)
 #### 1.1 xrefと直上タグのポジションを抜き出す (20150417)
@@ -310,7 +309,6 @@ while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; d
 -- 上記に対して第5カラムを抜粋: /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm
 -- 上記に対して先頭と末尾のスペースを除去: /home/kamano/gitsrc/utility/drop_headtailSP.pl 17topOrgNameSearchTerm > /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt
 -- 最終的に検索するターム(20150708): /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt
-
 ##TASK(1.2): パターン定義用既知バイオリソース名決定(20140423)
 ###TASK(1.2.1) NBRC利用者成果からバイオリソース名+請求番号を抜き出す(20140420)
 - 利用者成果ファイル: /BANK/BioResource/Organization/NBRP_2015/user-data/reference_list.tsv
@@ -396,7 +394,19 @@ while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; d
 - スクリプト: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/hit_ResOrg_from_Mat.sh
 - 結果(20150710): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_Mat.au.tsv
 ##==ここまで==##
-##TASK(2.3)既知バイオリソース名と既知機関名のポジション検索
+##TASK(2.3)既知機関名のポジション決定
+###TASK(2.3.1)既知機関名position in ACK
+- 対象: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv.XMLonly
+ /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv より第3カラム目を抽出し対象のXMLのみにしたもの
+- プログラム: match_position
+- スクリプト:
+###TASK(2.3.2)既知機関名position in Mat
+- 検索: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_Org_from_Mat.a[a-u].tsv.XMLonly
+- プログラム: match_position
+- スクリプト:
+##TASK(2.4)既知バイオリソース名のポジション決定
+###TASK(2.4.1)既知バイオリソース名position in ACK
+###TASK(2.4.2)既知バイオリソース名position in Mat
 
 
 #TASK(3): 評価対象機関名候補決定(/BANK/PMC/20140724/elements/aff) THEME[kaken-26540170]
