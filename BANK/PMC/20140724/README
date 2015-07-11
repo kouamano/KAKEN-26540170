@@ -405,7 +405,7 @@ while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; d
 - 検索対象(XMLのみ): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_Org_from_Mat.a[a-u].tsv.XMLonly
 - 検索ターム(エスケープなし): /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt 
 - プログラム: match_position
-- スクリプト:
+- スクリプト:/BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/extract_reg_Org_from_ACK.pl
 ##TASK(2.4)既知バイオリソース名のポジション決定
 ###TASK(2.4.1)既知バイオリソース名position in ACK
 ###TASK(2.4.2)既知バイオリソース名position in Mat
