@@ -397,28 +397,28 @@ while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; d
 ###TASK(2.3.1)既知機関名position in ACK
 - 検索対象(XMLのみ): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv.XMLonly
  /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv より第3カラム目を抽出し対象のXMLのみにしたもの
-- 検索ターム(エスケープなし): /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt 
+- 検索ターム(エスケープなし): /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt.sort.uniq
 - プログラム: match_position
-- スクリプト: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/extract_reg_Org_from_ACK.pl
+- スクリプト: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/extract_reg_Org_from_ACK.sh
 - 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/extract_reg_Org_from_ACK
 ###TASK(2.3.2)既知機関名position in Mat
 - 検索対象(XMLのみ): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_Mat.a[a-u].tsv.XMLonly
-- 検索ターム(エスケープなし): /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt 
+- 検索ターム(エスケープなし): /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt.sort.uniq
 - プログラム: match_position
-- スクリプト: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/extract_reg_Org_from_Mat.pl
+- スクリプト: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/extract_reg_Org_from_Mat.sh
 - 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/extract_reg_Org_from_Mat.au
 ##TASK(2.4)既知バイオリソース名のポジション決定
 ###TASK(2.4.1)既知バイオリソース名position in ACK
 - 検索対象(XMLのみ): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv.XMLonly
 - 検索ターム(エスケープなし): /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_3.ncr
 - プログラム: match_position
-- スクリプト: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/extract_reg_Res_from_ACK.pl
+- スクリプト: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/extract_reg_Res_from_ACK.sh
 - 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/extract_reg_Res_from_ACK
 ###TASK(2.4.2)既知バイオリソース名position in Mat
 - 検索対象(XMLのみ): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_Mat.a[a-u].tsv.XMLonly
 - 検索ターム(エスケープなし): /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_3.ncr
 - プログラム: match_position
-- スクリプト: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/extract_reg_Res_from_Mat.pl
+- スクリプト: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/extract_reg_Res_from_Mat.sh
 - 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/extract_reg_Res_from_Mat.au
 ###===いまここ===###
 
