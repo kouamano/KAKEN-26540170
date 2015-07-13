@@ -420,7 +420,16 @@ while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; d
 - プログラム: match_position
 - スクリプト: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/extract_reg_Res_from_Mat.sh
 - 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/extract_reg_Res_from_Mat.au
+###TASK(一般語を除去、再検索はまだ)
+- 検索ターム(エスケープなし): /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_3
 ###===いまここ===###
+###TASK(2.5) 既知機関名position結果、既知バイオリソース名position結果、ターゲットセンテンスの組を作る
+###TASK(2.5.1) in ACK
+- 対象(ソース): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv
+- 対象(機関名): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/extract_reg_Org_from_ACK
+- 対象(バイオリソース名): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_Mat.au.tsv
+- プログラム: paste_Res_Org_Src.pl
+###つくりちゅう
 
 
 #TASK(3): 評価対象機関名候補決定(/BANK/PMC/20140724/elements/aff) THEME[kaken-26540170]
