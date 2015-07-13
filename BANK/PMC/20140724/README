@@ -422,7 +422,7 @@ while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; d
 - 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/extract_reg_Res_from_Mat.au
 ###TASK(一般語を除去、再検索はまだ)
 - 検索ターム(エスケープなし): /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_3
-###TASK(2.5) 既知機関名position結果、既知バイオリソース名position結果、ターゲットセンテンスの組を作る
+###TASK(2.5) 既知機関名position結果、既知バイオリソース名position結果、ターゲットセンテンスの組(まとめ)を作る
 ###TASK(2.5.1) in ACK
 - 対象(ソース): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv
 - 対象(機関名): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/extract_reg_Org_from_ACK
@@ -436,7 +436,14 @@ while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; d
 - 対象(バイオリソース名):  /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/extract_reg_Res_from_Mat.au
 - プログラム: paste_Res_Org_Src.pl
 - スクリプト: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/pasteSrcOrgRes_Mat.sh
-###===実行中===###
+- 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_Mat.au.tsv+Org+Res
+###TASK(2.5.3) まとめ より無理やりカラーテキストHTMLに変換
+- 対象: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/*.tsv+Org+Res
+- プログラム: /home/kamano/gitsrc/utility/SrcOrgRes_to_html.pl
+- スクリプト: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/SrcOrgRes_to_html.sh
+- 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/*.tsv+Org+Res.html
+###(20150713)###
+
 
 
 #TASK(3): 評価対象機関名候補決定(/BANK/PMC/20140724/elements/aff) THEME[kaken-26540170]
