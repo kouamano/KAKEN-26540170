@@ -437,12 +437,12 @@ while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; d
 - プログラム: paste_Res_Org_Src.pl
 - スクリプト: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/pasteSrcOrgRes_Mat.sh
 - 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_Mat.au.tsv+Org+Res
-###TASK(2.5.3) まとめ より無理やりカラーテキストHTMLに変換
+###TASK(2.5.3) まとめより無理やりカラーテキストHTMLに変換
 - 対象: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/*.tsv+Org+Res
 - プログラム: /home/kamano/gitsrc/utility/SrcOrgRes_to_html.pl
 - スクリプト: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/SrcOrgRes_to_html.sh
 - 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/*.tsv+Org+Res.html
-###(20150713)###
+###(20150714)###
 
 
 
