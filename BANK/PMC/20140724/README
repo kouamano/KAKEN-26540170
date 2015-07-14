@@ -445,7 +445,7 @@ while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; d
 - リソースネームファイル修正:
 cp /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_3 /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_3.org
 vim /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_3
-##Loop:1
+##Loop(バイオリソース名の調整):1
 ##TASK(2.2)
 ###TASK(2.2.1)
 - 検索ターム(UTF8)を数値文字参照に変換: utf8_to_ncr resterms.sort.uniq.select_3 > resterms.sort.uniq.select_3.ncr
