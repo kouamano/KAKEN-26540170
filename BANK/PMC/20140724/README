@@ -442,12 +442,19 @@ while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; d
 - プログラム: /home/kamano/gitsrc/utility/SrcOrgRes_to_html.pl
 - スクリプト: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/SrcOrgRes_to_html.sh
 - 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/*.tsv+Org+Res.html
-###===いまここ===###
 - リソースネームファイル修正:
 cp /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_3 /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_3.org
 vim /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_3
-##Loop
+##Loop:1
 ##TASK(2.2)
+###TASK(2.2.1)
+- 検索ターム(UTF8)を数値文字参照に変換: utf8_to_ncr resterms.sort.uniq.select_3 > resterms.sort.uniq.select_3.ncr
+- perl検索用にエスケープ: escape_char sf=resterms.sort.uniq.select_3.ncr lf=/usr/local/var/perl_esc.list > sf=resterms.sort.uniq.select_3.ncr.esc
+- スクリプト: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/hit_ResOrg_from_ACK.sh
+- 結果(20150715): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv
+###TASK(2.2.2)既知バイオリソース名inMat with 既知機関名
+- スクリプト: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/hit_ResOrg_from_Mat.sh
+###===実行中===###
 ##TASK(2.4)
 ##TASK(2.5)
 
