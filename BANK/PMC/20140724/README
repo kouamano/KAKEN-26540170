@@ -454,8 +454,11 @@ vim /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select
 - 結果(20150715): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv
 ###TASK(2.2.2)既知バイオリソース名inMat with 既知機関名
 - スクリプト: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/hit_ResOrg_from_Mat.sh
-###===実行中===###
+- 結果(20150715): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_Mat.au.tsv
 ##TASK(2.4)
+###TASK(2.4.1)既知バイオリソース名position in ACK
+- スクリプト: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/extract_reg_Res_from_ACK.sh
+###===実行中===###
 ##TASK(2.5)
 
 
