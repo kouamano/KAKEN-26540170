@@ -445,7 +445,10 @@ while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; d
 - リソースネームファイル修正:
 cp /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_3 /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_3.org
 vim /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_3
-
+##Loop
+##TASK(2.2)
+##TASK(2.4)
+##TASK(2.5)
 
 
 
