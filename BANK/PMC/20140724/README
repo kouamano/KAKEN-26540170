@@ -446,8 +446,8 @@ while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; d
 ##Loop(バイオリソース名の調整):1
 ##TASK(2.2)既知バイオリソース名(NBRP)検索
 ###TASK(2.2.1)既知バイオリソース名inACK with 既知機関名
-- 検索ターム(UTF8)を数値文字参照に変換: utf8_to_ncr resterms.sort.uniq.select_3 > resterms.sort.uniq.select_3.ncr
-- perl検索用にエスケープ: escape_char sf=resterms.sort.uniq.select_3.ncr lf=/usr/local/var/perl_esc.list > sf=resterms.sort.uniq.select_3.ncr.esc
+- 検索ターム(UTF8)を数値文字参照に変換: utf8_to_ncr /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_3 > /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_3.ncr
+- perl検索用にエスケープ: escape_char sf=/BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_3.ncr lf=/usr/local/var/perl_esc.list > /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_3.ncr.esc
 - スクリプト: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/hit_ResOrg_from_ACK.sh
 - 結果(20150715): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv
 ###TASK(2.2.2)既知バイオリソース名inMat with 既知機関名
@@ -456,9 +456,11 @@ while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; d
 ##TASK(2.4)既知バイオリソース名のポジション決定(20150715)
 ###TASK(2.4.1)既知バイオリソース名position in ACK
 - スクリプト: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/extract_reg_Res_from_ACK.sh
+###===いまここ===###
 - 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/extract_reg_Res_from_ACK
 ###TASK(2.4.2)既知バイオリソース名position in Mat
 - スクリプト: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/extract_reg_Res_from_Mat.sh
+###===いまここ===###
 - 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/extract_reg_Res_from_Mat.au
 ###TASK(2.5) 既知機関名position結果、既知バイオリソース名position結果、ターゲットセンテンスの組(まとめ)を作る
 ###TASK(2.5.1) in ACK
