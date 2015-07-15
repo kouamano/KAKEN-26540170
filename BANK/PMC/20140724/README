@@ -472,6 +472,7 @@ while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; d
 - 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/*.tsv+Org+Res.html
 ##TASK(2.6) リソースネームリストの修正
 - リソースネーム修正: vim /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_3
+##==作業中==##
 ##EndLoop
 
 #TASK(3): 評価対象機関名候補決定(/BANK/PMC/20140724/elements/aff) THEME[kaken-26540170]
