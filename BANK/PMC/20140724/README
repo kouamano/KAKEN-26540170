@@ -469,10 +469,10 @@ while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; d
 - 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_Mat.au.tsv+Org+Res
 ###TASK(2.5.3) まとめより無理やりカラーテキストHTMLに変換
 - スクリプト: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/SrcOrgRes_to_html.sh
-###===実行中===###
+- 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/*.tsv+Org+Res.html
 ##TASK(2.6) リソースネームリストの修正
 - リソースネーム修正: vim /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_3
-
+##EndLoop
 
 #TASK(3): 評価対象機関名候補決定(/BANK/PMC/20140724/elements/aff) THEME[kaken-26540170]
 #aff領域より得られた機関名(住所つき)をmaterial、ack領域に対して検索、存在を確認。
