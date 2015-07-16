@@ -504,16 +504,18 @@ while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; d
 - ヒット結果（ゴミ含む）: /BANK/PMC/20140724/elements/aff/AFFvsACK/AFFvsACK.log-tagALL-uniqsort
 - 大文字小文字スペース以外を含むフレーズファイル: /BANK/PMC/20140724/elements/aff/WIKIvsAFFvsACK+MAT/tokusyu-list/AFFvsACK.log-tagALL-tokusyu-list
 ### 機関名候補のwiki見出し語による確認
-- ファイル(20150625): /BANK/PMC/20140724/elements/aff/WIKIvsAFFvsACK/AFFvsACK.log-tagALL-wikifilterd
+- ファイル(AFF)(20150625): /BANK/PMC/20140724/elements/aff/WIKIvsAFFvsACK/AFFvsACK.log-tagALL-wikifilterd
+- ファイル(MAT)(20150625): /BANK/PMC/20140724/elements/aff/WIKIvsAFFvsMAT/AFFvsMAT.log-tagALL-wikifilterd
 ##TASK(3.2): material vs. 機関名候補検索(20150508)
 ### material vs. tag1, tag2 and tag3 (石川氏)
 - ヒット結果（ゴミ含む）: /BANK/PMC/20140724/elements/aff/AFFvsMAT/AFFvsMAT.log-tagALL-uniqsort
 - 大文字小文字スペース以外を含むフレーズファイル: /BANK/PMC/20140724/elements/aff/WIKIvsAFFvsACK+MAT/tokusyu-list/AFFvsMAT.log-tagALL-tokusyu-list
 ### 機関名候補のwiki見出し語による確認
-- ファイル(20150625): /BANK/PMC/20140724/elements/aff/WIKIvsAFFvsMAT/AFFvsMAT.log-tagALL-wikifilterd
+- ファイル(ACK)(20150625): /BANK/PMC/20140724/elements/aff/WIKIvsAFFvsACK/AFFvsACK.log-tagALL-wikifilterd
+- ファイル(MAT)(20150625): /BANK/PMC/20140724/elements/aff/WIKIvsAFFvsMAT/AFFvsMAT.log-tagALL-wikifilterd
 - 作業手順ファイル(20150625): /BANK/PMC/20140724/elements/aff/PMC-AFF作業手順メモ.utf8
 ### 手作業によるセレクション
-- grep -v -E '> [a-zA-Z][a-z]+$' AFFvsMAT.log-tagALL-wikifilterd > AFFvsMAT.log-tagALL-wikifilterd.select_1
+- (MAT) grep -v -E '> [a-zA-Z][a-z]+$' AFFvsMAT.log-tagALL-wikifilterd > AFFvsMAT.log-tagALL-wikifilterd.select_1
 
 
 #TASK(4)対象機関名を含むパターン検索
