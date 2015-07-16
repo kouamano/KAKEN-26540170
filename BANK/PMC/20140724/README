@@ -443,7 +443,7 @@ while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; d
 ##TASK(2.6) リソースネームリストの修正
 - リソースネームファイルコピー: cp /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_3 /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_3.org
 - リソースネーム修正: vim /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_3
-##Loop(バイオリソース名の調整):2
+##TASK:Loop(2.7) (バイオリソース名の調整):2
 ##TASK(2.2)既知バイオリソース名(NBRP)検索
 ###TASK(2.2.1)既知バイオリソース名inACK with 既知機関名
 - 検索ターム(UTF8)を数値文字参照に変換: utf8_to_ncr /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_3 > /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_3.ncr
@@ -486,7 +486,7 @@ while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; d
 ##TASK(2.7) リソースネームリストの修正
 - リソースネーム修正: vim /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_3
 - (未定)リソースネーム正規表現検索リスト: /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.additional.RE
-##EndLoop
+##End:Loop
 
 
 
