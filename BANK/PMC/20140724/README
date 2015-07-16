@@ -479,14 +479,16 @@ while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; d
 - 新しく追加するターム(リテラル)(match_position):
 -- /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.additional.ncr
  /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_3.ncr と cat して検索。
-- 正規表現検索を行なうターム(match_position_RE.pl):
+- (未定)正規表現検索を行なうターム(match_position_RE.pl):
 -- /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.additional.RE
  別検索。
 ##TASK(2.7) リソースネームリストの修正
 - リソースネーム修正: vim /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_3
-- リソースネーム正規表現検索リスト: /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.additional.RE
+- (未定)リソースネーム正規表現検索リスト: /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.additional.RE
 ##==作業中==##
 ##EndLoop
+
+
 
 #TASK(3): 評価対象機関名候補決定(/BANK/PMC/20140724/elements/aff) THEME[kaken-26540170]
 #aff領域より得られた機関名(住所つき)をmaterial、ack領域に対して検索、存在を確認。
