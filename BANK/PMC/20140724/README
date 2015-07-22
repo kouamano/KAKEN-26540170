@@ -273,6 +273,7 @@ cd /BANK/PMC/20140724/elements/sec-type
 ##TASK(1.1): パターン定義用既知機関名決定 -> 石川氏
 ###TASK(1.1.1): 既知機関英名シノニム決定 -> 石川氏
 ###石川氏 -> 水野氏に指示 (20150610)
+- 手順書: tejun-sho_201507.ods
 - 日本語機関名リスト(NBRPオリジナル): /BANK/Organization/NBRP_2015/nbrp.organization-names.J.20150409
 - 日本語正式機関名リスト(水野氏): /BANK/Organization/NBRP_2015/orgnames-jp_eng.csv
 - 上ファイルのsortuniq(20150616): /BANK/Organization/NBRP_2015/orgname_jp.sort.uniq
