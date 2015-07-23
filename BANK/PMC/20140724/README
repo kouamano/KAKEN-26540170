@@ -475,18 +475,17 @@ while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; d
 ##TASK(2.6) 検索の検討
 - 検討するタームのリスト:
 -- /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/res.kentou.terms
--- 直接追加: /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_3.ncr
 - 削除するタームのリスト:
 -- /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/res.del.terms
 - 新しく追加するターム(リテラル)(match_position):
 -- /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.additional.ncr
  /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_3.ncr と cat して検索。
-- (未定)正規表現検索を行なうターム(match_position_RE.pl):
+- [未定]新しく追加するターム(正規表現)(match_position_RE.pl):
 -- /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.additional.RE
  別検索。
 ##TASK(2.7) リソースネームリストの修正
 - リソースネーム修正: vim /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_3
-- (未定)リソースネーム正規表現検索リスト: /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.additional.RE
+- [未定]リソースネーム正規表現検索リスト: /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.additional.RE
 ##End:Loop
 
 
