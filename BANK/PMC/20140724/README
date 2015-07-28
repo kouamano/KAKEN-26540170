@@ -374,15 +374,22 @@ while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; d
 ###機関名
 - エスケープコマンド: escape_char sf=/BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt lf=/usr/local/var/perl_esc.list > /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt.esc
 ###リソース名
-- エスケープコマンド: escape_char sf=/BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_3.ncr lf=/usr/local/var/perl_esc.list > /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_3.ncr.esc
+- ncrコマンド: utf8_to_ncr /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_4 > /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_4.ncr
+- エスケープコマンド: escape_char sf=/BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_4.ncr lf=/usr/local/var/perl_esc.list > /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_4.ncr.esc
 ##TASK(2.1)既知機関名(NBRP)検索(文字色挿入)
 ###TASK(2.1.1)既知機関名 in ACK
 - 対象(ソース): /BANK/PMC/20140724/elements/acknowledgement/PMC-ACK-v6.tsv
 - 検索ターム(エスケープ済み): /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt.esc
 - プログラム: /home/kamano/gitsrc/XMLOP/insTxColor_to_html.pl
-- スクリプト : time /home/kamano/gitsrc/XMLOP/insTxColor_to_html.pl src=/BANK/PMC/20140724/elements/acknowledgement/PMC-ACK-v6.tsv clm=1 trm=/BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt.esc clr=red > /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/PMC-ACK.color
-<E> 実行時間計測中(20150728)
+- スクリプト(10 min): time /home/kamano/gitsrc/XMLOP/insTxColor_to_html.pl src=/BANK/PMC/20140724/elements/acknowledgement/PMC-ACK-v6.tsv clm=1 trm=/BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt.esc clr=red > /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/PMC-ACK.Org.color
 ###TASK(2.1.1)既知機関名 in Mat
+##TASK(2.2)バイオリソース名(NBRP)検索(文字色挿入)
+###TASK(2.2.1)バイオリソース名 in ACK
+- 対象(すでに機関名の処理が終わったもの): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/PMC-ACK.Org.color
+- 検索ターム(ncr、エスケープ済み): /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_4.ncr.esc
+- プログラム: /home/kamano/gitsrc/XMLOP/insTxColor_to_html.pl
+- スクリプト(時間計測中): time /home/kamano/gitsrc/XMLOP/insTxColor_to_html.pl src=/BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/PMC-ACK.Org.color clm=1 trm=/BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_4.ncr.esc clr=blue > /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/PMC-ACK.OrgSrc.color
+<E>
 
 
 #[old]TASK(2): 既知バイオリソース名・機関名の検索とパターン定義(NBRP)(やりなおし:どうしても行番号が一致しない@ACK)
