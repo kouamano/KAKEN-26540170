@@ -394,7 +394,7 @@ while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; d
 
 #[old]TASK(2): 既知バイオリソース名・機関名の検索とパターン定義(NBRP)(やりなおし:どうしても行番号が一致しない@ACK)
 #3段階の検索を行なう:1.機関名が出現する行を抽出(20150708) 2.さらにバイオリソース名が出現する行を抽出(20150710) 3.抽出結果に対して、機関名ポジションとバイオリソース名ポジションを検索
-##TASK(2.1)既知機関名(NBRP)検索
+##TASK(2.1)既知機関名(NBRP)出現articleの抽出
 ###TASK(2.1.1)検索タームの調整
 - 検索ターム(元): /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt
 - エスケープコマンド: escape_char sf=/BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt lf=/usr/local/var/perl_esc.list > /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt.esc
@@ -412,7 +412,7 @@ while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; d
 - プログラム: /home/kamano/gitsrc/utility/hit_least.pl
 - スクリプト: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/hit_Org_from_Mat.sh
 - 結果(20150708): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_Org_from_Mat.au.tsv
-##TASK(2.2)既知バイオリソース名(NBRP)検索
+##TASK(2.2)既知バイオリソース名(NBRP)出現articleの抽出
 ###TASK(2.2.1)検索タームの調整
 - 検索ターム(元): /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_3
 - 検索ターム(UTF8)を数値文字参照に変換: utf8_to_ncr resterms.sort.uniq.select_3 > resterms.sort.uniq.select_3.ncr
@@ -428,8 +428,7 @@ while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; d
 - 検索ターム(エスケープ済み): /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_3.ncr.esc
 - プログラム: /home/kamano/gitsrc/utility/hit_least.pl
 - スクリプト: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/hit_ResOrg_from_Mat.sh
-- 結果(20150710): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_Mat.au.tsv
-##ここまで手順の並列化は行なえない。
+- 結果(20150728): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_Mat.au.tsv
 ##TASK(2.3)既知機関名のポジション決定(20150711)
 ###TASK(2.3.1)既知機関名position in ACK
 - 検索対象(XMLのみ): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv.XMLonly
@@ -461,7 +460,6 @@ for alf in aa ab ac ad ae af ag ah ai aj ak al am an ao ap aq ar as at au; do aw
 - 検索ターム(エスケープなし): /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_3.ncr
 - プログラム: match_position
 - スクリプト: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/extract_reg_Res_from_Mat.sh
-<E>
 - 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/extract_reg_Res_from_Mat.au
 ##TASK(2.5) 既知機関名position結果、既知バイオリソース名position結果、ターゲットセンテンスの組(まとめ)を作る
 ###TASK(2.5.1) in ACK
@@ -487,6 +485,7 @@ for alf in aa ab ac ad ae af ag ah ai aj ak al am an ao ap aq ar as at au; do aw
 - 対象: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/*.tsv+Org+Res
 - プログラム: /home/kamano/gitsrc/XMLOP/SrcOrgRes-Sel_to_html.pl
 - スクリプト: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/SrcOrgRes-Sel_to_html.sh
+(20150728)
 ##TASK(2.6) リソースネームリストの修正
 - リソースネームファイルコピー: cp /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_3 /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_3.org
 - リソースネーム修正: vim /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_3
