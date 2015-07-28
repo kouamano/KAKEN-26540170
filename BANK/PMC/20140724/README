@@ -367,17 +367,22 @@ while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; d
 
 
 
-#[new]TASK(2): 既知バイオリソース名・機関名の検索とパターン定義(NBRP)
-#まだ、ペンディング。[old]を最初から全部やってみてダメならこちらに移行。
+#[new]TASK(2): 既知バイオリソース名・機関名の出現状況確認(NBRP)
+#試験中
 #ヒット箇所に直接文字色を挿入
-##TASK(2.0)準備:ACKよりpmidをdrop
-- 対象: /BANK/PMC/20140724/elements/acknowledgement/PMC-ACK-v6_pmid.tsv
-- スクリプト:  awk -F '	' '{print $2"\t"$3}' /BANK/PMC/20140724/elements/acknowledgement/PMC-ACK-v6_pmid.tsv > /BANK/PMC/20140724/elements/acknowledgement/PMC-ACK-v6.tsv
-- 結果: /BANK/PMC/20140724/elements/acknowledgement/PMC-ACK-v6.tsv
-##TASK(2.1)既知機関名(NBRP)検索(文字色挿入)
-###TASK(2.1.1)検索タームの調整
-- 検索ターム(元): /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt
+##TASK(2.0)準備 検索タームの特殊文字エスケープ
+###機関名
 - エスケープコマンド: escape_char sf=/BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt lf=/usr/local/var/perl_esc.list > /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt.esc
+###リソース名
+- エスケープコマンド: escape_char sf=/BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_3.ncr lf=/usr/local/var/perl_esc.list > /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_3.ncr.esc
+##TASK(2.1)既知機関名(NBRP)検索(文字色挿入)
+###TASK(2.1.1)既知機関名 in ACK
+- 対象(ソース): /BANK/PMC/20140724/elements/acknowledgement/PMC-ACK-v6.tsv
+- 検索ターム(エスケープ済み): /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt.esc
+- プログラム: /home/kamano/gitsrc/XMLOP/insTxColor_to_html.pl
+- スクリプト : time /home/kamano/gitsrc/XMLOP/insTxColor_to_html.pl src=/BANK/PMC/20140724/elements/acknowledgement/PMC-ACK-v6.tsv clm=1 trm=/BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt.esc clr=red > /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/PMC-ACK.color
+<E> 実行時間計測中(20150728)
+###TASK(2.1.1)既知機関名 in Mat
 
 
 #[old]TASK(2): 既知バイオリソース名・機関名の検索とパターン定義(NBRP)(やりなおし:どうしても行番号が一致しない@ACK)
@@ -404,7 +409,7 @@ while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; d
 ###TASK(2.2.1)検索タームの調整
 - 検索ターム(元): /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_3
 - 検索ターム(UTF8)を数値文字参照に変換: utf8_to_ncr resterms.sort.uniq.select_3 > resterms.sort.uniq.select_3.ncr
-- perl検索用にエスケープ: escape_char sf=resterms.sort.uniq.select_3.ncr lf=/usr/local/var/perl_esc.list > sf=resterms.sort.uniq.select_3.ncr.esc
+- perl検索用にエスケープ: escape_char sf=/BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_3.ncr lf=/usr/local/var/perl_esc.list > /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_3.ncr.esc
 ###TASK(2.2.2)既知バイオリソース名inACK with 既知機関名
 - 検索対象: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_Org_from_ACK.tsv
 - 検索ターム(エスケープ): /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_3.ncr.esc
@@ -417,6 +422,7 @@ while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; d
 - プログラム: /home/kamano/gitsrc/utility/hit_least.pl
 - スクリプト: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/hit_ResOrg_from_Mat.sh
 - 結果(20150710): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_Mat.au.tsv
+##ここまで手順の並列化は行なえない。
 ##TASK(2.3)既知機関名のポジション決定(20150711)
 ###TASK(2.3.1)既知機関名position in ACK
 - 検索対象(XMLのみ): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv.XMLonly
@@ -429,7 +435,9 @@ while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; d
 ###TASK(2.3.2)既知機関名position in Mat
 - 検索対象(XMLのみ): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_Mat.a[a-u].tsv.XMLonly
  /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_Mat.a[a-u].tsv より第2カラムのみを抽出したもの
--- スクリプト:
+-- スクリプト: 
+cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015;
+for alf in aa ab ac ad ae af ag ah ai aj ak al am an ao ap aq ar as at au; do awk -F '	' '{print $2}' hit_ResOrg_from_Mat.$alf.tsv > hit_ResOrg_from_Mat.$alf.tsv.XMLonly; done
 - 検索ターム(エスケープなし): /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt.sort.uniq
 - プログラム: match_position
 - スクリプト: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/extract_reg_Org_from_Mat.sh
