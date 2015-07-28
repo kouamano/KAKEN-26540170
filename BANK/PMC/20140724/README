@@ -430,6 +430,10 @@ while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; d
 - スクリプト(10 min): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/insTxColor_Res_in_Mat.sh
 - 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_Mat.au.tsv.color2
 ##TASK(2.3) センテンスsplit & html化
+- プログラム: /home/kamano/gitsrc/XMLOP/extract_hit_sentence_from_colored.pl
+ プログラム作成済み
+##== いまここ ==##
+
 
 
 #[old]TASK(2): 既知バイオリソース名・機関名の検索とパターン定義(NBRP)
@@ -506,7 +510,7 @@ for alf in aa ab ac ad ae af ag ah ai aj ak al am an ao ap aq ar as at au; do aw
 - 対象(ソース): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv
 - 対象(機関名): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/extract_reg_Org_from_ACK
 - 対象(バイオリソース名):  /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/extract_reg_Res_from_ACK
-- プログラム: paste_Res_Org_Src.pl
+- プログラム: /home/kamano/gitsrc/utility/paste_Res_Org_Src.pl
 - スクリプト: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/pasteSrcOrgRes_ACK.sh
 - 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv+Org+Res
 ###TASK(2.5.2) in Mat
