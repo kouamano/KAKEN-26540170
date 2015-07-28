@@ -385,54 +385,53 @@ while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; d
 - プログラム: /home/kamano/gitsrc/utility/hit_least.pl
 - スクリプト: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/hit_Org_from_ACK.sh
 - 結果(20150708): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_Org_from_ACK.tsv
-###TASK(2.0.2)機関名hitの確認抽出 in Mat
+###TASK(2.0.2)リソース名hitの確認抽出 in ACK with 機関名
+- 検索対象: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_Org_from_ACK.tsv
+- 検索ターム(エスケープ): /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_3.ncr.esc
+- プログラム: /home/kamano/gitsrc/utility/hit_least.pl
+- スクリプト: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/hit_ResOrg_from_ACK.sh
+- 結果(20150710): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv
+###TASK(2.0.3)機関名hitの確認抽出 in Mat
 - 検索対象: /BANK/PMC/20140724/elements/MERGED/allmaterials/*.cont
  2カラムめに対して検索
 - 検索ターム(スケープ済み): /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt.esc
 - プログラム: /home/kamano/gitsrc/utility/hit_least.pl
 - スクリプト: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/hit_Org_from_Mat.sh
 - 結果(20150708): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_Org_from_Mat.au.tsv
-###TASK(2.0.3)リソース名hitの確認抽出 in ACK with 機関名
-- 検索対象: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_Org_from_ACK.tsv
-- 検索ターム(エスケープ): /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_3.ncr.esc
-- プログラム: /home/kamano/gitsrc/utility/hit_least.pl
-- スクリプト: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/hit_ResOrg_from_ACK.sh
-- 結果(20150710): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv
 ###TASK(2.0.4)リソース名hitの確認抽出 in Mat with 機関名
 - 検索対象: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_Org_from_Mat.a[a-u].tsv
 - 検索ターム(エスケープ済み): /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_3.ncr.esc
 - プログラム: /home/kamano/gitsrc/utility/hit_least.pl
 - スクリプト: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/hit_ResOrg_from_Mat.sh
 - 結果(20150728): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_Mat.au.tsv
-##TASK(2.1)既知機関名(NBRP)検索(文字色挿入)
+##TASK(2.1)既知機関名・リソース名(NBRP)検索(文字色挿入)
 ###TASK(2.1.1)既知機関名 in ACK
 - 対象(ソース): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv
 - 検索ターム(エスケープ済み): /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt.esc
 - プログラム: /home/kamano/gitsrc/XMLOP/insTxColor_to_html.pl
 - スクリプト: time /home/kamano/gitsrc/XMLOP/insTxColor_to_html.pl src=/BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv clm=2 trm=/BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt.esc clr=red > /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv.color1
 - 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv.color1
-###TASK(2.1.2)既知機関名 in Mat
+###TASK(2.1.2)バイオリソース名 in ACK
+- 対象(すでに機関名の処理が終わったもの): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv.color1
+- 検索ターム(ncr、エスケープ済み): /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_4.ncr.esc
+- プログラム: /home/kamano/gitsrc/XMLOP/insTxColor_to_html.pl
+- スクリプト(15 min): time /home/kamano/gitsrc/XMLOP/insTxColor_to_html.pl src=/BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv.color1 clm=2 trm=/BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_4.ncr.esc clr=blue > /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv.color2
+- 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv.color2
+###TASK(2.1.3)既知機関名 in Mat
 - 対象(ソース): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_Mat.au.tsv
 - 検索ターム(エスケープ済み): /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt.esc
 - プログラム: /home/kamano/gitsrc/XMLOP/insTxColor_to_html.pl
 - スクリプト: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/insTxColor_Org_in_Mat.sh
 - 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_Mat.au.tsv.color1
-##TASK(2.2)バイオリソース名(NBRP)検索(文字色挿入)
-###TASK(2.2.1)バイオリソース名 in ACK
-- 対象(すでに機関名の処理が終わったもの): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv.color1
-- 検索ターム(ncr、エスケープ済み): /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_4.ncr.esc
-- プログラム: /home/kamano/gitsrc/XMLOP/insTxColor_to_html.pl
-- スクリプト(時間計測中): time /home/kamano/gitsrc/XMLOP/insTxColor_to_html.pl src=/BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv.color1 clm=2 trm=/BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_4.ncr.esc clr=blue > /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv.color2
-<E>
-###TASK(2.2.2)バイオリソース名 in ACK
+###TASK(2.1.4)バイオリソース名 in ACK (20150728)
 - 対象(すでに機関名の処理が終わったもの): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_Mat.au.tsv.color1
 - 検索ターム(ncr、エスケープ済み): /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_4.ncr.esc
 - プログラム: /home/kamano/gitsrc/XMLOP/insTxColor_to_html.pl
-- スクリプト: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/insTxColor_Res_in_Mat.sh
+- スクリプト(10 min): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/insTxColor_Res_in_Mat.sh
 
 
 
-#[old]TASK(2): 既知バイオリソース名・機関名の検索とパターン定義(NBRP)(やりなおし:どうしても行番号が一致しない@ACK)
+#[old]TASK(2): 既知バイオリソース名・機関名の検索とパターン定義(NBRP)
 #3段階の検索を行なう:1.機関名が出現する行を抽出(20150708) 2.さらにバイオリソース名が出現する行を抽出(20150710) 3.抽出結果に対して、機関名ポジションとバイオリソース名ポジションを検索
 ##TASK(2.1)既知機関名(NBRP)出現articleの抽出
 ###TASK(2.1.1)検索タームの調整
