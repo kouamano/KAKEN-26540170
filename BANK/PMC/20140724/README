@@ -437,7 +437,9 @@ while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; d
 - 対象(すでに機関名の処理が終わったもの): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_Mat.au.tsv.color1
 - 検索ターム(ncr、エスケープ済み): /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_4.ncr.esc
 - プログラム: /home/kamano/gitsrc/XMLOP/insTxColor_to_html.pl
-- スクリプト(10 min): time /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/insTxColor_Res_in_Mat.sh
+- スクリプト(10 min): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/insTxColor_Res_in_Mat.sh
+<R>
+<E>
 - 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_Mat.au.tsv.color2
 ##TASK(2.3) センテンスsplit & html化 (20150729)
 - 対象: hit_ResOrg_from*color2
