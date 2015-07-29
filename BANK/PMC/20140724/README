@@ -432,21 +432,22 @@ while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; d
 - スクリプト: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/insTxColor_Org_in_Mat.sh
 - 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_Mat.au.tsv.color1
 <R>
-###== いまここ ==###
 ###TASK(2.1.4)バイオリソース名 in ACK (20150728)
 - 対象(すでに機関名の処理が終わったもの): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_Mat.au.tsv.color1
 - 検索ターム(ncr、エスケープ済み): /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_4.ncr.esc
 - プログラム: /home/kamano/gitsrc/XMLOP/insTxColor_to_html.pl
 - スクリプト(10 min): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/insTxColor_Res_in_Mat.sh
-<R>
-<E>
 - 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_Mat.au.tsv.color2
+<R>
+###== いまここ ==###
 ##TASK(2.3) センテンスsplit & html化 (20150729)
 - 対象: hit_ResOrg_from*color2
 - プログラム: /home/kamano/gitsrc/XMLOP/extract_hit_sentence_from_colored.pl
  プログラム作成済み
 - スクリプト(ACK): /home/kamano/gitsrc/XMLOP/extract_hit_sentence_from_colored.pl src=/BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv.color2 clm=2 terms=red,blue > /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv.color2.sel.html
+<R>
 - スクリプト(Mat): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/select_from_colored_Mat.sh
+- 結果: hit_ResOrg_from_*color2.sel.html
 ##TASK(2.4) 機関名、バイオリソース名が同時出現するセンテンス(ピリオド区切り)を人手で抜きだし
 - 対象: hit_ResOrg_from_*.tsv.color2.sel.html
 
