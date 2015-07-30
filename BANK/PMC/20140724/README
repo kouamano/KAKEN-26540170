@@ -377,7 +377,7 @@ while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; d
 - 実行ファイル: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/exec_TASK2_all.sh
 --> 失敗。 waitしてもつぎのスクリプトが実行される。
 --> waitは段階的に呼び出されるプロセスに対応していない。--> スクリプト修正中
---> 現在、いくつかのファイルが壊れたまま。--> 修正中
+--> 現在、いくつかのファイルが壊れたまま。--> 修正中 --> OK
 ##TASK(2.0)準備
 ###TASK(2.0.0)検索タームの特殊文字エスケープ
 ####機関名
@@ -435,7 +435,6 @@ while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; d
 - 検索ターム(ncr、エスケープ済み): /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_5.ncr.esc
 - プログラム: /home/kamano/gitsrc/XMLOP/insTxColor_to_html.pl
 - スクリプト(10 min): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/insTxColor_Res_in_Mat.sh
-###===いまここ===###
 - 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_Mat.au.tsv.color2
 ##TASK(2.3) センテンスsplit & html化 (20150729)
 - 対象: hit_ResOrg_from*color2
@@ -443,6 +442,7 @@ while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; d
 - スクリプト(ACK): /home/kamano/gitsrc/XMLOP/extract_hit_sentence_from_colored.pl src=/BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv.color2 clm=2 terms=red,blue > /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv.color2.sel.html
 - スクリプト(Mat): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/select_from_colored_Mat.sh
 - 結果: hit_ResOrg_from_*color2.sel.html
+###===いまここ===###
 ##TASK(2.4) 機関名、バイオリソース名が同時出現するセンテンス(ピリオド区切り)を人手で抜きだし
 - 対象: hit_ResOrg_from_*.tsv.color2.sel.html
 
