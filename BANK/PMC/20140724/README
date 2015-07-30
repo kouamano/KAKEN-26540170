@@ -376,8 +376,8 @@ while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; d
 #全実行シークエンス
 - 実行ファイル: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/exec_TASK2_all.sh
 --> 失敗。 waitしてもつぎのスクリプトが実行される。
---> waitは段階的に呼び出されるプロセスに対応していない。
---> 現在、いくつかのファイルが壊れたまま。
+--> waitは段階的に呼び出されるプロセスに対応していない。--> スクリプト修正中
+--> 現在、いくつかのファイルが壊れたまま。--> 修正中
 ##TASK(2.0)準備
 ###TASK(2.0.0)検索タームの特殊文字エスケープ
 ####機関名
