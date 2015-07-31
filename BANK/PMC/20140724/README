@@ -1,6 +1,4 @@
 #[リソース名共出現解析][kaken-26540170][引用解析]
-
-
 #NOTE:
 ##20150428 新手順に切り替え
 ##開始インデックス(イタレータ)まとめ
@@ -8,25 +6,13 @@
 ##perl: 0
 ##Mathematica: 1
 ##Matlab: 1
-
 #検討事項:
 ##正解論文を集めてそこからパターンを抽出することを検討
-
 #TODO:
-##TASK(2.5) においてペースト時に行がずれる
-##match_positionの結果をもとのソースにインサートする際にずれる。ACKのみ。
-##ACKにおけるResの検索に問題か?
-##ひとまず[old]TASK(2)を流す。
-##それでもダメなら新しい手順[new]TASK(2)を作成。
-##間違っていそうなところ:
-- match_position の対象ファイル (スクリプト)
-- paste　の対象ファイル (スクリプト)
-
 ##check: OK
 ###/BANK/PMC/20140724/Matching/BioResource/Organization/ATCC_2014 -> OK
 ###match_pos_AllResNames_Jour-ao.res がない。-> OK
 ##プログラムの整理: gitsrc/KAKEN-26540170/BANK/PMC/bin を使わないようにする -> OK
-##TASK(term-count)
 ##データのバックアップ: OK
 ##As of 20141013 -> OK
 /mnt/EDB200/BANK/BioResource - OK
@@ -227,51 +213,120 @@ cd /BANK/PMC/20140724/elements/sec-type
 - プログラム: /home/kamano/gitsrc/XMLOP/region-ref_from_XML.pl
 - スクリプト: /BANK/PMC/20140724/elements/x+ref+p/exec_command/content_ref_Jour-ALL.sh
 - 結果: /BANK/PMC/20140724/elements/x+ref+p/content_ref_Jour-au
-### 3. ペアリング ->  柴田さん
 
 
 
-#TASK(term-count): 出現タームのカウント
+#TASK(term-count): 出現タームのsplit・カウント
 ##TASK(term-count.ALL)
-###タグの除去とsplit
+### (split pattern 3)
+#### タグの除去とsplit
 - プログラム:
 -- /home/kamano/gitsrc/XMLOP/drop_tag-text.pl
 -- /home/kamano/gitsrc/XMLOP/splitter3.pl
 - スクリプト: /BANK/PMC/20140724/terms/whole/patt.3/exec_command/split_Word_Jour-ALL.sh
 - 出力ファイル: /BANK/PMC/20140724/terms/whole/patt.3/Word_Jour-au
-##TASK(term-count.allmaterials; patt.4)(20150421完了)
-###各ファイルのtag除去, split, sort, uniq, count
+
+##TASK(term-count.allmaterials)
+### (split pattern 1)
+#### 各ファイルのtag除去, split, sort, uniq, count
+- 対象: /BANK/PMC/20140724/elements/MERGED/allmaterials/allmaterials.au.reg.cont
+- プログラム: 
+-- /home/kamano/gitsrc/utility/drop_1ST-col_from_TSV.pl
+-- /home/kamano/gitsrc/XMLOP/drop_tag-text.pl
+-- /home/kamano/gitsrc/XMLOP/splitter1.pl
+- スクリプト例: /home/kamano/gitsrc/utility/drop_1ST-col_from_TSV.pl /BANK/PMC/20140724/elements/MERGED/allmaterials/allmaterials.au.reg.cont | /home/kamano/gitsrc/XMLOP/drop_tag-text.pl | /home/kamano/gitsrc/XMLOP/splitter1.pl | tr '	' '\n' | sort |uniq -c > /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.4/allmaterials.au.sort.uniq.count
+- スクリプト(5 min): /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.1/exec_command/split-sort-count.sh
+- 結果: /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.1/allmaterials.au.sort.uniq.count
+#### すべてのファイルのcount結果をマージ
+##### すべてのファイルをマージ、タームでソート
+- プログラム: /home/kamano/gitsrc/utility/rep4count.pl
+- スクリプト: cat /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.1/allmaterials.*.sort.uniq.count | /home/kamano/gitsrc/utility/rep4count.pl | sort -t '	' -k2 > /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.1/ALL.merge
+- 結果: /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.1/ALL.merge
+##### マージ結果を集計
+- プログラム: /home/kamano/gitsrc/utility/sum_count_from_mixed_sort.pl
+- スクリプト: /home/kamano/gitsrc/utility/sum_count_from_mixed_sort.pl /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.1/ALL.merge > /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.1/ALL.merge.sort.count
+- 結果: /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.1/ALL.merge.sort.count
+#### 空文字列を削除(手動)
+- 対象: /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.1/ALL.merge.sort.count
+- スクリプト: vim /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.1/ALL.merge.sort.count
+- 結果: /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.1/ALL.merge.sort.count
+####====(20150731)====####
+#### 検索用のターム作成
+##### 拡張子の使い方
+- .<n>E : (Extract)、対象
+- .<n>D : (Delete)、対象外
+- <n> : シークエンス番号
+##### ディレクトリ移動
+- ディレクトリ移動:  cd /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.1
+##### 出現が1のタームを除去
+- スクリプト:
+ grep -v '^1 ' ALL.merge.sort.count.sort > ALL.merge.sort.count.sort.1E
+##### 出現が多いタームを除去
+- HeLa : 24084
+- threshold : 40000
+- 境界 : 40012 v/v
+- スクリプト:
+ cp ALL.merge.sort.count.sort.1E ALL.merge.sort.count.sort.2E
+ vim ALL.merge.sort.count.sort.2E
+##### delete terms which contain double-quote
+- スクリプト: grep -v \" ALL.merge.sort.count.sort.2E > ALL.merge.sort.count.sort.3E
+##### 出現が2のタームを除去
+- スクリプト: grep -v '^2 ' ALL.merge.sort.count.sort.3E > ALL.merge.sort.count.sort.4E
+##### 文頭が "#" (シャープ) のタームを除去
+- スクリプト: grep -E -v '^[0-9]+ #' ALL.merge.sort.count.sort.4E > ALL.merge.sort.count.sort.5E
+##### 文頭が "$" (ダラー) のタームを除去
+- スクリプト: grep -E -v '^[0-9]+ \$' ALL.merge.sort.count.sort.5E > ALL.merge.sort.count.sort.6E
+##### 文頭が "!" (エクスクラメーション) のタームを除去
+- スクリプト: grep -E -v '^[0-9]+ !' ALL.merge.sort.count.sort.6E > ALL.merge.sort.count.sort.7E
+##### 文頭が "%" (パーセント) のタームを除去
+- スクリプト: grep -E -v '^[0-9]+ %' ALL.merge.sort.count.sort.7E > ALL.merge.sort.count.sort.8E
+##### 文頭が "'" (ダッシュ) のタームを除去
+- スクリプト: grep -E -v "^[0-9]+ '" ALL.merge.sort.count.sort.8E > ALL.merge.sort.count.sort.9E
+##### 文頭が "*" (アスタリスク) のタームを除去
+- スクリプト: grep -E -v "^[0-9]+ \*" ALL.merge.sort.count.sort.9E > ALL.merge.sort.count.sort.10E
+##### 文頭が "+" (プラス) のタームを除去
+- スクリプト: grep -E -v "^[0-9]+ \+" ALL.merge.sort.count.sort.10E > ALL.merge.sort.count.sort.11E
+##### 文頭が "-" (マイナス) のタームを除去
+- スクリプト: grep -E -v "^[0-9]+ -" ALL.merge.sort.count.sort.11E > ALL.merge.sort.count.sort.12E
+##### 文頭が "/" (スラッシュ) のタームを除去
+- スクリプト: grep -E -v "^[0-9] /" ALL.merge.sort.count.sort.12E > ALL.merge.sort.count.sort.13E
+##### 小文字子数字1文字のタームを除去
+- スクリプト: grep -E -v "^[0-9]+ [0-9a-z]$" ALL.merge.sort.count.sort.13E > ALL.merge.sort.count.sort.14E
+##### 小文字子数字2文字のタームを除去
+- スクリプト: grep -E -v "^[0-9]+ [0-9a-z][0-9a-z]$" ALL.merge.sort.count.sort.14E > ALL.merge.sort.count.sort.15E
+
+
+
+### (split pattern 4)
+#### 各ファイルのtag除去, split, sort, uniq, count
 - cd /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.4
 - プログラム:
 -- /home/kamano/gitsrc/utility/drop_1ST-col_from_TSV.pl
 -- /home/kamano/gitsrc/XMLOP/drop_tag-text.pl
 -- /home/kamano/gitsrc/XMLOP/splitter4.pl
-- スクリプト例: /home/kamano/gitsrc/utility/drop_1ST-col_from_TSV.pl /BANK/PMC/20140724/elements/MERGED/allmaterials/allmaterials.au.reg.cont | /home/kamano/gitsrc/XMLOP/drop_tag-text.pl | /home/kamano/gitsrc/XMLOP/splitter4.pl | tr ' ' '\n' | sort |uniq -c > /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.4/allmaterials.au.sort.uniq.count
-- スクリプト: /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.4/split-sort-count.sh
-###すべてのファイルのcount結果をマージ
-####すべてのファイルをマージ、タームでソート
+- スクリプト例: /home/kamano/gitsrc/utility/drop_1ST-col_from_TSV.pl /BANK/PMC/20140724/elements/MERGED/allmaterials/allmaterials.au.reg.cont | /home/kamano/gitsrc/XMLOP/drop_tag-text.pl | /home/kamano/gitsrc/XMLOP/splitter4.pl | tr '	' '\n' | sort |uniq -c > /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.4/allmaterials.au.sort.uniq.count
+- スクリプト: /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.4/exec_command/split-sort-count.sh
+#### すべてのファイルのcount結果をマージ
+##### すべてのファイルをマージ、タームでソート
 - プログラム: /home/kamano/gitsrc/utility/rep4count.pl
 - スクリプト: cat /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.4/allmaterials.*.sort.uniq.count | /home/kamano/gitsrc/utility/rep4count.pl | sort -t '	' -k2 > /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.4/ALL.merge
-####マージ結果を集計
+##### マージ結果を集計
 - プログラム: /home/kamano/gitsrc/utility/sum_count_from_mixed_sort.pl
 - スクリプト: /home/kamano/gitsrc/utility/sum_count_from_mixed_sort.pl /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.4/ALL.merge > /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.4/ALL.merge.sort.count
-###空文字列を削除
+#### 空文字列を削除
 - /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.4/ALL.merge.sort.count
-##
 - 結果: /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.4/ALL.merge.sort.count
-## perl検索用のターム作成
+#### perl検索用のターム作成
 - 対象: /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.4/ALL.merge.sort.count
-### カウントを消去
+##### カウントを消去
 - スクリプト:  sed -e 's/^[^ ]* //;' ALL.merge.sort.count > terms.search.pre
-### 1文字、極端に長いタームを削除
+##### 1文字、極端に長いタームを削除
 - プログラム: /home/kamano/gitsrc/utility/drop_suspicius-length.pl
 - スクリプト: /home/kamano/gitsrc/utility/drop_suspicius-length.pl terms.search.pre > terms.search
-### 特殊文字をエスケープ
+##### 特殊文字をエスケープ
 - プログラム: escape_char
 - スクリプト: escape_char sf=/BANK/PMC/20140724/terms/MERGED/allmaterials/patt.4/terms.search lf=/usr/local/var/perl_esc.list > /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.4/terms.search.esc
-##
 - 結果: /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.4/terms.search.esc
-##TASK(term-count.acknowledgement; patt.4)
 
 
 
@@ -376,8 +431,9 @@ while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; d
 #全実行シークエンス
 - 実行ファイル: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/exec_TASK2_all.sh
 --> 失敗。 waitしてもつぎのスクリプトが実行される。
---> waitは段階的に呼び出されるプロセスに対応していない。--> スクリプト修正中
+--> waitは段階的に呼び出されるプロセスに対応していない。--> スクリプト修正完了
 --> 現在、いくつかのファイルが壊れたまま。--> 修正中 --> OK
+--> まだ実行していない。
 ##TASK(2.0)準備
 ###TASK(2.0.0)検索タームの特殊文字エスケープ
 ####機関名
@@ -442,7 +498,7 @@ while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; d
 - スクリプト(ACK): /home/kamano/gitsrc/XMLOP/extract_hit_sentence_from_colored.pl src=/BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv.color2 clm=2 terms=red,blue > /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv.color2.sel.html
 - スクリプト(Mat): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/select_from_colored_Mat.sh
 - 結果: hit_ResOrg_from_*color2.sel.html
-###===いまここ===###
+##==(20150730)完了==##
 ##TASK(2.4) 機関名、バイオリソース名が同時出現するセンテンス(ピリオド区切り)を人手で抜きだし
 - 対象: hit_ResOrg_from_*.tsv.color2.sel.html
 
