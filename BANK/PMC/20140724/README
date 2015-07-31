@@ -250,7 +250,6 @@ cd /BANK/PMC/20140724/elements/sec-type
 - 対象: /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.1/ALL.merge.sort.count
 - スクリプト: vim /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.1/ALL.merge.sort.count
 - 結果: /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.1/ALL.merge.sort.count
-####====(20150731)====####
 #### 検索用のターム作成
 ##### 拡張子の使い方
 - .<n>E : (Extract)、対象
@@ -294,9 +293,8 @@ cd /BANK/PMC/20140724/elements/sec-type
 - スクリプト: grep -E -v "^[0-9]+ [0-9a-z]$" ALL.merge.sort.count.sort.13E > ALL.merge.sort.count.sort.14E
 ##### 小文字子数字2文字のタームを除去
 - スクリプト: grep -E -v "^[0-9]+ [0-9a-z][0-9a-z]$" ALL.merge.sort.count.sort.14E > ALL.merge.sort.count.sort.15E
-
-
-
+#####=====(20150731)=====#####
+#####=====作業中=====#####
 ### (split pattern 4)
 #### 各ファイルのtag除去, split, sort, uniq, count
 - cd /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.4
@@ -418,8 +416,7 @@ while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; d
  生物種名については全て残す。
 -- 作業対象ファイル: /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.1
 -- 結果ファイル(20150710): /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_3
--- 結果ファイル(20150728): /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_4
--- 修正子たが使用していない最新: /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_5
+-- 結果ファイル(20150728): /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_5
 
 
 
@@ -498,6 +495,18 @@ while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; d
 - スクリプト(ACK): /home/kamano/gitsrc/XMLOP/extract_hit_sentence_from_colored.pl src=/BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv.color2 clm=2 terms=red,blue > /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv.color2.sel.html
 - スクリプト(Mat): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/select_from_colored_Mat.sh
 - 結果: hit_ResOrg_from_*color2.sel.html
+##TASK(2.3.1) htmlより空のレコードを除去 (20150731)
+- 対象: hit_ResOrg_from_*color2.sel.html
+- プログラム: /home/kamano/gitsrc/XMLOP/drop_empty_hit_from_html.pl
+- スクリプト: 
+ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015
+ for file in *color2.sel.html; do  /home/kamano/gitsrc/XMLOP/drop_empty_hit_from_html.pl $file > ${file%.html}.dropE.html; done
+- 結果: hit_ResOrg_from_*color2.sel.dropE.html
+- ヒット数を確認:
+-- grep nxml *dropE.html | wc
+   1259  136216 1867816
+-- grep -o '<;/>' *dropE.html | wc
+   1313    1313   69963
 ##==(20150730)完了==##
 ##TASK(2.4) 機関名、バイオリソース名が同時出現するセンテンス(ピリオド区切り)を人手で抜きだし
 - 対象: hit_ResOrg_from_*.tsv.color2.sel.html
