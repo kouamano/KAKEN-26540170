@@ -369,7 +369,7 @@ while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; d
 -- 上記に対して第5カラムを抜粋: /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm
 -- 上記に対して先頭と末尾のスペースを除去: /home/kamano/gitsrc/utility/drop_headtailSP.pl 17topOrgNameSearchTerm > /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt
 -- 最終的に検索するターム(20150708): /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt
-##TASK(1.2): パターン定義用既知バイオリソース名決定(20140423)
+##TASK(1.2) パターン定義用既知バイオリソース名決定(20140423)
 ###TASK(1.2.1) NBRC利用者成果からバイオリソース名+請求番号を抜き出す(20140420)
 - 利用者成果ファイル: /BANK/BioResource/Organization/NBRP_2015/user-data/reference_list.tsv
 - Resource name カラムを抜き出したもの: /BANK/BioResource/Organization/NBRP_2015/user-data/Resnames.line
@@ -389,10 +389,11 @@ while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; d
 - ソートユニークカウント: /BANK/BioResource/Organization/NBRP_2015/user-data/ResnameVSid.sort.uniq.count
 - リフォーム: ./reform_sort-uniq-count.pl ResnameVSid.sort.uniq.count > ResnameVSid.sort.uniq.count.re
 - 文頭の空タームを除去: /BANK/BioResource/Organization/NBRP_2015/user-data/ResnameVSid.sort.uniq.count.re
-###TASK(1.2.3): 既知バイオリソース検索タームの絞り込み
+###TASK(1.2.3) 既知バイオリソース検索タームの絞り込み(行なわない)
 ###materialおよびacknowledgementの出現タームを既知バイオリソース検索シノニムにヒットさせ、ヒットとなったバイオリソースを実際の検索タームとする。
 ###出現タームがリソース名のサブストリングであることを期待している。
 ###結局、ほとんどすべてのサブストリングにマッチしてしまい、意味が無かった。(20140422)
+###TASK(1.2.4) バイオリソース名+請求番号を検索用タームにばらし、例外的なタームを除去
 ####シノニム+IDを検索タームにばらす
 - cd /BANK/BioResource/Organization/NBRP_2015/user-data
 - awk -F'	' '{print $2}' ResnameVSid.sort.uniq.count.re > resterms.search.pre
