@@ -505,9 +505,9 @@ while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; d
 - 結果: hit_ResOrg_from_*color2.sel.dropE.html
 - ヒット数を確認:
 -- grep nxml *dropE.html | wc
-   1259  136216 1867816
+   1258  213409 2648070
 -- grep -o '<;/>' *dropE.html | wc
-   1313    1313   69963
+   1312    1312   69912
 ##==(20150730)完了==##
 ##TASK(2.4) 機関名、バイオリソース名が同時出現するセンテンス(ピリオド区切り)を人手で抜きだし
 - 対象: hit_ResOrg_from_*.tsv.color2.sel.html
