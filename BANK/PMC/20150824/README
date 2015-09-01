@@ -70,7 +70,8 @@ cd /BANK/PMC/20150824/articles.fname/20.check/exec_command
 - 結果: /BANK/PMC/20150824/articles.fname/20.check/au.err
  ファイル名にバックスラッシュを含むファイルがエラー
 -- 当該ファイル: Saudi_J_Anaesth_2015_Apr-Jun_9(2)_236-23\6.nxml
-
+-- 回避: read に -r オプションをつける
+-- 例: /BANK/PMC/20150824/articles.fname/20.check/exec_command/jour-check.as.sh
 
 #=ここまで=#
 
