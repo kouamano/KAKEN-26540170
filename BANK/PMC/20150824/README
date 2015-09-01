@@ -64,14 +64,16 @@ find ./ -name *.nxml > /BANK/PMC/20150824/articles.fname/20/Jour-All.fname
 -- 分割
 cd /BANK/PMC/20150824/articles.fname/20
 split -l 54950 Jour-All.fname Jour-split.
+##TASK(data.2):PMCファイルのチェック
+cd /BANK/PMC/20150824/articles.fname/20.check/exec_command
+- スクリプト: /BANK/PMC/20150824/articles.fname/20.check/exec_command/jour-check.All.sh
+- 結果: /BANK/PMC/20150824/articles.fname/20.check/au.err
+ ファイル名にバックスラッシュを含むファイルがエラー
+-- 当該ファイル: Saudi_J_Anaesth_2015_Apr-Jun_9(2)_236-23\6.nxml
 
 
 #=ここまで=#
 
-##TASK(data.2):PMCファイルのチェック
-cd /BANK/PMC/20140724/articles.fname/20.check/exec_command
-./jour-check.aa.sh
-##エラーゼロを確認。
 ##TASK(data.fname): ファイルネームのリスト作成
 - dir : /BANK/PMC/20140724/articles.fname/20
 ##TASK(data.issn): ファイル vs. issn情報
