@@ -534,7 +534,8 @@ while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; d
 - ディレクトリ移動: cd /BANK/PMC/20140724/elements/aff/WIKIvsAFFvsACK
 - スクリプト: grep -v -E '> [a-zA-Z][a-z]+$' AFFvsACK.log-tagALL-wikifilterd > AFFvsACK.log-tagALL-wikifilterd.select_1
 - スクリプト: grep -v -E '> [a-zA-Z0-9][a-zA-Z0-9]$' AFFvsACK.log-tagALL-wikifilterd.select_1 > AFFvsACK.log-tagALL-wikifilterd.select_2
-- 結果: /BANK/PMC/20140724/elements/aff/WIKIvsAFFvsACK/AFFvsACK.log-tagALL-wikifilterd.select_2
+- スクリプト: grep -v -E '> [a-zA-Z][a-z0-9]+$' AFFvsACK.log-tagALL-wikifilterd.select_2 > AFFvsACK.log-tagALL-wikifilterd.select_3
+- 結果: /BANK/PMC/20140724/elements/aff/WIKIvsAFFvsACK/AFFvsACK.log-tagALL-wikifilterd.select_3
 ##TASK(3.2): (Mat)  機関名候補検索 in  材料 (20150508)
 ### 材料 vs. tag1, tag2 and tag3 (石川氏)
 - ヒット結果（ゴミ含む）: /BANK/PMC/20140724/elements/aff/AFFvsMAT/AFFvsMAT.log-tagALL-uniqsort
@@ -545,7 +546,8 @@ while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; d
 - ディレクトリ移動: cd /BANK/PMC/20140724/elements/aff/WIKIvsAFFvsMAT/
 - スクリプト: grep -v -E '> [a-zA-Z][a-z]+$' AFFvsMAT.log-tagALL-wikifilterd > AFFvsMAT.log-tagALL-wikifilterd.select_1
 - スクリプト: grep -v -E '> [a-zA-Z0-9][a-zA-Z0-9]$' AFFvsMAT.log-tagALL-wikifilterd.select_1 > AFFvsMAT.log-tagALL-wikifilterd.select_2
-- 結果: /BANK/PMC/20140724/elements/aff/WIKIvsAFFvsMAT/AFFvsMAT.log-tagALL-wikifilterd.select_2
+- スクリプト: grep -v -E '> [a-zA-Z][a-z0-9]+$' AFFvsMAT.log-tagALL-wikifilterd.select_2 > AFFvsMAT.log-tagALL-wikifilterd.select_3
+- 結果: /BANK/PMC/20140724/elements/aff/WIKIvsAFFvsMAT/AFFvsMAT.log-tagALL-wikifilterd.select_3
 
 
 #TASK(4)対象機関名を含むパターン検索
