@@ -1,0 +1,567 @@
+################
+#2014よりコピー#
+################
+
+#[kaken-26540170]
+#NOTE:
+##開始インデックス(イタレータ)まとめ
+##C: 0
+##perl: 0
+##Mathematica: 1
+##Matlab: 1
+#検討事項:
+##正解論文を集めてそこからパターンを抽出することを検討
+#TODO:
+##データのcheck
+##データのバックアップ -> OK
+/mnt/EDB200/BANK/BioResource - 
+/mnt/EDB200/BANK/Organization - 
+/mnt/EDB200/BANK/PMC/20150824 - 
+/mnt/EDB200/BANK/PMC/20150824/Matching - 
+/mnt/EDB200/BANK/PMC/20150824/Matching/BioResource/Organization/ATCC_2014 - 
+/mnt/EDB200/BANK/PMC/20150824/Matching/BioResource/Organization/DSMZ_2014 - 
+/mnt/EDB200/BANK/PMC/20150824/Matching/BioResource/Organization/JCRB_2014 - 
+/mnt/EDB200/BANK/PMC/20150824/Matching/BioResource/Organization/NITE-NBRC_2014 -
+/mnt/EDB200/BANK/PMC/20150824/Matching/BioResource/Organization/RIKEN-BRC_2012 - 
+/mnt/EDB200/BANK/PMC/20150824/Matching/BioResource/Organization/WDCM_2014 - 対象外
+/mnt/EDB200/BANK/PMC/20150824/TAR - 
+/mnt/EDB200/BANK/PMC/20150824/articles - 対象外
+/mnt/EDB200/BANK/PMC/20150824/articles.fname - 
+/mnt/EDB200/BANK/PMC/20150824/articles.pmid - 
+/mnt/EDB200/BANK/PMC/20150824/elements - 
+/mnt/EDB200/BANK/PMC/20150824/elements/ALL - 
+/mnt/EDB200/BANK/PMC/20150824/elements/MERGED - 
+/mnt/EDB200/BANK/PMC/20150824/elements/SKELTON - 
+/mnt/EDB200/BANK/PMC/20150824/elements/acknowledgement - 
+/mnt/EDB200/BANK/PMC/20150824/elements/aff - 
+/mnt/EDB200/BANK/PMC/20150824/elements/sec - 
+/mnt/EDB200/BANK/PMC/20150824/elements/sec-type - 
+/mnt/EDB200/BANK/PMC/20150824/elements/supplementary-material - 
+/mnt/EDB200/BANK/PMC/20150824/terms - 
+#ディレクトリ構成
+- root: /BANK/
+- XML情報: /BANK/PMC/<日付>/ 配下
+- 機関情報: /BANK/Organization/<機関名_日付>/ 配下
+- バイオリソース情報: /BANK/BioResource/Organization/<機関名_日付>/ 配下
+- マッチング(検索)結果: /BANK/PMC/<日付>/Matching/BioResource/Organization/<機関名>/ 配下
+- プログラム: github
+- 実行スクリプト: 各 exec_command フォルダ
+#PMC概観
+- /BANK/PMC/20150824/articles : 73G, 1099015 files
+- 20+1分割
+-- 1frac:54950
+-- reamain:15
+
+
+
+#TASK(data) (随時更新) : データの基本情報をまとめる
+##TASK(data.1):PMCファイルの展開
+- 展開先: /BANK/PMC/20150824/articles
+- check:
+-- ファイル名リスト作成
+cd /BANK/PMC/20150824/articles
+find ./ -name *.nxml > /BANK/PMC/20150824/articles.fname/20/Jour-All.fname
+-- 分割
+cd /BANK/PMC/20150824/articles.fname/20
+split -l 54950 Jour-All.fname Jour-split.
+
+
+#=ここまで=#
+
+##TASK(data.2):PMCファイルのチェック
+cd /BANK/PMC/20140724/articles.fname/20.check/exec_command
+./jour-check.aa.sh
+##エラーゼロを確認。
+##TASK(data.fname): ファイルネームのリスト作成
+- dir : /BANK/PMC/20140724/articles.fname/20
+##TASK(data.issn): ファイル vs. issn情報
+- dir : /BANK/PMC/20140724/articles.issn
+### 1. issnの摘出(20150405)
+- 対象: /BANK/PMC/20140724/articles/*/*.nxml
+- 対象ファイルリスト: /BANK/PMC/20140724/articles.fname/20/Jour-split.a[a-u]
+- プログラム: /home/kamano/gitsrc/XMLOP/extract_issn.pl
+- スクリプト: /BANK/PMC/20140724/articles.issn/exec_command/extract_issn.ALL.sh
+- 結果: /BANK/PMC/20140724/articles.issn/Jour-split.issn.au
+##TASK(data.pmid): ファイル vs. pmid情報
+- dir : /BANK/PMC/20140724/articles.pmid
+##TASK(data.title):  ファイル vs. title
+- dir : /BANK/PMC/20140724/articles.title
+### 1. アーティクルタイトルの抽出(20150226)
+- プログラム: /home/kamano/gitsrc/XMLOP/extract_art-title_in_front.pl
+- スクリプト: /BANK/PMC/20140724/articles.title/exec_command/jour-split.title.All.sh
+- 結果: /BANK/PMC/20140724/articles.title/jour-split.title.au
+##TASK(data.type):  ファイル vs. article-type
+- dir : /BANK/PMC/20140724/articles.type
+### 1. articletypeの摘出(20150405)
+- 対象: /BANK/PMC/20140724/articles/*/*.nxml
+- 対象ファイルリスト: /BANK/PMC/20140724/articles.fname/20/Jour-split.a[a-u]
+- プログラム: /home/kamano/gitsrc/XMLOP/extract_art-type.pl
+- スクリプト: /BANK/PMC/20140724/articles.type/exec_command/extract_art-type.ALL.sh
+- 結果: /BANK/PMC/20140724/articles.type/Jour-split.arttype.au
+
+
+
+#TASK(check): pmid/pmcidのチェック (20140724 に完了 -> ディレクトリ移動あり)
+##TASK(check.pmcid): PMC-XMLよりpmcidを抽出
+- 対象: /BANK/PMC/20140724/articles.pmid/
+- プログラム: /home/kamano/gitsrc/XMLOP/extract_pmcid.pl
+cd /BANK/PMC/20140724/articles.pmid/exec_command
+/BANK/PMC/20140724/articles.pmid/exec_command/jour-split.pmcid.au.sh
+##TASK(check.pmid): PMC-XMLよりpmidを抽出
+- 対象: /BANK/PMC/20140724/articles.pmid/
+- プログラム: /home/kamano/gitsrc/XMLOP/extract_pmid.pl
+cd /BANK/PMC/20140724/articles.pmid/exec_command
+/BANK/PMC/20140724/articles.pmid/exec_command/jour-split.pmid.aa.sh
+##TASK(check.user-data-pmid): RIKEN-BRC利用者成果よりpmidを抽出(20140904 移動)
+- 対象: /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/user-data/PMID/ALL.pmid.sort.uniq
+##TASK(check.PMC_VS_user-data): RIKEN-BRC利用者成果pmid　PMC-XML_pmid　をマッチング(20140904 移動)
+- ツール: Mathematica
+- 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/user-data/PMID/ALL.pmid.sort.uniq.in_pmc.hit
+
+
+
+#TASK(element-tree)
+##XMLのエレメント木を作成
+- プログラム: /home/kamano/gitsrc/XMLOP/skelton.py
+- 結果: /BANK/PMC/20140724/elements/SKELTON/*res
+##各ジャーナルグループごとにタグをカウント
+- プログラム: /home/kamano/gitsrc/utility/drop_colon.pl
+- スクリプト: /BANK/PMC/20140724/elements/SKELTON/exec_command/tag-count-au.sh
+- 結果: /BANK/PMC/20140724/elements/SKELTON/*res.tag-count
+##マージのために余計なスペースを除去
+- プログラム: /home/kamano/gitsrc/utility/rep4count.pl
+- スクリプト: /BANK/PMC/20140724/elements/SKELTON/exec_command/rep_all.sh
+- 結果: /BANK/PMC/20140724/elements/SKELTON/*res.tag-count.rep
+##マージソート
+- スクリプト: /BANK/PMC/20140724/elements/SKELTON/exec_command/merge-sort.sh
+- 結果: skelton-ALL.res.tag-count.rep.merge-sort
+##マージソートをカウント
+- プログラム: /home/kamano/gitsrc/utility/sum_count_from_mixed_sort.pl
+- スクリプト: /BANK/PMC/20140724/elements/SKELTON/exec_command/count_merge.sh
+- 結果: skelton-ALL.res.tag-count.rep.merge-sort.count
+
+
+
+#TASK(tag.new): XMLのエレメントタグを抽出・ソート・レベル付与(20150417完了)
+- 対象: PMC-XML全件 (/BANK/PMC/20140724/articles/*/*nxml)
+-- コメント中にタグがあるのでコメントを空白列に置き換える必要アリ。
+- プログラム: /home/kamano/gitsrc/XMLOP/elementPos_sequence_flag-lv.pl
+- スクリプト: /BANK/PMC/20140724/elements/ALL/exec_command/ALL_sort_pos_lv_rev-au.sh
+- 結果: /BANK/PMC/20140724/elements/ALL/ALL_sort_pos_rev-au.reg+lv
+
+
+
+#TASK(sec-type): sec-typeの種類を抽出
+- ソース: /BANK/PMC/20140724/elements/sec/sec_pos-a[a-u].reg_sort
+- プログラム: /home/kamano/gitsrc/XMLOP/grep-sec-type.pl
+cd /BANK/PMC/20140724/elements/sec-type
+/home/kamano/gitsrc/XMLOP/extract_sec-types.pl *reg_sort | sort | uniq -c > ALL_sec-type.sort.count
+
+
+
+#TASK(extract)
+##TASK(extract.ack) :  extract acknowledgement region
+## -> 石川氏
+- 対象領域: /BANK/PMC/20140724/elements/acknowledgement/PMC-ACK-v6_pmid.tsv
+##TAST(extract.aff) : extract affiliation region
+## -> 石川氏
+- 対象領域: /BANK/PMC/20140724/elements/aff/PMC-AFF-v1.tsv (20141114)
+##TASK(extract.material) : extract *material* region ; (20140417)
+### 領域のポインター情報作成(20140417)
+- 対象: /BANK/PMC/20140724/elements/ALL/ALL_sort_pos_rev-au.reg+lv
+- プログラム: /home/kamano/gitsrc/XMLOP/extract_pos-tag-allmaterials.pl
+ <*material*></>のリージョンを一発で取り出すスクリプト。
+- スクリプト: /BANK/PMC/20140724/elements/MERGED/allmaterials/exec_command/extract_all-materials-reg_from_reg.sh
+- 結果: /BANK/PMC/20140724/elements/MERGED/allmaterials/allmaterials.au.reg
+### 領域抽出(20150417)
+- 対象: /BANK/PMC/20140724/elements/MERGED/allmaterials/allmaterials.au.reg
+- プログラム: /home/kamano/gitsrc/XMLOP/extract_content_from_reg_allmaterial.pl
+ extract_pos-tag-allmaterials.pl の出力から、直接対象領域を取り出す。
+-- example: /home/kamano/gitsrc/XMLOP/extract_content_from_reg_allmaterial.pl /BANK/PMC/20140724/articles /BANK/PMC/20140724/elements/MERGED/allmaterials/allmaterials.au.reg
+- スクリプト: /BANK/PMC/20140724/elements/MERGED/allmaterials/exec_command/extract_cont_from_reg.au.sh
+- 結果: /BANK/PMC/20140724/elements/MERGED/allmaterials/allmaterials.au.reg.cont
+## TASK(extract.xref): xrefを含む直上位のレベルを抜き出す。
+### 1. xrefと直上タグのポジションを抜き出し、必要なxref部分を特定、特定領域をプリント ver.2 (20150417)
+#### 1.1 xrefと直上タグのポジションを抜き出す (20150417)
+- 対象: /BANK/PMC/20140724/elements/ALL/ALL_sort_pos_rev-au.reg+lv
+- プログラム: /home/kamano/gitsrc/XMLOP/extract_pos_xref_lv_in_body.pl /BANK/PMC/20140724/elements/ALL/ALL_sort_pos_rev-au.reg+lv
+ タグが正しく閉じられるかの情報をプリント。
+- スクリプト: /BANK/PMC/20140724/elements/x+ref+p/exec_command/extract_reg-lv_xref-p-sec_in_body.sh
+- 結果: /BANK/PMC/20140724/elements/x+ref+p/reg-lv_xref-p-sec_in_body-au
+#### 1.2 xrefと直上タグのポジションよりbibrを抜き出す (20150417)
+- 対象: /BANK/PMC/20140724/elements/x+ref+p/reg-lv_xref-p-sec_in_body-au
+- プログラム: /home/kamano/gitsrc/XMLOP/extract_bibr_from_pos_xref_lv.pl
+- スクリプト: /BANK/PMC/20140724/elements/x+ref+p/exec_command/extract_bibr_from_xref-p-sec.sh
+- 結果: /BANK/PMC/20140724/elements/x+ref+p/reg-lv_xref-p-sec_in_body-au.bibr
+#### 1.3 xrefと直上タグのポジションとbibr情報より除外すべきデータを除外する (20150417)
+- 対象: /BANK/PMC/20140724/elements/x+ref+p/reg-lv_xref-p-sec_in_body-au.bibr
+- プログラム: /home/kamano/gitsrc/XMLOP/exclude_from_rev-lv.pl
+- スクリプト: /BANK/PMC/20140724/elements/x+ref+p/exec_command/exclude_from_rev-lv-bibr.sh
+- 結果: /BANK/PMC/20140724/elements/x+ref+p/reg-lv_xref-p-sec_in_body-au.bibr.exc
+#### 1.4 対象領域の抜きだし(20150417)
+- 対象: /BANK/PMC/20140724/articles/*/*.nxml
+- 対象ファイルリスト: Jour-split.a[a-u]
+- 領域情報: /BANK/PMC/20140724/elements/x+ref+p/reg-lv_xref-p-sec_in_body-au.bibr.exc
+- プログラム: /home/kamano/gitsrc/XMLOP/extract_content_xref_from_reg-lv.pl
+-- プログラム中で呼び出される外部プログラム: /usr/local/bin/streamcut
+- スクリプト: /BANK/PMC/20140724/elements/x+ref+p/exec_command/extract_content_xref_from_reg-lv.sh
+- 結果: /BANK/PMC/20140724/elements/x+ref+p/reg-lv_xref-p-sec_in_body-au.bibr.exc.cont
+### [特別タスク] 2. 対象論文を 雑誌(心臓病学)とarticle-type(原著論文)で絞る
+- 結果: /BANK/PMC/20140724/elements/x+ref+p/targeted/target_cont.au
+##TASK(extract.ref) : xrefを含むp領域のextract、対応するref領域のextract
+### 1. xrefを含むp領域のextract
+- プログラム: /home/kamano/gitsrc/XMLOP/region-xrefINp_from_XML.pl
+- スクリプト: /BANK/PMC/20140724/elements/x+ref+p/exec_command/content_xrefINp_Jour-ALL.sh
+- 結果: /BANK/PMC/20140724/elements/x+ref+p/content_xrefINp_Jour-au
+### 2. 対応するref領域のextract
+対象ファイル: content_ref_Jour-a*
+- プログラム: /home/kamano/gitsrc/XMLOP/region-ref_from_XML.pl
+- スクリプト: /BANK/PMC/20140724/elements/x+ref+p/exec_command/content_ref_Jour-ALL.sh
+- 結果: /BANK/PMC/20140724/elements/x+ref+p/content_ref_Jour-au
+
+
+
+#TASK(term-count): 出現タームのsplit・カウント
+##TASK(term-count.ALL)
+### (split pattern 3)
+#### タグの除去とsplit
+- プログラム:
+-- /home/kamano/gitsrc/XMLOP/drop_tag-text.pl
+-- /home/kamano/gitsrc/XMLOP/splitter3.pl
+- スクリプト: /BANK/PMC/20140724/terms/whole/patt.3/exec_command/split_Word_Jour-ALL.sh
+- 出力ファイル: /BANK/PMC/20140724/terms/whole/patt.3/Word_Jour-au
+
+##TASK(term-count.allmaterials)
+### (split pattern 1)
+#### 各ファイルのtag除去, split, sort, uniq, count
+- 対象: /BANK/PMC/20140724/elements/MERGED/allmaterials/allmaterials.au.reg.cont
+- プログラム: 
+-- /home/kamano/gitsrc/utility/drop_1ST-col_from_TSV.pl
+-- /home/kamano/gitsrc/XMLOP/drop_tag-text.pl
+-- /home/kamano/gitsrc/XMLOP/splitter1.pl
+- スクリプト例: /home/kamano/gitsrc/utility/drop_1ST-col_from_TSV.pl /BANK/PMC/20140724/elements/MERGED/allmaterials/allmaterials.au.reg.cont | /home/kamano/gitsrc/XMLOP/drop_tag-text.pl | /home/kamano/gitsrc/XMLOP/splitter1.pl | tr '	' '\n' | sort |uniq -c > /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.4/allmaterials.au.sort.uniq.count
+- スクリプト(5 min): /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.1/exec_command/split-sort-count.sh
+- 結果: /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.1/allmaterials.au.sort.uniq.count
+#### すべてのファイルのcount結果をマージ
+##### すべてのファイルをマージ、タームでソート
+- プログラム: /home/kamano/gitsrc/utility/rep4count.pl
+- スクリプト: cat /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.1/allmaterials.*.sort.uniq.count | /home/kamano/gitsrc/utility/rep4count.pl | sort -t '	' -k2 > /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.1/ALL.merge
+- 結果: /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.1/ALL.merge
+##### マージ結果を集計
+- プログラム: /home/kamano/gitsrc/utility/sum_count_from_mixed_sort.pl
+- スクリプト: /home/kamano/gitsrc/utility/sum_count_from_mixed_sort.pl /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.1/ALL.merge > /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.1/ALL.merge.sort.count
+- 結果: /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.1/ALL.merge.sort.count
+#### 空文字列を削除(手動)
+- 対象: /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.1/ALL.merge.sort.count
+- スクリプト: vim /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.1/ALL.merge.sort.count
+- 結果: /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.1/ALL.merge.sort.count
+#### 検索用のターム作成
+##### 拡張子の使い方
+- .<n>E : (Extract)、対象
+- .<n>D : (Delete)、対象外
+- <n> : シークエンス番号
+##### ディレクトリ移動
+- ディレクトリ移動:  cd /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.1
+##### 出現が1のタームを除去
+- スクリプト:
+ grep -v '^1 ' ALL.merge.sort.count.sort > ALL.merge.sort.count.sort.1E
+##### 出現が多いタームを除去
+- HeLa : 24084
+- threshold : 40000
+- 境界 : 40012 v/v
+- スクリプト:
+ cp ALL.merge.sort.count.sort.1E ALL.merge.sort.count.sort.2E
+ vim ALL.merge.sort.count.sort.2E
+##### delete terms which contain double-quote
+- スクリプト: grep -v \" ALL.merge.sort.count.sort.2E > ALL.merge.sort.count.sort.3E
+##### 出現が2のタームを除去
+- スクリプト: grep -v '^2 ' ALL.merge.sort.count.sort.3E > ALL.merge.sort.count.sort.4E
+##### 文頭が "#" (シャープ) のタームを除去
+- スクリプト: grep -E -v '^[0-9]+ #' ALL.merge.sort.count.sort.4E > ALL.merge.sort.count.sort.5E
+##### 文頭が "$" (ダラー) のタームを除去
+- スクリプト: grep -E -v '^[0-9]+ \$' ALL.merge.sort.count.sort.5E > ALL.merge.sort.count.sort.6E
+##### 文頭が "!" (エクスクラメーション) のタームを除去
+- スクリプト: grep -E -v '^[0-9]+ !' ALL.merge.sort.count.sort.6E > ALL.merge.sort.count.sort.7E
+##### 文頭が "%" (パーセント) のタームを除去
+- スクリプト: grep -E -v '^[0-9]+ %' ALL.merge.sort.count.sort.7E > ALL.merge.sort.count.sort.8E
+##### 文頭が "'" (ダッシュ) のタームを除去
+- スクリプト: grep -E -v "^[0-9]+ '" ALL.merge.sort.count.sort.8E > ALL.merge.sort.count.sort.9E
+##### 文頭が "*" (アスタリスク) のタームを除去
+- スクリプト: grep -E -v "^[0-9]+ \*" ALL.merge.sort.count.sort.9E > ALL.merge.sort.count.sort.10E
+##### 文頭が "+" (プラス) のタームを除去
+- スクリプト: grep -E -v "^[0-9]+ \+" ALL.merge.sort.count.sort.10E > ALL.merge.sort.count.sort.11E
+##### 文頭が "-" (マイナス) のタームを除去
+- スクリプト: grep -E -v "^[0-9]+ -" ALL.merge.sort.count.sort.11E > ALL.merge.sort.count.sort.12E
+##### 文頭が "/" (スラッシュ) のタームを除去
+- スクリプト: grep -E -v "^[0-9] /" ALL.merge.sort.count.sort.12E > ALL.merge.sort.count.sort.13E
+##### 小文字子数字1文字のタームを除去
+- スクリプト: grep -E -v "^[0-9]+ [0-9a-z]$" ALL.merge.sort.count.sort.13E > ALL.merge.sort.count.sort.14E
+##### 小文字子数字2文字のタームを除去
+- スクリプト: grep -E -v "^[0-9]+ [0-9a-z][0-9a-z]$" ALL.merge.sort.count.sort.14E > ALL.merge.sort.count.sort.15E
+#####=====(20150731)=====#####
+#####=====作業中=====#####
+### (split pattern 4)
+#### 各ファイルのtag除去, split, sort, uniq, count
+- cd /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.4
+- プログラム:
+-- /home/kamano/gitsrc/utility/drop_1ST-col_from_TSV.pl
+-- /home/kamano/gitsrc/XMLOP/drop_tag-text.pl
+-- /home/kamano/gitsrc/XMLOP/splitter4.pl
+- スクリプト例: /home/kamano/gitsrc/utility/drop_1ST-col_from_TSV.pl /BANK/PMC/20140724/elements/MERGED/allmaterials/allmaterials.au.reg.cont | /home/kamano/gitsrc/XMLOP/drop_tag-text.pl | /home/kamano/gitsrc/XMLOP/splitter4.pl | tr '	' '\n' | sort |uniq -c > /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.4/allmaterials.au.sort.uniq.count
+- スクリプト: /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.4/exec_command/split-sort-count.sh
+#### すべてのファイルのcount結果をマージ
+##### すべてのファイルをマージ、タームでソート
+- プログラム: /home/kamano/gitsrc/utility/rep4count.pl
+- スクリプト: cat /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.4/allmaterials.*.sort.uniq.count | /home/kamano/gitsrc/utility/rep4count.pl | sort -t '	' -k2 > /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.4/ALL.merge
+##### マージ結果を集計
+- プログラム: /home/kamano/gitsrc/utility/sum_count_from_mixed_sort.pl
+- スクリプト: /home/kamano/gitsrc/utility/sum_count_from_mixed_sort.pl /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.4/ALL.merge > /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.4/ALL.merge.sort.count
+#### 空文字列を削除
+- /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.4/ALL.merge.sort.count
+- 結果: /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.4/ALL.merge.sort.count
+#### perl検索用のターム作成
+- 対象: /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.4/ALL.merge.sort.count
+##### カウントを消去
+- スクリプト:  sed -e 's/^[^ ]* //;' ALL.merge.sort.count > terms.search.pre
+##### 1文字、極端に長いタームを削除
+- プログラム: /home/kamano/gitsrc/utility/drop_suspicius-length.pl
+- スクリプト: /home/kamano/gitsrc/utility/drop_suspicius-length.pl terms.search.pre > terms.search
+##### 特殊文字をエスケープ
+- プログラム: escape_char
+- スクリプト: escape_char sf=/BANK/PMC/20140724/terms/MERGED/allmaterials/patt.4/terms.search lf=/usr/local/var/perl_esc.list > /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.4/terms.search.esc
+- 結果: /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.4/terms.search.esc
+
+
+
+#TASK(1): 既知バイオリソース名・機関名の決定と検索タームの定義 (NBRP機関とする)
+##TASK(1.1): パターン定義用既知機関名決定 -> 石川氏
+###TASK(1.1.1): 既知機関英名シノニム決定 -> 石川氏
+###石川氏 -> 水野氏に指示 (20150610)
+- 手順書: tejun-sho_201507.ods
+- 日本語機関名リスト(NBRPオリジナル): /BANK/Organization/NBRP_2015/nbrp.organization-names.J.20150409
+- 日本語正式機関名リスト(水野氏): /BANK/Organization/NBRP_2015/orgnames-jp_eng.csv
+- 上ファイルのsortuniq(20150616): /BANK/Organization/NBRP_2015/orgname_jp.sort.uniq
+- 機関名和英対応表のURL(NISTEP): http://www.nistep.go.jp/research/scisip/randd-on-university
+- 実際に使用する和英対応表ファイル(WoS): /BANK/NISTEP/name_variations_WoS_Ver2014_1.utf8.txt
+- 実際に使用する和英対応表ファイル(scopus): /BANK/NISTEP/name_variations_scopus_ver_2013_1.utf8.csv
+- 日本語正式名にマッチさせるスクリプト: while read ln ; do grep $ln /BANK/NISTEP/name_variations_WoS_Ver2014_1.utf8.txt; done < orgname_jp.sort.uniq > /BANK/Organization/NBRP_2015/17toporg_in_WoS.csv
+- WoSより日本名マッチした17機関: /BANK/Organization/NBRP_2015/17toporg_in_WoS.csv
+- scopusより日本名マッチした17機関: /BANK/Organization/NBRP_2015/17toporg_in_scopus.csv
+- (1) dictionaly(organization_dictionary_ver_2014_1.utf8.insTAB.txt)より下部機関含むNBRP機関英名抽出:
+-- 対象ファイル: /BANK/NISTEP/organization_dictionary_ver_2014_1.utf8.insTAB.txt
+-- 下部機関を含むIDと日本語名を抽出: 
+cd /BANK/NISTEP;
+while read org ; do grep $org organization_dictionary_ver_2014_1.utf8.insTAB.txt; done < /BANK/Organization/NBRP_2015/orgname_jp.sort.uniq | awk -F'	' '{print $1"\t"$4}' | sort | uniq > NBRP-IDvsOrg
+-- 名称空欄を手作業で除去
+-- IDのみ抽出:
+awk -F'   ' '{print $1}' NBRP-IDvsOrg > NBRP-ID
+-- NBRP-IDをもとに英名を抜きだし:
+grep "\t" NBRP-IDvsEnName > /BANK/Organization/NBRP_2015/NBRP-IDvsEnName_fromDict.dropEMP
+-- 辞書、WoS、Scopusを合わせた最上位機関英名シノニムvs機関ID(20150707)(最終ファイル): /BANK/Organization/NBRP_2015/IDtopd9oksotods7okodssort17toporg_in_scopus.WoS.dic.m.s.csv.sort.csv
+- (2) 下部機関リスト(86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt)より下部機関含むNBRP機関英名抽出:
+while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; done < /BANK/Organization/NBRP_2015/orgname_jp.sort.uniq > /BANK/Organization/NBRP_2015/extractNBRPname_fromSheet2 (最終ファイル)
+- (3) 検索ターム
+-- 依頼: 水野氏中間ファイル(20150623): /BANK/Organization/NBRP_2015/3OK 17toporg_in_scopus.WoS.dic.m.s.ods
+-- 依頼: 上記ファイルより重複英名を削除、他のカラムに違う値が入っている場合はどれかを残す
+--- プログラム: /BANK/Organization/NBRP_2015/drop_multi_name.pl
+--- 結果(ソートなし): /BANK/Organization/NBRP_2015/17toporg_in_scopus.WoS.dic.m.s.csv.dropDup
+--- スクリプト(5からむ目でソート): sort -t'	' '3OK 17toporg_in_scopus.WoS.dic.m.s.csv' -k4 | /BANK/Organization/NBRP_2015/drop_multi_name.pl > /BANK/Organization/NBRP_2015/17toporg_in_scopus.WoS.dic.m.s.csv.sort.dropDup
+--- 結果(5からむ目でソート): /BANK/Organization/NBRP_2015/17toporg_in_scopus.WoS.dic.m.s.csv.sort.dropDup
+--- 上記に対してさらに別からむでソートドロップ 
+--- スクリプト: sort -t'       ' -k2 /BANK/Organization/NBRP_2015/17toporg_in_scopus.WoS.dic.m.s.csv.sort.dropDup | /BANK/Organization/NBRP_2015/drop_multi_name.pl > /BANK/Organization/NBRP_2015/17toporg_in_scopus.WoS.dic.m.s.csv.sort.dropDupx2
+--- 結果ファイル: /BANK/Organization/NBRP_2015/17toporg_in_scopus.WoS.dic.m.s.csv.sort.dropDupx2
+-- 上記に対してハンドサーチで上位機関名決定(20150702): /BANK/Organization/NBRP_2015/9oksotods17toporg_in_scopus.WoS.dic.m.s.csv.sort.dropDupx2
+-- 上記に対して第5カラムを抜粋: /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm
+-- 上記に対して先頭と末尾のスペースを除去: /home/kamano/gitsrc/utility/drop_headtailSP.pl 17topOrgNameSearchTerm > /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt
+-- 最終的に検索するターム(20150708): /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt
+##TASK(1.2) パターン定義用既知バイオリソース名決定(20140423)
+###TASK(1.2.1) NBRC利用者成果からバイオリソース名+請求番号を抜き出す(20140420)
+- 利用者成果ファイル: /BANK/BioResource/Organization/NBRP_2015/user-data/reference_list.tsv
+- Resource name カラムを抜き出したもの: /BANK/BioResource/Organization/NBRP_2015/user-data/Resnames.line
+- さらに個別のリソースに分割: /BANK/BioResource/Organization/NBRP_2015/user-data/Resnames
+-- ", " (<カンマ><スペース>)で区切る
+-- "; " (<セミコロン><スペース>)で区切る
+-- プログラム: /home/kamano/gitsrc/utility/CM-SP_SC-SP_to_LF.pl
+-- "," カッコ内でなければ(<カンマ>)で区切る
+-- プログラムソース: /home/kamano/gitsrc/utility/CM_to_LF_out_Bracket_line.c
+-- スクリプト: /home/kamano/gitsrc/utility/CM-SP_SC-SP_to_LF.pl Resnames.line | /home/kamano/gitsrc/utility/CM_to_LF_out_Bracket_line if=/dev/stdin > Resnames
+-- リフォーム: sed -e 's/^\s+//' Resnames | sed -e 's/\s+$//' > Resnames.re
+- リストをリソースネーム vs. リソース番号の形に整形
+-- プログラム: /home/kamano/gitsrc/utility/divide_lastBRK.pl
+-- 結果: /BANK/BioResource/Organization/NBRP_2015/user-data/ResnameVSid
+###TASK(1.2.2): 既知バイオリソース検索シノニム+ID決定
+- 対象: /BANK/BioResource/Organization/NBRP_2015/user-data/ResnameVSid
+- ソートユニークカウント: /BANK/BioResource/Organization/NBRP_2015/user-data/ResnameVSid.sort.uniq.count
+- リフォーム: ./reform_sort-uniq-count.pl ResnameVSid.sort.uniq.count > ResnameVSid.sort.uniq.count.re
+- 文頭の空タームを除去: /BANK/BioResource/Organization/NBRP_2015/user-data/ResnameVSid.sort.uniq.count.re
+###TASK(1.2.3) 既知バイオリソース検索タームの絞り込み(行なわない)
+###materialおよびacknowledgementの出現タームを既知バイオリソース検索シノニムにヒットさせ、ヒットとなったバイオリソースを実際の検索タームとする。
+###出現タームがリソース名のサブストリングであることを期待している。
+###結局、ほとんどすべてのサブストリングにマッチしてしまい、意味が無かった。(20140422)
+###TASK(1.2.4) バイオリソース名+請求番号を検索用タームにばらし、例外的なタームを除去
+####シノニム+IDを検索タームにばらす
+- cd /BANK/BioResource/Organization/NBRP_2015/user-data
+- awk -F'	' '{print $2}' ResnameVSid.sort.uniq.count.re > resterms.search.pre
+- awk -F'	' '{print $3}' ResnameVSid.sort.uniq.count.re >> resterms.search.pre
+- ./exec_command/reform_resterms.pl resterms.search.pre > resterms.search.pre.re
+- sort resterms.search.pre.re | uniq > resterms.sort.uniq
+- 検索ターム: /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq
+####極端に短い、長いネームを除去
+- プログラム: /BANK/BioResource/Organization/NBRP_2015/user-data/exec_command/drop_suspicius-length.pl
+- 検索ターム候補: /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.1
+####material出現タームがサブ文字列になっているバイオリソースネーム(いみなし)
+- 対象: /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.1
+- サブ文字列: /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.4/terms.search.esc
+- プログラム: /home/kamano/gitsrc/utility/match_substr.pl
+- スクリプト: /home/kamano/gitsrc/utility/match_substr.pl /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.1 /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.4/terms.search.esc > /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.1.allmaterials-hit
+####acknowledgement出現タームがサブ文字列になっているバイオリソースネーム
+####行なわない
+####最終的に使う検索タームのチューニング
+####中間ファイル: <n>E、<n>D、<n>m、kwのサフィクスを使用、<n>は番号、Eはextract、Dはdelete
+- 作業詳細: /BANK/BioResource/Organization/NBRP_2015/user-data/README
+ 生物種名については全て残す。
+-- 作業対象ファイル: /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.1
+-- 結果ファイル(20150710): /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_3
+-- 結果ファイル(20150728): /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_5
+
+
+
+#TASK(2): 既知バイオリソース名・既知機関名の出現状況確認(NBRP)
+#ヒット箇所に直接文字色を挿入
+#3段階で行なう: 1.機関名hitの確認抽出 2.リソース名hitの確認抽出 3.文字色挿入
+#試験 -> 採用 -> 修正(20150729) -> OK(20150729)
+#修正状況: n-column以降をスキャンする処理に変更(20150729) <- カラム数が同じだと勘違いしていた。修正終了には<R> 。 -> OK(20150729)
+#全実行シークエンス
+- 実行ファイル: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/exec_TASK2_all.sh
+--> 失敗。 waitしてもつぎのスクリプトが実行される。
+--> waitは段階的に呼び出されるプロセスに対応していない。--> スクリプト修正完了
+--> 現在、いくつかのファイルが壊れたまま。--> 修正中 --> OK
+--> まだ実行していない。
+##TASK(2.0)準備
+###TASK(2.0.0)検索タームの特殊文字エスケープ
+####機関名
+- エスケープコマンド: escape_char sf=/BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt lf=/usr/local/var/perl_esc.list > /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt.esc
+####リソース名
+- ncrコマンド: utf8_to_ncr /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_5 > /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_5.ncr
+- エスケープコマンド: escape_char sf=/BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_5.ncr lf=/usr/local/var/perl_esc.list > /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_5.ncr.esc
+###TASK(2.0.1)機関名hitの確認抽出 in ACK
+- 検索対象: /BANK/PMC/20140724/elements/acknowledgement/PMC-ACK-v6_pmid.tsv
+ 3カラム以降に対して検索
+- 検索ターム(スケープ): /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt.esc
+- プログラム: /home/kamano/gitsrc/utility/hit_least.pl
+- スクリプト(5 min): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/hit_Org_from_ACK.sh
+- 結果(20150729): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_Org_from_ACK.tsv
+###TASK(2.0.2)リソース名hitの確認抽出 in ACK with 機関名
+- 検索対象: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_Org_from_ACK.tsv
+- 検索ターム(エスケープ): /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_4.ncr.esc
+- プログラム: /home/kamano/gitsrc/utility/hit_least.pl
+- スクリプト(5 min): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/hit_ResOrg_from_ACK.sh
+- 結果(20150729): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv
+###TASK(2.0.3)機関名hitの確認抽出 in Mat
+- 検索対象: /BANK/PMC/20140724/elements/MERGED/allmaterials/*.cont
+ 2カラム以降に対して検索
+- 検索ターム(スケープ済み): /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt.esc
+- プログラム: /home/kamano/gitsrc/utility/hit_least.pl
+- スクリプト(3 min): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/hit_Org_from_Mat.sh
+- 結果(20150729): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_Org_from_Mat.au.tsv
+###TASK(2.0.4)リソース名hitの確認抽出 in Mat with 機関名
+- 検索対象: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_Org_from_Mat.a[a-u].tsv
+- 検索ターム(エスケープ済み): /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_5.ncr.esc
+- プログラム: /home/kamano/gitsrc/utility/hit_least.pl
+- スクリプト(1 min): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/hit_ResOrg_from_Mat.sh
+- 結果(20150728): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_Mat.au.tsv
+##TASK(2.1)既知機関名・リソース名(NBRP)検索(文字色挿入)
+###TASK(2.1.1)既知機関名 in ACK
+- 対象(ソース): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv
+- 検索ターム(エスケープ済み): /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt.esc
+- プログラム: /home/kamano/gitsrc/XMLOP/insTxColor_to_html.pl
+- スクリプト: /home/kamano/gitsrc/XMLOP/insTxColor_to_html.pl src=/BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv clm=2 trm=/BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt.esc clr=red > /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv.color1
+- 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv.color1
+###TASK(2.1.2)バイオリソース名 in ACK
+- 対象(すでに機関名の処理が終わったもの): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv.color1
+- 検索ターム(ncr、エスケープ済み): /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_5.ncr.esc
+- プログラム: /home/kamano/gitsrc/XMLOP/insTxColor_to_html.pl
+- スクリプト(15 min): time /home/kamano/gitsrc/XMLOP/insTxColor_to_html.pl src=/BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv.color1 clm=2 trm=/BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_5.ncr.esc clr=blue > /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv.color2
+- 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv.color2
+###TASK(2.1.3)既知機関名 in Mat
+- 対象(ソース): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_Mat.au.tsv
+- 検索ターム(エスケープ済み): /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt.esc
+- プログラム: /home/kamano/gitsrc/XMLOP/insTxColor_to_html.pl
+- スクリプト: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/insTxColor_Org_in_Mat.sh
+- 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_Mat.au.tsv.color1
+###TASK(2.1.4)バイオリソース名 in Mat (20150728)
+- 対象(すでに機関名の処理が終わったもの): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_Mat.au.tsv.color1
+- 検索ターム(ncr、エスケープ済み): /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_5.ncr.esc
+- プログラム: /home/kamano/gitsrc/XMLOP/insTxColor_to_html.pl
+- スクリプト(10 min): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/insTxColor_Res_in_Mat.sh
+- 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_Mat.au.tsv.color2
+##TASK(2.3) センテンスsplit & html化 (20150804)
+- 対象: hit_ResOrg_from*color2
+- プログラム: /home/kamano/gitsrc/XMLOP/extract_hit_sentence_from_colored.pl
+- スクリプト(ACK): /home/kamano/gitsrc/XMLOP/extract_hit_sentence_from_colored.pl src=/BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv.color2 clm=2 terms=red,blue > /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv.color2.sel.html
+- スクリプト(Mat): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/select_from_colored_Mat.sh
+- 結果: hit_ResOrg_from_*color2.sel.html
+##TASK(2.3.1) htmlより空のレコードを除去 (20150804)
+- 対象: hit_ResOrg_from_*color2.sel.html
+- プログラム: /home/kamano/gitsrc/XMLOP/drop_empty_hit_from_html.pl
+- スクリプト: 
+ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015
+ for file in *color2.sel.html; do  /home/kamano/gitsrc/XMLOP/drop_empty_hit_from_html.pl $file > ${file%.html}.dropE.html; done
+- 結果: hit_ResOrg_from_*color2.sel.dropE.html
+- ヒット数を確認:
+-- grep nxml *dropE.html | wc
+   1258  213409 2648070
+-- grep -o '<;/>' *dropE.html | wc
+   1312    1312   69912
+##==(20150730)完了==##
+##TASK(2.4) 機関名、バイオリソース名が同時出現するセンテンス(ピリオド区切り、場合によってはカンマ、セミコロン区切り)を人手で抜きだし
+- 対象: hit_ResOrg_from_*.tsv.color2.sel.html
+
+
+
+#TASK(3): 評価対象機関名候補決定(/BANK/PMC/20140724/elements/aff) THEME[kaken-26540170]
+#aff領域より得られた機関名(住所つき)をmaterial、ack領域に対して検索、存在を確認。
+#所属をカンマで区切り、各フレーズを対象領域に対してマッチング。
+#<tag1>,<tag2>,<tag3>
+- 各ファイル:
+-- 作業手順ファイル(20150625): /BANK/PMC/20140724/elements/aff/PMC-AFF作業手順メモ.utf8
+-- 所属領域抽出結果: /BANK/PMC/20140724/elements/aff/PMC-AFF-v1.tsv
+-- 所属抽出結果より不要なタグ等を取り除きユニークソート: /BANK/PMC/20140724/elements/aff/PMC-AFF-plain-v4
+-- 上記データをカンマ区切りで切り出した第2カラムのデータ: /BANK/PMC/20140724/elements/aff/PMC-AFF-tag2
+-- 上記各ファイルの解説: /BANK/PMC/20140724/elements/aff/README.Gmail(2015-03-14).pdf
+##TASK(3.1): (ACK) 機関名候補検索 in 謝辞 (20150508)
+### 謝辞 vs. tag1, tag2 and tag3 (石川氏)
+- ヒット結果（ゴミ含む）: /BANK/PMC/20140724/elements/aff/AFFvsACK/AFFvsACK.log-tagALL-uniqsort
+- 大文字小文字スペース以外を含むフレーズファイル: /BANK/PMC/20140724/elements/aff/WIKIvsAFFvsACK+MAT/tokusyu-list/AFFvsACK.log-tagALL-tokusyu-list
+### 機関名候補のwiki見出し語による確認
+- 結果ファイル(20150625): /BANK/PMC/20140724/elements/aff/WIKIvsAFFvsACK/AFFvsACK.log-tagALL-wikifilterd
+### 手作業によるさらなるセレクション
+- ディレクトリ移動: cd /BANK/PMC/20140724/elements/aff/WIKIvsAFFvsACK
+- スクリプト: grep -v -E '> [a-zA-Z][a-z]+$' AFFvsACK.log-tagALL-wikifilterd > AFFvsACK.log-tagALL-wikifilterd.select_1
+- スクリプト: grep -v -E '> [a-zA-Z0-9][a-zA-Z0-9]$' AFFvsACK.log-tagALL-wikifilterd.select_1 > AFFvsACK.log-tagALL-wikifilterd.select_2
+- 結果: /BANK/PMC/20140724/elements/aff/WIKIvsAFFvsACK/AFFvsACK.log-tagALL-wikifilterd.select_2
+##TASK(3.2): (Mat)  機関名候補検索 in  材料 (20150508)
+### 材料 vs. tag1, tag2 and tag3 (石川氏)
+- ヒット結果（ゴミ含む）: /BANK/PMC/20140724/elements/aff/AFFvsMAT/AFFvsMAT.log-tagALL-uniqsort
+- 大文字小文字スペース以外を含むフレーズファイル: /BANK/PMC/20140724/elements/aff/WIKIvsAFFvsACK+MAT/tokusyu-list/AFFvsMAT.log-tagALL-tokusyu-list
+### 機関名候補のwiki見出し語による確認
+- 結果ファイル(20150625): /BANK/PMC/20140724/elements/aff/WIKIvsAFFvsMAT/AFFvsMAT.log-tagALL-wikifilterd
+### 手作業によるさらなるセレクション
+- ディレクトリ移動: cd /BANK/PMC/20140724/elements/aff/WIKIvsAFFvsMAT/
+- スクリプト: grep -v -E '> [a-zA-Z][a-z]+$' AFFvsMAT.log-tagALL-wikifilterd > AFFvsMAT.log-tagALL-wikifilterd.select_1
+- スクリプト: grep -v -E '> [a-zA-Z0-9][a-zA-Z0-9]$' AFFvsMAT.log-tagALL-wikifilterd.select_1 > AFFvsMAT.log-tagALL-wikifilterd.select_2
+- 結果: /BANK/PMC/20140724/elements/aff/WIKIvsAFFvsMAT/AFFvsMAT.log-tagALL-wikifilterd.select_2
+
+
+#TASK(4)対象機関名を含むパターン検索
+#未実行
+#予約ファイル:
+- hit_Aff_from_Ack
+- hit_Aff_from_Mat
+- extract_reg_Aff_from_Ack
+- extract_reg_Aff_from_Mat
+
+
+
+
+
