@@ -54,7 +54,7 @@
 
 
 
-#TASK(data) (随時更新) : データの基本情報をまとめる
+#TASK(data) (随時更新) : データの基本情報をまとめる[20150901]
 ##TASK(data.x): PMCファイルの展開
 - 展開先: /BANK/PMC/20150824/articles
 - check:
@@ -65,7 +65,8 @@ find ./ -name *.nxml > /BANK/PMC/20150824/articles.fname/20/Jour-All.fname
 cd /BANK/PMC/20150824/articles.fname/20
 split -l 54950 Jour-All.fname Jour-split.
 ##TASK(data.fname): ファイルネームのリスト作成
-- dir : /BANK/PMC/20150824/articles.fname/20
+- dir: /BANK/PMC/20150824/articles.fname/20
+- ファイル: Jour-split.au
 ##TASK(data.check): PMCファイルのチェック
 cd /BANK/PMC/20150824/articles.fname/20.check/exec_command
 - スクリプト: /BANK/PMC/20150824/articles.fname/20.check/exec_command/jour-check.All.sh
@@ -79,8 +80,26 @@ cd /BANK/PMC/20150824/articles.fname/20.check/exec_command
 
 
 
+
+#TASK(tag.new): XMLのエレメントタグを抽出・ソート・レベル付与(20150417完了)
+- 対象: PMC-XML全件 (/BANK/PMC/20140724/articles/*/*nxml)
+-- コメント中にタグがあるのでコメントを空白列に置き換える必要アリ。
+- プログラム: /home/kamano/gitsrc/XMLOP/elementPos_sequence_flag-lv.pl
+- スクリプト: /BANK/PMC/20140724/elements/ALL/exec_command/ALL_sort_pos_lv_rev-au.sh
+- 結果: /BANK/PMC/20140724/elements/ALL/ALL_sort_pos_rev-au.reg+lv
+
+
+
+#TASK(sec-type): sec-typeの種類を抽出
+- ソース: /BANK/PMC/20140724/elements/sec/sec_pos-a[a-u].reg_sort
+- プログラム: /home/kamano/gitsrc/XMLOP/grep-sec-type.pl
+cd /BANK/PMC/20140724/elements/sec-type
+/home/kamano/gitsrc/XMLOP/extract_sec-types.pl *reg_sort | sort | uniq -c > ALL_sec-type.sort.count
+
+
+
 ##TASK(data.issn): ファイル vs. issn情報
-- dir : /BANK/PMC/20140724/articles.issn
+- dir: /BANK/PMC/20140724/articles.issn
 ### 1. issnの摘出(20150405)
 - 対象: /BANK/PMC/20140724/articles/*/*.nxml
 - 対象ファイルリスト: /BANK/PMC/20140724/articles.fname/20/Jour-split.a[a-u]
@@ -144,23 +163,6 @@ cd /BANK/PMC/20140724/articles.pmid/exec_command
 - プログラム: /home/kamano/gitsrc/utility/sum_count_from_mixed_sort.pl
 - スクリプト: /BANK/PMC/20140724/elements/SKELTON/exec_command/count_merge.sh
 - 結果: skelton-ALL.res.tag-count.rep.merge-sort.count
-
-
-
-#TASK(tag.new): XMLのエレメントタグを抽出・ソート・レベル付与(20150417完了)
-- 対象: PMC-XML全件 (/BANK/PMC/20140724/articles/*/*nxml)
--- コメント中にタグがあるのでコメントを空白列に置き換える必要アリ。
-- プログラム: /home/kamano/gitsrc/XMLOP/elementPos_sequence_flag-lv.pl
-- スクリプト: /BANK/PMC/20140724/elements/ALL/exec_command/ALL_sort_pos_lv_rev-au.sh
-- 結果: /BANK/PMC/20140724/elements/ALL/ALL_sort_pos_rev-au.reg+lv
-
-
-
-#TASK(sec-type): sec-typeの種類を抽出
-- ソース: /BANK/PMC/20140724/elements/sec/sec_pos-a[a-u].reg_sort
-- プログラム: /home/kamano/gitsrc/XMLOP/grep-sec-type.pl
-cd /BANK/PMC/20140724/elements/sec-type
-/home/kamano/gitsrc/XMLOP/extract_sec-types.pl *reg_sort | sort | uniq -c > ALL_sec-type.sort.count
 
 
 
