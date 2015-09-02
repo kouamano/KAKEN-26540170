@@ -422,11 +422,15 @@ while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; d
 
 
 #TASK(2): 既知バイオリソース名・既知機関名の出現状況確認(NBRP)
-#ヒット箇所に直接文字色を挿入
+#[1]同時出現確認:
+#同時出現箇所に直接文字色を挿入
 #3段階で行なう: 1.機関名hitの確認抽出 2.リソース名hitの確認抽出 3.文字色挿入
 #試験 -> 採用 -> 修正(20150729) -> OK(20150729)
 #修正状況: n-column以降をスキャンする処理に変更(20150729) <- カラム数が同じだと勘違いしていた。修正終了には<R> 。 -> OK(20150729)
-#全実行シークエンス
+#[2]リソース名出現確認:
+#前後のn文字を含めリソース名抽出
+#判定
+#正解グループ/不正解グループを統計処理
 - 実行ファイル: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/exec_TASK2_all.sh
 --> 失敗。 waitしてもつぎのスクリプトが実行される。
 --> waitは段階的に呼び出されるプロセスに対応していない。--> スクリプト修正完了
@@ -465,7 +469,7 @@ while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; d
 - プログラム: /home/kamano/gitsrc/utility/hit_least.pl
 - スクリプト(1 min): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/hit_ResOrg_from_Mat.sh
 - 結果(20150728): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_Mat.au.tsv
-##TASK(2.1)既知機関名・リソース名(NBRP)検索(文字色挿入)
+##TASK(2.1)[1]既知機関名・リソース名同時出現(NBRP)検索(文字色挿入)
 ###TASK(2.1.1)既知機関名 in ACK
 - 対象(ソース): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv
 - 検索ターム(エスケープ済み): /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt.esc
@@ -490,13 +494,13 @@ while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; d
 - プログラム: /home/kamano/gitsrc/XMLOP/insTxColor_to_html.pl
 - スクリプト(10 min): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/insTxColor_Res_in_Mat.sh
 - 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_Mat.au.tsv.color2
-##TASK(2.3) センテンスsplit & html化 (20150804)
+##TASK(2.1.5) センテンスsplit & html化 (20150804)
 - 対象: hit_ResOrg_from*color2
 - プログラム: /home/kamano/gitsrc/XMLOP/extract_hit_sentence_from_colored.pl
 - スクリプト(ACK): /home/kamano/gitsrc/XMLOP/extract_hit_sentence_from_colored.pl src=/BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv.color2 clm=2 terms=red,blue > /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv.color2.sel.html
 - スクリプト(Mat): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/select_from_colored_Mat.sh
 - 結果: hit_ResOrg_from_*color2.sel.html
-##TASK(2.3.1) htmlより空のレコードを除去 (20150804)
+##TASK(2.1.6) htmlより空のレコードを除去 (20150804)
 - 対象: hit_ResOrg_from_*color2.sel.html
 - プログラム: /home/kamano/gitsrc/XMLOP/drop_empty_hit_from_html.pl
 - スクリプト: 
@@ -509,7 +513,7 @@ while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; d
 -- grep -o '<;/>' *dropE.html | wc
    1312    1312   69912
 ##==(20150730)完了==##
-##TASK(2.4) 機関名、バイオリソース名が同時出現するセンテンス(ピリオド区切り、場合によってはカンマ、セミコロン区切り)を人手で抜きだし(実行中)
+##TASK(2.1.7) 機関名、バイオリソース名が同時出現するセンテンス(ピリオド区切り、場合によってはカンマ、セミコロン区切り)を人手で抜きだし(実行中)
 - 対象: hit_ResOrg_from_*.tsv.color2.sel.html
 - 手順
 -- 手作業で抜きだし
@@ -518,7 +522,7 @@ while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; d
 --- スクリプト: reformResOrgWork.pl
 -- 以上を繰り返し、収束
 - 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/ 配下
-
+##TASK(2.2)[2] バイオリソース名の前後の出現文字(単語)パターンより正解バイオリソースかを判定
 
 
 #TASK(3): 評価対象機関名候補決定(/BANK/PMC/20140724/elements/aff) THEME[kaken-26540170]
