@@ -509,8 +509,15 @@ while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; d
 -- grep -o '<;/>' *dropE.html | wc
    1312    1312   69912
 ##==(20150730)完了==##
-##TASK(2.4) 機関名、バイオリソース名が同時出現するセンテンス(ピリオド区切り、場合によってはカンマ、セミコロン区切り)を人手で抜きだし
+##TASK(2.4) 機関名、バイオリソース名が同時出現するセンテンス(ピリオド区切り、場合によってはカンマ、セミコロン区切り)を人手で抜きだし(実行中)
 - 対象: hit_ResOrg_from_*.tsv.color2.sel.html
+- 手順
+-- 手作業で抜きだし
+-- スクリプトでチェック
+--- チェック法: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/README
+--- スクリプト: reformResOrgWork.pl
+-- 以上を繰り返し、収束
+- 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/ 配下
 
 
 
