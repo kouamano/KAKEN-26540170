@@ -76,17 +76,17 @@ cd /BANK/PMC/20150824/articles.fname/20.check/exec_command
 -- 回避: read に -r オプションをつける
 -- 例: /BANK/PMC/20150824/articles.fname/20.check/exec_command/jour-check.as.sh
 - 再実行、エラーゼロを確認
-#=ここまで=#
 
 
 
-
-#TASK(tag.new): XMLのエレメントタグを抽出・ソート・レベル付与[実行中]
+#TASK(tag.new): XMLのエレメントタグを抽出・ソート・レベル付与[20150902](2H)
 - 対象: PMC-XML全件 (/BANK/PMC/20150824/articles/*/*nxml)
 -- コメント中にタグがあるのでコメントを空白列に置き換える必要アリ。
 - プログラム: /home/kamano/gitsrc/XMLOP/elementPos_sequence_flag-lv.pl
 - スクリプト: /BANK/PMC/20150824/elements/ALL/exec_command/ALL_sort_pos_lv_rev-au.sh
 - 結果: /BANK/PMC/20150824/elements/ALL/ALL_sort_pos_rev-au.reg+lv
+#=ここまで=#
+
 
 
 
