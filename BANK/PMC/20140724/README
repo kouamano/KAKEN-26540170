@@ -162,6 +162,7 @@ cd /BANK/PMC/20140724/elements/sec-type
 ## -> 石川氏
 - 対象領域: /BANK/PMC/20140724/elements/aff/PMC-AFF-v1.tsv (20141114)
 ##TASK(extract.material) : extract *material* region ; (20140417)
+##2段階で行なう: 1. ポインター情報作成, 2. ポインター情報を元にソースから抜き出す。
 ### 領域のポインター情報作成(20140417)
 - 対象: /BANK/PMC/20140724/elements/ALL/ALL_sort_pos_rev-au.reg+lv
 - プログラム: /home/kamano/gitsrc/XMLOP/extract_pos-tag-allmaterials.pl
