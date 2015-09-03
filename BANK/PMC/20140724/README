@@ -102,7 +102,7 @@ cd /BANK/PMC/20140724/articles.fname/20.check/exec_command
 - 対象: /BANK/PMC/20140724/articles/ 配下のnxml
 -- 対象リスト: /BANK/PMC/20140724/articles.fname/20/Jour-split.a[a-u]
 - プログラム: /home/kamano/gitsrc/utility/WSP_to_SP.pl
-- スクリプト: /BANK/PMC/20140724/articles.gather/20/exec_command/gather.ALL.sh
+- スクリプト(2Hr): /BANK/PMC/20140724/articles.gather/20/exec_command/gather.ALL.sh
 - 結果: /BANK/PMC/20140724/articles.gather/20/
 
 
