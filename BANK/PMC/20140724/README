@@ -96,6 +96,17 @@ cd /BANK/PMC/20140724/articles.fname/20.check/exec_command
 
 
 
+#TASK(gather)
+#XMLを少数のファイルにまとめる
+#改行はすべてスペースに
+- 対象: /BANK/PMC/20140724/articles/ 配下のnxml
+-- 対象リスト: /BANK/PMC/20140724/articles.fname/20/Jour-split.a[a-u]
+- プログラム: /home/kamano/gitsrc/utility/WSP_to_SP.pl
+- スクリプト: /BANK/PMC/20140724/articles.gather/20/exec_command/gather.ALL.sh
+- 結果: /BANK/PMC/20140724/articles.gather/20/
+
+
+
 #TASK(check): pmid/pmcidのチェック (20140724 に完了 -> ディレクトリ移動あり)
 ##TASK(check.pmcid): PMC-XMLよりpmcidを抽出
 - 対象: /BANK/PMC/20140724/articles.pmid/
@@ -524,13 +535,6 @@ while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; d
 -- 以上を繰り返し、収束
 - 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/ 配下
 ##TASK(2.2)[2] バイオリソース名の前後の出現文字(単語)パターンより正解バイオリソースかを判定
-###TASK(2.2.1) XMLを少数のファイルにまとめる
-###改行はすべてスペースに
-- 対象: /BANK/PMC/20140724/articles/ 配下のnxml
--- 対象リスト: /BANK/PMC/20140724/articles.fname/20/Jour-split.a[a-u]
-- プログラム: /home/kamano/gitsrc/utility/WSP_to_SP.pl
-- スクリプト: /BANK/PMC/20140724/articles.gather/20/exec_command/gather.ALL.sh
-- 結果: /BANK/PMC/20140724/articles.gather/20/
 
 
 #TASK(3): 評価対象機関名候補決定(/BANK/PMC/20140724/elements/aff) THEME[kaken-26540170]
