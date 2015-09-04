@@ -538,11 +538,12 @@ while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; d
 - 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/ 配下
 ##TASK(2.2)[2] バイオリソース名の前後の出現文字(単語)パターンより正解バイオリソースかを判定
 ###TASK(2.2.1) in ACK
-###TASK(2.2.2) in Mat
+###TASK(2.2.2) in Mat #時間がかかる; 1article / 0.5min
 - 対象: /BANK/PMC/20140724/elements/MERGED/allmaterials/*.cont
  ファイル名が含まれているがそのまま使用。
 - 検索タームリスト(ncr,escaped): /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_5.ncr.esc
 - プログラム: /home/kamano/gitsrc/utility/extract_term_tspan_byline.pl
+
 
 
 #TASK(3): 評価対象機関名候補決定(/BANK/PMC/20140724/elements/aff) THEME[kaken-26540170]
