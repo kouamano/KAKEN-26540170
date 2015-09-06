@@ -542,7 +542,10 @@ while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; d
 - 対象: /BANK/PMC/20140724/elements/MERGED/allmaterials/*.cont
  ファイル名が含まれているがそのまま使用。
 - 検索タームリスト(ncr,escaped): /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_5.ncr.esc
-- プログラム: /home/kamano/gitsrc/utility/extract_term_tspan_byline_P.pl
+- プログラム: /home/kamano/gitsrc/utility/extract_term_tspan_P.pl
+ span=8,8
+- スクリプト: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/match_ResSpan_Mat.au.sh
+- 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/match_ResSpan_Mat.au
 
 
 
