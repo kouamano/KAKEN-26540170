@@ -520,7 +520,7 @@ while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; d
 - スクリプト: 
  cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015
  for file in *color2.sel.html; do  /home/kamano/gitsrc/XMLOP/drop_empty_hit_from_html.pl $file > ${file%.html}.dropE.html; done
-- 結果: hit_ResOrg_from_*color2.sel.dropE.html
+- 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_*color2.sel.dropE.html
 - ヒット数を確認:
 -- grep nxml *dropE.html | wc
    1258  213409 2648070
@@ -528,7 +528,7 @@ while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; d
    1312    1312   69912
 ##==(20150730)完了==##
 ##TASK(2.1.7) 機関名、バイオリソース名が同時出現するセンテンス(ピリオド区切り、場合によってはカンマ、セミコロン区切り)を人手で抜きだし(実行中)
-- 対象: hit_ResOrg_from_*.tsv.color2.sel.html
+- 対象: hit_ResOrg_from_*.tsv.color2.sel.dropE.html
 - 手順
 -- 手作業で抜きだし
 -- スクリプトでチェック
