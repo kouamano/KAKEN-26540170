@@ -509,13 +509,13 @@ while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; d
 - スクリプト(10 min): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/insTxColor_Res_in_Mat.sh
 - 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_Mat.au.tsv.color2
 ##TASK(2.1.5) センテンスsplit & html化 (20150804)
-- 対象: hit_ResOrg_from*color2
+- 対象: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from*color2
 - プログラム: /home/kamano/gitsrc/XMLOP/extract_hit_sentence_from_colored.pl
 - スクリプト(ACK): /home/kamano/gitsrc/XMLOP/extract_hit_sentence_from_colored.pl src=/BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv.color2 clm=2 terms=red,blue > /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv.color2.sel.html
 - スクリプト(Mat): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/select_from_colored_Mat.sh
 - 結果: hit_ResOrg_from_*color2.sel.html
 ##TASK(2.1.6) htmlより空のレコードを除去 (20150804)
-- 対象: hit_ResOrg_from_*color2.sel.html
+- 対象: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_*color2.sel.html
 - プログラム: /home/kamano/gitsrc/XMLOP/drop_empty_hit_from_html.pl
 - スクリプト: 
  cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015
@@ -528,7 +528,7 @@ while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; d
    1312    1312   69912
 ##==(20150730)完了==##
 ##TASK(2.1.7) 機関名、バイオリソース名が同時出現するセンテンス(ピリオド区切り、場合によってはカンマ、セミコロン区切り)を人手で抜きだし(実行中)
-- 対象: hit_ResOrg_from_*.tsv.color2.sel.dropE.html
+- 対象: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_*.tsv.color2.sel.dropE.html
 - 手順
 -- 手作業で抜きだし
 -- スクリプトでチェック
@@ -536,7 +536,7 @@ while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; d
 --- スクリプト: reformResOrgWork.pl
 -- 以上を繰り返し、収束
 - 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/ 配下
-##TASK(2.2)[2] バイオリソース名の前後の出現文字(単語)パターンより正解バイオリソースかを判定
+##TASK(2.2)[2] バイオリソース名の前後の出現文字(単語)パターンより正解バイオリソースかを判定(ペンディング)
 ###TASK(2.2.1) in ACK
 - 対象: /BANK/PMC/20140724/elements/acknowledgement/PMC-ACK-v6.tsv.contOnly
 - 検索タームリスト(ncr,escaped): /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_5.ncr.esc
