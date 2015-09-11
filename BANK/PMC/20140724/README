@@ -548,6 +548,7 @@ while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; d
 - プログラム: /home/kamano/gitsrc/utility/extract_term_tspan_P.pl
 - スクリプト: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/match_ResSpan_ACK.sh
 - 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/match_ResSpan_ACK
+-- リソース名無名化プログラム: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/extract_patt.pl
 ###TASK(2.2.2) in Mat #時間がかかる; 1article / 0.5min
 - 対象: /BANK/PMC/20140724/elements/MERGED/allmaterials/*.contOnly
 - 検索タームリスト(ncr,escaped): /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_5.ncr.esc
