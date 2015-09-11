@@ -557,6 +557,11 @@ while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; d
 - 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/match_ResSpan_Mat.au
 ##TASK(2.3)[3] 機関名の前後の出現文字(単語)パターン統計(ペンディング)
 ###TASK(2.3.1) in ACK
+- 対象: /BANK/PMC/20140724/elements/acknowledgement/PMC-ACK-v6.tsv.contOnly
+- 検索するターム(perl用エスケープ): /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt.sort.uniq.esc
+- プログラム: /home/kamano/gitsrc/utility/extract_term_tspan_P.pl
+- スクリプト(n003): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/match_OrgSpan_ACK.sh
+###TASK(2.3.1) in Mat
 
 
 #TASK(3): 評価対象機関名候補決定(/BANK/PMC/20140724/elements/aff) THEME[kaken-26540170]
