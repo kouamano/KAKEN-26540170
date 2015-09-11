@@ -344,6 +344,7 @@ cd /BANK/PMC/20140724/elements/sec-type
 ##TASK(1.1): パターン定義用既知機関名決定 -> 石川氏
 ###TASK(1.1.1): 既知機関英名シノニム決定 -> 石川氏
 ###石川氏 -> 水野氏に指示 (20150610)
+###上位機関を単位とする、ただし、下部機関も上位機関のシノニムとする
 - 手順書: /BANK/Organization/NBRP_2015/tejun-sho_201507.ods
 - 日本語機関名リスト(NBRPオリジナル): /BANK/Organization/NBRP_2015/nbrp.organization-names.J.20150409
 - 日本語正式機関名リスト(水野氏): /BANK/Organization/NBRP_2015/orgnames-jp_eng.csv
@@ -359,14 +360,16 @@ cd /BANK/PMC/20140724/elements/sec-type
 -- 対象ファイル: /BANK/NISTEP/organization_dictionary_ver_2014_1.utf8.insTAB.txt
 -- 下部機関を含むIDと日本語名を抽出: 
 cd /BANK/NISTEP;
-while read org ; do grep $org organization_dictionary_ver_2014_1.utf8.insTAB.txt; done < /BANK/Organization/NBRP_2015/orgname_jp.sort.uniq | awk -F'	' '{print $1"\t"$4}' | sort | uniq > NBRP-IDvsOrg
+while read org ; do grep $org organization_dictionary_ver_2014_1.utf8.insTAB.txt; done < /BANK/Organization/NBRP_2015/orgname_jp.sort.uniq | awk -F'	' '{print $1"\t"$4}' | sort | uniq > /BANK/Organization/NBRP_2015/NBRP-IDvsOrg
 -- 名称空欄を手作業で除去
 -- IDのみ抽出:
+cd /BANK/Organization/NBRP_2015
 awk -F'   ' '{print $1}' NBRP-IDvsOrg > NBRP-ID
 -- NBRP-IDをもとに英名を抜きだし:
 grep "\t" NBRP-IDvsEnName > /BANK/Organization/NBRP_2015/NBRP-IDvsEnName_fromDict.dropEMP
 -- 辞書、WoS、Scopusを合わせた最上位機関英名シノニムvs機関ID(20150707)(最終ファイル): /BANK/Organization/NBRP_2015/IDtopd9oksotods7okodssort17toporg_in_scopus.WoS.dic.m.s.csv.sort.csv
 - (2) 下部機関リスト(86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt)より下部機関含むNBRP機関英名抽出:
+cd /BANK/NISTEP
 while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; done < /BANK/Organization/NBRP_2015/orgname_jp.sort.uniq > /BANK/Organization/NBRP_2015/extractNBRPname_fromSheet2 (最終ファイル)
 - (3) 検索ターム
 -- 依頼: 水野氏中間ファイル(20150623): /BANK/Organization/NBRP_2015/3OK 17toporg_in_scopus.WoS.dic.m.s.ods
@@ -382,6 +385,7 @@ while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; d
 -- 上記に対して第5カラムを抜粋: /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm
 -- 上記に対して先頭と末尾のスペースを除去: /home/kamano/gitsrc/utility/drop_headtailSP.pl 17topOrgNameSearchTerm > /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt
 -- 最終的に検索するターム(20150708): /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt.sort.uniq
+-- 最終的に検索するターム(perl用エスケープ)(20150708): /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt.sort.uniq.esc
 ##TASK(1.2) パターン定義用既知バイオリソース名決定(20140423)
 ###TASK(1.2.1) NBRC利用者成果からバイオリソース名+請求番号を抜き出す(20140420)
 - 利用者成果ファイル: /BANK/BioResource/Organization/NBRP_2015/user-data/reference_list.tsv
