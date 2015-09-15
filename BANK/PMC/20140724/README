@@ -349,7 +349,7 @@ cd /BANK/PMC/20140724/elements/sec-type
 - 日本語機関名リスト(NBRPオリジナル): /BANK/Organization/NBRP_2015/nbrp.organization-names.J.20150409
 - 日本語正式機関名リスト(水野氏): /BANK/Organization/NBRP_2015/orgnames-jp_eng.csv
 - 上ファイルのsortuniq(20150616): /BANK/Organization/NBRP_2015/orgname_jp.sort.uniq
-- 上ファイルの英語名対応表: ???
+- 上ファイルの英語名対応表: /BANK/Organization/NBRP_2015/17orgs_jp_eng.csv
 - 機関名和英対応表のURL(NISTEP): http://www.nistep.go.jp/research/scisip/randd-on-university
 - 実際に使用する和英対応表ファイル(WoS): /BANK/NISTEP/name_variations_WoS_Ver2014_1.utf8.txt
 - 実際に使用する和英対応表ファイル(scopus): /BANK/NISTEP/name_variations_scopus_ver_2013_1.utf8.csv
