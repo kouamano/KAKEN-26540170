@@ -557,6 +557,18 @@ while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; d
 - スクリプト[local]: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/match_ResSpan_Mat.a[pqr].sh
 - スクリプト[hokusai]: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/hokusai/term+span.au.sh
 - 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/match_ResSpan_Mat.au
+##TASK(2.3)[3] 機関名の前後の出現文字(単語)パターンのまとめ
+###TASK(2.3.1) in ACK
+- 対象: /BANK/PMC/20140724/elements/acknowledgement/PMC-ACK-v6.tsv.contOnly
+- 検索ターム: /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt.sort.uniq.esc
+- プログラム: /home/kamano/gitsrc/utility/extract_phrase_tspan_P.pl
+- スクリプト: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/match_OrgSpan_ACK.sh
+- 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/match_Orgpan_ACK
+###TASK(2.3.2) in Mat
+- 対象: /BANK/PMC/20140724/elements/MERGED/allmaterials/allmaterials.au.reg.contOnly
+- 検索ターム: /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt.sort.uniq.esc
+- プログラム: /home/kamano/gitsrc/utility/extract_phrase_tspan_P.pl
+- スクリプト: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/match_OrgSpan_Mat.au.sh
 
 
 
