@@ -519,7 +519,7 @@ while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; d
 - プログラム: /home/kamano/gitsrc/XMLOP/extract_hit_sentence_from_colored.pl
 - スクリプト(ACK): /home/kamano/gitsrc/XMLOP/extract_hit_sentence_from_colored.pl src=/BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv.color2 clm=2 terms=red,blue > /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv.color2.sel.html
 - スクリプト(Mat): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/select_from_colored_Mat.sh
-- 結果: hit_ResOrg_from_*color2.sel.html
+- 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_*color2.sel.html
 ##TASK(2.1.6) htmlより空のレコードを除去 (20150804)
 - 対象: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_*color2.sel.html
 - プログラム: /home/kamano/gitsrc/XMLOP/drop_empty_hit_from_html.pl
