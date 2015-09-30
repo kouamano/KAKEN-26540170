@@ -166,12 +166,13 @@ cd /BANK/PMC/20140724/elements/sec-type
 
 
 #TASK(extract)
-##TASK(extract.ack) :  extract acknowledgement region
-## -> 石川氏
-- 対象領域: /BANK/PMC/20140724/elements/acknowledgement/PMC-ACK-v6_pmid.tsv
+##ackとresのマージ論文数:???
 ##TAST(extract.aff) : extract affiliation region
 ## -> 石川氏
 - 対象領域: /BANK/PMC/20140724/elements/aff/PMC-AFF-v1.tsv (20141114)
+##TASK(extract.ack) :  extract acknowledgement region
+## -> 石川氏
+- 対象領域: /BANK/PMC/20140724/elements/acknowledgement/PMC-ACK-v6_pmid.tsv
 ##TASK(extract.material) : extract *material* region ; (20140417)
 ##2段階で行なう: 1. ポインター情報作成, 2. ポインター情報を元にソースから抜き出す。
 ### 領域のポインター情報作成(20140417)
@@ -187,6 +188,7 @@ cd /BANK/PMC/20140724/elements/sec-type
 -- example: /home/kamano/gitsrc/XMLOP/extract_content_from_reg_allmaterial.pl /BANK/PMC/20140724/articles /BANK/PMC/20140724/elements/MERGED/allmaterials/allmaterials.au.reg
 - スクリプト: /BANK/PMC/20140724/elements/MERGED/allmaterials/exec_command/extract_cont_from_reg.au.sh
 - 結果: /BANK/PMC/20140724/elements/MERGED/allmaterials/allmaterials.au.reg.cont
+## TASK(count_art.ack_and_mat)
 ## TASK(extract.xref): xrefを含む直上位のレベルを抜き出す。
 ### 1. xrefと直上タグのポジションを抜き出し、必要なxref部分を特定、特定領域をプリント ver.2 (20150417)
 #### 1.1 xrefと直上タグのポジションを抜き出す (20150417)
