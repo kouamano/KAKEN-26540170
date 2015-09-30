@@ -189,6 +189,14 @@ cd /BANK/PMC/20140724/elements/sec-type
 - スクリプト: /BANK/PMC/20140724/elements/MERGED/allmaterials/exec_command/extract_cont_from_reg.au.sh
 - 結果: /BANK/PMC/20140724/elements/MERGED/allmaterials/allmaterials.au.reg.cont
 ## TASK(count_art.ack_and_mat)
+- 対象ack: /BANK/PMC/20140724/elements/acknowledgement/PMC-ACK-v6_pmid.tsv
+- nxmlファイル名取り出し: 
+cd /BANK/PMC/20140724/elements/acknowledgement
+awk -F '	' '{print $2}' PMC-ACK-v6_pmid.tsv | sed -e 's/^PMC\///' > PMC-ACK-v6_pmid.nxmlName
+- 対象mat: /BANK/PMC/20140724/elements/MERGED/allmaterials/allmaterials.au.reg.cont
+- nxmlファイル取り出し:
+cd /BANK/PMC/20140724/elements/MERGED/allmaterials/
+cat *cont | awk -F '	' '{print $1}' | sed -e 's/^\/BANK\/PMC\/20140724\/articles\///'  > allmaterials.nxmlNames
 ## TASK(extract.xref): xrefを含む直上位のレベルを抜き出す。
 ### 1. xrefと直上タグのポジションを抜き出し、必要なxref部分を特定、特定領域をプリント ver.2 (20150417)
 #### 1.1 xrefと直上タグのポジションを抜き出す (20150417)
