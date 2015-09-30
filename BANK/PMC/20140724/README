@@ -542,6 +542,7 @@ while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; d
 --- スクリプト: reformResOrgWork.pl
 -- 以上を繰り返し、収束
 - 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/ 配下
+
 ##TASK(2.2)[2] バイオリソース名の前後の出現文字(単語)パターンより正解バイオリソースかを判定(ペンディング)(20150911)
 ###TASK(2.2.1) in ACK
 - 対象: /BANK/PMC/20140724/elements/acknowledgement/PMC-ACK-v6.tsv.contOnly
