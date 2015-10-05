@@ -539,10 +539,21 @@ while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; d
 - 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_*color2.sel.dropE.html
 -- 問題点: タグ内のResにマッチ、タグの破壊が起こっている。-> ar: [399] /BANK/PMC/20140724/articles/PLoS_Pathog/PLoS_Pathog_2007_Nov_23_3(11)_e173.nxml
 - ヒット数を確認:
--- grep nxml *dropE.html | wc
+-- センテンス:
+--- grep nxml *dropE.html | wc
    1258  213409 2648070
--- grep -o '<;/>' *dropE.html | wc
+--- grep -o '<;/>' *dropE.html | wc
    1312    1312   69912
+-- Res: 
+--- cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015
+--- ./exec_command/extract_HitRes_from_dropE.pl *dropE.html | ./exec_command/extract_blueFontStr_from_HitRes.pl | sort | uniq
+    327     376    2501
+-- Org:
+--- cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015
+--- ./exec_command/extract_HitOrg_from_dropE.pl *dropE.html | ./exec_command/extract_redFontStr_from_HitRes.pl | sort | uniq | wc
+     32      89     699
+
+
 ##==(20150730)完了==##
 ##TASK(2.1.7) 機関名、バイオリソース名が同時出現するセンテンス(ピリオド区切り、場合によってはカンマ、セミコロン区切り)を人手で抜きだし(実行中)
 - 対象: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_*.tsv.color2.sel.dropE.html
