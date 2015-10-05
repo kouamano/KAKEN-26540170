@@ -546,7 +546,7 @@ while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; d
    1312    1312   69912
 -- Res: 
 --- cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015
---- ./exec_command/extract_HitRes_from_dropE.pl *dropE.html | ./exec_command/extract_blueFontStr_from_HitRes.pl | sort | uniq
+--- ./exec_command/extract_HitRes_from_dropE.pl *dropE.html | ./exec_command/extract_blueFontStr_from_HitRes.pl | sort | uniq | wc
     327     376    2501
 -- Org:
 --- cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015
