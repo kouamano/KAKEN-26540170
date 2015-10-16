@@ -561,9 +561,16 @@ while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; d
 --- チェック法: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/README
 --- スクリプト: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/reformResOrgWork.pl
 -- 以上を繰り返し、収束
-- 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/ 配下
+- 作業ファイル: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/ 配下
 -- 1回目: hit_ResOrg.tsv.color2.sel.html.work.20140929.csv
 -- 2回目: hit_ResOrg.tsv.color2.sel.html.work.20151007.csv
+-- 3回目: hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref
+-- チェック:
+--- (1) エラーを抜きだし
+--- (2) ;Eフラグ付きを抜きだし
+--- (3) 1の要素がすべて(2)によってeditされていればOK
+###===いまここ===###
+
 
 ##TASK(2.2)[2](ペンディング) バイオリソース名の前後の出現文字(単語)パターンより正解バイオリソースかを判定(20150911)
 ###TASK(2.2.1) in ACK
