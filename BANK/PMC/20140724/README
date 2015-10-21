@@ -579,6 +579,12 @@ grep ';E' check_7.E.20151015 > check_7.E.20151015.E
 - 本文中のリソースにマーク、シングルライン化: 
 -- スクリプト: reformResOrgWorkMark.pl hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev | toSingleLine.pl > hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.S
 - 最終結果: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.S
+-- フォーマットの説明:
+--- 対象のnxmlごとの結果行(各1行) + アノテーション行
+--- 対象行: <タブ>ではじまる
+--- 各行におけるセンテンスレコード区切り: <タブ><セミコロン><セミコロン><タブ>
+--- レコードセンテンスの構成: <レコードID>、<コンテンツ>、<ヒットリソース>、<ヒット組織名>、<ヒットの順番>、<備考>、<質問>の<タブ>区切り
+--- <リソース名>と<組織名>の区切り: <スペース><セミコロン><スペース>
 ###===いまここ===###
 
 
