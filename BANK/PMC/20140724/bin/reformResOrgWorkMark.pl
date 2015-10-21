@@ -86,7 +86,7 @@ while(<>){
 		foreach(@resu){
 			$sent =~ s/($_)/<RES>$1<\/RES>/g;
 		}
-		foreach(@orugu){
+		foreach(@orgu){
 			$sent =~ s/($_)/<ORG>$1<\/ORG>/g;
 		}
 		##print sent, resu, orgu
