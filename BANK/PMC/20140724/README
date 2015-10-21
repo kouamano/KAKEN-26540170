@@ -568,7 +568,15 @@ while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; d
 -- チェック:
 --- (1) エラーを抜きだし
 --- (2) ;Eフラグ付きを抜きだし
+---- スクリプト:
+awk -F '	' '{print $7}' hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv > check_7.E.20151015
+#### 行番号挿入
+vim check_7.E.20151015
+:%s/^/\=line('.').'^I'/
+grep ';E' check_7.E.20151015 > check_7.E.20151015.E
 --- (3) 1の要素がすべて(2)によってeditされていればOK
+- 最終結果: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev
+- 本文中のリソースにマーク、シングルライン化: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.S
 ###===いまここ===###
 
 
