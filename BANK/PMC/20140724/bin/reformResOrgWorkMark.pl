@@ -94,6 +94,7 @@ while(<>){
 		print "$resu\t";
 		print "$orgu\t";
 		##sort, print pos
+		##if without ;E
 		print ":";
 		for my $key (sort{$a <=> $b} keys %hpos){
 			print $key.$hpos{$key}.":";
