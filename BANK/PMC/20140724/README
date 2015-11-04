@@ -579,6 +579,7 @@ grep ';E' check_7.E.20151015 > check_7.E.20151015.E
 - 本文中のリソースにマーク、シングルライン化: 
 -- スクリプト: reformResOrgWorkMark.pl hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev | toSingleLine.pl > hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.S
 - 最終結果: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.S
+- ACK or Mat ラベル付与: vimで編集
 -- フォーマットの説明:
 --- 対象のnxmlごとの結果行(各1行) + アノテーション行
 --- 対象行: <タブ>ではじまる
@@ -592,6 +593,10 @@ grep '^	' hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.S 
 -- センテンス数:
 grep '^		' hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev | wc
     983   36238  256870
+grep 'ACK			' hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.L | wc
+    246   10376   71610
+grep 'Mat			' hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.L | wc
+    737   26845  189192
 ###===いまここ===###
 
 
