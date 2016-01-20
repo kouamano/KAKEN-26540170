@@ -605,14 +605,14 @@ grep 'Mat			' hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.L |
 ###TASK(2.2.1) in ACK
 - 対象: /BANK/PMC/20140724/elements/acknowledgement/PMC-ACK-v6.tsv.contOnly
 - 検索タームリスト(ncr,escaped): /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_5.ncr.esc
-- プログラム: /home/kamano/gitsrc/utility/extract_term_tspan_P.pl
+- プログラム: /home/kamano/gitsrc/utility/extract_term_tspan.Ppl
 - スクリプト: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/match_ResSpan_ACK.sh
 - 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/match_ResSpan_ACK
 -- リソース名無名化プログラム: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/extract_patt.pl
 ###TASK(2.2.2) in Mat #時間がかかる; 1article / 0.5min
 - 対象: /BANK/PMC/20140724/elements/MERGED/allmaterials/*.contOnly
 - 検索タームリスト(ncr,escaped): /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_5.ncr.esc
-- プログラム: /home/kamano/gitsrc/utility/extract_term_tspan_P.pl
+- プログラム: /home/kamano/gitsrc/utility/extract_term_tspan.Ppl
 - スクリプト[local]: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/match_ResSpan_Mat.a[pqr].sh
 - スクリプト[hokusai]: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/hokusai/term+span.au.sh
 - 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/match_ResSpan_Mat.au
@@ -620,13 +620,13 @@ grep 'Mat			' hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.L |
 ###TASK(2.3.1) in ACK
 - 対象: /BANK/PMC/20140724/elements/acknowledgement/PMC-ACK-v6.tsv.contOnly
 - 検索ターム: /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt.sort.uniq.esc
-- プログラム: /home/kamano/gitsrc/utility/extract_phrase_tspan_P.pl
+- プログラム: /home/kamano/gitsrc/utility/extract_phrase_tspan.Ppl
 - スクリプト: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/match_OrgSpan_ACK.sh
 - 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/match_Orgpan_ACK
 ###TASK(2.3.2) in Mat
 - 対象: /BANK/PMC/20140724/elements/MERGED/allmaterials/allmaterials.au.reg.contOnly
 - 検索ターム: /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt.sort.uniq.esc
-- プログラム: /home/kamano/gitsrc/utility/extract_phrase_tspan_P.pl
+- プログラム: /home/kamano/gitsrc/utility/extract_phrase_tspan.Ppl
 - スクリプト: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/match_OrgSpan_Mat.au.sh
 
 
