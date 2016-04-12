@@ -588,7 +588,7 @@ grep ';E' check_7.E.20151015 > check_7.E.20151015.E
 --- <リソース名>と<組織名>の区切り: <スペース><セミコロン><スペース>
 - 集計:
 -- 論文数:
-grep '^	' hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.S | wc
+grep '^	' hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.E.S | wc
     954   39533  365305
 -- センテンス数:
 grep '^		' hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev | wc
