@@ -539,19 +539,20 @@ while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; d
  for file in *color2.sel.html; do  /home/kamano/gitsrc/XMLOP/drop_empty_hit_from_html.pl $file > ${file%.html}.dropE.html; done
 - 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_*color2.sel.dropE.html
 -- 問題点: タグ内のResにマッチ、タグの破壊が起こっている。-> ar: [399] /BANK/PMC/20140724/articles/PLoS_Pathog/PLoS_Pathog_2007_Nov_23_3(11)_e173.nxml
-- ヒット数を確認:
+- 集計結果:
 -- センテンス:
---- grep nxml *dropE.html | wc
+grep nxml *dropE.html | wc
    1258  213409 2648070
---- grep -o '<;/>' *dropE.html | wc
+-- 論文:
+grep -o '<;/>' *dropE.html | wc
    1312    1312   69912
 -- Res: 
---- cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015
---- ./exec_command/extract_HitRes_from_dropE.pl *dropE.html | ./exec_command/extract_blueFontStr_from_HitRes.pl | sort | uniq | wc
+cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015
+./exec_command/extract_HitRes_from_dropE.pl *dropE.html | ./exec_command/extract_blueFontStr_from_HitRes.pl | sort | uniq | wc
     327     376    2501
 -- Org:
---- cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015
---- ./exec_command/extract_HitOrg_from_dropE.pl *dropE.html | ./exec_command/extract_redFontStr_from_HitRes.pl | sort | uniq | wc
+cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015
+./exec_command/extract_HitOrg_from_dropE.pl *dropE.html | ./exec_command/extract_redFontStr_from_HitRes.pl | sort | uniq | wc
      32      89     699
 ###==(20150730)完了==###
 ###TASK(2.1.7) 機関名、バイオリソース名が同時出現するセンテンス(ピリオド区切り、場合によってはカンマ、セミコロン区切り)を人手で抜きだし(水野氏実行完了)
@@ -587,16 +588,19 @@ grep ';E' check_7.E.20151015 > check_7.E.20151015.E
 --- 各行におけるセンテンスレコード区切り: <タブ><セミコロン><セミコロン><タブ>
 --- レコードセンテンスの構成: <レコードID>、<コンテンツ>、<ヒットリソース>、<ヒット組織名>、<ヒットの順番>、<備考>、<質問>の<タブ>区切り
 --- <リソース名>と<組織名>の区切り: <スペース><セミコロン><スペース>
-- 集計結果
--- 論文数
+- 集計結果(調整済み)
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
+-- 全論文数
 grep '^	' hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.E.S | wc
     954   39533  365305
 -- センテンス数:
+--- Total
 grep '^		' hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev | wc
     983   36238  256870
+--- <ACK>
 grep 'ACK			' hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.L | wc
     246   10376   71610
+--- <Mat>
 grep 'Mat			' hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.L | wc
     737   26845  189192
 -- パターン集計: => 石川氏に問い合わせ
