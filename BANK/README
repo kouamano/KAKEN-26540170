@@ -636,7 +636,7 @@ grep 'Mat			' hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.L |
 - 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/match_OrgSpan_Mat.au
 
 
-#TASK(3): 評価対象機関名候補決定(/BANK/PMC/20140724/elements/aff) THEME[kaken-26540170]
+#TASK(3): 評価対象機関名(拡張)候補決定(/BANK/PMC/20140724/elements/aff) THEME[kaken-26540170]
 #aff領域より得られた機関名(住所つき)をmaterial、ack領域に対して検索、存在を確認。
 #所属をカンマで区切り、各フレーズを対象領域に対してマッチング。
 #<tag1>,<tag2>,<tag3>
