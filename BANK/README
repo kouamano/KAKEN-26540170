@@ -579,7 +579,7 @@ grep ';E' check_7.E.20151015 > check_7.E.20151015.E
 - 修正結果: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev
 - 本文中のリソースにマーク、シングルライン化: 
 -- スクリプト: reformResOrgWorkMark.pl hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev | toSingleLine.pl > hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.S
-- 最終結果: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.E.S
+- 最終結果: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.E.S.L
 - ACK or Mat ラベル付与: vimで編集
 -- フォーマットの説明:
 --- 対象のnxmlごとの結果行(各1行) + アノテーション行
