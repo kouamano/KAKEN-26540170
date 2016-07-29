@@ -1099,7 +1099,7 @@ cd /BANK/PMC/20140724/elements/sec
 - プログラム(試用): /home/kamano/gitsrc/XMLOP/check-region_from_pos.pl
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/exec_command
 /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/exec_command/check_pos_AllResNames_Jour-au_inMMs.sh
-#### 2.2 (OLD) マテリアルメソッドセクションの領域とヒット領域を比較 
+#### 2.2 (OLD) マテリアルメソッドセクションの領域とヒット領域を比較(ファイル消去) 
 - プログラム: /home/kamano/gitsrc/XMLOP/check_res_sec-MMs.pl
  : ポジションでソートしているのでOK
 cd /BANK/PMC/20130909/Matching/BioResource/Organization/RIKEN-BRC_2012/
