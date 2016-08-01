@@ -626,10 +626,7 @@ grep 'Mat			' hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.L |
 -- プログラム: /home/kamano/gitsrc/XMLOP/extract_region_ORG-RES.pl
 -- スクリプト: grep ^ACK hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.E.S.L | awk -F '	' '{print $6}' | /home/kamano/gitsrc/XMLOP/extract_region_ORG-RES.pl > region_ORG-RES_ACK
 -- 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/region_ORG-RES_ACK
-##### 集計2.1 : 単語数ごとのフレーズ集計
-#####===いまここ===#####
-#####===集計パターンを議論する必要がある===#####
-#####===ex. ORのO直後とR直前、2、3、4Wフレーズ、など===#####
+##### 集計2.1 : 準備
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/
 - RES-ORG@Mat
 -- 対象: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/region_RES-ORG_Mat
@@ -643,6 +640,8 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/
 - ORG-RES@ACK
 -- 対象: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/region_ORG-RES_ACK
 -- タグの除去: /home/kamano/gitsrc/XMLOP/drop_tag_RES-ORG.pl region_ORG-RES_ACK > region_ORG-RES_ACK.droptags
+##### 集計2.2 : RES-ORGまたはORG-RES間のワード集計
+#####===いまここ===#####
 
 ##TASK(2.2)[2](ペンディング) バイオリソース名の前後の出現文字(単語)パターンより正解バイオリソースかを判定(20150911)
 ###TASK(2.2.1) in ACK
