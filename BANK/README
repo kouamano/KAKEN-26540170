@@ -605,7 +605,7 @@ grep 'Mat			' hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.L |
     737   26845  189192
 ###TASK(2.1.8) 機関名、バイオリソース名が同時出現するセンテンスのパターン解析
 - 対象: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.E.S.L
-#### 集計1 : </RES>...<ORG> or </ORG>...<RES> 間、単語数ごとの検索
+#### 集計1 : </RES>...<ORG> or </ORG>...<RES> 間、単語数ごとの集計
 - パターン集計結果: => 石川氏に問い合わせ(20170725)
 ####===いまここ===####
 - パターン集計結果のまとめ: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/analysis/pattern-bunseki-kekka (図書館総合展)
@@ -626,6 +626,12 @@ grep 'Mat			' hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.L |
 -- プログラム: /home/kamano/gitsrc/XMLOP/extract_region_ORG-RES.pl
 -- スクリプト: grep ^ACK hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.E.S.L | awk -F '	' '{print $6}' | /home/kamano/gitsrc/XMLOP/extract_region_ORG-RES.pl > region_ORG-RES_ACK
 -- 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/region_ORG-RES_ACK
+##### 集計2.1 : 単語数ごとのフレーズ集計
+#####===いまここ===#####
+- RES-ORG@Mat
+- RES-ORG@ACK
+- ORG-RES@Mat
+- ORG-RES@ACK
 
 ##TASK(2.2)[2](ペンディング) バイオリソース名の前後の出現文字(単語)パターンより正解バイオリソースかを判定(20150911)
 ###TASK(2.2.1) in ACK
