@@ -609,7 +609,7 @@ grep 'Mat			' hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.L |
 - パターン集計結果: => 石川氏に問い合わせ(20170725)
 ####===いまここ===####
 - パターン集計結果のまとめ: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/analysis/pattern-bunseki-kekka (図書館総合展)
-#### 集計2 : </RES>...<ORG> or </ORG>...<RES> 間の単語数制限なし
+#### 集計2 : </RES>...<ORG> or </ORG>...<RES> 間の単語数制限なし (20160801)
 - RES-ORG@Mat
 -- プログラム: /home/kamano/gitsrc/XMLOP/extract_region_RES-ORG.pl
 -- スクリプト: grep ^Mat hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.E.S.L | awk -F '	' '{print $6}' | /home/kamano/gitsrc/XMLOP/extract_region_RES-ORG.pl > region_RES-ORG_Mat
