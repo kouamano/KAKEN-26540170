@@ -1,20 +1,20 @@
-#[¥ê¥½¡¼¥¹Ì¾¶¦½Ğ¸½²òÀÏ][kaken-26540170][°úÍÑ²òÀÏ]
+#[ãƒªã‚½ãƒ¼ã‚¹åå…±å‡ºç¾è§£æ][kaken-26540170][å¼•ç”¨è§£æ]
 #NOTE:
-##20150428 ¿·¼ê½ç¤ËÀÚ¤êÂØ¤¨
-##³«»Ï¥¤¥ó¥Ç¥Ã¥¯¥¹(¥¤¥¿¥ì¡¼¥¿)¤Ş¤È¤á
+##20150428 æ–°æ‰‹é †ã«åˆ‡ã‚Šæ›¿ãˆ
+##é–‹å§‹ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹(ã‚¤ã‚¿ãƒ¬ãƒ¼ã‚¿)ã¾ã¨ã‚
 ##C: 0
 ##perl: 0
 ##Mathematica: 1
 ##Matlab: 1
-#¸¡Æ¤»ö¹à:
-##Àµ²òÏÀÊ¸¤ò½¸¤á¤Æ¤½¤³¤«¤é¥Ñ¥¿¡¼¥ó¤òÃê½Ğ¤¹¤ë¤³¤È¤ò¸¡Æ¤
+#æ¤œè¨äº‹é …:
+##æ­£è§£è«–æ–‡ã‚’é›†ã‚ã¦ãã“ã‹ã‚‰ãƒ‘ã‚¿ãƒ¼ãƒ³ã‚’æŠ½å‡ºã™ã‚‹ã“ã¨ã‚’æ¤œè¨
 #TODO:
-##TASK(2.1.7) -½¸·×·ë²Ì --¥Ñ¥¿¡¼¥ó½¸·×: => ÀĞÀî»á¤Ë¥Õ¥¡¥¤¥ë³ÎÇ§
+##TASK(2.1.7) -é›†è¨ˆçµæœ --ãƒ‘ã‚¿ãƒ¼ãƒ³é›†è¨ˆ: => çŸ³å·æ°ã«ãƒ•ã‚¡ã‚¤ãƒ«ç¢ºèª
 ##check: OK
 ###/BANK/PMC/20140724/Matching/BioResource/Organization/ATCC_2014 -> OK
-###match_pos_AllResNames_Jour-ao.res ¤¬¤Ê¤¤¡£-> OK
-##¥×¥í¥°¥é¥à¤ÎÀ°Íı: gitsrc/KAKEN-26540170/BANK/PMC/bin ¤ò»È¤ï¤Ê¤¤¤è¤¦¤Ë¤¹¤ë -> OK
-##¥Ç¡¼¥¿¤Î¥Ğ¥Ã¥¯¥¢¥Ã¥×: OK
+###match_pos_AllResNames_Jour-ao.res ãŒãªã„ã€‚-> OK
+##ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã®æ•´ç†: gitsrc/KAKEN-26540170/BANK/PMC/bin ã‚’ä½¿ã‚ãªã„ã‚ˆã†ã«ã™ã‚‹ -> OK
+##ãƒ‡ãƒ¼ã‚¿ã®ãƒãƒƒã‚¯ã‚¢ãƒƒãƒ—: OK
 ##As of 20141013 -> OK
 /mnt/EDB200/BANK/BioResource - OK
 /mnt/EDB200/BANK/Organization - OK
@@ -25,9 +25,9 @@
 /mnt/EDB200/BANK/PMC/20140724/Matching/BioResource/Organization/JCRB_2014 - OK
 /mnt/EDB200/BANK/PMC/20140724/Matching/BioResource/Organization/NITE-NBRC_2014 -OK
 /mnt/EDB200/BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012 - OK
-/mnt/EDB200/BANK/PMC/20140724/Matching/BioResource/Organization/WDCM_2014 - ÂĞ¾İ³°
+/mnt/EDB200/BANK/PMC/20140724/Matching/BioResource/Organization/WDCM_2014 - å¯¾è±¡å¤–
 /mnt/EDB200/BANK/PMC/20140724/TAR - OK
-/mnt/EDB200/BANK/PMC/20140724/articles - ÂĞ¾İ³°
+/mnt/EDB200/BANK/PMC/20140724/articles - å¯¾è±¡å¤–
 /mnt/EDB200/BANK/PMC/20140724/articles.fname - OK
 /mnt/EDB200/BANK/PMC/20140724/articles.pmid - OK
 /mnt/EDB200/BANK/PMC/20140724/elements - OK
@@ -40,510 +40,510 @@
 /mnt/EDB200/BANK/PMC/20140724/elements/sec-type - OK
 /mnt/EDB200/BANK/PMC/20140724/elements/supplementary-material - OK
 /mnt/EDB200/BANK/PMC/20140724/terms - OK
-#¥Ç¥£¥ì¥¯¥È¥ê¹½À®
+#ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªæ§‹æˆ
 - root: /BANK/
-- XML¾ğÊó: /BANK/PMC/<ÆüÉÕ>/ ÇÛ²¼
-- µ¡´Ø¾ğÊó: /BANK/Organization/<µ¡´ØÌ¾_ÆüÉÕ>/ ÇÛ²¼
-- ¥Ğ¥¤¥ª¥ê¥½¡¼¥¹¾ğÊó: /BANK/BioResource/Organization/<µ¡´ØÌ¾_ÆüÉÕ>/ ÇÛ²¼
-- ¥Ş¥Ã¥Á¥ó¥°(¸¡º÷)·ë²Ì: /BANK/PMC/<ÆüÉÕ>/Matching/BioResource/Organization/<µ¡´ØÌ¾>/ ÇÛ²¼
-- ¥×¥í¥°¥é¥à: github
-- ¼Â¹Ô¥¹¥¯¥ê¥×¥È: ³Æ exec_command ¥Õ¥©¥ë¥À
-#PMC³µ´Ñ
+- XMLæƒ…å ±: /BANK/PMC/<æ—¥ä»˜>/ é…ä¸‹
+- æ©Ÿé–¢æƒ…å ±: /BANK/Organization/<æ©Ÿé–¢å_æ—¥ä»˜>/ é…ä¸‹
+- ãƒã‚¤ã‚ªãƒªã‚½ãƒ¼ã‚¹æƒ…å ±: /BANK/BioResource/Organization/<æ©Ÿé–¢å_æ—¥ä»˜>/ é…ä¸‹
+- ãƒãƒƒãƒãƒ³ã‚°(æ¤œç´¢)çµæœ: /BANK/PMC/<æ—¥ä»˜>/Matching/BioResource/Organization/<æ©Ÿé–¢å>/ é…ä¸‹
+- ãƒ—ãƒ­ã‚°ãƒ©ãƒ : github
+- å®Ÿè¡Œã‚¹ã‚¯ãƒªãƒ—ãƒˆ: å„ exec_command ãƒ•ã‚©ãƒ«ãƒ€
+#PMCæ¦‚è¦³
 - /BANK/PMC/20140724/articles : 54G, 843679 files
-- /BANK/PMC/20140724/elements/SKELTON/skelton-ALL.res.tag-count.rep.merge-sort.count : 282¥¿¥°
+- /BANK/PMC/20140724/elements/SKELTON/skelton-ALL.res.tag-count.rep.merge-sort.count : 282ã‚¿ã‚°
 
 
 
-#TASK(data) (¿ï»ş¹¹¿·) : ¥Ç¡¼¥¿¤Î´ğËÜ¾ğÊó¤ò¤Ş¤È¤á¤ë
-##TASK(data.1):PMC¥Õ¥¡¥¤¥ë¤ÎÅ¸³«
-- Å¸³«Àè: /BANK/PMC/20140724/articles
+#TASK(data) (éšæ™‚æ›´æ–°) : ãƒ‡ãƒ¼ã‚¿ã®åŸºæœ¬æƒ…å ±ã‚’ã¾ã¨ã‚ã‚‹
+##TASK(data.1):PMCãƒ•ã‚¡ã‚¤ãƒ«ã®å±•é–‹
+- å±•é–‹å…ˆ: /BANK/PMC/20140724/articles
 - check:
--- ¥Õ¥¡¥¤¥ëÌ¾¥ê¥¹¥ÈºîÀ®
+-- ãƒ•ã‚¡ã‚¤ãƒ«åãƒªã‚¹ãƒˆä½œæˆ
 cd /BANK/PMC/20140724/articles
 find ./ -name *.nxml > /BANK/PMC/20140724/articles.fname/20/Jour-All.fname
--- Ê¬³ä
+-- åˆ†å‰²
 cd /BANK/PMC/20140724/articles.fname/20
 split -l 42183 Jour-All.fname Jour-split
-##TASK(data.2):PMC¥Õ¥¡¥¤¥ë¤Î¥Á¥§¥Ã¥¯
+##TASK(data.2):PMCãƒ•ã‚¡ã‚¤ãƒ«ã®ãƒã‚§ãƒƒã‚¯
 cd /BANK/PMC/20140724/articles.fname/20.check/exec_command
 ./jour-check.aa.sh
-##¥¨¥é¡¼¥¼¥í¤ò³ÎÇ§¡£
-##TASK(data.fname): ¥Õ¥¡¥¤¥ë¥Í¡¼¥à¤Î¥ê¥¹¥ÈºîÀ®
+##ã‚¨ãƒ©ãƒ¼ã‚¼ãƒ­ã‚’ç¢ºèªã€‚
+##TASK(data.fname): ãƒ•ã‚¡ã‚¤ãƒ«ãƒãƒ¼ãƒ ã®ãƒªã‚¹ãƒˆä½œæˆ
 - dir : /BANK/PMC/20140724/articles.fname/20
-##TASK(data.issn): ¥Õ¥¡¥¤¥ë vs. issn¾ğÊó
+##TASK(data.issn): ãƒ•ã‚¡ã‚¤ãƒ« vs. issnæƒ…å ±
 - dir : /BANK/PMC/20140724/articles.issn
-### 1. issn¤ÎÅ¦½Ğ(20150405)
-- ÂĞ¾İ: /BANK/PMC/20140724/articles/*/*.nxml
-- ÂĞ¾İ¥Õ¥¡¥¤¥ë¥ê¥¹¥È: /BANK/PMC/20140724/articles.fname/20/Jour-split.a[a-u]
-- ¥×¥í¥°¥é¥à: /home/kamano/gitsrc/XMLOP/extract_issn.pl
-- ¥¹¥¯¥ê¥×¥È: /BANK/PMC/20140724/articles.issn/exec_command/extract_issn.ALL.sh
-- ·ë²Ì: /BANK/PMC/20140724/articles.issn/Jour-split.issn.au
-##TASK(data.pmid): ¥Õ¥¡¥¤¥ë vs. pmid¾ğÊó
+### 1. issnã®æ‘˜å‡º(20150405)
+- å¯¾è±¡: /BANK/PMC/20140724/articles/*/*.nxml
+- å¯¾è±¡ãƒ•ã‚¡ã‚¤ãƒ«ãƒªã‚¹ãƒˆ: /BANK/PMC/20140724/articles.fname/20/Jour-split.a[a-u]
+- ãƒ—ãƒ­ã‚°ãƒ©ãƒ : /home/kamano/gitsrc/XMLOP/extract_issn.pl
+- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ: /BANK/PMC/20140724/articles.issn/exec_command/extract_issn.ALL.sh
+- çµæœ: /BANK/PMC/20140724/articles.issn/Jour-split.issn.au
+##TASK(data.pmid): ãƒ•ã‚¡ã‚¤ãƒ« vs. pmidæƒ…å ±
 - dir : /BANK/PMC/20140724/articles.pmid
-##TASK(data.title):  ¥Õ¥¡¥¤¥ë vs. title
+##TASK(data.title):  ãƒ•ã‚¡ã‚¤ãƒ« vs. title
 - dir : /BANK/PMC/20140724/articles.title
-### 1. ¥¢¡¼¥Æ¥£¥¯¥ë¥¿¥¤¥È¥ë¤ÎÃê½Ğ(20150226)
-- ¥×¥í¥°¥é¥à: /home/kamano/gitsrc/XMLOP/extract_art-title_in_front.pl
-- ¥¹¥¯¥ê¥×¥È: /BANK/PMC/20140724/articles.title/exec_command/jour-split.title.All.sh
-- ·ë²Ì: /BANK/PMC/20140724/articles.title/jour-split.title.au
-##TASK(data.type):  ¥Õ¥¡¥¤¥ë vs. article-type
+### 1. ã‚¢ãƒ¼ãƒ†ã‚£ã‚¯ãƒ«ã‚¿ã‚¤ãƒˆãƒ«ã®æŠ½å‡º(20150226)
+- ãƒ—ãƒ­ã‚°ãƒ©ãƒ : /home/kamano/gitsrc/XMLOP/extract_art-title_in_front.pl
+- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ: /BANK/PMC/20140724/articles.title/exec_command/jour-split.title.All.sh
+- çµæœ: /BANK/PMC/20140724/articles.title/jour-split.title.au
+##TASK(data.type):  ãƒ•ã‚¡ã‚¤ãƒ« vs. article-type
 - dir : /BANK/PMC/20140724/articles.type
-### 1. articletype¤ÎÅ¦½Ğ(20150405)
-- ÂĞ¾İ: /BANK/PMC/20140724/articles/*/*.nxml
-- ÂĞ¾İ¥Õ¥¡¥¤¥ë¥ê¥¹¥È: /BANK/PMC/20140724/articles.fname/20/Jour-split.a[a-u]
-- ¥×¥í¥°¥é¥à: /home/kamano/gitsrc/XMLOP/extract_art-type.pl
-- ¥¹¥¯¥ê¥×¥È: /BANK/PMC/20140724/articles.type/exec_command/extract_art-type.ALL.sh
-- ·ë²Ì: /BANK/PMC/20140724/articles.type/Jour-split.arttype.au
+### 1. articletypeã®æ‘˜å‡º(20150405)
+- å¯¾è±¡: /BANK/PMC/20140724/articles/*/*.nxml
+- å¯¾è±¡ãƒ•ã‚¡ã‚¤ãƒ«ãƒªã‚¹ãƒˆ: /BANK/PMC/20140724/articles.fname/20/Jour-split.a[a-u]
+- ãƒ—ãƒ­ã‚°ãƒ©ãƒ : /home/kamano/gitsrc/XMLOP/extract_art-type.pl
+- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ: /BANK/PMC/20140724/articles.type/exec_command/extract_art-type.ALL.sh
+- çµæœ: /BANK/PMC/20140724/articles.type/Jour-split.arttype.au
 
 
 
 #TASK(gather)
-#XML¤ò¾¯¿ô¤Î¥Õ¥¡¥¤¥ë¤Ë¤Ş¤È¤á¤ë
-#²ş¹Ô¤Ï¤¹¤Ù¤Æ¥¹¥Ú¡¼¥¹¤Ë
-- ÂĞ¾İ: /BANK/PMC/20140724/articles/ ÇÛ²¼¤Înxml
--- ÂĞ¾İ¥ê¥¹¥È: /BANK/PMC/20140724/articles.fname/20/Jour-split.a[a-u]
-- ¥×¥í¥°¥é¥à: /home/kamano/gitsrc/utility/WSP_to_SP.pl
-- ¥¹¥¯¥ê¥×¥È(2Hr): /BANK/PMC/20140724/articles.gather/20/exec_command/gather.ALL.sh
-- ·ë²Ì: /BANK/PMC/20140724/articles.gather/20/
+#XMLã‚’å°‘æ•°ã®ãƒ•ã‚¡ã‚¤ãƒ«ã«ã¾ã¨ã‚ã‚‹
+#æ”¹è¡Œã¯ã™ã¹ã¦ã‚¹ãƒšãƒ¼ã‚¹ã«
+- å¯¾è±¡: /BANK/PMC/20140724/articles/ é…ä¸‹ã®nxml
+-- å¯¾è±¡ãƒªã‚¹ãƒˆ: /BANK/PMC/20140724/articles.fname/20/Jour-split.a[a-u]
+- ãƒ—ãƒ­ã‚°ãƒ©ãƒ : /home/kamano/gitsrc/utility/WSP_to_SP.pl
+- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ(2Hr): /BANK/PMC/20140724/articles.gather/20/exec_command/gather.ALL.sh
+- çµæœ: /BANK/PMC/20140724/articles.gather/20/
 
 
 
-#TASK(check): pmid/pmcid¤Î¥Á¥§¥Ã¥¯ (20140724 ¤Ë´°Î» -> ¥Ç¥£¥ì¥¯¥È¥ê°ÜÆ°¤¢¤ê)
-##TASK(check.pmcid): PMC-XML¤è¤êpmcid¤òÃê½Ğ
-- ÂĞ¾İ: /BANK/PMC/20140724/articles.pmid/
-- ¥×¥í¥°¥é¥à: /home/kamano/gitsrc/XMLOP/extract_pmcid.pl
+#TASK(check): pmid/pmcidã®ãƒã‚§ãƒƒã‚¯ (20140724 ã«å®Œäº† -> ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªç§»å‹•ã‚ã‚Š)
+##TASK(check.pmcid): PMC-XMLã‚ˆã‚Špmcidã‚’æŠ½å‡º
+- å¯¾è±¡: /BANK/PMC/20140724/articles.pmid/
+- ãƒ—ãƒ­ã‚°ãƒ©ãƒ : /home/kamano/gitsrc/XMLOP/extract_pmcid.pl
 cd /BANK/PMC/20140724/articles.pmid/exec_command
 /BANK/PMC/20140724/articles.pmid/exec_command/jour-split.pmcid.au.sh
-##TASK(check.pmid): PMC-XML¤è¤êpmid¤òÃê½Ğ
-- ÂĞ¾İ: /BANK/PMC/20140724/articles.pmid/
-- ¥×¥í¥°¥é¥à: /home/kamano/gitsrc/XMLOP/extract_pmid.pl
+##TASK(check.pmid): PMC-XMLã‚ˆã‚Špmidã‚’æŠ½å‡º
+- å¯¾è±¡: /BANK/PMC/20140724/articles.pmid/
+- ãƒ—ãƒ­ã‚°ãƒ©ãƒ : /home/kamano/gitsrc/XMLOP/extract_pmid.pl
 cd /BANK/PMC/20140724/articles.pmid/exec_command
 /BANK/PMC/20140724/articles.pmid/exec_command/jour-split.pmid.aa.sh
-##TASK(check.user-data-pmid): RIKEN-BRCÍøÍÑ¼ÔÀ®²Ì¤è¤êpmid¤òÃê½Ğ(20140904 °ÜÆ°)
-- ÂĞ¾İ: /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/user-data/PMID/ALL.pmid.sort.uniq
-##TASK(check.PMC_VS_user-data): RIKEN-BRCÍøÍÑ¼ÔÀ®²Ìpmid¡¡PMC-XML_pmid¡¡¤ò¥Ş¥Ã¥Á¥ó¥°(20140904 °ÜÆ°)
-- ¥Ä¡¼¥ë: Mathematica
-- ·ë²Ì: /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/user-data/PMID/ALL.pmid.sort.uniq.in_pmc.hit
+##TASK(check.user-data-pmid): RIKEN-BRCåˆ©ç”¨è€…æˆæœã‚ˆã‚Špmidã‚’æŠ½å‡º(20140904 ç§»å‹•)
+- å¯¾è±¡: /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/user-data/PMID/ALL.pmid.sort.uniq
+##TASK(check.PMC_VS_user-data): RIKEN-BRCåˆ©ç”¨è€…æˆæœpmidã€€PMC-XML_pmidã€€ã‚’ãƒãƒƒãƒãƒ³ã‚°(20140904 ç§»å‹•)
+- ãƒ„ãƒ¼ãƒ«: Mathematica
+- çµæœ: /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/user-data/PMID/ALL.pmid.sort.uniq.in_pmc.hit
 
 
 
 #TASK(element-tree)
-##XML¤Î¥¨¥ì¥á¥ó¥ÈÌÚ¤òºîÀ®
-- ¥×¥í¥°¥é¥à: /home/kamano/gitsrc/XMLOP/skelton.py
-- ·ë²Ì: /BANK/PMC/20140724/elements/SKELTON/*res
-##³Æ¥¸¥ã¡¼¥Ê¥ë¥°¥ë¡¼¥×¤´¤È¤Ë¥¿¥°¤ò¥«¥¦¥ó¥È
-- ¥×¥í¥°¥é¥à: /home/kamano/gitsrc/utility/drop_colon.pl
-- ¥¹¥¯¥ê¥×¥È: /BANK/PMC/20140724/elements/SKELTON/exec_command/tag-count-au.sh
-- ·ë²Ì: /BANK/PMC/20140724/elements/SKELTON/*res.tag-count
-##¥Ş¡¼¥¸¤Î¤¿¤á¤ËÍ¾·×¤Ê¥¹¥Ú¡¼¥¹¤ò½üµî
-- ¥×¥í¥°¥é¥à: /home/kamano/gitsrc/utility/rep4count.pl
-- ¥¹¥¯¥ê¥×¥È: /BANK/PMC/20140724/elements/SKELTON/exec_command/rep_all.sh
-- ·ë²Ì: /BANK/PMC/20140724/elements/SKELTON/*res.tag-count.rep
-##¥Ş¡¼¥¸¥½¡¼¥È
-- ¥¹¥¯¥ê¥×¥È: /BANK/PMC/20140724/elements/SKELTON/exec_command/merge-sort.sh
-- ·ë²Ì: skelton-ALL.res.tag-count.rep.merge-sort
-##¥Ş¡¼¥¸¥½¡¼¥È¤ò¥«¥¦¥ó¥È
-- ¥×¥í¥°¥é¥à: /home/kamano/gitsrc/utility/sum_count_from_mixed_sort.pl
-- ¥¹¥¯¥ê¥×¥È: /BANK/PMC/20140724/elements/SKELTON/exec_command/count_merge.sh
-- ·ë²Ì: skelton-ALL.res.tag-count.rep.merge-sort.count
+##XMLã®ã‚¨ãƒ¬ãƒ¡ãƒ³ãƒˆæœ¨ã‚’ä½œæˆ
+- ãƒ—ãƒ­ã‚°ãƒ©ãƒ : /home/kamano/gitsrc/XMLOP/skelton.py
+- çµæœ: /BANK/PMC/20140724/elements/SKELTON/*res
+##å„ã‚¸ãƒ£ãƒ¼ãƒŠãƒ«ã‚°ãƒ«ãƒ¼ãƒ—ã”ã¨ã«ã‚¿ã‚°ã‚’ã‚«ã‚¦ãƒ³ãƒˆ
+- ãƒ—ãƒ­ã‚°ãƒ©ãƒ : /home/kamano/gitsrc/utility/drop_colon.pl
+- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ: /BANK/PMC/20140724/elements/SKELTON/exec_command/tag-count-au.sh
+- çµæœ: /BANK/PMC/20140724/elements/SKELTON/*res.tag-count
+##ãƒãƒ¼ã‚¸ã®ãŸã‚ã«ä½™è¨ˆãªã‚¹ãƒšãƒ¼ã‚¹ã‚’é™¤å»
+- ãƒ—ãƒ­ã‚°ãƒ©ãƒ : /home/kamano/gitsrc/utility/rep4count.pl
+- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ: /BANK/PMC/20140724/elements/SKELTON/exec_command/rep_all.sh
+- çµæœ: /BANK/PMC/20140724/elements/SKELTON/*res.tag-count.rep
+##ãƒãƒ¼ã‚¸ã‚½ãƒ¼ãƒˆ
+- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ: /BANK/PMC/20140724/elements/SKELTON/exec_command/merge-sort.sh
+- çµæœ: skelton-ALL.res.tag-count.rep.merge-sort
+##ãƒãƒ¼ã‚¸ã‚½ãƒ¼ãƒˆã‚’ã‚«ã‚¦ãƒ³ãƒˆ
+- ãƒ—ãƒ­ã‚°ãƒ©ãƒ : /home/kamano/gitsrc/utility/sum_count_from_mixed_sort.pl
+- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ: /BANK/PMC/20140724/elements/SKELTON/exec_command/count_merge.sh
+- çµæœ: skelton-ALL.res.tag-count.rep.merge-sort.count
 
 
 
-#TASK(tag.new): XML¤Î¥¨¥ì¥á¥ó¥È¥¿¥°¤òÃê½Ğ¡¦¥½¡¼¥È¡¦¥ì¥Ù¥ëÉÕÍ¿(20150417´°Î»)
-- ÂĞ¾İ: PMC-XMLÁ´·ï (/BANK/PMC/20140724/articles/*/*nxml)
--- ¥³¥á¥ó¥ÈÃæ¤Ë¥¿¥°¤¬¤¢¤ë¤Î¤Ç¥³¥á¥ó¥È¤ò¶õÇòÎó¤ËÃÖ¤­´¹¤¨¤ëÉ¬Í×¥¢¥ê¡£
-- ¥×¥í¥°¥é¥à: /home/kamano/gitsrc/XMLOP/elementPos_sequence_flag-lv.pl
-- ¥¹¥¯¥ê¥×¥È: /BANK/PMC/20140724/elements/ALL/exec_command/ALL_sort_pos_lv_rev-au.sh
-- ·ë²Ì: /BANK/PMC/20140724/elements/ALL/ALL_sort_pos_rev-au.reg+lv
+#TASK(tag.new): XMLã®ã‚¨ãƒ¬ãƒ¡ãƒ³ãƒˆã‚¿ã‚°ã‚’æŠ½å‡ºãƒ»ã‚½ãƒ¼ãƒˆãƒ»ãƒ¬ãƒ™ãƒ«ä»˜ä¸(20150417å®Œäº†)
+- å¯¾è±¡: PMC-XMLå…¨ä»¶ (/BANK/PMC/20140724/articles/*/*nxml)
+-- ã‚³ãƒ¡ãƒ³ãƒˆä¸­ã«ã‚¿ã‚°ãŒã‚ã‚‹ã®ã§ã‚³ãƒ¡ãƒ³ãƒˆã‚’ç©ºç™½åˆ—ã«ç½®ãæ›ãˆã‚‹å¿…è¦ã‚¢ãƒªã€‚
+- ãƒ—ãƒ­ã‚°ãƒ©ãƒ : /home/kamano/gitsrc/XMLOP/elementPos_sequence_flag-lv.pl
+- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ: /BANK/PMC/20140724/elements/ALL/exec_command/ALL_sort_pos_lv_rev-au.sh
+- çµæœ: /BANK/PMC/20140724/elements/ALL/ALL_sort_pos_rev-au.reg+lv
 
 
 
-#TASK(sec-type): sec-type¤Î¼ïÎà¤òÃê½Ğ
-- ¥½¡¼¥¹: /BANK/PMC/20140724/elements/sec/sec_pos-a[a-u].reg_sort
-- ¥×¥í¥°¥é¥à: /home/kamano/gitsrc/XMLOP/grep-sec-type.pl
+#TASK(sec-type): sec-typeã®ç¨®é¡ã‚’æŠ½å‡º
+- ã‚½ãƒ¼ã‚¹: /BANK/PMC/20140724/elements/sec/sec_pos-a[a-u].reg_sort
+- ãƒ—ãƒ­ã‚°ãƒ©ãƒ : /home/kamano/gitsrc/XMLOP/grep-sec-type.pl
 cd /BANK/PMC/20140724/elements/sec-type
 /home/kamano/gitsrc/XMLOP/extract_sec-types.pl *reg_sort | sort | uniq -c > ALL_sec-type.sort.count
 
 
 
 #TASK(extract)
-##ack¤Ères¤Î¥Ş¡¼¥¸ÏÀÊ¸¿ô:???
+##ackã¨resã®ãƒãƒ¼ã‚¸è«–æ–‡æ•°:???
 ##TASK(extract.aff) : extract affiliation region
-## -> ÀĞÀî»á
-- ÂĞ¾İÎÎ°è: /BANK/PMC/20140724/elements/aff/PMC-AFF-v1.tsv (20141114)
+## -> çŸ³å·æ°
+- å¯¾è±¡é ˜åŸŸ: /BANK/PMC/20140724/elements/aff/PMC-AFF-v1.tsv (20141114)
 ##TASK(extract.ack) :  extract acknowledgement region
-## -> ÀĞÀî»á
-- ÂĞ¾İÎÎ°è: /BANK/PMC/20140724/elements/acknowledgement/PMC-ACK-v6_pmid.tsv
+## -> çŸ³å·æ°
+- å¯¾è±¡é ˜åŸŸ: /BANK/PMC/20140724/elements/acknowledgement/PMC-ACK-v6_pmid.tsv
 ##TASK(extract.material) : extract *material* region ; (20140417)
-##2ÃÊ³¬¤Ç¹Ô¤Ê¤¦: 1. ¥İ¥¤¥ó¥¿¡¼¾ğÊóºîÀ®, 2. ¥İ¥¤¥ó¥¿¡¼¾ğÊó¤ò¸µ¤Ë¥½¡¼¥¹¤«¤éÈ´¤­½Ğ¤¹¡£
-### ÎÎ°è¤Î¥İ¥¤¥ó¥¿¡¼¾ğÊóºîÀ®(20140417)
-- ÂĞ¾İ: /BANK/PMC/20140724/elements/ALL/ALL_sort_pos_rev-au.reg+lv
-- ¥×¥í¥°¥é¥à: /home/kamano/gitsrc/XMLOP/extract_pos-tag-allmaterials.pl
- <*material*></>¤Î¥ê¡¼¥¸¥ç¥ó¤ò°ìÈ¯¤Ç¼è¤ê½Ğ¤¹¥¹¥¯¥ê¥×¥È¡£
-- ¥¹¥¯¥ê¥×¥È: /BANK/PMC/20140724/elements/MERGED/allmaterials/exec_command/extract_all-materials-reg_from_reg.sh
-- ·ë²Ì: /BANK/PMC/20140724/elements/MERGED/allmaterials/allmaterials.au.reg
-### ÎÎ°èÃê½Ğ(20150417)
-- ÂĞ¾İ: /BANK/PMC/20140724/elements/MERGED/allmaterials/allmaterials.au.reg
-- ¥×¥í¥°¥é¥à: /home/kamano/gitsrc/XMLOP/extract_content_from_reg_allmaterial.pl
- extract_pos-tag-allmaterials.pl ¤Î½ĞÎÏ¤«¤é¡¢Ä¾ÀÜÂĞ¾İÎÎ°è¤ò¼è¤ê½Ğ¤¹¡£
+##2æ®µéšã§è¡Œãªã†: 1. ãƒã‚¤ãƒ³ã‚¿ãƒ¼æƒ…å ±ä½œæˆ, 2. ãƒã‚¤ãƒ³ã‚¿ãƒ¼æƒ…å ±ã‚’å…ƒã«ã‚½ãƒ¼ã‚¹ã‹ã‚‰æŠœãå‡ºã™ã€‚
+### é ˜åŸŸã®ãƒã‚¤ãƒ³ã‚¿ãƒ¼æƒ…å ±ä½œæˆ(20140417)
+- å¯¾è±¡: /BANK/PMC/20140724/elements/ALL/ALL_sort_pos_rev-au.reg+lv
+- ãƒ—ãƒ­ã‚°ãƒ©ãƒ : /home/kamano/gitsrc/XMLOP/extract_pos-tag-allmaterials.pl
+ <*material*></>ã®ãƒªãƒ¼ã‚¸ãƒ§ãƒ³ã‚’ä¸€ç™ºã§å–ã‚Šå‡ºã™ã‚¹ã‚¯ãƒªãƒ—ãƒˆã€‚
+- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ: /BANK/PMC/20140724/elements/MERGED/allmaterials/exec_command/extract_all-materials-reg_from_reg.sh
+- çµæœ: /BANK/PMC/20140724/elements/MERGED/allmaterials/allmaterials.au.reg
+### é ˜åŸŸæŠ½å‡º(20150417)
+- å¯¾è±¡: /BANK/PMC/20140724/elements/MERGED/allmaterials/allmaterials.au.reg
+- ãƒ—ãƒ­ã‚°ãƒ©ãƒ : /home/kamano/gitsrc/XMLOP/extract_content_from_reg_allmaterial.pl
+ extract_pos-tag-allmaterials.pl ã®å‡ºåŠ›ã‹ã‚‰ã€ç›´æ¥å¯¾è±¡é ˜åŸŸã‚’å–ã‚Šå‡ºã™ã€‚
 -- example: /home/kamano/gitsrc/XMLOP/extract_content_from_reg_allmaterial.pl /BANK/PMC/20140724/articles /BANK/PMC/20140724/elements/MERGED/allmaterials/allmaterials.au.reg
-- ¥¹¥¯¥ê¥×¥È: /BANK/PMC/20140724/elements/MERGED/allmaterials/exec_command/extract_cont_from_reg.au.sh
-- ·ë²Ì: /BANK/PMC/20140724/elements/MERGED/allmaterials/allmaterials.au.reg.cont
+- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ: /BANK/PMC/20140724/elements/MERGED/allmaterials/exec_command/extract_cont_from_reg.au.sh
+- çµæœ: /BANK/PMC/20140724/elements/MERGED/allmaterials/allmaterials.au.reg.cont
 ## TASK(count_art.ack_and_mat)
-- ÂĞ¾İack: /BANK/PMC/20140724/elements/acknowledgement/PMC-ACK-v6_pmid.tsv
-- nxml¥Õ¥¡¥¤¥ëÌ¾¼è¤ê½Ğ¤·: 
+- å¯¾è±¡ack: /BANK/PMC/20140724/elements/acknowledgement/PMC-ACK-v6_pmid.tsv
+- nxmlãƒ•ã‚¡ã‚¤ãƒ«åå–ã‚Šå‡ºã—: 
 cd /BANK/PMC/20140724/elements/acknowledgement
 awk -F '	' '{print $2}' PMC-ACK-v6_pmid.tsv | sed -e 's/^PMC\///' > PMC-ACK-v6_pmid.nxmlName
-- ÂĞ¾İmat: /BANK/PMC/20140724/elements/MERGED/allmaterials/allmaterials.au.reg.cont
-- nxml¥Õ¥¡¥¤¥ë¼è¤ê½Ğ¤·:
+- å¯¾è±¡mat: /BANK/PMC/20140724/elements/MERGED/allmaterials/allmaterials.au.reg.cont
+- nxmlãƒ•ã‚¡ã‚¤ãƒ«å–ã‚Šå‡ºã—:
 cd /BANK/PMC/20140724/elements/MERGED/allmaterials/
 cat *cont | awk -F '	' '{print $1}' | sed -e 's/^\/BANK\/PMC\/20140724\/articles\///'  > allmaterials.nxmlNames
-## TASK(extract.xref): xref¤ò´Ş¤àÄ¾¾å°Ì¤Î¥ì¥Ù¥ë¤òÈ´¤­½Ğ¤¹¡£
-### 1. xref¤ÈÄ¾¾å¥¿¥°¤Î¥İ¥¸¥·¥ç¥ó¤òÈ´¤­½Ğ¤·¡¢É¬Í×¤ÊxrefÉôÊ¬¤òÆÃÄê¡¢ÆÃÄêÎÎ°è¤ò¥×¥ê¥ó¥È ver.2 (20150417)
-#### 1.1 xref¤ÈÄ¾¾å¥¿¥°¤Î¥İ¥¸¥·¥ç¥ó¤òÈ´¤­½Ğ¤¹ (20150417)
-- ÂĞ¾İ: /BANK/PMC/20140724/elements/ALL/ALL_sort_pos_rev-au.reg+lv
-- ¥×¥í¥°¥é¥à: /home/kamano/gitsrc/XMLOP/extract_pos_xref_lv_in_body.pl /BANK/PMC/20140724/elements/ALL/ALL_sort_pos_rev-au.reg+lv
- ¥¿¥°¤¬Àµ¤·¤¯ÊÄ¤¸¤é¤ì¤ë¤«¤Î¾ğÊó¤ò¥×¥ê¥ó¥È¡£
-- ¥¹¥¯¥ê¥×¥È: /BANK/PMC/20140724/elements/x+ref+p/exec_command/extract_reg-lv_xref-p-sec_in_body.sh
-- ·ë²Ì: /BANK/PMC/20140724/elements/x+ref+p/reg-lv_xref-p-sec_in_body-au
-#### 1.2 xref¤ÈÄ¾¾å¥¿¥°¤Î¥İ¥¸¥·¥ç¥ó¤è¤êbibr¤òÈ´¤­½Ğ¤¹ (20150417)
-- ÂĞ¾İ: /BANK/PMC/20140724/elements/x+ref+p/reg-lv_xref-p-sec_in_body-au
-- ¥×¥í¥°¥é¥à: /home/kamano/gitsrc/XMLOP/extract_bibr_from_pos_xref_lv.pl
-- ¥¹¥¯¥ê¥×¥È: /BANK/PMC/20140724/elements/x+ref+p/exec_command/extract_bibr_from_xref-p-sec.sh
-- ·ë²Ì: /BANK/PMC/20140724/elements/x+ref+p/reg-lv_xref-p-sec_in_body-au.bibr
-#### 1.3 xref¤ÈÄ¾¾å¥¿¥°¤Î¥İ¥¸¥·¥ç¥ó¤Èbibr¾ğÊó¤è¤ê½ü³°¤¹¤Ù¤­¥Ç¡¼¥¿¤ò½ü³°¤¹¤ë (20150417)
-- ÂĞ¾İ: /BANK/PMC/20140724/elements/x+ref+p/reg-lv_xref-p-sec_in_body-au.bibr
-- ¥×¥í¥°¥é¥à: /home/kamano/gitsrc/XMLOP/exclude_from_rev-lv.pl
-- ¥¹¥¯¥ê¥×¥È: /BANK/PMC/20140724/elements/x+ref+p/exec_command/exclude_from_rev-lv-bibr.sh
-- ·ë²Ì: /BANK/PMC/20140724/elements/x+ref+p/reg-lv_xref-p-sec_in_body-au.bibr.exc
-#### 1.4 ÂĞ¾İÎÎ°è¤ÎÈ´¤­¤À¤·(20150417)
-- ÂĞ¾İ: /BANK/PMC/20140724/articles/*/*.nxml
-- ÂĞ¾İ¥Õ¥¡¥¤¥ë¥ê¥¹¥È: Jour-split.a[a-u]
-- ÎÎ°è¾ğÊó: /BANK/PMC/20140724/elements/x+ref+p/reg-lv_xref-p-sec_in_body-au.bibr.exc
-- ¥×¥í¥°¥é¥à: /home/kamano/gitsrc/XMLOP/extract_content_xref_from_reg-lv.pl
--- ¥×¥í¥°¥é¥àÃæ¤Ç¸Æ¤Ó½Ğ¤µ¤ì¤ë³°Éô¥×¥í¥°¥é¥à: /usr/local/bin/streamcut
-- ¥¹¥¯¥ê¥×¥È: /BANK/PMC/20140724/elements/x+ref+p/exec_command/extract_content_xref_from_reg-lv.sh
-- ·ë²Ì: /BANK/PMC/20140724/elements/x+ref+p/reg-lv_xref-p-sec_in_body-au.bibr.exc.cont
-### [ÆÃÊÌ¥¿¥¹¥¯] 2. ÂĞ¾İÏÀÊ¸¤ò »¨»ï(¿´Â¡ÉÂ³Ø)¤Èarticle-type(¸¶ÃøÏÀÊ¸)¤Ç¹Ê¤ë
-- ·ë²Ì: /BANK/PMC/20140724/elements/x+ref+p/targeted/target_cont.au
-##TASK(extract.ref) : xref¤ò´Ş¤àpÎÎ°è¤Îextract¡¢ÂĞ±ş¤¹¤ërefÎÎ°è¤Îextract
-### 1. xref¤ò´Ş¤àpÎÎ°è¤Îextract
-- ¥×¥í¥°¥é¥à: /home/kamano/gitsrc/XMLOP/region-xrefINp_from_XML.pl
-- ¥¹¥¯¥ê¥×¥È: /BANK/PMC/20140724/elements/x+ref+p/exec_command/content_xrefINp_Jour-ALL.sh
-- ·ë²Ì: /BANK/PMC/20140724/elements/x+ref+p/content_xrefINp_Jour-au
-### 2. ÂĞ±ş¤¹¤ërefÎÎ°è¤Îextract
-ÂĞ¾İ¥Õ¥¡¥¤¥ë: content_ref_Jour-a*
-- ¥×¥í¥°¥é¥à: /home/kamano/gitsrc/XMLOP/region-ref_from_XML.pl
-- ¥¹¥¯¥ê¥×¥È: /BANK/PMC/20140724/elements/x+ref+p/exec_command/content_ref_Jour-ALL.sh
-- ·ë²Ì: /BANK/PMC/20140724/elements/x+ref+p/content_ref_Jour-au
+## TASK(extract.xref): xrefã‚’å«ã‚€ç›´ä¸Šä½ã®ãƒ¬ãƒ™ãƒ«ã‚’æŠœãå‡ºã™ã€‚
+### 1. xrefã¨ç›´ä¸Šã‚¿ã‚°ã®ãƒã‚¸ã‚·ãƒ§ãƒ³ã‚’æŠœãå‡ºã—ã€å¿…è¦ãªxreféƒ¨åˆ†ã‚’ç‰¹å®šã€ç‰¹å®šé ˜åŸŸã‚’ãƒ—ãƒªãƒ³ãƒˆ ver.2 (20150417)
+#### 1.1 xrefã¨ç›´ä¸Šã‚¿ã‚°ã®ãƒã‚¸ã‚·ãƒ§ãƒ³ã‚’æŠœãå‡ºã™ (20150417)
+- å¯¾è±¡: /BANK/PMC/20140724/elements/ALL/ALL_sort_pos_rev-au.reg+lv
+- ãƒ—ãƒ­ã‚°ãƒ©ãƒ : /home/kamano/gitsrc/XMLOP/extract_pos_xref_lv_in_body.pl /BANK/PMC/20140724/elements/ALL/ALL_sort_pos_rev-au.reg+lv
+ ã‚¿ã‚°ãŒæ­£ã—ãé–‰ã˜ã‚‰ã‚Œã‚‹ã‹ã®æƒ…å ±ã‚’ãƒ—ãƒªãƒ³ãƒˆã€‚
+- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ: /BANK/PMC/20140724/elements/x+ref+p/exec_command/extract_reg-lv_xref-p-sec_in_body.sh
+- çµæœ: /BANK/PMC/20140724/elements/x+ref+p/reg-lv_xref-p-sec_in_body-au
+#### 1.2 xrefã¨ç›´ä¸Šã‚¿ã‚°ã®ãƒã‚¸ã‚·ãƒ§ãƒ³ã‚ˆã‚Šbibrã‚’æŠœãå‡ºã™ (20150417)
+- å¯¾è±¡: /BANK/PMC/20140724/elements/x+ref+p/reg-lv_xref-p-sec_in_body-au
+- ãƒ—ãƒ­ã‚°ãƒ©ãƒ : /home/kamano/gitsrc/XMLOP/extract_bibr_from_pos_xref_lv.pl
+- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ: /BANK/PMC/20140724/elements/x+ref+p/exec_command/extract_bibr_from_xref-p-sec.sh
+- çµæœ: /BANK/PMC/20140724/elements/x+ref+p/reg-lv_xref-p-sec_in_body-au.bibr
+#### 1.3 xrefã¨ç›´ä¸Šã‚¿ã‚°ã®ãƒã‚¸ã‚·ãƒ§ãƒ³ã¨bibræƒ…å ±ã‚ˆã‚Šé™¤å¤–ã™ã¹ããƒ‡ãƒ¼ã‚¿ã‚’é™¤å¤–ã™ã‚‹ (20150417)
+- å¯¾è±¡: /BANK/PMC/20140724/elements/x+ref+p/reg-lv_xref-p-sec_in_body-au.bibr
+- ãƒ—ãƒ­ã‚°ãƒ©ãƒ : /home/kamano/gitsrc/XMLOP/exclude_from_rev-lv.pl
+- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ: /BANK/PMC/20140724/elements/x+ref+p/exec_command/exclude_from_rev-lv-bibr.sh
+- çµæœ: /BANK/PMC/20140724/elements/x+ref+p/reg-lv_xref-p-sec_in_body-au.bibr.exc
+#### 1.4 å¯¾è±¡é ˜åŸŸã®æŠœãã ã—(20150417)
+- å¯¾è±¡: /BANK/PMC/20140724/articles/*/*.nxml
+- å¯¾è±¡ãƒ•ã‚¡ã‚¤ãƒ«ãƒªã‚¹ãƒˆ: Jour-split.a[a-u]
+- é ˜åŸŸæƒ…å ±: /BANK/PMC/20140724/elements/x+ref+p/reg-lv_xref-p-sec_in_body-au.bibr.exc
+- ãƒ—ãƒ­ã‚°ãƒ©ãƒ : /home/kamano/gitsrc/XMLOP/extract_content_xref_from_reg-lv.pl
+-- ãƒ—ãƒ­ã‚°ãƒ©ãƒ ä¸­ã§å‘¼ã³å‡ºã•ã‚Œã‚‹å¤–éƒ¨ãƒ—ãƒ­ã‚°ãƒ©ãƒ : /usr/local/bin/streamcut
+- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ: /BANK/PMC/20140724/elements/x+ref+p/exec_command/extract_content_xref_from_reg-lv.sh
+- çµæœ: /BANK/PMC/20140724/elements/x+ref+p/reg-lv_xref-p-sec_in_body-au.bibr.exc.cont
+### [ç‰¹åˆ¥ã‚¿ã‚¹ã‚¯] 2. å¯¾è±¡è«–æ–‡ã‚’ é›‘èªŒ(å¿ƒè‡“ç—…å­¦)ã¨article-type(åŸè‘—è«–æ–‡)ã§çµã‚‹
+- çµæœ: /BANK/PMC/20140724/elements/x+ref+p/targeted/target_cont.au
+##TASK(extract.ref) : xrefã‚’å«ã‚€pé ˜åŸŸã®extractã€å¯¾å¿œã™ã‚‹refé ˜åŸŸã®extract
+### 1. xrefã‚’å«ã‚€pé ˜åŸŸã®extract
+- ãƒ—ãƒ­ã‚°ãƒ©ãƒ : /home/kamano/gitsrc/XMLOP/region-xrefINp_from_XML.pl
+- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ: /BANK/PMC/20140724/elements/x+ref+p/exec_command/content_xrefINp_Jour-ALL.sh
+- çµæœ: /BANK/PMC/20140724/elements/x+ref+p/content_xrefINp_Jour-au
+### 2. å¯¾å¿œã™ã‚‹refé ˜åŸŸã®extract
+å¯¾è±¡ãƒ•ã‚¡ã‚¤ãƒ«: content_ref_Jour-a*
+- ãƒ—ãƒ­ã‚°ãƒ©ãƒ : /home/kamano/gitsrc/XMLOP/region-ref_from_XML.pl
+- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ: /BANK/PMC/20140724/elements/x+ref+p/exec_command/content_ref_Jour-ALL.sh
+- çµæœ: /BANK/PMC/20140724/elements/x+ref+p/content_ref_Jour-au
 
 
 
-#TASK(term-count): ½Ğ¸½¥¿¡¼¥à¤Îsplit¡¦¥«¥¦¥ó¥È
+#TASK(term-count): å‡ºç¾ã‚¿ãƒ¼ãƒ ã®splitãƒ»ã‚«ã‚¦ãƒ³ãƒˆ
 ##TASK(term-count.ALL)
 ### (split pattern 3)
-#### ¥¿¥°¤Î½üµî¤Èsplit
-- ¥×¥í¥°¥é¥à:
+#### ã‚¿ã‚°ã®é™¤å»ã¨split
+- ãƒ—ãƒ­ã‚°ãƒ©ãƒ :
 -- /home/kamano/gitsrc/XMLOP/drop_tag-text.pl
 -- /home/kamano/gitsrc/XMLOP/splitter3.pl
-- ¥¹¥¯¥ê¥×¥È: /BANK/PMC/20140724/terms/whole/patt.3/exec_command/split_Word_Jour-ALL.sh
-- ½ĞÎÏ¥Õ¥¡¥¤¥ë: /BANK/PMC/20140724/terms/whole/patt.3/Word_Jour-au
+- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ: /BANK/PMC/20140724/terms/whole/patt.3/exec_command/split_Word_Jour-ALL.sh
+- å‡ºåŠ›ãƒ•ã‚¡ã‚¤ãƒ«: /BANK/PMC/20140724/terms/whole/patt.3/Word_Jour-au
 ##TASK(term-count.allmaterials)
 ### (split pattern 1)
-#### ³Æ¥Õ¥¡¥¤¥ë¤Îtag½üµî, split, sort, uniq, count
-- ÂĞ¾İ: /BANK/PMC/20140724/elements/MERGED/allmaterials/allmaterials.au.reg.cont
-- ¥×¥í¥°¥é¥à: 
+#### å„ãƒ•ã‚¡ã‚¤ãƒ«ã®tagé™¤å», split, sort, uniq, count
+- å¯¾è±¡: /BANK/PMC/20140724/elements/MERGED/allmaterials/allmaterials.au.reg.cont
+- ãƒ—ãƒ­ã‚°ãƒ©ãƒ : 
 -- /home/kamano/gitsrc/utility/drop_1ST-col_from_TSV.pl
 -- /home/kamano/gitsrc/XMLOP/drop_tag-text.pl
 -- /home/kamano/gitsrc/XMLOP/splitter1.pl
-- ¥¹¥¯¥ê¥×¥ÈÎã: /home/kamano/gitsrc/utility/drop_1ST-col_from_TSV.pl /BANK/PMC/20140724/elements/MERGED/allmaterials/allmaterials.au.reg.cont | /home/kamano/gitsrc/XMLOP/drop_tag-text.pl | /home/kamano/gitsrc/XMLOP/splitter1.pl | tr '	' '\n' | sort |uniq -c > /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.4/allmaterials.au.sort.uniq.count
-- ¥¹¥¯¥ê¥×¥È(5 min): /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.1/exec_command/split-sort-count.sh
-- ·ë²Ì: /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.1/allmaterials.au.sort.uniq.count
-#### ¤¹¤Ù¤Æ¤Î¥Õ¥¡¥¤¥ë¤Îcount·ë²Ì¤ò¥Ş¡¼¥¸
-##### ¤¹¤Ù¤Æ¤Î¥Õ¥¡¥¤¥ë¤ò¥Ş¡¼¥¸¡¢¥¿¡¼¥à¤Ç¥½¡¼¥È
-- ¥×¥í¥°¥é¥à: /home/kamano/gitsrc/utility/rep4count.pl
-- ¥¹¥¯¥ê¥×¥È: cat /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.1/allmaterials.*.sort.uniq.count | /home/kamano/gitsrc/utility/rep4count.pl | sort -t '	' -k2 > /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.1/ALL.merge
-- ·ë²Ì: /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.1/ALL.merge
-##### ¥Ş¡¼¥¸·ë²Ì¤ò½¸·×
-- ¥×¥í¥°¥é¥à: /home/kamano/gitsrc/utility/sum_count_from_mixed_sort.pl
-- ¥¹¥¯¥ê¥×¥È: /home/kamano/gitsrc/utility/sum_count_from_mixed_sort.pl /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.1/ALL.merge > /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.1/ALL.merge.sort.count
-- ·ë²Ì: /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.1/ALL.merge.sort.count
-#### ¶õÊ¸»úÎó¤òºï½ü(¼êÆ°)
-- ÂĞ¾İ: /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.1/ALL.merge.sort.count
-- ¥¹¥¯¥ê¥×¥È: vim /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.1/ALL.merge.sort.count
-- ·ë²Ì: /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.1/ALL.merge.sort.count
-#### ¸¡º÷ÍÑ¤Î¥¿¡¼¥àºîÀ®
-##### ³ÈÄ¥»Ò¤Î»È¤¤Êı
-- .<n>E : (Extract)¡¢ÂĞ¾İ
-- .<n>D : (Delete)¡¢ÂĞ¾İ³°
-- <n> : ¥·¡¼¥¯¥¨¥ó¥¹ÈÖ¹æ
-##### ¥Ç¥£¥ì¥¯¥È¥ê°ÜÆ°
-- ¥Ç¥£¥ì¥¯¥È¥ê°ÜÆ°:  cd /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.1
-##### ½Ğ¸½¤¬1¤Î¥¿¡¼¥à¤ò½üµî
-- ¥¹¥¯¥ê¥×¥È:
+- ã‚¹ã‚¯ãƒªãƒ—ãƒˆä¾‹: /home/kamano/gitsrc/utility/drop_1ST-col_from_TSV.pl /BANK/PMC/20140724/elements/MERGED/allmaterials/allmaterials.au.reg.cont | /home/kamano/gitsrc/XMLOP/drop_tag-text.pl | /home/kamano/gitsrc/XMLOP/splitter1.pl | tr '	' '\n' | sort |uniq -c > /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.4/allmaterials.au.sort.uniq.count
+- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ(5 min): /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.1/exec_command/split-sort-count.sh
+- çµæœ: /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.1/allmaterials.au.sort.uniq.count
+#### ã™ã¹ã¦ã®ãƒ•ã‚¡ã‚¤ãƒ«ã®countçµæœã‚’ãƒãƒ¼ã‚¸
+##### ã™ã¹ã¦ã®ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ãƒãƒ¼ã‚¸ã€ã‚¿ãƒ¼ãƒ ã§ã‚½ãƒ¼ãƒˆ
+- ãƒ—ãƒ­ã‚°ãƒ©ãƒ : /home/kamano/gitsrc/utility/rep4count.pl
+- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ: cat /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.1/allmaterials.*.sort.uniq.count | /home/kamano/gitsrc/utility/rep4count.pl | sort -t '	' -k2 > /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.1/ALL.merge
+- çµæœ: /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.1/ALL.merge
+##### ãƒãƒ¼ã‚¸çµæœã‚’é›†è¨ˆ
+- ãƒ—ãƒ­ã‚°ãƒ©ãƒ : /home/kamano/gitsrc/utility/sum_count_from_mixed_sort.pl
+- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ: /home/kamano/gitsrc/utility/sum_count_from_mixed_sort.pl /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.1/ALL.merge > /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.1/ALL.merge.sort.count
+- çµæœ: /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.1/ALL.merge.sort.count
+#### ç©ºæ–‡å­—åˆ—ã‚’å‰Šé™¤(æ‰‹å‹•)
+- å¯¾è±¡: /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.1/ALL.merge.sort.count
+- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ: vim /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.1/ALL.merge.sort.count
+- çµæœ: /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.1/ALL.merge.sort.count
+#### æ¤œç´¢ç”¨ã®ã‚¿ãƒ¼ãƒ ä½œæˆ
+##### æ‹¡å¼µå­ã®ä½¿ã„æ–¹
+- .<n>E : (Extract)ã€å¯¾è±¡
+- .<n>D : (Delete)ã€å¯¾è±¡å¤–
+- <n> : ã‚·ãƒ¼ã‚¯ã‚¨ãƒ³ã‚¹ç•ªå·
+##### ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªç§»å‹•
+- ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªç§»å‹•:  cd /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.1
+##### å‡ºç¾ãŒ1ã®ã‚¿ãƒ¼ãƒ ã‚’é™¤å»
+- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ:
  grep -v '^1 ' ALL.merge.sort.count.sort > ALL.merge.sort.count.sort.1E
-##### ½Ğ¸½¤¬Â¿¤¤¥¿¡¼¥à¤ò½üµî
+##### å‡ºç¾ãŒå¤šã„ã‚¿ãƒ¼ãƒ ã‚’é™¤å»
 - HeLa : 24084
 - threshold : 40000
-- ¶­³¦ : 40012 v/v
-- ¥¹¥¯¥ê¥×¥È:
+- å¢ƒç•Œ : 40012 v/v
+- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ:
  cp ALL.merge.sort.count.sort.1E ALL.merge.sort.count.sort.2E
  vim ALL.merge.sort.count.sort.2E
 ##### delete terms which contain double-quote
-- ¥¹¥¯¥ê¥×¥È: grep -v \" ALL.merge.sort.count.sort.2E > ALL.merge.sort.count.sort.3E
-##### ½Ğ¸½¤¬2¤Î¥¿¡¼¥à¤ò½üµî
-- ¥¹¥¯¥ê¥×¥È: grep -v '^2 ' ALL.merge.sort.count.sort.3E > ALL.merge.sort.count.sort.4E
-##### Ê¸Æ¬¤¬ "#" (¥·¥ã¡¼¥×) ¤Î¥¿¡¼¥à¤ò½üµî
-- ¥¹¥¯¥ê¥×¥È: grep -E -v '^[0-9]+ #' ALL.merge.sort.count.sort.4E > ALL.merge.sort.count.sort.5E
-##### Ê¸Æ¬¤¬ "$" (¥À¥é¡¼) ¤Î¥¿¡¼¥à¤ò½üµî
-- ¥¹¥¯¥ê¥×¥È: grep -E -v '^[0-9]+ \$' ALL.merge.sort.count.sort.5E > ALL.merge.sort.count.sort.6E
-##### Ê¸Æ¬¤¬ "!" (¥¨¥¯¥¹¥¯¥é¥á¡¼¥·¥ç¥ó) ¤Î¥¿¡¼¥à¤ò½üµî
-- ¥¹¥¯¥ê¥×¥È: grep -E -v '^[0-9]+ !' ALL.merge.sort.count.sort.6E > ALL.merge.sort.count.sort.7E
-##### Ê¸Æ¬¤¬ "%" (¥Ñ¡¼¥»¥ó¥È) ¤Î¥¿¡¼¥à¤ò½üµî
-- ¥¹¥¯¥ê¥×¥È: grep -E -v '^[0-9]+ %' ALL.merge.sort.count.sort.7E > ALL.merge.sort.count.sort.8E
-##### Ê¸Æ¬¤¬ "'" (¥À¥Ã¥·¥å) ¤Î¥¿¡¼¥à¤ò½üµî
-- ¥¹¥¯¥ê¥×¥È: grep -E -v "^[0-9]+ '" ALL.merge.sort.count.sort.8E > ALL.merge.sort.count.sort.9E
-##### Ê¸Æ¬¤¬ "*" (¥¢¥¹¥¿¥ê¥¹¥¯) ¤Î¥¿¡¼¥à¤ò½üµî
-- ¥¹¥¯¥ê¥×¥È: grep -E -v "^[0-9]+ \*" ALL.merge.sort.count.sort.9E > ALL.merge.sort.count.sort.10E
-##### Ê¸Æ¬¤¬ "+" (¥×¥é¥¹) ¤Î¥¿¡¼¥à¤ò½üµî
-- ¥¹¥¯¥ê¥×¥È: grep -E -v "^[0-9]+ \+" ALL.merge.sort.count.sort.10E > ALL.merge.sort.count.sort.11E
-##### Ê¸Æ¬¤¬ "-" (¥Ş¥¤¥Ê¥¹) ¤Î¥¿¡¼¥à¤ò½üµî
-- ¥¹¥¯¥ê¥×¥È: grep -E -v "^[0-9]+ -" ALL.merge.sort.count.sort.11E > ALL.merge.sort.count.sort.12E
-##### Ê¸Æ¬¤¬ "/" (¥¹¥é¥Ã¥·¥å) ¤Î¥¿¡¼¥à¤ò½üµî
-- ¥¹¥¯¥ê¥×¥È: grep -E -v "^[0-9] /" ALL.merge.sort.count.sort.12E > ALL.merge.sort.count.sort.13E
-##### ¾®Ê¸»ú»Ò¿ô»ú1Ê¸»ú¤Î¥¿¡¼¥à¤ò½üµî
-- ¥¹¥¯¥ê¥×¥È: grep -E -v "^[0-9]+ [0-9a-z]$" ALL.merge.sort.count.sort.13E > ALL.merge.sort.count.sort.14E
-##### ¾®Ê¸»ú»Ò¿ô»ú2Ê¸»ú¤Î¥¿¡¼¥à¤ò½üµî
-- ¥¹¥¯¥ê¥×¥È: grep -E -v "^[0-9]+ [0-9a-z][0-9a-z]$" ALL.merge.sort.count.sort.14E > ALL.merge.sort.count.sort.15E
+- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ: grep -v \" ALL.merge.sort.count.sort.2E > ALL.merge.sort.count.sort.3E
+##### å‡ºç¾ãŒ2ã®ã‚¿ãƒ¼ãƒ ã‚’é™¤å»
+- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ: grep -v '^2 ' ALL.merge.sort.count.sort.3E > ALL.merge.sort.count.sort.4E
+##### æ–‡é ­ãŒ "#" (ã‚·ãƒ£ãƒ¼ãƒ—) ã®ã‚¿ãƒ¼ãƒ ã‚’é™¤å»
+- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ: grep -E -v '^[0-9]+ #' ALL.merge.sort.count.sort.4E > ALL.merge.sort.count.sort.5E
+##### æ–‡é ­ãŒ "$" (ãƒ€ãƒ©ãƒ¼) ã®ã‚¿ãƒ¼ãƒ ã‚’é™¤å»
+- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ: grep -E -v '^[0-9]+ \$' ALL.merge.sort.count.sort.5E > ALL.merge.sort.count.sort.6E
+##### æ–‡é ­ãŒ "!" (ã‚¨ã‚¯ã‚¹ã‚¯ãƒ©ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³) ã®ã‚¿ãƒ¼ãƒ ã‚’é™¤å»
+- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ: grep -E -v '^[0-9]+ !' ALL.merge.sort.count.sort.6E > ALL.merge.sort.count.sort.7E
+##### æ–‡é ­ãŒ "%" (ãƒ‘ãƒ¼ã‚»ãƒ³ãƒˆ) ã®ã‚¿ãƒ¼ãƒ ã‚’é™¤å»
+- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ: grep -E -v '^[0-9]+ %' ALL.merge.sort.count.sort.7E > ALL.merge.sort.count.sort.8E
+##### æ–‡é ­ãŒ "'" (ãƒ€ãƒƒã‚·ãƒ¥) ã®ã‚¿ãƒ¼ãƒ ã‚’é™¤å»
+- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ: grep -E -v "^[0-9]+ '" ALL.merge.sort.count.sort.8E > ALL.merge.sort.count.sort.9E
+##### æ–‡é ­ãŒ "*" (ã‚¢ã‚¹ã‚¿ãƒªã‚¹ã‚¯) ã®ã‚¿ãƒ¼ãƒ ã‚’é™¤å»
+- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ: grep -E -v "^[0-9]+ \*" ALL.merge.sort.count.sort.9E > ALL.merge.sort.count.sort.10E
+##### æ–‡é ­ãŒ "+" (ãƒ—ãƒ©ã‚¹) ã®ã‚¿ãƒ¼ãƒ ã‚’é™¤å»
+- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ: grep -E -v "^[0-9]+ \+" ALL.merge.sort.count.sort.10E > ALL.merge.sort.count.sort.11E
+##### æ–‡é ­ãŒ "-" (ãƒã‚¤ãƒŠã‚¹) ã®ã‚¿ãƒ¼ãƒ ã‚’é™¤å»
+- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ: grep -E -v "^[0-9]+ -" ALL.merge.sort.count.sort.11E > ALL.merge.sort.count.sort.12E
+##### æ–‡é ­ãŒ "/" (ã‚¹ãƒ©ãƒƒã‚·ãƒ¥) ã®ã‚¿ãƒ¼ãƒ ã‚’é™¤å»
+- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ: grep -E -v "^[0-9] /" ALL.merge.sort.count.sort.12E > ALL.merge.sort.count.sort.13E
+##### å°æ–‡å­—å­æ•°å­—1æ–‡å­—ã®ã‚¿ãƒ¼ãƒ ã‚’é™¤å»
+- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ: grep -E -v "^[0-9]+ [0-9a-z]$" ALL.merge.sort.count.sort.13E > ALL.merge.sort.count.sort.14E
+##### å°æ–‡å­—å­æ•°å­—2æ–‡å­—ã®ã‚¿ãƒ¼ãƒ ã‚’é™¤å»
+- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ: grep -E -v "^[0-9]+ [0-9a-z][0-9a-z]$" ALL.merge.sort.count.sort.14E > ALL.merge.sort.count.sort.15E
 #####=====(20150731)=====#####
-#####=====ºî¶ÈÃæ=====#####
+#####=====ä½œæ¥­ä¸­=====#####
 ### (split pattern 4)
-#### ³Æ¥Õ¥¡¥¤¥ë¤Îtag½üµî, split, sort, uniq, count
+#### å„ãƒ•ã‚¡ã‚¤ãƒ«ã®tagé™¤å», split, sort, uniq, count
 - cd /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.4
-- ¥×¥í¥°¥é¥à:
+- ãƒ—ãƒ­ã‚°ãƒ©ãƒ :
 -- /home/kamano/gitsrc/utility/drop_1ST-col_from_TSV.pl
 -- /home/kamano/gitsrc/XMLOP/drop_tag-text.pl
 -- /home/kamano/gitsrc/XMLOP/splitter4.pl
-- ¥¹¥¯¥ê¥×¥ÈÎã: /home/kamano/gitsrc/utility/drop_1ST-col_from_TSV.pl /BANK/PMC/20140724/elements/MERGED/allmaterials/allmaterials.au.reg.cont | /home/kamano/gitsrc/XMLOP/drop_tag-text.pl | /home/kamano/gitsrc/XMLOP/splitter4.pl | tr '	' '\n' | sort |uniq -c > /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.4/allmaterials.au.sort.uniq.count
-- ¥¹¥¯¥ê¥×¥È: /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.4/exec_command/split-sort-count.sh
-#### ¤¹¤Ù¤Æ¤Î¥Õ¥¡¥¤¥ë¤Îcount·ë²Ì¤ò¥Ş¡¼¥¸
-##### ¤¹¤Ù¤Æ¤Î¥Õ¥¡¥¤¥ë¤ò¥Ş¡¼¥¸¡¢¥¿¡¼¥à¤Ç¥½¡¼¥È
-- ¥×¥í¥°¥é¥à: /home/kamano/gitsrc/utility/rep4count.pl
-- ¥¹¥¯¥ê¥×¥È: cat /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.4/allmaterials.*.sort.uniq.count | /home/kamano/gitsrc/utility/rep4count.pl | sort -t '	' -k2 > /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.4/ALL.merge
-##### ¥Ş¡¼¥¸·ë²Ì¤ò½¸·×
-- ¥×¥í¥°¥é¥à: /home/kamano/gitsrc/utility/sum_count_from_mixed_sort.pl
-- ¥¹¥¯¥ê¥×¥È: /home/kamano/gitsrc/utility/sum_count_from_mixed_sort.pl /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.4/ALL.merge > /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.4/ALL.merge.sort.count
-#### ¶õÊ¸»úÎó¤òºï½ü
+- ã‚¹ã‚¯ãƒªãƒ—ãƒˆä¾‹: /home/kamano/gitsrc/utility/drop_1ST-col_from_TSV.pl /BANK/PMC/20140724/elements/MERGED/allmaterials/allmaterials.au.reg.cont | /home/kamano/gitsrc/XMLOP/drop_tag-text.pl | /home/kamano/gitsrc/XMLOP/splitter4.pl | tr '	' '\n' | sort |uniq -c > /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.4/allmaterials.au.sort.uniq.count
+- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ: /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.4/exec_command/split-sort-count.sh
+#### ã™ã¹ã¦ã®ãƒ•ã‚¡ã‚¤ãƒ«ã®countçµæœã‚’ãƒãƒ¼ã‚¸
+##### ã™ã¹ã¦ã®ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ãƒãƒ¼ã‚¸ã€ã‚¿ãƒ¼ãƒ ã§ã‚½ãƒ¼ãƒˆ
+- ãƒ—ãƒ­ã‚°ãƒ©ãƒ : /home/kamano/gitsrc/utility/rep4count.pl
+- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ: cat /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.4/allmaterials.*.sort.uniq.count | /home/kamano/gitsrc/utility/rep4count.pl | sort -t '	' -k2 > /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.4/ALL.merge
+##### ãƒãƒ¼ã‚¸çµæœã‚’é›†è¨ˆ
+- ãƒ—ãƒ­ã‚°ãƒ©ãƒ : /home/kamano/gitsrc/utility/sum_count_from_mixed_sort.pl
+- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ: /home/kamano/gitsrc/utility/sum_count_from_mixed_sort.pl /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.4/ALL.merge > /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.4/ALL.merge.sort.count
+#### ç©ºæ–‡å­—åˆ—ã‚’å‰Šé™¤
 - /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.4/ALL.merge.sort.count
-- ·ë²Ì: /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.4/ALL.merge.sort.count
-#### perl¸¡º÷ÍÑ¤Î¥¿¡¼¥àºîÀ®
-- ÂĞ¾İ: /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.4/ALL.merge.sort.count
-##### ¥«¥¦¥ó¥È¤ò¾Ãµî
-- ¥¹¥¯¥ê¥×¥È:  sed -e 's/^[^ ]* //;' ALL.merge.sort.count > terms.search.pre
-##### 1Ê¸»ú¡¢¶ËÃ¼¤ËÄ¹¤¤¥¿¡¼¥à¤òºï½ü
-- ¥×¥í¥°¥é¥à: /home/kamano/gitsrc/utility/drop_suspicius-length.pl
-- ¥¹¥¯¥ê¥×¥È: /home/kamano/gitsrc/utility/drop_suspicius-length.pl terms.search.pre > terms.search
-##### ÆÃ¼ìÊ¸»ú¤ò¥¨¥¹¥±¡¼¥×
-- ¥×¥í¥°¥é¥à: escape_char
-- ¥¹¥¯¥ê¥×¥È: escape_char sf=/BANK/PMC/20140724/terms/MERGED/allmaterials/patt.4/terms.search lf=/usr/local/var/perl_esc.list > /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.4/terms.search.esc
-- ·ë²Ì: /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.4/terms.search.esc
+- çµæœ: /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.4/ALL.merge.sort.count
+#### perlæ¤œç´¢ç”¨ã®ã‚¿ãƒ¼ãƒ ä½œæˆ
+- å¯¾è±¡: /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.4/ALL.merge.sort.count
+##### ã‚«ã‚¦ãƒ³ãƒˆã‚’æ¶ˆå»
+- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ:  sed -e 's/^[^ ]* //;' ALL.merge.sort.count > terms.search.pre
+##### 1æ–‡å­—ã€æ¥µç«¯ã«é•·ã„ã‚¿ãƒ¼ãƒ ã‚’å‰Šé™¤
+- ãƒ—ãƒ­ã‚°ãƒ©ãƒ : /home/kamano/gitsrc/utility/drop_suspicius-length.pl
+- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ: /home/kamano/gitsrc/utility/drop_suspicius-length.pl terms.search.pre > terms.search
+##### ç‰¹æ®Šæ–‡å­—ã‚’ã‚¨ã‚¹ã‚±ãƒ¼ãƒ—
+- ãƒ—ãƒ­ã‚°ãƒ©ãƒ : escape_char
+- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ: escape_char sf=/BANK/PMC/20140724/terms/MERGED/allmaterials/patt.4/terms.search lf=/usr/local/var/perl_esc.list > /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.4/terms.search.esc
+- çµæœ: /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.4/terms.search.esc
 
 
 
-#TASK(1): ´ûÃÎ¥Ğ¥¤¥ª¥ê¥½¡¼¥¹Ì¾¡¦µ¡´ØÌ¾¤Î·èÄê¤È¸¡º÷¥¿¡¼¥à¤ÎÄêµÁ (NBRPµ¡´Ø¤È¤¹¤ë)
-##TASK(1.1): ¥Ñ¥¿¡¼¥óÄêµÁÍÑ´ûÃÎµ¡´ØÌ¾·èÄê -> ÀĞÀî»á
-###TASK(1.1.1): ´ûÃÎµ¡´Ø±ÑÌ¾¥·¥Î¥Ë¥à·èÄê -> ÀĞÀî»á
-###ÀĞÀî»á -> ¿åÌî»á¤Ë»Ø¼¨ (20150610)
-###¾å°Ìµ¡´Ø¤òÃ±°Ì¤È¤¹¤ë¡¢¤¿¤À¤·¡¢²¼Éôµ¡´Ø¤â¾å°Ìµ¡´Ø¤Î¥·¥Î¥Ë¥à¤È¤¹¤ë
-- ¼ê½ç½ñ: /BANK/Organization/NBRP_2015/tejun-sho_201507.ods
-- ÆüËÜ¸ìµ¡´ØÌ¾¥ê¥¹¥È(NBRP¥ª¥ê¥¸¥Ê¥ë): /BANK/Organization/NBRP_2015/nbrp.organization-names.J.20150409
-- ÆüËÜ¸ìÀµ¼°µ¡´ØÌ¾¥ê¥¹¥È(¿åÌî»á): /BANK/Organization/NBRP_2015/orgnames-jp_eng.csv
-- ¾å¥Õ¥¡¥¤¥ë¤Îsortuniq(20150616): /BANK/Organization/NBRP_2015/orgname_jp.sort.uniq
-- ¾å¥Õ¥¡¥¤¥ë¤Î±Ñ¸ìÌ¾ÂĞ±şÉ½: /BANK/Organization/NBRP_2015/17orgs_jp_eng.csv
-- µ¡´ØÌ¾ÏÂ±ÑÂĞ±şÉ½¤ÎURL(NISTEP): http://www.nistep.go.jp/research/scisip/randd-on-university
-- ¼Âºİ¤Ë»ÈÍÑ¤¹¤ëÏÂ±ÑÂĞ±şÉ½¥Õ¥¡¥¤¥ë(WoS): /BANK/NISTEP/name_variations_WoS_Ver2014_1.utf8.txt
-- ¼Âºİ¤Ë»ÈÍÑ¤¹¤ëÏÂ±ÑÂĞ±şÉ½¥Õ¥¡¥¤¥ë(scopus): /BANK/NISTEP/name_variations_scopus_ver_2013_1.utf8.csv
-- ÆüËÜ¸ìÀµ¼°Ì¾¤Ë¥Ş¥Ã¥Á¤µ¤»¤ë¥¹¥¯¥ê¥×¥È: while read ln ; do grep $ln /BANK/NISTEP/name_variations_WoS_Ver2014_1.utf8.txt; done < orgname_jp.sort.uniq > /BANK/Organization/NBRP_2015/17toporg_in_WoS.csv
-- WoS¤è¤êÆüËÜÌ¾¥Ş¥Ã¥Á¤·¤¿17µ¡´Ø: /BANK/Organization/NBRP_2015/17toporg_in_WoS.csv
-- scopus¤è¤êÆüËÜÌ¾¥Ş¥Ã¥Á¤·¤¿17µ¡´Ø: /BANK/Organization/NBRP_2015/17toporg_in_scopus.csv
-- (1) dictionaly(organization_dictionary_ver_2014_1.utf8.insTAB.txt)¤è¤ê²¼Éôµ¡´Ø´Ş¤àNBRPµ¡´Ø±ÑÌ¾Ãê½Ğ:
--- ÂĞ¾İ¥Õ¥¡¥¤¥ë: /BANK/NISTEP/organization_dictionary_ver_2014_1.utf8.insTAB.txt
--- ²¼Éôµ¡´Ø¤ò´Ş¤àID¤ÈÆüËÜ¸ìÌ¾¤òÃê½Ğ: 
+#TASK(1): æ—¢çŸ¥ãƒã‚¤ã‚ªãƒªã‚½ãƒ¼ã‚¹åãƒ»æ©Ÿé–¢åã®æ±ºå®šã¨æ¤œç´¢ã‚¿ãƒ¼ãƒ ã®å®šç¾© (NBRPæ©Ÿé–¢ã¨ã™ã‚‹)
+##TASK(1.1): ãƒ‘ã‚¿ãƒ¼ãƒ³å®šç¾©ç”¨æ—¢çŸ¥æ©Ÿé–¢åæ±ºå®š -> çŸ³å·æ°
+###TASK(1.1.1): æ—¢çŸ¥æ©Ÿé–¢è‹±åã‚·ãƒãƒ‹ãƒ æ±ºå®š -> çŸ³å·æ°
+###çŸ³å·æ° -> æ°´é‡æ°ã«æŒ‡ç¤º (20150610)
+###ä¸Šä½æ©Ÿé–¢ã‚’å˜ä½ã¨ã™ã‚‹ã€ãŸã ã—ã€ä¸‹éƒ¨æ©Ÿé–¢ã‚‚ä¸Šä½æ©Ÿé–¢ã®ã‚·ãƒãƒ‹ãƒ ã¨ã™ã‚‹
+- æ‰‹é †æ›¸: /BANK/Organization/NBRP_2015/tejun-sho_201507.ods
+- æ—¥æœ¬èªæ©Ÿé–¢åãƒªã‚¹ãƒˆ(NBRPã‚ªãƒªã‚¸ãƒŠãƒ«): /BANK/Organization/NBRP_2015/nbrp.organization-names.J.20150409
+- æ—¥æœ¬èªæ­£å¼æ©Ÿé–¢åãƒªã‚¹ãƒˆ(æ°´é‡æ°): /BANK/Organization/NBRP_2015/orgnames-jp_eng.csv
+- ä¸Šãƒ•ã‚¡ã‚¤ãƒ«ã®sortuniq(20150616): /BANK/Organization/NBRP_2015/orgname_jp.sort.uniq
+- ä¸Šãƒ•ã‚¡ã‚¤ãƒ«ã®è‹±èªåå¯¾å¿œè¡¨: /BANK/Organization/NBRP_2015/17orgs_jp_eng.csv
+- æ©Ÿé–¢åå’Œè‹±å¯¾å¿œè¡¨ã®URL(NISTEP): http://www.nistep.go.jp/research/scisip/randd-on-university
+- å®Ÿéš›ã«ä½¿ç”¨ã™ã‚‹å’Œè‹±å¯¾å¿œè¡¨ãƒ•ã‚¡ã‚¤ãƒ«(WoS): /BANK/NISTEP/name_variations_WoS_Ver2014_1.utf8.txt
+- å®Ÿéš›ã«ä½¿ç”¨ã™ã‚‹å’Œè‹±å¯¾å¿œè¡¨ãƒ•ã‚¡ã‚¤ãƒ«(scopus): /BANK/NISTEP/name_variations_scopus_ver_2013_1.utf8.csv
+- æ—¥æœ¬èªæ­£å¼åã«ãƒãƒƒãƒã•ã›ã‚‹ã‚¹ã‚¯ãƒªãƒ—ãƒˆ: while read ln ; do grep $ln /BANK/NISTEP/name_variations_WoS_Ver2014_1.utf8.txt; done < orgname_jp.sort.uniq > /BANK/Organization/NBRP_2015/17toporg_in_WoS.csv
+- WoSã‚ˆã‚Šæ—¥æœ¬åãƒãƒƒãƒã—ãŸ17æ©Ÿé–¢: /BANK/Organization/NBRP_2015/17toporg_in_WoS.csv
+- scopusã‚ˆã‚Šæ—¥æœ¬åãƒãƒƒãƒã—ãŸ17æ©Ÿé–¢: /BANK/Organization/NBRP_2015/17toporg_in_scopus.csv
+- (1) dictionaly(organization_dictionary_ver_2014_1.utf8.insTAB.txt)ã‚ˆã‚Šä¸‹éƒ¨æ©Ÿé–¢å«ã‚€NBRPæ©Ÿé–¢è‹±åæŠ½å‡º:
+-- å¯¾è±¡ãƒ•ã‚¡ã‚¤ãƒ«: /BANK/NISTEP/organization_dictionary_ver_2014_1.utf8.insTAB.txt
+-- ä¸‹éƒ¨æ©Ÿé–¢ã‚’å«ã‚€IDã¨æ—¥æœ¬èªåã‚’æŠ½å‡º: 
 cd /BANK/NISTEP;
 while read org ; do grep $org organization_dictionary_ver_2014_1.utf8.insTAB.txt; done < /BANK/Organization/NBRP_2015/orgname_jp.sort.uniq | awk -F'	' '{print $1"\t"$4}' | sort | uniq > /BANK/Organization/NBRP_2015/NBRP-IDvsOrg
--- Ì¾¾Î¶õÍó¤ò¼êºî¶È¤Ç½üµî
--- ID¤Î¤ßÃê½Ğ:
+-- åç§°ç©ºæ¬„ã‚’æ‰‹ä½œæ¥­ã§é™¤å»
+-- IDã®ã¿æŠ½å‡º:
 cd /BANK/Organization/NBRP_2015
 awk -F'   ' '{print $1}' NBRP-IDvsOrg > NBRP-ID
--- NBRP-ID¤ò¤â¤È¤Ë±ÑÌ¾¤òÈ´¤­¤À¤·:
+-- NBRP-IDã‚’ã‚‚ã¨ã«è‹±åã‚’æŠœãã ã—:
 grep "\t" NBRP-IDvsEnName > /BANK/Organization/NBRP_2015/NBRP-IDvsEnName_fromDict.dropEMP
--- ¼­½ñ¡¢WoS¡¢Scopus¤ò¹ç¤ï¤»¤¿ºÇ¾å°Ìµ¡´Ø±ÑÌ¾¥·¥Î¥Ë¥àvsµ¡´ØID(20150707)(ºÇ½ª¥Õ¥¡¥¤¥ë): /BANK/Organization/NBRP_2015/IDtopd9oksotods7okodssort17toporg_in_scopus.WoS.dic.m.s.csv.sort.csv
-- (2) ²¼Éôµ¡´Ø¥ê¥¹¥È(86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt)¤è¤ê²¼Éôµ¡´Ø´Ş¤àNBRPµ¡´Ø±ÑÌ¾Ãê½Ğ:
+-- è¾æ›¸ã€WoSã€Scopusã‚’åˆã‚ã›ãŸæœ€ä¸Šä½æ©Ÿé–¢è‹±åã‚·ãƒãƒ‹ãƒ vsæ©Ÿé–¢ID(20150707)(æœ€çµ‚ãƒ•ã‚¡ã‚¤ãƒ«): /BANK/Organization/NBRP_2015/IDtopd9oksotods7okodssort17toporg_in_scopus.WoS.dic.m.s.csv.sort.csv
+- (2) ä¸‹éƒ¨æ©Ÿé–¢ãƒªã‚¹ãƒˆ(86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt)ã‚ˆã‚Šä¸‹éƒ¨æ©Ÿé–¢å«ã‚€NBRPæ©Ÿé–¢è‹±åæŠ½å‡º:
 cd /BANK/NISTEP
-while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; done < /BANK/Organization/NBRP_2015/orgname_jp.sort.uniq > /BANK/Organization/NBRP_2015/extractNBRPname_fromSheet2 (ºÇ½ª¥Õ¥¡¥¤¥ë)
-- (3) ¸¡º÷¥¿¡¼¥à
--- °ÍÍê: ¿åÌî»áÃæ´Ö¥Õ¥¡¥¤¥ë(20150623): /BANK/Organization/NBRP_2015/3OK 17toporg_in_scopus.WoS.dic.m.s.ods
--- °ÍÍê: ¾åµ­¥Õ¥¡¥¤¥ë¤è¤ê½ÅÊ£±ÑÌ¾¤òºï½ü¡¢Â¾¤Î¥«¥é¥à¤Ë°ã¤¦ÃÍ¤¬Æş¤Ã¤Æ¤¤¤ë¾ì¹ç¤Ï¤É¤ì¤«¤ò»Ä¤¹
---- ¥×¥í¥°¥é¥à: /BANK/Organization/NBRP_2015/drop_multi_name.pl
---- ·ë²Ì(¥½¡¼¥È¤Ê¤·): /BANK/Organization/NBRP_2015/17toporg_in_scopus.WoS.dic.m.s.csv.dropDup
---- ¥¹¥¯¥ê¥×¥È(5¤«¤é¤àÌÜ¤Ç¥½¡¼¥È): sort -t'	' '3OK 17toporg_in_scopus.WoS.dic.m.s.csv' -k4 | /BANK/Organization/NBRP_2015/drop_multi_name.pl > /BANK/Organization/NBRP_2015/17toporg_in_scopus.WoS.dic.m.s.csv.sort.dropDup
---- ·ë²Ì(5¤«¤é¤àÌÜ¤Ç¥½¡¼¥È): /BANK/Organization/NBRP_2015/17toporg_in_scopus.WoS.dic.m.s.csv.sort.dropDup
---- ¾åµ­¤ËÂĞ¤·¤Æ¤µ¤é¤ËÊÌ¤«¤é¤à¤Ç¥½¡¼¥È¥É¥í¥Ã¥× 
---- ¥¹¥¯¥ê¥×¥È: sort -t'       ' -k2 /BANK/Organization/NBRP_2015/17toporg_in_scopus.WoS.dic.m.s.csv.sort.dropDup | /BANK/Organization/NBRP_2015/drop_multi_name.pl > /BANK/Organization/NBRP_2015/17toporg_in_scopus.WoS.dic.m.s.csv.sort.dropDupx2
---- ·ë²Ì¥Õ¥¡¥¤¥ë: /BANK/Organization/NBRP_2015/17toporg_in_scopus.WoS.dic.m.s.csv.sort.dropDupx2
--- ¾åµ­¤ËÂĞ¤·¤Æ¥Ï¥ó¥É¥µ¡¼¥Á¤Ç¾å°Ìµ¡´ØÌ¾·èÄê(20150702): /BANK/Organization/NBRP_2015/9oksotods17toporg_in_scopus.WoS.dic.m.s.csv.sort.dropDupx2
--- ¾åµ­¤ËÂĞ¤·¤ÆÂè5¥«¥é¥à¤òÈ´¿è: /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm
--- ¾åµ­¤ËÂĞ¤·¤ÆÀèÆ¬¤ÈËöÈø¤Î¥¹¥Ú¡¼¥¹¤ò½üµî: /home/kamano/gitsrc/utility/drop_headtailSP.pl 17topOrgNameSearchTerm > /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt
--- ºÇ½ªÅª¤Ë¸¡º÷¤¹¤ë¥¿¡¼¥à(20150708)(´ğËÜ¤Ï¤³¤Î¥Õ¥¡¥¤¥ë): /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt.sort.uniq
--- ºÇ½ªÅª¤Ë¸¡º÷¤¹¤ë¥¿¡¼¥à(perlÍÑ¥¨¥¹¥±¡¼¥×)(20150708): /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt.sort.uniq.esc
-##TASK(1.2) ¥Ñ¥¿¡¼¥óÄêµÁÍÑ´ûÃÎ¥Ğ¥¤¥ª¥ê¥½¡¼¥¹Ì¾·èÄê(20140423)
-###TASK(1.2.1) NBRCÍøÍÑ¼ÔÀ®²Ì¤«¤é¥Ğ¥¤¥ª¥ê¥½¡¼¥¹Ì¾+ÀÁµáÈÖ¹æ¤òÈ´¤­½Ğ¤¹(20140420)
-- ÍøÍÑ¼ÔÀ®²Ì¥Õ¥¡¥¤¥ë: /BANK/BioResource/Organization/NBRP_2015/user-data/reference_list.tsv
-- Resource name ¥«¥é¥à¤òÈ´¤­½Ğ¤·¤¿¤â¤Î: /BANK/BioResource/Organization/NBRP_2015/user-data/Resnames.line
-- ¤µ¤é¤Ë¸ÄÊÌ¤Î¥ê¥½¡¼¥¹¤ËÊ¬³ä: /BANK/BioResource/Organization/NBRP_2015/user-data/Resnames
--- ", " (<¥«¥ó¥Ş><¥¹¥Ú¡¼¥¹>)¤Ç¶èÀÚ¤ë
--- "; " (<¥»¥ß¥³¥í¥ó><¥¹¥Ú¡¼¥¹>)¤Ç¶èÀÚ¤ë
--- ¥×¥í¥°¥é¥à: /home/kamano/gitsrc/utility/CM-SP_SC-SP_to_LF.pl
--- "," ¥«¥Ã¥³Æâ¤Ç¤Ê¤±¤ì¤Ğ(<¥«¥ó¥Ş>)¤Ç¶èÀÚ¤ë
--- ¥×¥í¥°¥é¥à¥½¡¼¥¹: /home/kamano/gitsrc/utility/CM_to_LF_out_Bracket_line.c
--- ¥¹¥¯¥ê¥×¥È: /home/kamano/gitsrc/utility/CM-SP_SC-SP_to_LF.pl Resnames.line | /home/kamano/gitsrc/utility/CM_to_LF_out_Bracket_line if=/dev/stdin > Resnames
--- ¥ê¥Õ¥©¡¼¥à: sed -e 's/^\s+//' Resnames | sed -e 's/\s+$//' > Resnames.re
-- ¥ê¥¹¥È¤ò¥ê¥½¡¼¥¹¥Í¡¼¥à vs. ¥ê¥½¡¼¥¹ÈÖ¹æ¤Î·Á¤ËÀ°·Á
--- ¥×¥í¥°¥é¥à: /home/kamano/gitsrc/utility/divide_lastBRK.pl
--- ·ë²Ì: /BANK/BioResource/Organization/NBRP_2015/user-data/ResnameVSid
-###TASK(1.2.2): ´ûÃÎ¥Ğ¥¤¥ª¥ê¥½¡¼¥¹¸¡º÷¥·¥Î¥Ë¥à+ID·èÄê
-- ÂĞ¾İ: /BANK/BioResource/Organization/NBRP_2015/user-data/ResnameVSid
-- ¥½¡¼¥È¥æ¥Ë¡¼¥¯¥«¥¦¥ó¥È: /BANK/BioResource/Organization/NBRP_2015/user-data/ResnameVSid.sort.uniq.count
-- ¥ê¥Õ¥©¡¼¥à: ./reform_sort-uniq-count.pl ResnameVSid.sort.uniq.count > ResnameVSid.sort.uniq.count.re
-- Ê¸Æ¬¤Î¶õ¥¿¡¼¥à¤ò½üµî: /BANK/BioResource/Organization/NBRP_2015/user-data/ResnameVSid.sort.uniq.count.re
-###TASK(1.2.3) ´ûÃÎ¥Ğ¥¤¥ª¥ê¥½¡¼¥¹¸¡º÷¥¿¡¼¥à¤Î¹Ê¤ê¹ş¤ß(¹Ô¤Ê¤ï¤Ê¤¤)
-###material¤ª¤è¤Óacknowledgement¤Î½Ğ¸½¥¿¡¼¥à¤ò´ûÃÎ¥Ğ¥¤¥ª¥ê¥½¡¼¥¹¸¡º÷¥·¥Î¥Ë¥à¤Ë¥Ò¥Ã¥È¤µ¤»¡¢¥Ò¥Ã¥È¤È¤Ê¤Ã¤¿¥Ğ¥¤¥ª¥ê¥½¡¼¥¹¤ò¼Âºİ¤Î¸¡º÷¥¿¡¼¥à¤È¤¹¤ë¡£
-###½Ğ¸½¥¿¡¼¥à¤¬¥ê¥½¡¼¥¹Ì¾¤Î¥µ¥Ö¥¹¥È¥ê¥ó¥°¤Ç¤¢¤ë¤³¤È¤ò´üÂÔ¤·¤Æ¤¤¤ë¡£
-###·ë¶É¡¢¤Û¤È¤ó¤É¤¹¤Ù¤Æ¤Î¥µ¥Ö¥¹¥È¥ê¥ó¥°¤Ë¥Ş¥Ã¥Á¤·¤Æ¤·¤Ş¤¤¡¢°ÕÌ£¤¬Ìµ¤«¤Ã¤¿¡£(20140422)
-###TASK(1.2.4) ¥Ğ¥¤¥ª¥ê¥½¡¼¥¹Ì¾+ÀÁµáÈÖ¹æ¤ò¸¡º÷ÍÑ¥¿¡¼¥à¤Ë¤Ğ¤é¤·¡¢Îã³°Åª¤Ê¥¿¡¼¥à¤ò½üµî
-####¥·¥Î¥Ë¥à+ID¤ò¸¡º÷¥¿¡¼¥à¤Ë¤Ğ¤é¤¹
+while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; done < /BANK/Organization/NBRP_2015/orgname_jp.sort.uniq > /BANK/Organization/NBRP_2015/extractNBRPname_fromSheet2 (æœ€çµ‚ãƒ•ã‚¡ã‚¤ãƒ«)
+- (3) æ¤œç´¢ã‚¿ãƒ¼ãƒ 
+-- ä¾é ¼: æ°´é‡æ°ä¸­é–“ãƒ•ã‚¡ã‚¤ãƒ«(20150623): /BANK/Organization/NBRP_2015/3OK 17toporg_in_scopus.WoS.dic.m.s.ods
+-- ä¾é ¼: ä¸Šè¨˜ãƒ•ã‚¡ã‚¤ãƒ«ã‚ˆã‚Šé‡è¤‡è‹±åã‚’å‰Šé™¤ã€ä»–ã®ã‚«ãƒ©ãƒ ã«é•ã†å€¤ãŒå…¥ã£ã¦ã„ã‚‹å ´åˆã¯ã©ã‚Œã‹ã‚’æ®‹ã™
+--- ãƒ—ãƒ­ã‚°ãƒ©ãƒ : /BANK/Organization/NBRP_2015/drop_multi_name.pl
+--- çµæœ(ã‚½ãƒ¼ãƒˆãªã—): /BANK/Organization/NBRP_2015/17toporg_in_scopus.WoS.dic.m.s.csv.dropDup
+--- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ(5ã‹ã‚‰ã‚€ç›®ã§ã‚½ãƒ¼ãƒˆ): sort -t'	' '3OK 17toporg_in_scopus.WoS.dic.m.s.csv' -k4 | /BANK/Organization/NBRP_2015/drop_multi_name.pl > /BANK/Organization/NBRP_2015/17toporg_in_scopus.WoS.dic.m.s.csv.sort.dropDup
+--- çµæœ(5ã‹ã‚‰ã‚€ç›®ã§ã‚½ãƒ¼ãƒˆ): /BANK/Organization/NBRP_2015/17toporg_in_scopus.WoS.dic.m.s.csv.sort.dropDup
+--- ä¸Šè¨˜ã«å¯¾ã—ã¦ã•ã‚‰ã«åˆ¥ã‹ã‚‰ã‚€ã§ã‚½ãƒ¼ãƒˆãƒ‰ãƒ­ãƒƒãƒ— 
+--- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ: sort -t'       ' -k2 /BANK/Organization/NBRP_2015/17toporg_in_scopus.WoS.dic.m.s.csv.sort.dropDup | /BANK/Organization/NBRP_2015/drop_multi_name.pl > /BANK/Organization/NBRP_2015/17toporg_in_scopus.WoS.dic.m.s.csv.sort.dropDupx2
+--- çµæœãƒ•ã‚¡ã‚¤ãƒ«: /BANK/Organization/NBRP_2015/17toporg_in_scopus.WoS.dic.m.s.csv.sort.dropDupx2
+-- ä¸Šè¨˜ã«å¯¾ã—ã¦ãƒãƒ³ãƒ‰ã‚µãƒ¼ãƒã§ä¸Šä½æ©Ÿé–¢åæ±ºå®š(20150702): /BANK/Organization/NBRP_2015/9oksotods17toporg_in_scopus.WoS.dic.m.s.csv.sort.dropDupx2
+-- ä¸Šè¨˜ã«å¯¾ã—ã¦ç¬¬5ã‚«ãƒ©ãƒ ã‚’æŠœç²‹: /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm
+-- ä¸Šè¨˜ã«å¯¾ã—ã¦å…ˆé ­ã¨æœ«å°¾ã®ã‚¹ãƒšãƒ¼ã‚¹ã‚’é™¤å»: /home/kamano/gitsrc/utility/drop_headtailSP.pl 17topOrgNameSearchTerm > /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt
+-- æœ€çµ‚çš„ã«æ¤œç´¢ã™ã‚‹ã‚¿ãƒ¼ãƒ (20150708)(åŸºæœ¬ã¯ã“ã®ãƒ•ã‚¡ã‚¤ãƒ«): /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt.sort.uniq
+-- æœ€çµ‚çš„ã«æ¤œç´¢ã™ã‚‹ã‚¿ãƒ¼ãƒ (perlç”¨ã‚¨ã‚¹ã‚±ãƒ¼ãƒ—)(20150708): /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt.sort.uniq.esc
+##TASK(1.2) ãƒ‘ã‚¿ãƒ¼ãƒ³å®šç¾©ç”¨æ—¢çŸ¥ãƒã‚¤ã‚ªãƒªã‚½ãƒ¼ã‚¹åæ±ºå®š(20140423)
+###TASK(1.2.1) NBRCåˆ©ç”¨è€…æˆæœã‹ã‚‰ãƒã‚¤ã‚ªãƒªã‚½ãƒ¼ã‚¹å+è«‹æ±‚ç•ªå·ã‚’æŠœãå‡ºã™(20140420)
+- åˆ©ç”¨è€…æˆæœãƒ•ã‚¡ã‚¤ãƒ«: /BANK/BioResource/Organization/NBRP_2015/user-data/reference_list.tsv
+- Resource name ã‚«ãƒ©ãƒ ã‚’æŠœãå‡ºã—ãŸã‚‚ã®: /BANK/BioResource/Organization/NBRP_2015/user-data/Resnames.line
+- ã•ã‚‰ã«å€‹åˆ¥ã®ãƒªã‚½ãƒ¼ã‚¹ã«åˆ†å‰²: /BANK/BioResource/Organization/NBRP_2015/user-data/Resnames
+-- ", " (<ã‚«ãƒ³ãƒ><ã‚¹ãƒšãƒ¼ã‚¹>)ã§åŒºåˆ‡ã‚‹
+-- "; " (<ã‚»ãƒŸã‚³ãƒ­ãƒ³><ã‚¹ãƒšãƒ¼ã‚¹>)ã§åŒºåˆ‡ã‚‹
+-- ãƒ—ãƒ­ã‚°ãƒ©ãƒ : /home/kamano/gitsrc/utility/CM-SP_SC-SP_to_LF.pl
+-- "," ã‚«ãƒƒã‚³å†…ã§ãªã‘ã‚Œã°(<ã‚«ãƒ³ãƒ>)ã§åŒºåˆ‡ã‚‹
+-- ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã‚½ãƒ¼ã‚¹: /home/kamano/gitsrc/utility/CM_to_LF_out_Bracket_line.c
+-- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ: /home/kamano/gitsrc/utility/CM-SP_SC-SP_to_LF.pl Resnames.line | /home/kamano/gitsrc/utility/CM_to_LF_out_Bracket_line if=/dev/stdin > Resnames
+-- ãƒªãƒ•ã‚©ãƒ¼ãƒ : sed -e 's/^\s+//' Resnames | sed -e 's/\s+$//' > Resnames.re
+- ãƒªã‚¹ãƒˆã‚’ãƒªã‚½ãƒ¼ã‚¹ãƒãƒ¼ãƒ  vs. ãƒªã‚½ãƒ¼ã‚¹ç•ªå·ã®å½¢ã«æ•´å½¢
+-- ãƒ—ãƒ­ã‚°ãƒ©ãƒ : /home/kamano/gitsrc/utility/divide_lastBRK.pl
+-- çµæœ: /BANK/BioResource/Organization/NBRP_2015/user-data/ResnameVSid
+###TASK(1.2.2): æ—¢çŸ¥ãƒã‚¤ã‚ªãƒªã‚½ãƒ¼ã‚¹æ¤œç´¢ã‚·ãƒãƒ‹ãƒ +IDæ±ºå®š
+- å¯¾è±¡: /BANK/BioResource/Organization/NBRP_2015/user-data/ResnameVSid
+- ã‚½ãƒ¼ãƒˆãƒ¦ãƒ‹ãƒ¼ã‚¯ã‚«ã‚¦ãƒ³ãƒˆ: /BANK/BioResource/Organization/NBRP_2015/user-data/ResnameVSid.sort.uniq.count
+- ãƒªãƒ•ã‚©ãƒ¼ãƒ : ./reform_sort-uniq-count.pl ResnameVSid.sort.uniq.count > ResnameVSid.sort.uniq.count.re
+- æ–‡é ­ã®ç©ºã‚¿ãƒ¼ãƒ ã‚’é™¤å»: /BANK/BioResource/Organization/NBRP_2015/user-data/ResnameVSid.sort.uniq.count.re
+###TASK(1.2.3) æ—¢çŸ¥ãƒã‚¤ã‚ªãƒªã‚½ãƒ¼ã‚¹æ¤œç´¢ã‚¿ãƒ¼ãƒ ã®çµã‚Šè¾¼ã¿(è¡Œãªã‚ãªã„)
+###materialãŠã‚ˆã³acknowledgementã®å‡ºç¾ã‚¿ãƒ¼ãƒ ã‚’æ—¢çŸ¥ãƒã‚¤ã‚ªãƒªã‚½ãƒ¼ã‚¹æ¤œç´¢ã‚·ãƒãƒ‹ãƒ ã«ãƒ’ãƒƒãƒˆã•ã›ã€ãƒ’ãƒƒãƒˆã¨ãªã£ãŸãƒã‚¤ã‚ªãƒªã‚½ãƒ¼ã‚¹ã‚’å®Ÿéš›ã®æ¤œç´¢ã‚¿ãƒ¼ãƒ ã¨ã™ã‚‹ã€‚
+###å‡ºç¾ã‚¿ãƒ¼ãƒ ãŒãƒªã‚½ãƒ¼ã‚¹åã®ã‚µãƒ–ã‚¹ãƒˆãƒªãƒ³ã‚°ã§ã‚ã‚‹ã“ã¨ã‚’æœŸå¾…ã—ã¦ã„ã‚‹ã€‚
+###çµå±€ã€ã»ã¨ã‚“ã©ã™ã¹ã¦ã®ã‚µãƒ–ã‚¹ãƒˆãƒªãƒ³ã‚°ã«ãƒãƒƒãƒã—ã¦ã—ã¾ã„ã€æ„å‘³ãŒç„¡ã‹ã£ãŸã€‚(20140422)
+###TASK(1.2.4) ãƒã‚¤ã‚ªãƒªã‚½ãƒ¼ã‚¹å+è«‹æ±‚ç•ªå·ã‚’æ¤œç´¢ç”¨ã‚¿ãƒ¼ãƒ ã«ã°ã‚‰ã—ã€ä¾‹å¤–çš„ãªã‚¿ãƒ¼ãƒ ã‚’é™¤å»
+####ã‚·ãƒãƒ‹ãƒ +IDã‚’æ¤œç´¢ã‚¿ãƒ¼ãƒ ã«ã°ã‚‰ã™
 - cd /BANK/BioResource/Organization/NBRP_2015/user-data
 - awk -F'	' '{print $2}' ResnameVSid.sort.uniq.count.re > resterms.search.pre
 - awk -F'	' '{print $3}' ResnameVSid.sort.uniq.count.re >> resterms.search.pre
 - ./exec_command/reform_resterms.pl resterms.search.pre > resterms.search.pre.re
 - sort resterms.search.pre.re | uniq > resterms.sort.uniq
-- ¸¡º÷¥¿¡¼¥à: /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq
-####¶ËÃ¼¤ËÃ»¤¤¡¢Ä¹¤¤¥Í¡¼¥à¤ò½üµî
-- ¥×¥í¥°¥é¥à: /BANK/BioResource/Organization/NBRP_2015/user-data/exec_command/drop_suspicius-length.pl
-- ¸¡º÷¥¿¡¼¥à¸õÊä: /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.1
-####material½Ğ¸½¥¿¡¼¥à¤¬¥µ¥ÖÊ¸»úÎó¤Ë¤Ê¤Ã¤Æ¤¤¤ë¥Ğ¥¤¥ª¥ê¥½¡¼¥¹¥Í¡¼¥à(¤¤¤ß¤Ê¤·)
-- ÂĞ¾İ: /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.1
-- ¥µ¥ÖÊ¸»úÎó: /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.4/terms.search.esc
-- ¥×¥í¥°¥é¥à: /home/kamano/gitsrc/utility/match_substr.pl
-- ¥¹¥¯¥ê¥×¥È: /home/kamano/gitsrc/utility/match_substr.pl /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.1 /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.4/terms.search.esc > /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.1.allmaterials-hit
-####acknowledgement½Ğ¸½¥¿¡¼¥à¤¬¥µ¥ÖÊ¸»úÎó¤Ë¤Ê¤Ã¤Æ¤¤¤ë¥Ğ¥¤¥ª¥ê¥½¡¼¥¹¥Í¡¼¥à
-####¹Ô¤Ê¤ï¤Ê¤¤
-###TASK(1.2.5)ºÇ½ªÅª¤Ë»È¤¦¸¡º÷¥¿¡¼¥à¤Î¥Ş¥Ë¥å¥¢¥ë¥Á¥å¡¼¥Ë¥ó¥°
-####Ãæ´Ö¥Õ¥¡¥¤¥ë: <n>E¡¢<n>D¡¢<n>m¡¢kw¤Î¥µ¥Õ¥£¥¯¥¹¤ò»ÈÍÑ¡¢<n>¤ÏÈÖ¹æ¡¢E¤Ïextract¡¢D¤Ïdelete
-- ºî¶È¾ÜºÙ: /BANK/BioResource/Organization/NBRP_2015/user-data/README
- À¸Êª¼ïÌ¾¤Ë¤Ä¤¤¤Æ¤ÏÁ´¤Æ»Ä¤¹¡£
--- ºî¶ÈÂĞ¾İ¥Õ¥¡¥¤¥ë: /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.1
--- ·ë²Ì¥Õ¥¡¥¤¥ë(20150710): /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_3
--- ·ë²Ì¥Õ¥¡¥¤¥ë(20150728): /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_5
--- C¸¡º÷ÍÑ·ë²Ì¥Õ¥¡¥¤¥ë(ncr): /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_5.ncr
--- Perl¸¡º÷ÍÑ·ë²Ì¥Õ¥¡¥¤¥ë(ncr,escape): /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_5.ncr.esc
+- æ¤œç´¢ã‚¿ãƒ¼ãƒ : /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq
+####æ¥µç«¯ã«çŸ­ã„ã€é•·ã„ãƒãƒ¼ãƒ ã‚’é™¤å»
+- ãƒ—ãƒ­ã‚°ãƒ©ãƒ : /BANK/BioResource/Organization/NBRP_2015/user-data/exec_command/drop_suspicius-length.pl
+- æ¤œç´¢ã‚¿ãƒ¼ãƒ å€™è£œ: /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.1
+####materialå‡ºç¾ã‚¿ãƒ¼ãƒ ãŒã‚µãƒ–æ–‡å­—åˆ—ã«ãªã£ã¦ã„ã‚‹ãƒã‚¤ã‚ªãƒªã‚½ãƒ¼ã‚¹ãƒãƒ¼ãƒ (ã„ã¿ãªã—)
+- å¯¾è±¡: /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.1
+- ã‚µãƒ–æ–‡å­—åˆ—: /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.4/terms.search.esc
+- ãƒ—ãƒ­ã‚°ãƒ©ãƒ : /home/kamano/gitsrc/utility/match_substr.pl
+- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ: /home/kamano/gitsrc/utility/match_substr.pl /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.1 /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.4/terms.search.esc > /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.1.allmaterials-hit
+####acknowledgementå‡ºç¾ã‚¿ãƒ¼ãƒ ãŒã‚µãƒ–æ–‡å­—åˆ—ã«ãªã£ã¦ã„ã‚‹ãƒã‚¤ã‚ªãƒªã‚½ãƒ¼ã‚¹ãƒãƒ¼ãƒ 
+####è¡Œãªã‚ãªã„
+###TASK(1.2.5)æœ€çµ‚çš„ã«ä½¿ã†æ¤œç´¢ã‚¿ãƒ¼ãƒ ã®ãƒãƒ‹ãƒ¥ã‚¢ãƒ«ãƒãƒ¥ãƒ¼ãƒ‹ãƒ³ã‚°
+####ä¸­é–“ãƒ•ã‚¡ã‚¤ãƒ«: <n>Eã€<n>Dã€<n>mã€kwã®ã‚µãƒ•ã‚£ã‚¯ã‚¹ã‚’ä½¿ç”¨ã€<n>ã¯ç•ªå·ã€Eã¯extractã€Dã¯delete
+- ä½œæ¥­è©³ç´°: /BANK/BioResource/Organization/NBRP_2015/user-data/README
+ ç”Ÿç‰©ç¨®åã«ã¤ã„ã¦ã¯å…¨ã¦æ®‹ã™ã€‚
+-- ä½œæ¥­å¯¾è±¡ãƒ•ã‚¡ã‚¤ãƒ«: /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.1
+-- çµæœãƒ•ã‚¡ã‚¤ãƒ«(20150710): /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_3
+-- çµæœãƒ•ã‚¡ã‚¤ãƒ«(20150728): /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_5
+-- Cæ¤œç´¢ç”¨çµæœãƒ•ã‚¡ã‚¤ãƒ«(ncr): /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_5.ncr
+-- Perlæ¤œç´¢ç”¨çµæœãƒ•ã‚¡ã‚¤ãƒ«(ncr,escape): /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_5.ncr.esc
 
 
 
-#TASK(2): ´ûÃÎ¥Ğ¥¤¥ª¥ê¥½¡¼¥¹Ì¾¡¦´ûÃÎµ¡´ØÌ¾¤Î½Ğ¸½¾õ¶·³ÎÇ§(NBRP)
-#[1]Æ±»ş½Ğ¸½³ÎÇ§:
-#Æ±»ş½Ğ¸½²Õ½ê¤ËÄ¾ÀÜÊ¸»ú¿§¤òÁŞÆş
-#3ÃÊ³¬¤Ç¹Ô¤Ê¤¦: a.µ¡´ØÌ¾hit¤Î³ÎÇ§Ãê½Ğ b.¥ê¥½¡¼¥¹Ì¾hit¤Î³ÎÇ§Ãê½Ğ c.Ê¸»ú¿§ÁŞÆş
-#»î¸³ -> ºÎÍÑ -> ½¤Àµ(20150729) -> OK(20150729)
-#½¤Àµ¾õ¶·: n-column°Ê¹ß¤ò¥¹¥­¥ã¥ó¤¹¤ë½èÍı¤ËÊÑ¹¹(20150729) <- ¥«¥é¥à¿ô¤¬Æ±¤¸¤À¤È´ª°ã¤¤¤·¤Æ¤¤¤¿¡£½¤Àµ½ªÎ»¤Ë¤Ï<R> ¡£ -> OK(20150729)
-#[2]¥ê¥½¡¼¥¹Ì¾½Ğ¸½³ÎÇ§:
-#Á°¸å¤ÎnÊ¸»ú¤ò´Ş¤á¥ê¥½¡¼¥¹Ì¾Ãê½Ğ
-#È½Äê
-#Àµ²ò¥°¥ë¡¼¥×/ÉÔÀµ²ò¥°¥ë¡¼¥×¤òÅı·×½èÍı
-- ¼Â¹Ô¥Õ¥¡¥¤¥ë: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/exec_TASK2_all.sh
---> ¼ºÇÔ¡£ wait¤·¤Æ¤â¤Ä¤®¤Î¥¹¥¯¥ê¥×¥È¤¬¼Â¹Ô¤µ¤ì¤ë¡£
---> wait¤ÏÃÊ³¬Åª¤Ë¸Æ¤Ó½Ğ¤µ¤ì¤ë¥×¥í¥»¥¹¤ËÂĞ±ş¤·¤Æ¤¤¤Ê¤¤¡£--> ¥¹¥¯¥ê¥×¥È½¤Àµ´°Î»
---> ¸½ºß¡¢¤¤¤¯¤Ä¤«¤Î¥Õ¥¡¥¤¥ë¤¬²õ¤ì¤¿¤Ş¤Ş¡£--> ½¤ÀµÃæ --> OK
---> ¤Ş¤À¼Â¹Ô¤·¤Æ¤¤¤Ê¤¤¡£
-#[3]µ¡´ØÌ¾½Ğ¸½³ÎÇ§:
-##TASK(2.0)½àÈ÷
-###TASK(2.0.0)¸¡º÷¥¿¡¼¥à¤ÎÆÃ¼ìÊ¸»ú¥¨¥¹¥±¡¼¥×
-####µ¡´ØÌ¾
-- ¥¨¥¹¥±¡¼¥×¥³¥Ş¥ó¥É: escape_char sf=/BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt lf=/usr/local/var/perl_esc.list > /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt.esc
-- ¤Û¤ó¤È¤Ï¡¢¤³¤Ã¤Á¤Î¥Õ¥¡¥¤¥ë¤ò»È¤¦: /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt.sort.uniq.esc
-####¥ê¥½¡¼¥¹Ì¾
-- ncr¥³¥Ş¥ó¥É: utf8_to_ncr /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_5 > /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_5.ncr
-- ¥¨¥¹¥±¡¼¥×¥³¥Ş¥ó¥É: escape_char sf=/BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_5.ncr lf=/usr/local/var/perl_esc.list > /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_5.ncr.esc
-###TASK(2.0.1)a. µ¡´ØÌ¾hit¤Î³ÎÇ§Ãê½Ğ in ACK
-- ¸¡º÷ÂĞ¾İ: /BANK/PMC/20140724/elements/acknowledgement/PMC-ACK-v6_pmid.tsv
- 3¥«¥é¥à°Ê¹ß¤ËÂĞ¤·¤Æ¸¡º÷
-- ¸¡º÷¥¿¡¼¥à(¥¹¥±¡¼¥×): /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt.esc
-- ¥×¥í¥°¥é¥à: /home/kamano/gitsrc/utility/hit_least.pl
-- ¥¹¥¯¥ê¥×¥È(5 min): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/hit_Org_from_ACK.sh
-- ·ë²Ì(20150729): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_Org_from_ACK.tsv
-###TASK(2.0.2)b. ¥ê¥½¡¼¥¹Ì¾hit¤Î³ÎÇ§Ãê½Ğ in ACK with µ¡´ØÌ¾
-- ¸¡º÷ÂĞ¾İ: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_Org_from_ACK.tsv
-- ¸¡º÷¥¿¡¼¥à(¥¨¥¹¥±¡¼¥×): /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_4.ncr.esc
-- ¥×¥í¥°¥é¥à: /home/kamano/gitsrc/utility/hit_least.pl
-- ¥¹¥¯¥ê¥×¥È(5 min): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/hit_ResOrg_from_ACK.sh
-- ·ë²Ì(20150729): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv
-###TASK(2.0.3)a. µ¡´ØÌ¾hit¤Î³ÎÇ§Ãê½Ğ in Mat
-- ¸¡º÷ÂĞ¾İ: /BANK/PMC/20140724/elements/MERGED/allmaterials/*.cont
- 2¥«¥é¥à°Ê¹ß¤ËÂĞ¤·¤Æ¸¡º÷
-- ¸¡º÷¥¿¡¼¥à(¥¹¥±¡¼¥×ºÑ¤ß): /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt.esc
-- ¥×¥í¥°¥é¥à: /home/kamano/gitsrc/utility/hit_least.pl
-- ¥¹¥¯¥ê¥×¥È(3 min): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/hit_Org_from_Mat.sh
-- ·ë²Ì(20150729): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_Org_from_Mat.au.tsv
-###TASK(2.0.4)b. ¥ê¥½¡¼¥¹Ì¾hit¤Î³ÎÇ§Ãê½Ğ in Mat with µ¡´ØÌ¾
-- ¸¡º÷ÂĞ¾İ: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_Org_from_Mat.a[a-u].tsv
-- ¸¡º÷¥¿¡¼¥à(¥¨¥¹¥±¡¼¥×ºÑ¤ß): /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_5.ncr.esc
-- ¥×¥í¥°¥é¥à: /home/kamano/gitsrc/utility/hit_least.pl
-- ¥¹¥¯¥ê¥×¥È(1 min): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/hit_ResOrg_from_Mat.sh
-- ·ë²Ì(20150728): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_Mat.au.tsv
-##TASK(2.1) [1]´ûÃÎµ¡´ØÌ¾¡¦¥ê¥½¡¼¥¹Ì¾Æ±»ş½Ğ¸½(NBRP)¸¡º÷(Ê¸»ú¿§ÁŞÆş)
-###TASK(2.1.1) c. ´ûÃÎµ¡´ØÌ¾Ê¸»ú¿§ÁŞÆş in ACK
-- ÂĞ¾İ(¥½¡¼¥¹): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv
-- ¸¡º÷¥¿¡¼¥à(¥¨¥¹¥±¡¼¥×ºÑ¤ß): /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt.esc
-- ¥×¥í¥°¥é¥à: /home/kamano/gitsrc/XMLOP/insTxColor_to_html.pl
-- ¥¹¥¯¥ê¥×¥È: /home/kamano/gitsrc/XMLOP/insTxColor_to_html.pl src=/BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv clm=2 trm=/BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt.esc clr=red > /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv.color1
-- ·ë²Ì: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv.color1
-###TASK(2.1.2) c. ¥Ğ¥¤¥ª¥ê¥½¡¼¥¹Ì¾Ê¸»ú¿§ÁŞÆş in ACK
-- ÂĞ¾İ(¤¹¤Ç¤Ëµ¡´ØÌ¾¤Î½èÍı¤¬½ª¤ï¤Ã¤¿¤â¤Î): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv.color1
-- ¸¡º÷¥¿¡¼¥à(ncr¡¢¥¨¥¹¥±¡¼¥×ºÑ¤ß): /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_5.ncr.esc
-- ¥×¥í¥°¥é¥à: /home/kamano/gitsrc/XMLOP/insTxColor_to_html.pl
-- ¥¹¥¯¥ê¥×¥È(15 min): time /home/kamano/gitsrc/XMLOP/insTxColor_to_html.pl src=/BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv.color1 clm=2 trm=/BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_5.ncr.esc clr=blue > /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv.color2
-- ·ë²Ì: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv.color2
-###TASK(2.1.3)c. ´ûÃÎµ¡´ØÌ¾Ê¸»ú¿§ÁŞÆş in Mat
-- ÂĞ¾İ(¥½¡¼¥¹): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_Mat.au.tsv
-- ¸¡º÷¥¿¡¼¥à(¥¨¥¹¥±¡¼¥×ºÑ¤ß): /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt.esc
-- ¥×¥í¥°¥é¥à: /home/kamano/gitsrc/XMLOP/insTxColor_to_html.pl
-- ¥¹¥¯¥ê¥×¥È: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/insTxColor_Org_in_Mat.sh
-- ·ë²Ì: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_Mat.au.tsv.color1
-###TASK(2.1.4)c. ¥Ğ¥¤¥ª¥ê¥½¡¼¥¹Ì¾Ê¸»ú¿§ÁŞÆş in Mat (20150728)
-- ÂĞ¾İ(¤¹¤Ç¤Ëµ¡´ØÌ¾¤Î½èÍı¤¬½ª¤ï¤Ã¤¿¤â¤Î): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_Mat.au.tsv.color1
-- ¸¡º÷¥¿¡¼¥à(ncr¡¢¥¨¥¹¥±¡¼¥×ºÑ¤ß): /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_5.ncr.esc
-- ¥×¥í¥°¥é¥à: /home/kamano/gitsrc/XMLOP/insTxColor_to_html.pl
-- ¥¹¥¯¥ê¥×¥È(10 min): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/insTxColor_Res_in_Mat.sh
-- ·ë²Ì: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_Mat.au.tsv.color2
-###TASK(2.1.5) ¥»¥ó¥Æ¥ó¥¹split & html²½ (20150804)
-- ÂĞ¾İ: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from*color2
-- ¥×¥í¥°¥é¥à: /home/kamano/gitsrc/XMLOP/extract_hit_sentence_from_colored.pl
-- ¥¹¥¯¥ê¥×¥È(ACK): /home/kamano/gitsrc/XMLOP/extract_hit_sentence_from_colored.pl src=/BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv.color2 clm=2 terms=red,blue > /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv.color2.sel.html
-- ¥¹¥¯¥ê¥×¥È(Mat): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/select_from_colored_Mat.sh
-- ·ë²Ì: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_*color2.sel.html
-###TASK(2.1.6) html¤è¤ê¶õ¤Î¥ì¥³¡¼¥É¤ò½üµî (20150804)
-- ÂĞ¾İ: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_*color2.sel.html
-- ¥×¥í¥°¥é¥à: /home/kamano/gitsrc/XMLOP/drop_empty_hit_from_html.pl
-- ¥¹¥¯¥ê¥×¥È: 
+#TASK(2): æ—¢çŸ¥ãƒã‚¤ã‚ªãƒªã‚½ãƒ¼ã‚¹åãƒ»æ—¢çŸ¥æ©Ÿé–¢åã®å‡ºç¾çŠ¶æ³ç¢ºèª(NBRP)
+#[1]åŒæ™‚å‡ºç¾ç¢ºèª:
+#åŒæ™‚å‡ºç¾ç®‡æ‰€ã«ç›´æ¥æ–‡å­—è‰²ã‚’æŒ¿å…¥
+#3æ®µéšã§è¡Œãªã†: a.æ©Ÿé–¢åhitã®ç¢ºèªæŠ½å‡º b.ãƒªã‚½ãƒ¼ã‚¹åhitã®ç¢ºèªæŠ½å‡º c.æ–‡å­—è‰²æŒ¿å…¥
+#è©¦é¨“ -> æ¡ç”¨ -> ä¿®æ­£(20150729) -> OK(20150729)
+#ä¿®æ­£çŠ¶æ³: n-columnä»¥é™ã‚’ã‚¹ã‚­ãƒ£ãƒ³ã™ã‚‹å‡¦ç†ã«å¤‰æ›´(20150729) <- ã‚«ãƒ©ãƒ æ•°ãŒåŒã˜ã ã¨å‹˜é•ã„ã—ã¦ã„ãŸã€‚ä¿®æ­£çµ‚äº†ã«ã¯<R> ã€‚ -> OK(20150729)
+#[2]ãƒªã‚½ãƒ¼ã‚¹åå‡ºç¾ç¢ºèª:
+#å‰å¾Œã®næ–‡å­—ã‚’å«ã‚ãƒªã‚½ãƒ¼ã‚¹åæŠ½å‡º
+#åˆ¤å®š
+#æ­£è§£ã‚°ãƒ«ãƒ¼ãƒ—/ä¸æ­£è§£ã‚°ãƒ«ãƒ¼ãƒ—ã‚’çµ±è¨ˆå‡¦ç†
+- å®Ÿè¡Œãƒ•ã‚¡ã‚¤ãƒ«: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/exec_TASK2_all.sh
+--> å¤±æ•—ã€‚ waitã—ã¦ã‚‚ã¤ãã®ã‚¹ã‚¯ãƒªãƒ—ãƒˆãŒå®Ÿè¡Œã•ã‚Œã‚‹ã€‚
+--> waitã¯æ®µéšçš„ã«å‘¼ã³å‡ºã•ã‚Œã‚‹ãƒ—ãƒ­ã‚»ã‚¹ã«å¯¾å¿œã—ã¦ã„ãªã„ã€‚--> ã‚¹ã‚¯ãƒªãƒ—ãƒˆä¿®æ­£å®Œäº†
+--> ç¾åœ¨ã€ã„ãã¤ã‹ã®ãƒ•ã‚¡ã‚¤ãƒ«ãŒå£Šã‚ŒãŸã¾ã¾ã€‚--> ä¿®æ­£ä¸­ --> OK
+--> ã¾ã å®Ÿè¡Œã—ã¦ã„ãªã„ã€‚
+#[3]æ©Ÿé–¢åå‡ºç¾ç¢ºèª:
+##TASK(2.0)æº–å‚™
+###TASK(2.0.0)æ¤œç´¢ã‚¿ãƒ¼ãƒ ã®ç‰¹æ®Šæ–‡å­—ã‚¨ã‚¹ã‚±ãƒ¼ãƒ—
+####æ©Ÿé–¢å
+- ã‚¨ã‚¹ã‚±ãƒ¼ãƒ—ã‚³ãƒãƒ³ãƒ‰: escape_char sf=/BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt lf=/usr/local/var/perl_esc.list > /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt.esc
+- ã»ã‚“ã¨ã¯ã€ã“ã£ã¡ã®ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ä½¿ã†: /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt.sort.uniq.esc
+####ãƒªã‚½ãƒ¼ã‚¹å
+- ncrã‚³ãƒãƒ³ãƒ‰: utf8_to_ncr /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_5 > /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_5.ncr
+- ã‚¨ã‚¹ã‚±ãƒ¼ãƒ—ã‚³ãƒãƒ³ãƒ‰: escape_char sf=/BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_5.ncr lf=/usr/local/var/perl_esc.list > /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_5.ncr.esc
+###TASK(2.0.1)a. æ©Ÿé–¢åhitã®ç¢ºèªæŠ½å‡º in ACK
+- æ¤œç´¢å¯¾è±¡: /BANK/PMC/20140724/elements/acknowledgement/PMC-ACK-v6_pmid.tsv
+ 3ã‚«ãƒ©ãƒ ä»¥é™ã«å¯¾ã—ã¦æ¤œç´¢
+- æ¤œç´¢ã‚¿ãƒ¼ãƒ (ã‚¹ã‚±ãƒ¼ãƒ—): /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt.esc
+- ãƒ—ãƒ­ã‚°ãƒ©ãƒ : /home/kamano/gitsrc/utility/hit_least.pl
+- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ(5 min): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/hit_Org_from_ACK.sh
+- çµæœ(20150729): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_Org_from_ACK.tsv
+###TASK(2.0.2)b. ãƒªã‚½ãƒ¼ã‚¹åhitã®ç¢ºèªæŠ½å‡º in ACK with æ©Ÿé–¢å
+- æ¤œç´¢å¯¾è±¡: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_Org_from_ACK.tsv
+- æ¤œç´¢ã‚¿ãƒ¼ãƒ (ã‚¨ã‚¹ã‚±ãƒ¼ãƒ—): /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_4.ncr.esc
+- ãƒ—ãƒ­ã‚°ãƒ©ãƒ : /home/kamano/gitsrc/utility/hit_least.pl
+- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ(5 min): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/hit_ResOrg_from_ACK.sh
+- çµæœ(20150729): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv
+###TASK(2.0.3)a. æ©Ÿé–¢åhitã®ç¢ºèªæŠ½å‡º in Mat
+- æ¤œç´¢å¯¾è±¡: /BANK/PMC/20140724/elements/MERGED/allmaterials/*.cont
+ 2ã‚«ãƒ©ãƒ ä»¥é™ã«å¯¾ã—ã¦æ¤œç´¢
+- æ¤œç´¢ã‚¿ãƒ¼ãƒ (ã‚¹ã‚±ãƒ¼ãƒ—æ¸ˆã¿): /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt.esc
+- ãƒ—ãƒ­ã‚°ãƒ©ãƒ : /home/kamano/gitsrc/utility/hit_least.pl
+- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ(3 min): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/hit_Org_from_Mat.sh
+- çµæœ(20150729): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_Org_from_Mat.au.tsv
+###TASK(2.0.4)b. ãƒªã‚½ãƒ¼ã‚¹åhitã®ç¢ºèªæŠ½å‡º in Mat with æ©Ÿé–¢å
+- æ¤œç´¢å¯¾è±¡: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_Org_from_Mat.a[a-u].tsv
+- æ¤œç´¢ã‚¿ãƒ¼ãƒ (ã‚¨ã‚¹ã‚±ãƒ¼ãƒ—æ¸ˆã¿): /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_5.ncr.esc
+- ãƒ—ãƒ­ã‚°ãƒ©ãƒ : /home/kamano/gitsrc/utility/hit_least.pl
+- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ(1 min): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/hit_ResOrg_from_Mat.sh
+- çµæœ(20150728): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_Mat.au.tsv
+##TASK(2.1) [1]æ—¢çŸ¥æ©Ÿé–¢åãƒ»ãƒªã‚½ãƒ¼ã‚¹ååŒæ™‚å‡ºç¾(NBRP)æ¤œç´¢(æ–‡å­—è‰²æŒ¿å…¥)
+###TASK(2.1.1) c. æ—¢çŸ¥æ©Ÿé–¢åæ–‡å­—è‰²æŒ¿å…¥ in ACK
+- å¯¾è±¡(ã‚½ãƒ¼ã‚¹): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv
+- æ¤œç´¢ã‚¿ãƒ¼ãƒ (ã‚¨ã‚¹ã‚±ãƒ¼ãƒ—æ¸ˆã¿): /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt.esc
+- ãƒ—ãƒ­ã‚°ãƒ©ãƒ : /home/kamano/gitsrc/XMLOP/insTxColor_to_html.pl
+- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ: /home/kamano/gitsrc/XMLOP/insTxColor_to_html.pl src=/BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv clm=2 trm=/BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt.esc clr=red > /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv.color1
+- çµæœ: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv.color1
+###TASK(2.1.2) c. ãƒã‚¤ã‚ªãƒªã‚½ãƒ¼ã‚¹åæ–‡å­—è‰²æŒ¿å…¥ in ACK
+- å¯¾è±¡(ã™ã§ã«æ©Ÿé–¢åã®å‡¦ç†ãŒçµ‚ã‚ã£ãŸã‚‚ã®): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv.color1
+- æ¤œç´¢ã‚¿ãƒ¼ãƒ (ncrã€ã‚¨ã‚¹ã‚±ãƒ¼ãƒ—æ¸ˆã¿): /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_5.ncr.esc
+- ãƒ—ãƒ­ã‚°ãƒ©ãƒ : /home/kamano/gitsrc/XMLOP/insTxColor_to_html.pl
+- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ(15 min): time /home/kamano/gitsrc/XMLOP/insTxColor_to_html.pl src=/BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv.color1 clm=2 trm=/BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_5.ncr.esc clr=blue > /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv.color2
+- çµæœ: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv.color2
+###TASK(2.1.3)c. æ—¢çŸ¥æ©Ÿé–¢åæ–‡å­—è‰²æŒ¿å…¥ in Mat
+- å¯¾è±¡(ã‚½ãƒ¼ã‚¹): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_Mat.au.tsv
+- æ¤œç´¢ã‚¿ãƒ¼ãƒ (ã‚¨ã‚¹ã‚±ãƒ¼ãƒ—æ¸ˆã¿): /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt.esc
+- ãƒ—ãƒ­ã‚°ãƒ©ãƒ : /home/kamano/gitsrc/XMLOP/insTxColor_to_html.pl
+- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/insTxColor_Org_in_Mat.sh
+- çµæœ: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_Mat.au.tsv.color1
+###TASK(2.1.4)c. ãƒã‚¤ã‚ªãƒªã‚½ãƒ¼ã‚¹åæ–‡å­—è‰²æŒ¿å…¥ in Mat (20150728)
+- å¯¾è±¡(ã™ã§ã«æ©Ÿé–¢åã®å‡¦ç†ãŒçµ‚ã‚ã£ãŸã‚‚ã®): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_Mat.au.tsv.color1
+- æ¤œç´¢ã‚¿ãƒ¼ãƒ (ncrã€ã‚¨ã‚¹ã‚±ãƒ¼ãƒ—æ¸ˆã¿): /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_5.ncr.esc
+- ãƒ—ãƒ­ã‚°ãƒ©ãƒ : /home/kamano/gitsrc/XMLOP/insTxColor_to_html.pl
+- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ(10 min): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/insTxColor_Res_in_Mat.sh
+- çµæœ: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_Mat.au.tsv.color2
+###TASK(2.1.5) ã‚»ãƒ³ãƒ†ãƒ³ã‚¹split & htmlåŒ– (20150804)
+- å¯¾è±¡: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from*color2
+- ãƒ—ãƒ­ã‚°ãƒ©ãƒ : /home/kamano/gitsrc/XMLOP/extract_hit_sentence_from_colored.pl
+- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ(ACK): /home/kamano/gitsrc/XMLOP/extract_hit_sentence_from_colored.pl src=/BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv.color2 clm=2 terms=red,blue > /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv.color2.sel.html
+- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ(Mat): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/select_from_colored_Mat.sh
+- çµæœ: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_*color2.sel.html
+###TASK(2.1.6) htmlã‚ˆã‚Šç©ºã®ãƒ¬ã‚³ãƒ¼ãƒ‰ã‚’é™¤å» (20150804)
+- å¯¾è±¡: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_*color2.sel.html
+- ãƒ—ãƒ­ã‚°ãƒ©ãƒ : /home/kamano/gitsrc/XMLOP/drop_empty_hit_from_html.pl
+- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ: 
  cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015
  for file in *color2.sel.html; do  /home/kamano/gitsrc/XMLOP/drop_empty_hit_from_html.pl $file > ${file%.html}.dropE.html; done
-- ·ë²Ì: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_*color2.sel.dropE.html
--- ÌäÂêÅÀ: ¥¿¥°Æâ¤ÎRes¤Ë¥Ş¥Ã¥Á¡¢¥¿¥°¤ÎÇË²õ¤¬µ¯¤³¤Ã¤Æ¤¤¤ë¡£-> ar: [399] /BANK/PMC/20140724/articles/PLoS_Pathog/PLoS_Pathog_2007_Nov_23_3(11)_e173.nxml
-- ½¸·×·ë²Ì:
--- ¥»¥ó¥Æ¥ó¥¹:
+- çµæœ: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_*color2.sel.dropE.html
+-- å•é¡Œç‚¹: ã‚¿ã‚°å†…ã®Resã«ãƒãƒƒãƒã€ã‚¿ã‚°ã®ç ´å£ŠãŒèµ·ã“ã£ã¦ã„ã‚‹ã€‚-> ar: [399] /BANK/PMC/20140724/articles/PLoS_Pathog/PLoS_Pathog_2007_Nov_23_3(11)_e173.nxml
+- é›†è¨ˆçµæœ:
+-- ã‚»ãƒ³ãƒ†ãƒ³ã‚¹:
 grep nxml *dropE.html | wc
    1258  213409 2648070
--- ÏÀÊ¸:
+-- è«–æ–‡:
 grep -o '<;/>' *dropE.html | wc
    1312    1312   69912
 -- Res: 
@@ -554,46 +554,46 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015
 ./exec_command/extract_HitOrg_from_dropE.pl *dropE.html | ./exec_command/extract_redFontStr_from_HitRes.pl | sort | uniq | wc
      32      89     699
-###==(20150730)´°Î»==###
-###TASK(2.1.7) µ¡´ØÌ¾¡¢¥Ğ¥¤¥ª¥ê¥½¡¼¥¹Ì¾¤¬Æ±»ş½Ğ¸½¤¹¤ë¥»¥ó¥Æ¥ó¥¹(¥Ô¥ê¥ª¥É¶èÀÚ¤ê¡¢¾ì¹ç¤Ë¤è¤Ã¤Æ¤Ï¥«¥ó¥Ş¡¢¥»¥ß¥³¥í¥ó¶èÀÚ¤ê)¤ò¿Í¼ê¤ÇÈ´¤­¤À¤·(¿åÌî»á¼Â¹Ô´°Î»)
-- ÂĞ¾İ: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_*.tsv.color2.sel.dropE.html
-- ¼ê½ç
--- ¼êºî¶È¤ÇÈ´¤­¤À¤·
--- ¥¹¥¯¥ê¥×¥È¤Ç¥Á¥§¥Ã¥¯
---- ¥Á¥§¥Ã¥¯Ë¡: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/README
---- ¥¹¥¯¥ê¥×¥È: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/reformResOrgWork.pl
--- °Ê¾å¤ò·«¤êÊÖ¤·¡¢¼ıÂ«
-- ºî¶È¥Õ¥¡¥¤¥ë: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/ ÇÛ²¼
--- 1²óÌÜ: hit_ResOrg.tsv.color2.sel.html.work.20140929.csv
--- 2²óÌÜ: hit_ResOrg.tsv.color2.sel.html.work.20151007.csv
--- 3²óÌÜ: hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref
--- ¥Á¥§¥Ã¥¯:
---- (1) ¥¨¥é¡¼¤òÈ´¤­¤À¤·
---- (2) ;E¥Õ¥é¥°ÉÕ¤­¤òÈ´¤­¤À¤·
----- ¥¹¥¯¥ê¥×¥È:
+###==(20150730)å®Œäº†==###
+###TASK(2.1.7) æ©Ÿé–¢åã€ãƒã‚¤ã‚ªãƒªã‚½ãƒ¼ã‚¹åãŒåŒæ™‚å‡ºç¾ã™ã‚‹ã‚»ãƒ³ãƒ†ãƒ³ã‚¹(ãƒ”ãƒªã‚ªãƒ‰åŒºåˆ‡ã‚Šã€å ´åˆã«ã‚ˆã£ã¦ã¯ã‚«ãƒ³ãƒã€ã‚»ãƒŸã‚³ãƒ­ãƒ³åŒºåˆ‡ã‚Š)ã‚’äººæ‰‹ã§æŠœãã ã—(æ°´é‡æ°å®Ÿè¡Œå®Œäº†)
+- å¯¾è±¡: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_*.tsv.color2.sel.dropE.html
+- æ‰‹é †
+-- æ‰‹ä½œæ¥­ã§æŠœãã ã—
+-- ã‚¹ã‚¯ãƒªãƒ—ãƒˆã§ãƒã‚§ãƒƒã‚¯
+--- ãƒã‚§ãƒƒã‚¯æ³•: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/README
+--- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/reformResOrgWork.pl
+-- ä»¥ä¸Šã‚’ç¹°ã‚Šè¿”ã—ã€åæŸ
+- ä½œæ¥­ãƒ•ã‚¡ã‚¤ãƒ«: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/ é…ä¸‹
+-- 1å›ç›®: hit_ResOrg.tsv.color2.sel.html.work.20140929.csv
+-- 2å›ç›®: hit_ResOrg.tsv.color2.sel.html.work.20151007.csv
+-- 3å›ç›®: hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref
+-- ãƒã‚§ãƒƒã‚¯:
+--- (1) ã‚¨ãƒ©ãƒ¼ã‚’æŠœãã ã—
+--- (2) ;Eãƒ•ãƒ©ã‚°ä»˜ãã‚’æŠœãã ã—
+---- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ:
 awk -F '	' '{print $7}' hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv > check_7.E.20151015
------ ¹ÔÈÖ¹æÁŞÆş
+----- è¡Œç•ªå·æŒ¿å…¥
 vim check_7.E.20151015
 :%s/^/\=line('.').'^I'/
 grep ';E' check_7.E.20151015 > check_7.E.20151015.E
---- (3) 1¤ÎÍ×ÁÇ¤¬¤¹¤Ù¤Æ(2)¤Ë¤è¤Ã¤Æedit¤µ¤ì¤Æ¤¤¤ì¤ĞOK
-- ½¤Àµ·ë²Ì: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev
-- ·ë²Ì¤ÎÊÔ½¸(1):ËÜÊ¸Ãæ¤Î¥ê¥½¡¼¥¹¤Ë¥Ş¡¼¥¯¡¢¥·¥ó¥°¥ë¥é¥¤¥ó²½: 
--- ¥¹¥¯¥ê¥×¥È: reformResOrgWorkMark.pl hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev | toSingleLine.pl > hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.S
-- ·ë²Ì¤ÎÊÔ½¸(2):ACK or Mat ¥é¥Ù¥ëÉÕÍ¿: vim¤ÇÊÔ½¸
--- ¥Õ¥©¡¼¥Ş¥Ã¥È¤ÎÀâÌÀ:
---- ÂĞ¾İ¤Înxml¤´¤È¤Î·ë²Ì¹Ô(³Æ1¹Ô) + ¥¢¥Î¥Æ¡¼¥·¥ç¥ó¹Ô
---- ÂĞ¾İ¹Ô: <¥¿¥Ö>¤Ç¤Ï¤¸¤Ş¤ë
---- ³Æ¹Ô¤Ë¤ª¤±¤ë¥»¥ó¥Æ¥ó¥¹¥ì¥³¡¼¥É¶èÀÚ¤ê: <¥¿¥Ö><¥»¥ß¥³¥í¥ó><¥»¥ß¥³¥í¥ó><¥¿¥Ö>
---- ¥ì¥³¡¼¥É¥»¥ó¥Æ¥ó¥¹¤Î¹½À®: <¥ì¥³¡¼¥ÉID>¡¢<¥³¥ó¥Æ¥ó¥Ä>¡¢<¥Ò¥Ã¥È¥ê¥½¡¼¥¹>¡¢<¥Ò¥Ã¥ÈÁÈ¿¥Ì¾>¡¢<¥Ò¥Ã¥È¤Î½çÈÖ>¡¢<È÷¹Í>¡¢<¼ÁÌä>¤Î<¥¿¥Ö>¶èÀÚ¤ê
---- <¥ê¥½¡¼¥¹Ì¾>¤È<ÁÈ¿¥Ì¾>¤Î¶èÀÚ¤ê: <¥¹¥Ú¡¼¥¹><¥»¥ß¥³¥í¥ó><¥¹¥Ú¡¼¥¹>
-- ºÇ½ª·ë²Ì: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.E.S.L
-- ·ë²Ì¤Î½¸·×¾ğÊó
+--- (3) 1ã®è¦ç´ ãŒã™ã¹ã¦(2)ã«ã‚ˆã£ã¦editã•ã‚Œã¦ã„ã‚Œã°OK
+- ä¿®æ­£çµæœ: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev
+- çµæœã®ç·¨é›†(1):æœ¬æ–‡ä¸­ã®ãƒªã‚½ãƒ¼ã‚¹ã«ãƒãƒ¼ã‚¯ã€ã‚·ãƒ³ã‚°ãƒ«ãƒ©ã‚¤ãƒ³åŒ–: 
+-- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ: reformResOrgWorkMark.pl hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev | toSingleLine.pl > hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.S
+- çµæœã®ç·¨é›†(2):ACK or Mat ãƒ©ãƒ™ãƒ«ä»˜ä¸: vimã§ç·¨é›†
+-- ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆã®èª¬æ˜:
+--- å¯¾è±¡ã®nxmlã”ã¨ã®çµæœè¡Œ(å„1è¡Œ) + ã‚¢ãƒãƒ†ãƒ¼ã‚·ãƒ§ãƒ³è¡Œ
+--- å¯¾è±¡è¡Œ: <ã‚¿ãƒ–>ã§ã¯ã˜ã¾ã‚‹
+--- å„è¡Œã«ãŠã‘ã‚‹ã‚»ãƒ³ãƒ†ãƒ³ã‚¹ãƒ¬ã‚³ãƒ¼ãƒ‰åŒºåˆ‡ã‚Š: <ã‚¿ãƒ–><ã‚»ãƒŸã‚³ãƒ­ãƒ³><ã‚»ãƒŸã‚³ãƒ­ãƒ³><ã‚¿ãƒ–>
+--- ãƒ¬ã‚³ãƒ¼ãƒ‰ã‚»ãƒ³ãƒ†ãƒ³ã‚¹ã®æ§‹æˆ: <ãƒ¬ã‚³ãƒ¼ãƒ‰ID>ã€<ã‚³ãƒ³ãƒ†ãƒ³ãƒ„>ã€<ãƒ’ãƒƒãƒˆãƒªã‚½ãƒ¼ã‚¹>ã€<ãƒ’ãƒƒãƒˆçµ„ç¹”å>ã€<ãƒ’ãƒƒãƒˆã®é †ç•ª>ã€<å‚™è€ƒ>ã€<è³ªå•>ã®<ã‚¿ãƒ–>åŒºåˆ‡ã‚Š
+--- <ãƒªã‚½ãƒ¼ã‚¹å>ã¨<çµ„ç¹”å>ã®åŒºåˆ‡ã‚Š: <ã‚¹ãƒšãƒ¼ã‚¹><ã‚»ãƒŸã‚³ãƒ­ãƒ³><ã‚¹ãƒšãƒ¼ã‚¹>
+- æœ€çµ‚çµæœ: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.E.S.L
+- çµæœã®é›†è¨ˆæƒ…å ±
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
--- Á´ÏÀÊ¸¿ô
+-- å…¨è«–æ–‡æ•°
 grep '^	' hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.E.S | wc
     954   39533  365305
--- ¥»¥ó¥Æ¥ó¥¹¿ô:
+-- ã‚»ãƒ³ãƒ†ãƒ³ã‚¹æ•°:
 --- Total
 grep '^		' hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev | wc
     983   36238  256870
@@ -603,102 +603,102 @@ grep 'ACK			' hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.L |
 --- <Mat>
 grep 'Mat			' hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.L | wc
     737   26845  189192
-###TASK(2.1.8) µ¡´ØÌ¾¡¢¥Ğ¥¤¥ª¥ê¥½¡¼¥¹Ì¾¤¬Æ±»ş½Ğ¸½¤¹¤ë¥»¥ó¥Æ¥ó¥¹¤Î¥Ñ¥¿¡¼¥ó²òÀÏ
-- ÂĞ¾İ: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.E.S.L
-#### ½¸·×1 : </RES>...<ORG> or </ORG>...<RES> ´Ö¡¢Ã±¸ì¿ô¤´¤È¤Î¸¡º÷
-- ¥Ñ¥¿¡¼¥ó½¸·×·ë²Ì: => ÀĞÀî»á¤ËÌä¤¤¹ç¤ï¤»(20170725)
-####===¤¤¤Ş¤³¤³===####
-- ¥Ñ¥¿¡¼¥ó½¸·×·ë²Ì¤Î¤Ş¤È¤á: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/analysis/pattern-bunseki-kekka (¿Ş½ñ´ÛÁí¹çÅ¸)
-#### ½¸·×2 : </RES>...<ORG> or </ORG>...<RES> ´Ö¤ÎÃ±¸ì¿ôÀ©¸Â¤Ê¤· (20160801)
+###TASK(2.1.8) æ©Ÿé–¢åã€ãƒã‚¤ã‚ªãƒªã‚½ãƒ¼ã‚¹åãŒåŒæ™‚å‡ºç¾ã™ã‚‹ã‚»ãƒ³ãƒ†ãƒ³ã‚¹ã®ãƒ‘ã‚¿ãƒ¼ãƒ³è§£æ
+- å¯¾è±¡: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.E.S.L
+#### é›†è¨ˆ1 : </RES>...<ORG> or </ORG>...<RES> é–“ã€å˜èªæ•°ã”ã¨ã®æ¤œç´¢
+- ãƒ‘ã‚¿ãƒ¼ãƒ³é›†è¨ˆçµæœ: => çŸ³å·æ°ã«å•ã„åˆã‚ã›(20170725)
+####===ã„ã¾ã“ã“===####
+- ãƒ‘ã‚¿ãƒ¼ãƒ³é›†è¨ˆçµæœã®ã¾ã¨ã‚: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/analysis/pattern-bunseki-kekka (å›³æ›¸é¤¨ç·åˆå±•)
+#### é›†è¨ˆ2 : </RES>...<ORG> or </ORG>...<RES> é–“ã®å˜èªæ•°åˆ¶é™ãªã— (20160801)
 - RES-ORG@Mat
--- ¥×¥í¥°¥é¥à: /home/kamano/gitsrc/XMLOP/extract_region_RES-ORG.pl
--- ¥¹¥¯¥ê¥×¥È: grep ^Mat hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.E.S.L | awk -F '	' '{print $6}' | /home/kamano/gitsrc/XMLOP/extract_region_RES-ORG.pl > region_RES-ORG_Mat
--- ·ë²Ì: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/region_RES-ORG_Mat
+-- ãƒ—ãƒ­ã‚°ãƒ©ãƒ : /home/kamano/gitsrc/XMLOP/extract_region_RES-ORG.pl
+-- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ: grep ^Mat hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.E.S.L | awk -F '	' '{print $6}' | /home/kamano/gitsrc/XMLOP/extract_region_RES-ORG.pl > region_RES-ORG_Mat
+-- çµæœ: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/region_RES-ORG_Mat
 - RES-ORG@ACK
--- ¥×¥í¥°¥é¥à: /home/kamano/gitsrc/XMLOP/extract_region_RES-ORG.pl
--- ¥¹¥¯¥ê¥×¥È: grep ^ACK hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.E.S.L | awk -F '	' '{print $6}' | /home/kamano/gitsrc/XMLOP/extract_region_RES-ORG.pl > region_RES-ORG_ACK
--- ·ë²Ì: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/region_RES-ORG_ACK
+-- ãƒ—ãƒ­ã‚°ãƒ©ãƒ : /home/kamano/gitsrc/XMLOP/extract_region_RES-ORG.pl
+-- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ: grep ^ACK hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.E.S.L | awk -F '	' '{print $6}' | /home/kamano/gitsrc/XMLOP/extract_region_RES-ORG.pl > region_RES-ORG_ACK
+-- çµæœ: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/region_RES-ORG_ACK
 - ORG-RES@Mat
--- ¥×¥í¥°¥é¥à: /home/kamano/gitsrc/XMLOP/extract_region_ORG-RES.pl
--- ¥¹¥¯¥ê¥×¥È: grep ^Mat hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.E.S.L | awk -F '	' '{print $6}' | /home/kamano/gitsrc/XMLOP/extract_region_ORG-RES.pl > region_ORG-RES_Mat
--- ·ë²Ì: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/region_ORG-RES_Mat
+-- ãƒ—ãƒ­ã‚°ãƒ©ãƒ : /home/kamano/gitsrc/XMLOP/extract_region_ORG-RES.pl
+-- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ: grep ^Mat hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.E.S.L | awk -F '	' '{print $6}' | /home/kamano/gitsrc/XMLOP/extract_region_ORG-RES.pl > region_ORG-RES_Mat
+-- çµæœ: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/region_ORG-RES_Mat
 - ORG-RES@ACK
--- ¥×¥í¥°¥é¥à: /home/kamano/gitsrc/XMLOP/extract_region_ORG-RES.pl
--- ¥¹¥¯¥ê¥×¥È: grep ^ACK hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.E.S.L | awk -F '	' '{print $6}' | /home/kamano/gitsrc/XMLOP/extract_region_ORG-RES.pl > region_ORG-RES_ACK
--- ·ë²Ì: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/region_ORG-RES_ACK
+-- ãƒ—ãƒ­ã‚°ãƒ©ãƒ : /home/kamano/gitsrc/XMLOP/extract_region_ORG-RES.pl
+-- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ: grep ^ACK hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.E.S.L | awk -F '	' '{print $6}' | /home/kamano/gitsrc/XMLOP/extract_region_ORG-RES.pl > region_ORG-RES_ACK
+-- çµæœ: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/region_ORG-RES_ACK
 
-##TASK(2.2)[2](¥Ú¥ó¥Ç¥£¥ó¥°) ¥Ğ¥¤¥ª¥ê¥½¡¼¥¹Ì¾¤ÎÁ°¸å¤Î½Ğ¸½Ê¸»ú(Ã±¸ì)¥Ñ¥¿¡¼¥ó¤è¤êÀµ²ò¥Ğ¥¤¥ª¥ê¥½¡¼¥¹¤«¤òÈ½Äê(20150911)
+##TASK(2.2)[2](ãƒšãƒ³ãƒ‡ã‚£ãƒ³ã‚°) ãƒã‚¤ã‚ªãƒªã‚½ãƒ¼ã‚¹åã®å‰å¾Œã®å‡ºç¾æ–‡å­—(å˜èª)ãƒ‘ã‚¿ãƒ¼ãƒ³ã‚ˆã‚Šæ­£è§£ãƒã‚¤ã‚ªãƒªã‚½ãƒ¼ã‚¹ã‹ã‚’åˆ¤å®š(20150911)
 ###TASK(2.2.1) in ACK
-- ÂĞ¾İ: /BANK/PMC/20140724/elements/acknowledgement/PMC-ACK-v6.tsv.contOnly
-- ¸¡º÷¥¿¡¼¥à¥ê¥¹¥È(ncr,escaped): /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_5.ncr.esc
-- ¥×¥í¥°¥é¥à: /home/kamano/gitsrc/utility/extract_term_tspan.Ppl
-- ¥¹¥¯¥ê¥×¥È: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/match_ResSpan_ACK.sh
-- ·ë²Ì: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/match_ResSpan_ACK
--- ¥ê¥½¡¼¥¹Ì¾ÌµÌ¾²½¥×¥í¥°¥é¥à: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/extract_patt.pl
-###TASK(2.2.2) in Mat #»ş´Ö¤¬¤«¤«¤ë; 1article / 0.5min
-- ÂĞ¾İ: /BANK/PMC/20140724/elements/MERGED/allmaterials/*.contOnly
-- ¸¡º÷¥¿¡¼¥à¥ê¥¹¥È(ncr,escaped): /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_5.ncr.esc
-- ¥×¥í¥°¥é¥à: /home/kamano/gitsrc/utility/extract_term_tspan.Ppl
-- ¥¹¥¯¥ê¥×¥È[local]: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/match_ResSpan_Mat.a[pqr].sh
-- ¥¹¥¯¥ê¥×¥È[hokusai]: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/hokusai/term+span.au.sh
-- ·ë²Ì: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/match_ResSpan_Mat.au
+- å¯¾è±¡: /BANK/PMC/20140724/elements/acknowledgement/PMC-ACK-v6.tsv.contOnly
+- æ¤œç´¢ã‚¿ãƒ¼ãƒ ãƒªã‚¹ãƒˆ(ncr,escaped): /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_5.ncr.esc
+- ãƒ—ãƒ­ã‚°ãƒ©ãƒ : /home/kamano/gitsrc/utility/extract_term_tspan.Ppl
+- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/match_ResSpan_ACK.sh
+- çµæœ: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/match_ResSpan_ACK
+-- ãƒªã‚½ãƒ¼ã‚¹åç„¡ååŒ–ãƒ—ãƒ­ã‚°ãƒ©ãƒ : /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/extract_patt.pl
+###TASK(2.2.2) in Mat #æ™‚é–“ãŒã‹ã‹ã‚‹; 1article / 0.5min
+- å¯¾è±¡: /BANK/PMC/20140724/elements/MERGED/allmaterials/*.contOnly
+- æ¤œç´¢ã‚¿ãƒ¼ãƒ ãƒªã‚¹ãƒˆ(ncr,escaped): /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_5.ncr.esc
+- ãƒ—ãƒ­ã‚°ãƒ©ãƒ : /home/kamano/gitsrc/utility/extract_term_tspan.Ppl
+- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ[local]: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/match_ResSpan_Mat.a[pqr].sh
+- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ[hokusai]: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/hokusai/term+span.au.sh
+- çµæœ: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/match_ResSpan_Mat.au
 
-##TASK(2.3)[3] µ¡´ØÌ¾¤ÎÁ°¸å¤Î½Ğ¸½Ê¸»ú(Ã±¸ì)¥Ñ¥¿¡¼¥ó¤Î¤Ş¤È¤á (20150915)
+##TASK(2.3)[3] æ©Ÿé–¢åã®å‰å¾Œã®å‡ºç¾æ–‡å­—(å˜èª)ãƒ‘ã‚¿ãƒ¼ãƒ³ã®ã¾ã¨ã‚ (20150915)
 ###TASK(2.3.1) in ACK
-- ÂĞ¾İ: /BANK/PMC/20140724/elements/acknowledgement/PMC-ACK-v6.tsv.contOnly
-- ¸¡º÷¥¿¡¼¥à: /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt.sort.uniq.esc
-- ¥×¥í¥°¥é¥à: /home/kamano/gitsrc/utility/extract_phrase_tspan.Ppl
-- ¥¹¥¯¥ê¥×¥È: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/match_OrgSpan_ACK.sh
-- ·ë²Ì: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/match_OrgSpan_ACK
+- å¯¾è±¡: /BANK/PMC/20140724/elements/acknowledgement/PMC-ACK-v6.tsv.contOnly
+- æ¤œç´¢ã‚¿ãƒ¼ãƒ : /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt.sort.uniq.esc
+- ãƒ—ãƒ­ã‚°ãƒ©ãƒ : /home/kamano/gitsrc/utility/extract_phrase_tspan.Ppl
+- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/match_OrgSpan_ACK.sh
+- çµæœ: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/match_OrgSpan_ACK
 ###TASK(2.3.2) in Mat
-- ÂĞ¾İ: /BANK/PMC/20140724/elements/MERGED/allmaterials/allmaterials.au.reg.contOnly
-- ¸¡º÷¥¿¡¼¥à: /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt.sort.uniq.esc
-- ¥×¥í¥°¥é¥à: /home/kamano/gitsrc/utility/extract_phrase_tspan.Ppl
-- ¥¹¥¯¥ê¥×¥È: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/match_OrgSpan_Mat.au.sh
-- ·ë²Ì: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/match_OrgSpan_Mat.au
+- å¯¾è±¡: /BANK/PMC/20140724/elements/MERGED/allmaterials/allmaterials.au.reg.contOnly
+- æ¤œç´¢ã‚¿ãƒ¼ãƒ : /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt.sort.uniq.esc
+- ãƒ—ãƒ­ã‚°ãƒ©ãƒ : /home/kamano/gitsrc/utility/extract_phrase_tspan.Ppl
+- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/match_OrgSpan_Mat.au.sh
+- çµæœ: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/match_OrgSpan_Mat.au
 
 
-#TASK(3): É¾²ÁÂĞ¾İµ¡´ØÌ¾(³ÈÄ¥)¸õÊä·èÄê(/BANK/PMC/20140724/elements/aff) THEME[kaken-26540170]
-#affÎÎ°è¤è¤êÆÀ¤é¤ì¤¿µ¡´ØÌ¾(½»½ê¤Ä¤­)¤òmaterial¡¢ackÎÎ°è¤ËÂĞ¤·¤Æ¸¡º÷¡¢Â¸ºß¤ò³ÎÇ§¡£
-#½êÂ°¤ò¥«¥ó¥Ş¤Ç¶èÀÚ¤ê¡¢³Æ¥Õ¥ì¡¼¥º¤òÂĞ¾İÎÎ°è¤ËÂĞ¤·¤Æ¥Ş¥Ã¥Á¥ó¥°¡£
+#TASK(3): è©•ä¾¡å¯¾è±¡æ©Ÿé–¢å(æ‹¡å¼µ)å€™è£œæ±ºå®š(/BANK/PMC/20140724/elements/aff) THEME[kaken-26540170]
+#affé ˜åŸŸã‚ˆã‚Šå¾—ã‚‰ã‚ŒãŸæ©Ÿé–¢å(ä½æ‰€ã¤ã)ã‚’materialã€acké ˜åŸŸã«å¯¾ã—ã¦æ¤œç´¢ã€å­˜åœ¨ã‚’ç¢ºèªã€‚
+#æ‰€å±ã‚’ã‚«ãƒ³ãƒã§åŒºåˆ‡ã‚Šã€å„ãƒ•ãƒ¬ãƒ¼ã‚ºã‚’å¯¾è±¡é ˜åŸŸã«å¯¾ã—ã¦ãƒãƒƒãƒãƒ³ã‚°ã€‚
 #<tag1>,<tag2>,<tag3>
-- ³Æ¥Õ¥¡¥¤¥ë:
--- ºî¶È¼ê½ç¥Õ¥¡¥¤¥ë(20150625): /BANK/PMC/20140724/elements/aff/PMC-AFFºî¶È¼ê½ç¥á¥â.utf8
--- ½êÂ°ÎÎ°èÃê½Ğ·ë²Ì: /BANK/PMC/20140724/elements/aff/PMC-AFF-v1.tsv
--- ½êÂ°Ãê½Ğ·ë²Ì¤è¤êÉÔÍ×¤Ê¥¿¥°Åù¤ò¼è¤ê½ü¤­¥æ¥Ë¡¼¥¯¥½¡¼¥È: /BANK/PMC/20140724/elements/aff/PMC-AFF-plain-v4
--- ¾åµ­¥Ç¡¼¥¿¤ò¥«¥ó¥Ş¶èÀÚ¤ê¤ÇÀÚ¤ê½Ğ¤·¤¿Âè2¥«¥é¥à¤Î¥Ç¡¼¥¿: /BANK/PMC/20140724/elements/aff/PMC-AFF-tag2
--- ¾åµ­³Æ¥Õ¥¡¥¤¥ë¤Î²òÀâ: /BANK/PMC/20140724/elements/aff/README.Gmail(2015-03-14).pdf
-##TASK(3.1): (ACK) µ¡´ØÌ¾¸õÊä¸¡º÷ in ¼Õ¼­ (20150508)
-### ¼Õ¼­ vs. tag1, tag2 and tag3 (ÀĞÀî»á)
-- ¥Ò¥Ã¥È·ë²Ì¡Ê¥´¥ß´Ş¤à¡Ë: /BANK/PMC/20140724/elements/aff/AFFvsACK/AFFvsACK.log-tagALL-uniqsort
-- ÂçÊ¸»ú¾®Ê¸»ú¥¹¥Ú¡¼¥¹°Ê³°¤ò´Ş¤à¥Õ¥ì¡¼¥º¥Õ¥¡¥¤¥ë: /BANK/PMC/20140724/elements/aff/WIKIvsAFFvsACK+MAT/tokusyu-list/AFFvsACK.log-tagALL-tokusyu-list
-### µ¡´ØÌ¾¸õÊä¤Îwiki¸«½Ğ¤·¸ì¤Ë¤è¤ë³ÎÇ§
-- ·ë²Ì¥Õ¥¡¥¤¥ë(20150625): /BANK/PMC/20140724/elements/aff/WIKIvsAFFvsACK/AFFvsACK.log-tagALL-wikifilterd
-### ¼êºî¶È¤Ë¤è¤ë¤µ¤é¤Ê¤ë¥»¥ì¥¯¥·¥ç¥ó
-- ¥Ç¥£¥ì¥¯¥È¥ê°ÜÆ°: cd /BANK/PMC/20140724/elements/aff/WIKIvsAFFvsACK
-- ¥¹¥¯¥ê¥×¥È: grep -v -E '> [a-zA-Z][a-z]+$' AFFvsACK.log-tagALL-wikifilterd > AFFvsACK.log-tagALL-wikifilterd.select_1
-- ¥¹¥¯¥ê¥×¥È: grep -v -E '> [a-zA-Z0-9][a-zA-Z0-9]$' AFFvsACK.log-tagALL-wikifilterd.select_1 > AFFvsACK.log-tagALL-wikifilterd.select_2
-- ¥¹¥¯¥ê¥×¥È: grep -v -E '> [a-zA-Z][a-z0-9]+$' AFFvsACK.log-tagALL-wikifilterd.select_2 > AFFvsACK.log-tagALL-wikifilterd.select_3
-- ·ë²Ì: /BANK/PMC/20140724/elements/aff/WIKIvsAFFvsACK/AFFvsACK.log-tagALL-wikifilterd.select_3
-- ·ï¿ô(¥É¥­¥å¥á¥ó¥È): 22530
-##TASK(3.2): (Mat)  µ¡´ØÌ¾¸õÊä¸¡º÷ in  ºàÎÁ (20150508)
-### ºàÎÁ vs. tag1, tag2 and tag3 (ÀĞÀî»á)
-- ¥Ò¥Ã¥È·ë²Ì¡Ê¥´¥ß´Ş¤à¡Ë: /BANK/PMC/20140724/elements/aff/AFFvsMAT/AFFvsMAT.log-tagALL-uniqsort
-- ÂçÊ¸»ú¾®Ê¸»ú¥¹¥Ú¡¼¥¹°Ê³°¤ò´Ş¤à¥Õ¥ì¡¼¥º¥Õ¥¡¥¤¥ë: /BANK/PMC/20140724/elements/aff/WIKIvsAFFvsACK+MAT/tokusyu-list/AFFvsMAT.log-tagALL-tokusyu-list
-### µ¡´ØÌ¾¸õÊä¤Îwiki¸«½Ğ¤·¸ì¤Ë¤è¤ë³ÎÇ§
-- ·ë²Ì¥Õ¥¡¥¤¥ë(20150625): /BANK/PMC/20140724/elements/aff/WIKIvsAFFvsMAT/AFFvsMAT.log-tagALL-wikifilterd
-### ¼êºî¶È¤Ë¤è¤ë¤µ¤é¤Ê¤ë¥»¥ì¥¯¥·¥ç¥ó
-- ¥Ç¥£¥ì¥¯¥È¥ê°ÜÆ°: cd /BANK/PMC/20140724/elements/aff/WIKIvsAFFvsMAT/
-- ¥¹¥¯¥ê¥×¥È: grep -v -E '> [a-zA-Z][a-z]+$' AFFvsMAT.log-tagALL-wikifilterd > AFFvsMAT.log-tagALL-wikifilterd.select_1
-- ¥¹¥¯¥ê¥×¥È: grep -v -E '> [a-zA-Z0-9][a-zA-Z0-9]$' AFFvsMAT.log-tagALL-wikifilterd.select_1 > AFFvsMAT.log-tagALL-wikifilterd.select_2
-- ¥¹¥¯¥ê¥×¥È: grep -v -E '> [a-zA-Z][a-z0-9]+$' AFFvsMAT.log-tagALL-wikifilterd.select_2 > AFFvsMAT.log-tagALL-wikifilterd.select_3
-- ·ë²Ì: /BANK/PMC/20140724/elements/aff/WIKIvsAFFvsMAT/AFFvsMAT.log-tagALL-wikifilterd.select_3
-- ·ï¿ô(¥É¥­¥å¥á¥ó¥È): 19091
+- å„ãƒ•ã‚¡ã‚¤ãƒ«:
+-- ä½œæ¥­æ‰‹é †ãƒ•ã‚¡ã‚¤ãƒ«(20150625): /BANK/PMC/20140724/elements/aff/PMC-AFFä½œæ¥­æ‰‹é †ãƒ¡ãƒ¢.utf8
+-- æ‰€å±é ˜åŸŸæŠ½å‡ºçµæœ: /BANK/PMC/20140724/elements/aff/PMC-AFF-v1.tsv
+-- æ‰€å±æŠ½å‡ºçµæœã‚ˆã‚Šä¸è¦ãªã‚¿ã‚°ç­‰ã‚’å–ã‚Šé™¤ããƒ¦ãƒ‹ãƒ¼ã‚¯ã‚½ãƒ¼ãƒˆ: /BANK/PMC/20140724/elements/aff/PMC-AFF-plain-v4
+-- ä¸Šè¨˜ãƒ‡ãƒ¼ã‚¿ã‚’ã‚«ãƒ³ãƒåŒºåˆ‡ã‚Šã§åˆ‡ã‚Šå‡ºã—ãŸç¬¬2ã‚«ãƒ©ãƒ ã®ãƒ‡ãƒ¼ã‚¿: /BANK/PMC/20140724/elements/aff/PMC-AFF-tag2
+-- ä¸Šè¨˜å„ãƒ•ã‚¡ã‚¤ãƒ«ã®è§£èª¬: /BANK/PMC/20140724/elements/aff/README.Gmail(2015-03-14).pdf
+##TASK(3.1): (ACK) æ©Ÿé–¢åå€™è£œæ¤œç´¢ in è¬è¾ (20150508)
+### è¬è¾ vs. tag1, tag2 and tag3 (çŸ³å·æ°)
+- ãƒ’ãƒƒãƒˆçµæœï¼ˆã‚´ãƒŸå«ã‚€ï¼‰: /BANK/PMC/20140724/elements/aff/AFFvsACK/AFFvsACK.log-tagALL-uniqsort
+- å¤§æ–‡å­—å°æ–‡å­—ã‚¹ãƒšãƒ¼ã‚¹ä»¥å¤–ã‚’å«ã‚€ãƒ•ãƒ¬ãƒ¼ã‚ºãƒ•ã‚¡ã‚¤ãƒ«: /BANK/PMC/20140724/elements/aff/WIKIvsAFFvsACK+MAT/tokusyu-list/AFFvsACK.log-tagALL-tokusyu-list
+### æ©Ÿé–¢åå€™è£œã®wikiè¦‹å‡ºã—èªã«ã‚ˆã‚‹ç¢ºèª
+- çµæœãƒ•ã‚¡ã‚¤ãƒ«(20150625): /BANK/PMC/20140724/elements/aff/WIKIvsAFFvsACK/AFFvsACK.log-tagALL-wikifilterd
+### æ‰‹ä½œæ¥­ã«ã‚ˆã‚‹ã•ã‚‰ãªã‚‹ã‚»ãƒ¬ã‚¯ã‚·ãƒ§ãƒ³
+- ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªç§»å‹•: cd /BANK/PMC/20140724/elements/aff/WIKIvsAFFvsACK
+- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ: grep -v -E '> [a-zA-Z][a-z]+$' AFFvsACK.log-tagALL-wikifilterd > AFFvsACK.log-tagALL-wikifilterd.select_1
+- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ: grep -v -E '> [a-zA-Z0-9][a-zA-Z0-9]$' AFFvsACK.log-tagALL-wikifilterd.select_1 > AFFvsACK.log-tagALL-wikifilterd.select_2
+- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ: grep -v -E '> [a-zA-Z][a-z0-9]+$' AFFvsACK.log-tagALL-wikifilterd.select_2 > AFFvsACK.log-tagALL-wikifilterd.select_3
+- çµæœ: /BANK/PMC/20140724/elements/aff/WIKIvsAFFvsACK/AFFvsACK.log-tagALL-wikifilterd.select_3
+- ä»¶æ•°(ãƒ‰ã‚­ãƒ¥ãƒ¡ãƒ³ãƒˆ): 22530
+##TASK(3.2): (Mat)  æ©Ÿé–¢åå€™è£œæ¤œç´¢ in  ææ–™ (20150508)
+### ææ–™ vs. tag1, tag2 and tag3 (çŸ³å·æ°)
+- ãƒ’ãƒƒãƒˆçµæœï¼ˆã‚´ãƒŸå«ã‚€ï¼‰: /BANK/PMC/20140724/elements/aff/AFFvsMAT/AFFvsMAT.log-tagALL-uniqsort
+- å¤§æ–‡å­—å°æ–‡å­—ã‚¹ãƒšãƒ¼ã‚¹ä»¥å¤–ã‚’å«ã‚€ãƒ•ãƒ¬ãƒ¼ã‚ºãƒ•ã‚¡ã‚¤ãƒ«: /BANK/PMC/20140724/elements/aff/WIKIvsAFFvsACK+MAT/tokusyu-list/AFFvsMAT.log-tagALL-tokusyu-list
+### æ©Ÿé–¢åå€™è£œã®wikiè¦‹å‡ºã—èªã«ã‚ˆã‚‹ç¢ºèª
+- çµæœãƒ•ã‚¡ã‚¤ãƒ«(20150625): /BANK/PMC/20140724/elements/aff/WIKIvsAFFvsMAT/AFFvsMAT.log-tagALL-wikifilterd
+### æ‰‹ä½œæ¥­ã«ã‚ˆã‚‹ã•ã‚‰ãªã‚‹ã‚»ãƒ¬ã‚¯ã‚·ãƒ§ãƒ³
+- ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªç§»å‹•: cd /BANK/PMC/20140724/elements/aff/WIKIvsAFFvsMAT/
+- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ: grep -v -E '> [a-zA-Z][a-z]+$' AFFvsMAT.log-tagALL-wikifilterd > AFFvsMAT.log-tagALL-wikifilterd.select_1
+- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ: grep -v -E '> [a-zA-Z0-9][a-zA-Z0-9]$' AFFvsMAT.log-tagALL-wikifilterd.select_1 > AFFvsMAT.log-tagALL-wikifilterd.select_2
+- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ: grep -v -E '> [a-zA-Z][a-z0-9]+$' AFFvsMAT.log-tagALL-wikifilterd.select_2 > AFFvsMAT.log-tagALL-wikifilterd.select_3
+- çµæœ: /BANK/PMC/20140724/elements/aff/WIKIvsAFFvsMAT/AFFvsMAT.log-tagALL-wikifilterd.select_3
+- ä»¶æ•°(ãƒ‰ã‚­ãƒ¥ãƒ¡ãƒ³ãƒˆ): 19091
 
 
-#TASK(4)ÂĞ¾İµ¡´ØÌ¾¤ò´Ş¤à¥Ñ¥¿¡¼¥ó¸¡º÷
-#Ì¤¼Â¹Ô
-#Í½Ìó¥Õ¥¡¥¤¥ë:
+#TASK(4)å¯¾è±¡æ©Ÿé–¢åã‚’å«ã‚€ãƒ‘ã‚¿ãƒ¼ãƒ³æ¤œç´¢
+#æœªå®Ÿè¡Œ
+#äºˆç´„ãƒ•ã‚¡ã‚¤ãƒ«:
 - hit_Aff_from_Ack
 - hit_Aff_from_Mat
 - extract_reg_Aff_from_Ack
@@ -708,684 +708,684 @@ grep 'Mat			' hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.L |
 
 
 ############################
-#===== ¤³¤³¤«¤éµì¼ê½ç =====#
+#===== ã“ã“ã‹ã‚‰æ—§æ‰‹é † =====#
 ############################
 
-#[ÉÔºÎÍÑ][old]TASK(2): ´ûÃÎ¥Ğ¥¤¥ª¥ê¥½¡¼¥¹Ì¾¡¦µ¡´ØÌ¾¤Î¸¡º÷¤È¥Ñ¥¿¡¼¥óÄêµÁ(NBRP) ACK¤Î½èÍı¤Ë¥Ğ¥°(20150728)
-#3ÃÊ³¬¤Î¸¡º÷¤ò¹Ô¤Ê¤¦:1.µ¡´ØÌ¾¤¬½Ğ¸½¤¹¤ë¹Ô¤òÃê½Ğ(20150708) 2.¤µ¤é¤Ë¥Ğ¥¤¥ª¥ê¥½¡¼¥¹Ì¾¤¬½Ğ¸½¤¹¤ë¹Ô¤òÃê½Ğ(20150710) 3.Ãê½Ğ·ë²Ì¤ËÂĞ¤·¤Æ¡¢µ¡´ØÌ¾¥İ¥¸¥·¥ç¥ó¤È¥Ğ¥¤¥ª¥ê¥½¡¼¥¹Ì¾¥İ¥¸¥·¥ç¥ó¤ò¸¡º÷
-##TASK(2.1)´ûÃÎµ¡´ØÌ¾(NBRP)½Ğ¸½article¤ÎÃê½Ğ
-###TASK(2.1.1)¸¡º÷¥¿¡¼¥à¤ÎÄ´À°
-- ¸¡º÷¥¿¡¼¥à(¸µ): /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt
-- ¥¨¥¹¥±¡¼¥×¥³¥Ş¥ó¥É: escape_char sf=/BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt lf=/usr/local/var/perl_esc.list > /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt.esc
-###TASK(2.1.2)´ûÃÎµ¡´ØÌ¾inACK
-- ¸¡º÷ÂĞ¾İ: /BANK/PMC/20140724/elements/acknowledgement/PMC-ACK-v6_pmid.tsv
- 3¥«¥é¥à¤á¤ËÂĞ¤·¤Æ¸¡º÷
-- ¸¡º÷¥¿¡¼¥à(¥¹¥±¡¼¥×): /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt.esc
-- ¥×¥í¥°¥é¥à: /home/kamano/gitsrc/utility/hit_least.pl
-- ¥¹¥¯¥ê¥×¥È: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/hit_Org_from_ACK.sh
-- ·ë²Ì(20150708): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_Org_from_ACK.tsv
-###TASK(2.1.3)´ûÃÎµ¡´ØÌ¾inMat
-- ¸¡º÷ÂĞ¾İ: /BANK/PMC/20140724/elements/MERGED/allmaterials/*.cont
- 2¥«¥é¥à¤á¤ËÂĞ¤·¤Æ¸¡º÷
-- ¸¡º÷¥¿¡¼¥à(¥¹¥±¡¼¥×ºÑ¤ß): /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt.esc
-- ¥×¥í¥°¥é¥à: /home/kamano/gitsrc/utility/hit_least.pl
-- ¥¹¥¯¥ê¥×¥È: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/hit_Org_from_Mat.sh
-- ·ë²Ì(20150708): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_Org_from_Mat.au.tsv
-##TASK(2.2)´ûÃÎ¥Ğ¥¤¥ª¥ê¥½¡¼¥¹Ì¾(NBRP)½Ğ¸½article¤ÎÃê½Ğ
-###TASK(2.2.1)¸¡º÷¥¿¡¼¥à¤ÎÄ´À°
-- ¸¡º÷¥¿¡¼¥à(¸µ): /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_3
-- ¸¡º÷¥¿¡¼¥à(UTF8)¤ò¿ôÃÍÊ¸»ú»²¾È¤ËÊÑ´¹: utf8_to_ncr resterms.sort.uniq.select_3 > resterms.sort.uniq.select_3.ncr
-- perl¸¡º÷ÍÑ¤Ë¥¨¥¹¥±¡¼¥×: escape_char sf=/BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_3.ncr lf=/usr/local/var/perl_esc.list > /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_3.ncr.esc
-###TASK(2.2.2)´ûÃÎ¥Ğ¥¤¥ª¥ê¥½¡¼¥¹Ì¾inACK with ´ûÃÎµ¡´ØÌ¾
-- ¸¡º÷ÂĞ¾İ: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_Org_from_ACK.tsv
-- ¸¡º÷¥¿¡¼¥à(¥¨¥¹¥±¡¼¥×): /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_3.ncr.esc
-- ¥×¥í¥°¥é¥à: /home/kamano/gitsrc/utility/hit_least.pl
-- ¥¹¥¯¥ê¥×¥È: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/hit_ResOrg_from_ACK.sh
-- ·ë²Ì(20150710): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv
-###TASK(2.2.3)´ûÃÎ¥Ğ¥¤¥ª¥ê¥½¡¼¥¹Ì¾inMat with ´ûÃÎµ¡´ØÌ¾
-- ¸¡º÷ÂĞ¾İ: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_Org_from_Mat.a[a-u].tsv
-- ¸¡º÷¥¿¡¼¥à(¥¨¥¹¥±¡¼¥×ºÑ¤ß): /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_3.ncr.esc
-- ¥×¥í¥°¥é¥à: /home/kamano/gitsrc/utility/hit_least.pl
-- ¥¹¥¯¥ê¥×¥È: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/hit_ResOrg_from_Mat.sh
-- ·ë²Ì(20150728): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_Mat.au.tsv
-##TASK(2.3)´ûÃÎµ¡´ØÌ¾¤Î¥İ¥¸¥·¥ç¥ó·èÄê(20150711)
-###TASK(2.3.1)´ûÃÎµ¡´ØÌ¾position in ACK
-- ¸¡º÷ÂĞ¾İ(XML¤Î¤ß): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv.XMLonly
- /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv ¤è¤êÂè3¥«¥é¥à¤Î¤ß¤òÃê½Ğ¤·¤¿¤â¤Î
--- ¥¹¥¯¥ê¥×¥È: awk -F '	' '{print $3}' /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv > /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv.XMLonly
-- ¸¡º÷¥¿¡¼¥à(¥¨¥¹¥±¡¼¥×¤Ê¤·): /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt.sort.uniq
-- ¥×¥í¥°¥é¥à: match_position
-- ¥¹¥¯¥ê¥×¥È: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/extract_reg_Org_from_ACK.sh
-- ·ë²Ì: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/extract_reg_Org_from_ACK
-###TASK(2.3.2)´ûÃÎµ¡´ØÌ¾position in Mat
-- ¸¡º÷ÂĞ¾İ(XML¤Î¤ß): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_Mat.a[a-u].tsv.XMLonly
- /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_Mat.a[a-u].tsv ¤è¤êÂè2¥«¥é¥à¤Î¤ß¤òÃê½Ğ¤·¤¿¤â¤Î
--- ¥¹¥¯¥ê¥×¥È: 
+#[ä¸æ¡ç”¨][old]TASK(2): æ—¢çŸ¥ãƒã‚¤ã‚ªãƒªã‚½ãƒ¼ã‚¹åãƒ»æ©Ÿé–¢åã®æ¤œç´¢ã¨ãƒ‘ã‚¿ãƒ¼ãƒ³å®šç¾©(NBRP) ACKã®å‡¦ç†ã«ãƒã‚°(20150728)
+#3æ®µéšã®æ¤œç´¢ã‚’è¡Œãªã†:1.æ©Ÿé–¢åãŒå‡ºç¾ã™ã‚‹è¡Œã‚’æŠ½å‡º(20150708) 2.ã•ã‚‰ã«ãƒã‚¤ã‚ªãƒªã‚½ãƒ¼ã‚¹åãŒå‡ºç¾ã™ã‚‹è¡Œã‚’æŠ½å‡º(20150710) 3.æŠ½å‡ºçµæœã«å¯¾ã—ã¦ã€æ©Ÿé–¢åãƒã‚¸ã‚·ãƒ§ãƒ³ã¨ãƒã‚¤ã‚ªãƒªã‚½ãƒ¼ã‚¹åãƒã‚¸ã‚·ãƒ§ãƒ³ã‚’æ¤œç´¢
+##TASK(2.1)æ—¢çŸ¥æ©Ÿé–¢å(NBRP)å‡ºç¾articleã®æŠ½å‡º
+###TASK(2.1.1)æ¤œç´¢ã‚¿ãƒ¼ãƒ ã®èª¿æ•´
+- æ¤œç´¢ã‚¿ãƒ¼ãƒ (å…ƒ): /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt
+- ã‚¨ã‚¹ã‚±ãƒ¼ãƒ—ã‚³ãƒãƒ³ãƒ‰: escape_char sf=/BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt lf=/usr/local/var/perl_esc.list > /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt.esc
+###TASK(2.1.2)æ—¢çŸ¥æ©Ÿé–¢åinACK
+- æ¤œç´¢å¯¾è±¡: /BANK/PMC/20140724/elements/acknowledgement/PMC-ACK-v6_pmid.tsv
+ 3ã‚«ãƒ©ãƒ ã‚ã«å¯¾ã—ã¦æ¤œç´¢
+- æ¤œç´¢ã‚¿ãƒ¼ãƒ (ã‚¹ã‚±ãƒ¼ãƒ—): /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt.esc
+- ãƒ—ãƒ­ã‚°ãƒ©ãƒ : /home/kamano/gitsrc/utility/hit_least.pl
+- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/hit_Org_from_ACK.sh
+- çµæœ(20150708): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_Org_from_ACK.tsv
+###TASK(2.1.3)æ—¢çŸ¥æ©Ÿé–¢åinMat
+- æ¤œç´¢å¯¾è±¡: /BANK/PMC/20140724/elements/MERGED/allmaterials/*.cont
+ 2ã‚«ãƒ©ãƒ ã‚ã«å¯¾ã—ã¦æ¤œç´¢
+- æ¤œç´¢ã‚¿ãƒ¼ãƒ (ã‚¹ã‚±ãƒ¼ãƒ—æ¸ˆã¿): /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt.esc
+- ãƒ—ãƒ­ã‚°ãƒ©ãƒ : /home/kamano/gitsrc/utility/hit_least.pl
+- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/hit_Org_from_Mat.sh
+- çµæœ(20150708): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_Org_from_Mat.au.tsv
+##TASK(2.2)æ—¢çŸ¥ãƒã‚¤ã‚ªãƒªã‚½ãƒ¼ã‚¹å(NBRP)å‡ºç¾articleã®æŠ½å‡º
+###TASK(2.2.1)æ¤œç´¢ã‚¿ãƒ¼ãƒ ã®èª¿æ•´
+- æ¤œç´¢ã‚¿ãƒ¼ãƒ (å…ƒ): /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_3
+- æ¤œç´¢ã‚¿ãƒ¼ãƒ (UTF8)ã‚’æ•°å€¤æ–‡å­—å‚ç…§ã«å¤‰æ›: utf8_to_ncr resterms.sort.uniq.select_3 > resterms.sort.uniq.select_3.ncr
+- perlæ¤œç´¢ç”¨ã«ã‚¨ã‚¹ã‚±ãƒ¼ãƒ—: escape_char sf=/BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_3.ncr lf=/usr/local/var/perl_esc.list > /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_3.ncr.esc
+###TASK(2.2.2)æ—¢çŸ¥ãƒã‚¤ã‚ªãƒªã‚½ãƒ¼ã‚¹åinACK with æ—¢çŸ¥æ©Ÿé–¢å
+- æ¤œç´¢å¯¾è±¡: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_Org_from_ACK.tsv
+- æ¤œç´¢ã‚¿ãƒ¼ãƒ (ã‚¨ã‚¹ã‚±ãƒ¼ãƒ—): /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_3.ncr.esc
+- ãƒ—ãƒ­ã‚°ãƒ©ãƒ : /home/kamano/gitsrc/utility/hit_least.pl
+- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/hit_ResOrg_from_ACK.sh
+- çµæœ(20150710): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv
+###TASK(2.2.3)æ—¢çŸ¥ãƒã‚¤ã‚ªãƒªã‚½ãƒ¼ã‚¹åinMat with æ—¢çŸ¥æ©Ÿé–¢å
+- æ¤œç´¢å¯¾è±¡: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_Org_from_Mat.a[a-u].tsv
+- æ¤œç´¢ã‚¿ãƒ¼ãƒ (ã‚¨ã‚¹ã‚±ãƒ¼ãƒ—æ¸ˆã¿): /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_3.ncr.esc
+- ãƒ—ãƒ­ã‚°ãƒ©ãƒ : /home/kamano/gitsrc/utility/hit_least.pl
+- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/hit_ResOrg_from_Mat.sh
+- çµæœ(20150728): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_Mat.au.tsv
+##TASK(2.3)æ—¢çŸ¥æ©Ÿé–¢åã®ãƒã‚¸ã‚·ãƒ§ãƒ³æ±ºå®š(20150711)
+###TASK(2.3.1)æ—¢çŸ¥æ©Ÿé–¢åposition in ACK
+- æ¤œç´¢å¯¾è±¡(XMLã®ã¿): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv.XMLonly
+ /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv ã‚ˆã‚Šç¬¬3ã‚«ãƒ©ãƒ ã®ã¿ã‚’æŠ½å‡ºã—ãŸã‚‚ã®
+-- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ: awk -F '	' '{print $3}' /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv > /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv.XMLonly
+- æ¤œç´¢ã‚¿ãƒ¼ãƒ (ã‚¨ã‚¹ã‚±ãƒ¼ãƒ—ãªã—): /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt.sort.uniq
+- ãƒ—ãƒ­ã‚°ãƒ©ãƒ : match_position
+- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/extract_reg_Org_from_ACK.sh
+- çµæœ: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/extract_reg_Org_from_ACK
+###TASK(2.3.2)æ—¢çŸ¥æ©Ÿé–¢åposition in Mat
+- æ¤œç´¢å¯¾è±¡(XMLã®ã¿): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_Mat.a[a-u].tsv.XMLonly
+ /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_Mat.a[a-u].tsv ã‚ˆã‚Šç¬¬2ã‚«ãƒ©ãƒ ã®ã¿ã‚’æŠ½å‡ºã—ãŸã‚‚ã®
+-- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ: 
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015;
 for alf in aa ab ac ad ae af ag ah ai aj ak al am an ao ap aq ar as at au; do awk -F '	' '{print $2}' hit_ResOrg_from_Mat.$alf.tsv > hit_ResOrg_from_Mat.$alf.tsv.XMLonly; done
-- ¸¡º÷¥¿¡¼¥à(¥¨¥¹¥±¡¼¥×¤Ê¤·): /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt.sort.uniq
-- ¥×¥í¥°¥é¥à: match_position
-- ¥¹¥¯¥ê¥×¥È: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/extract_reg_Org_from_Mat.sh
-- ·ë²Ì: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/extract_reg_Org_from_Mat.au
-##TASK(2.4)´ûÃÎ¥Ğ¥¤¥ª¥ê¥½¡¼¥¹Ì¾¤Î¥İ¥¸¥·¥ç¥ó·èÄê(20150711)
-###TASK(2.4.1)´ûÃÎ¥Ğ¥¤¥ª¥ê¥½¡¼¥¹Ì¾position in ACK
-- ¸¡º÷ÂĞ¾İ(XML¤Î¤ß): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv.XMLonly
-- ¸¡º÷¥¿¡¼¥à(¥¨¥¹¥±¡¼¥×¤Ê¤·): /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_3.ncr
-- ¥×¥í¥°¥é¥à: match_position
-- ¥¹¥¯¥ê¥×¥È: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/extract_reg_Res_from_ACK.sh
-- ·ë²Ì: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/extract_reg_Res_from_ACK
-###TASK(2.4.2)´ûÃÎ¥Ğ¥¤¥ª¥ê¥½¡¼¥¹Ì¾position in Mat
-- ¸¡º÷ÂĞ¾İ(XML¤Î¤ß): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_Mat.a[a-u].tsv.XMLonly
-- ¸¡º÷¥¿¡¼¥à(¥¨¥¹¥±¡¼¥×¤Ê¤·): /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_3.ncr
-- ¥×¥í¥°¥é¥à: match_position
-- ¥¹¥¯¥ê¥×¥È: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/extract_reg_Res_from_Mat.sh
-- ·ë²Ì: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/extract_reg_Res_from_Mat.au
-##TASK(2.5) ´ûÃÎµ¡´ØÌ¾position·ë²Ì¡¢´ûÃÎ¥Ğ¥¤¥ª¥ê¥½¡¼¥¹Ì¾position·ë²Ì¡¢¥¿¡¼¥²¥Ã¥È¥»¥ó¥Æ¥ó¥¹¤ÎÁÈ(¤Ş¤È¤á)¤òºî¤ë
+- æ¤œç´¢ã‚¿ãƒ¼ãƒ (ã‚¨ã‚¹ã‚±ãƒ¼ãƒ—ãªã—): /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt.sort.uniq
+- ãƒ—ãƒ­ã‚°ãƒ©ãƒ : match_position
+- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/extract_reg_Org_from_Mat.sh
+- çµæœ: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/extract_reg_Org_from_Mat.au
+##TASK(2.4)æ—¢çŸ¥ãƒã‚¤ã‚ªãƒªã‚½ãƒ¼ã‚¹åã®ãƒã‚¸ã‚·ãƒ§ãƒ³æ±ºå®š(20150711)
+###TASK(2.4.1)æ—¢çŸ¥ãƒã‚¤ã‚ªãƒªã‚½ãƒ¼ã‚¹åposition in ACK
+- æ¤œç´¢å¯¾è±¡(XMLã®ã¿): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv.XMLonly
+- æ¤œç´¢ã‚¿ãƒ¼ãƒ (ã‚¨ã‚¹ã‚±ãƒ¼ãƒ—ãªã—): /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_3.ncr
+- ãƒ—ãƒ­ã‚°ãƒ©ãƒ : match_position
+- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/extract_reg_Res_from_ACK.sh
+- çµæœ: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/extract_reg_Res_from_ACK
+###TASK(2.4.2)æ—¢çŸ¥ãƒã‚¤ã‚ªãƒªã‚½ãƒ¼ã‚¹åposition in Mat
+- æ¤œç´¢å¯¾è±¡(XMLã®ã¿): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_Mat.a[a-u].tsv.XMLonly
+- æ¤œç´¢ã‚¿ãƒ¼ãƒ (ã‚¨ã‚¹ã‚±ãƒ¼ãƒ—ãªã—): /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_3.ncr
+- ãƒ—ãƒ­ã‚°ãƒ©ãƒ : match_position
+- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/extract_reg_Res_from_Mat.sh
+- çµæœ: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/extract_reg_Res_from_Mat.au
+##TASK(2.5) æ—¢çŸ¥æ©Ÿé–¢åpositionçµæœã€æ—¢çŸ¥ãƒã‚¤ã‚ªãƒªã‚½ãƒ¼ã‚¹åpositionçµæœã€ã‚¿ãƒ¼ã‚²ãƒƒãƒˆã‚»ãƒ³ãƒ†ãƒ³ã‚¹ã®çµ„(ã¾ã¨ã‚)ã‚’ä½œã‚‹
 ###TASK(2.5.1) in ACK
-- ÂĞ¾İ(¥½¡¼¥¹): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv
-- ÂĞ¾İ(µ¡´ØÌ¾): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/extract_reg_Org_from_ACK
-- ÂĞ¾İ(¥Ğ¥¤¥ª¥ê¥½¡¼¥¹Ì¾):  /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/extract_reg_Res_from_ACK
-- ¥×¥í¥°¥é¥à: /home/kamano/gitsrc/utility/paste_Res_Org_Src.pl
-- ¥¹¥¯¥ê¥×¥È: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/pasteSrcOrgRes_ACK.sh
-- ·ë²Ì: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv+Org+Res
+- å¯¾è±¡(ã‚½ãƒ¼ã‚¹): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv
+- å¯¾è±¡(æ©Ÿé–¢å): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/extract_reg_Org_from_ACK
+- å¯¾è±¡(ãƒã‚¤ã‚ªãƒªã‚½ãƒ¼ã‚¹å):  /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/extract_reg_Res_from_ACK
+- ãƒ—ãƒ­ã‚°ãƒ©ãƒ : /home/kamano/gitsrc/utility/paste_Res_Org_Src.pl
+- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/pasteSrcOrgRes_ACK.sh
+- çµæœ: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv+Org+Res
 ###TASK(2.5.2) in Mat
-- ÂĞ¾İ(¥½¡¼¥¹): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_Mat.au.tsv
-- ÂĞ¾İ(µ¡´ØÌ¾): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/extract_reg_Org_from_Mat.au
-- ÂĞ¾İ(¥Ğ¥¤¥ª¥ê¥½¡¼¥¹Ì¾):  /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/extract_reg_Res_from_Mat.au
-- ¥×¥í¥°¥é¥à: paste_Res_Org_Src.pl
-- ¥¹¥¯¥ê¥×¥È: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/pasteSrcOrgRes_Mat.sh
-- ·ë²Ì: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_Mat.au.tsv+Org+Res
-###TASK(2.5.3) ¤Ş¤È¤á¤è¤êÌµÍı¤ä¤ê¥«¥é¡¼¥Æ¥­¥¹¥ÈHTML¤ËÊÑ´¹
-- ÂĞ¾İ: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/*.tsv+Org+Res
-- ¥×¥í¥°¥é¥à: /home/kamano/gitsrc/XMLOP/SrcOrgRes_to_html.pl
-- ¥¹¥¯¥ê¥×¥È: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/SrcOrgRes_to_html.sh
-- ·ë²Ì: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/*.tsv+Org+Res.html
-###TASK(2.5.4) ¤Ş¤È¤á¤è¤êOrg Res¤¬ÁĞÊı½Ğ¸½¤¹¤ë¥»¥ó¥Æ¥ó¥¹¤òÁªÂò¡¢ÌµÍı¤ä¤ê¥«¥é¡¼¥Æ¥­¥¹¥ÈHTML¤ËÊÑ´¹
-- ÂĞ¾İ: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/*.tsv+Org+Res
-- ¥×¥í¥°¥é¥à: /home/kamano/gitsrc/XMLOP/SrcOrgRes-Sel_to_html.pl
-- ¥¹¥¯¥ê¥×¥È: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/SrcOrgRes-Sel_to_html.sh
+- å¯¾è±¡(ã‚½ãƒ¼ã‚¹): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_Mat.au.tsv
+- å¯¾è±¡(æ©Ÿé–¢å): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/extract_reg_Org_from_Mat.au
+- å¯¾è±¡(ãƒã‚¤ã‚ªãƒªã‚½ãƒ¼ã‚¹å):  /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/extract_reg_Res_from_Mat.au
+- ãƒ—ãƒ­ã‚°ãƒ©ãƒ : paste_Res_Org_Src.pl
+- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/pasteSrcOrgRes_Mat.sh
+- çµæœ: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_Mat.au.tsv+Org+Res
+###TASK(2.5.3) ã¾ã¨ã‚ã‚ˆã‚Šç„¡ç†ã‚„ã‚Šã‚«ãƒ©ãƒ¼ãƒ†ã‚­ã‚¹ãƒˆHTMLã«å¤‰æ›
+- å¯¾è±¡: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/*.tsv+Org+Res
+- ãƒ—ãƒ­ã‚°ãƒ©ãƒ : /home/kamano/gitsrc/XMLOP/SrcOrgRes_to_html.pl
+- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/SrcOrgRes_to_html.sh
+- çµæœ: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/*.tsv+Org+Res.html
+###TASK(2.5.4) ã¾ã¨ã‚ã‚ˆã‚ŠOrg ResãŒåŒæ–¹å‡ºç¾ã™ã‚‹ã‚»ãƒ³ãƒ†ãƒ³ã‚¹ã‚’é¸æŠã€ç„¡ç†ã‚„ã‚Šã‚«ãƒ©ãƒ¼ãƒ†ã‚­ã‚¹ãƒˆHTMLã«å¤‰æ›
+- å¯¾è±¡: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/*.tsv+Org+Res
+- ãƒ—ãƒ­ã‚°ãƒ©ãƒ : /home/kamano/gitsrc/XMLOP/SrcOrgRes-Sel_to_html.pl
+- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/SrcOrgRes-Sel_to_html.sh
 (20150728)
-##TASK(2.6) ¥ê¥½¡¼¥¹¥Í¡¼¥à¥ê¥¹¥È¤Î½¤Àµ
-- ¥ê¥½¡¼¥¹¥Í¡¼¥à¥Õ¥¡¥¤¥ë¥³¥Ô¡¼: cp /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_3 /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_3.org
-- ¥ê¥½¡¼¥¹¥Í¡¼¥à½¤Àµ: vim /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_3
-##TASK:Loop(2.7) (¥Ğ¥¤¥ª¥ê¥½¡¼¥¹Ì¾¤ÎÄ´À°):2
-##TASK(2.2)´ûÃÎ¥Ğ¥¤¥ª¥ê¥½¡¼¥¹Ì¾(NBRP)¸¡º÷
-###TASK(2.2.1)´ûÃÎ¥Ğ¥¤¥ª¥ê¥½¡¼¥¹Ì¾inACK with ´ûÃÎµ¡´ØÌ¾
-- ¸¡º÷¥¿¡¼¥à(UTF8)¤ò¿ôÃÍÊ¸»ú»²¾È¤ËÊÑ´¹: utf8_to_ncr /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_3 > /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_3.ncr
-- perl¸¡º÷ÍÑ¤Ë¥¨¥¹¥±¡¼¥×: escape_char sf=/BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_3.ncr lf=/usr/local/var/perl_esc.list > /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_3.ncr.esc
-- ¥¹¥¯¥ê¥×¥È(4min): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/hit_ResOrg_from_ACK.sh
-- ·ë²Ì(20150715): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv
-###TASK(2.2.2)´ûÃÎ¥Ğ¥¤¥ª¥ê¥½¡¼¥¹Ì¾inMat with ´ûÃÎµ¡´ØÌ¾
-- ¥¹¥¯¥ê¥×¥È: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/hit_ResOrg_from_Mat.sh
-- ·ë²Ì(20150715): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_Mat.au.tsv
-##TASK(2.4)´ûÃÎ¥Ğ¥¤¥ª¥ê¥½¡¼¥¹Ì¾¤Î¥İ¥¸¥·¥ç¥ó·èÄê(20150716)
-###TASK(2.4.1)´ûÃÎ¥Ğ¥¤¥ª¥ê¥½¡¼¥¹Ì¾position in ACK
-- ¥¹¥¯¥ê¥×¥È(35min): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/extract_reg_Res_from_ACK.sh
-- ·ë²Ì: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/extract_reg_Res_from_ACK
-###TASK(2.4.2)´ûÃÎ¥Ğ¥¤¥ª¥ê¥½¡¼¥¹Ì¾position in Mat 
-- ¥¹¥¯¥ê¥×¥È(90min): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/extract_reg_Res_from_Mat.sh
-- ·ë²Ì: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/extract_reg_Res_from_Mat.au
-###TASK(2.5) ´ûÃÎµ¡´ØÌ¾position·ë²Ì¡¢´ûÃÎ¥Ğ¥¤¥ª¥ê¥½¡¼¥¹Ì¾position·ë²Ì¡¢¥¿¡¼¥²¥Ã¥È¥»¥ó¥Æ¥ó¥¹¤ÎÁÈ(¤Ş¤È¤á)¤òºî¤ë
+##TASK(2.6) ãƒªã‚½ãƒ¼ã‚¹ãƒãƒ¼ãƒ ãƒªã‚¹ãƒˆã®ä¿®æ­£
+- ãƒªã‚½ãƒ¼ã‚¹ãƒãƒ¼ãƒ ãƒ•ã‚¡ã‚¤ãƒ«ã‚³ãƒ”ãƒ¼: cp /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_3 /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_3.org
+- ãƒªã‚½ãƒ¼ã‚¹ãƒãƒ¼ãƒ ä¿®æ­£: vim /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_3
+##TASK:Loop(2.7) (ãƒã‚¤ã‚ªãƒªã‚½ãƒ¼ã‚¹åã®èª¿æ•´):2
+##TASK(2.2)æ—¢çŸ¥ãƒã‚¤ã‚ªãƒªã‚½ãƒ¼ã‚¹å(NBRP)æ¤œç´¢
+###TASK(2.2.1)æ—¢çŸ¥ãƒã‚¤ã‚ªãƒªã‚½ãƒ¼ã‚¹åinACK with æ—¢çŸ¥æ©Ÿé–¢å
+- æ¤œç´¢ã‚¿ãƒ¼ãƒ (UTF8)ã‚’æ•°å€¤æ–‡å­—å‚ç…§ã«å¤‰æ›: utf8_to_ncr /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_3 > /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_3.ncr
+- perlæ¤œç´¢ç”¨ã«ã‚¨ã‚¹ã‚±ãƒ¼ãƒ—: escape_char sf=/BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_3.ncr lf=/usr/local/var/perl_esc.list > /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_3.ncr.esc
+- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ(4min): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/hit_ResOrg_from_ACK.sh
+- çµæœ(20150715): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv
+###TASK(2.2.2)æ—¢çŸ¥ãƒã‚¤ã‚ªãƒªã‚½ãƒ¼ã‚¹åinMat with æ—¢çŸ¥æ©Ÿé–¢å
+- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/hit_ResOrg_from_Mat.sh
+- çµæœ(20150715): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_Mat.au.tsv
+##TASK(2.4)æ—¢çŸ¥ãƒã‚¤ã‚ªãƒªã‚½ãƒ¼ã‚¹åã®ãƒã‚¸ã‚·ãƒ§ãƒ³æ±ºå®š(20150716)
+###TASK(2.4.1)æ—¢çŸ¥ãƒã‚¤ã‚ªãƒªã‚½ãƒ¼ã‚¹åposition in ACK
+- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ(35min): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/extract_reg_Res_from_ACK.sh
+- çµæœ: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/extract_reg_Res_from_ACK
+###TASK(2.4.2)æ—¢çŸ¥ãƒã‚¤ã‚ªãƒªã‚½ãƒ¼ã‚¹åposition in Mat 
+- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ(90min): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/extract_reg_Res_from_Mat.sh
+- çµæœ: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/extract_reg_Res_from_Mat.au
+###TASK(2.5) æ—¢çŸ¥æ©Ÿé–¢åpositionçµæœã€æ—¢çŸ¥ãƒã‚¤ã‚ªãƒªã‚½ãƒ¼ã‚¹åpositionçµæœã€ã‚¿ãƒ¼ã‚²ãƒƒãƒˆã‚»ãƒ³ãƒ†ãƒ³ã‚¹ã®çµ„(ã¾ã¨ã‚)ã‚’ä½œã‚‹
 ###TASK(2.5.1) in ACK
-- ¥¹¥¯¥ê¥×¥È: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/pasteSrcOrgRes_ACK.sh
-- ·ë²Ì: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv+Org+Res
+- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/pasteSrcOrgRes_ACK.sh
+- çµæœ: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv+Org+Res
 ###TASK(2.5.2) in Mat
-- ¥¹¥¯¥ê¥×¥È: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/pasteSrcOrgRes_Mat.sh
-- ·ë²Ì: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_Mat.au.tsv+Org+Res
-###TASK(2.5.3) ¤Ş¤È¤á¤è¤êÌµÍı¤ä¤ê¥«¥é¡¼¥Æ¥­¥¹¥ÈHTML¤ËÊÑ´¹
-- ¥¹¥¯¥ê¥×¥È: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/SrcOrgRes_to_html.sh
-- ·ë²Ì: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_Mat.au.tsv+Org+Res.html
-###TASK(2.5.4) ¤Ş¤È¤á¤è¤êOrg Res¤¬ÁĞÊı½Ğ¸½¤¹¤ë¥»¥ó¥Æ¥ó¥¹¤òÁªÂò¡¢ÌµÍı¤ä¤ê¥«¥é¡¼¥Æ¥­¥¹¥ÈHTML¤ËÊÑ´¹
-##==¤¤¤Ş¤³¤³==##(20150722)
-##TASK(2.6) ¸¡º÷¤Î¸¡Æ¤
-- ¸¡Æ¤¤¹¤ë¥¿¡¼¥à¤Î¥ê¥¹¥È:
+- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/pasteSrcOrgRes_Mat.sh
+- çµæœ: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_Mat.au.tsv+Org+Res
+###TASK(2.5.3) ã¾ã¨ã‚ã‚ˆã‚Šç„¡ç†ã‚„ã‚Šã‚«ãƒ©ãƒ¼ãƒ†ã‚­ã‚¹ãƒˆHTMLã«å¤‰æ›
+- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/SrcOrgRes_to_html.sh
+- çµæœ: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_Mat.au.tsv+Org+Res.html
+###TASK(2.5.4) ã¾ã¨ã‚ã‚ˆã‚ŠOrg ResãŒåŒæ–¹å‡ºç¾ã™ã‚‹ã‚»ãƒ³ãƒ†ãƒ³ã‚¹ã‚’é¸æŠã€ç„¡ç†ã‚„ã‚Šã‚«ãƒ©ãƒ¼ãƒ†ã‚­ã‚¹ãƒˆHTMLã«å¤‰æ›
+##==ã„ã¾ã“ã“==##(20150722)
+##TASK(2.6) æ¤œç´¢ã®æ¤œè¨
+- æ¤œè¨ã™ã‚‹ã‚¿ãƒ¼ãƒ ã®ãƒªã‚¹ãƒˆ:
 -- /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/res.kentou.terms
-- ºï½ü¤¹¤ë¥¿¡¼¥à¤Î¥ê¥¹¥È:
+- å‰Šé™¤ã™ã‚‹ã‚¿ãƒ¼ãƒ ã®ãƒªã‚¹ãƒˆ:
 -- /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/res.del.terms
-- ¿·¤·¤¯ÄÉ²Ã¤¹¤ë¥¿¡¼¥à(¥ê¥Æ¥é¥ë)(match_position):
+- æ–°ã—ãè¿½åŠ ã™ã‚‹ã‚¿ãƒ¼ãƒ (ãƒªãƒ†ãƒ©ãƒ«)(match_position):
 -- /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.additional.ncr
- /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_3.ncr ¤È cat ¤·¤Æ¸¡º÷¡£
-- [Ì¤Äê]¿·¤·¤¯ÄÉ²Ã¤¹¤ë¥¿¡¼¥à(Àµµ¬É½¸½)(match_position_RE.pl):
+ /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_3.ncr ã¨ cat ã—ã¦æ¤œç´¢ã€‚
+- [æœªå®š]æ–°ã—ãè¿½åŠ ã™ã‚‹ã‚¿ãƒ¼ãƒ (æ­£è¦è¡¨ç¾)(match_position_RE.pl):
 -- /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.additional.RE
- ÊÌ¸¡º÷¡£
-##TASK(2.7) ¥ê¥½¡¼¥¹¥Í¡¼¥à¥ê¥¹¥È¤Î½¤Àµ
-- ¥ê¥½¡¼¥¹¥Í¡¼¥à½¤Àµ: vim /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_3
-- [Ì¤Äê]¥ê¥½¡¼¥¹¥Í¡¼¥àÀµµ¬É½¸½¸¡º÷¥ê¥¹¥È: /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.additional.RE
+ åˆ¥æ¤œç´¢ã€‚
+##TASK(2.7) ãƒªã‚½ãƒ¼ã‚¹ãƒãƒ¼ãƒ ãƒªã‚¹ãƒˆã®ä¿®æ­£
+- ãƒªã‚½ãƒ¼ã‚¹ãƒãƒ¼ãƒ ä¿®æ­£: vim /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_3
+- [æœªå®š]ãƒªã‚½ãƒ¼ã‚¹ãƒãƒ¼ãƒ æ­£è¦è¡¨ç¾æ¤œç´¢ãƒªã‚¹ãƒˆ: /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.additional.RE
 ##End:Loop
 
 
 
-#TASK(check-correct): Àµ²ò¥Ç¡¼¥¿¤ËÂĞ¤·¤Æµ¡´ØÌ¾¸¡º÷¤ò¹Ô¤¤¥«¥Ğ¥ì¥Ã¥¸¤ò³ÎÇ§ (20150123)
-## 1. ÂĞ¾İ¥Õ¥¡¥¤¥ë¤Î·èÄê
-## XML¤ÈÀµ²ò¥Ç¡¼¥¿¤ÎPMID¤ò¥Ş¥Ã¥Á¤µ¤»¤ë
-- ·ë²Ì: /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/user-data/PMID/ALL.pmidVSfilename.sort.uniq.in_pmc.hit
-## 2. ÂĞ¾İ¥Õ¥¡¥¤¥ë¤òÈ´¤­¤À¤·(¥ê¥ó¥¯ºîÀ®)
-- ¥×¥í¥°¥é¥à: ln
-- ¥¹¥¯¥ê¥×¥È: /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/user-data/XML/exec_command/mklink.sh
-- ·ë²Ì: /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/user-data/XML/
-## 3 ¸¡º÷
-### 3.1 ÂĞ¾İ¥Õ¥¡¥¤¥ë¤ËÂĞ¤·¤Æµ¡´ØÌ¾¤ògrep¸¡º÷(RIKEN BRC)
-- ¥×¥í¥°¥é¥à: grep
-- ¥¹¥¯¥ê¥×¥È: /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/user-data/exec-command/grep-orgnames.sh
-- ·ë²Ì: /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/user-data/grep-orgnames.out
-### 3.2 ÂĞ¾İ¥Õ¥¡¥¤¥ë¤ËÂĞ¤·¤Æµ¡´ØÌ¾¤ògrep¸¡º÷(RIKEN)
-- ¥×¥í¥°¥é¥à: grep
-- ¥¹¥¯¥ê¥×¥È: /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/user-data/exec-command/grep-RIKEN.sh
-- ·ë²Ì: /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/user-data/grep-RIKEN.out
-## 4 Ê¸¸¥¥Á¥§¥Ã¥¯
-- ¥Á¥§¥Ã¥¯¤¹¤Ù¤­PrimaryÈÖ¹æ¥ê¥¹¥È(ÍøÍÑ¼ÔÀ®²Ì¥¨¥¯¥»¥ëÉ½¤ËÂĞ±ş): /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/user-data/PMID/artgrNoHitPrimaryInPMC.tsv
-- ¾åµ­¥Á¥§¥Ã¥¯Ê¸¸¥¥ê¥¹¥È¤Îº¬µò(ºî¶Èµ­Ï¿): /BANK/BioResource/Organization/RIKEN-BRC_2012/user-data/UserArticles.nb
+#TASK(check-correct): æ­£è§£ãƒ‡ãƒ¼ã‚¿ã«å¯¾ã—ã¦æ©Ÿé–¢åæ¤œç´¢ã‚’è¡Œã„ã‚«ãƒãƒ¬ãƒƒã‚¸ã‚’ç¢ºèª (20150123)
+## 1. å¯¾è±¡ãƒ•ã‚¡ã‚¤ãƒ«ã®æ±ºå®š
+## XMLã¨æ­£è§£ãƒ‡ãƒ¼ã‚¿ã®PMIDã‚’ãƒãƒƒãƒã•ã›ã‚‹
+- çµæœ: /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/user-data/PMID/ALL.pmidVSfilename.sort.uniq.in_pmc.hit
+## 2. å¯¾è±¡ãƒ•ã‚¡ã‚¤ãƒ«ã‚’æŠœãã ã—(ãƒªãƒ³ã‚¯ä½œæˆ)
+- ãƒ—ãƒ­ã‚°ãƒ©ãƒ : ln
+- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ: /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/user-data/XML/exec_command/mklink.sh
+- çµæœ: /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/user-data/XML/
+## 3 æ¤œç´¢
+### 3.1 å¯¾è±¡ãƒ•ã‚¡ã‚¤ãƒ«ã«å¯¾ã—ã¦æ©Ÿé–¢åã‚’grepæ¤œç´¢(RIKEN BRC)
+- ãƒ—ãƒ­ã‚°ãƒ©ãƒ : grep
+- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ: /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/user-data/exec-command/grep-orgnames.sh
+- çµæœ: /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/user-data/grep-orgnames.out
+### 3.2 å¯¾è±¡ãƒ•ã‚¡ã‚¤ãƒ«ã«å¯¾ã—ã¦æ©Ÿé–¢åã‚’grepæ¤œç´¢(RIKEN)
+- ãƒ—ãƒ­ã‚°ãƒ©ãƒ : grep
+- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ: /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/user-data/exec-command/grep-RIKEN.sh
+- çµæœ: /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/user-data/grep-RIKEN.out
+## 4 æ–‡çŒ®ãƒã‚§ãƒƒã‚¯
+- ãƒã‚§ãƒƒã‚¯ã™ã¹ãPrimaryç•ªå·ãƒªã‚¹ãƒˆ(åˆ©ç”¨è€…æˆæœã‚¨ã‚¯ã‚»ãƒ«è¡¨ã«å¯¾å¿œ): /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/user-data/PMID/artgrNoHitPrimaryInPMC.tsv
+- ä¸Šè¨˜ãƒã‚§ãƒƒã‚¯æ–‡çŒ®ãƒªã‚¹ãƒˆã®æ ¹æ‹ (ä½œæ¥­è¨˜éŒ²): /BANK/BioResource/Organization/RIKEN-BRC_2012/user-data/UserArticles.nb
 
 
 
-#TASK(1 ver.1): ´ûÃÎ¥ê¥½¡¼¥¹Ì¾¡¦µ¡´ØÌ¾¤Î·èÄê¤È¸¡º÷¥¿¡¼¥à¤Î·èÄê (8µ¡´Ø¤ò·èÄê´°Î»)
-#THEME[¥ê¥½¡¼¥¹Ì¾¶¦½Ğ¸½²òÀÏ][kaken-26540170]
-#Âç·¿µ¡´Ø¤Ë¹Ê¤Ã¤Æ¹Ô¤Ê¤¦¤³¤È¤È¤¹¤ë¡£
-##TASK(1.0): ÂĞ¾İµ¡´Ø¤Î·èÄê -> 8µ¡´Ø¤Ë·èÄê
-- ¥Õ¥¡¥¤¥ë: /BANK/Organization/_ALL_/organization-name/8orgs.name.list
-- id¤È¸¡º÷¥¿¡¼¥à¤Î¥Ú¥¢¤òºî¤ë: pair.pl
-- id vs. ¸¡º÷¥¿¡¼¥à: 8orgs.name.idVSterms
-- ¸¡º÷¥¿¡¼¥à¤Î¤ß: 8orgs.name.terms
-##¾ò·ï: Âç³Ø°Ê³°¡¢¤â¤·¤¯¤Ï¥»¥ó¥¿¡¼
-##ÊıË¡: ¥¤¥ó¥¿¡¼¥Í¥Ã¥È¸¡º÷
-##¥¢¥¹¥¿¥ê¥¹¥¯(*)¤¬º£²ó¤ÎÂĞ¾İ
-ÆüËÜ:
+#TASK(1 ver.1): æ—¢çŸ¥ãƒªã‚½ãƒ¼ã‚¹åãƒ»æ©Ÿé–¢åã®æ±ºå®šã¨æ¤œç´¢ã‚¿ãƒ¼ãƒ ã®æ±ºå®š (8æ©Ÿé–¢ã‚’æ±ºå®šå®Œäº†)
+#THEME[ãƒªã‚½ãƒ¼ã‚¹åå…±å‡ºç¾è§£æ][kaken-26540170]
+#å¤§å‹æ©Ÿé–¢ã«çµã£ã¦è¡Œãªã†ã“ã¨ã¨ã™ã‚‹ã€‚
+##TASK(1.0): å¯¾è±¡æ©Ÿé–¢ã®æ±ºå®š -> 8æ©Ÿé–¢ã«æ±ºå®š
+- ãƒ•ã‚¡ã‚¤ãƒ«: /BANK/Organization/_ALL_/organization-name/8orgs.name.list
+- idã¨æ¤œç´¢ã‚¿ãƒ¼ãƒ ã®ãƒšã‚¢ã‚’ä½œã‚‹: pair.pl
+- id vs. æ¤œç´¢ã‚¿ãƒ¼ãƒ : 8orgs.name.idVSterms
+- æ¤œç´¢ã‚¿ãƒ¼ãƒ ã®ã¿: 8orgs.name.terms
+##æ¡ä»¶: å¤§å­¦ä»¥å¤–ã€ã‚‚ã—ãã¯ã‚»ãƒ³ã‚¿ãƒ¼
+##æ–¹æ³•: ã‚¤ãƒ³ã‚¿ãƒ¼ãƒãƒƒãƒˆæ¤œç´¢
+##ã‚¢ã‚¹ã‚¿ãƒªã‚¹ã‚¯(*)ãŒä»Šå›ã®å¯¾è±¡
+æ—¥æœ¬:
 -* riken brc
 -* nig
 -* nite nbrc
 -* jcrb
-- ¤¬¤ó¸¦µæ¥»¥ó¥¿¡¼(biobank:2011)
-- ½Û´Ä´ïÉÂ¸¦µæ¥»¥ó¥¿¡¼(biobank:2011)
-- Àº¿À¡¦¿À·Ğ°åÎÅ¸¦µæ¥»¥ó¥¿¡¼(biobank:2011)
-- ¹ñºİ°åÎÅ¸¦µæ¥»¥ó¥¿¡¼(biobank:?)
-- À¸°é°åÎÅ¸¦µæ¥»¥ó¥¿¡¼(biobank:?)
-- Ä¹¼÷°åÎÅ¸¦µæ¥»¥ó¥¿¡¼(biobank:?)
-³¤³°:
+- ãŒã‚“ç ”ç©¶ã‚»ãƒ³ã‚¿ãƒ¼(biobank:2011)
+- å¾ªç’°å™¨ç—…ç ”ç©¶ã‚»ãƒ³ã‚¿ãƒ¼(biobank:2011)
+- ç²¾ç¥ãƒ»ç¥çµŒåŒ»ç™‚ç ”ç©¶ã‚»ãƒ³ã‚¿ãƒ¼(biobank:2011)
+- å›½éš›åŒ»ç™‚ç ”ç©¶ã‚»ãƒ³ã‚¿ãƒ¼(biobank:?)
+- ç”Ÿè‚²åŒ»ç™‚ç ”ç©¶ã‚»ãƒ³ã‚¿ãƒ¼(biobank:?)
+- é•·å¯¿åŒ»ç™‚ç ”ç©¶ã‚»ãƒ³ã‚¿ãƒ¼(biobank:?)
+æµ·å¤–:
 -* dsmz
 -* atcc
 -* addgene
 -* jackson lab
-##TASK(1.1): ÂĞ¾İ¥ê¥½¡¼¥¹Ì¾¤Î·èÄê:8µ¡´Ø¤«¤é¤µ¤é¤Ë½½Ê¬¤Ê¥ê¥½¡¼¥¹¥ê¥¹¥È¤¬ÆÀ¤é¤ì¤ëµ¡´Ø¤Ë¸ÂÄê(Ì¤´°)¡£
+##TASK(1.1): å¯¾è±¡ãƒªã‚½ãƒ¼ã‚¹åã®æ±ºå®š:8æ©Ÿé–¢ã‹ã‚‰ã•ã‚‰ã«ååˆ†ãªãƒªã‚½ãƒ¼ã‚¹ãƒªã‚¹ãƒˆãŒå¾—ã‚‰ã‚Œã‚‹æ©Ÿé–¢ã«é™å®š(æœªå®Œ)ã€‚
 ###TASK(1.1.1): RIKEN-BRC
-- ¥ê¥½¡¼¥¹
--- ÂĞ¾İ: RIKEN BRC (ÍøÍÑ¼ÔÀ®²Ì)
--- ¥ê¥½¡¼¥¹Ì¾: /BANK/BioResource/Organization/RIKEN-BRC_2012/RAW_cited-resource/All.name.sort.uniq.tsv.rev
--- ¸¡º÷¥¿¡¼¥à: /BANK/BioResource/Organization/RIKEN-BRC_2012/cited-resource/All.name.sort.uniq.tsv.esc
-- µ¡´ØÌ¾
--- ¸¡º÷¥¿¡¼¥à: /BANK/Organiztion/RIKEN-BRC_2012/organization-name/org.name.only
+- ãƒªã‚½ãƒ¼ã‚¹
+-- å¯¾è±¡: RIKEN BRC (åˆ©ç”¨è€…æˆæœ)
+-- ãƒªã‚½ãƒ¼ã‚¹å: /BANK/BioResource/Organization/RIKEN-BRC_2012/RAW_cited-resource/All.name.sort.uniq.tsv.rev
+-- æ¤œç´¢ã‚¿ãƒ¼ãƒ : /BANK/BioResource/Organization/RIKEN-BRC_2012/cited-resource/All.name.sort.uniq.tsv.esc
+- æ©Ÿé–¢å
+-- æ¤œç´¢ã‚¿ãƒ¼ãƒ : /BANK/Organiztion/RIKEN-BRC_2012/organization-name/org.name.only
 ###TASK(1.1.2): JCRB
-- ¥ê¥½¡¼¥¹
--- ÂĞ¾İ: JCRB (¥ª¥ó¥é¥¤¥ó¥«¥¿¥í¥°)
--- ¥ê¥½¡¼¥¹Ì¾: /BANK/BioResource/Organization/JCRB_2014/RAW_catalogue/All.name.sort.uniq.tsv
--- ¸¡º÷¥¿¡¼¥à: /BANK/BioResource/Organization/JCRB_2014/catalogue/All.name.sort.uniq.tsv.esc.rev
-- µ¡´ØÌ¾
--- ¸¡º÷¥¿¡¼¥à: /BANK/Organiztion/JCRB_2014/organization-name/org.name.only
+- ãƒªã‚½ãƒ¼ã‚¹
+-- å¯¾è±¡: JCRB (ã‚ªãƒ³ãƒ©ã‚¤ãƒ³ã‚«ã‚¿ãƒ­ã‚°)
+-- ãƒªã‚½ãƒ¼ã‚¹å: /BANK/BioResource/Organization/JCRB_2014/RAW_catalogue/All.name.sort.uniq.tsv
+-- æ¤œç´¢ã‚¿ãƒ¼ãƒ : /BANK/BioResource/Organization/JCRB_2014/catalogue/All.name.sort.uniq.tsv.esc.rev
+- æ©Ÿé–¢å
+-- æ¤œç´¢ã‚¿ãƒ¼ãƒ : /BANK/Organiztion/JCRB_2014/organization-name/org.name.only
 ###TASK(1.1.3): NITE-NBRC
-- ¥ê¥½¡¼¥¹
--- ÂĞ¾İ: Àµµ¬É½¸½¥Ñ¥¿¡¼¥ó
--- ¸¡º÷¥¿¡¼¥à: /BANK/BioResource/Organization/NITE-NBRC_2014/catalogue/All.patt
-- µ¡´ØÌ¾
--- ¸¡º÷¥¿¡¼¥à: /BANK/Organization/NITE-NBRC_2014/organization-name/org.name.only
+- ãƒªã‚½ãƒ¼ã‚¹
+-- å¯¾è±¡: æ­£è¦è¡¨ç¾ãƒ‘ã‚¿ãƒ¼ãƒ³
+-- æ¤œç´¢ã‚¿ãƒ¼ãƒ : /BANK/BioResource/Organization/NITE-NBRC_2014/catalogue/All.patt
+- æ©Ÿé–¢å
+-- æ¤œç´¢ã‚¿ãƒ¼ãƒ : /BANK/Organization/NITE-NBRC_2014/organization-name/org.name.only
 ###TASK(1.1.4): DSMZ
-- ¥ê¥½¡¼¥¹
--- ÂĞ¾İ: Àµµ¬É½¸½¥Ñ¥¿¡¼¥ó
--- ¸¡º÷¥¿¡¼¥à: /BANK/BioResource/Organization/DSMZ_2014/catalogue/All.patt
-- µ¡´ØÌ¾
--- ¸¡º÷¥¿¡¼¥à: /BANK/Organization/DSMZ_2014/organization-name/org.name.only
+- ãƒªã‚½ãƒ¼ã‚¹
+-- å¯¾è±¡: æ­£è¦è¡¨ç¾ãƒ‘ã‚¿ãƒ¼ãƒ³
+-- æ¤œç´¢ã‚¿ãƒ¼ãƒ : /BANK/BioResource/Organization/DSMZ_2014/catalogue/All.patt
+- æ©Ÿé–¢å
+-- æ¤œç´¢ã‚¿ãƒ¼ãƒ : /BANK/Organization/DSMZ_2014/organization-name/org.name.only
 ###TASK(1.1.5): WDCM
-- ¥ê¥½¡¼¥¹
--- ÂĞ¾İ: Àµµ¬É½¸½¥Ñ¥¿¡¼¥ó
--- ¸¡º÷¥¿¡¼¥à: /BANK/BioResource/Organization/WDCM_2014/catalogue/All.patt
-- µ¡´ØÌ¾
--- ¸¡º÷¥¿¡¼¥à: /BANK/Organization/WDCM_2014/organization-name/org.name.only
+- ãƒªã‚½ãƒ¼ã‚¹
+-- å¯¾è±¡: æ­£è¦è¡¨ç¾ãƒ‘ã‚¿ãƒ¼ãƒ³
+-- æ¤œç´¢ã‚¿ãƒ¼ãƒ : /BANK/BioResource/Organization/WDCM_2014/catalogue/All.patt
+- æ©Ÿé–¢å
+-- æ¤œç´¢ã‚¿ãƒ¼ãƒ : /BANK/Organization/WDCM_2014/organization-name/org.name.only
 ###TASK(1.1.6): ATCC
-- ¥ê¥½¡¼¥¹
--- ÂĞ¾İ: Àµµ¬É½¸½¥Ñ¥¿¡¼¥ó
--- ¸¡º÷¥¿¡¼¥à: /BANK/BioResource/Organization/ATCC_2014/catalogue/All.patt
-- µ¡´ØÌ¾
--- ¸¡º÷¥¿¡¼¥à: /BANK/Organization/ATCC_2014/organization-name/org.name.only
+- ãƒªã‚½ãƒ¼ã‚¹
+-- å¯¾è±¡: æ­£è¦è¡¨ç¾ãƒ‘ã‚¿ãƒ¼ãƒ³
+-- æ¤œç´¢ã‚¿ãƒ¼ãƒ : /BANK/BioResource/Organization/ATCC_2014/catalogue/All.patt
+- æ©Ÿé–¢å
+-- æ¤œç´¢ã‚¿ãƒ¼ãƒ : /BANK/Organization/ATCC_2014/organization-name/org.name.only
 
 
 
 
-#TASK(3): ´ûÃÎµ¡´ØÌ¾¤Î¸¡º÷ THEME[kaken-26540170]
-##TASK(3.1): affÎÎ°è¤è¤êµ¡´ØÌ¾¸¡º÷(8µ¡´Ø)
-### 1. aff ¥¨¥ì¥á¥ó¥È¤ÎÃê½Ğ(ÀĞÀî»á)
-- ·ë²Ì¥Õ¥¡¥¤¥ë: /BANK/PMC/20140724/elements/aff/PMC-AFF-v1.tsv
-### 2. µ¡´ØÌ¾(8µ¡´Ø)¸¡º÷(ÀĞÀî»á)(20141225)
-- ¸¡º÷¥¿¡¼¥à: /BANK/Organization/_ALL_/organization-name/8orgs.name.terms
-- ·ë²Ì¥Õ¥¡¥¤¥ë:  /BANK/PMC/20140724/Matching/BioResource/Organization/_ALL_/aff/PMC-AFF-plain-10_ORG.txt
-##TASK(3.2): ackÎÎ°è¤è¤êµ¡´ØÌ¾¸¡º÷
-### 1. acknowledgement ¥¨¥ì¥á¥ó¥È¤ÎÃê½Ğ(ÀĞÀî»á)
-- ÂĞ¾İÎÎ°è: /BANK/PMC/20140724/elements/acknowledgement/PMC-ACK-v6_pmid.tsv
-### 2. µ¡´ØÌ¾¸¡º÷
-### 2.1 ackÎÎ°è¤«¤é5µ¡´ØÌ¾¤ò¸¡º÷(Å·Ìî)(´°Î»)
+#TASK(3): æ—¢çŸ¥æ©Ÿé–¢åã®æ¤œç´¢ THEME[kaken-26540170]
+##TASK(3.1): affé ˜åŸŸã‚ˆã‚Šæ©Ÿé–¢åæ¤œç´¢(8æ©Ÿé–¢)
+### 1. aff ã‚¨ãƒ¬ãƒ¡ãƒ³ãƒˆã®æŠ½å‡º(çŸ³å·æ°)
+- çµæœãƒ•ã‚¡ã‚¤ãƒ«: /BANK/PMC/20140724/elements/aff/PMC-AFF-v1.tsv
+### 2. æ©Ÿé–¢å(8æ©Ÿé–¢)æ¤œç´¢(çŸ³å·æ°)(20141225)
+- æ¤œç´¢ã‚¿ãƒ¼ãƒ : /BANK/Organization/_ALL_/organization-name/8orgs.name.terms
+- çµæœãƒ•ã‚¡ã‚¤ãƒ«:  /BANK/PMC/20140724/Matching/BioResource/Organization/_ALL_/aff/PMC-AFF-plain-10_ORG.txt
+##TASK(3.2): acké ˜åŸŸã‚ˆã‚Šæ©Ÿé–¢åæ¤œç´¢
+### 1. acknowledgement ã‚¨ãƒ¬ãƒ¡ãƒ³ãƒˆã®æŠ½å‡º(çŸ³å·æ°)
+- å¯¾è±¡é ˜åŸŸ: /BANK/PMC/20140724/elements/acknowledgement/PMC-ACK-v6_pmid.tsv
+### 2. æ©Ÿé–¢åæ¤œç´¢
+### 2.1 acké ˜åŸŸã‹ã‚‰5æ©Ÿé–¢åã‚’æ¤œç´¢(å¤©é‡)(å®Œäº†)
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/_ALL_
-- ÂĞ¾İÎÎ°è: /BANK/PMC/20140724/elements/acknowledgement/PMC-ACK-v6_pmid.tsv
-- ¸¡º÷¥¿¡¼¥à: /BANK/Organization/_ALL_/organization-name/5orgs.name.only
-- ¥×¥í¥°¥é¥à: /home/kamano/gitsrc/utility/match_lines.pl
-- ¥¹¥¯¥ê¥×¥È:
+- å¯¾è±¡é ˜åŸŸ: /BANK/PMC/20140724/elements/acknowledgement/PMC-ACK-v6_pmid.tsv
+- æ¤œç´¢ã‚¿ãƒ¼ãƒ : /BANK/Organization/_ALL_/organization-name/5orgs.name.only
+- ãƒ—ãƒ­ã‚°ãƒ©ãƒ : /home/kamano/gitsrc/utility/match_lines.pl
+- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ:
  /BANK/PMC/20140724/Matching/BioResource/Organization/_ALL_/exec_command/5orgs_in_ack.sh
  /BANK/PMC/20140724/Matching/BioResource/Organization/_ALL_/exec_command/5org_extract_hit.sh
-- ·ë²Ì: /BANK/PMC/20140724/Matching/BioResource/Organization/_ALL_/5orgs_in_ack.hit
-- PMIDÉÕ¤­PMC-BRCÍøÍÑ¼ÔÀ®²Ì(118·ï) AND ·ë²Ì: (30·ï) : /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/user-data/PMID/pmid_5orgs_AND_BRCuser_inACK
-### 2.2 ackÎÎ°è¤«¤é8µ¡´ØÌ¾¤ò¸¡º÷(ÀĞÀî»á)(20150306)
-- ÂĞ¾İÎÎ°è: /BANK/PMC/20140724/elements/acknowledgement/PMC-ACK-v6_pmid.tsv
-- ¸¡º÷¥¿¡¼¥à: /BANK/Organization/_ALL_/organization-name/8orgs.name.terms
-- ·ë²Ì: /BANK/PMC/20140724/Matching/BioResource/Organization/_ALL_/acknowledgement/8orgs-OUTPUT
+- çµæœ: /BANK/PMC/20140724/Matching/BioResource/Organization/_ALL_/5orgs_in_ack.hit
+- PMIDä»˜ãPMC-BRCåˆ©ç”¨è€…æˆæœ(118ä»¶) AND çµæœ: (30ä»¶) : /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/user-data/PMID/pmid_5orgs_AND_BRCuser_inACK
+### 2.2 acké ˜åŸŸã‹ã‚‰8æ©Ÿé–¢åã‚’æ¤œç´¢(çŸ³å·æ°)(20150306)
+- å¯¾è±¡é ˜åŸŸ: /BANK/PMC/20140724/elements/acknowledgement/PMC-ACK-v6_pmid.tsv
+- æ¤œç´¢ã‚¿ãƒ¼ãƒ : /BANK/Organization/_ALL_/organization-name/8orgs.name.terms
+- çµæœ: /BANK/PMC/20140724/Matching/BioResource/Organization/_ALL_/acknowledgement/8orgs-OUTPUT
 
-##TASK(3.3): materialÎÎ°è¤è¤êµ¡´ØÌ¾¤ò¸¡º÷(ÀĞÀî»á)(20150306)
-- ÂĞ¾İÎÎ°è: /BANK/PMC/20140724/elements/MERGED/Materials/au.merge-reg-material.cont.tsv
-- ¸¡º÷¥¿¡¼¥à: /BANK/Organization/_ALL_/organization-name/8orgs.name.terms
-- ·ë²Ì: /BANK/PMC/20140724/Matching/BioResource/Organization/_ALL_/MERGED/Materials/OUTPUT2
+##TASK(3.3): materialé ˜åŸŸã‚ˆã‚Šæ©Ÿé–¢åã‚’æ¤œç´¢(çŸ³å·æ°)(20150306)
+- å¯¾è±¡é ˜åŸŸ: /BANK/PMC/20140724/elements/MERGED/Materials/au.merge-reg-material.cont.tsv
+- æ¤œç´¢ã‚¿ãƒ¼ãƒ : /BANK/Organization/_ALL_/organization-name/8orgs.name.terms
+- çµæœ: /BANK/PMC/20140724/Matching/BioResource/Organization/_ALL_/MERGED/Materials/OUTPUT2
 
-##TASK(3.4): Á´PMC-XML¤è¤êµ¡´ØÌ¾¤ò¸¡º÷(20140801 ´°Î»)
+##TASK(3.4): å…¨PMC-XMLã‚ˆã‚Šæ©Ÿé–¢åã‚’æ¤œç´¢(20140801 å®Œäº†)
 ###TASK(3.4.1) RIKEN-BRC :
-###´ûÃÎµ¡´ØÌ¾¤Î¥ê¥¹¥È¤Î¸¡º÷
-- ´ûÃÎµ¡´ØÌ¾¤Î¸¡º÷
--- ¸¡º÷¥¿¡¼¥à: /BANK/Organization/RIKEN-BRC_2012/organization-name/org.name.only
+###æ—¢çŸ¥æ©Ÿé–¢åã®ãƒªã‚¹ãƒˆã®æ¤œç´¢
+- æ—¢çŸ¥æ©Ÿé–¢åã®æ¤œç´¢
+-- æ¤œç´¢ã‚¿ãƒ¼ãƒ : /BANK/Organization/RIKEN-BRC_2012/organization-name/org.name.only
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/
--- ¸¡º÷¥³¥Ş¥ó¥É:
+-- æ¤œç´¢ã‚³ãƒãƒ³ãƒ‰:
 /home/kamano/gitsrc/utility/match_position
 /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/exec_command/match_pos_SynonOrgNames_Jour-au.sh
 ###TASK(3.4.2) JCRB :
-###´ûÃÎµ¡´ØÌ¾¤Î¥ê¥¹¥È¸¡º÷
-- ´ûÃÎµ¡´ØÌ¾¤Î¸¡º÷
--- ¸¡º÷¥¿¡¼¥à: /BANK/Organization/JCRB_2014/organization-name/org.name.only
+###æ—¢çŸ¥æ©Ÿé–¢åã®ãƒªã‚¹ãƒˆæ¤œç´¢
+- æ—¢çŸ¥æ©Ÿé–¢åã®æ¤œç´¢
+-- æ¤œç´¢ã‚¿ãƒ¼ãƒ : /BANK/Organization/JCRB_2014/organization-name/org.name.only
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/JCRB_2014/
--- ¸¡º÷¥³¥Ş¥ó¥É:
+-- æ¤œç´¢ã‚³ãƒãƒ³ãƒ‰:
 /home/kamano/gitsrc/utility/match_position
 /BANK/PMC/20140724/Matching/BioResource/Organization/JCRB_2014/exec_command/match_pos_SynonOrgNames_Jour-au.sh
 ###TASK(3.4.3): NITE-NBRC
-###´ûÃÎµ¡´ØÌ¾¤Î¥ê¥¹¥È¤Î¸¡º÷
-- ´ûÃÎµ¡´ØÌ¾¤Î¸¡º÷
--- ¸¡º÷¥¿¡¼¥à: /BANK/Organization/NITE-NBRC_2014/organization-name/org.name.only
+###æ—¢çŸ¥æ©Ÿé–¢åã®ãƒªã‚¹ãƒˆã®æ¤œç´¢
+- æ—¢çŸ¥æ©Ÿé–¢åã®æ¤œç´¢
+-- æ¤œç´¢ã‚¿ãƒ¼ãƒ : /BANK/Organization/NITE-NBRC_2014/organization-name/org.name.only
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/NITE-NBRC_2014/
--- ¸¡º÷¥³¥Ş¥ó¥É:
+-- æ¤œç´¢ã‚³ãƒãƒ³ãƒ‰:
 /home/kamano/gitsrc/utility/match_position
 /BANK/PMC/20140724/Matching/BioResource/Organization/NITE-NBRC_2014/exec_command/match_pos_SynonOrgNames_Jour-au.sh
 ###TASK(3.4.4): DSMZ
-###´ûÃÎµ¡´ØÌ¾¤Î¥ê¥¹¥È¤Î¸¡º÷
-- ´ûÃÎµ¡´ØÌ¾¤Î¸¡º÷
--- ¸¡º÷¥¿¡¼¥à: /BANK/Organization/DSMZ_2014/organization-name/org.name.only
+###æ—¢çŸ¥æ©Ÿé–¢åã®ãƒªã‚¹ãƒˆã®æ¤œç´¢
+- æ—¢çŸ¥æ©Ÿé–¢åã®æ¤œç´¢
+-- æ¤œç´¢ã‚¿ãƒ¼ãƒ : /BANK/Organization/DSMZ_2014/organization-name/org.name.only
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/DSMZ_2014/
--- ¸¡º÷¥³¥Ş¥ó¥É:
+-- æ¤œç´¢ã‚³ãƒãƒ³ãƒ‰:
 /home/kamano/gitsrc/utility/match_position
 /BANK/PMC/20140724/Matching/BioResource/Organization/DSMZ_2014/exec_command/match_pos_SynonOrgNames_Jour-au.sh
 ###TASK(3.4.5): WDCM
-###´ûÃÎµ¡´ØÌ¾¤Î¥ê¥¹¥È¤Î¸¡º÷
-- ´ûÃÎµ¡´ØÌ¾¤Î¸¡º÷
--- ¸¡º÷¥¿¡¼¥à: /BANK/Organization/WDCM_2014/organization-name/org.name.only
+###æ—¢çŸ¥æ©Ÿé–¢åã®ãƒªã‚¹ãƒˆã®æ¤œç´¢
+- æ—¢çŸ¥æ©Ÿé–¢åã®æ¤œç´¢
+-- æ¤œç´¢ã‚¿ãƒ¼ãƒ : /BANK/Organization/WDCM_2014/organization-name/org.name.only
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/WDCM_2014/
--- ¸¡º÷¥³¥Ş¥ó¥É:
+-- æ¤œç´¢ã‚³ãƒãƒ³ãƒ‰:
 /home/kamano/gitsrc/utility/match_position
 /BANK/PMC/20140724/Matching/BioResource/Organization/WDCM_2014/exec_command/match_pos_SynonOrgNames_Jour-au.sh
 ###TASK(3.4.6): ATCC
-###´ûÃÎµ¡´ØÌ¾¤Î¥ê¥¹¥È¤Î¸¡º÷
-- ´ûÃÎµ¡´ØÌ¾¤Î¸¡º÷
--- ¸¡º÷¥¿¡¼¥à: /BANK/Organization/ATCC_2014/organization-name/org.name.only
+###æ—¢çŸ¥æ©Ÿé–¢åã®ãƒªã‚¹ãƒˆã®æ¤œç´¢
+- æ—¢çŸ¥æ©Ÿé–¢åã®æ¤œç´¢
+-- æ¤œç´¢ã‚¿ãƒ¼ãƒ : /BANK/Organization/ATCC_2014/organization-name/org.name.only
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/ATCC_2014/
--- ¸¡º÷¥³¥Ş¥ó¥É:
+-- æ¤œç´¢ã‚³ãƒãƒ³ãƒ‰:
 /home/kamano/gitsrc/utility/match_position
 /BANK/PMC/20140724/Matching/BioResource/Organization/ATCC_2014/exec_command/match_pos_SynonOrgNames_Jour-au.sh
-##===¤³¤³¤Ş¤Ç´°Î»===##
+##===ã“ã“ã¾ã§å®Œäº†===##
 
 
 
-#TASK(2): ´ûÃÎ¥ê¥½¡¼¥¹Ì¾¸¡º÷:!!TASK(3)¤è¤ê¤¢¤È¤Ë¹Ô¤Ê¤¦!!
+#TASK(2): æ—¢çŸ¥ãƒªã‚½ãƒ¼ã‚¹åæ¤œç´¢:!!TASK(3)ã‚ˆã‚Šã‚ã¨ã«è¡Œãªã†!!
 ##TASK(2.1): RIKEN-BRC
-##THEME[¥ê¥½¡¼¥¹Ì¾¶¦½Ğ¸½²òÀÏ][kaken-26540170]
-### 0. ¥ê¥½¡¼¥¹Ì¾¸¡º÷¤Î¤¿¤á¤Î¥ê¥½¡¼¥¹Ì¾ vs. ¥ê¥½¡¼¥¹ÈÖ¹æ¥ê¥¹¥È¤òºîÀ®¤¹¤ë(NEW)
-- ÂĞ¾İ: /BANK/BioResource/Organization/RIKEN-BRC_2012/RAW_cited-resource/riyousha_seika.2012.xls
-- ¥×¥í¥°¥é¥à: Mathematica
-- ¥¹¥¯¥ê¥×¥È: /BANK/BioResource/Organization/RIKEN-BRC_2012/RAW_cited-resource/all.seika-matome.nb
-- ¸¡º÷¥¿¡¼¥à
--- Mus: ¥ê¥½¡¼¥¹ÈÖ¹æ + ¥ê¥½¡¼¥¹Ì¾
--- Plt: ¥ê¥½¡¼¥¹ÈÖ¹æ¤Î¤ß
--- Cell: ¥ê¥½¡¼¥¹ÈÖ¹æ + ¥ê¥½¡¼¥¹Ì¾
--- Mic: ¥ê¥½¡¼¥¹ÈÖ¹æ¤Î¤ß
--- DNA: ¥ê¥½¡¼¥¹ÈÖ¹æ¤Î¤ßs
--- ¤¹¤Ù¤Æ¤Ş¤È¤á¤¿¥Õ¥¡¥¤¥ë: /BANK/BioResource/Organization/RIKEN-BRC_2012/RAW_cited-resource/All.name
--- ¥½¡¼¥È¥æ¥Ë¡¼¥¯¥¨¥¹¥±¡¼¥×¤·¤¿¸¡º÷¥¿¡¼¥à¥Õ¥¡¥¤¥ë: /BANK/BioResource/Organization/RIKEN-BRC_2012/RAW_cited-resource/All.name.sort.uniq.tsv.esc
-### 1. ¸¡º÷(¥¿¥°¤òKO¤·¤Ê¤¤:ÉÔºÎÂò)
-- ¥×¥í¥°¥é¥à: /home/kamano/gitsrc/utility/match_lines.pl
--- Îã: match_lines.pl sf=/BANK/PMC/20140724/elements/MERGED/Materials/au.merge-reg-material.cont.tsv qf=/BANK/BioResource/Organization/RIKEN-BRC_2012/RAW_cited-resource/All.name.sort.uniq.tsv.esc > res4
-- ¥¹¥¯¥ê¥×¥È(1): /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/exec_command/matchResNameLines_merge-reg-material.au.sh
-- ¥¹¥¯¥ê¥×¥È(2)(20150226¼Â¹Ô): /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/exec_command/matchResNameLines_merge-reg-material.All.sh
-- ·ë²Ì: /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/au.resName_merge-reg-material.cont.res
-- ·ë²Ì¤Î²Ã¹©(¥ê¥½¡¼¥¹Ì¾¤Î¤ß¤òÈ´¤­½Ğ¤¹)
--- ¥¹¥¯¥ê¥×¥È: awk -F"<  >" '{print $2}' aa.resName_merge-reg-material.cont.res > aa.resNameOnly_merge-reg-material
--- ¤¹¤Ù¤Æ¤Î¥Õ¥¡¥¤¥ë¤ò¤Ş¤È¤á¤ë: /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/exec_command/matome_resNameOnly.sh
--- ¤Ş¤È¤á·ë²Ì: /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/All.resNameOnly_merge-reg-material
-- ·ë²Ì¤Î²Ã¹©(¥ê¥½¡¼¥¹Ì¾¤Î¤ß¡¢¥¿¥Ö¶èÀÚ¤ê¡¢ºÇ½ªÅª¤ËÍß¤·¤¤·Á¤Î·ë²Ì): All.resNameOnly_merge-reg-material.tab
--- ¾åµ­¤Î¼Â¹Ô¥¹¥¯¥ê¥×¥È: sed -e "s/^               //" All.resNameOnly_merge-reg-material > All.resNameOnly_merge-reg-material.tab
-- ½Ğ¸½¥ê¥½¡¼¥¹Ì¾¤ÈÂĞ±ş¤¹¤ëÏÀÊ¸Ì¾¤Î¥ê¥¹¥È
--- ¥¹¥¯¥ê¥×¥È: awk -F'   ' '{print $1"   "$2}' aa.resName_merge-reg-material.cont.res > aa.artName_merge-reg-material
--- ¥¹¥¯¥ê¥×¥È: matome_artNameOnly.sh
-### 2. ¸¡º÷(¥¿¥°¤òKO:ºÎÂò)
-#### 2.0-a ¸¡º÷¥½¡¼¥¹¤Î¥¿¥°¤òKO(¥¹¥Ú¡¼¥¹ÃÖ¤­´¹¤¨)
-- ¥×¥í¥°¥é¥à: /home/kamano/gitsrc/XMLOP/tag-KO
-- ¥¹¥¯¥ê¥×¥È:
+##THEME[ãƒªã‚½ãƒ¼ã‚¹åå…±å‡ºç¾è§£æ][kaken-26540170]
+### 0. ãƒªã‚½ãƒ¼ã‚¹åæ¤œç´¢ã®ãŸã‚ã®ãƒªã‚½ãƒ¼ã‚¹å vs. ãƒªã‚½ãƒ¼ã‚¹ç•ªå·ãƒªã‚¹ãƒˆã‚’ä½œæˆã™ã‚‹(NEW)
+- å¯¾è±¡: /BANK/BioResource/Organization/RIKEN-BRC_2012/RAW_cited-resource/riyousha_seika.2012.xls
+- ãƒ—ãƒ­ã‚°ãƒ©ãƒ : Mathematica
+- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ: /BANK/BioResource/Organization/RIKEN-BRC_2012/RAW_cited-resource/all.seika-matome.nb
+- æ¤œç´¢ã‚¿ãƒ¼ãƒ 
+-- Mus: ãƒªã‚½ãƒ¼ã‚¹ç•ªå· + ãƒªã‚½ãƒ¼ã‚¹å
+-- Plt: ãƒªã‚½ãƒ¼ã‚¹ç•ªå·ã®ã¿
+-- Cell: ãƒªã‚½ãƒ¼ã‚¹ç•ªå· + ãƒªã‚½ãƒ¼ã‚¹å
+-- Mic: ãƒªã‚½ãƒ¼ã‚¹ç•ªå·ã®ã¿
+-- DNA: ãƒªã‚½ãƒ¼ã‚¹ç•ªå·ã®ã¿s
+-- ã™ã¹ã¦ã¾ã¨ã‚ãŸãƒ•ã‚¡ã‚¤ãƒ«: /BANK/BioResource/Organization/RIKEN-BRC_2012/RAW_cited-resource/All.name
+-- ã‚½ãƒ¼ãƒˆãƒ¦ãƒ‹ãƒ¼ã‚¯ã‚¨ã‚¹ã‚±ãƒ¼ãƒ—ã—ãŸæ¤œç´¢ã‚¿ãƒ¼ãƒ ãƒ•ã‚¡ã‚¤ãƒ«: /BANK/BioResource/Organization/RIKEN-BRC_2012/RAW_cited-resource/All.name.sort.uniq.tsv.esc
+### 1. æ¤œç´¢(ã‚¿ã‚°ã‚’KOã—ãªã„:ä¸æ¡æŠ)
+- ãƒ—ãƒ­ã‚°ãƒ©ãƒ : /home/kamano/gitsrc/utility/match_lines.pl
+-- ä¾‹: match_lines.pl sf=/BANK/PMC/20140724/elements/MERGED/Materials/au.merge-reg-material.cont.tsv qf=/BANK/BioResource/Organization/RIKEN-BRC_2012/RAW_cited-resource/All.name.sort.uniq.tsv.esc > res4
+- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ(1): /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/exec_command/matchResNameLines_merge-reg-material.au.sh
+- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ(2)(20150226å®Ÿè¡Œ): /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/exec_command/matchResNameLines_merge-reg-material.All.sh
+- çµæœ: /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/au.resName_merge-reg-material.cont.res
+- çµæœã®åŠ å·¥(ãƒªã‚½ãƒ¼ã‚¹åã®ã¿ã‚’æŠœãå‡ºã™)
+-- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ: awk -F"<  >" '{print $2}' aa.resName_merge-reg-material.cont.res > aa.resNameOnly_merge-reg-material
+-- ã™ã¹ã¦ã®ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ã¾ã¨ã‚ã‚‹: /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/exec_command/matome_resNameOnly.sh
+-- ã¾ã¨ã‚çµæœ: /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/All.resNameOnly_merge-reg-material
+- çµæœã®åŠ å·¥(ãƒªã‚½ãƒ¼ã‚¹åã®ã¿ã€ã‚¿ãƒ–åŒºåˆ‡ã‚Šã€æœ€çµ‚çš„ã«æ¬²ã—ã„å½¢ã®çµæœ): All.resNameOnly_merge-reg-material.tab
+-- ä¸Šè¨˜ã®å®Ÿè¡Œã‚¹ã‚¯ãƒªãƒ—ãƒˆ: sed -e "s/^               //" All.resNameOnly_merge-reg-material > All.resNameOnly_merge-reg-material.tab
+- å‡ºç¾ãƒªã‚½ãƒ¼ã‚¹åã¨å¯¾å¿œã™ã‚‹è«–æ–‡åã®ãƒªã‚¹ãƒˆ
+-- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ: awk -F'   ' '{print $1"   "$2}' aa.resName_merge-reg-material.cont.res > aa.artName_merge-reg-material
+-- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ: matome_artNameOnly.sh
+### 2. æ¤œç´¢(ã‚¿ã‚°ã‚’KO:æ¡æŠ)
+#### 2.0-a æ¤œç´¢ã‚½ãƒ¼ã‚¹ã®ã‚¿ã‚°ã‚’KO(ã‚¹ãƒšãƒ¼ã‚¹ç½®ãæ›ãˆ)
+- ãƒ—ãƒ­ã‚°ãƒ©ãƒ : /home/kamano/gitsrc/XMLOP/tag-KO
+- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ:
 cd /BANK/PMC/20140724/elements/MERGED/Materials
 /home/kamano/gitsrc/XMLOP/tag-KO if=aa.merge-reg-material.cont.tsv > aa.merge-reg-material.cont.tsv.KO
-#### 2.0-b ¸¡º÷¥½¡¼¥¹¤Î¥¿¥°¤òKO(¥·¥å¥ê¥ó¥¯)
-#### <[^<>]*>¤Î¥Ñ¥¿¡¼¥ó¤ò<¿ô»ú>¤Î¥Ñ¥¿¡¼¥ó¤ËÊÑ´¹¡£¿ô»ú¤Ï<>¤ò´Ş¤á¤¿Ê¸»ú¿ô¡£
-- ¥×¥í¥°¥é¥à(¥·¥å¥ê¥ó¥¯): /home/kamano/gitsrc/XMLOP/shrink-tag.pl
-- ¥¹¥¯¥ê¥×¥È(¥·¥å¥ê¥ó¥¯): /home/kamano/gitsrc/XMLOP/shrink-tag.pl aa.merge-reg-material.cont.tsv > aa.merge-reg-material.cont.tsv.KO
-- ·ë²Ì: /BANK/PMC/20140724/elements/MERGED/Materials/aa.merge-reg-material.cont.tsv.KO
-#### 2.1-b ¸¡º÷(¥·¥å¥ê¥ó¥¯)
-- ¥×¥í¥°¥é¥à: /home/kamano/gitsrc/utility/match_lines.pl
-- ¥¹¥¯¥ê¥×¥È(2): /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/exec_command/matchResNameLines_merge-reg-material.All-KO.sh
-- ·ë²Ì: /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/aa.resName_merge-reg-material.cont.KO.res
-- ·ë²Ì(¤Ş¤È¤á): /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/All.resName_merge-reg-material.cont.KO.res
-- ·ë²Ì¤Î²Ã¹©(¥ê¥½¡¼¥¹Ì¾¤Î¤ß¤òÈ´¤­½Ğ¤¹): awk -F"<  >" '{print $2}' All.resName_merge-reg-material.cont.KO.res | sed -e "s/^                //" > All.resNameOnly_merge-reg-material.cont.KO.res.tsv
-### ===´°Î»===
+#### 2.0-b æ¤œç´¢ã‚½ãƒ¼ã‚¹ã®ã‚¿ã‚°ã‚’KO(ã‚·ãƒ¥ãƒªãƒ³ã‚¯)
+#### <[^<>]*>ã®ãƒ‘ã‚¿ãƒ¼ãƒ³ã‚’<æ•°å­—>ã®ãƒ‘ã‚¿ãƒ¼ãƒ³ã«å¤‰æ›ã€‚æ•°å­—ã¯<>ã‚’å«ã‚ãŸæ–‡å­—æ•°ã€‚
+- ãƒ—ãƒ­ã‚°ãƒ©ãƒ (ã‚·ãƒ¥ãƒªãƒ³ã‚¯): /home/kamano/gitsrc/XMLOP/shrink-tag.pl
+- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ(ã‚·ãƒ¥ãƒªãƒ³ã‚¯): /home/kamano/gitsrc/XMLOP/shrink-tag.pl aa.merge-reg-material.cont.tsv > aa.merge-reg-material.cont.tsv.KO
+- çµæœ: /BANK/PMC/20140724/elements/MERGED/Materials/aa.merge-reg-material.cont.tsv.KO
+#### 2.1-b æ¤œç´¢(ã‚·ãƒ¥ãƒªãƒ³ã‚¯)
+- ãƒ—ãƒ­ã‚°ãƒ©ãƒ : /home/kamano/gitsrc/utility/match_lines.pl
+- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ(2): /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/exec_command/matchResNameLines_merge-reg-material.All-KO.sh
+- çµæœ: /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/aa.resName_merge-reg-material.cont.KO.res
+- çµæœ(ã¾ã¨ã‚): /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/All.resName_merge-reg-material.cont.KO.res
+- çµæœã®åŠ å·¥(ãƒªã‚½ãƒ¼ã‚¹åã®ã¿ã‚’æŠœãå‡ºã™): awk -F"<  >" '{print $2}' All.resName_merge-reg-material.cont.KO.res | sed -e "s/^                //" > All.resNameOnly_merge-reg-material.cont.KO.res.tsv
+### ===å®Œäº†===
 
-### old:1. ¥ê¥½¡¼¥¹Ì¾¸¡º÷
-- ¸¡º÷¥ê¥½¡¼¥¹Ì¾¥Ñ¥¿¡¼¥óºîÀ®:
--- ÂĞ¾İ: ÍøÍÑ¼ÔÀ®²Ì
--- ¥ê¥½¡¼¥¹Ì¾: /BANK/BioResource/Organization/RIKEN-BRC_2012/cited-resource/ALL.name.sort.uniq.tsv
--- ¸¡º÷¥¿¡¼¥à: /BANK/BioResource/Organization/RIKEN-BRC_2012/cited-resource/All.name.sort.uniq.tsv.esc
--- ¾ò·ï¡¦ÈÏ°Ï: ¥ê¥½¡¼¥¹Ì¾¤ÎÎ¾Â¦¤Î¥¹¥Ú¡¼¥¹¡¢¥«¥ó¥Ş¡¢¥Ö¥é¥±¥Ã¥È¤ò¹ÍÎ¸¤·¤ÆXMLÁ´ÂÎ¤ò¸¡º÷¡¢¤Î¤Á¤Ëposition¤ò¤â¤È¤Ë materials|methods Æâ¤ÎÈÏ°Ï¤Ë¹Ê¤ë¡£ 
--- method: match_position_ex_RE.pl ¥³¥Ş¥ó¥É¤ò»ÈÍÑ
-- ¥³¥Ş¥ó¥É¥Õ¥í¡¼:
--- ÍøÍÑ¼ÔÀ®²Ì¤è¤ê¥¿¡¼¥à¤òÃê½Ğ: /BANK/BioResource/Organization/RIKEN-BRC_2012/cited-resource/ALL.name.sort.uniq.tsv
--- Àµµ¬É½¸½¸¡º÷ÍÑ¤ËÍ½ÌóÊ¸»ú¤ò¥¨¥¹¥±¡¼¥×:
+### old:1. ãƒªã‚½ãƒ¼ã‚¹åæ¤œç´¢
+- æ¤œç´¢ãƒªã‚½ãƒ¼ã‚¹åãƒ‘ã‚¿ãƒ¼ãƒ³ä½œæˆ:
+-- å¯¾è±¡: åˆ©ç”¨è€…æˆæœ
+-- ãƒªã‚½ãƒ¼ã‚¹å: /BANK/BioResource/Organization/RIKEN-BRC_2012/cited-resource/ALL.name.sort.uniq.tsv
+-- æ¤œç´¢ã‚¿ãƒ¼ãƒ : /BANK/BioResource/Organization/RIKEN-BRC_2012/cited-resource/All.name.sort.uniq.tsv.esc
+-- æ¡ä»¶ãƒ»ç¯„å›²: ãƒªã‚½ãƒ¼ã‚¹åã®ä¸¡å´ã®ã‚¹ãƒšãƒ¼ã‚¹ã€ã‚«ãƒ³ãƒã€ãƒ–ãƒ©ã‚±ãƒƒãƒˆã‚’è€ƒæ…®ã—ã¦XMLå…¨ä½“ã‚’æ¤œç´¢ã€ã®ã¡ã«positionã‚’ã‚‚ã¨ã« materials|methods å†…ã®ç¯„å›²ã«çµã‚‹ã€‚ 
+-- method: match_position_ex_RE.pl ã‚³ãƒãƒ³ãƒ‰ã‚’ä½¿ç”¨
+- ã‚³ãƒãƒ³ãƒ‰ãƒ•ãƒ­ãƒ¼:
+-- åˆ©ç”¨è€…æˆæœã‚ˆã‚Šã‚¿ãƒ¼ãƒ ã‚’æŠ½å‡º: /BANK/BioResource/Organization/RIKEN-BRC_2012/cited-resource/ALL.name.sort.uniq.tsv
+-- æ­£è¦è¡¨ç¾æ¤œç´¢ç”¨ã«äºˆç´„æ–‡å­—ã‚’ã‚¨ã‚¹ã‚±ãƒ¼ãƒ—:
 escape_char sf=/BANK/BioResource/Organization/RIKEN-BRC_2012/RAW_cited-resource/All.name.sort.uniq.tsv lf=/usr/local/var/perl_esc.list > /BANK/BioResource/Organization/RIKEN-BRC_2012/RAW_cited-resource/All.name.sort.uniq.tsv.esc
 ln -s /BANK/BioResource/Organization/RIKEN-BRC_2012/RAW_cited-resource/All.name.sort.uniq.tsv.esc /BANK/BioResource/Organization/RIKEN-BRC_2012/cited-resource/All.name.sort.uniq.tsv.esc
--- ¸¡º÷
---- ¥×¥í¥°¥é¥à: /home/kamano/gitsrc/utility/match_position_ex_RE.pl
+-- æ¤œç´¢
+--- ãƒ—ãƒ­ã‚°ãƒ©ãƒ : /home/kamano/gitsrc/utility/match_position_ex_RE.pl
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/exec_command
 /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/exec_command/match_pos_AllResNames_Jour-au.sh
 ###==========================
-###===2014.07.30 1700 ³«»Ï===
-###===2014.08.02 1925 ½ªÎ»===
+###===2014.07.30 1700 é–‹å§‹===
+###===2014.08.02 1925 çµ‚äº†===
 ###==========================
-### old:2. ¥Ş¥Æ¥ê¥¢¥ë¥á¥½¥Ã¥É¥»¥¯¥·¥ç¥ó¤Ë¤¢¤ë¤« (¿·Êı¼°)(³ÎÇ§É¬Í×)
-#### 2.1 ¥Ş¥Æ¥ê¥¢¥ë¥á¥½¥Ã¥É¥»¥¯¥·¥ç¥ó¤ÎÎÎ°è¤òÃê½Ğ (1²ó¤ä¤ì¤ĞOK)
-#### -> »²¾È: TASK(extract.material) 1.
-##### 2.1.1 <sec>¥¿¥°ÎÎ°è¤òÃê½Ğ (NEW) (´°Î»)
-- ¥×¥í¥°¥é¥à: /home/kamano/gitsrc/XMLOP/elementPos_sec.pl
+### old:2. ãƒãƒ†ãƒªã‚¢ãƒ«ãƒ¡ã‚½ãƒƒãƒ‰ã‚»ã‚¯ã‚·ãƒ§ãƒ³ã«ã‚ã‚‹ã‹ (æ–°æ–¹å¼)(ç¢ºèªå¿…è¦)
+#### 2.1 ãƒãƒ†ãƒªã‚¢ãƒ«ãƒ¡ã‚½ãƒƒãƒ‰ã‚»ã‚¯ã‚·ãƒ§ãƒ³ã®é ˜åŸŸã‚’æŠ½å‡º (1å›ã‚„ã‚Œã°OK)
+#### -> å‚ç…§: TASK(extract.material) 1.
+##### 2.1.1 <sec>ã‚¿ã‚°é ˜åŸŸã‚’æŠ½å‡º (NEW) (å®Œäº†)
+- ãƒ—ãƒ­ã‚°ãƒ©ãƒ : /home/kamano/gitsrc/XMLOP/elementPos_sec.pl
 cd /BANK/PMC/20140724/elements/sec
 /BANK/PMC/20140724/elements/sec/exec_command/sec_pos-au.sh
-##### 2.1.2 Ãê½Ğ¤µ¤ì¤¿<sec>¥¿¥°ÎÎ°è ¤ò sort (NEW) (´°Î»)
-- ¥×¥í¥°¥é¥à: /home/kamano/gitsrc/XMLOP/region-sort_from_reg.pl
+##### 2.1.2 æŠ½å‡ºã•ã‚ŒãŸ<sec>ã‚¿ã‚°é ˜åŸŸ ã‚’ sort (NEW) (å®Œäº†)
+- ãƒ—ãƒ­ã‚°ãƒ©ãƒ : /home/kamano/gitsrc/XMLOP/region-sort_from_reg.pl
 cd /BANK/PMC/20140724/elements/sec
 for file in *reg; do  /home/kamano/gitsrc/XMLOP/region-sort_from_reg.pl $file > ${file}_sort; done
-##### 2.1.3 sortºÑ¤ß¤ÎÃê½Ğ¤µ¤ì¤¿<sec>¥¿¥°ÎÎ°èfile¡¡¤«¤é¡¡¥Ş¥Æ¥ê¥¢¥ë¥á¥½¥Ã¥É¥»¥¯¥·¥ç¥ó¤ÎÎÎ°è¤òÃê½Ğ (NEW) (´°Î»)
-- ¥×¥í¥°¥é¥à(»îÍÑ): /home/kamano/gitsrc/XMLOP/region-MMs_from_reg_sort.pl
+##### 2.1.3 sortæ¸ˆã¿ã®æŠ½å‡ºã•ã‚ŒãŸ<sec>ã‚¿ã‚°é ˜åŸŸfileã€€ã‹ã‚‰ã€€ãƒãƒ†ãƒªã‚¢ãƒ«ãƒ¡ã‚½ãƒƒãƒ‰ã‚»ã‚¯ã‚·ãƒ§ãƒ³ã®é ˜åŸŸã‚’æŠ½å‡º (NEW) (å®Œäº†)
+- ãƒ—ãƒ­ã‚°ãƒ©ãƒ (è©¦ç”¨): /home/kamano/gitsrc/XMLOP/region-MMs_from_reg_sort.pl
 cd /BANK/PMC/20140724/elements/sec
 /home/kamano/gitsrc/XMLOP/region-MMs_from_reg_sort.pl sec_pos-au.reg_sort  | grep ^[^0-9] > sec_pos-au.reg-MMs
-##### ¿·¤·¤¤ÎÎ°è¤È¤·¤Æ¡¢ sec_sort_pos-au.reg-Material  ¤ò¤Ä¤«¤¦¡£
-#### 2.2 (NEW) ¥Ş¥Æ¥ê¥¢¥ë¥á¥½¥Ã¥É¥»¥¯¥·¥ç¥ó¤ÎÎÎ°è¤È¥Ò¥Ã¥ÈÎÎ°è¤òÈæ³Ó (´°Î»)
-- ¥×¥í¥°¥é¥à(»îÍÑ): /home/kamano/gitsrc/XMLOP/check-region_from_pos.pl
+##### æ–°ã—ã„é ˜åŸŸã¨ã—ã¦ã€ sec_sort_pos-au.reg-Material  ã‚’ã¤ã‹ã†ã€‚
+#### 2.2 (NEW) ãƒãƒ†ãƒªã‚¢ãƒ«ãƒ¡ã‚½ãƒƒãƒ‰ã‚»ã‚¯ã‚·ãƒ§ãƒ³ã®é ˜åŸŸã¨ãƒ’ãƒƒãƒˆé ˜åŸŸã‚’æ¯”è¼ƒ (å®Œäº†)
+- ãƒ—ãƒ­ã‚°ãƒ©ãƒ (è©¦ç”¨): /home/kamano/gitsrc/XMLOP/check-region_from_pos.pl
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/exec_command
 /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/exec_command/check_pos_AllResNames_Jour-au_inMMs.sh
-#### 2.2 (OLD) ¥Ş¥Æ¥ê¥¢¥ë¥á¥½¥Ã¥É¥»¥¯¥·¥ç¥ó¤ÎÎÎ°è¤È¥Ò¥Ã¥ÈÎÎ°è¤òÈæ³Ó(¥Õ¥¡¥¤¥ë¾Ãµî) 
-- ¥×¥í¥°¥é¥à: /home/kamano/gitsrc/XMLOP/check_res_sec-MMs.pl
- : ¥İ¥¸¥·¥ç¥ó¤Ç¥½¡¼¥È¤·¤Æ¤¤¤ë¤Î¤ÇOK
+#### 2.2 (OLD) ãƒãƒ†ãƒªã‚¢ãƒ«ãƒ¡ã‚½ãƒƒãƒ‰ã‚»ã‚¯ã‚·ãƒ§ãƒ³ã®é ˜åŸŸã¨ãƒ’ãƒƒãƒˆé ˜åŸŸã‚’æ¯”è¼ƒ(ãƒ•ã‚¡ã‚¤ãƒ«æ¶ˆå») 
+- ãƒ—ãƒ­ã‚°ãƒ©ãƒ : /home/kamano/gitsrc/XMLOP/check_res_sec-MMs.pl
+ : ãƒã‚¸ã‚·ãƒ§ãƒ³ã§ã‚½ãƒ¼ãƒˆã—ã¦ã„ã‚‹ã®ã§OK
 cd /BANK/PMC/20130909/Matching/BioResource/Organization/RIKEN-BRC_2012/
 /BANK/PMC/20130909/Matching/BioResource/Organization/RIKEN-BRC_2012/exec_commandcheck_Res_betSP_sec-MMs_Jour-aa.sh
 /BANK/PMC/20130909/Matching/BioResource/Organization/RIKEN-BRC_2012/exec_command/check_pos_MMs_AllResNames_Jour-au.sh
-#### 2.3. ¥Á¥§¥Ã¥¯ºÑ¤ß·ë²Ì¤ò¥«¥¦¥ó¥È
-#####THEME[¥ê¥½¡¼¥¹Ì¾¶¦½Ğ¸½²òÀÏ]
-##### 2.3.0 ¥Á¥§¥Ã¥¯ÍÑ¥¿¡¼¥à:
+#### 2.3. ãƒã‚§ãƒƒã‚¯æ¸ˆã¿çµæœã‚’ã‚«ã‚¦ãƒ³ãƒˆ
+#####THEME[ãƒªã‚½ãƒ¼ã‚¹åå…±å‡ºç¾è§£æ]
+##### 2.3.0 ãƒã‚§ãƒƒã‚¯ç”¨ã‚¿ãƒ¼ãƒ :
 /BANK/BioResource/Organization/RIKEN-BRC_2012/cited-resource/ALL.name.sort.uniq.tsv
-#####¸¡º÷¥¿¡¼¥à¤¬¥ê¥Æ¥é¥ë¤Ç¤Ê¤¤¾ì¹ç¡¢°ìÃ¶¸¡º÷·ë²Ì¤«¤é¥Á¥§¥Ã¥¯ÍÑ¥¿¡¼¥à¤òºî¤ë¡£
-##### 2.3.1 ¥¤¥ó¥Ç¥Ã¥¯¥¹ÉÕ¤­¹ÔÎó (ÉÔÍ×)
-##### 2.3.2 ¥«¥¦¥ó¥È¥¹¥Ñ¡¼¥¹¹ÔÎó(matlab·Á¼°)¤òÄ¾ÀÜ½ĞÎÏ
-#####¥¤¥ó¥Ç¥Ã¥¯¥¹¤Ï1¤«¤é¥¹¥¿¡¼¥È
-- ¥×¥í¥°¥é¥à(»î¸³Ãæ): /home/kamano/gitsrc/XMLOP/count_Res_in_Art.pl
+#####æ¤œç´¢ã‚¿ãƒ¼ãƒ ãŒãƒªãƒ†ãƒ©ãƒ«ã§ãªã„å ´åˆã€ä¸€æ—¦æ¤œç´¢çµæœã‹ã‚‰ãƒã‚§ãƒƒã‚¯ç”¨ã‚¿ãƒ¼ãƒ ã‚’ä½œã‚‹ã€‚
+##### 2.3.1 ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ä»˜ãè¡Œåˆ— (ä¸è¦)
+##### 2.3.2 ã‚«ã‚¦ãƒ³ãƒˆã‚¹ãƒ‘ãƒ¼ã‚¹è¡Œåˆ—(matlabå½¢å¼)ã‚’ç›´æ¥å‡ºåŠ›
+#####ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ã¯1ã‹ã‚‰ã‚¹ã‚¿ãƒ¼ãƒˆ
+- ãƒ—ãƒ­ã‚°ãƒ©ãƒ (è©¦é¨“ä¸­): /home/kamano/gitsrc/XMLOP/count_Res_in_Art.pl
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012
 /home/kamano/gitsrc/XMLOP/count_Res_in_Art.pl rf=/BANK/BioResource/Organization/RIKEN-BRC_2012/cited-resource/ALL.name.sort.uniq.tsv  hf=/BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/match_pos_AllResNames_Jour-au.res.inMMs > count_AllResNames_Jour-au.res.inMMs
-##### 2.3.3 ¥«¥¦¥ó¥È¥¹¥Ñ¡¼¥¹¹ÔÎó¡¡¤«¤é¡¡¥Ò¥Ã¥È¥¹¥Ñ¡¼¥¹¹ÔÎó¤Ø
-- ¥×¥í¥°¥é¥à: /home/kamano/gitsrc/utility/SP_count2hit.pl
+##### 2.3.3 ã‚«ã‚¦ãƒ³ãƒˆã‚¹ãƒ‘ãƒ¼ã‚¹è¡Œåˆ—ã€€ã‹ã‚‰ã€€ãƒ’ãƒƒãƒˆã‚¹ãƒ‘ãƒ¼ã‚¹è¡Œåˆ—ã¸
+- ãƒ—ãƒ­ã‚°ãƒ©ãƒ : /home/kamano/gitsrc/utility/SP_count2hit.pl
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012
 for file in count*; do  /home/kamano/gitsrc/utility/SP_count2hit.pl $file > hit${file#count}; done
-#### 2.4. ¥¤¥ó¥Ç¥Ã¥¯¥¹ÉÕ¤­¹ÔÎó -> ¿ôÃÍ¤Î¤ß¹ÔÎó (ÉÔÍ×)
-####Ãà¼¡°ì³ç½èÍı
-#### 2.5. ¿ôÃÍ¹ÔÎó¤Î¥¼¥íÍ×ÁÇ°Ê³°¤ò1¤ËÃÖ´¹ (1 article¤Ë¤ª¤±¤ë¶¦µ¯¤ò1¤È¥«¥¦¥ó¥È¤¹¤ë¤¿¤á)(ÉÔÍ×)
-#### 2.6. ¿ôÃÍ¹ÔÎó¤ò¥¹¥Ñ¡¼¥¹·Á¼°¤ËÊÑ´¹ (ÉÔÍ×)
-##### 2.6.1 Mathematica¥¹¥Ñ¡¼¥¹·Á¼°
-- ¥×¥í¥°¥é¥à: /home/kamano/gitsrc/utility/mk_MMA-SPA_from_numtable.pl
-#####¥¤¥ó¥Ç¥Ã¥¯¥¹¤ÏmatlabÍÑ¤Ë1¤«¤é¥¹¥¿¡¼¥È
-##### 2.6.2 Matlab data ·Á¼° (ÆÉ¤ß¹ş¤ó¤À¸å¤Ë¤µ¤é¤ËÊÑ´¹¤¬É¬Í×)
-- ¥×¥í¥°¥é¥à: /home/kamano/gitsrc/utility/mk_MatlabSparse_from_numtable.pl
-#####Ãà¼¡°ì³ç½èÍı(ÃÙ¤¤)
+#### 2.4. ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ä»˜ãè¡Œåˆ— -> æ•°å€¤ã®ã¿è¡Œåˆ— (ä¸è¦)
+####é€æ¬¡ä¸€æ‹¬å‡¦ç†
+#### 2.5. æ•°å€¤è¡Œåˆ—ã®ã‚¼ãƒ­è¦ç´ ä»¥å¤–ã‚’1ã«ç½®æ› (1 articleã«ãŠã‘ã‚‹å…±èµ·ã‚’1ã¨ã‚«ã‚¦ãƒ³ãƒˆã™ã‚‹ãŸã‚)(ä¸è¦)
+#### 2.6. æ•°å€¤è¡Œåˆ—ã‚’ã‚¹ãƒ‘ãƒ¼ã‚¹å½¢å¼ã«å¤‰æ› (ä¸è¦)
+##### 2.6.1 Mathematicaã‚¹ãƒ‘ãƒ¼ã‚¹å½¢å¼
+- ãƒ—ãƒ­ã‚°ãƒ©ãƒ : /home/kamano/gitsrc/utility/mk_MMA-SPA_from_numtable.pl
+#####ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ã¯matlabç”¨ã«1ã‹ã‚‰ã‚¹ã‚¿ãƒ¼ãƒˆ
+##### 2.6.2 Matlab data å½¢å¼ (èª­ã¿è¾¼ã‚“ã å¾Œã«ã•ã‚‰ã«å¤‰æ›ãŒå¿…è¦)
+- ãƒ—ãƒ­ã‚°ãƒ©ãƒ : /home/kamano/gitsrc/utility/mk_MatlabSparse_from_numtable.pl
+#####é€æ¬¡ä¸€æ‹¬å‡¦ç†(é…ã„)
 for file in count_pos_MMs_AllResNames-U_Jour-a*.res.numonly; do  /home/kamano/gitsrc/utility/mk_MatlabSparse_from_numtable.pl $file > $file.sptbl; done
-##### 2.6.3 Matrix Market ·Á¼°
-- ¥×¥í¥°¥é¥à: /home/kamano/gitsrc/utility/mk_MatMarket_from_numtable.pl
-#### 2.7. ¥«¥¦¥ó¥È
-- ¥Ä¡¼¥ë: matlab
-##### 2.7.1 ¥Ò¥Ã¥È¥Õ¥¡¥¤¥ë¤òÆÉ¤ß¹ş¤à¤ÈÆ±»ş¤Ë¥¹¥Ñ¡¼¥¹ÇÛÎó¤ËÊÑ´¹¡¢°ì¤Ä¤Î¹ÔÎó¤ËÏ¢·ë¡£
+##### 2.6.3 Matrix Market å½¢å¼
+- ãƒ—ãƒ­ã‚°ãƒ©ãƒ : /home/kamano/gitsrc/utility/mk_MatMarket_from_numtable.pl
+#### 2.7. ã‚«ã‚¦ãƒ³ãƒˆ
+- ãƒ„ãƒ¼ãƒ«: matlab
+##### 2.7.1 ãƒ’ãƒƒãƒˆãƒ•ã‚¡ã‚¤ãƒ«ã‚’èª­ã¿è¾¼ã‚€ã¨åŒæ™‚ã«ã‚¹ãƒ‘ãƒ¼ã‚¹é…åˆ—ã«å¤‰æ›ã€ä¸€ã¤ã®è¡Œåˆ—ã«é€£çµã€‚
 >> cd('/BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/')
 >> files = (dir('hit*'))
 >> for i=1:length(files); SpCount{i}=spconvert(load(files(i).name)); end
 >> SpCountCat=vertcat(SpCount{:});
-###### 2.7.1.1 ¥ê¥½¡¼¥¹¥Í¡¼¥à¤ÎÁí½Ğ¸½¿ô¥«¥¦¥ó¥È¤Î·ë²Ì¥Õ¥¡¥¤¥ë(csv)
+###### 2.7.1.1 ãƒªã‚½ãƒ¼ã‚¹ãƒãƒ¼ãƒ ã®ç·å‡ºç¾æ•°ã‚«ã‚¦ãƒ³ãƒˆã®çµæœãƒ•ã‚¡ã‚¤ãƒ«(csv)
 >> SpCountCatSumRes=sum(SpCountCat);
 >> CountCatSumRes=full(SpCountCatSumRes);
 >> csvwrite('/BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/analisys/count/resource-count_AllResNames.inMMs.csv',CountCatSumRes)
-- ¥Õ¥¡¥¤¥ë: /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/analisys/count/resource-count_AllResNames.inMMs.csv
-- ÂĞ±ş¤¹¤ë¥ê¥½¡¼¥¹Ì¾¥Õ¥¡¥¤¥ë: /BANK/BioResource/Organization/RIKEN-BRC_2012/cited-resource/ALL.name.sort.uniq.tsv
-- ÂĞ±ş¤¹¤ë¥ê¥½¡¼¥¹Ì¾¥Õ¥¡¥¤¥ë(¥°¥ë¡¼¥×¥¿¥°ÉÕ¤­): /BANK/BioResource/Organization/RIKEN-BRC_2012/RAW_cited-resource/All.name_group_org.sort.uniq.tsv
-###### 2.7.1.2 article¤ÎÁí½Ğ¸½¿ô¥«¥¦¥ó¥È¤Î·ë²Ì¥Õ¥¡¥¤¥ë(csv)
+- ãƒ•ã‚¡ã‚¤ãƒ«: /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/analisys/count/resource-count_AllResNames.inMMs.csv
+- å¯¾å¿œã™ã‚‹ãƒªã‚½ãƒ¼ã‚¹åãƒ•ã‚¡ã‚¤ãƒ«: /BANK/BioResource/Organization/RIKEN-BRC_2012/cited-resource/ALL.name.sort.uniq.tsv
+- å¯¾å¿œã™ã‚‹ãƒªã‚½ãƒ¼ã‚¹åãƒ•ã‚¡ã‚¤ãƒ«(ã‚°ãƒ«ãƒ¼ãƒ—ã‚¿ã‚°ä»˜ã): /BANK/BioResource/Organization/RIKEN-BRC_2012/RAW_cited-resource/All.name_group_org.sort.uniq.tsv
+###### 2.7.1.2 articleã®ç·å‡ºç¾æ•°ã‚«ã‚¦ãƒ³ãƒˆã®çµæœãƒ•ã‚¡ã‚¤ãƒ«(csv)
 >> TrSpCountCat = transpose(SpCountCat);
 >> TrSpCountCatSum = sum(TrSpCountCat);
 >> TrCountCatSum = full(TrSpCountCatSum);
 >> csvwrite('/BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/analisys/count/article-count_AllResNames.inMMs.csv',TrCountCatSum)
-- ¥Õ¥¡¥¤¥ë: /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/analisys/count/article-count_AllResNames.inMMs.csv
-- ÂĞ±ş¤¹¤ëarticleÌ¾¥Õ¥¡¥¤¥ë(Ê£¿ô): /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/match_pos_AllResNames_Jour-a[a-u].res.inMMs
-###===¤³¤³¤Ş¤Ç´°Î»===
-#### 2.8. ¥ê¥½¡¼¥¹Ì¾(term)¤¬¥Ş¥Ã¥Á¤·¤¿²Õ½ê¤È¥Õ¥¡¥¤¥ëÌ¾¤Î¾ğÊó(1.)¤òRDBMS¤ËÆş¤ì¤ë¡£¥ê¥½¡¼¥¹Ì¾¤«¤é¸¡º÷¤·¤Æ¥Õ¥¡¥¤¥ëÌ¾¤È²Õ½ê¤òÃµ¤»¤ë¤è¤¦¤Ë¡£(¸¡Æ¤Ãæ)
+- ãƒ•ã‚¡ã‚¤ãƒ«: /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/analisys/count/article-count_AllResNames.inMMs.csv
+- å¯¾å¿œã™ã‚‹articleåãƒ•ã‚¡ã‚¤ãƒ«(è¤‡æ•°): /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/match_pos_AllResNames_Jour-a[a-u].res.inMMs
+###===ã“ã“ã¾ã§å®Œäº†===
+#### 2.8. ãƒªã‚½ãƒ¼ã‚¹å(term)ãŒãƒãƒƒãƒã—ãŸç®‡æ‰€ã¨ãƒ•ã‚¡ã‚¤ãƒ«åã®æƒ…å ±(1.)ã‚’RDBMSã«å…¥ã‚Œã‚‹ã€‚ãƒªã‚½ãƒ¼ã‚¹åã‹ã‚‰æ¤œç´¢ã—ã¦ãƒ•ã‚¡ã‚¤ãƒ«åã¨ç®‡æ‰€ã‚’æ¢ã›ã‚‹ã‚ˆã†ã«ã€‚(æ¤œè¨ä¸­)
 ####DB start
 pg_ctl start -D /BANK/pgsql
 ####DB connect
 psql term_region
-##### 2.8.1 ÂĞ¾İ¥Õ¥¡¥¤¥ë
+##### 2.8.1 å¯¾è±¡ãƒ•ã‚¡ã‚¤ãƒ«
 /BANK/PMC/20130909/Matching/BioResource_AND_Organization/RIKEN-BRC_2012/check_Res_betSP_sec-MMs_Jour-[A-Z].res
-##### 2.8.2 ¥Æ¡¼¥Ö¥ë¹½Â¤
+##### 2.8.2 ãƒ†ãƒ¼ãƒ–ãƒ«æ§‹é€ 
 DB:<term_region>:
 Table0:<elementname>: <elementname> <annotation>
 Table1:<region_type>: <region_type> <annotation> <element> #ex. tag, content ... 
 Table2:<region_type_property>: <region_type> <property_target> <property_valur>
-#####<region_type>¤Ï¡¢region_type.region_type¤Î¥×¥í¥Ñ¥Æ¥£ÉÕÍ¿¡£Ê£¿ô¤Î<region_type_atom>¤Î¥×¥í¥Ñ¥Æ¥£¤¬ÉÕÍ¿¤µ¤ì¤ë¤È¡¢region_type.complex_or_single ¤Ïcomplex¡£
-#####<region_type_atom>¤Ï¡¢¾¯¤Ê¤¯¤È¤â¤½¤Î¾ò·ï¤òËş¤¿¤·¤Æ¤¤¤ë¡£
+#####<region_type>ã¯ã€region_type.region_typeã®ãƒ—ãƒ­ãƒ‘ãƒ†ã‚£ä»˜ä¸ã€‚è¤‡æ•°ã®<region_type_atom>ã®ãƒ—ãƒ­ãƒ‘ãƒ†ã‚£ãŒä»˜ä¸ã•ã‚Œã‚‹ã¨ã€region_type.complex_or_single ã¯complexã€‚
+#####<region_type_atom>ã¯ã€å°‘ãªãã¨ã‚‚ãã®æ¡ä»¶ã‚’æº€ãŸã—ã¦ã„ã‚‹ã€‚
 Table4:<element_region>: <filename> <resourcename> <region_type> <region_start> <region_end>
 Table5:<resourcename_region>: <filename> <resourcename> <region_type> <region_start> <region_end>
 Table6:<organizationname_region>: <filename> <organizationname> <region_type> <region_start> <region_end>
 Table7:<affriationname_region>: <filename> <affriationname> <region_type> <region_start> <region_end>
 Table8:<...>: ... 
 
-##TASK(2.2): JCRB (¸¡º÷´°Î»¡¢¥Á¥§¥Ã¥¯´°Î»)
+##TASK(2.2): JCRB (æ¤œç´¢å®Œäº†ã€ãƒã‚§ãƒƒã‚¯å®Œäº†)
 ##THEME[kaken-26540170]
-### 1. ¥ê¥½¡¼¥¹Ì¾¸¡º÷
-- ¾ò·ï¡¦ÈÏ°Ï: ¥ê¥½¡¼¥¹Ì¾¤ÎÎ¾Â¦¤Î¥¹¥Ú¡¼¥¹¡¢¥«¥ó¥Ş¡¢¥Ö¥é¥±¥Ã¥È¤ò¹ÍÎ¸¤·¤ÆXMLÁ´ÂÎ¤ò¸¡º÷¡¢¤Î¤Á¤Ëposition¤ò¤â¤È¤Ë materials|methods Æâ¤ÎÈÏ°Ï¤Ë¹Ê¤ë¡£ 
-- method: match_position_ex_RE.pl ¥³¥Ş¥ó¥É¤ò»ÈÍÑ
+### 1. ãƒªã‚½ãƒ¼ã‚¹åæ¤œç´¢
+- æ¡ä»¶ãƒ»ç¯„å›²: ãƒªã‚½ãƒ¼ã‚¹åã®ä¸¡å´ã®ã‚¹ãƒšãƒ¼ã‚¹ã€ã‚«ãƒ³ãƒã€ãƒ–ãƒ©ã‚±ãƒƒãƒˆã‚’è€ƒæ…®ã—ã¦XMLå…¨ä½“ã‚’æ¤œç´¢ã€ã®ã¡ã«positionã‚’ã‚‚ã¨ã« materials|methods å†…ã®ç¯„å›²ã«çµã‚‹ã€‚ 
+- method: match_position_ex_RE.pl ã‚³ãƒãƒ³ãƒ‰ã‚’ä½¿ç”¨
 cd /BANK/PMC/20140724/articles.fname/20
 split -l 33216 Jour-All.fname Jour-split.
-- ¥³¥Ş¥ó¥É¥Õ¥í¡¼:
--- ¥¿¡¼¥à¤Î¸¡º÷
---- ¥«¥¿¥í¥°¤è¤ê¥ê¥½¡¼¥¹Ì¾¤È¥ê¥½¡¼¥¹ÈÖ¹æ¤òÆÀ¤ë: /BANK/BioResource/Organization/JCRB_2014/RAW_catalogue/All.name.sort.uniq.tsv
---- Àµµ¬É½¸½¸¡º÷ÍÑ¤ËÍ½ÌóÊ¸»ú¤ò¥¹¥±¡¼¥×:
+- ã‚³ãƒãƒ³ãƒ‰ãƒ•ãƒ­ãƒ¼:
+-- ã‚¿ãƒ¼ãƒ ã®æ¤œç´¢
+--- ã‚«ã‚¿ãƒ­ã‚°ã‚ˆã‚Šãƒªã‚½ãƒ¼ã‚¹åã¨ãƒªã‚½ãƒ¼ã‚¹ç•ªå·ã‚’å¾—ã‚‹: /BANK/BioResource/Organization/JCRB_2014/RAW_catalogue/All.name.sort.uniq.tsv
+--- æ­£è¦è¡¨ç¾æ¤œç´¢ç”¨ã«äºˆç´„æ–‡å­—ã‚’ã‚¹ã‚±ãƒ¼ãƒ—:
 escape_char sf=/BANK/BioResource/Organization/JCRB_2014/RAW_catalogue/All.name.sort.uniq.tsv lf=/usr/local/var/perl_esc.list > All.name.sort.uniq.tsv.esc
 /BANK/BioResource/Organization/JCRB_2014/catalogue/All.name.sort.uniq.tsv.esc
----  ¸¡º÷
----- ¥×¥í¥°¥é¥à: /home/kamano/gitsrc/utility/match_position_ex_RE.pl
+---  æ¤œç´¢
+---- ãƒ—ãƒ­ã‚°ãƒ©ãƒ : /home/kamano/gitsrc/utility/match_position_ex_RE.pl
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/JCRB_2014
 /BANK/PMC/20140724/Matching/BioResource/Organization/JCRB_2014/exec_command/match_pos_AllResNames_Jour-au.sh
 ###========================
-###===20140804 1400 ³«»Ï===
-###===20140806 0743 ½ªÎ»===
+###===20140804 1400 é–‹å§‹===
+###===20140806 0743 çµ‚äº†===
 ###========================
-### 2. ¥Ş¥Æ¥ê¥¢¥ë¥á¥½¥Ã¥É¥»¥¯¥·¥ç¥ó¤Ë¤¢¤ë¤« (¿·Êı¼°)
-#### 2.1 ¥Ş¥Æ¥ê¥¢¥ë¥á¥½¥Ã¥É¥»¥¯¥·¥ç¥ó¤ÎÎÎ°è¤òÃê½Ğ (1²ó¤ä¤ì¤ĞOK ->  Á°TASK¤Ç´°Î»)
-##### 2.1.1 <sec>¥¿¥°ÎÎ°è¤òÃê½Ğ (NEW) (´°Î»)
-##### 2.1.2 Ãê½Ğ¤µ¤ì¤¿<sec>¥¿¥°ÎÎ°è ¤ò sort (NEW) (´°Î»)
-##### 2.1.3 sortºÑ¤ß¤ÎÃê½Ğ¤µ¤ì¤¿<sec>¥¿¥°ÎÎ°èfile¡¡¤«¤é¡¡¥Ş¥Æ¥ê¥¢¥ë¥á¥½¥Ã¥É¥»¥¯¥·¥ç¥ó¤ÎÎÎ°è¤òÃê½Ğ (NEW) (´°Î»)
-#### 2.2 (NEW) ¥Ş¥Æ¥ê¥¢¥ë¥á¥½¥Ã¥É¥»¥¯¥·¥ç¥ó¤ÎÎÎ°è¤È¥Ò¥Ã¥ÈÎÎ°è¤òÈæ³Ó (´°Î»)
-- ¥×¥í¥°¥é¥à(»îÍÑ): /home/kamano/gitsrc/XMLOP/check-region_from_pos.pl
+### 2. ãƒãƒ†ãƒªã‚¢ãƒ«ãƒ¡ã‚½ãƒƒãƒ‰ã‚»ã‚¯ã‚·ãƒ§ãƒ³ã«ã‚ã‚‹ã‹ (æ–°æ–¹å¼)
+#### 2.1 ãƒãƒ†ãƒªã‚¢ãƒ«ãƒ¡ã‚½ãƒƒãƒ‰ã‚»ã‚¯ã‚·ãƒ§ãƒ³ã®é ˜åŸŸã‚’æŠ½å‡º (1å›ã‚„ã‚Œã°OK ->  å‰TASKã§å®Œäº†)
+##### 2.1.1 <sec>ã‚¿ã‚°é ˜åŸŸã‚’æŠ½å‡º (NEW) (å®Œäº†)
+##### 2.1.2 æŠ½å‡ºã•ã‚ŒãŸ<sec>ã‚¿ã‚°é ˜åŸŸ ã‚’ sort (NEW) (å®Œäº†)
+##### 2.1.3 sortæ¸ˆã¿ã®æŠ½å‡ºã•ã‚ŒãŸ<sec>ã‚¿ã‚°é ˜åŸŸfileã€€ã‹ã‚‰ã€€ãƒãƒ†ãƒªã‚¢ãƒ«ãƒ¡ã‚½ãƒƒãƒ‰ã‚»ã‚¯ã‚·ãƒ§ãƒ³ã®é ˜åŸŸã‚’æŠ½å‡º (NEW) (å®Œäº†)
+#### 2.2 (NEW) ãƒãƒ†ãƒªã‚¢ãƒ«ãƒ¡ã‚½ãƒƒãƒ‰ã‚»ã‚¯ã‚·ãƒ§ãƒ³ã®é ˜åŸŸã¨ãƒ’ãƒƒãƒˆé ˜åŸŸã‚’æ¯”è¼ƒ (å®Œäº†)
+- ãƒ—ãƒ­ã‚°ãƒ©ãƒ (è©¦ç”¨): /home/kamano/gitsrc/XMLOP/check-region_from_pos.pl
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/JCRB_2014/exec_command
 /BANK/PMC/20140724/Matching/BioResource/Organization/JCRB_2014/exec_command/check_pos_AllResNames_Jour-au_inMMs.sh
-###===¤³¤³¤Ş¤Ç´°Î»===
-### 3. ¥Á¥§¥Ã¥¯ºÑ¤ß·ë²Ì¤ò¥«¥¦¥ó¥È
-###THEME[¥ê¥½¡¼¥¹Ì¾¶¦½Ğ¸½²òÀÏ]
-#### 3.0 ¥Á¥§¥Ã¥¯ÍÑ¥¿¡¼¥à: All.name.sort.uniq.tsv
-####¸¡º÷¥¿¡¼¥à¤¬¥ê¥Æ¥é¥ë¤Ç¤Ê¤¤¾ì¹ç¡¢°ìÃ¶¸¡º÷·ë²Ì¤«¤é¥Á¥§¥Ã¥¯ÍÑ¥¿¡¼¥à¤òºî¤ë¡£
-#### 3.1 ¥¤¥ó¥Ç¥Ã¥¯¥¹ÉÕ¤­¹ÔÎó
-- ¥×¥í¥°¥é¥à: /BANK/BioResource/bin/count_Res-Art_in_check.pl
+###===ã“ã“ã¾ã§å®Œäº†===
+### 3. ãƒã‚§ãƒƒã‚¯æ¸ˆã¿çµæœã‚’ã‚«ã‚¦ãƒ³ãƒˆ
+###THEME[ãƒªã‚½ãƒ¼ã‚¹åå…±å‡ºç¾è§£æ]
+#### 3.0 ãƒã‚§ãƒƒã‚¯ç”¨ã‚¿ãƒ¼ãƒ : All.name.sort.uniq.tsv
+####æ¤œç´¢ã‚¿ãƒ¼ãƒ ãŒãƒªãƒ†ãƒ©ãƒ«ã§ãªã„å ´åˆã€ä¸€æ—¦æ¤œç´¢çµæœã‹ã‚‰ãƒã‚§ãƒƒã‚¯ç”¨ã‚¿ãƒ¼ãƒ ã‚’ä½œã‚‹ã€‚
+#### 3.1 ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ä»˜ãè¡Œåˆ—
+- ãƒ—ãƒ­ã‚°ãƒ©ãƒ : /BANK/BioResource/bin/count_Res-Art_in_check.pl
 cd /BANK/PMC/20130909/Matching/BioResource/Organization/RIKEN-BRC_2012/analisys/count/
 /BANK/PMC/20130909/Matching/BioResource/Organization/RIKEN-BRC_2012/analisys/count/exec_command/count_pos_MMs_AllResNames_Jour-aa.sh
 /BANK/PMC/20130909/Matching/BioResource/Organization/RIKEN-BRC_2012/analisys/count/exec_command/count_pos_MMs_AllResNames-U_Jour-aa.sh
 
-##TASK(2.3): NITE-NBRC(¸¡º÷´°Î»¡¢¥Á¥§¥Ã¥¯´°Î»)
-##THEME[¥ê¥½¡¼¥¹Ì¾¶¦½Ğ¸½²òÀÏ][kaken-26540170]
-### 1. ¥ê¥½¡¼¥¹Ì¾¸¡º÷
-- ¸¡º÷¥ê¥½¡¼¥¹Ì¾¥Ñ¥¿¡¼¥óºîÀ®: -> ¸¡º÷¥¿¡¼¥à
--- ÂĞ¾İ: ¥«¥¿¥í¥°ID¥Ñ¥¿¡¼¥ó
--- ¥ê¥½¡¼¥¹Ì¾: 
--- ¸¡º÷¥¿¡¼¥à: /BANK/BioResource/Organization/NITE-NBRC_2014/catalogue/All.patt
--- ¾ò·ï¡¦ÈÏ°Ï: ¥ê¥½¡¼¥¹Ì¾¤ÎÎ¾Â¦¤Î¥¹¥Ú¡¼¥¹¡¢¥«¥ó¥Ş¡¢¥Ö¥é¥±¥Ã¥È¤ò¹ÍÎ¸¤·¤ÆXMLÁ´ÂÎ¤ò¸¡º÷¡¢¤Î¤Á¤Ëposition¤ò¤â¤È¤Ë materials|methods Æâ¤ÎÈÏ°Ï¤Ë¹Ê¤ë¡£ 
--- method: match_position_ex_RE.pl ¥³¥Ş¥ó¥É¤ò»ÈÍÑ
-- ¥³¥Ş¥ó¥É¥Õ¥í¡¼:
--- ¸¡º÷
---- ¥×¥í¥°¥é¥à: /home/kamano/gitsrc/utility/match_position_ex_RE.pl
+##TASK(2.3): NITE-NBRC(æ¤œç´¢å®Œäº†ã€ãƒã‚§ãƒƒã‚¯å®Œäº†)
+##THEME[ãƒªã‚½ãƒ¼ã‚¹åå…±å‡ºç¾è§£æ][kaken-26540170]
+### 1. ãƒªã‚½ãƒ¼ã‚¹åæ¤œç´¢
+- æ¤œç´¢ãƒªã‚½ãƒ¼ã‚¹åãƒ‘ã‚¿ãƒ¼ãƒ³ä½œæˆ: -> æ¤œç´¢ã‚¿ãƒ¼ãƒ 
+-- å¯¾è±¡: ã‚«ã‚¿ãƒ­ã‚°IDãƒ‘ã‚¿ãƒ¼ãƒ³
+-- ãƒªã‚½ãƒ¼ã‚¹å: 
+-- æ¤œç´¢ã‚¿ãƒ¼ãƒ : /BANK/BioResource/Organization/NITE-NBRC_2014/catalogue/All.patt
+-- æ¡ä»¶ãƒ»ç¯„å›²: ãƒªã‚½ãƒ¼ã‚¹åã®ä¸¡å´ã®ã‚¹ãƒšãƒ¼ã‚¹ã€ã‚«ãƒ³ãƒã€ãƒ–ãƒ©ã‚±ãƒƒãƒˆã‚’è€ƒæ…®ã—ã¦XMLå…¨ä½“ã‚’æ¤œç´¢ã€ã®ã¡ã«positionã‚’ã‚‚ã¨ã« materials|methods å†…ã®ç¯„å›²ã«çµã‚‹ã€‚ 
+-- method: match_position_ex_RE.pl ã‚³ãƒãƒ³ãƒ‰ã‚’ä½¿ç”¨
+- ã‚³ãƒãƒ³ãƒ‰ãƒ•ãƒ­ãƒ¼:
+-- æ¤œç´¢
+--- ãƒ—ãƒ­ã‚°ãƒ©ãƒ : /home/kamano/gitsrc/utility/match_position_ex_RE.pl
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/NITE-NBRC_2014/exec_command
 /BANK/PMC/20140724/Matching/BioResource/Organization/NITE-NBRC_2014/exec_command/match_pos_AllResNames_Jour-au.sh
 ###========================
-###===20140808 1833 ³«»Ï===
-###===20140808 1942 ½ªÎ»===
+###===20140808 1833 é–‹å§‹===
+###===20140808 1942 çµ‚äº†===
 ###========================
-### 2. ¥Ş¥Æ¥ê¥¢¥ë¥á¥½¥Ã¥É¥»¥¯¥·¥ç¥ó¤Ë¤¢¤ë¤« (¿·Êı¼°)
-#### 2.1 ¥Ş¥Æ¥ê¥¢¥ë¥á¥½¥Ã¥É¥»¥¯¥·¥ç¥ó¤ÎÎÎ°è¤òÃê½Ğ (1²ó¤ä¤ì¤ĞOK -> Á°TASK¤Ç´°Î»)
-##### 2.1.1 <sec>¥¿¥°ÎÎ°è¤òÃê½Ğ (NEW) (´°Î»)
-##### 2.1.2 Ãê½Ğ¤µ¤ì¤¿<sec>¥¿¥°ÎÎ°è ¤ò sort (NEW) (´°Î»)
-##### 2.1.3 sortºÑ¤ß¤ÎÃê½Ğ¤µ¤ì¤¿<sec>¥¿¥°ÎÎ°èfile¡¡¤«¤é¡¡¥Ş¥Æ¥ê¥¢¥ë¥á¥½¥Ã¥É¥»¥¯¥·¥ç¥ó¤ÎÎÎ°è¤òÃê½Ğ (NEW) (´°Î»)
-#### 2.2 (NEW) ¥Ş¥Æ¥ê¥¢¥ë¥á¥½¥Ã¥É¥»¥¯¥·¥ç¥ó¤ÎÎÎ°è¤È¥Ò¥Ã¥ÈÎÎ°è¤òÈæ³Ó
-- ¥×¥í¥°¥é¥à(»îÍÑ): /home/kamano/gitsrc/XMLOP/check-region_from_pos.pl
+### 2. ãƒãƒ†ãƒªã‚¢ãƒ«ãƒ¡ã‚½ãƒƒãƒ‰ã‚»ã‚¯ã‚·ãƒ§ãƒ³ã«ã‚ã‚‹ã‹ (æ–°æ–¹å¼)
+#### 2.1 ãƒãƒ†ãƒªã‚¢ãƒ«ãƒ¡ã‚½ãƒƒãƒ‰ã‚»ã‚¯ã‚·ãƒ§ãƒ³ã®é ˜åŸŸã‚’æŠ½å‡º (1å›ã‚„ã‚Œã°OK -> å‰TASKã§å®Œäº†)
+##### 2.1.1 <sec>ã‚¿ã‚°é ˜åŸŸã‚’æŠ½å‡º (NEW) (å®Œäº†)
+##### 2.1.2 æŠ½å‡ºã•ã‚ŒãŸ<sec>ã‚¿ã‚°é ˜åŸŸ ã‚’ sort (NEW) (å®Œäº†)
+##### 2.1.3 sortæ¸ˆã¿ã®æŠ½å‡ºã•ã‚ŒãŸ<sec>ã‚¿ã‚°é ˜åŸŸfileã€€ã‹ã‚‰ã€€ãƒãƒ†ãƒªã‚¢ãƒ«ãƒ¡ã‚½ãƒƒãƒ‰ã‚»ã‚¯ã‚·ãƒ§ãƒ³ã®é ˜åŸŸã‚’æŠ½å‡º (NEW) (å®Œäº†)
+#### 2.2 (NEW) ãƒãƒ†ãƒªã‚¢ãƒ«ãƒ¡ã‚½ãƒƒãƒ‰ã‚»ã‚¯ã‚·ãƒ§ãƒ³ã®é ˜åŸŸã¨ãƒ’ãƒƒãƒˆé ˜åŸŸã‚’æ¯”è¼ƒ
+- ãƒ—ãƒ­ã‚°ãƒ©ãƒ (è©¦ç”¨): /home/kamano/gitsrc/XMLOP/check-region_from_pos.pl
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/NITE-NBRC_2014/exec_command
 /BANK/PMC/20140724/Matching/BioResource/Organization/NITE-NBRC_2014/exec_command/check_pos_AllResNames_Jour-au_inMMs.sh
-###===¤³¤³¤Ş¤Ç´°Î»===
+###===ã“ã“ã¾ã§å®Œäº†===
 
-##TASK(2.4): DSMZ (¸¡º÷´°Î»¡¢¥Á¥§¥Ã¥¯´°Î»)
-##THEME[¥ê¥½¡¼¥¹Ì¾¶¦½Ğ¸½²òÀÏ][kaken-26540170]
-### 1. ¥ê¥½¡¼¥¹Ì¾¸¡º÷
-- ¸¡º÷¥ê¥½¡¼¥¹Ì¾¥Ñ¥¿¡¼¥óºîÀ®: -> ¸¡º÷¥¿¡¼¥à
--- ÂĞ¾İ: ¥«¥¿¥í¥°ID¥Ñ¥¿¡¼¥ó
--- ¥ê¥½¡¼¥¹Ì¾: 
--- ¸¡º÷¥¿¡¼¥à: /BANK/BioResource/Organization/DSMZ_2014/catalogue/All.patt
--- ¾ò·ï¡¦ÈÏ°Ï: ¥ê¥½¡¼¥¹Ì¾¤ÎÎ¾Â¦¤Î¥¹¥Ú¡¼¥¹¡¢¥«¥ó¥Ş¡¢¥Ö¥é¥±¥Ã¥È¤ò¹ÍÎ¸¤·¤ÆXMLÁ´ÂÎ¤ò¸¡º÷¡¢¤Î¤Á¤Ëposition¤ò¤â¤È¤Ë materials|methods Æâ¤ÎÈÏ°Ï¤Ë¹Ê¤ë¡£ 
--- method: match_position_ex_RE.pl ¥³¥Ş¥ó¥É¤ò»ÈÍÑ
-- ¥³¥Ş¥ó¥É¥Õ¥í¡¼:
--- ¸¡º÷
---- ¥×¥í¥°¥é¥à: /home/kamano/gitsrc/utility/match_position_ex_RE.pl
+##TASK(2.4): DSMZ (æ¤œç´¢å®Œäº†ã€ãƒã‚§ãƒƒã‚¯å®Œäº†)
+##THEME[ãƒªã‚½ãƒ¼ã‚¹åå…±å‡ºç¾è§£æ][kaken-26540170]
+### 1. ãƒªã‚½ãƒ¼ã‚¹åæ¤œç´¢
+- æ¤œç´¢ãƒªã‚½ãƒ¼ã‚¹åãƒ‘ã‚¿ãƒ¼ãƒ³ä½œæˆ: -> æ¤œç´¢ã‚¿ãƒ¼ãƒ 
+-- å¯¾è±¡: ã‚«ã‚¿ãƒ­ã‚°IDãƒ‘ã‚¿ãƒ¼ãƒ³
+-- ãƒªã‚½ãƒ¼ã‚¹å: 
+-- æ¤œç´¢ã‚¿ãƒ¼ãƒ : /BANK/BioResource/Organization/DSMZ_2014/catalogue/All.patt
+-- æ¡ä»¶ãƒ»ç¯„å›²: ãƒªã‚½ãƒ¼ã‚¹åã®ä¸¡å´ã®ã‚¹ãƒšãƒ¼ã‚¹ã€ã‚«ãƒ³ãƒã€ãƒ–ãƒ©ã‚±ãƒƒãƒˆã‚’è€ƒæ…®ã—ã¦XMLå…¨ä½“ã‚’æ¤œç´¢ã€ã®ã¡ã«positionã‚’ã‚‚ã¨ã« materials|methods å†…ã®ç¯„å›²ã«çµã‚‹ã€‚ 
+-- method: match_position_ex_RE.pl ã‚³ãƒãƒ³ãƒ‰ã‚’ä½¿ç”¨
+- ã‚³ãƒãƒ³ãƒ‰ãƒ•ãƒ­ãƒ¼:
+-- æ¤œç´¢
+--- ãƒ—ãƒ­ã‚°ãƒ©ãƒ : /home/kamano/gitsrc/utility/match_position_ex_RE.pl
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/DSMZ_2014/exec_command
 /BANK/PMC/20140724/Matching/BioResource/Organization/DSMZ_2014/exec_command/match_pos_AllResNames_Jour-au.sh
 ###========================
-###===20140811 1014 ³«»Ï===
-###===20140811 1029 ½ªÎ»===
+###===20140811 1014 é–‹å§‹===
+###===20140811 1029 çµ‚äº†===
 ###========================
-### 2. ¥Ş¥Æ¥ê¥¢¥ë¥á¥½¥Ã¥É¥»¥¯¥·¥ç¥ó¤Ë¤¢¤ë¤« (¿·Êı¼°)
-#### 2.1 ¥Ş¥Æ¥ê¥¢¥ë¥á¥½¥Ã¥É¥»¥¯¥·¥ç¥ó¤ÎÎÎ°è¤òÃê½Ğ (1²ó¤ä¤ì¤ĞOK -> Á°TASK¤Ç´°Î»)
-##### 2.1.1 <sec>¥¿¥°ÎÎ°è¤òÃê½Ğ (NEW) (´°Î»)
-##### 2.1.2 Ãê½Ğ¤µ¤ì¤¿<sec>¥¿¥°ÎÎ°è ¤ò sort (NEW) (´°Î»)
-##### 2.1.3 sortºÑ¤ß¤ÎÃê½Ğ¤µ¤ì¤¿<sec>¥¿¥°ÎÎ°èfile¡¡¤«¤é¡¡¥Ş¥Æ¥ê¥¢¥ë¥á¥½¥Ã¥É¥»¥¯¥·¥ç¥ó¤ÎÎÎ°è¤òÃê½Ğ (NEW) (´°Î»)
-#### 2.2 (NEW) ¥Ş¥Æ¥ê¥¢¥ë¥á¥½¥Ã¥É¥»¥¯¥·¥ç¥ó¤ÎÎÎ°è¤È¥Ò¥Ã¥ÈÎÎ°è¤òÈæ³Ó (´°Î»)
-- ¥×¥í¥°¥é¥à(»îÍÑ): /home/kamano/gitsrc/XMLOP/check-region_from_pos.pl
+### 2. ãƒãƒ†ãƒªã‚¢ãƒ«ãƒ¡ã‚½ãƒƒãƒ‰ã‚»ã‚¯ã‚·ãƒ§ãƒ³ã«ã‚ã‚‹ã‹ (æ–°æ–¹å¼)
+#### 2.1 ãƒãƒ†ãƒªã‚¢ãƒ«ãƒ¡ã‚½ãƒƒãƒ‰ã‚»ã‚¯ã‚·ãƒ§ãƒ³ã®é ˜åŸŸã‚’æŠ½å‡º (1å›ã‚„ã‚Œã°OK -> å‰TASKã§å®Œäº†)
+##### 2.1.1 <sec>ã‚¿ã‚°é ˜åŸŸã‚’æŠ½å‡º (NEW) (å®Œäº†)
+##### 2.1.2 æŠ½å‡ºã•ã‚ŒãŸ<sec>ã‚¿ã‚°é ˜åŸŸ ã‚’ sort (NEW) (å®Œäº†)
+##### 2.1.3 sortæ¸ˆã¿ã®æŠ½å‡ºã•ã‚ŒãŸ<sec>ã‚¿ã‚°é ˜åŸŸfileã€€ã‹ã‚‰ã€€ãƒãƒ†ãƒªã‚¢ãƒ«ãƒ¡ã‚½ãƒƒãƒ‰ã‚»ã‚¯ã‚·ãƒ§ãƒ³ã®é ˜åŸŸã‚’æŠ½å‡º (NEW) (å®Œäº†)
+#### 2.2 (NEW) ãƒãƒ†ãƒªã‚¢ãƒ«ãƒ¡ã‚½ãƒƒãƒ‰ã‚»ã‚¯ã‚·ãƒ§ãƒ³ã®é ˜åŸŸã¨ãƒ’ãƒƒãƒˆé ˜åŸŸã‚’æ¯”è¼ƒ (å®Œäº†)
+- ãƒ—ãƒ­ã‚°ãƒ©ãƒ (è©¦ç”¨): /home/kamano/gitsrc/XMLOP/check-region_from_pos.pl
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/DSMZ_2014/exec_command
 /BANK/PMC/20140724/Matching/BioResource/Organization/DSMZ_2014/exec_command/check_pos_AllResNames_Jour-au_inMMs.sh
-###===¤³¤³¤Ş¤Ç´°Î»===
+###===ã“ã“ã¾ã§å®Œäº†===
 
-##TASK(2.5): WDCM (ÂĞ¾İ³°)
-##THEME[¥ê¥½¡¼¥¹Ì¾¶¦½Ğ¸½²òÀÏ][kaken-26540170]
-### 1. ¥ê¥½¡¼¥¹Ì¾¸¡º÷
-###¥Ò¥Ã¥È¤·¤Ê¤¤ -> ¥Ç¡¼¥¿¥»¥ó¥¿¡¼¤Ê¤Î¤Ç¡¢Ä¾ÀÜÄó¶¡¤·¤Æ¤¤¤Ê¤¤?
-- ¸¡º÷¥ê¥½¡¼¥¹Ì¾¥Ñ¥¿¡¼¥óºîÀ®: -> ¸¡º÷¥¿¡¼¥à
--- ÂĞ¾İ: ¥«¥¿¥í¥°ID¥Ñ¥¿¡¼¥ó
--- ¥ê¥½¡¼¥¹Ì¾: 
--- ¸¡º÷¥¿¡¼¥à: /BANK/BioResource/Organization/WDCM_2014/catalogue/All.patt
--- ¾ò·ï¡¦ÈÏ°Ï: ¥ê¥½¡¼¥¹Ì¾¤ÎÎ¾Â¦¤Î¥¹¥Ú¡¼¥¹¡¢¥«¥ó¥Ş¡¢¥Ö¥é¥±¥Ã¥È¤ò¹ÍÎ¸¤·¤ÆXMLÁ´ÂÎ¤ò¸¡º÷¡¢¤Î¤Á¤Ëposition¤ò¤â¤È¤Ë materials|methods Æâ¤ÎÈÏ°Ï¤Ë¹Ê¤ë¡£ 
--- method: match_position_ex_RE.pl ¥³¥Ş¥ó¥É¤ò»ÈÍÑ
-- ¥³¥Ş¥ó¥É¥Õ¥í¡¼:
--- ¸¡º÷
---- ¥×¥í¥°¥é¥à: /home/kamano/gitsrc/utility/match_position_ex_RE.pl
+##TASK(2.5): WDCM (å¯¾è±¡å¤–)
+##THEME[ãƒªã‚½ãƒ¼ã‚¹åå…±å‡ºç¾è§£æ][kaken-26540170]
+### 1. ãƒªã‚½ãƒ¼ã‚¹åæ¤œç´¢
+###ãƒ’ãƒƒãƒˆã—ãªã„ -> ãƒ‡ãƒ¼ã‚¿ã‚»ãƒ³ã‚¿ãƒ¼ãªã®ã§ã€ç›´æ¥æä¾›ã—ã¦ã„ãªã„?
+- æ¤œç´¢ãƒªã‚½ãƒ¼ã‚¹åãƒ‘ã‚¿ãƒ¼ãƒ³ä½œæˆ: -> æ¤œç´¢ã‚¿ãƒ¼ãƒ 
+-- å¯¾è±¡: ã‚«ã‚¿ãƒ­ã‚°IDãƒ‘ã‚¿ãƒ¼ãƒ³
+-- ãƒªã‚½ãƒ¼ã‚¹å: 
+-- æ¤œç´¢ã‚¿ãƒ¼ãƒ : /BANK/BioResource/Organization/WDCM_2014/catalogue/All.patt
+-- æ¡ä»¶ãƒ»ç¯„å›²: ãƒªã‚½ãƒ¼ã‚¹åã®ä¸¡å´ã®ã‚¹ãƒšãƒ¼ã‚¹ã€ã‚«ãƒ³ãƒã€ãƒ–ãƒ©ã‚±ãƒƒãƒˆã‚’è€ƒæ…®ã—ã¦XMLå…¨ä½“ã‚’æ¤œç´¢ã€ã®ã¡ã«positionã‚’ã‚‚ã¨ã« materials|methods å†…ã®ç¯„å›²ã«çµã‚‹ã€‚ 
+-- method: match_position_ex_RE.pl ã‚³ãƒãƒ³ãƒ‰ã‚’ä½¿ç”¨
+- ã‚³ãƒãƒ³ãƒ‰ãƒ•ãƒ­ãƒ¼:
+-- æ¤œç´¢
+--- ãƒ—ãƒ­ã‚°ãƒ©ãƒ : /home/kamano/gitsrc/utility/match_position_ex_RE.pl
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/WDCM_2014/exec_command
 /BANK/PMC/20140724/Matching/BioResource/Organization/WDCM_2014/exec_command/match_pos_AllResNames_Jour-au.sh
 ###========================
-###===n007 : ¼Â¹ÔÃæ========
-###===20140815 1140 ³«»Ï===
-###===20140815 1230 ½ªÎ»===
-###===¥Ò¥Ã¥È¤Ê¤·===========
+###===n007 : å®Ÿè¡Œä¸­========
+###===20140815 1140 é–‹å§‹===
+###===20140815 1230 çµ‚äº†===
+###===ãƒ’ãƒƒãƒˆãªã—===========
 ###========================
-### 2. ¥Ş¥Æ¥ê¥¢¥ë¥á¥½¥Ã¥É¥»¥¯¥·¥ç¥ó¤Ë¤¢¤ë¤« (¿·Êı¼°)
-#### 2.1 ¥Ş¥Æ¥ê¥¢¥ë¥á¥½¥Ã¥É¥»¥¯¥·¥ç¥ó¤ÎÎÎ°è¤òÃê½Ğ (1²ó¤ä¤ì¤ĞOK -> Á°TASK¤Ç´°Î»)
-##### 2.1.1 <sec>¥¿¥°ÎÎ°è¤òÃê½Ğ (NEW) (´°Î»)
-##### 2.1.2 Ãê½Ğ¤µ¤ì¤¿<sec>¥¿¥°ÎÎ°è ¤ò sort (NEW) (´°Î»)
-##### 2.1.3 sortºÑ¤ß¤ÎÃê½Ğ¤µ¤ì¤¿<sec>¥¿¥°ÎÎ°èfile¡¡¤«¤é¡¡¥Ş¥Æ¥ê¥¢¥ë¥á¥½¥Ã¥É¥»¥¯¥·¥ç¥ó¤ÎÎÎ°è¤òÃê½Ğ (NEW) (´°Î»)
-#### 2.2 (NEW) ¥Ş¥Æ¥ê¥¢¥ë¥á¥½¥Ã¥É¥»¥¯¥·¥ç¥ó¤ÎÎÎ°è¤È¥Ò¥Ã¥ÈÎÎ°è¤òÈæ³Ó 
+### 2. ãƒãƒ†ãƒªã‚¢ãƒ«ãƒ¡ã‚½ãƒƒãƒ‰ã‚»ã‚¯ã‚·ãƒ§ãƒ³ã«ã‚ã‚‹ã‹ (æ–°æ–¹å¼)
+#### 2.1 ãƒãƒ†ãƒªã‚¢ãƒ«ãƒ¡ã‚½ãƒƒãƒ‰ã‚»ã‚¯ã‚·ãƒ§ãƒ³ã®é ˜åŸŸã‚’æŠ½å‡º (1å›ã‚„ã‚Œã°OK -> å‰TASKã§å®Œäº†)
+##### 2.1.1 <sec>ã‚¿ã‚°é ˜åŸŸã‚’æŠ½å‡º (NEW) (å®Œäº†)
+##### 2.1.2 æŠ½å‡ºã•ã‚ŒãŸ<sec>ã‚¿ã‚°é ˜åŸŸ ã‚’ sort (NEW) (å®Œäº†)
+##### 2.1.3 sortæ¸ˆã¿ã®æŠ½å‡ºã•ã‚ŒãŸ<sec>ã‚¿ã‚°é ˜åŸŸfileã€€ã‹ã‚‰ã€€ãƒãƒ†ãƒªã‚¢ãƒ«ãƒ¡ã‚½ãƒƒãƒ‰ã‚»ã‚¯ã‚·ãƒ§ãƒ³ã®é ˜åŸŸã‚’æŠ½å‡º (NEW) (å®Œäº†)
+#### 2.2 (NEW) ãƒãƒ†ãƒªã‚¢ãƒ«ãƒ¡ã‚½ãƒƒãƒ‰ã‚»ã‚¯ã‚·ãƒ§ãƒ³ã®é ˜åŸŸã¨ãƒ’ãƒƒãƒˆé ˜åŸŸã‚’æ¯”è¼ƒ 
 
-##TASK(2.6): ATCC (¸¡º÷´°Î»¡¢¥Á¥§¥Ã¥¯´°Î»)
-##THEME[¥ê¥½¡¼¥¹Ì¾¶¦½Ğ¸½²òÀÏ][kaken-26540170]
-### 1. ¥ê¥½¡¼¥¹Ì¾¸¡º÷
-###¥Ò¥Ã¥È¤·¤Ê¤¤ -> ¥Ç¡¼¥¿¥»¥ó¥¿¡¼¤Ê¤Î¤Ç¡¢Ä¾ÀÜÄó¶¡¤·¤Æ¤¤¤Ê¤¤?
-- ¸¡º÷¥ê¥½¡¼¥¹Ì¾¥Ñ¥¿¡¼¥óºîÀ®: -> ¸¡º÷¥¿¡¼¥à
--- ÂĞ¾İ: ¥«¥¿¥í¥°ID¥Ñ¥¿¡¼¥ó
--- ¥ê¥½¡¼¥¹Ì¾: 
--- ¸¡º÷¥¿¡¼¥à: /BANK/BioResource/Organization/ATCC_2014/catalogue/All.patt
--- ¾ò·ï¡¦ÈÏ°Ï: ¥ê¥½¡¼¥¹Ì¾¤ÎÎ¾Â¦¤Î¥¹¥Ú¡¼¥¹¡¢¥«¥ó¥Ş¡¢¥Ö¥é¥±¥Ã¥È¤ò¹ÍÎ¸¤·¤ÆXMLÁ´ÂÎ¤ò¸¡º÷¡¢¤Î¤Á¤Ëposition¤ò¤â¤È¤Ë materials|methods Æâ¤ÎÈÏ°Ï¤Ë¹Ê¤ë¡£ 
--- method: match_position_ex_RE.pl ¥³¥Ş¥ó¥É¤ò»ÈÍÑ
-- ¥³¥Ş¥ó¥É¥Õ¥í¡¼:
--- ¸¡º÷
---- ¥×¥í¥°¥é¥à: /home/kamano/gitsrc/utility/match_position_ex_RE.pl
+##TASK(2.6): ATCC (æ¤œç´¢å®Œäº†ã€ãƒã‚§ãƒƒã‚¯å®Œäº†)
+##THEME[ãƒªã‚½ãƒ¼ã‚¹åå…±å‡ºç¾è§£æ][kaken-26540170]
+### 1. ãƒªã‚½ãƒ¼ã‚¹åæ¤œç´¢
+###ãƒ’ãƒƒãƒˆã—ãªã„ -> ãƒ‡ãƒ¼ã‚¿ã‚»ãƒ³ã‚¿ãƒ¼ãªã®ã§ã€ç›´æ¥æä¾›ã—ã¦ã„ãªã„?
+- æ¤œç´¢ãƒªã‚½ãƒ¼ã‚¹åãƒ‘ã‚¿ãƒ¼ãƒ³ä½œæˆ: -> æ¤œç´¢ã‚¿ãƒ¼ãƒ 
+-- å¯¾è±¡: ã‚«ã‚¿ãƒ­ã‚°IDãƒ‘ã‚¿ãƒ¼ãƒ³
+-- ãƒªã‚½ãƒ¼ã‚¹å: 
+-- æ¤œç´¢ã‚¿ãƒ¼ãƒ : /BANK/BioResource/Organization/ATCC_2014/catalogue/All.patt
+-- æ¡ä»¶ãƒ»ç¯„å›²: ãƒªã‚½ãƒ¼ã‚¹åã®ä¸¡å´ã®ã‚¹ãƒšãƒ¼ã‚¹ã€ã‚«ãƒ³ãƒã€ãƒ–ãƒ©ã‚±ãƒƒãƒˆã‚’è€ƒæ…®ã—ã¦XMLå…¨ä½“ã‚’æ¤œç´¢ã€ã®ã¡ã«positionã‚’ã‚‚ã¨ã« materials|methods å†…ã®ç¯„å›²ã«çµã‚‹ã€‚ 
+-- method: match_position_ex_RE.pl ã‚³ãƒãƒ³ãƒ‰ã‚’ä½¿ç”¨
+- ã‚³ãƒãƒ³ãƒ‰ãƒ•ãƒ­ãƒ¼:
+-- æ¤œç´¢
+--- ãƒ—ãƒ­ã‚°ãƒ©ãƒ : /home/kamano/gitsrc/utility/match_position_ex_RE.pl
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/ATCC_2014/exec_command
 /BANK/PMC/20140724/Matching/BioResource/Organization/ATCC_2014/exec_command/match_pos_AllResNames_Jour-au.sh
 ###========================
-###===n003 : ¼Â¹Ô==========
-###===20140815 1313 ³«»Ï===
-###===20140815 1330 ½ªÎ»===
+###===n003 : å®Ÿè¡Œ==========
+###===20140815 1313 é–‹å§‹===
+###===20140815 1330 çµ‚äº†===
 ###========================
-###===n007¤ËÅ¾Á÷===
-### 2. ¥Ş¥Æ¥ê¥¢¥ë¥á¥½¥Ã¥É¥»¥¯¥·¥ç¥ó¤Ë¤¢¤ë¤« (¿·Êı¼°)
-#### 2.1 ¥Ş¥Æ¥ê¥¢¥ë¥á¥½¥Ã¥É¥»¥¯¥·¥ç¥ó¤ÎÎÎ°è¤òÃê½Ğ (1²ó¤ä¤ì¤ĞOK -> Á°TASK¤Ç´°Î»)
-##### 2.1.1 <sec>¥¿¥°ÎÎ°è¤òÃê½Ğ (NEW) (´°Î»)
-##### 2.1.2 Ãê½Ğ¤µ¤ì¤¿<sec>¥¿¥°ÎÎ°è ¤ò sort (NEW) (´°Î»)
-##### 2.1.3 sortºÑ¤ß¤ÎÃê½Ğ¤µ¤ì¤¿<sec>¥¿¥°ÎÎ°èfile¡¡¤«¤é¡¡¥Ş¥Æ¥ê¥¢¥ë¥á¥½¥Ã¥É¥»¥¯¥·¥ç¥ó¤ÎÎÎ°è¤òÃê½Ğ (NEW) (´°Î»)
-#### 2.2 (NEW) ¥Ş¥Æ¥ê¥¢¥ë¥á¥½¥Ã¥É¥»¥¯¥·¥ç¥ó¤ÎÎÎ°è¤È¥Ò¥Ã¥ÈÎÎ°è¤òÈæ³Ó 
-- ¥×¥í¥°¥é¥à(»îÍÑ): /home/kamano/gitsrc/XMLOP/check-region_from_pos.pl
+###===n007ã«è»¢é€===
+### 2. ãƒãƒ†ãƒªã‚¢ãƒ«ãƒ¡ã‚½ãƒƒãƒ‰ã‚»ã‚¯ã‚·ãƒ§ãƒ³ã«ã‚ã‚‹ã‹ (æ–°æ–¹å¼)
+#### 2.1 ãƒãƒ†ãƒªã‚¢ãƒ«ãƒ¡ã‚½ãƒƒãƒ‰ã‚»ã‚¯ã‚·ãƒ§ãƒ³ã®é ˜åŸŸã‚’æŠ½å‡º (1å›ã‚„ã‚Œã°OK -> å‰TASKã§å®Œäº†)
+##### 2.1.1 <sec>ã‚¿ã‚°é ˜åŸŸã‚’æŠ½å‡º (NEW) (å®Œäº†)
+##### 2.1.2 æŠ½å‡ºã•ã‚ŒãŸ<sec>ã‚¿ã‚°é ˜åŸŸ ã‚’ sort (NEW) (å®Œäº†)
+##### 2.1.3 sortæ¸ˆã¿ã®æŠ½å‡ºã•ã‚ŒãŸ<sec>ã‚¿ã‚°é ˜åŸŸfileã€€ã‹ã‚‰ã€€ãƒãƒ†ãƒªã‚¢ãƒ«ãƒ¡ã‚½ãƒƒãƒ‰ã‚»ã‚¯ã‚·ãƒ§ãƒ³ã®é ˜åŸŸã‚’æŠ½å‡º (NEW) (å®Œäº†)
+#### 2.2 (NEW) ãƒãƒ†ãƒªã‚¢ãƒ«ãƒ¡ã‚½ãƒƒãƒ‰ã‚»ã‚¯ã‚·ãƒ§ãƒ³ã®é ˜åŸŸã¨ãƒ’ãƒƒãƒˆé ˜åŸŸã‚’æ¯”è¼ƒ 
+- ãƒ—ãƒ­ã‚°ãƒ©ãƒ (è©¦ç”¨): /home/kamano/gitsrc/XMLOP/check-region_from_pos.pl
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/ATCC_2014/exec_command
 /BANK/PMC/20140724/Matching/BioResource/Organization/ATCC_2014/exec_command/check_pos_AllResNames_Jour-au_inMMs.sh
-###===¤³¤³¤Ş¤Ç´°Î»===
+###===ã“ã“ã¾ã§å®Œäº†===
 
 
 
 
 
-#TASK(4): XML¤ÎÊ¬²ò - ¥Ğ¥¤¥ª¥ê¥½¡¼¥¹Ì¾¸õÊäÈ´¤­¤À¤·
-#ÎÌ¤¬Â¿¤¤¤Î¤ÇÊ¬³ä¤·¤¿¤â¤Î¤òsort-count¡¢¤¹¤Ù¤Æ¤Îsort-count¤òmerge-sort-count
-## 1. ALL: KO¤Ê¤· (2¥ï¡¼¥É¥Õ¥ì¡¼¥º¤Ş¤Ç´°Î»)
-### 1.1 single word (´°Î»)
-#### 1.1.1 ÀÚ¤ê½Ğ¤·
-- ¥×¥í¥°¥é¥à: /home/kamano/gitsrc/utility/extract_Word.pl
+#TASK(4): XMLã®åˆ†è§£ - ãƒã‚¤ã‚ªãƒªã‚½ãƒ¼ã‚¹åå€™è£œæŠœãã ã—
+#é‡ãŒå¤šã„ã®ã§åˆ†å‰²ã—ãŸã‚‚ã®ã‚’sort-countã€ã™ã¹ã¦ã®sort-countã‚’merge-sort-count
+## 1. ALL: KOãªã— (2ãƒ¯ãƒ¼ãƒ‰ãƒ•ãƒ¬ãƒ¼ã‚ºã¾ã§å®Œäº†)
+### 1.1 single word (å®Œäº†)
+#### 1.1.1 åˆ‡ã‚Šå‡ºã—
+- ãƒ—ãƒ­ã‚°ãƒ©ãƒ : /home/kamano/gitsrc/utility/extract_Word.pl
 cd /BANK/PMC/20140724/terms/whole/exec_command
 /BANK/PMC/20140724/terms/whole/exec_command/extract_1W_Jour-au.sh
 #### 1.1.2 sort uniq count
 cd /BANK/PMC/20140724/terms/whole
 sort Word_Jour-au | uniq -c > Word_Jour-au.sort.uniq
 #### 1.1.3 total count
-##### 1.1.3.1 countºÑ¤ß¤ò¼¡¤Îmerge-sort¤Î¤¿¤á¤Ë¤µ¤é¤ËÀ°·Á
-- ¥×¥í¥°¥é¥à: /home/kamano/gitsrc/utility/rep4count.pl
+##### 1.1.3.1 countæ¸ˆã¿ã‚’æ¬¡ã®merge-sortã®ãŸã‚ã«ã•ã‚‰ã«æ•´å½¢
+- ãƒ—ãƒ­ã‚°ãƒ©ãƒ : /home/kamano/gitsrc/utility/rep4count.pl
 cd /BANK/PMC/20140724/terms/whole
 for file in W*uniq; do /home/kamano/gitsrc/utility/rep4count.pl $file > $file.rep; done
-##### 1.1.3.2 À°·Á¤·¤¿¤â¤Î¤òmerge-sort
+##### 1.1.3.2 æ•´å½¢ã—ãŸã‚‚ã®ã‚’merge-sort
 cd /BANK/PMC/20140724/terms/whole
 cat Word*.sort.uniq.rep | sort -t ' ' -k2 > Word_Jour-All.merge
-##### 1.1.3.3 sort-merge-sort¤òcount
-- ¥×¥í¥°¥é¥à: /home/kamano/gitsrc/utility/sum_count_from_mixed_sort.pl
+##### 1.1.3.3 sort-merge-sortã‚’count
+- ãƒ—ãƒ­ã‚°ãƒ©ãƒ : /home/kamano/gitsrc/utility/sum_count_from_mixed_sort.pl
 cd /BANK/PMC/20140724/terms/whole
 /home/kamano/gitsrc/utility/sum_count_from_mixed_sort.pl Word_Jour-All.merge > Word_Jour-All.merge.count
-### 1.2 two-words-phrase (´°Î»)
-#### 1.2.1 ÀÚ¤ê½Ğ¤·
-- ¥×¥í¥°¥é¥à: /home/kamano/gitsrc/utility/extract_phrase2W.pl
+### 1.2 two-words-phrase (å®Œäº†)
+#### 1.2.1 åˆ‡ã‚Šå‡ºã—
+- ãƒ—ãƒ­ã‚°ãƒ©ãƒ : /home/kamano/gitsrc/utility/extract_phrase2W.pl
 cd /BANK/PMC/20140724/terms/whole
 /BANK/PMC/20140724/terms/whole/exec_command/extract_2W_Jour-au.sh
 #### 1.2.2 sort uniq count
@@ -1393,38 +1393,38 @@ cd /BANK/PMC/20140724/terms/whole
 sort phrase-2W_Jour-au | uniq -c > phrase-2W_Jour-au.sort.uniq
 /BANK/PMC/20140724/terms/whole/exec_command/sort-uniq_All.sh
 #### 1.2.3 total count
-##### 1.2.3.1 countºÑ¤ß¤ò¼¡¤Îmerge-sort¤Î¤¿¤á¤Ë¤µ¤é¤ËÀ°·Á
-- ¥×¥í¥°¥é¥à: /home/kamano/gitsrc/utility/rep4count.pl
+##### 1.2.3.1 countæ¸ˆã¿ã‚’æ¬¡ã®merge-sortã®ãŸã‚ã«ã•ã‚‰ã«æ•´å½¢
+- ãƒ—ãƒ­ã‚°ãƒ©ãƒ : /home/kamano/gitsrc/utility/rep4count.pl
 cd /BANK/PMC/20140724/terms/whole
 for file in p*uniq; do /home/kamano/gitsrc/utility/rep4count.pl $file > $file.rep; done
-##### 1.2.3.2 À°·Á¤·¤¿¤â¤Î¤òmerge-sort
+##### 1.2.3.2 æ•´å½¢ã—ãŸã‚‚ã®ã‚’merge-sort
 cd /BANK/PMC/20140724/terms/whole
 cat *2W_Jour*.sort.uniq.rep | sort -t '	' -k2 -k3 > phrase-2W_Jour-All.merge
-##### 1.2.3.3 sort-merge-sort¤òcount
-- ¥×¥í¥°¥é¥à: /home/kamano/gitsrc/utility/sum_count_from_mixed_sort.pl
+##### 1.2.3.3 sort-merge-sortã‚’count
+- ãƒ—ãƒ­ã‚°ãƒ©ãƒ : /home/kamano/gitsrc/utility/sum_count_from_mixed_sort.pl
 cd /BANK/PMC/20140724/terms/whole
 /home/kamano/gitsrc/utility/sum_count_from_mixed_sort.pl phrase-2W_Jour-All.merge > phrase-2W_Jour-All.merge.count
-##===¤³¤³¤Ş¤Ç´°Î»===
+##===ã“ã“ã¾ã§å®Œäº†===
 ## 2. body
 ## 3. acknowledgement
-## 4. MERGED/Materials: KOSP ¥¿¥°¤ò¥¹¥Ú¡¼¥¹¤ËKO
-## patt.3 ¤È patt.5 ¤Ç¼Â¹Ô
-### 4.1 ¥¿¥°¤òKO¡¢¥¹¥Ú¡¼¥¹¤Ë
-- ¥¹¥¯¥ê¥×¥È:
+## 4. MERGED/Materials: KOSP ã‚¿ã‚°ã‚’ã‚¹ãƒšãƒ¼ã‚¹ã«KO
+## patt.3 ã¨ patt.5 ã§å®Ÿè¡Œ
+### 4.1 ã‚¿ã‚°ã‚’KOã€ã‚¹ãƒšãƒ¼ã‚¹ã«
+- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ:
 cd /BANK/PMC/20140724/elements/MERGED/Materials
 for file in *KO; do  /home/kamano/gitsrc/XMLOP/tag-KOSP.pl $file >  ${file}SP; done
-### 4.2 ¥Ø¥Ã¥À¾ğÊó¤òºï½ü
+### 4.2 ãƒ˜ãƒƒãƒ€æƒ…å ±ã‚’å‰Šé™¤
 for file in *KOSP; do awk -F'  '  '{for(i=3;i<=NF;i++){printf("%s ",$i)}}' $file > $file.drophead; done
-### 4.3 term¤òsplit
-- ¥¹¥¯¥ê¥×¥È: /BANK/PMC/20140724/terms/MERGED/Materials/patt.3/exec_command/split_Word.au.sh
-### 4.4 ¤½¤ì¤¾¤ì¤Î¥Õ¥¡¥¤¥ë¤ò¥½¡¼¥È/¥æ¥Ë¡¼¥¯/¥«¥¦¥ó¥È
-- ¥¹¥¯¥ê¥×¥È: /BANK/PMC/20140724/terms/MERGED/Materials/patt.3/exec_command/sort_each.ALL.sh
-### 4.5 Á´ÂÎ¤ò¥½¡¼¥È/¥æ¥Ë¡¼¥¯/¥«¥¦¥ó¥È¤¹¤ë¤¿¤á¤ÎÁ°½èÍı
-- ¥¹¥¯¥ê¥×¥È:
+### 4.3 termã‚’split
+- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ: /BANK/PMC/20140724/terms/MERGED/Materials/patt.3/exec_command/split_Word.au.sh
+### 4.4 ãã‚Œãã‚Œã®ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ã‚½ãƒ¼ãƒˆ/ãƒ¦ãƒ‹ãƒ¼ã‚¯/ã‚«ã‚¦ãƒ³ãƒˆ
+- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ: /BANK/PMC/20140724/terms/MERGED/Materials/patt.3/exec_command/sort_each.ALL.sh
+### 4.5 å…¨ä½“ã‚’ã‚½ãƒ¼ãƒˆ/ãƒ¦ãƒ‹ãƒ¼ã‚¯/ã‚«ã‚¦ãƒ³ãƒˆã™ã‚‹ãŸã‚ã®å‰å‡¦ç†
+- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ:
 cd /BANK/PMC/20140724/terms/MERGED/Materials/patt.3
 cat *sort.uniq | /home/kamano/gitsrc/utility/rep4count.pl | sort -t '     ' -k2 > Word.ALL.presort
-### 4.6 Á°½èÍı¤ò¥Ş¡¼¥¸¥«¥¦¥ó¥È½èÍı
-- ¥¹¥¯¥ê¥×¥È:
+### 4.6 å‰å‡¦ç†ã‚’ãƒãƒ¼ã‚¸ã‚«ã‚¦ãƒ³ãƒˆå‡¦ç†
+- ã‚¹ã‚¯ãƒªãƒ—ãƒˆ:
 cd /BANK/PMC/20140724/terms/MERGED/Materials/patt.3
  /home/kamano/gitsrc/utility/sum_count_from_mixed_sort.pl Word.ALL.presort > Word.ALL.sort.count
-### ===´°Î»=== 
+### ===å®Œäº†=== 
