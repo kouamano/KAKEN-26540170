@@ -628,6 +628,8 @@ grep 'Mat			' hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.L |
 -- 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/region_ORG-RES_ACK
 ##### 集計2.1 : 単語数ごとのフレーズ集計
 #####===いまここ===#####
+#####===集計パターンを議論する必要がある===#####
+#####===ex. ORのO直後とR直前、2、3、4Wフレーズ、など===#####
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/
 - RES-ORG@Mat
 -- 対象: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/region_RES-ORG_Mat
