@@ -650,7 +650,8 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/
 /home/kamano/gitsrc/utility/split_terms.pl region_ORG-RES_Mat.droptags | sort | uniq -c | sort -nr > region_ORG-RES_Mat.droptags.term
 - ORG-RES@ACK
 /home/kamano/gitsrc/utility/split_terms.pl region_ORG-RES_ACK.droptags | sort | uniq -c | sort -nr > region_ORG-RES_ACK.droptags.term
-
+###### 集計2.2.2 : RES-ORGまたはORG-RES間のワード集計:1term:全体の出現確率に比して高い確率のterm
+- 比較: 
 #####===いまここ===#####
 
 ##TASK(2.2)[2](ペンディング) バイオリソース名の前後の出現文字(単語)パターンより正解バイオリソースかを判定(20150911)
