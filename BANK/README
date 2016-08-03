@@ -252,7 +252,7 @@ cat *cont | awk -F '	' '{print $1}' | sed -e 's/^\/BANK\/PMC\/20140724\/articles
 - プログラム:
 -- /home/kamano/gitsrc/XMLOP/drop_any_tag_LF.pl
 - スクリプト:
-cd /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1/exec_command
+-- 0. cd /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1/exec_command
 -- 1. split_Word_Jour-ALL.sh
 -- 2. sort_each_W_Jour-ALL.sh <= 実行中
 
