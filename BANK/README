@@ -240,7 +240,9 @@ cat *cont | awk -F '	' '{print $1}' | sed -e 's/^\/BANK\/PMC\/20140724\/articles
 
 
 #TASK(term-count): 出現タームのsplit・カウント
-##TASK(term-count.ALL)
+##TASK(term-count.ELM_VAL_ALL):タグ含まない <= 実行中
+
+##TASK(term-count.ALL):タグ含む
 ### (split pattern 0)
 - デリミター: /usr/local/var/perl_word_delimiter.patt
 - スクリプト: /BANK/PMC/20140724/terms/ALL/patt.0/exec_command/extract_1W_Jour-au.sh (のちにディレクトリ名変更のため無効)
