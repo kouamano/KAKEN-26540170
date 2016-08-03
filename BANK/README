@@ -248,8 +248,11 @@ cat *cont | awk -F '	' '{print $1}' | sed -e 's/^\/BANK\/PMC\/20140724\/articles
 - 全集計結果: /BANK/PMC/20140724/terms/ALL/patt.0/Word_Jour-All.merge.count.nsort
 
 ##TASK(term-count.ELM_VAL_ALL):タグ含まない
-### (split pattern 0) <= 実行中
-
+### (split pattern 1) <= 実施中
+- プログラム:
+-- /home/kamano/gitsrc/XMLOP/drop_any_tag_LF.pl
+- スクリプト:
+-- 1. split_Word_Jour-ALL.sh <= 実行中
 
 ### (split pattern 3)
 #### タグの除去とsplit
