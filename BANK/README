@@ -701,7 +701,7 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/
 - RES-ORG@Mat
 - base: /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1/Word_jour-ALL.sort.count
-- object: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/region_RES-ORG_Mat.droptags.term
+- object: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/region_RES-ORG_Mat.droptags.drop1.term
 ######===いまここ===######
 
 ##TASK(2.2)[2](ペンディング) バイオリソース名の前後の出現文字(単語)パターンより正解バイオリソースかを判定(20150911)
