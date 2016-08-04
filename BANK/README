@@ -662,7 +662,15 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/
 -- タグの除去: /home/kamano/gitsrc/XMLOP/drop_tag_RES-ORG.pl region_ORG-RES_ACK > region_ORG-RES_ACK.droptags
 ###### 集計2.1.2 : 句読点、カッコ類を落とす
 ####### 集計2.1.2.1 : single term
-#######===いまここ===#######
+cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/
+- RES-ORG@Mat
+-- スクリプト: /home/kamano/gitsrc/utility/drop_piriod_blk.pl region_RES-ORG_Mat.droptags > region_RES-ORG_Mat.droptags.drop1
+- RES-ORG@ACK
+-- スクリプト: /home/kamano/gitsrc/utility/drop_piriod_blk.pl region_RES-ORG_ACK.droptags > region_RES-ORG_ACK.droptags.drop1
+- ORG-RES@Mat
+-- スクリプト: /home/kamano/gitsrc/utility/drop_piriod_blk.pl region_ORG-RES_Mat.droptags > region_ORG-RES_Mat.droptags.drop1
+- ORG-RES@ACK
+-- スクリプト: /home/kamano/gitsrc/utility/drop_piriod_blk.pl region_ORG-RES_ACK.droptags > region_ORG-RES_ACK.droptags.drop1
 
 ##### 集計2.2 : RES-ORGまたはORG-RES間のワード集計
 ###### 集計2.2.1 : 句読点カッコ類を残す
@@ -677,6 +685,19 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/
 - ORG-RES@ACK
 /home/kamano/gitsrc/utility/split_terms.pl region_ORG-RES_ACK.droptags | sort | uniq -c | sort -nr > region_ORG-RES_ACK.droptags.term
 ####### 集計2.2.1.2 : RES-ORGまたはORG-RES間のワード集計:1term:全体の出現確率に比して高い確率のterm
+- ペンディング
+###### 集計2.2.2 : 句読点カッコ類を落とす
+####### 集計2.2.2.1 : RES-ORGまたはORG-RES間のワード集計:1term
+cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/
+- RES-ORG@Mat
+/home/kamano/gitsrc/utility/split_terms.pl region_RES-ORG_Mat.droptags.drop1 | sort | uniq -c | sort -nr > region_RES-ORG_Mat.droptags.drop1.term
+- RES-ORG@ACK
+/home/kamano/gitsrc/utility/split_terms.pl region_RES-ORG_ACK.droptags.drop1 | sort | uniq -c | sort -nr > region_RES-ORG_ACK.droptags.drop1.term
+- ORG-RES@Mat
+/home/kamano/gitsrc/utility/split_terms.pl region_ORG-RES_Mat.droptags.drop1 | sort | uniq -c | sort -nr > region_ORG-RES_Mat.droptags.drop1.term
+- ORG-RES@ACK
+/home/kamano/gitsrc/utility/split_terms.pl region_ORG-RES_ACK.droptags.drop1 | sort | uniq -c | sort -nr > region_ORG-RES_ACK.droptags.drop1.term
+####### 集計2.2.2.2 : RES-ORGまたはORG-RES間のワード集計:1term:全体の出現確率に比して高い確率のterm
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/
 - RES-ORG@Mat
 - base: /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1/Word_jour-ALL.sort.count
