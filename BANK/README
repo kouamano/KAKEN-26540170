@@ -265,6 +265,7 @@ cat *cont | awk -F '	' '{print $1}' | sed -e 's/^\/BANK\/PMC\/20140724\/articles
 -- /home/kamano/gitsrc/XMLOP/splitter3.pl
 - スクリプト: /BANK/PMC/20140724/terms/whole/patt.3/exec_command/split_Word_Jour-ALL.sh
 - 出力ファイル: /BANK/PMC/20140724/terms/whole/patt.3/Word_Jour-au
+
 ##TASK(term-count.allmaterials)
 ### (split pattern 1)
 #### 各ファイルのtag除去, split, sort, uniq, count
@@ -333,7 +334,6 @@ cat *cont | awk -F '	' '{print $1}' | sed -e 's/^\/BANK\/PMC\/20140724\/articles
 ##### 小文字子数字2文字のタームを除去
 - スクリプト: grep -E -v "^[0-9]+ [0-9a-z][0-9a-z]$" ALL.merge.sort.count.sort.14E > ALL.merge.sort.count.sort.15E
 #####=====(20150731)=====#####
-#####=====作業中=====#####
 ### (split pattern 4)
 #### 各ファイルのtag除去, split, sort, uniq, count
 - cd /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.4
@@ -627,6 +627,7 @@ grep 'Mat			' hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.L |
 ####===いまここ===####
 - パターン集計結果のまとめ: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/analysis/pattern-bunseki-kekka (図書館総合展)
 #### 集計2 : </RES>...<ORG> or </ORG>...<RES> 間の単語数制限なし (20160801)
+cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/
 - RES-ORG@Mat
 -- プログラム: /home/kamano/gitsrc/XMLOP/extract_region_RES-ORG.pl
 -- スクリプト: grep ^Mat hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.E.S.L | awk -F '	' '{print $6}' | /home/kamano/gitsrc/XMLOP/extract_region_RES-ORG.pl > region_RES-ORG_Mat
@@ -659,6 +660,7 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/
 -- タグの除去: /home/kamano/gitsrc/XMLOP/drop_tag_RES-ORG.pl region_ORG-RES_ACK > region_ORG-RES_ACK.droptags
 ##### 集計2.2 : RES-ORGまたはORG-RES間のワード集計
 ###### 集計2.2.1 : RES-ORGまたはORG-RES間のワード集計:1term
+cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/
 - RES-ORG@Mat
 /home/kamano/gitsrc/utility/split_terms.pl region_RES-ORG_Mat.droptags | sort | uniq -c | sort -nr > region_RES-ORG_Mat.droptags.term
 - RES-ORG@ACK
@@ -668,6 +670,8 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/
 - ORG-RES@ACK
 /home/kamano/gitsrc/utility/split_terms.pl region_ORG-RES_ACK.droptags | sort | uniq -c | sort -nr > region_ORG-RES_ACK.droptags.term
 ###### 集計2.2.2 : RES-ORGまたはORG-RES間のワード集計:1term:全体の出現確率に比して高い確率のterm
+cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/
+- base: /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1/Word_jour-ALL.sort.count
 ######===いまここ===######
 
 ##TASK(2.2)[2](ペンディング) バイオリソース名の前後の出現文字(単語)パターンより正解バイオリソースかを判定(20150911)
