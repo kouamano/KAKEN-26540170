@@ -709,8 +709,7 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 for file in *drop1.term; do /home/kamano/gitsrc/MATH_SCRIPT/SCRIPTS/count_to_wl.pl $file > $file.wl; done
 - RES-ORG@Mat
 -- object: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/region_RES-ORG_Mat.droptags.drop1.term.wl
--- ratioVSratio: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/ROMratioVSwordratio.wl
--- オッズ比(2番目の数値): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/ROModds.wl
+-- ratioVSratio{{ROMcount},word,{totalcount}}: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/ROMratioVSwordratio.wl
 - RES-ORG@ACK
 - ORG-RES@Mat
 - ORG-RES@ACK
