@@ -713,18 +713,18 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 for file in *drop1.term; do /home/kamano/gitsrc/MATH_SCRIPT/SCRIPTS/count_to_wl.pl $file > $file.wl; done
 
+######## 出現率比と出現の積が高い順に一般語を取り出し、OR検索ですべてのステートメントをカバーするまで単語を拾う
 - RES-ORG@Mat
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 -- program: Math
 -- object: ROM=<<"/BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/region_RES-ORG_Mat.droptags.drop1.term.wl";
 -- ROMvsWord {{ROMcount},word,{totalcount}}: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/ROMvsWord.wl
--- ROModds=Map[{#[[1,2]]/#[[3,2]],#[[1,1]],#[[2]]}&,ROMvsWord]
--- ROModdsSel=Cases[ROModds,x_/;NumberQ[x[[1]]]]
--- ROModdsSelSort=Sort[ROModdsSel,#1[[1]]>=#2[[1]]&]
--- Save["ROModdsSelSort.wl",ROModdsSelSort]
--- ROModdsSelProd=Map[{#[[1]] * #[[2]],#[[3]]}&,ROModdsSelSort]//Sort
--- Save["ROModdsSelProd.wl",ROModdsSelProd]
-######## オッズ比と出現の積が高い順に一般語を取り出し、OR検索ですべてのステートメントをカバーするまで単語を拾う
+-- ROMrate=Map[{#[[1,2]]/#[[3,2]],#[[1,1]],#[[2]]}&,ROMvsWord]
+-- ROMrateSel=Cases[ROMrate,x_/;NumberQ[x[[1]]]]
+-- ROMrateSelSort=Sort[ROMrateSel,#1[[1]]>=#2[[1]]&]
+-- Save["ROMrateSelSort.wl",ROMrateSelSort]
+-- ROMrateSelProd=Map[{#[[1]] * #[[2]],#[[3]]}&,ROMrateSelSort]//Sort
+-- 出現率比x出現: Save["ROMrateSelProd.wl",ROMrateSelProd]
 - RES-ORG@ACK
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 -- program: Math
