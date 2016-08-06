@@ -714,26 +714,44 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 for file in *drop1.term; do /home/kamano/gitsrc/MATH_SCRIPT/SCRIPTS/count_to_wl.pl $file > $file.wl; done
 
 - RES-ORG@Mat
--- prigram: Math
+cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
+-- program: Math
 -- object: ROM=<<"/BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/region_RES-ORG_Mat.droptags.drop1.term.wl";
 -- ROMvsWord {{ROMcount},word,{totalcount}}: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/ROMvsWord.wl
 - RES-ORG@ACK
--- prigram: Math
+cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
+-- program: Math
 -- object: ROA=<<"/BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/region_RES-ORG_ACK.droptags.drop1.term.wl";
 -- ROAtotal = Map[#[[1]]&,ROA]//Tr
 -- ROAratio = Map[{#[[1]],#[[1]]/1286//N,#[[2]]}&,ROA]
 -- ROAvsWord = Map[{{#[[1]],#[[2]]},#[[3]],#[[3]]/.wordD}&,ROAratio]
 -- Save["ROAvsWord.wl",ROAvsWord]
 - ORG-RES@Mat
--- prigram: Math
+cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
+-- program: Math
 -- wordcountratio: <<"/BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1/wordcountratio.wl"
 -- wordRule = Map[#[[3]]->{#[[1]],#[[2]]}&,wordcountratio];
+-- wordD = Dispatch[wordRule]
 -- object: ORM=<<"/BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/region_ORG-RES_Mat.droptags.drop1.term.wl";
 -- ORMtotal = Map[#[[1]]&,ORM]//Tr -> 1315
 -- ORMratio = Map[{#[[1]],#[[1]]/1315//N,#[[2]]}&,ORM]
 -- ORMvsWord = Map[{{#[[1]],#[[2]]},#[[3]],#[[3]]/.wordD}&,ORMratio]
+-- Save["ORMvsWord.wl",ORMvsWord]
 - ORG-RES@ACK
+cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
+-- wordcountratio: <<"/BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1/wordcountratio.wl"
+-- wordRule = Map[#[[3]]->{#[[1]],#[[2]]}&,wordcountratio];
+-- wordD = Dispatch[wordRule]
+-- object: ORA=<<"/BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/region_ORG-RES_ACK.droptags.drop1.term.wl";
+-- ORAtotal = Map[#[[1]]&,ORA]//Tr -> 1688
+-- ORAratio = Map[{#[[1]],#[[1]]/1688//N,#[[2]]}&,ORA]
+-- ORAvsWord = Map[{{#[[1]],#[[2]]},#[[3]],#[[3]]/.wordD}&,ORAratio]
+-- Save["ORAvsWord.wl",ORAvsWord]
+
+
 ######===いまここ===######
+
+
 
 ##TASK(2.2)[2](ペンディング) バイオリソース名の前後の出現文字(単語)パターンより正解バイオリソースかを判定(20150911)
 ###TASK(2.2.1) in ACK
