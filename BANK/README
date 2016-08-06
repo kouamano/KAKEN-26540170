@@ -701,7 +701,7 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/
 - base
 -- file: /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1/Word_jour-ALL.sort.count
--- wordcount: /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1/Word_jour-ALL.count.wl
+-- wordcount = <<"/BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1/Word_jour-ALL.count.wl";
 -- wordcounttotal = Map[#[[1]]&,wordcount]//Tr
 -- wordcountratio = Map[{#[[1]],#[[1]]/wordcounttotal//N,#[[2]]}&,wordcount]; 
 -- Save["wordcountratio.wl",wordcountratio]
@@ -714,7 +714,7 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 for file in *drop1.term; do /home/kamano/gitsrc/MATH_SCRIPT/SCRIPTS/count_to_wl.pl $file > $file.wl; done
 
 - RES-ORG@Mat
--- object: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/region_RES-ORG_Mat.droptags.drop1.term.wl
+-- object: ROM=<<"/BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/region_RES-ORG_Mat.droptags.drop1.term.wl";
 -- ROMvsWord {{ROMcount},word,{totalcount}}: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/ROMvsWord.wl
 - RES-ORG@ACK
 -- object: ROA=<<"/BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/region_RES-ORG_ACK.droptags.drop1.term.wl";
@@ -723,6 +723,12 @@ for file in *drop1.term; do /home/kamano/gitsrc/MATH_SCRIPT/SCRIPTS/count_to_wl.
 -- ROAvsWord = Map[{{#[[1]],#[[2]]},#[[3]],#[[3]]/.wordD}&,ROAratio]
 -- Save["ROAvsWord.wl",ROAvsWord]
 - ORG-RES@Mat
+-- wordcountratio: <<"/BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1/wordcountratio.wl"
+-- wordRule = Map[#[[3]]->{#[[1]],#[[2]]}&,wordcountratio];
+-- object: ORM=<<"/BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/region_ORG-RES_Mat.droptags.drop1.term.wl";
+-- ORMtotal = Map[#[[1]]&,ORM]//Tr -> 1315
+-- ORMratio = Map[{#[[1]],#[[1]]/1315//N,#[[2]]}&,ORM]
+-- ORMvsWord = Map[{{#[[1]],#[[2]]},#[[3]],#[[3]]/.wordD}&,ORMratio]
 - ORG-RES@ACK
 ######===いまここ===######
 
