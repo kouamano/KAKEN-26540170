@@ -333,7 +333,7 @@ cat *cont | awk -F '	' '{print $1}' | sed -e 's/^\/BANK\/PMC\/20140724\/articles
 - スクリプト: grep -E -v "^[0-9]+ [0-9a-z]$" ALL.merge.sort.count.sort.13E > ALL.merge.sort.count.sort.14E
 ##### 小文字子数字2文字のタームを除去
 - スクリプト: grep -E -v "^[0-9]+ [0-9a-z][0-9a-z]$" ALL.merge.sort.count.sort.14E > ALL.merge.sort.count.sort.15E
-#####=====(20150731)=====#####
+#####(20150731)#####
 ### (split pattern 4)
 #### 各ファイルのtag除去, split, sort, uniq, count
 - cd /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.4
@@ -571,7 +571,7 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015
 ./exec_command/extract_HitOrg_from_dropE.pl *dropE.html | ./exec_command/extract_redFontStr_from_HitRes.pl | sort | uniq | wc
      32      89     699
-###==(20150730)完了==###
+###(20150730)完了###
 ###TASK(2.1.7) 機関名、バイオリソース名が同時出現するセンテンス(ピリオド区切り、場合によってはカンマ、セミコロン区切り)を人手で抜きだし(水野氏実行完了)
 - 対象: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_*.tsv.color2.sel.dropE.html
 - 手順
@@ -718,6 +718,13 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 -- program: Math
 -- object: ROM=<<"/BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/region_RES-ORG_Mat.droptags.drop1.term.wl";
 -- ROMvsWord {{ROMcount},word,{totalcount}}: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/ROMvsWord.wl
+-- ROModds=Map[{#[[1,2]]/#[[3,2]],#[[1,1]],#[[2]]}&,ROMvsWord]
+-- ROModdsSel=Cases[ROModds,x_/;NumberQ[x[[1]]]]
+-- ROModdsSelSort=Sort[ROModdsSel,#1[[1]]>=#2[[1]]&]
+-- Save["ROModdsSelSort.wl",ROModdsSelSort]
+-- ROModdsSelProd=Map[{#[[1]] * #[[2]],#[[3]]}&,ROModdsSelSort]//Sort
+-- Save["ROModdsSelProd.wl",ROModdsSelProd]
+######## オッズ比と出現の積が高い順に一般語を取り出し、OR検索ですべてのステートメントをカバーするまで単語を拾う
 - RES-ORG@ACK
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 -- program: Math
