@@ -748,7 +748,6 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 -- ORAvsWord = Map[{{#[[1]],#[[2]]},#[[3]],#[[3]]/.wordD}&,ORAratio]
 -- Save["ORAvsWord.wl",ORAvsWord]
 
-
 ######===いまここ===######
 
 
