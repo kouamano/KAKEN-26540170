@@ -726,7 +726,7 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 -- ROMrateSelProd=Map[{#[[1]] * #[[2]],#[[3]]}&,ROMrateSelSort]//Sort
 -- 出現率比x出現: Save["ROMrateSelProd.wl",ROMrateSelProd]
 -- 出現率比x出現x辞書出現: ROMrateSelProdDic = Map[If[DictionaryLookup[#[[2]]]!={},#,Null]&,ROMrateSelProd]
--- 結果: Save["ROMrateSelProdDic.wl",ROMrateSelProdDic]
+-- 候補term: Save["ROMrateSelProdDic.wl",ROMrateSelProdDic]
 - RES-ORG@ACK
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 -- program: Math
