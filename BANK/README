@@ -797,6 +797,8 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/
 - ORG-RES@ACK
 -- /home/kamano/gitsrc/utility/split_phrase2W.pl region_ORG-RES_ACK.droptags.drop1 | sort | uniq -c | sort -nr > region_ORG-RES_ACK.droptags.drop1.2W
 
+########===今ここ===########
+
 
 
 
