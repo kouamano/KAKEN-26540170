@@ -785,7 +785,18 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 -- 出現率比x出現x辞書出現: ORArateSelProdDic = Map[If[DictionaryLookup[#[[2]]]!={},#,Null]&,ORArateSelProd]
 -- 候補term: Save["ORArateSelProdDic.wl",ORArateSelProdDic]
 
-######===いまここ===######
+####### 集計2.2.2.2 : RES-ORGまたはORG-RES間のワード集計:2term
+cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/
+######## カウント
+- RES-ORG@Mat
+-- /home/kamano/gitsrc/utility/split_phrase2W.pl region_RES-ORG_Mat.droptags.drop1 | sort | uniq -c | sort -nr > region_RES-ORG_Mat.droptags.drop1.2W
+- RES-ORG@ACK
+-- /home/kamano/gitsrc/utility/split_phrase2W.pl region_RES-ORG_ACK.droptags.drop1 | sort | uniq -c | sort -nr > region_RES-ORG_ACK.droptags.drop1.2W
+- ORG-RES@Mat
+-- /home/kamano/gitsrc/utility/split_phrase2W.pl region_ORG-RES_Mat.droptags.drop1 | sort | uniq -c | sort -nr > region_ORG-RES_Mat.droptags.drop1.2W
+- ORG-RES@ACK
+-- /home/kamano/gitsrc/utility/split_phrase2W.pl region_ORG-RES_ACK.droptags.drop1 | sort | uniq -c | sort -nr > region_ORG-RES_ACK.droptags.drop1.2W
+
 
 
 
