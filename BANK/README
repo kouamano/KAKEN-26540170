@@ -246,9 +246,8 @@ cat *cont | awk -F '	' '{print $1}' | sed -e 's/^\/BANK\/PMC\/20140724\/articles
 - スクリプト: /BANK/PMC/20140724/terms/ALL/patt.0/exec_command/extract_1W_Jour-au.sh (のちにディレクトリ名変更のため無効)
 - 結果: /BANK/PMC/20140724/terms/ALL/patt.0/Word_Jour-au.sort.uniq.rep
 - 全集計結果: /BANK/PMC/20140724/terms/ALL/patt.0/Word_Jour-All.merge.count.nsort
-
 ##TASK(term-count.ELM_VAL_ALL):タグ含まない
-### (split pattern 1) (20160804)
+### (split pattern 1; single term) (20160804)
 - プログラム:
 -- /home/kamano/gitsrc/XMLOP/drop_any_tag_LF.pl
 - スクリプト:
@@ -258,6 +257,8 @@ cat *cont | awk -F '	' '{print $1}' | sed -e 's/^\/BANK\/PMC\/20140724\/articles
 -- 3. sort_ALL_W_presort_Jour-ALL.sh
 -- 4. sort-count_ALL_W_Jour-ALL.sh
 - result: /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1/Word_jour-ALL.sort.count
+### (split pattern 1; 2W-phrase) (20160804)
+
 ### (split pattern 3): OLD
 #### タグの除去とsplit
 - プログラム:
@@ -265,7 +266,6 @@ cat *cont | awk -F '	' '{print $1}' | sed -e 's/^\/BANK\/PMC\/20140724\/articles
 -- /home/kamano/gitsrc/XMLOP/splitter3.pl
 - スクリプト: /BANK/PMC/20140724/terms/whole/patt.3/exec_command/split_Word_Jour-ALL.sh
 - 出力ファイル: /BANK/PMC/20140724/terms/whole/patt.3/Word_Jour-au
-
 ##TASK(term-count.allmaterials)
 ### (split pattern 1)
 #### 各ファイルのtag除去, split, sort, uniq, count
