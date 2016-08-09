@@ -265,6 +265,9 @@ cd /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1
 - プログラム:
 -- /home/kamano/gitsrc/XMLOP/drop_tag-text_LF.pl
 -- /home/kamano/gitsrc/XMLOP/phrase_splitter1.pl
+- スクリプト:
+-- 0. cd /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1/exec_command
+-- 1. ./split_Phrase_Jour-ALL.sh
 ###===いまここ===###
 
 ### (split pattern 3): OLD
