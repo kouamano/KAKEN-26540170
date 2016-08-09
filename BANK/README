@@ -248,6 +248,8 @@ cat *cont | awk -F '	' '{print $1}' | sed -e 's/^\/BANK\/PMC\/20140724\/articles
 - 全集計結果: /BANK/PMC/20140724/terms/ALL/patt.0/Word_Jour-All.merge.count.nsort
 ##TASK(term-count.ELM_VAL_ALL):タグ含まない
 ### (split pattern 1; single term) (20160804)
+cd /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1
+- README: /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1/exec_command/README
 - プログラム:
 -- /home/kamano/gitsrc/XMLOP/drop_any_tag_LF.pl
 - スクリプト:
@@ -257,7 +259,11 @@ cat *cont | awk -F '	' '{print $1}' | sed -e 's/^\/BANK\/PMC\/20140724\/articles
 -- 3. sort_ALL_W_presort_Jour-ALL.sh
 -- 4. sort-count_ALL_W_Jour-ALL.sh
 - result: /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1/Word_jour-ALL.sort.count
-### (split pattern 1; 2W-phrase) (20160804)
+### (split pattern 1; 2W-phrase)
+cd /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1
+- README: /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1/exec_command/README
+- プログラム:
+-- /home/kamano/gitsrc/XMLOP/drop_tag-text.pl
 
 ### (split pattern 3): OLD
 #### タグの除去とsplit
