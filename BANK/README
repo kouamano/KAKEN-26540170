@@ -267,13 +267,15 @@ cd /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1
 -- /home/kamano/gitsrc/XMLOP/phrase_splitter1.pl
 -- /home/kamano/gitsrc/utility/split_phrase2W.pl
 -- /home/kamano/gitsrc/utility/select_phrase2W.pl
+-- /home/kamano/gitsrc/utility/sum_count_from_mixed_phrase_sort.pl
 - スクリプト:
 -- 0. cd /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1/exec_command
 -- 1. ./split_Phrase_Jour-ALL.sh
 -- 2. ./select_phrase2W.sh
 -- 3. ./sort_each_2W_Jour-ALL.sh
 -- 4. ./sort_ALL_2W_presort_Jour-ALL.sh #20min
--- 5. ./sort-count_ALL_2W_Jour-ALL.sh
+-- 5. ./sort-count_ALL_2W_Jour-ALL.sh #10min
+- result: /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1/Phrase_jour-ALL.2W.sort.count
 ###===いまここ===###
 
 ### (split pattern 3): OLD
