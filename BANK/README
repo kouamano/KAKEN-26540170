@@ -271,6 +271,7 @@ cd /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1
 -- 0. cd /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1/exec_command
 -- 1. ./split_Phrase_Jour-ALL.sh
 -- 2. ./select_phrase2W.sh
+-- 3. ./sort_each_2W_Jour-ALL.sh
 ###===いまここ===###
 
 ### (split pattern 3): OLD
