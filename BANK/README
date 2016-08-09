@@ -272,7 +272,7 @@ cd /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1
 -- 1. ./split_Phrase_Jour-ALL.sh
 -- 2. ./select_phrase2W.sh
 -- 3. ./sort_each_2W_Jour-ALL.sh
--- 4. ./sort_ALL_2W_presort_Jour-ALL.sh
+-- 4. ./sort_ALL_2W_presort_Jour-ALL.sh #20min
 ###===いまここ===###
 
 ### (split pattern 3): OLD
