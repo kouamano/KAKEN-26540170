@@ -291,6 +291,7 @@ cd /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1
 -- 2. ./select_phrase3W.sh
 -- 3. ./sort_each_3W_Jour-ALL.sh
 -- 4. ./sort_ALL_3W_presort_Jour-ALL.sh
+-- 5. ./sort-count_ALL_3W_Jour-ALL.sh
 
 ###===いまここ===###
 
