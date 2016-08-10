@@ -289,6 +289,9 @@ cd /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1
 -- 0. cd /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1/exec_command
 -- 1. 実行済み
 -- 2. ./select_phrase3W.sh
+-- 3. ./sort_each_3W_Jour-ALL.sh
+-- 4. ./sort_ALL_3W_presort_Jour-ALL.sh
+
 ###===いまここ===###
 
 ### (split pattern 3): OLD
