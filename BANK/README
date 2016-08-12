@@ -293,7 +293,6 @@ cd /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1
 -- 4. ./sort_ALL_3W_presort_Jour-ALL.sh
 -- 5. ./sort-count_ALL_3W_Jour-ALL.sh
 - result: /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1/Phrase_jour-ALL.3W.sort.count
-###===いまここ===###
 
 ### (split pattern 3): OLD
 #### タグの除去とsplit
