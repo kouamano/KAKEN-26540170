@@ -723,7 +723,7 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/
 - ペンディング
 ###### 集計2.2.2 : 句読点カッコ類を落とす
 ####### 集計2.2.2.1 : RES-ORGまたはORG-RES間のワード集計:1term
-######## カウント
+######## (1)カウント
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/
 - RES-ORG@Mat
 /home/kamano/gitsrc/utility/split_terms.pl region_RES-ORG_Mat.droptags.drop1 | sort | uniq -c | sort -nr > region_RES-ORG_Mat.droptags.drop1.term
@@ -733,7 +733,7 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/
 /home/kamano/gitsrc/utility/split_terms.pl region_ORG-RES_Mat.droptags.drop1 | sort | uniq -c | sort -nr > region_ORG-RES_Mat.droptags.drop1.term
 - ORG-RES@ACK
 /home/kamano/gitsrc/utility/split_terms.pl region_ORG-RES_ACK.droptags.drop1 | sort | uniq -c | sort -nr > region_ORG-RES_ACK.droptags.drop1.term
-######## RES-ORGまたはORG-RES間のワード集計:1term:region内の出現率と全体の出現確率の比に出現数をかけた値が高いtermから抽出
+######## (2)RES-ORGまたはORG-RES間のワード集計:1term:region内の出現率と全体の出現確率の比に出現数をかけた値が高いtermから抽出
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/
 - base
 -- file: /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1/Word_jour-ALL.sort.count
@@ -748,7 +748,7 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/
 -- スクリプト:
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 for file in *drop1.term; do /home/kamano/gitsrc/MATH_SCRIPT/SCRIPTS/count_to_wl.pl $file > $file.wl; done
-######## 出現率比と出現の積が高い順に一般語を取り出し(候補term)、OR検索ですべてのステートメントをカバーするまで単語を拾う
+######## (3)出現率比と出現の積が高い順に一般語を取り出し(候補term)、OR検索ですべてのステートメントをカバーするまで単語を拾う
 - RES-ORG@Mat
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 -- program: Math
@@ -822,7 +822,7 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 
 ####### 集計2.2.2.2 : RES-ORGまたはORG-RES間のワード集計:2term
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/
-######## カウント
+######## (1)カウント
 - RES-ORG@Mat
 -- /home/kamano/gitsrc/utility/split_phrase2W.pl region_RES-ORG_Mat.droptags.drop1 | sort | uniq -c | sort -nr > region_RES-ORG_Mat.droptags.drop1.2W
 - RES-ORG@ACK
@@ -831,8 +831,9 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/
 -- /home/kamano/gitsrc/utility/split_phrase2W.pl region_ORG-RES_Mat.droptags.drop1 | sort | uniq -c | sort -nr > region_ORG-RES_Mat.droptags.drop1.2W
 - ORG-RES@ACK
 -- /home/kamano/gitsrc/utility/split_phrase2W.pl region_ORG-RES_ACK.droptags.drop1 | sort | uniq -c | sort -nr > region_ORG-RES_ACK.droptags.drop1.2W
-######## RES-ORGまたはORG-RES間のフレーズ集計:2term:region内の出現率と全体の出現確率の比に出現数をかけた値が高い2termから抽出
+######## (2)RES-ORGまたはORG-RES間のフレーズ集計:2term:region内の出現率と全体の出現確率の比に出現数をかけた値が高い2termから抽出
 ########===今ここ===########
+######## (3)出現率比と出現の積が高い順に一般語を含むフレーズ取り出し(候補phrase)、OR検索ですべてのステートメントをカバーするまでphraseを拾う
 
 
 
