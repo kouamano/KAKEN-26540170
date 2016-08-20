@@ -835,8 +835,8 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/
 - base
 -- file: /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1/Phrase_jour-ALL.2W.sort.count
+-- wlに変換: home/kamano/gitsrc/MATH_SCRIPT/SCRIPTS/Pcount_to_wl.pl /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1/Phrase_jour-ALL.2W.sort.count > /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1/Phrase_jour-ALL.2W.count.wl
 ########===今ここ===########(作業中)
--- wlに変換:
 -- phrasecount2W = <<"/BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1/Phrase_jour-ALL.2W.count.wl";
 -- phrasecounttotal2W = Map[#[[1]]&,phrasecount2W]//Tr
 -- phrasecountratio2W = Map[{#[[1]],#[[1]]/phrasecounttotal2W//N,#[[2]]}&,phrasecount2W]; 
