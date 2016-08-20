@@ -836,6 +836,7 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/
 cd /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1
 -- file: /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1/Phrase_jour-ALL.2W.sort.count
 -- wlに変換: home/kamano/gitsrc/MATH_SCRIPT/SCRIPTS/Pcount_to_wl.pl /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1/Phrase_jour-ALL.2W.sort.count > /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1/Phrase_jour-ALL.2W.count.wl
+--- フレーズのターム中にクオーティングあり -> 対応策考え中
 ########===今ここ===########(作業中)
 -- phrasecount2W = <<"/BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1/Phrase_jour-ALL.2W.count.wl";
 -- phrasecounttotal2W = Map[#[[1]]&,phrasecount2W]//Tr
