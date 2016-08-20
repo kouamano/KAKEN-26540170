@@ -832,7 +832,16 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/
 - ORG-RES@ACK
 -- /home/kamano/gitsrc/utility/split_phrase2W.pl region_ORG-RES_ACK.droptags.drop1 | sort | uniq -c | sort -nr > region_ORG-RES_ACK.droptags.drop1.2W
 ######## (2)RES-ORGまたはORG-RES間のフレーズ(2W)集計:region内の出現率と全体の出現確率の比に出現数をかけた値が高い2termから抽出
-########===今ここ===########
+cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/
+- base
+-- file: /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1/Phrase_jour-ALL.2W.sort.count
+########===今ここ===########(作業中)
+-- wlに変換
+-- phrasecount = <<"/BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1/Phrase_jour-ALL.2W.count.wl";
+-- phrasecounttotal = Map[#[[1]]&,phrasecount]//Tr
+-- phrasecountratio = Map[{#[[1]],#[[1]]/phrasecounttotal//N,#[[2]]}&,phrasecount]; 
+-- Save["phrasecountratio.wl",phrasecountratio]
+-- phraseRule = Map[#[[3]]->{#[[1]],#[[2]]}&,phrasecountratio];
 ######## (3)出現率比と出現の積が高い順に一般語を含むフレーズ(2W)取り出し(候補phrase)、OR検索ですべてのステートメントをカバーするまでphraseを拾う
 
 
