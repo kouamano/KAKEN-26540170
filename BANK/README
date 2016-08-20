@@ -836,12 +836,12 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/
 - base
 -- file: /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1/Phrase_jour-ALL.2W.sort.count
 ########===今ここ===########(作業中)
--- wlに変換
--- phrasecount = <<"/BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1/Phrase_jour-ALL.2W.count.wl";
--- phrasecounttotal = Map[#[[1]]&,phrasecount]//Tr
--- phrasecountratio = Map[{#[[1]],#[[1]]/phrasecounttotal//N,#[[2]]}&,phrasecount]; 
--- Save["phrasecountratio.wl",phrasecountratio]
--- phraseRule = Map[#[[3]]->{#[[1]],#[[2]]}&,phrasecountratio];
+-- wlに変換:
+-- phrasecount2W = <<"/BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1/Phrase_jour-ALL.2W.count.wl";
+-- phrasecounttotal2W = Map[#[[1]]&,phrasecount2W]//Tr
+-- phrasecountratio2W = Map[{#[[1]],#[[1]]/phrasecounttotal2W//N,#[[2]]}&,phrasecount2W]; 
+-- Save["phrasecountratio2W.wl",phrasecountratio2W]
+-- phraseRule2W = Map[#[[3]]->{#[[1]],#[[2]]}&,phrasecountratio2W];
 ######## (3)出現率比と出現の積が高い順に一般語を含むフレーズ(2W)取り出し(候補phrase)、OR検索ですべてのステートメントをカバーするまでphraseを拾う
 
 
