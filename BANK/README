@@ -841,8 +841,8 @@ cd /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1
 --- total2W=Map[#[[1]]&,sp]//Tr (*2866055366*)
 --- phrasecountratio2W=Map[{#[[1]],#[[1]]/total2W//N,#[[2]]}&,sp];
 --- Save["phrasecountratio2W.wl",phrasecountratio2W]
-########===今ここ===########(作業中)
 --- phraseRule2W = Map[#[[3]]->{#[[1]],#[[2]]}&,phrasecountratio2W];
+########===今ここ===########(作業中)
 ######## (3)出現率比と出現の積が高い順に一般語を含むフレーズ(2W)取り出し(候補phrase)、OR検索ですべてのステートメントをカバーするまでphraseを拾う
 
 
