@@ -840,6 +840,7 @@ cd /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1
 -- sp=<<"/BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1/Phrase_jour-ALL.2W.count.wl";
 -- total2W=Map[#[[1]]&,sp]//Tr (*2866055366*)
 -- phrasecountratio2W=Map[{#[[1]],#[[1]]/total2W//N,#[[2]]}&,sp];
+-- Save["phrasecountratio2W.wl",phrasecountratio2W]
 ########===今ここ===########(作業中)
 -- phrasecount2W = <<"/BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1/Phrase_jour-ALL.2W.count.wl";
 -- phrasecounttotal2W = Map[#[[1]]&,phrasecount2W]//Tr
