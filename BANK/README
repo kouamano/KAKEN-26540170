@@ -904,7 +904,6 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 -- ORMrate2W=Map[{#[[1,2]]/#[[3,2]],#[[1,1]],#[[2]]}&,ORMvs2Wsel]
 -- ORMrateSel2W=Cases[ORMrate2W,x_/;NumberQ[x[[1]]]]
 -- ORMrateSelSort2W=Sort[ORMrateSel2W,#1[[1]]>=#2[[1]]&]
-########===いまここ===########(20160823)
 -- Save["ORMrateSelSort2W.wl",ORMrateSelSort2W]
 -- ORMrateSelProd2W=Map[{#[[1]] * #[[2]],#[[3]]}&,ORMrateSelSort2W]//Sort
 -- 出現率比x出現: Save["ORMrateSelProd2W.wl",ORMrateSelProd2W]
@@ -913,6 +912,7 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 --- ORMrateSelProdDic2W = Map[If[DictionaryLookup[#[[2,1]]]!={}&&DictionaryLookup[#[[2,2]]]!={},#,Null]&,ORMrateSelProd2WSpl]
 -- 候補term: Save["ORMrateSelProdDic2W.wl",ORMrateSelProdDic2W]
 
+########===いまここ===########(20160823)
 - ORG-RES@ACK
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 -- wordcountratio: <<"/BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1/wordcountratio.wl"
