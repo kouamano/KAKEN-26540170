@@ -855,14 +855,14 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 -- ROMvs2Wsel = Cases[ROMvs2W,{{x_,y_},_String,{s_,t_}}/;NumberQ[x]&&NumberQ[y]&&NumberQ[s]&&NumberQ[t]]
 -- Save["ROMvs2W.wl",ROMvs2Wsel]
 ########===いまここ===########(20160822)
--- ROMrate=Map[{#[[1,2]]/#[[3,2]],#[[1,1]],#[[2]]}&,ROMvs2Wsel]
--- ROMrateSel=Cases[ROMrate,x_/;NumberQ[x[[1]]]]
--- ROMrateSelSort=Sort[ROMrateSel,#1[[1]]>=#2[[1]]&]
--- Save["ROMrateSelSort.wl",ROMrateSelSort]
--- ROMrateSelProd=Map[{#[[1]] * #[[2]],#[[3]]}&,ROMrateSelSort]//Sort
--- 出現率比x出現: Save["ROMrateSelProd.wl",ROMrateSelProd]
--- 出現率比x出現x辞書出現: ROMrateSelProdDic = Map[If[DictionaryLookup[#[[2]]]!={},#,Null]&,ROMrateSelProd]
--- 候補term: Save["ROMrateSelProdDic.wl",ROMrateSelProdDic]
+-- ROMrate2W=Map[{#[[1,2]]/#[[3,2]],#[[1,1]],#[[2]]}&,ROMvs2Wsel]
+-- ROMrateSel2W=Cases[ROMrate2W,x_/;NumberQ[x[[1]]]]
+-- ROMrateSelSort2W=Sort[ROMrateSel2W,#1[[1]]>=#2[[1]]&]
+-- Save["ROMrateSelSort2W.wl",ROMrateSelSort2W]
+-- ROMrateSelProd2W=Map[{#[[1]] * #[[2]],#[[3]]}&,ROMrateSelSort2W]//Sort
+-- 出現率比x出現: Save["ROMrateSelProd2W.wl",ROMrateSelProd2W]
+-- 出現率比x出現x辞書出現: ROMrateSelProdDic2W = Map[If[DictionaryLookup[#[[2]]]!={},#,Null]&,ROMrateSelProd2W]
+-- 候補term: Save["ROMrateSelProdDic2W.wl",ROMrateSelProdDic2W]
 
 - RES-ORG@ACK
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
