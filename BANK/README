@@ -874,42 +874,44 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 -- wlに変換: /home/kamano/gitsrc/MATH_SCRIPT/SCRIPTS/count_to_wl.pl region_RES-ORG_ACK.droptags.drop1.2W > region_RES-ORG_ACK.droptags.drop1.2W.wl
 -- object: ROA=<<"/BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/region_RES-ORG_ACK.droptags.drop1.2W.wl";
 -- ROAtotal = Map[#[[1]]&,ROA]//Tr (*847*)
-########===いまここ===########(20160823)
 -- ROAvs2W=Map[{{#[[1]],#[[1]]/ROAtotal//N},#[[2]],#[[2]]/.DphraseRule2W}&, ROA]
-
---- ROMvs2W format : {{ROMcount},word,{totalcount}} 
--- ROMvs2Wsel = Cases[ROMvs2W,{{x_,y_},_String,{s_,t_}}/;NumberQ[x]&&NumberQ[y]&&NumberQ[s]&&NumberQ[t]]
--- Save["ROMvs2W.wl",ROMvs2Wsel]
--- ROMrate2W=Map[{#[[1,2]]/#[[3,2]],#[[1,1]],#[[2]]}&,ROMvs2Wsel]
--- ROMrateSel2W=Cases[ROMrate2W,x_/;NumberQ[x[[1]]]]
--- ROMrateSelSort2W=Sort[ROMrateSel2W,#1[[1]]>=#2[[1]]&]
--- Save["ROMrateSelSort2W.wl",ROMrateSelSort2W]
--- ROMrateSelProd2W=Map[{#[[1]] * #[[2]],#[[3]]}&,ROMrateSelSort2W]//Sort
--- 出現率比x出現: Save["ROMrateSelProd2W.wl",ROMrateSelProd2W]
+--- ROAvs2W format : {{ROAcount},word,{totalcount}} 
+-- ROAvs2Wsel = Cases[ROAvs2W,{{x_,y_},_String,{s_,t_}}/;NumberQ[x]&&NumberQ[y]&&NumberQ[s]&&NumberQ[t]]
+-- Save["ROAvs2W.wl",ROAvs2Wsel]
+-- ROArate2W=Map[{#[[1,2]]/#[[3,2]],#[[1,1]],#[[2]]}&,ROAvs2Wsel]
+-- ROArateSel2W=Cases[ROArate2W,x_/;NumberQ[x[[1]]]]
+-- ROArateSelSort2W=Sort[ROArateSel2W,#1[[1]]>=#2[[1]]&]
+-- Save["ROArateSelSort2W.wl",ROArateSelSort2W]
+-- ROArateSelProd2W=Map[{#[[1]] * #[[2]],#[[3]]}&,ROArateSelSort2W]//Sort
+-- 出現率比x出現: Save["ROArateSelProd2W.wl",ROArateSelProd2W]
 -- 出現率比x出現x辞書出現:
---- ROMrateSelProd2WSpl = Map[{#[[1]],StringSplit[#[[2]]]}&,ROMrateSelProd2W]
---- ROMrateSelProdDic2W = Map[If[DictionaryLookup[#[[2,1]]]!={}&&DictionaryLookup[#[[2,2]]]!={},#,Null]&,ROMrateSelProd2WSpl]
--- 候補term: Save["ROMrateSelProdDic2W.wl",ROMrateSelProdDic2W]
+--- ROArateSelProd2WSpl = Map[{#[[1]],StringSplit[#[[2]]]}&,ROArateSelProd2W]
+--- ROArateSelProdDic2W = Map[If[DictionaryLookup[#[[2,1]]]!={}&&DictionaryLookup[#[[2,2]]]!={},#,Null]&,ROArateSelProd2WSpl]
+-- 候補term: Save["ROArateSelProdDic2W.wl",ROArateSelProdDic2W]
 
 - ORG-RES@Mat
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
--- program: Math
--- wordcountratio: <<"/BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1/wordcountratio.wl"
--- wordRule = Map[#[[3]]->{#[[1]],#[[2]]}&,wordcountratio];
--- wordD = Dispatch[wordRule]
--- object: ORM=<<"/BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/region_ORG-RES_Mat.droptags.drop1.term.wl";
--- ORMtotal = Map[#[[1]]&,ORM]//Tr -> 1315
--- ORMratio = Map[{#[[1]],#[[1]]/1315//N,#[[2]]}&,ORM]
--- ORMvsWord = Map[{{#[[1]],#[[2]]},#[[3]],#[[3]]/.wordD}&,ORMratio]
--- Save["ORMvsWord.wl",ORMvsWord]
--- ORMrate=Map[{#[[1,2]]/#[[3,2]],#[[1,1]],#[[2]]}&,ORMvsWord]
--- ORMrateSel=Cases[ORMrate,x_/;NumberQ[x[[1]]]]
--- ORMrateSelSort=Sort[ORMrateSel,#1[[1]]>=#2[[1]]&]
--- Save["ORMrateSelSort.wl",ORMrateSelSort]
--- ORMrateSelProd=Map[{#[[1]] * #[[2]],#[[3]]}&,ORMrateSelSort]//Sort
--- 出現率比x出現: Save["ORMrateSelProd.wl",ORMrateSelProd]
--- 出現率比x出現x辞書出現: ORMrateSelProdDic = Map[If[DictionaryLookup[#[[2]]]!={},#,Null]&,ORMrateSelProd]
--- 候補term: Save["ORMrateSelProdDic.wl",ORMrateSelProdDic]
+-- program:
+--- Math
+--- /home/kamano/gitsrc/MATH_SCRIPT/SCRIPTS/count_to_wl.pl
+-- wlに変換: /home/kamano/gitsrc/MATH_SCRIPT/SCRIPTS/count_to_wl.pl region_ORG-RES_Mat.droptags.drop1.2W > region_ORG-RES_Mat.droptags.drop1.2W.wl
+########===いまここ===########(20160823)
+-- object: ORM=<<"/BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/region_ORG-RES_Mat.droptags.drop1.2W.wl";
+-- ROAtotal = Map[#[[1]]&,ROA]//Tr (*847*)
+-- ROAvs2W=Map[{{#[[1]],#[[1]]/ROAtotal//N},#[[2]],#[[2]]/.DphraseRule2W}&, ROA]
+--- ROAvs2W format : {{ROAcount},word,{totalcount}} 
+-- ROAvs2Wsel = Cases[ROAvs2W,{{x_,y_},_String,{s_,t_}}/;NumberQ[x]&&NumberQ[y]&&NumberQ[s]&&NumberQ[t]]
+-- Save["ROAvs2W.wl",ROAvs2Wsel]
+-- ROArate2W=Map[{#[[1,2]]/#[[3,2]],#[[1,1]],#[[2]]}&,ROAvs2Wsel]
+-- ROArateSel2W=Cases[ROArate2W,x_/;NumberQ[x[[1]]]]
+-- ROArateSelSort2W=Sort[ROArateSel2W,#1[[1]]>=#2[[1]]&]
+-- Save["ROArateSelSort2W.wl",ROArateSelSort2W]
+-- ROArateSelProd2W=Map[{#[[1]] * #[[2]],#[[3]]}&,ROArateSelSort2W]//Sort
+-- 出現率比x出現: Save["ROArateSelProd2W.wl",ROArateSelProd2W]
+-- 出現率比x出現x辞書出現:
+--- ROArateSelProd2WSpl = Map[{#[[1]],StringSplit[#[[2]]]}&,ROArateSelProd2W]
+--- ROArateSelProdDic2W = Map[If[DictionaryLookup[#[[2,1]]]!={}&&DictionaryLookup[#[[2,2]]]!={},#,Null]&,ROArateSelProd2WSpl]
+-- 候補term: Save["ROArateSelProdDic2W.wl",ROArateSelProdDic2W]
 
 - ORG-RES@ACK
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
