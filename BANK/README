@@ -659,7 +659,6 @@ grep 'Mat			' hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.L |
 - 対象: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.E.S.L
 #### 集計1 : </RES>...<ORG> or </ORG>...<RES> 間、単語数ごとの集計
 - パターン集計結果: => 石川氏に問い合わせ(20170725)
-####===いまここ===####
 - パターン集計結果のまとめ: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/analysis/pattern-bunseki-kekka (図書館総合展)
 #### 集計2 : </RES>...<ORG> or </ORG>...<RES> 間の単語数制限なし (20160801)
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/
@@ -954,7 +953,7 @@ cd /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1
 ########===いまここ===########(20160823)
 -- math
 --- sp=<<"/BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1/Phrase_jour-ALL.3W.count.wl";
---- total3W=Map[#[[1]]&,sp]//Tr (*???*)
+--- total3W=Map[#[[1]]&,sp]//Tr (*2411385356*)
 --- phrasecountratio3W=Map[{#[[1]],#[[1]]/total3W//N,#[[2]]}&,sp];
 --- Save["phrasecountratio3W.wl",phrasecountratio3W]
 --- phraseRule3W = Map[#[[3]]->{#[[1]],#[[2]]}&,phrasecountratio3W];
