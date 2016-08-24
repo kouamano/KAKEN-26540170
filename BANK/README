@@ -821,8 +821,8 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 -- 候補term: Save["ORArateSelProdDic.wl",ORArateSelProdDic]
 
 ####### 集計2.2.2.2 : RES-ORGまたはORG-RES間のワード集計:2term
-cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/
 ######## (1)カウント
+cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/
 - RES-ORG@Mat
 -- /home/kamano/gitsrc/utility/split_phrase2W.pl region_RES-ORG_Mat.droptags.drop1 | sort | uniq -c | sort -nr > region_RES-ORG_Mat.droptags.drop1.2W
 - RES-ORG@ACK
@@ -934,12 +934,33 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 --- ORArateSelProd2WSpl = Map[{#[[1]],StringSplit[#[[2]]]}&,ORArateSelProd2W]
 --- ORArateSelProdDic2W = Map[If[DictionaryLookup[#[[2,1]]]!={}&&DictionaryLookup[#[[2,2]]]!={},#,Null]&,ORArateSelProd2WSpl]
 -- 候補term: Save["ORArateSelProdDic2W.wl",ORArateSelProdDic2W]
-########===いまここ===########(20160823)
 
 ####### 集計2.2.2.3 : RES-ORGまたはORG-RES間のワード集計:3term
 ######## (1)カウント
+cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/
+- RES-ORG@Mat
+-- /home/kamano/gitsrc/utility/split_phrase3W.pl region_RES-ORG_Mat.droptags.drop1 | sort | uniq -c | sort -nr > region_RES-ORG_Mat.droptags.drop1.3W
+- RES-ORG@ACK
+-- /home/kamano/gitsrc/utility/split_phrase3W.pl region_RES-ORG_ACK.droptags.drop1 | sort | uniq -c | sort -nr > region_RES-ORG_ACK.droptags.drop1.3W
+- ORG-RES@Mat
+-- /home/kamano/gitsrc/utility/split_phrase3W.pl region_ORG-RES_Mat.droptags.drop1 | sort | uniq -c | sort -nr > region_ORG-RES_Mat.droptags.drop1.3W
+- ORG-RES@ACK
+-- /home/kamano/gitsrc/utility/split_phrase3W.pl region_ORG-RES_ACK.droptags.drop1 | sort | uniq -c | sort -nr > region_ORG-RES_ACK.droptags.drop1.3W
 ######## (2)RES-ORGまたはORG-RES間のフレーズ(3W)集計:region内の出現率と全体の出現確率の比に出現数をかけた値が高い3termから抽出
+- base
+cd /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1
+-- file: /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1/Phrase_jour-ALL.3W.sort.count
+-- wlに変換: /home/kamano/gitsrc/MATH_SCRIPT/SCRIPTS/Pcount_to_wl.pl /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1/Phrase_jour-ALL.3W.sort.count > /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1/Phrase_jour-ALL.3W.count.wl
+########===いまここ===########(20160823)
+-- math
+--- sp=<<"/BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1/Phrase_jour-ALL.3W.count.wl";
+--- total3W=Map[#[[1]]&,sp]//Tr (*2866055366*)
+--- phrasecountratio3W=Map[{#[[1]],#[[1]]/total3W//N,#[[2]]}&,sp];
+--- Save["phrasecountratio3W.wl",phrasecountratio3W]
+--- phraseRule3W = Map[#[[3]]->{#[[1]],#[[2]]}&,phrasecountratio3W];
+
 ######## (3)出現率比と出現の積が高い順に一般語を含むフレーズ(3W)取り出す(候補phrase)。
+
 
 
 ##TASK(2.2)[2](ペンディング) バイオリソース名の前後の出現文字(単語)パターンより正解バイオリソースかを判定(20150911)
