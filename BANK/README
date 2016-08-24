@@ -950,11 +950,12 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/
 cd /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1
 -- file: /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1/Phrase_jour-ALL.3W.sort.count
 -- wlに変換: /home/kamano/gitsrc/MATH_SCRIPT/SCRIPTS/Pcount_to_wl.pl /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1/Phrase_jour-ALL.3W.sort.count > /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1/Phrase_jour-ALL.3W.count.wl
-########===いまここ===########(20160823)
 -- math
 --- sp=<<"/BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1/Phrase_jour-ALL.3W.count.wl";
 --- total3W=Map[#[[1]]&,sp]//Tr (*2411385356*)
 --- phrasecountratio3W=Map[{#[[1]],#[[1]]/total3W//N,#[[2]]}&,sp];
+
+########===いまここ===########(20160823)
 --- Save["phrasecountratio3W.wl",phrasecountratio3W]
 --- phraseRule3W = Map[#[[3]]->{#[[1]],#[[2]]}&,phrasecountratio3W];
 
@@ -977,7 +978,6 @@ cd /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1
 - スクリプト[local]: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/match_ResSpan_Mat.a[pqr].sh
 - スクリプト[hokusai]: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/hokusai/term+span.au.sh
 - 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/match_ResSpan_Mat.au
-
 ##TASK(2.3)[3] 機関名の前後の出現文字(単語)パターンのまとめ (20150915)
 ###TASK(2.3.1) in ACK
 - 対象: /BANK/PMC/20140724/elements/acknowledgement/PMC-ACK-v6.tsv.contOnly
@@ -993,7 +993,7 @@ cd /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1
 - 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/match_OrgSpan_Mat.au
 
 
-#TASK(3): 評価対象機関名(拡張)候補決定(/BANK/PMC/20140724/elements/aff) THEME[kaken-26540170]
+#TASK(3): 評価対象機関名拡張(/BANK/PMC/20140724/elements/aff)
 #aff領域より得られた機関名(住所つき)をmaterial、ack領域に対して検索、存在を確認。
 #所属をカンマで区切り、各フレーズを対象領域に対してマッチング。
 #<tag1>,<tag2>,<tag3>
@@ -1031,8 +1031,8 @@ cd /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1
 - 件数(ドキュメント): 19091
 
 
-#TASK(4)対象機関名を含むパターン検索
-#未実行
+#TASK(4)パターン(TASK(3))による検索とパターンの再定義
+#TASK(4.1) リソース名、機関名ともに拡張なし
 #予約ファイル:
 - hit_Aff_from_Ack
 - hit_Aff_from_Mat
