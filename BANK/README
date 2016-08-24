@@ -954,7 +954,7 @@ cd /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1
 ########===いまここ===########(20160823)
 -- math
 --- sp=<<"/BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1/Phrase_jour-ALL.3W.count.wl";
---- total3W=Map[#[[1]]&,sp]//Tr (*2866055366*)
+--- total3W=Map[#[[1]]&,sp]//Tr (*???*)
 --- phrasecountratio3W=Map[{#[[1]],#[[1]]/total3W//N,#[[2]]}&,sp];
 --- Save["phrasecountratio3W.wl",phrasecountratio3W]
 --- phraseRule3W = Map[#[[3]]->{#[[1]],#[[2]]}&,phrasecountratio3W];
