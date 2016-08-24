@@ -954,9 +954,8 @@ cd /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1
 --- sp=<<"/BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1/Phrase_jour-ALL.3W.count.wl";
 --- total3W=Map[#[[1]]&,sp]//Tr (*2411385356*)
 --- phrasecountratio3W=Map[{#[[1]],#[[1]]/total3W//N,#[[2]]}&,sp];
-
-########===いまここ===########(20160823)
 --- Save["phrasecountratio3W.wl",phrasecountratio3W]
+########===いまここ===########(20160823)
 --- phraseRule3W = Map[#[[3]]->{#[[1]],#[[2]]}&,phrasecountratio3W];
 
 ######## (3)出現率比と出現の積が高い順に一般語を含むフレーズ(3W)取り出す(候補phrase)。
