@@ -655,7 +655,6 @@ grep 'ACK			' hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.L |
 --- <Mat>
 grep 'Mat			' hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.L | wc
     737   26845  189192
-
 ###TASK(2.1.8) 機関名、バイオリソース名が同時出現するセンテンスのパターン解析
 - 対象: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.E.S.L
 #### 集計1 : </RES>...<ORG> or </ORG>...<RES> 間、単語数ごとの集計
@@ -719,6 +718,10 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/
 /home/kamano/gitsrc/utility/split_terms.pl region_ORG-RES_Mat.droptags | sort | uniq -c | sort -nr > region_ORG-RES_Mat.droptags.term
 - ORG-RES@ACK
 /home/kamano/gitsrc/utility/split_terms.pl region_ORG-RES_ACK.droptags | sort | uniq -c | sort -nr > region_ORG-RES_ACK.droptags.term
+####### 集計2.2.1.2 : RES-ORGまたはORG-RES間のワード集計:1term:全体の出現確率に比して高い確率のterm
+- ペンディング
+###### 集計2.2.2 : 句読点カッコ類を落とす
+####### 集計2.2.2.1 : RES-ORGまたはORG-RES間のワード集計:1term
 ######## (1)カウント
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/
 - RES-ORG@Mat
@@ -729,10 +732,6 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/
 /home/kamano/gitsrc/utility/split_terms.pl region_ORG-RES_Mat.droptags.drop1 | sort | uniq -c | sort -nr > region_ORG-RES_Mat.droptags.drop1.term
 - ORG-RES@ACK
 /home/kamano/gitsrc/utility/split_terms.pl region_ORG-RES_ACK.droptags.drop1 | sort | uniq -c | sort -nr > region_ORG-RES_ACK.droptags.drop1.term
-
-##### 集計2.3 : RES-ORGまたはORG-RES間のワード集計 vs. 全体の集計
-###### 集計2.3.1 : 句読点カッコ類を落とす
-####### 集計2.3.1.1 : RES-ORGまたはORG-RES間のワード集計: single term
 ######## (2)RES-ORGまたはORG-RES間のワード集計:1term:region内の出現率と全体の出現確率の比に出現数をかけた値が高いtermから抽出
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/
 - base
@@ -820,7 +819,7 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 -- 出現率比x出現x辞書出現: ORArateSelProdDic = Map[If[DictionaryLookup[#[[2]]]!={},#,Null]&,ORArateSelProd]
 -- 候補term: Save["ORArateSelProdDic.wl",ORArateSelProdDic]
 
-####### 集計2.3.1.2 : RES-ORGまたはORG-RES間のワード集計:2term
+####### 集計2.2.2.2 : RES-ORGまたはORG-RES間のワード集計:2term
 ######## (1)カウント
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/
 - RES-ORG@Mat
@@ -935,7 +934,7 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 --- ORArateSelProdDic2W = Map[If[DictionaryLookup[#[[2,1]]]!={}&&DictionaryLookup[#[[2,2]]]!={},#,Null]&,ORArateSelProd2WSpl]
 -- 候補term: Save["ORArateSelProdDic2W.wl",ORArateSelProdDic2W]
 
-####### 集計2.3.1.3 : RES-ORGまたはORG-RES間のワード集計:3term
+####### 集計2.2.2.3 : RES-ORGまたはORG-RES間のワード集計:3term
 ######## (1)カウント
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/
 - RES-ORG@Mat
