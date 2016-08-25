@@ -981,7 +981,6 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 -- 候補term: Save["ROMrateSelProdDic3W.wl",ROMrateSelProdDic3W]
 ########===いまここ===########(20160824)
 
-
 ##TASK(2.2)[2](ペンディング) バイオリソース名の前後の出現文字(単語)パターンより正解バイオリソースかを判定(20150911)
 ###TASK(2.2.1) in ACK
 - 対象: /BANK/PMC/20140724/elements/acknowledgement/PMC-ACK-v6.tsv.contOnly
