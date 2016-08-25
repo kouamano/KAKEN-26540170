@@ -655,6 +655,7 @@ grep 'ACK			' hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.L |
 --- <Mat>
 grep 'Mat			' hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.L | wc
     737   26845  189192
+
 ###TASK(2.1.8) 機関名、バイオリソース名が同時出現するセンテンスのパターン解析
 - 対象: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.E.S.L
 #### 集計1 : </RES>...<ORG> or </ORG>...<RES> 間、単語数ごとの集計
@@ -718,8 +719,6 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/
 /home/kamano/gitsrc/utility/split_terms.pl region_ORG-RES_Mat.droptags | sort | uniq -c | sort -nr > region_ORG-RES_Mat.droptags.term
 - ORG-RES@ACK
 /home/kamano/gitsrc/utility/split_terms.pl region_ORG-RES_ACK.droptags | sort | uniq -c | sort -nr > region_ORG-RES_ACK.droptags.term
-####### 集計2.2.1.2 : RES-ORGまたはORG-RES間のワード集計:1term:全体の出現確率に比して高い確率のterm
-- ペンディング
 ###### 集計2.2.2 : 句読点カッコ類を落とす
 ####### 集計2.2.2.1 : RES-ORGまたはORG-RES間のワード集計:1term
 ######## (1)カウント
