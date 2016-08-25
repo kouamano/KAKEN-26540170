@@ -761,6 +761,8 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 -- 出現率比x出現: Save["ROMrateSelProd.wl",ROMrateSelProd]
 -- 出現率比x出現x辞書出現: ROMrateSelProdDic = Map[If[DictionaryLookup[#[[2]]]!={},#,Null]&,ROMrateSelProd]
 -- 候補term: Save["ROMrateSelProdDic.wl",ROMrateSelProdDic]
+-- ROMrateSelProdDicTop = Cases[ROMrateSelProdDic, _List] // Reverse
+-- Export["ROMrateSelProdDicTop.tsv", ROMrateSelProdDicTop]
 
 - RES-ORG@ACK
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
@@ -778,6 +780,8 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 -- 出現率比x出現: Save["ROArateSelProd.wl",ROArateSelProd]
 -- 出現率比x出現x辞書出現: ROArateSelProdDic = Map[If[DictionaryLookup[#[[2]]]!={},#,Null]&,ROArateSelProd]
 -- 候補term: Save["ROArateSelProdDic.wl",ROArateSelProdDic]
+-- ROArateSelProdDicTop = Cases[ROArateSelProdDic, _List] // Reverse
+-- Export["ROArateSelProdDicTop.tsv", ROArateSelProdDicTop]
 
 - ORG-RES@Mat
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
@@ -798,6 +802,8 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 -- 出現率比x出現: Save["ORMrateSelProd.wl",ORMrateSelProd]
 -- 出現率比x出現x辞書出現: ORMrateSelProdDic = Map[If[DictionaryLookup[#[[2]]]!={},#,Null]&,ORMrateSelProd]
 -- 候補term: Save["ORMrateSelProdDic.wl",ORMrateSelProdDic]
+-- ORMrateSelProdDicTop = Cases[ORMrateSelProdDic, _List] // Reverse
+-- Export["ORMrateSelProdDicTop.tsv", ORMrateSelProdDicTop]
 
 - ORG-RES@ACK
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
@@ -817,6 +823,8 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 -- 出現率比x出現: Save["ORArateSelProd.wl",ORArateSelProd]
 -- 出現率比x出現x辞書出現: ORArateSelProdDic = Map[If[DictionaryLookup[#[[2]]]!={},#,Null]&,ORArateSelProd]
 -- 候補term: Save["ORArateSelProdDic.wl",ORArateSelProdDic]
+-- ORArateSelProdDicTop = Cases[ORArateSelProdDic, _List] // Reverse
+-- Export["ORArateSelProdDicTop.tsv", ORArateSelProdDicTop]
 
 ####### 集計2.2.2.2 : RES-ORGまたはORG-RES間のワード集計:2term
 ######## (1)カウント
