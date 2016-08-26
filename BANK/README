@@ -1007,9 +1007,11 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 -- program: 
 --- /home/kamano/gitsrc/MATH_SCRIPT/SCRIPTS/count_to_wl.pl
 --- math
--- wlに変換: /home/kamano/gitsrc/MATH_SCRIPT/SCRIPTS/count_to_wl.pl region_RES-ORG_Mat.droptags.drop1.3W > region_RES-ORG_Mat.droptags.drop1.3W.wl
--- object: ROM=<<"/BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/region_RES-ORG_Mat.droptags.drop1.3W.wl";
--- ROMtotal = Map[#[[1]]&,ROM]//Tr (*5951*)
+-- wlに変換: /home/kamano/gitsrc/MATH_SCRIPT/SCRIPTS/count_to_wl.pl region_RES-ORG_ACK.droptags.drop1.3W > region_RES-ORG_ACK.droptags.drop1.3W.wl
+-- object: ROA=<<"/BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/region_RES-ORG_ACK.droptags.drop1.3W.wl";
+
+-- ROAtotal = Map[#[[1]]&,ROA]//Tr (*5951*)
+
 -- ROMvs3W=Map[{{#[[1]],#[[1]]/ROMtotal//N},#[[2]],#[[2]]/.DphraseRule3W}&, ROM]
 --- ROMvs3W format : {{ROMcount},word,{totalcount}} 
 -- ROMvs3Wsel = Cases[ROMvs3W,{{x_,y_},_String,{s_,t_}}/;NumberQ[x]&&NumberQ[y]&&NumberQ[s]&&NumberQ[t]]
