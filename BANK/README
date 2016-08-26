@@ -1001,7 +1001,7 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 -- ROMrateSelProdDicTop3W = Cases[ROMrateSelProdDic3W, _List] // Reverse
 -- ROMrateSelProdDicTop3WJ = Map[{#[[1]],#[[2,1]]<>" "<>#[[2,2]]<>" "<>#[[2,3]]}&,ROMrateSelProdDicTop3W]
 -- Export["ROMrateSelProdDicTop3W.tsv", ROMrateSelProdDicTop3WJ]
-########===いまここ===########(20160824)
+
 - RES-ORG@ACK
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 -- program: 
@@ -1010,6 +1010,7 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 -- wlに変換: /home/kamano/gitsrc/MATH_SCRIPT/SCRIPTS/count_to_wl.pl region_RES-ORG_ACK.droptags.drop1.3W > region_RES-ORG_ACK.droptags.drop1.3W.wl
 -- object: ROA=<<"/BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/region_RES-ORG_ACK.droptags.drop1.3W.wl";
 
+########===いまここ===########(20160824)
 -- ROAtotal = Map[#[[1]]&,ROA]//Tr (*5951*)
 
 -- ROMvs3W=Map[{{#[[1]],#[[1]]/ROMtotal//N},#[[2]],#[[2]]/.DphraseRule3W}&, ROM]
