@@ -985,7 +985,6 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 -- object: ROM=<<"/BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/region_RES-ORG_Mat.droptags.drop1.3W.wl";
 -- ROMtotal = Map[#[[1]]&,ROM]//Tr (*5951*)
 -- ROMvs3W=Map[{{#[[1]],#[[1]]/ROMtotal//N},#[[2]],#[[2]]/.DphraseRule3W}&, ROM]
-
 --- ROMvs3W format : {{ROMcount},word,{totalcount}} 
 -- ROMvs3Wsel = Cases[ROMvs3W,{{x_,y_},_String,{s_,t_}}/;NumberQ[x]&&NumberQ[y]&&NumberQ[s]&&NumberQ[t]]
 -- Save["ROMvs3W.wl",ROMvs3Wsel]
@@ -1000,6 +999,10 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 --- ROMrateSelProdDic3W = Map[If[ DictionaryLookup[#[[2,1]]]!={} && DictionaryLookup[#[[2,2]]]!={} && DictionaryLookup[#[[2,3]]]!={}, #, Null]&, ROMrateSelProd3WSpl]
 -- 候補term: Save["ROMrateSelProdDic3W.wl",ROMrateSelProdDic3W]
 ########===いまここ===########(20160824)
+- RES-ORG@ACK
+- ORG-RES@Mat
+- ORG-RES@ACK
+
 
 ##TASK(2.2)[2](ペンディング) バイオリソース名の前後の出現文字(単語)パターンより正解バイオリソースかを判定(20150911)
 ###TASK(2.2.1) in ACK
