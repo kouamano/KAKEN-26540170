@@ -871,6 +871,9 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 --- ROMrateSelProd2WSpl = Map[{#[[1]],StringSplit[#[[2]]]}&,ROMrateSelProd2W]
 --- ROMrateSelProdDic2W = Map[If[DictionaryLookup[#[[2,1]]]!={}&&DictionaryLookup[#[[2,2]]]!={},#,Null]&,ROMrateSelProd2WSpl]
 -- 候補term: Save["ROMrateSelProdDic2W.wl",ROMrateSelProdDic2W]
+-- ROMrateSelProdDicTop2W = Cases[ROMrateSelProdDic2W, _List] // Reverse
+-- ROMrateSelProdDicTop2WJ = Map[{#[[1]],#[[2,1]]<>" "<>#[[2,2]]}&,ROMrateSelProdDicTop2W]
+-- Export["ROMrateSelProdDicTop2W.tsv", ROMrateSelProdDicTop2WJ]
 
 - RES-ORG@ACK
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
@@ -894,6 +897,9 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 --- ROArateSelProd2WSpl = Map[{#[[1]],StringSplit[#[[2]]]}&,ROArateSelProd2W]
 --- ROArateSelProdDic2W = Map[If[DictionaryLookup[#[[2,1]]]!={}&&DictionaryLookup[#[[2,2]]]!={},#,Null]&,ROArateSelProd2WSpl]
 -- 候補term: Save["ROArateSelProdDic2W.wl",ROArateSelProdDic2W]
+-- ROArateSelProdDicTop2W = Cases[ROArateSelProdDic2W, _List] // Reverse
+-- ROArateSelProdDicTop2WJ = Map[{#[[1]],#[[2,1]]<>" "<>#[[2,2]]}&,ROArateSelProdDicTop2W]
+-- Export["ROArateSelProdDicTop2W.tsv", ROArateSelProdDicTop2WJ]
 
 - ORG-RES@Mat
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
@@ -917,6 +923,9 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 --- ORMrateSelProd2WSpl = Map[{#[[1]],StringSplit[#[[2]]]}&,ORMrateSelProd2W]
 --- ORMrateSelProdDic2W = Map[If[DictionaryLookup[#[[2,1]]]!={}&&DictionaryLookup[#[[2,2]]]!={},#,Null]&,ORMrateSelProd2WSpl]
 -- 候補term: Save["ORMrateSelProdDic2W.wl",ORMrateSelProdDic2W]
+-- ORMrateSelProdDicTop2W = Cases[ORMrateSelProdDic2W, _List] // Reverse
+-- ORMrateSelProdDicTop2WJ = Map[{#[[1]],#[[2,1]]<>" "<>#[[2,2]]}&,ORMrateSelProdDicTop2W]
+-- Export["ORMrateSelProdDicTop2W.tsv", ORMrateSelProdDicTop2WJ]
 
 - ORG-RES@ACK
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
@@ -940,6 +949,9 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 --- ORArateSelProd2WSpl = Map[{#[[1]],StringSplit[#[[2]]]}&,ORArateSelProd2W]
 --- ORArateSelProdDic2W = Map[If[DictionaryLookup[#[[2,1]]]!={}&&DictionaryLookup[#[[2,2]]]!={},#,Null]&,ORArateSelProd2WSpl]
 -- 候補term: Save["ORArateSelProdDic2W.wl",ORArateSelProdDic2W]
+-- ORArateSelProdDicTop2W = Cases[ORArateSelProdDic2W, _List] // Reverse
+-- ORArateSelProdDicTop2WJ = Map[{#[[1]],#[[2,1]]<>" "<>#[[2,2]]}&,ORArateSelProdDicTop2W]
+-- Export["ORArateSelProdDicTop2W.tsv", ORArateSelProdDicTop2WJ]
 
 ####### 集計2.2.2.3 : RES-ORGまたはORG-RES間のワード集計:3term
 ######## (1)カウント
