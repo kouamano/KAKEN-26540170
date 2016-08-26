@@ -1003,6 +1003,31 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 -- Export["ROMrateSelProdDicTop3W.tsv", ROMrateSelProdDicTop3WJ]
 ########===いまここ===########(20160824)
 - RES-ORG@ACK
+cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
+-- program: 
+--- /home/kamano/gitsrc/MATH_SCRIPT/SCRIPTS/count_to_wl.pl
+--- math
+-- wlに変換: /home/kamano/gitsrc/MATH_SCRIPT/SCRIPTS/count_to_wl.pl region_RES-ORG_Mat.droptags.drop1.3W > region_RES-ORG_Mat.droptags.drop1.3W.wl
+-- object: ROM=<<"/BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/region_RES-ORG_Mat.droptags.drop1.3W.wl";
+-- ROMtotal = Map[#[[1]]&,ROM]//Tr (*5951*)
+-- ROMvs3W=Map[{{#[[1]],#[[1]]/ROMtotal//N},#[[2]],#[[2]]/.DphraseRule3W}&, ROM]
+--- ROMvs3W format : {{ROMcount},word,{totalcount}} 
+-- ROMvs3Wsel = Cases[ROMvs3W,{{x_,y_},_String,{s_,t_}}/;NumberQ[x]&&NumberQ[y]&&NumberQ[s]&&NumberQ[t]]
+-- Save["ROMvs3W.wl",ROMvs3Wsel]
+-- ROMrate3W=Map[{#[[1,2]]/#[[3,2]],#[[1,1]],#[[2]]}&,ROMvs3Wsel]
+-- ROMrateSel3W=Cases[ROMrate3W,x_/;NumberQ[x[[1]]]]
+-- ROMrateSelSort3W=Sort[ROMrateSel3W,#1[[1]]>=#2[[1]]&]
+-- Save["ROMrateSelSort3W.wl",ROMrateSelSort3W]
+-- ROMrateSelProd3W=Map[{#[[1]] * #[[2]],#[[3]]}&,ROMrateSelSort3W]//Sort
+-- 出現率比x出現: Save["ROMrateSelProd3W.wl",ROMrateSelProd3W]
+-- 出現率比x出現x辞書出現:
+--- ROMrateSelProd3WSpl = Map[{#[[1]],StringSplit[#[[2]]]}&,ROMrateSelProd3W]
+--- ROMrateSelProdDic3W = Map[If[ DictionaryLookup[#[[2,1]]]!={} && DictionaryLookup[#[[2,2]]]!={} && DictionaryLookup[#[[2,3]]]!={}, #, Null]&, ROMrateSelProd3WSpl]
+-- 候補term: Save["ROMrateSelProdDic3W.wl",ROMrateSelProdDic3W]
+-- ROMrateSelProdDicTop3W = Cases[ROMrateSelProdDic3W, _List] // Reverse
+-- ROMrateSelProdDicTop3WJ = Map[{#[[1]],#[[2,1]]<>" "<>#[[2,2]]<>" "<>#[[2,3]]}&,ROMrateSelProdDicTop3W]
+-- Export["ROMrateSelProdDicTop3W.tsv", ROMrateSelProdDicTop3WJ]
+
 - ORG-RES@Mat
 - ORG-RES@ACK
 
