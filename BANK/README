@@ -1011,29 +1011,77 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 -- object: ROA=<<"/BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/region_RES-ORG_ACK.droptags.drop1.3W.wl";
 -- DphraseRule3W = Dispatch[phraseRule3W]
 -- ROAtotal = Map[#[[1]]&,ROA]//Tr (*847*)
-########===いまここ===########(20160824)
-
 -- ROAvs3W=Map[{{#[[1]],#[[1]]/ROAtotal//N},#[[2]],#[[2]]/.DphraseRule3W}&, ROA]
-
---- ROMvs3W format : {{ROMcount},word,{totalcount}} 
--- ROMvs3Wsel = Cases[ROMvs3W,{{x_,y_},_String,{s_,t_}}/;NumberQ[x]&&NumberQ[y]&&NumberQ[s]&&NumberQ[t]]
--- Save["ROMvs3W.wl",ROMvs3Wsel]
--- ROMrate3W=Map[{#[[1,2]]/#[[3,2]],#[[1,1]],#[[2]]}&,ROMvs3Wsel]
--- ROMrateSel3W=Cases[ROMrate3W,x_/;NumberQ[x[[1]]]]
--- ROMrateSelSort3W=Sort[ROMrateSel3W,#1[[1]]>=#2[[1]]&]
--- Save["ROMrateSelSort3W.wl",ROMrateSelSort3W]
--- ROMrateSelProd3W=Map[{#[[1]] * #[[2]],#[[3]]}&,ROMrateSelSort3W]//Sort
--- 出現率比x出現: Save["ROMrateSelProd3W.wl",ROMrateSelProd3W]
+--- ROAvs3W format : {{ROAcount},word,{totalcount}} 
+-- ROAvs3Wsel = Cases[ROAvs3W,{{x_,y_},_String,{s_,t_}}/;NumberQ[x]&&NumberQ[y]&&NumberQ[s]&&NumberQ[t]]
+-- Save["ROAvs3W.wl",ROAvs3Wsel]
+-- ROArate3W=Map[{#[[1,2]]/#[[3,2]],#[[1,1]],#[[2]]}&,ROAvs3Wsel]
+-- ROArateSel3W=Cases[ROArate3W,x_/;NumberQ[x[[1]]]]
+-- ROArateSelSort3W=Sort[ROArateSel3W,#1[[1]]>=#2[[1]]&]
+-- Save["ROArateSelSort3W.wl",ROArateSelSort3W]
+-- ROArateSelProd3W=Map[{#[[1]] * #[[2]],#[[3]]}&,ROArateSelSort3W]//Sort
+-- 出現率比x出現: Save["ROArateSelProd3W.wl",ROArateSelProd3W]
 -- 出現率比x出現x辞書出現:
---- ROMrateSelProd3WSpl = Map[{#[[1]],StringSplit[#[[2]]]}&,ROMrateSelProd3W]
---- ROMrateSelProdDic3W = Map[If[ DictionaryLookup[#[[2,1]]]!={} && DictionaryLookup[#[[2,2]]]!={} && DictionaryLookup[#[[2,3]]]!={}, #, Null]&, ROMrateSelProd3WSpl]
--- 候補term: Save["ROMrateSelProdDic3W.wl",ROMrateSelProdDic3W]
--- ROMrateSelProdDicTop3W = Cases[ROMrateSelProdDic3W, _List] // Reverse
--- ROMrateSelProdDicTop3WJ = Map[{#[[1]],#[[2,1]]<>" "<>#[[2,2]]<>" "<>#[[2,3]]}&,ROMrateSelProdDicTop3W]
--- Export["ROMrateSelProdDicTop3W.tsv", ROMrateSelProdDicTop3WJ]
+--- ROArateSelProd3WSpl = Map[{#[[1]],StringSplit[#[[2]]]}&,ROArateSelProd3W]
+--- ROArateSelProdDic3W = Map[If[ DictionaryLookup[#[[2,1]]]!={} && DictionaryLookup[#[[2,2]]]!={} && DictionaryLookup[#[[2,3]]]!={}, #, Null]&, ROArateSelProd3WSpl]
+-- 候補term: Save["ROArateSelProdDic3W.wl",ROArateSelProdDic3W]
+-- ROArateSelProdDicTop3W = Cases[ROArateSelProdDic3W, _List] // Reverse
+-- ROArateSelProdDicTop3WJ = Map[{#[[1]],#[[2,1]]<>" "<>#[[2,2]]<>" "<>#[[2,3]]}&,ROArateSelProdDicTop3W]
+-- Export["ROArateSelProdDicTop3W.tsv", ROArateSelProdDicTop3WJ]
 
 - ORG-RES@Mat
+cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
+-- program: 
+--- /home/kamano/gitsrc/MATH_SCRIPT/SCRIPTS/count_to_wl.pl
+--- math
+-- wlに変換: /home/kamano/gitsrc/MATH_SCRIPT/SCRIPTS/count_to_wl.pl region_ORG-RES_Mat.droptags.drop1.3W > region_ORG-RES_Mat.droptags.drop1.3W.wl
+-- object: ORM=<<"/BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/region_ORG-RES_Mat.droptags.drop1.3W.wl";
+-- ORMtotal = Map[#[[1]]&,ORM]//Tr (*442*)
+-- ORMvs3W=Map[{{#[[1]],#[[1]]/ORMtotal//N},#[[2]],#[[2]]/.DphraseRule3W}&, ORM]
+--- ORMvs3W format : {{ORMcount},word,{totalcount}} 
+-- ORMvs3Wsel = Cases[ORMvs3W,{{x_,y_},_String,{s_,t_}}/;NumberQ[x]&&NumberQ[y]&&NumberQ[s]&&NumberQ[t]]
+-- Save["ORMvs3W.wl",ORMvs3Wsel]
+-- ORMrate3W=Map[{#[[1,2]]/#[[3,2]],#[[1,1]],#[[2]]}&,ORMvs3Wsel]
+-- ORMrateSel3W=Cases[ORMrate3W,x_/;NumberQ[x[[1]]]]
+-- ORMrateSelSort3W=Sort[ORMrateSel3W,#1[[1]]>=#2[[1]]&]
+-- Save["ORMrateSelSort3W.wl",ORMrateSelSort3W]
+-- ORMrateSelProd3W=Map[{#[[1]] * #[[2]],#[[3]]}&,ORMrateSelSort3W]//Sort
+-- 出現率比x出現: Save["ORMrateSelProd3W.wl",ORMrateSelProd3W]
+-- 出現率比x出現x辞書出現:
+--- ORMrateSelProd3WSpl = Map[{#[[1]],StringSplit[#[[2]]]}&,ORMrateSelProd3W]
+--- ORMrateSelProdDic3W = Map[If[ DictionaryLookup[#[[2,1]]]!={} && DictionaryLookup[#[[2,2]]]!={} && DictionaryLookup[#[[2,3]]]!={}, #, Null]&, ORMrateSelProd3WSpl]
+-- 候補term: Save["ORMrateSelProdDic3W.wl",ORMrateSelProdDic3W]
+-- ORMrateSelProdDicTop3W = Cases[ORMrateSelProdDic3W, _List] // Reverse
+-- ORMrateSelProdDicTop3WJ = Map[{#[[1]],#[[2,1]]<>" "<>#[[2,2]]<>" "<>#[[2,3]]}&,ORMrateSelProdDicTop3W]
+-- Export["ORMrateSelProdDicTop3W.tsv", ORMrateSelProdDicTop3WJ]
+
 - ORG-RES@ACK
+cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
+-- program: 
+--- /home/kamano/gitsrc/MATH_SCRIPT/SCRIPTS/count_to_wl.pl
+--- math
+-- wlに変換: /home/kamano/gitsrc/MATH_SCRIPT/SCRIPTS/count_to_wl.pl region_ORG-RES_ACK.droptags.drop1.3W > region_ORG-RES_ACK.droptags.drop1.3W.wl
+-- object: ORA=<<"/BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/region_ORG-RES_ACK.droptags.drop1.3W.wl";
+-- ORAtotal = Map[#[[1]]&,ORA]//Tr (*1163*)
+-- ORAvs3W=Map[{{#[[1]],#[[1]]/ORAtotal//N},#[[2]],#[[2]]/.DphraseRule3W}&, ORA]
+--- ORAvs3W format : {{ORAcount},word,{totalcount}} 
+-- ORAvs3Wsel = Cases[ORAvs3W,{{x_,y_},_String,{s_,t_}}/;NumberQ[x]&&NumberQ[y]&&NumberQ[s]&&NumberQ[t]]
+-- Save["ORAvs3W.wl",ORAvs3Wsel]
+-- ORArate3W=Map[{#[[1,2]]/#[[3,2]],#[[1,1]],#[[2]]}&,ORAvs3Wsel]
+-- ORArateSel3W=Cases[ORArate3W,x_/;NumberQ[x[[1]]]]
+-- ORArateSelSort3W=Sort[ORArateSel3W,#1[[1]]>=#2[[1]]&]
+-- Save["ORArateSelSort3W.wl",ORArateSelSort3W]
+-- ORArateSelProd3W=Map[{#[[1]] * #[[2]],#[[3]]}&,ORArateSelSort3W]//Sort
+-- 出現率比x出現: Save["ORArateSelProd3W.wl",ORArateSelProd3W]
+-- 出現率比x出現x辞書出現:
+--- ORArateSelProd3WSpl = Map[{#[[1]],StringSplit[#[[2]]]}&,ORArateSelProd3W]
+--- ORArateSelProdDic3W = Map[If[ DictionaryLookup[#[[2,1]]]!={} && DictionaryLookup[#[[2,2]]]!={} && DictionaryLookup[#[[2,3]]]!={}, #, Null]&, ORArateSelProd3WSpl]
+-- 候補term: Save["ORArateSelProdDic3W.wl",ORArateSelProdDic3W]
+-- ORArateSelProdDicTop3W = Cases[ORArateSelProdDic3W, _List] // Reverse
+-- ORArateSelProdDicTop3WJ = Map[{#[[1]],#[[2,1]]<>" "<>#[[2,2]]<>" "<>#[[2,3]]}&,ORArateSelProdDicTop3W]
+-- Export["ORArateSelProdDicTop3W.tsv", ORArateSelProdDicTop3WJ]
+########===いまここ===########(20160827)
+
 
 
 ##TASK(2.2)[2](ペンディング) バイオリソース名の前後の出現文字(単語)パターンより正解バイオリソースかを判定(20150911)
