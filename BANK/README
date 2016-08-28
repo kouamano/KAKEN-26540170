@@ -170,10 +170,10 @@ cd /BANK/PMC/20140724/elements/sec-type
 ##ackとresのマージ論文数:???
 ##TASK(extract.aff) : extract affiliation region
 ## -> 石川氏
-- 対象領域: /BANK/PMC/20140724/elements/aff/PMC-AFF-v1.tsv (20141114)
+- コンテンツ: /BANK/PMC/20140724/elements/aff/PMC-AFF-v1.tsv (20141114)
 ##TASK(extract.ack) :  extract acknowledgement region
 ## -> 石川氏
-- 対象領域: /BANK/PMC/20140724/elements/acknowledgement/PMC-ACK-v6_pmid.tsv
+- コンテンツ: /BANK/PMC/20140724/elements/acknowledgement/PMC-ACK-v6_pmid.tsv
 ##TASK(extract.material) : extract *material* region ; (20140417)
 ##2段階で行なう: 1. ポインター情報作成, 2. ポインター情報を元にソースから抜き出す。
 ### 領域のポインター情報作成(20140417)
@@ -188,7 +188,7 @@ cd /BANK/PMC/20140724/elements/sec-type
  extract_pos-tag-allmaterials.pl の出力から、直接対象領域を取り出す。
 -- example: /home/kamano/gitsrc/XMLOP/extract_content_from_reg_allmaterial.pl /BANK/PMC/20140724/articles /BANK/PMC/20140724/elements/MERGED/allmaterials/allmaterials.au.reg
 - スクリプト: /BANK/PMC/20140724/elements/MERGED/allmaterials/exec_command/extract_cont_from_reg.au.sh
-- 結果: /BANK/PMC/20140724/elements/MERGED/allmaterials/allmaterials.au.reg.cont
+- コンテンツ: /BANK/PMC/20140724/elements/MERGED/allmaterials/allmaterials.au.reg.cont
 ## TASK(ACKファイル名取り出し)
 cd /BANK/PMC/20140724/elements/acknowledgement
 - 対象ack: /BANK/PMC/20140724/elements/acknowledgement/PMC-ACK-v6_pmid.tsv
