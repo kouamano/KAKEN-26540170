@@ -9,7 +9,6 @@
 #検討事項:
 ##正解論文を集めてそこからパターンを抽出することを検討
 #TODO:
-##TASK(2.1.7) -集計結果 --パターン集計: => 石川氏にファイル確認
 ##check: OK
 ###/BANK/PMC/20140724/Matching/BioResource/Organization/ATCC_2014 -> OK
 ###match_pos_AllResNames_Jour-ao.res がない。-> OK
@@ -163,6 +162,7 @@ cd /BANK/PMC/20140724/articles.pmid/exec_command
 - プログラム: /home/kamano/gitsrc/XMLOP/grep-sec-type.pl
 cd /BANK/PMC/20140724/elements/sec-type
 /home/kamano/gitsrc/XMLOP/extract_sec-types.pl *reg_sort | sort | uniq -c > ALL_sec-type.sort.count
+- 結果: /BANK/PMC/20140724/elements/sec-type/ALL_sec-type.sort.count.sort
 
 
 
@@ -189,14 +189,15 @@ cd /BANK/PMC/20140724/elements/sec-type
 -- example: /home/kamano/gitsrc/XMLOP/extract_content_from_reg_allmaterial.pl /BANK/PMC/20140724/articles /BANK/PMC/20140724/elements/MERGED/allmaterials/allmaterials.au.reg
 - スクリプト: /BANK/PMC/20140724/elements/MERGED/allmaterials/exec_command/extract_cont_from_reg.au.sh
 - 結果: /BANK/PMC/20140724/elements/MERGED/allmaterials/allmaterials.au.reg.cont
-## TASK(count_art.ack_and_mat)
+## TASK(ACKファイル名取り出し)
+cd /BANK/PMC/20140724/elements/acknowledgement
 - 対象ack: /BANK/PMC/20140724/elements/acknowledgement/PMC-ACK-v6_pmid.tsv
 - nxmlファイル名取り出し: 
-cd /BANK/PMC/20140724/elements/acknowledgement
 awk -F '	' '{print $2}' PMC-ACK-v6_pmid.tsv | sed -e 's/^PMC\///' > PMC-ACK-v6_pmid.nxmlName
+## TASK(Matのファイル名取り出し)
+cd /BANK/PMC/20140724/elements/MERGED/allmaterials/
 - 対象mat: /BANK/PMC/20140724/elements/MERGED/allmaterials/allmaterials.au.reg.cont
 - nxmlファイル取り出し:
-cd /BANK/PMC/20140724/elements/MERGED/allmaterials/
 cat *cont | awk -F '	' '{print $1}' | sed -e 's/^\/BANK\/PMC\/20140724\/articles\///'  > allmaterials.nxmlNames
 ## TASK(extract.xref): xrefを含む直上位のレベルを抜き出す。
 ### 1. xrefと直上タグのポジションを抜き出し、必要なxref部分を特定、特定領域をプリント ver.2 (20150417)
