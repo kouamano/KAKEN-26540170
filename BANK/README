@@ -759,6 +759,7 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 -- 候補term: Save["ROMrateSelProdDic.wl",ROMrateSelProdDic]
 -- ROMrateSelProdDicTop = Cases[ROMrateSelProdDic, _List] // Reverse
 -- Export["ROMrateSelProdDicTop.tsv", ROMrateSelProdDicTop]
+########===作業追加===########
 
 - RES-ORG@ACK
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
