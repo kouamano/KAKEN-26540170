@@ -759,6 +759,8 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 -- 候補term: Save["ROMrateSelProdDic.wl",ROMrateSelProdDic]
 -- ROMrateSelProdDicTop = Cases[ROMrateSelProdDic, _List] // Reverse
 -- Export["ROMrateSelProdDicTop.tsv", ROMrateSelProdDicTop]
+-- 固有名詞のdrop:品詞がNoneのみで、かつ、大文字で始まるtermを含むphraseをdrop
+--- 関数: partsofspeech, isCapital
 ########===作業追加===########
 
 - RES-ORG@ACK
