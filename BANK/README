@@ -813,6 +813,12 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 -- 候補term: Save["ORMrateSelProdDic.wl",ORMrateSelProdDic]
 -- ORMrateSelProdDicTop = Cases[ORMrateSelProdDic, _List] // Reverse
 -- Export["ORMrateSelProdDicTop.tsv", ORMrateSelProdDicTop]
+-- 固有名詞のdrop:品詞がNoneの可能性があり、かつ、大文字で始まるtermを含むphraseをdrop
+--- 関数: partsofspeech, isCapital, containNoun
+--- test = Map[{containNoun[#[[2]]],isCapital[#[[2]]]}&,ORMrateSelProdDicTop]
+--- delpos = Position[test,{True,True}]
+--- ORMrateSelProdDicTopDelnoun = Delete[ORMrateSelProdDicTop,delpos]
+--- Export["ORMrateSelProdDicTopDelnoun.tsv",ORMrateSelProdDicTopDelnoun]
 
 - ORG-RES@ACK
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
