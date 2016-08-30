@@ -840,6 +840,13 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 -- 候補term: Save["ORArateSelProdDic.wl",ORArateSelProdDic]
 -- ORArateSelProdDicTop = Cases[ORArateSelProdDic, _List] // Reverse
 -- Export["ORArateSelProdDicTop.tsv", ORArateSelProdDicTop]
+-- 固有名詞のdrop:品詞がNoneの可能性があり、かつ、大文字で始まるtermを含むphraseをdrop
+--- 関数: partsofspeech, isCapital, containNoun
+--- test = Map[{containNoun[#[[2]]],isCapital[#[[2]]]}&,ORArateSelProdDicTop]
+--- delpos = Position[test,{True,True}]
+--- ORArateSelProdDicTopDelnoun = Delete[ORArateSelProdDicTop,delpos]
+--- Export["ORArateSelProdDicTopDelnoun.tsv",ORArateSelProdDicTopDelnoun]
+
 
 ####### 集計2.2.2.2 : RES-ORGまたはORG-RES間のワード集計:2term
 ######## (1)カウント
