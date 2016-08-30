@@ -994,7 +994,13 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 -- ORArateSelProdDicTop2W = Cases[ORArateSelProdDic2W, _List] // Reverse
 -- ORArateSelProdDicTop2WJ = Map[{#[[1]],#[[2,1]]<>" "<>#[[2,2]]}&,ORArateSelProdDicTop2W]
 -- Export["ORArateSelProdDicTop2W.tsv", ORArateSelProdDicTop2WJ]
-###===いまここ===###
+-- 固有名詞のdrop:品詞がNoneの可能性があり、かつ、大文字で始まるtermを含むphraseをdrop
+--- 関数: partsofspeech, isCapital, containNoun
+--- <<"/home/kamano/gitsrc/MATH_SCRIPT/SCRIPTS/Dictionary_operations.txt"
+--- test = Map[{ Intersection[Map[containNoun,StringSplit[#[[2]]]],{True}] == {True}, isCapital[#[[2]]]}&,ORArateSelProdDicTop2WJ]
+--- delpos = Position[test,{True,True}]
+--- ORArateSelProdDicTop2WJDelnoun = Delete[ORArateSelProdDicTop2WJ,delpos]
+--- Export["ORArateSelProdDicTop2WJDelnoun.tsv",ORArateSelProdDicTop2WJDelnoun]
 
 
 ####### 集計2.2.2.3 : RES-ORGまたはORG-RES間のワード集計:3term
@@ -1045,6 +1051,15 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 -- ROMrateSelProdDicTop3W = Cases[ROMrateSelProdDic3W, _List] // Reverse
 -- ROMrateSelProdDicTop3WJ = Map[{#[[1]],#[[2,1]]<>" "<>#[[2,2]]<>" "<>#[[2,3]]}&,ROMrateSelProdDicTop3W]
 -- Export["ROMrateSelProdDicTop3W.tsv", ROMrateSelProdDicTop3WJ]
+-- 固有名詞のdrop:品詞がNoneの可能性があり、かつ、大文字で始まるtermを含むphraseをdrop
+--- 関数: partsofspeech, isCapital, containNoun
+--- <<"/home/kamano/gitsrc/MATH_SCRIPT/SCRIPTS/Dictionary_operations.txt"
+--- test = Map[{ Intersection[Map[containNoun,StringSplit[#[[2]]]],{True}] == {True}, isCapital[#[[2]]]}&,ROMrateSelProdDicTop3WJ]
+--- delpos = Position[test,{True,True}]
+--- ROMrateSelProdDicTop3WJDelnoun = Delete[ROMrateSelProdDicTop3WJ,delpos]
+--- Export["ROMrateSelProdDicTop3WJDelnoun.tsv",ROMrateSelProdDicTop3WJDelnoun]
+###===いまここ===###
+
 
 - RES-ORG@ACK
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
