@@ -759,7 +759,6 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 -- 候補term: Save["ROMrateSelProdDic.wl",ROMrateSelProdDic]
 -- ROMrateSelProdDicTop = Cases[ROMrateSelProdDic, _List] // Reverse
 -- Export["ROMrateSelProdDicTop.tsv", ROMrateSelProdDicTop]
-########===作業追加===########
 -- 固有名詞のdrop:品詞がNoneの可能性があり、かつ、大文字で始まるtermを含むphraseをdrop
 --- 関数: partsofspeech, isCapital, containNoun
 --- test = Map[{containNoun[#[[2]]],isCapital[#[[2]]]}&,ROMrateSelProdDicTop]
@@ -902,8 +901,6 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 --- delpos = Position[test,{True,True}]
 --- ROMrateSelProdDicTop2WJDelnoun = Delete[ROMrateSelProdDicTop2WJ,delpos]
 --- Export["ROMrateSelProdDicTop2WJDelnoun.tsv",ROMrateSelProdDicTop2WJDelnoun]
-###===いまここ===###
-
 
 - RES-ORG@ACK
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
@@ -930,6 +927,15 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 -- ROArateSelProdDicTop2W = Cases[ROArateSelProdDic2W, _List] // Reverse
 -- ROArateSelProdDicTop2WJ = Map[{#[[1]],#[[2,1]]<>" "<>#[[2,2]]}&,ROArateSelProdDicTop2W]
 -- Export["ROArateSelProdDicTop2W.tsv", ROArateSelProdDicTop2WJ]
+-- 固有名詞のdrop:品詞がNoneの可能性があり、かつ、大文字で始まるtermを含むphraseをdrop
+--- 関数: partsofspeech, isCapital, containNoun
+--- <<"/home/kamano/gitsrc/MATH_SCRIPT/SCRIPTS/Dictionary_operations.txt"
+--- test = Map[{ Intersection[Map[containNoun,StringSplit[#[[2]]]],{True}] == {True}, isCapital[#[[2]]]}&,ROArateSelProdDicTop2WJ]
+--- delpos = Position[test,{True,True}]
+--- ROArateSelProdDicTop2WJDelnoun = Delete[ROArateSelProdDicTop2WJ,delpos]
+--- Export["ROArateSelProdDicTop2WJDelnoun.tsv",ROArateSelProdDicTop2WJDelnoun]
+###===いまここ===###
+
 
 - ORG-RES@Mat
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
