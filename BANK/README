@@ -759,11 +759,13 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 -- 候補term: Save["ROMrateSelProdDic.wl",ROMrateSelProdDic]
 -- ROMrateSelProdDicTop = Cases[ROMrateSelProdDic, _List] // Reverse
 -- Export["ROMrateSelProdDicTop.tsv", ROMrateSelProdDicTop]
--- 固有名詞のdrop:品詞がNoneのみで、かつ、大文字で始まるtermを含むphraseをdrop
---- 関数: partsofspeech, isCapital
---- test = Map[{partsofspeech[#[[2]]],isCapital[#[[2]]]}&,ROMrateSelProdDicTop]
---- 
 ########===作業追加===########
+-- 固有名詞のdrop:品詞がNoneの可能性があり、かつ、大文字で始まるtermを含むphraseをdrop
+--- 関数: partsofspeech, isCapital, containNoun
+--- test = Map[{containNoun[#[[2]]],isCapital[#[[2]]]}&,ROMrateSelProdDicTop]
+--- delpos = Position[test,{True,True}]
+--- ROMrateSelProdDicTopDelnoun = Delete[ROMrateSelProdDicTop,delpos]
+--- Export["ROMrateSelProdDicTopDelnoun.tsv",ROMrateSelProdDicTopDelnoun]
 
 - RES-ORG@ACK
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
@@ -783,6 +785,12 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 -- 候補term: Save["ROArateSelProdDic.wl",ROArateSelProdDic]
 -- ROArateSelProdDicTop = Cases[ROArateSelProdDic, _List] // Reverse
 -- Export["ROArateSelProdDicTop.tsv", ROArateSelProdDicTop]
+-- 固有名詞のdrop:品詞がNoneの可能性があり、かつ、大文字で始まるtermを含むphraseをdrop
+--- 関数: partsofspeech, isCapital, containNoun
+--- test = Map[{containNoun[#[[2]]],isCapital[#[[2]]]}&,ROArateSelProdDicTop]
+--- delpos = Position[test,{True,True}]
+--- ROArateSelProdDicTopDelnoun = Delete[ROArateSelProdDicTop,delpos]
+--- Export["ROArateSelProdDicTopDelnoun.tsv",ROArateSelProdDicTopDelnoun]
 
 - ORG-RES@Mat
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
