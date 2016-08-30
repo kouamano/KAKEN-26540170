@@ -896,6 +896,14 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 -- ROMrateSelProdDicTop2W = Cases[ROMrateSelProdDic2W, _List] // Reverse
 -- ROMrateSelProdDicTop2WJ = Map[{#[[1]],#[[2,1]]<>" "<>#[[2,2]]}&,ROMrateSelProdDicTop2W]
 -- Export["ROMrateSelProdDicTop2W.tsv", ROMrateSelProdDicTop2WJ]
+-- 固有名詞のdrop:品詞がNoneの可能性があり、かつ、大文字で始まるtermを含むphraseをdrop
+--- 関数: partsofspeech, isCapital, containNoun
+--- test = Map[{ Intersection[Map[containNoun,StringSplit[#[[2]]]],{True}] == {True}, isCapital[#[[2]]]}&,ROMrateSelProdDicTop2WJ]
+--- delpos = Position[test,{True,True}]
+--- ROMrateSelProdDicTop2WJDelnoun = Delete[ROMrateSelProdDicTop2WJ,delpos]
+--- Export["ROMrateSelProdDicTop2WJDelnoun.tsv",ROMrateSelProdDicTop2WJDelnoun]
+###===いまここ===###
+
 
 - RES-ORG@ACK
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
