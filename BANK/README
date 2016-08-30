@@ -761,6 +761,8 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 -- Export["ROMrateSelProdDicTop.tsv", ROMrateSelProdDicTop]
 -- 固有名詞のdrop:品詞がNoneのみで、かつ、大文字で始まるtermを含むphraseをdrop
 --- 関数: partsofspeech, isCapital
+--- test = Map[{partsofspeech[#[[2]]],isCapital[#[[2]]]}&,ROMrateSelProdDicTop]
+--- 
 ########===作業追加===########
 
 - RES-ORG@ACK
