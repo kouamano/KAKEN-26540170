@@ -1058,7 +1058,6 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 --- delpos = Position[test,{True,True}]
 --- ROMrateSelProdDicTop3WJDelnoun = Delete[ROMrateSelProdDicTop3WJ,delpos]
 --- Export["ROMrateSelProdDicTop3WJDelnoun.tsv",ROMrateSelProdDicTop3WJDelnoun]
-###===いまここ===###
 
 
 - RES-ORG@ACK
@@ -1087,6 +1086,13 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 -- ROArateSelProdDicTop3W = Cases[ROArateSelProdDic3W, _List] // Reverse
 -- ROArateSelProdDicTop3WJ = Map[{#[[1]],#[[2,1]]<>" "<>#[[2,2]]<>" "<>#[[2,3]]}&,ROArateSelProdDicTop3W]
 -- Export["ROArateSelProdDicTop3W.tsv", ROArateSelProdDicTop3WJ]
+-- 固有名詞のdrop:品詞がNoneの可能性があり、かつ、大文字で始まるtermを含むphraseをdrop
+--- 関数: partsofspeech, isCapital, containNoun
+--- <<"/home/kamano/gitsrc/MATH_SCRIPT/SCRIPTS/Dictionary_operations.txt"
+--- test = Map[{ Intersection[Map[containNoun,StringSplit[#[[2]]]],{True}] == {True}, isCapital[#[[2]]]}&,ROArateSelProdDicTop3WJ]
+--- delpos = Position[test,{True,True}]
+--- ROArateSelProdDicTop3WJDelnoun = Delete[ROArateSelProdDicTop3WJ,delpos]
+--- Export["ROArateSelProdDicTop3WJDelnoun.tsv",ROArateSelProdDicTop3WJDelnoun]
 
 - ORG-RES@Mat
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
@@ -1113,6 +1119,13 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 -- ORMrateSelProdDicTop3W = Cases[ORMrateSelProdDic3W, _List] // Reverse
 -- ORMrateSelProdDicTop3WJ = Map[{#[[1]],#[[2,1]]<>" "<>#[[2,2]]<>" "<>#[[2,3]]}&,ORMrateSelProdDicTop3W]
 -- Export["ORMrateSelProdDicTop3W.tsv", ORMrateSelProdDicTop3WJ]
+-- 固有名詞のdrop:品詞がNoneの可能性があり、かつ、大文字で始まるtermを含むphraseをdrop
+--- 関数: partsofspeech, isCapital, containNoun
+--- <<"/home/kamano/gitsrc/MATH_SCRIPT/SCRIPTS/Dictionary_operations.txt"
+--- test = Map[{ Intersection[Map[containNoun,StringSplit[#[[2]]]],{True}] == {True}, isCapital[#[[2]]]}&,ORMrateSelProdDicTop3WJ]
+--- delpos = Position[test,{True,True}]
+--- ORMrateSelProdDicTop3WJDelnoun = Delete[ORMrateSelProdDicTop3WJ,delpos]
+--- Export["ORMrateSelProdDicTop3WJDelnoun.tsv",ORMrateSelProdDicTop3WJDelnoun]
 
 - ORG-RES@ACK
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
@@ -1139,7 +1152,15 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 -- ORArateSelProdDicTop3W = Cases[ORArateSelProdDic3W, _List] // Reverse
 -- ORArateSelProdDicTop3WJ = Map[{#[[1]],#[[2,1]]<>" "<>#[[2,2]]<>" "<>#[[2,3]]}&,ORArateSelProdDicTop3W]
 -- Export["ORArateSelProdDicTop3W.tsv", ORArateSelProdDicTop3WJ]
-########===いまここ===########(20160827)
+-- 固有名詞のdrop:品詞がNoneの可能性があり、かつ、大文字で始まるtermを含むphraseをdrop
+--- 関数: partsofspeech, isCapital, containNoun
+--- <<"/home/kamano/gitsrc/MATH_SCRIPT/SCRIPTS/Dictionary_operations.txt"
+--- test = Map[{ Intersection[Map[containNoun,StringSplit[#[[2]]]],{True}] == {True}, isCapital[#[[2]]]}&,ORArateSelProdDicTop3WJ]
+--- delpos = Position[test,{True,True}]
+--- ORArateSelProdDicTop3WJDelnoun = Delete[ORArateSelProdDicTop3WJ,delpos]
+--- Export["ORArateSelProdDicTop3WJDelnoun.tsv",ORArateSelProdDicTop3WJDelnoun]
+########===いまここ===########(20160831)
+
 
 
 
