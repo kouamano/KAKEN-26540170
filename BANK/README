@@ -862,7 +862,6 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 --- delpos = Position[test,False]
 --- ORArateSelProdDicTopDelnoun = Delete[ORArateSelProdDicTopDelnoun,delpos]
 --- Export["ORArateSelProdDicTopDelnoun.tsv",ORArateSelProdDicTopDelnoun]
-###===いまここ===###
 
 
 ####### 集計2.2.2.2 : RES-ORGまたはORG-RES間のワード集計:2term
@@ -914,11 +913,16 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 -- ROMrateSelProdDicTop2WJ = Map[{#[[1]],#[[2,1]]<>" "<>#[[2,2]]}&,ROMrateSelProdDicTop2W]
 -- Export["ROMrateSelProdDicTop2W.tsv", ROMrateSelProdDicTop2WJ]
 -- 固有名詞のdrop:品詞がNoneの可能性があり、かつ、大文字で始まるtermを含むphraseをdrop
---- 関数: partsofspeech, isCapital, containNoun
---- test = Map[{ Intersection[Map[containNoun,StringSplit[#[[2]]]],{True}] == {True}, isCapital[#[[2]]]}&,ROMrateSelProdDicTop2WJ]
---- delpos = Position[test,{True,True}]
+--- 関数: partsofspeech, isCapital, containNoun, checkPropernoun
+--- test = Map[checkPropernoun[#[[2]]]&,ROMrateSelProdDicTop2WJ]
+--- delpos = Position[test,True]
 --- ROMrateSelProdDicTop2WJDelnoun = Delete[ROMrateSelProdDicTop2WJ,delpos]
+-- さらにWordDataにある:
+--- test = Map[existWordAll[#[[2]]]&,ROMrateSelProdDicTop2WJDelnoun] 
+--- delpos = Position[test,False]
+--- ROMrateSelProdDicTop2WJDelnoun = Delete[ROMrateSelProdDicTop2WJDelnoun,delpos]
 --- Export["ROMrateSelProdDicTop2WJDelnoun.tsv",ROMrateSelProdDicTop2WJDelnoun]
+###===いまここ===###
 
 - RES-ORG@ACK
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
