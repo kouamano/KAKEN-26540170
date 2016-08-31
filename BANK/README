@@ -765,8 +765,11 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 --- test = Map[checkPropernoun[#[[2]]]&,ROMrateSelProdDicTop]
 --- delpos = Position[test,True]
 --- ROMrateSelProdDicTopDelnoun = Delete[ROMrateSelProdDicTop,delpos]
+-- さらにWordDataにある:
+--- test = Map[existWordAll[#[[2]]]&,ROMrateSelProdDicTopDelnoun] 
+--- delpos = Position[test,False]
+--- ROMrateSelProdDicTopDelnoun = Delete[ROMrateSelProdDicTopDelnoun,delpos]
 --- Export["ROMrateSelProdDicTopDelnoun.tsv",ROMrateSelProdDicTopDelnoun]
-###===いまここ===###
 
 - RES-ORG@ACK
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
@@ -787,11 +790,16 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 -- ROArateSelProdDicTop = Cases[ROArateSelProdDic, _List] // Reverse
 -- Export["ROArateSelProdDicTop.tsv", ROArateSelProdDicTop]
 -- 固有名詞のdrop:品詞がNoneの可能性があり、かつ、大文字で始まるtermを含むphraseをdrop
---- 関数: partsofspeech, isCapital, containNoun
---- test = Map[{containNoun[#[[2]]],isCapital[#[[2]]]}&,ROArateSelProdDicTop]
---- delpos = Position[test,{True,True}]
+--- 関数: partsofspeech, isCapital, containNoun, checkPropernoun
+--- test = Map[checkPropernoun[#[[2]]]&,ROArateSelProdDicTop]
+--- delpos = Position[test,True]
 --- ROArateSelProdDicTopDelnoun = Delete[ROArateSelProdDicTop,delpos]
+-- さらにWordDataにある:
+--- test = Map[existWordAll[#[[2]]]&,ROArateSelProdDicTopDelnoun] 
+--- delpos = Position[test,False]
+--- ROArateSelProdDicTopDelnoun = Delete[ROArateSelProdDicTopDelnoun,delpos]
 --- Export["ROArateSelProdDicTopDelnoun.tsv",ROArateSelProdDicTopDelnoun]
+###===いまここ===###
 
 - ORG-RES@Mat
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
