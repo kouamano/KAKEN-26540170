@@ -922,7 +922,6 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 --- delpos = Position[test,False]
 --- ROMrateSelProdDicTop2WJDelnoun = Delete[ROMrateSelProdDicTop2WJDelnoun,delpos]
 --- Export["ROMrateSelProdDicTop2WJDelnoun.tsv",ROMrateSelProdDicTop2WJDelnoun]
-###===いまここ===###
 
 - RES-ORG@ACK
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
@@ -952,11 +951,15 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 -- 固有名詞のdrop:品詞がNoneの可能性があり、かつ、大文字で始まるtermを含むphraseをdrop
 --- 関数: partsofspeech, isCapital, containNoun
 --- <<"/home/kamano/gitsrc/MATH_SCRIPT/SCRIPTS/Dictionary_operations.txt"
---- test = Map[{ Intersection[Map[containNoun,StringSplit[#[[2]]]],{True}] == {True}, isCapital[#[[2]]]}&,ROArateSelProdDicTop2WJ]
---- delpos = Position[test,{True,True}]
+--- test = Map[checkPropernoun[#[[2]]]&,ROArateSelProdDicTop2WJ]
+--- delpos = Position[test,True]
 --- ROArateSelProdDicTop2WJDelnoun = Delete[ROArateSelProdDicTop2WJ,delpos]
+-- さらにWordDataにある:
+--- test = Map[existWordAll[#[[2]]]&,ROArateSelProdDicTop2WJDelnoun] 
+--- delpos = Position[test,False]
+--- ROArateSelProdDicTop2WJDelnoun = Delete[ROArateSelProdDicTop2WJDelnoun,delpos]
 --- Export["ROArateSelProdDicTop2WJDelnoun.tsv",ROArateSelProdDicTop2WJDelnoun]
-
+###===いまここ===###
 
 - ORG-RES@Mat
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
