@@ -9,6 +9,7 @@
 #検討事項:
 ##正解論文を集めてそこからパターンを抽出することを検討
 #TODO:
+##候補フレーズ(2W,3W)抽出にバグあり、やりなおし(20160831)
 ##check: OK
 ###/BANK/PMC/20140724/Matching/BioResource/Organization/ATCC_2014 -> OK
 ###match_pos_AllResNames_Jour-ao.res がない。-> OK
