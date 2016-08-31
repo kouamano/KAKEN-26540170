@@ -831,7 +831,6 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 --- delpos = Position[test,False]
 --- ORMrateSelProdDicTopDelnoun = Delete[ORMrateSelProdDicTopDelnoun,delpos]
 --- Export["ORMrateSelProdDicTopDelnoun.tsv",ORMrateSelProdDicTopDelnoun]
-###===いまここ===###
 
 - ORG-RES@ACK
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
@@ -855,10 +854,15 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 -- Export["ORArateSelProdDicTop.tsv", ORArateSelProdDicTop]
 -- 固有名詞のdrop:品詞がNoneの可能性があり、かつ、大文字で始まるtermを含むphraseをdrop
 --- 関数: partsofspeech, isCapital, containNoun
---- test = Map[{containNoun[#[[2]]],isCapital[#[[2]]]}&,ORArateSelProdDicTop]
---- delpos = Position[test,{True,True}]
+--- test = Map[checkPropernoun[#[[2]]]&,ORArateSelProdDicTop]
+--- delpos = Position[test,True]
 --- ORArateSelProdDicTopDelnoun = Delete[ORArateSelProdDicTop,delpos]
+-- さらにWordDataにある:
+--- test = Map[existWordAll[#[[2]]]&,ORArateSelProdDicTopDelnoun] 
+--- delpos = Position[test,False]
+--- ORArateSelProdDicTopDelnoun = Delete[ORArateSelProdDicTopDelnoun,delpos]
 --- Export["ORArateSelProdDicTopDelnoun.tsv",ORArateSelProdDicTopDelnoun]
+###===いまここ===###
 
 
 ####### 集計2.2.2.2 : RES-ORGまたはORG-RES間のワード集計:2term
