@@ -762,10 +762,11 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 -- Export["ROMrateSelProdDicTop.tsv", ROMrateSelProdDicTop]
 -- 固有名詞のdrop:品詞がNoneの可能性があり、かつ、大文字で始まるtermを含むphraseをdrop
 --- 関数: partsofspeech, isCapital, containNoun
---- test = Map[{containNoun[#[[2]]],isCapital[#[[2]]]}&,ROMrateSelProdDicTop]
---- delpos = Position[test,{True,True}]
+--- test = Map[checkPropernoun[#[[2]]]&,ROMrateSelProdDicTop]
+--- delpos = Position[test,True]
 --- ROMrateSelProdDicTopDelnoun = Delete[ROMrateSelProdDicTop,delpos]
 --- Export["ROMrateSelProdDicTopDelnoun.tsv",ROMrateSelProdDicTopDelnoun]
+###===いまここ===###
 
 - RES-ORG@ACK
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
