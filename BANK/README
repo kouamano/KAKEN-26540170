@@ -1133,7 +1133,6 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 --- delpos = Position[test,False]
 --- ROArateSelProdDicTop3WJDelnoun = Delete[ROArateSelProdDicTop3WJDelnoun,delpos]
 --- Export["ROArateSelProdDicTop3WJDelnoun.tsv",ROArateSelProdDicTop3WJDelnoun]
-###===いまここ===###
 
 - ORG-RES@Mat
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
@@ -1163,9 +1162,13 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 -- 固有名詞のdrop:品詞がNoneの可能性があり、かつ、大文字で始まるtermを含むphraseをdrop
 --- 関数: partsofspeech, isCapital, containNoun
 --- <<"/home/kamano/gitsrc/MATH_SCRIPT/SCRIPTS/Dictionary_operations.txt"
---- test = Map[{ Intersection[Map[containNoun,StringSplit[#[[2]]]],{True}] == {True}, isCapital[#[[2]]]}&,ORMrateSelProdDicTop3WJ]
---- delpos = Position[test,{True,True}]
+--- test = Map[checkPropernoun[#[[2]]]&,ORMrateSelProdDicTop3WJ]
+--- delpos = Position[test,True]
 --- ORMrateSelProdDicTop3WJDelnoun = Delete[ORMrateSelProdDicTop3WJ,delpos]
+-- さらにWordDataにある:
+--- test = Map[existWordAll[#[[2]]]&,ORMrateSelProdDicTop3WJDelnoun] 
+--- delpos = Position[test,False]
+--- ORMrateSelProdDicTop3WJDelnoun = Delete[ORMrateSelProdDicTop3WJDelnoun,delpos]
 --- Export["ORMrateSelProdDicTop3WJDelnoun.tsv",ORMrateSelProdDicTop3WJDelnoun]
 
 - ORG-RES@ACK
@@ -1196,11 +1199,15 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 -- 固有名詞のdrop:品詞がNoneの可能性があり、かつ、大文字で始まるtermを含むphraseをdrop
 --- 関数: partsofspeech, isCapital, containNoun
 --- <<"/home/kamano/gitsrc/MATH_SCRIPT/SCRIPTS/Dictionary_operations.txt"
---- test = Map[{ Intersection[Map[containNoun,StringSplit[#[[2]]]],{True}] == {True}, isCapital[#[[2]]]}&,ORArateSelProdDicTop3WJ]
---- delpos = Position[test,{True,True}]
+--- test = Map[checkPropernoun[#[[2]]]&,ORArateSelProdDicTop3WJ]
+--- delpos = Position[test,True]
 --- ORArateSelProdDicTop3WJDelnoun = Delete[ORArateSelProdDicTop3WJ,delpos]
+-- さらにWordDataにある:
+--- test = Map[existWordAll[#[[2]]]&,ORArateSelProdDicTop3WJDelnoun] 
+--- delpos = Position[test,False]
+--- ORArateSelProdDicTop3WJDelnoun = Delete[ORArateSelProdDicTop3WJDelnoun,delpos]
 --- Export["ORArateSelProdDicTop3WJDelnoun.tsv",ORArateSelProdDicTop3WJDelnoun]
-########===いまここ===########(20160831)
+########===20160901===########
 
 
 
