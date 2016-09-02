@@ -303,6 +303,7 @@ cd /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1
 -- /home/kamano/gitsrc/XMLOP/splitter3.pl
 - スクリプト: /BANK/PMC/20140724/terms/whole/patt.3/exec_command/split_Word_Jour-ALL.sh
 - 出力ファイル: /BANK/PMC/20140724/terms/whole/patt.3/Word_Jour-au
+
 ##TASK(term-count.allmaterials)
 ### (split pattern 1)
 #### 各ファイルのtag除去, split, sort, uniq, count
@@ -703,7 +704,6 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/
 -- スクリプト: /home/kamano/gitsrc/utility/drop_piriod_blk.pl region_ORG-RES_Mat.droptags > region_ORG-RES_Mat.droptags.drop1
 - ORG-RES@ACK
 -- スクリプト: /home/kamano/gitsrc/utility/drop_piriod_blk.pl region_ORG-RES_ACK.droptags > region_ORG-RES_ACK.droptags.drop1
-
 ##### 集計2.2 : RES-ORGまたはORG-RES間のワード集計
 ###### 集計2.2.1 : 句読点カッコ類を残す
 ####### 集計2.2.1.1 : RES-ORGまたはORG-RES間のワード集計:1term
@@ -862,7 +862,6 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 --- delpos = Position[test,False]
 --- ORArateSelProdDicTopDelnoun = Delete[ORArateSelProdDicTopDelnoun,delpos]
 --- Export["ORArateSelProdDicTopDelnoun.tsv",ORArateSelProdDicTopDelnoun]
-
 
 ####### 集計2.2.2.2 : RES-ORGまたはORG-RES間のワード集計:2term
 ######## (1)カウント
@@ -1034,7 +1033,6 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 --- ORArateSelProdDicTop2WJDelnoun = Delete[ORArateSelProdDicTop2WJDelnoun,delpos]
 --- Export["ORArateSelProdDicTop2WJDelnoun.tsv",ORArateSelProdDicTop2WJDelnoun]
 
-
 ####### 集計2.2.2.3 : RES-ORGまたはORG-RES間のワード集計:3term
 ######## (1)カウント
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/
@@ -1094,7 +1092,6 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 --- delpos = Position[test,False]
 --- ROMrateSelProdDicTop3WJDelnoun = Delete[ROMrateSelProdDicTop3WJDelnoun,delpos]
 --- Export["ROMrateSelProdDicTop3WJDelnoun.tsv",ROMrateSelProdDicTop3WJDelnoun]
-
 
 - RES-ORG@ACK
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
@@ -1211,7 +1208,6 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 
 
 
-
 ##TASK(2.2)[2](ペンディング) バイオリソース名の前後の出現文字(単語)パターンより正解バイオリソースかを判定(20150911)
 ###TASK(2.2.1) in ACK
 - 対象: /BANK/PMC/20140724/elements/acknowledgement/PMC-ACK-v6.tsv.contOnly
@@ -1240,6 +1236,7 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 - プログラム: /home/kamano/gitsrc/utility/extract_phrase_tspan.Ppl
 - スクリプト: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/match_OrgSpan_Mat.au.sh
 - 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/match_OrgSpan_Mat.au
+
 
 
 #TASK(3): 評価対象機関名拡張(/BANK/PMC/20140724/elements/aff)
@@ -1280,15 +1277,21 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 - 件数(ドキュメント): 19091
 
 
-#TASK(4)パターン検索によるコレクションの拡張
-#
-#TASK(4.1) リソース名、機関名ともに拡張なし
-#予約ファイル:
-- hit_Aff_from_Ack
-- hit_Aff_from_Mat
-- extract_reg_Aff_from_Ack
-- extract_reg_Aff_from_Mat
 
+#TASK(4) パターン検索によるコレクションの拡張
+##TASK(4.1) NBRPセレクションの拡張
+###TASK(4.1.1) NBRP-ACKセレクションの拡張(リソース)
+###フレーズパターン検索による拡張
+- 拡張される対象: リソース
+- ソース: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_Org_from_ACK.tsv
+- 検索パターン:
+-- ORArateSelProdDicTopDelnoun.tsv
+-- ORArateSelProdDicTop2WJDelnoun.tsv
+-- ORArateSelProdDicTop3WJDelnoun.tsv
+-- ROArateSelProdDicTopDelnoun.tsv
+-- ROArateSelProdDicTop2WJDelnoun.tsv
+-- ROArateSelProdDicTop3WJDelnoun.tsv
 
+###TASK(4.1.2) NBRP-Matセレクションの拡張(リソース)
 
 
