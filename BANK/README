@@ -529,7 +529,7 @@ while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; d
 - 検索ターム(スケープ): /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt.esc
 - プログラム: /home/kamano/gitsrc/utility/hit_least.pl
 - スクリプト(5 min): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/hit_Org_from_ACK.sh
-- 結果(20150729): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_Org_from_ACK.tsv
+- 結果(NBRP-ACKセレクション): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_Org_from_ACK.tsv
 ###TASK(2.0.2)b. リソース名hitの確認抽出 in ACK with 機関名
 - 検索対象: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_Org_from_ACK.tsv
 - 検索ターム(エスケープ): /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_4.ncr.esc
@@ -542,7 +542,7 @@ while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; d
 - 検索ターム(スケープ済み): /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt.esc
 - プログラム: /home/kamano/gitsrc/utility/hit_least.pl
 - スクリプト(3 min): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/hit_Org_from_Mat.sh
-- 結果(20150729): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_Org_from_Mat.au.tsv
+- 結果(NBRP-Matセレクション): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_Org_from_Mat.a[a-u].tsv
 ###TASK(2.0.4)b. リソース名hitの確認抽出 in Mat with 機関名
 - 検索対象: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_Org_from_Mat.a[a-u].tsv
 - 検索ターム(エスケープ済み): /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_5.ncr.esc
@@ -636,7 +636,7 @@ grep ';E' check_7.E.20151015 > check_7.E.20151015.E
 --- 各行におけるセンテンスレコード区切り: <タブ><セミコロン><セミコロン><タブ>
 --- レコードセンテンスの構成: <レコードID>、<コンテンツ>、<ヒットリソース>、<ヒット組織名>、<ヒットの順番>、<備考>、<質問>の<タブ>区切り
 --- <リソース名>と<組織名>の区切り: <スペース><セミコロン><スペース>
-- 最終結果: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.E.S.L
+- 最終結果(キュレーテッドコアコレクション:CCC): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.E.S.L
 - 結果の集計情報
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 -- 全論文数
@@ -1280,7 +1280,8 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 - 件数(ドキュメント): 19091
 
 
-#TASK(4)パターン(TASK(3))による検索とパターンの再定義
+#TASK(4)パターン検索によるコレクションの拡張
+#
 #TASK(4.1) リソース名、機関名ともに拡張なし
 #予約ファイル:
 - hit_Aff_from_Ack
