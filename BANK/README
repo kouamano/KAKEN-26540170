@@ -1281,16 +1281,19 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 ###フレーズパターン検索による拡張
 - 拡張される対象: リソース
 - 検索対象: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_Org_from_ACK.tsv
+- 検索機関名:
 -- 機関名部分にタグ挿入<ORG>...</ORG>
 --- 機関名リスト(perl用エスケープ)(NBRP-ORG-Perlコレクション): /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt.sort.uniq.esc
 --- スクリプト(insTagORG_ACK.sh): ./insTag-ORG_to_html.pl /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_Org_from_ACK.tsv /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt.sort.uniq.esc > /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_Org_from_ACK.tsv.Tag-ORG
 - 検索パターン:
--- ORArateSelProdDicTopDelnoun.tsv
--- ORArateSelProdDicTop2WJDelnoun.tsv
--- ORArateSelProdDicTop3WJDelnoun.tsv
--- ROArateSelProdDicTopDelnoun.tsv
--- ROArateSelProdDicTop2WJDelnoun.tsv
--- ROArateSelProdDicTop3WJDelnoun.tsv
+-- 機関名部分に加え、パターン部分にタグ挿入
+--- ORArateSelProdDicTopDelnoun.tsv.sel
+--- ORArateSelProdDicTop2WJDelnoun.tsv.sel
+---- /home/kamano/gitsrc/XMLOP/insTag-KW_to_html.pl /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_Org_from_ACK.tsv.Tag-ORG /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/ORArateSelProdDicTop2WJDelnoun.tsv.sel  2W > /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_Org_from_ACK.tsv.Tag-ORG+2W
+--- ORArateSelProdDicTop3WJDelnoun.tsv.sel
+--- ROArateSelProdDicTopDelnoun.tsv.sel
+--- ROArateSelProdDicTop2WJDelnoun.tsv.sel
+--- ROArateSelProdDicTop3WJDelnoun.tsv.sel
 ###TASK(4.1.2) NBRP-Matセレクションの拡張(リソース)
 
 
