@@ -1281,8 +1281,9 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 ###フレーズパターン検索による拡張
 - 拡張される対象: リソース
 - 検索対象: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_Org_from_ACK.tsv
--- TODO:機関名領域にラベル挿入
+-- 機関名部分にタグ挿入<ORG>...</ORG>
 --- 機関名リスト(perl用エスケープ)(NBRP-ORG-Perlコレクション): /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt.sort.uniq.esc
+--- スクリプト(insTagORG_ACK.sh): ./insTag-ORG_to_html.pl /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_Org_from_ACK.tsv /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt.sort.uniq.esc > /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_Org_from_ACK.tsv.Tag-ORG
 - 検索パターン:
 -- ORArateSelProdDicTopDelnoun.tsv
 -- ORArateSelProdDicTop2WJDelnoun.tsv
