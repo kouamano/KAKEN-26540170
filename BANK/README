@@ -1305,9 +1305,20 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 [kamano@n007 doc]$ grep '<ORG>' *+*W | grep '<3W>\|<2W>\|<W>' | wc
   16008 1509343 14340979
 ###TASK(4.1.2) NBRP-Matセレクションの拡張(リソース)
+###候補フレーズのセレクション: indexが1以上 => ROM*Delnoun.tsv,ORM*Delnoun.tsv
 - 拡張される対象: リソース
 - 検索対象: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_Org_from_Mat.au.tsv
 - 検索機関名:
 -- 機関名部分にタグ挿入<ORG>...</ORG>
 --- 機関名リスト(perl用エスケープ)(NBRP-ORG-Perlコレクション): /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt.sort.uniq.esc
 --- スクリプト(insTagORG_Mat.sh): ./insTag-ORG_to_html.pl /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_Org_from_Mat.au.tsv /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt.sort.uniq.esc > /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_Org_from_Mat.au.tsv.Tag-ORG
+--- ORGタグ挿入コンテンツ: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_Org_from_Mat.au.tsv.Tag-ORG
+- 検索フレーズパターン:
+-- 機関名部分に加え、フレーズ部分にタグ挿入
+--- ORMrateSelProdDicTopDelnoun.tsv.sel
+---- スクリプト(insTagW_Mat.ORM.sh): /home/kamano/gitsrc/XMLOP/insTag-KW_to_html.pl /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_Org_from_Mat.au.tsv.Tag-ORG /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/ORArateSelProdDicTopDelnoun.tsv.sel  W > /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_Org_from_Mat.au.tsv.ORA.Tag-ORG+W
+--- ORMrateSelProdDicTop2WJDelnoun.tsv.sel
+--- ORMrateSelProdDicTop3WJDelnoun.tsv.sel
+--- ROMrateSelProdDicTopDelnoun.tsv.sel
+--- ROMrateSelProdDicTop2WJDelnoun.tsv.sel
+--- ROMrateSelProdDicTop3WJDelnoun.tsv.sel
