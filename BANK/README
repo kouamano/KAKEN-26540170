@@ -1277,7 +1277,7 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 
 #TASK(4) パターン検索によるコレクションの拡張
 ##TASK(4.1) NBRPセレクションの拡張
-###TASK(4.1.1) NBRP-ACKセレクションの拡張(candidate resource correction: CRC)
+###TASK(4.1.1) NBRP-ACKセレクションの拡張(candidate resource collection: CRC)
 ###フレーズパターン検索による拡張
 - 拡張される対象: リソース
 - 検索対象: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_Org_from_ACK.tsv
@@ -1300,6 +1300,9 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 ---- /home/kamano/gitsrc/XMLOP/insTag-KW_to_html.pl /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_Org_from_ACK.tsv.Tag-ORG /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/ROArateSelProdDicTop2WJDelnoun.tsv.sel 2W > /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_Org_from_ACK.tsv.ROA.Tag-ORG+2W
 --- ROArateSelProdDicTop3WJDelnoun.tsv.sel
 ---- /home/kamano/gitsrc/XMLOP/insTag-KW_to_html.pl /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_Org_from_ACK.tsv.Tag-ORG /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/ROArateSelProdDicTop3WJDelnoun.tsv.sel 3W > /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_Org_from_ACK.tsv.ROA.Tag-ORG+3W
+- CRC論文数:
+[kamano@n007 doc]$ grep '<ORG>' *+*W | grep '<3W>\|<2W>\|<W>' | wc
+  16008 1509343 14340979
 ###TASK(4.1.2) NBRP-Matセレクションの拡張(リソース)
 
 
