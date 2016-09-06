@@ -1316,11 +1316,16 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 - 検索フレーズパターン:
 -- 機関名部分に加え、フレーズ部分にタグ挿入
 --- ORMrateSelProdDicTopDelnoun.tsv.sel
----- スクリプト(insTagW_Mat.ORM.sh): /home/kamano/gitsrc/XMLOP/insTag-KW_to_html.pl /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_Org_from_Mat.au.tsv.Tag-ORG /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/ORArateSelProdDicTopDelnoun.tsv.sel  W > /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_Org_from_Mat.au.tsv.ORA.Tag-ORG+W
+---- スクリプト: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/exec_command/insTagW_Mat.ORM.sh
 --- ORMrateSelProdDicTop2WJDelnoun.tsv.sel
+---- スクリプト: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/exec_command/insTag2W_Mat.ORM.sh
 --- ORMrateSelProdDicTop3WJDelnoun.tsv.sel
+---- スクリプト: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/exec_command/insTag2W_Mat.ORM.sh
 --- ROMrateSelProdDicTopDelnoun.tsv.sel
+---- スクリプト: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/exec_command/insTagW_Mat.ROM.sh
 --- ROMrateSelProdDicTop2WJDelnoun.tsv.sel
+---- スクリプト: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/exec_command/insTag2W_Mat.ROM.sh
 --- ROMrateSelProdDicTop3WJDelnoun.tsv.sel
-
+---- スクリプト: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/exec_command/insTag3W_Mat.ROM.sh
+###===いまここ===###
 
