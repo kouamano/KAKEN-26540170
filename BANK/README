@@ -1302,7 +1302,7 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 - CRC@ACK論文数:
 [kamano@n007 doc]$ grep '<ORG>' *+*W | grep '<3W>\|<2W>\|<W>' | wc
   16008 1509343 14340979
-#### センテンスのsplit
+#### センテンスのsplit => splitTagの挿入
 - program: /home/kamano/gitsrc/XMLOP/ins_sentence-split.pl
 ###TASK(4.1.2) NBRP-Matセレクションの拡張(リソース)
 #### タグの挿入
@@ -1330,6 +1330,6 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 - CRC@Mat論文数:
 [kamano@n007 doc]$ grep '<ORG>'  hit_Org_from_Mat*W | grep '<3W>\|<2W>\|<W>' | wc
   21779 32101107 318564486
-#### センテンスのsplit
+#### センテンスのsplit => splitTagの挿入
 ###===いまここ===###
 
