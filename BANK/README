@@ -1304,6 +1304,7 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 [kamano@n007 doc]$ grep '<ORG>' *+*W | grep '<3W>\|<2W>\|<W>' | wc
   16008 1509343 14340979
 #### センテンスのsplit
+- program: /home/kamano/gitsrc/XMLOP/ins_sentence-split.pl
 ###TASK(4.1.2) NBRP-Matセレクションの拡張(リソース)
 #### タグの挿入
 - 拡張される対象: リソース
