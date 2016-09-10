@@ -654,7 +654,6 @@ grep 'Mat			' hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.L |
 ###TASK(2.1.8) 機関名、バイオリソース名が同時出現するセンテンスのパターン解析
 - 対象: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.E.S.L
 #### 集計1 : </RES>...<ORG> or </ORG>...<RES> 間、単語数ごとの集計
-- パターン集計結果: => 石川氏に問い合わせ(20170725)
 - パターン集計結果のまとめ: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/analysis/pattern-bunseki-kekka (図書館総合展)
 #### 集計2 : </RES>...<ORG> or </ORG>...<RES> 間の単語数制限なし (20160801)
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/
@@ -674,7 +673,7 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/
 -- プログラム: /home/kamano/gitsrc/XMLOP/extract_region_ORG-RES.pl
 -- スクリプト: grep ^ACK hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.E.S.L | awk -F '	' '{print $6}' | /home/kamano/gitsrc/XMLOP/extract_region_ORG-RES.pl > region_ORG-RES_ACK
 -- 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/region_ORG-RES_ACK
-##### 集計2.1 : 全ソースからのterm抽出
+##### 集計2.1 : RES-ORGまたはORG-RES間のterm(1W)集計
 ###### 集計2.1.1 : 句読点、カッコ類を残す
 ####### 集計2.1.1.1 : single term
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/
