@@ -1310,7 +1310,7 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 - 結果: hit*ACK*W.spl
 #### センテンスのセレクション: @ACK
 - パターン: <RES>-Phrase-ORG-spl
--- program: extract_RES-Phrase-ORG-spl.pl
+-- program: extract_RES-Phrase-ORG-spl.pl (作り中)
 ####===いまここ===####
 ###TASK(4.1.2) NBRP-Matセレクションの拡張(リソース)
 #### タグの挿入
