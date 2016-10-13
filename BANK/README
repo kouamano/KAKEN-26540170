@@ -51,7 +51,6 @@
 - /BANK/PMC/20140724/elements/SKELTON/skelton-ALL.res.tag-count.rep.merge-sort.count : 282タグ
 
 
-
 #TASK(data) (随時更新) : データの基本情報をまとめる
 ##TASK(data.1):PMCファイルの展開
 - 展開先: /BANK/PMC/20140724/articles
@@ -94,7 +93,6 @@ cd /BANK/PMC/20140724/articles.fname/20.check/exec_command
 - 結果: /BANK/PMC/20140724/articles.type/Jour-split.arttype.au
 
 
-
 #TASK(gather)
 #XMLを少数のファイルにまとめる
 #改行はすべてスペースに
@@ -103,7 +101,6 @@ cd /BANK/PMC/20140724/articles.fname/20.check/exec_command
 - プログラム: /home/kamano/gitsrc/utility/WSP_to_SP.pl
 - スクリプト(2Hr): /BANK/PMC/20140724/articles.gather/20/exec_command/gather.ALL.sh
 - 結果: /BANK/PMC/20140724/articles.gather/20/
-
 
 
 #TASK(check): pmid/pmcidのチェック (20140724 に完了 -> ディレクトリ移動あり)
@@ -122,7 +119,6 @@ cd /BANK/PMC/20140724/articles.pmid/exec_command
 ##TASK(check.PMC_VS_user-data): RIKEN-BRC利用者成果pmid　PMC-XML_pmid　をマッチング(20140904 移動)
 - ツール: Mathematica
 - 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/user-data/PMID/ALL.pmid.sort.uniq.in_pmc.hit
-
 
 
 #TASK(element-tree)
@@ -146,7 +142,6 @@ cd /BANK/PMC/20140724/articles.pmid/exec_command
 - 結果: skelton-ALL.res.tag-count.rep.merge-sort.count
 
 
-
 #TASK(tag.new): XMLのエレメントタグを抽出・ソート・レベル付与(20150417完了)
 - 対象: PMC-XML全件 (/BANK/PMC/20140724/articles/*/*nxml)
 -- コメント中にタグがあるのでコメントを空白列に置き換える必要アリ。
@@ -155,14 +150,12 @@ cd /BANK/PMC/20140724/articles.pmid/exec_command
 - 結果: /BANK/PMC/20140724/elements/ALL/ALL_sort_pos_rev-au.reg+lv
 
 
-
 #TASK(sec-type): sec-typeの種類を抽出
 - ソース: /BANK/PMC/20140724/elements/sec/sec_pos-a[a-u].reg_sort
 - プログラム: /home/kamano/gitsrc/XMLOP/grep-sec-type.pl
 cd /BANK/PMC/20140724/elements/sec-type
 /home/kamano/gitsrc/XMLOP/extract_sec-types.pl *reg_sort | sort | uniq -c > ALL_sec-type.sort.count
 - 結果: /BANK/PMC/20140724/elements/sec-type/ALL_sec-type.sort.count.sort
-
 
 
 #TASK(extract)
@@ -237,7 +230,6 @@ cat *cont | awk -F '	' '{print $1}' | sed -e 's/^\/BANK\/PMC\/20140724\/articles
 - 結果: /BANK/PMC/20140724/elements/x+ref+p/content_ref_Jour-au
 
 
-
 #TASK(term-count): 出現タームのsplit・カウント
 ##TASK(term-count.ALL_ALL):タグ含む
 ### (split pattern 0)
@@ -292,7 +284,6 @@ cd /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1
 -- 4. ./sort_ALL_3W_presort_Jour-ALL.sh
 -- 5. ./sort-count_ALL_3W_Jour-ALL.sh
 - result: /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1/Phrase_jour-ALL.3W.sort.count
-
 ### (split pattern 3): OLD
 #### タグの除去とsplit
 - プログラム:
@@ -300,7 +291,6 @@ cd /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1
 -- /home/kamano/gitsrc/XMLOP/splitter3.pl
 - スクリプト: /BANK/PMC/20140724/terms/whole/patt.3/exec_command/split_Word_Jour-ALL.sh
 - 出力ファイル: /BANK/PMC/20140724/terms/whole/patt.3/Word_Jour-au
-
 ##TASK(term-count.allmaterials)
 ### (split pattern 1)
 #### 各ファイルのtag除去, split, sort, uniq, count
@@ -1206,37 +1196,6 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 
 
 
-##TASK(2.2)[2](ペンディング) バイオリソース名の前後の出現文字(単語)パターンより正解バイオリソースかを判定(20150911)
-###TASK(2.2.1) in ACK
-- 対象: /BANK/PMC/20140724/elements/acknowledgement/PMC-ACK-v6.tsv.contOnly
-- 検索タームリスト(ncr,escaped): /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_5.ncr.esc
-- プログラム: /home/kamano/gitsrc/utility/extract_term_tspan.Ppl
-- スクリプト: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/match_ResSpan_ACK.sh
-- 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/match_ResSpan_ACK
--- リソース名無名化プログラム: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/extract_patt.pl
-###TASK(2.2.2) in Mat #時間がかかる; 1article / 0.5min
-- 対象: /BANK/PMC/20140724/elements/MERGED/allmaterials/*.contOnly
-- 検索タームリスト(ncr,escaped): /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_5.ncr.esc
-- プログラム: /home/kamano/gitsrc/utility/extract_term_tspan.Ppl
-- スクリプト[local]: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/match_ResSpan_Mat.a[pqr].sh
-- スクリプト[hokusai]: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/hokusai/term+span.au.sh
-- 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/match_ResSpan_Mat.au
-##TASK(2.3)[3] 機関名の前後の出現文字(単語)パターンのまとめ (20150915)
-###TASK(2.3.1) in ACK
-- 対象: /BANK/PMC/20140724/elements/acknowledgement/PMC-ACK-v6.tsv.contOnly
-- 検索ターム: /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt.sort.uniq.esc
-- プログラム: /home/kamano/gitsrc/utility/extract_phrase_tspan.Ppl
-- スクリプト: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/match_OrgSpan_ACK.sh
-- 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/match_OrgSpan_ACK
-###TASK(2.3.2) in Mat
-- 対象: /BANK/PMC/20140724/elements/MERGED/allmaterials/allmaterials.au.reg.contOnly
-- 検索ターム: /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt.sort.uniq.esc
-- プログラム: /home/kamano/gitsrc/utility/extract_phrase_tspan.Ppl
-- スクリプト: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/match_OrgSpan_Mat.au.sh
-- 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/match_OrgSpan_Mat.au
-
-
-
 #TASK(3): 評価対象機関名拡張(/BANK/PMC/20140724/elements/aff)
 #aff領域より得られた機関名(住所つき)をmaterial、ack領域に対して検索、存在を確認。
 #所属をカンマで区切り、各フレーズを対象領域に対してマッチング。
@@ -1348,3 +1307,39 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 - 結果: hit*Mat*W.spl
 #### センテンスのセレクション: @Mat
 - パターン: RES-Phrase-ORG-spl
+
+
+
+
+
+#ペンディング
+##TASK(2.2)[2](ペンディング) バイオリソース名の前後の出現文字(単語)パターンより正解バイオリソースかを判定(20150911)
+###TASK(2.2.1) in ACK
+- 対象: /BANK/PMC/20140724/elements/acknowledgement/PMC-ACK-v6.tsv.contOnly
+- 検索タームリスト(ncr,escaped): /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_5.ncr.esc
+- プログラム: /home/kamano/gitsrc/utility/extract_term_tspan.Ppl
+- スクリプト: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/match_ResSpan_ACK.sh
+- 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/match_ResSpan_ACK
+-- リソース名無名化プログラム: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/extract_patt.pl
+###TASK(2.2.2) in Mat #時間がかかる; 1article / 0.5min
+- 対象: /BANK/PMC/20140724/elements/MERGED/allmaterials/*.contOnly
+- 検索タームリスト(ncr,escaped): /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_5.ncr.esc
+- プログラム: /home/kamano/gitsrc/utility/extract_term_tspan.Ppl
+- スクリプト[local]: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/match_ResSpan_Mat.a[pqr].sh
+- スクリプト[hokusai]: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/hokusai/term+span.au.sh
+- 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/match_ResSpan_Mat.au
+##TASK(2.3)[3] 機関名の前後の出現文字(単語)パターンのまとめ (20150915)
+###TASK(2.3.1) in ACK
+- 対象: /BANK/PMC/20140724/elements/acknowledgement/PMC-ACK-v6.tsv.contOnly
+- 検索ターム: /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt.sort.uniq.esc
+- プログラム: /home/kamano/gitsrc/utility/extract_phrase_tspan.Ppl
+- スクリプト: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/match_OrgSpan_ACK.sh
+- 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/match_OrgSpan_ACK
+###TASK(2.3.2) in Mat
+- 対象: /BANK/PMC/20140724/elements/MERGED/allmaterials/allmaterials.au.reg.contOnly
+- 検索ターム: /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt.sort.uniq.esc
+- プログラム: /home/kamano/gitsrc/utility/extract_phrase_tspan.Ppl
+- スクリプト: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/match_OrgSpan_Mat.au.sh
+- 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/match_OrgSpan_Mat.au
+
+
