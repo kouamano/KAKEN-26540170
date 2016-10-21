@@ -704,6 +704,7 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/
 /home/kamano/gitsrc/utility/split_terms.pl region_ORG-RES_Mat.droptags | sort | uniq -c | sort -nr > region_ORG-RES_Mat.droptags.term
 - ORG-RES@ACK
 /home/kamano/gitsrc/utility/split_terms.pl region_ORG-RES_ACK.droptags | sort | uniq -c | sort -nr > region_ORG-RES_ACK.droptags.term
+
 ###### 集計2.2.2 : 句読点カッコ類を落とす
 ####### 集計2.2.2.1 : RES-ORGまたはORG-RES間のワード集計:1term
 ######## (1)カウント
