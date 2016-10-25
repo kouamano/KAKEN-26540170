@@ -10,7 +10,6 @@
 ##正解論文を集めてそこからパターンを抽出することを検討
 #TODO:
 ##check: OK
-###/BANK/PMC/20140724/Matching/BioResource/Organization/ATCC_2014 -> OK
 ###match_pos_AllResNames_Jour-ao.res がない。-> OK
 ##データのバックアップ: OK
 ##As of 20141013 -> OK
@@ -642,7 +641,20 @@ grep 'ACK			' hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.L |
 --- <Mat>
 grep 'Mat			' hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.L | wc
     737   26845  189192
-
+-- ヒットした<ORG>
+--- 述べ:
+/home/kamano/gitsrc/XMLOP/extract_element.pl ORG /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.E.S.L | wc
+   1022    2168   27324
+--- ユニーク:
+/home/kamano/gitsrc/XMLOP/extract_element.pl ORG /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.E.S.L | sort | uniq | wc
+     38     112    1318
+-- ヒットした<RES>
+--- 述べ:
+/home/kamano/gitsrc/XMLOP/extract_element.pl RES /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.E.S.L | wc
+   1369    1541   25125
+--- ユニーク:
+/home/kamano/gitsrc/XMLOP/extract_element.pl RES /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.E.S.L | sort | uniq | wc
+    444     514    8401
 ###TASK(2.1.8) 機関名、バイオリソース名が同時出現するセンテンスのパターン解析
 - 対象: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.E.S.L
 #### 集計1 : </RES>...<ORG> or </ORG>...<RES> 間、単語数ごとの集計
