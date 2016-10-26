@@ -1314,7 +1314,7 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 --- ROMrateSelProdDicTop3WJDelnoun.tsv.sel
 ---- スクリプト: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/exec_command/insTag3W_Mat.ROM.sh
 - CRC@Mat論文数:
-[kamano@n007 doc]$ grep '<ORG>'  hit_Org_from_Mat*W | grep '<3W>\|<2W>\|<W>' | wc
+grep '<ORG>'  hit_Org_from_Mat*W | grep '<3W>\|<2W>\|<W>' | wc
   21779 32101107 318564486
 #### センテンスのsplit => splitTagの挿入
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
