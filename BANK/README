@@ -1265,17 +1265,23 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 --- ORGタグ挿入コンテンツ: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_Org_from_ACK.tsv.Tag-ORG
 - 検索フレーズパターン:
 -- 機関名部分に加え、フレーズ部分にタグ挿入
---- ORArateSelProdDicTopDelnoun.tsv.sel
+--- 1W : <ORG>-<RES>
+---- ORArateSelProdDicTopDelnoun.tsv.sel
 ---- /home/kamano/gitsrc/XMLOP/insTag-KW_to_html.pl /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_Org_from_ACK.tsv.Tag-ORG /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/ORArateSelProdDicTopDelnoun.tsv.sel  W > /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_Org_from_ACK.tsv.ORA.Tag-ORG+W
---- ORArateSelProdDicTop2WJDelnoun.tsv.sel
+--- 2W : <ORG>-<RES>
+---- ORArateSelProdDicTop2WJDelnoun.tsv.sel
 ---- /home/kamano/gitsrc/XMLOP/insTag-KW_to_html.pl /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_Org_from_ACK.tsv.Tag-ORG /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/ORArateSelProdDicTop2WJDelnoun.tsv.sel  2W > /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_Org_from_ACK.tsv.ORA.Tag-ORG+2W
---- ORArateSelProdDicTop3WJDelnoun.tsv.sel
+--- 3W : <ORG>-<RES>
+---- ORArateSelProdDicTop3WJDelnoun.tsv.sel
 ---- /home/kamano/gitsrc/XMLOP/insTag-KW_to_html.pl /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_Org_from_ACK.tsv.Tag-ORG /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/ORArateSelProdDicTop3WJDelnoun.tsv.sel  3W > /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_Org_from_ACK.tsv.ORA.Tag-ORG+3W
---- ROArateSelProdDicTopDelnoun.tsv.sel
+--- 1W : <RES>-<ORG>
+---- ROArateSelProdDicTopDelnoun.tsv.sel
 ---- /home/kamano/gitsrc/XMLOP/insTag-KW_to_html.pl /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_Org_from_ACK.tsv.Tag-ORG /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/ROArateSelProdDicTopDelnoun.tsv.sel  W > /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_Org_from_ACK.tsv.ROA.Tag-ORG+W
---- ROArateSelProdDicTop2WJDelnoun.tsv.sel
+--- 2W : <RES>-<ORG>
+---- ROArateSelProdDicTop2WJDelnoun.tsv.sel
 ---- /home/kamano/gitsrc/XMLOP/insTag-KW_to_html.pl /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_Org_from_ACK.tsv.Tag-ORG /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/ROArateSelProdDicTop2WJDelnoun.tsv.sel 2W > /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_Org_from_ACK.tsv.ROA.Tag-ORG+2W
---- ROArateSelProdDicTop3WJDelnoun.tsv.sel
+--- 3W : <RES>-<ORG>
+---- ROArateSelProdDicTop3WJDelnoun.tsv.sel
 ---- /home/kamano/gitsrc/XMLOP/insTag-KW_to_html.pl /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_Org_from_ACK.tsv.Tag-ORG /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/ROArateSelProdDicTop3WJDelnoun.tsv.sel 3W > /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_Org_from_ACK.tsv.ROA.Tag-ORG+3W
 - CRC@ACK論文数:
 [kamano@n007 doc]$ grep '<ORG>' *+*W | grep '<3W>\|<2W>\|<W>' | wc
