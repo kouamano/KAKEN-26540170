@@ -1295,9 +1295,11 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 - 結果: hit*ACK*W.spl
 #### センテンスのセレクション @ACK => <RESc>タグの挿入
 - パターン: <RESc>-Phrase-ORG-spl
--- 対象: hit*ACK*W.spl
+-- 対象: hit*ACK*ROA*W.spl
 -- program: /home/kamano/gitsrc/XMLOP/extract_+RES+-Phrase-ORG-spl.pl
--- スクリプト: 
+-- スクリプト: for file in hit*ACK*ROA*W.spl; do  /home/kamano/gitsrc/XMLOP/extract_+RES+-Phrase-ORG-spl.pl $file 3 > $file+RESc; done
+-- 結果: hit*ACK*ROA*W.spl+RESc
+####===20161027===####
 ####===いまここ===####
 ###TASK(4.1.2) NBRP-Matセレクションの拡張(リソース)
 #### <ORG>、<W>タグの挿入
