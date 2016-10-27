@@ -1293,8 +1293,8 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 - スクリプト: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/exec_command/insTagSP_ACK.sh
 - 結果: hit*ACK*W.spl
 #### センテンスのセレクション @ACK
-- パターン: <RES>-Phrase-ORG-spl
--- program: extract_RES-Phrase-ORG-spl.pl (作り中)
+- パターン: <RESc>-Phrase-ORG-spl
+-- program: extract_+RES+-Phrase-ORG-spl.pl
 ####===いまここ===####
 ###TASK(4.1.2) NBRP-Matセレクションの拡張(リソース)
 #### タグの挿入
