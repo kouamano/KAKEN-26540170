@@ -1255,7 +1255,7 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 #TASK(4) パターン検索によるコレクションの拡張
 ##TASK(4.1) NBRPセレクションの拡張
 ###TASK(4.1.1) NBRP-ACKセレクションの拡張
-#### タグの挿入
+#### タグの挿入 @ACK
 - 拡張される対象: リソース
 - 検索対象(機関名がヒットしたセクション): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_Org_from_ACK.tsv
 - 検索機関名:
@@ -1286,13 +1286,13 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 - CRC@ACK論文数:
 [kamano@n007 doc]$ grep '<ORG>' *+*W | grep '<3W>\|<2W>\|<W>' | wc
   16008 1509343 14340979
-#### センテンスのsplit => splitTagの挿入
+#### センテンスのsplit => splitTagの挿入 @ACK
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 - 対象: hit*ACK*W
 - program: /home/kamano/gitsrc/XMLOP/ins_sentence-split.pl
 - スクリプト: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/exec_command/insTagSP_ACK.sh
 - 結果: hit*ACK*W.spl
-#### センテンスのセレクション: @ACK
+#### センテンスのセレクション @ACK
 - パターン: <RES>-Phrase-ORG-spl
 -- program: extract_RES-Phrase-ORG-spl.pl (作り中)
 ####===いまここ===####
