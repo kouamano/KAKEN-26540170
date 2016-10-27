@@ -1254,6 +1254,7 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 
 #TASK(4) パターン検索によるコレクションの拡張
 ##TASK(4.1) NBRPセレクションの拡張
+## ACKとMatでフォーマットが違うので注意
 ###TASK(4.1.1) NBRP-ACKセレクションの拡張
 #### <ORG>、<W>タグの挿入 @ACK
 - 拡張される対象: リソース
@@ -1294,7 +1295,9 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 - 結果: hit*ACK*W.spl
 #### センテンスのセレクション @ACK => <RESc>タグの挿入
 - パターン: <RESc>-Phrase-ORG-spl
--- program: extract_+RES+-Phrase-ORG-spl.pl
+-- 対象: hit*ACK*W.spl
+-- program: /home/kamano/gitsrc/XMLOP/extract_+RES+-Phrase-ORG-spl.pl
+-- スクリプト: 
 ####===いまここ===####
 ###TASK(4.1.2) NBRP-Matセレクションの拡張(リソース)
 #### <ORG>、<W>タグの挿入
