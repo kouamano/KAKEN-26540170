@@ -296,8 +296,8 @@ cd /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1
 -- 1. 実行済み
 -- 2. ./select_phrase4W.sh
 -- 3. ./sort_each_4W_Jour-ALL.sh
-###===実行中
 -- 4. ./sort_ALL_4W_presort_Jour-ALL.sh
+###===実行中
 -- 5. ./sort-count_ALL_4W_Jour-ALL.sh
 
 ##TASK(term-count.allmaterials)
