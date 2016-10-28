@@ -1262,7 +1262,7 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 #TASK(4): パターン検索によるコレクションの拡張
 ##TASK(4.1): NBRPセレクションの拡張
 ##ACKとMatでフォーマットが違うので注意
-###TASK(4.1.1): NBRP-ACKセレクションの拡張
+###TASK(4.1.1): NBRP-ACKセレクションの拡張(リソース)
 #### <ORG>、<W>タグの挿入 @ACK
 - 拡張される対象: リソース
 - 検索対象(機関名がヒットしたセクション): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_Org_from_ACK.tsv
