@@ -283,13 +283,6 @@ cd /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1
 -- 4. ./sort_ALL_3W_presort_Jour-ALL.sh
 -- 5. ./sort-count_ALL_3W_Jour-ALL.sh
 - result: /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1/Phrase_jour-ALL.3W.sort.count
-### (split pattern 3): OLD
-#### タグの除去とsplit
-- プログラム:
--- /home/kamano/gitsrc/XMLOP/drop_tag-text.pl
--- /home/kamano/gitsrc/XMLOP/splitter3.pl
-- スクリプト: /BANK/PMC/20140724/terms/whole/patt.3/exec_command/split_Word_Jour-ALL.sh
-- 出力ファイル: /BANK/PMC/20140724/terms/whole/patt.3/Word_Jour-au
 ##TASK(term-count.allmaterials)
 ### (split pattern 1)
 #### 各ファイルのtag除去, split, sort, uniq, count
@@ -720,7 +713,6 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/
 /home/kamano/gitsrc/utility/split_terms.pl region_ORG-RES_Mat.droptags | sort | uniq -c | sort -nr > region_ORG-RES_Mat.droptags.term
 - ORG-RES@ACK
 /home/kamano/gitsrc/utility/split_terms.pl region_ORG-RES_ACK.droptags | sort | uniq -c | sort -nr > region_ORG-RES_ACK.droptags.term
-
 ###### 集計2.2.2 : 句読点カッコ類を落とす
 ####### 集計2.2.2.1 : RES-ORGまたはORG-RES間のワード集計:1term
 ######## (1)カウント
