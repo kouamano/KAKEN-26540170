@@ -291,11 +291,12 @@ cd /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1
 -- /home/kamano/gitsrc/utility/split_phrase4W.pl
 -- /home/kamano/gitsrc/utility/select_phrase4W.pl
 -- /home/kamano/gitsrc/utility/sum_count_from_mixed_phrase_sort.pl
-- スクリプト: ###作り中
+- スクリプト:
 -- 0. cd /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1/exec_command
 -- 1. 実行済み
--- 2. ./select_phrase4W.sh ###実行中
+-- 2. ./select_phrase4W.sh
 -- 3. ./sort_each_4W_Jour-ALL.sh
+###===実行中
 -- 4. ./sort_ALL_4W_presort_Jour-ALL.sh
 -- 5. ./sort-count_ALL_4W_Jour-ALL.sh
 
