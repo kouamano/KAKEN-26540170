@@ -674,9 +674,8 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/
 -- プログラム: /home/kamano/gitsrc/XMLOP/extract_region_ORG-RES.pl
 -- スクリプト: grep ^ACK hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.E.S.L | awk -F '	' '{print $6}' | /home/kamano/gitsrc/XMLOP/extract_region_ORG-RES.pl > region_ORG-RES_ACK
 -- 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/region_ORG-RES_ACK
-##### 集計2.1 : RES-ORGまたはORG-RES間のterm(1W)集計
-###### 集計2.1.1 : 句読点、カッコ類を残す
-####### 集計2.1.1.1 : single term
+##### 集計2.1 : RES-ORGまたはORG-RES間のワード抽出
+###### 集計2.1.1 : 句読点カッコ類を残すバージョン
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/
 - RES-ORG@Mat
 -- 対象: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/region_RES-ORG_Mat
@@ -690,8 +689,7 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/
 - ORG-RES@ACK
 -- 対象: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/region_ORG-RES_ACK
 -- タグの除去: /home/kamano/gitsrc/XMLOP/drop_tag_RES-ORG.pl region_ORG-RES_ACK > region_ORG-RES_ACK.droptags
-###### 集計2.1.2 : 句読点、カッコ類を落とす
-####### 集計2.1.2.1 : ピリオド類カッコ類の除去
+###### 集計2.1.2 : 句読点カッコ類を落とすバージョン
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/
 - RES-ORG@Mat
 -- スクリプト: /home/kamano/gitsrc/utility/drop_piriod_blk.pl region_RES-ORG_Mat.droptags > region_RES-ORG_Mat.droptags.drop1
