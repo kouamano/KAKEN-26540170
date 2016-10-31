@@ -299,7 +299,6 @@ cd /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1
 -- 4. ./sort_ALL_4W_presort_Jour-ALL.sh
 -- 5. ./sort-count_ALL_4W_Jour-ALL.sh
 - result: /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1/Phrase_jour-ALL.4W.sort.count
-###===実行中
 
 ##TASK(term-count.allmaterials)
 ### (split pattern 1)
@@ -1311,7 +1310,7 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 -- 対象: hit*ACK*ORA*W.spl
 -- program: /home/kamano/gitsrc/XMLOP/extract_ORG-Phrase-+RES+-spl.pl
 -- スクリプト: for file in hit*ACK*ORA*W.spl; do  /home/kamano/gitsrc/XMLOP/extract_ORG-Phrase-+RES+-spl.pl $file 3 > $file+RESc; done
-#####===いまここ===#####
+####===20161031===####
 
 ###TASK(4.1.2): NBRP-Matセレクションの拡張(リソース)
 #### <ORG>、<W>タグの挿入 @Mat
