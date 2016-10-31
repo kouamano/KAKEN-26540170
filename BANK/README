@@ -1301,7 +1301,7 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 - スクリプト: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/exec_command/insTagSP_ACK.sh
 - 結果: hit*ACK*W.spl
 #### 候補タームのセレクション @ACK
-##### <RESc>タグの挿入
+##### <RESc>タグの挿入 @ACK
 - パターン: <RESc>-Phrase-ORG-spl
 -- 対象: hit*ACK*ROA*W.spl
 -- program: /home/kamano/gitsrc/XMLOP/extract_+RES+-Phrase-ORG-spl.pl
@@ -1310,7 +1310,7 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 #####===20161027===#####
 #####===いまここ===#####
 ###TASK(4.1.2): NBRP-Matセレクションの拡張(リソース)
-#### <ORG>、<W>タグの挿入
+#### <ORG>、<W>タグの挿入 @Mat
 - 拡張される対象: リソース
 - 検索対象: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_Org_from_Mat.au.tsv
 - 検索機関名:
@@ -1335,7 +1335,7 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 - CRC@Mat論文数:
 grep '<ORG>'  hit_Org_from_Mat*W | grep '<3W>\|<2W>\|<W>' | wc
   21779 32101107 318564486
-#### センテンスのsplit => splitTagの挿入
+#### センテンスのsplit => splitTagの挿入 @Mat
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 - 対象: hit*Mat*W
 - program: /home/kamano/gitsrc/XMLOP/ins_sentence-split.pl
