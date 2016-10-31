@@ -298,6 +298,7 @@ cd /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1
 -- 3. ./sort_each_4W_Jour-ALL.sh
 -- 4. ./sort_ALL_4W_presort_Jour-ALL.sh
 -- 5. ./sort-count_ALL_4W_Jour-ALL.sh
+- result: /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1/Phrase_jour-ALL.4W.sort.count
 ###===実行中
 
 ##TASK(term-count.allmaterials)
@@ -1307,8 +1308,10 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 -- program: /home/kamano/gitsrc/XMLOP/extract_+RES+-Phrase-ORG-spl.pl
 -- スクリプト: for file in hit*ACK*ROA*W.spl; do  /home/kamano/gitsrc/XMLOP/extract_+RES+-Phrase-ORG-spl.pl $file 3 > $file+RESc; done
 -- 結果: hit*ACK*ROA*W.spl+RESc
-#####===20161027===#####
+- パターン: ORG-Phrase-<RESc>-spl
+-- 対象: hit*ACK*ORA*W.spl
 #####===いまここ===#####
+
 ###TASK(4.1.2): NBRP-Matセレクションの拡張(リソース)
 #### <ORG>、<W>タグの挿入 @Mat
 - 拡張される対象: リソース
@@ -1342,7 +1345,7 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 - スクリプト: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/exec_command/insTagSP_Mat.sh
 - 結果: hit*Mat*W.spl
 #### 候補タームのセレクション: @Mat
-
+##### <RESc>タグの挿入 @Mat
 
 
 
