@@ -1289,7 +1289,7 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 --- 3W : <RES>-<ORG>
 ---- ROArateSelProdDicTop3WJDelnoun.tsv.sel
 ---- /home/kamano/gitsrc/XMLOP/insTag-KW_to_html.pl /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_Org_from_ACK.tsv.Tag-ORG /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/ROArateSelProdDicTop3WJDelnoun.tsv.sel 3W > /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_Org_from_ACK.tsv.ROA.Tag-ORG+3W
-- CRC@ACK論文数:
+- <ORG>-<phrase>@ACK論文数:
 [kamano@n007 doc]$ grep '<ORG>' *+*W | grep '<3W>\|<2W>\|<W>' | wc
   16008 1509343 14340979
 #### センテンスのsplit => splitTagの挿入 @ACK
@@ -1336,7 +1336,7 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 ---- スクリプト: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/exec_command/insTag2W_Mat.ROM.sh
 --- ROMrateSelProdDicTop3WJDelnoun.tsv.sel
 ---- スクリプト: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/exec_command/insTag3W_Mat.ROM.sh
-- CRC@Mat論文数:
+- <ORG>-<phrase>@Mat論文数:
 grep '<ORG>'  hit_Org_from_Mat*W | grep '<3W>\|<2W>\|<W>' | wc
   21779 32101107 318564486
 #### センテンスのsplit => splitTagの挿入 @Mat
