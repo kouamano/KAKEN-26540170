@@ -299,6 +299,23 @@ cd /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1
 -- 4. ./sort_ALL_4W_presort_Jour-ALL.sh
 -- 5. ./sort-count_ALL_4W_Jour-ALL.sh
 - result: /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1/Phrase_jour-ALL.4W.sort.count
+### (split pattern 1; 5W-phrase)
+cd /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1
+- プログラム:
+-- /home/kamano/gitsrc/XMLOP/drop_tag-text_LF.pl
+-- /home/kamano/gitsrc/XMLOP/phrase_splitter1.pl
+-- /home/kamano/gitsrc/utility/split_phrase5W.pl
+-- /home/kamano/gitsrc/utility/select_phrase5W.pl
+-- /home/kamano/gitsrc/utility/sum_count_from_mixed_phrase_sort.pl
+- スクリプト:
+-- 0. cd /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1/exec_command
+-- 1. 実行済み
+###===実行中===###
+-- 2. ./select_phrase5W.sh
+-- 3. ./sort_each_5W_Jour-ALL.sh
+-- 4. ./sort_ALL_5W_presort_Jour-ALL.sh
+-- 5. ./sort-count_ALL_4W_Jour-ALL.sh
+- result: /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1/Phrase_jour-ALL.4W.sort.count
 
 ##TASK(term-count.allmaterials)
 ### (split pattern 1)
