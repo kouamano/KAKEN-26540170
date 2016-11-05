@@ -266,6 +266,8 @@ cd /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1
 -- 4. ./sort_ALL_2W_presort_Jour-ALL.sh #20min
 -- 5. ./sort-count_ALL_2W_Jour-ALL.sh #10min
 - result: /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1/Phrase_jour-ALL.2W.sort.count
+wc /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1/Phrase_jour-ALL.2W.sort.count
+ 132446170  397338510 2523271505 /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1/Phrase_jour-ALL.2W.sort.count
 ### (split pattern 1; 3W-phrase)
 cd /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1
 - README: /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1/exec_command/README
