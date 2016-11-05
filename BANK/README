@@ -249,6 +249,8 @@ cd /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1
 -- 3. sort_ALL_W_presort_Jour-ALL.sh
 -- 4. sort-count_ALL_W_Jour-ALL.sh
 - result: /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1/Word_jour-ALL.sort.count
+wc Word_jour-ALL.sort.count
+ 32018234  64036467 470041543 Word_jour-ALL.sort.count
 ### (split pattern 1; 2W-phrase)
 cd /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1
 - README: /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1/exec_command/README
