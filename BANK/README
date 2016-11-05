@@ -314,8 +314,10 @@ cd /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1
 -- 3. ./sort_each_5W_Jour-ALL.sh
 -- 4. ./sort_ALL_5W_presort_Jour-ALL.sh
 -- 5. ./sort-count_ALL_5W_Jour-ALL.sh
- ###===実行中===###
 - result: /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1/Phrase_jour-ALL.5W.sort.count
+wc /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1/Phrase_jour-ALL.5W.sort.count
+ 1190286036  7141716216 41738382613 /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1/Phrase_jour-ALL.5W.sort.count
+
 
 ##TASK(term-count.allmaterials)
 ### (split pattern 1)
