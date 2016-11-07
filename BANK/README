@@ -249,8 +249,6 @@ cd /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1
 -- 3. sort_ALL_W_presort_Jour-ALL.sh
 -- 4. sort-count_ALL_W_Jour-ALL.sh
 - result: /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1/Word_jour-ALL.sort.count
-wc Word_jour-ALL.sort.count
- 32018234  64036467 470041543 Word_jour-ALL.sort.count
 ### (split pattern 1; 2W-phrase)
 cd /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1
 - README: /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1/exec_command/README
@@ -268,8 +266,6 @@ cd /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1
 -- 4. ./sort_ALL_2W_presort_Jour-ALL.sh #20min
 -- 5. ./sort-count_ALL_2W_Jour-ALL.sh #10min
 - result: /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1/Phrase_jour-ALL.2W.sort.count
-wc /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1/Phrase_jour-ALL.2W.sort.count
- 132446170  397338510 2523271505 /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1/Phrase_jour-ALL.2W.sort.count
 ### (split pattern 1; 3W-phrase)
 cd /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1
 - README: /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1/exec_command/README
@@ -287,8 +283,6 @@ cd /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1
 -- 4. ./sort_ALL_3W_presort_Jour-ALL.sh
 -- 5. ./sort-count_ALL_3W_Jour-ALL.sh
 - result: /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1/Phrase_jour-ALL.3W.sort.count
-wc /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1/Phrase_jour-ALL.3W.sort.count
-  490862335  1963449340 11772404990 /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1/Phrase_jour-ALL.3W.sort.count
 ### (split pattern 1; 4W-phrase)
 cd /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1
 - プログラム:
@@ -305,8 +299,6 @@ cd /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1
 -- 4. ./sort_ALL_4W_presort_Jour-ALL.sh
 -- 5. ./sort-count_ALL_4W_Jour-ALL.sh
 - result: /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1/Phrase_jour-ALL.4W.sort.count
-wc /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1/Phrase_jour-ALL.4W.sort.count
-  943151106  4715755530 27692348990 /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1/Phrase_jour-ALL.4W.sort.count
 ### (split pattern 1; 5W-phrase)
 cd /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1
 - プログラム:
@@ -320,12 +312,9 @@ cd /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1
 -- 1. 実行済み
 -- 2. ./select_phrase5W.sh
 -- 3. ./sort_each_5W_Jour-ALL.sh
--- 4. ./sort_ALL_5W_presort_Jour-ALL.sh
+-- 4. ./sort_ALL_5W_presort_Jour-ALL.sh ###===実行中===###
 -- 5. ./sort-count_ALL_5W_Jour-ALL.sh
 - result: /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1/Phrase_jour-ALL.5W.sort.count
-wc /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1/Phrase_jour-ALL.5W.sort.count
- 1190286036  7141716216 41738382613 /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1/Phrase_jour-ALL.5W.sort.count
-
 
 ##TASK(term-count.allmaterials)
 ### (split pattern 1)
