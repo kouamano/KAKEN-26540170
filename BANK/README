@@ -1,4 +1,4 @@
-#[kaken-26540170]
+[kaken-26540170]
 #NOTE:
 ##20150428 新手順に切り替え
 ##開始インデックス(イタレータ)まとめ
@@ -763,7 +763,6 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/
 -- wordcountratio = Map[{#[[1]],#[[1]]/wordcounttotal//N,#[[2]]}&,wordcount]; 
 -- Save["wordcountratio.wl",wordcountratio]
 -- wordRule = Map[#[[3]]->{#[[1]],#[[2]]}&,wordcountratio];
-
 - objectの変換
 -- プログラム: /home/kamano/gitsrc/MATH_SCRIPT/SCRIPTS/count_to_wl.pl
 -- スクリプト:
