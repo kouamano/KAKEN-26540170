@@ -1327,6 +1327,7 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 -- program(考え中): /home/kamano/gitsrc/XMLOP/extract_ORG-Phrase-+RES+-spl.pl
 -- スクリプト: for file in hit*ACK*ORA*W.spl; do  /home/kamano/gitsrc/XMLOP/extract_ORG-Phrase-+RES+-spl.pl $file 3 > $file+RESc; done
 -- 中間結果: hit*ACK*ORA*W.spl+RESc
+##### <RESc>候補の抜き出し @ACK
 ####===20161031===####
 
 ###TASK(4.1.2): NBRP-Matセレクションの拡張(リソース)
@@ -1374,6 +1375,7 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 -- program(考え中): /home/kamano/gitsrc/XMLOP/extract_ORG-Phrase-+RES+-spl.pl
 -- スクリプト: for file in hit*Mat*ORM*W.spl; do  /home/kamano/gitsrc/XMLOP/extract_ORG-Phrase-+RES+-spl.pl $file 3 > $file+RESc; done
 -- 中間結果: hit*Mat*ORM*W.spl+RESc
+##### <RESc>候補の抜き出し @Mat
 ####===20161031===####
 
 
