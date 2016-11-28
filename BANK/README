@@ -1330,7 +1330,8 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 #####===20161031===#####
 ##### <RESc>候補の抜き出し @ACK
 - program:
- /home/kamano/gitsrc/XMLOP/extract_element.pl
+-- /home/kamano/gitsrc/XMLOP/extract_element.pl
+-- /home/kamano/gitsrc/XMLOP/KO_element.pl
 ###TASK(4.1.2): NBRP-Matセレクションの拡張(リソース)
 #### <ORG>、<W>タグの挿入 @Mat
 - 拡張される対象: リソース
