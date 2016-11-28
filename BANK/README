@@ -1319,14 +1319,14 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 - パターン: <RESc>-Phrase-ORG-spl
 -- 対象: hit*ACK*ROA*W.spl
--- program(考え中): /home/kamano/gitsrc/XMLOP/extract_+RES+-Phrase-ORG-spl.pl
+-- program: /home/kamano/gitsrc/XMLOP/extract_+RES+-Phrase-ORG-spl.pl
 -- スクリプト: for file in hit*ACK*ROA*W.spl; do  /home/kamano/gitsrc/XMLOP/extract_+RES+-Phrase-ORG-spl.pl $file 3 > $file+RESc; done
--- 結果: hit*ACK*ROA*W.spl+RESc
+-- 中間結果: hit*ACK*ROA*W.spl+RESc
 - パターン: ORG-Phrase-<RESc>-spl
 -- 対象: hit*ACK*ORA*W.spl
 -- program(考え中): /home/kamano/gitsrc/XMLOP/extract_ORG-Phrase-+RES+-spl.pl
 -- スクリプト: for file in hit*ACK*ORA*W.spl; do  /home/kamano/gitsrc/XMLOP/extract_ORG-Phrase-+RES+-spl.pl $file 3 > $file+RESc; done
--- 結果: hit*ACK*ORA*W.spl+RESc
+-- 中間結果: hit*ACK*ORA*W.spl+RESc
 ####===20161031===####
 
 ###TASK(4.1.2): NBRP-Matセレクションの拡張(リソース)
@@ -1366,14 +1366,14 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 - パターン: <RESc>-Phrase-ORG-spl
 -- 対象: hit*Mat*ROM*W.spl
--- program(考え中): /home/kamano/gitsrc/XMLOP/extract_+RES+-Phrase-ORG-spl.pl
+-- program: /home/kamano/gitsrc/XMLOP/extract_+RES+-Phrase-ORG-spl.pl
 -- スクリプト: for file in hit*Mat*ROM*W.spl; do  /home/kamano/gitsrc/XMLOP/extract_+RES+-Phrase-ORG-spl.pl $file 3 > $file+RESc; done
--- 結果: hit*Mat*ROM*W.spl+RESc
+-- 中間結果: hit*Mat*ROM*W.spl+RESc
 - パターン: ORG-Phrase-<RESc>-spl
 -- 対象: hit*Mat*ORM*W.spl
 -- program(考え中): /home/kamano/gitsrc/XMLOP/extract_ORG-Phrase-+RES+-spl.pl
 -- スクリプト: for file in hit*Mat*ORM*W.spl; do  /home/kamano/gitsrc/XMLOP/extract_ORG-Phrase-+RES+-spl.pl $file 3 > $file+RESc; done
--- 結果: hit*Mat*ORM*W.spl+RESc
+-- 中間結果: hit*Mat*ORM*W.spl+RESc
 ####===20161031===####
 
 
