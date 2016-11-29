@@ -1331,11 +1331,15 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 --- /home/kamano/gitsrc/XMLOP/extract_element.pl
 --- /home/kamano/gitsrc/XMLOP/KO_element.pl
 -- 基準:
- <ORG>タグが残るものは対象外
- grantの文字列があるものは対象外
- <italic>はほぼ間違いなくリソース
- (カッコ)の処理: カッコ内の文字列区切りはカンマまたはセミコロン(スペースではない)
+ 1. [Drop:文]<ORG>タグが残るものは対象外
+ 2. [Drop:文]grantの文字列があるものは対象外
+ 3. [Drop:フレーズ]{Dr.|Prof.|Mr.|Mrs.|Ms.} -- {[前置詞]|[接続詞]|\(\<\,\;}
+ 4. [リソース候補]<italic>はほぼ間違いなくリソース
+ 5. [リソース候補](カッコ)の処理: カッコ内の文字列区切りはカンマまたはセミコロン(スペースではない)
+ 6. [Drop:ターム]辞書でヒットするものは対象外
 -- 手順:
+--- 候補文の選択
+--- リソース名候補(フレーズの可能性あり)の抜き出し
 
 - パターン: ORG-Phrase-<RESc>-spl
 -- 対象: hit*ACK*ORA*W.spl+RESc
