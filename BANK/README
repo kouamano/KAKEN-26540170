@@ -1325,15 +1325,17 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 #####===20161031===#####
 ##### <RESc>候補の抜き出し @ACK
 #####===いまここ===#####
+cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 - パターン: <RESc>-Phrase-ORG-spl
 -- 対象: hit*ACK*ROA*W.spl+RESc
 -- program:
 --- /home/kamano/gitsrc/XMLOP/extract_element.pl
 --- /home/kamano/gitsrc/XMLOP/KO_element.pl
+--- /home/kamano/gitsrc/XMLOP/drop_personal-name.pl #作り中
 -- 基準:
  1. [Drop:文]<ORG>タグが残るものは対象外
  2. [Drop:文]grantの文字列があるものは対象外
- 3. [Drop:フレーズ]{Drs.|Profs.|Mrs.|Mss.} -- {\(|\<|\,|\;}
+ 3. [Drop:フレーズ]{Drs.|Profs.|Mrs.|Mss.} -- {\(|\<}
  4. [Drop:フレーズ]{Dr.|Prof.|Mr.|Ms.} -- {[前置詞]|[接続詞]|\(|\<|\,|\;}
  5. [リソース候補]<italic>はほぼ間違いなくリソース
  6. [リソース候補](カッコ)の処理: カッコ内の文字列区切りはカンマまたはセミコロン(スペースではない)
