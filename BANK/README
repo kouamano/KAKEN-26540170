@@ -1329,9 +1329,13 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 -- 中間結果: hit*ACK*ORA*W.spl+RESc
 #####===20161031===#####
 ##### <RESc>候補の抜き出し @ACK
-- program:
--- /home/kamano/gitsrc/XMLOP/extract_element.pl
--- /home/kamano/gitsrc/XMLOP/KO_element.pl
+#####===いまここ===#####
+- パターン: <RESc>-Phrase-ORG-spl
+-- 対象: hit*ACK*ROA*W.spl+RESc
+-- program:
+--- /home/kamano/gitsrc/XMLOP/extract_element.pl
+--- /home/kamano/gitsrc/XMLOP/KO_element.pl
+- パターン: ORG-Phrase-<RESc>-spl
 ###TASK(4.1.2): NBRP-Matセレクションの拡張(リソース)
 #### <ORG>、<W>タグの挿入 @Mat
 - 拡張される対象: リソース
