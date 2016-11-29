@@ -1324,7 +1324,7 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 -- 中間結果: hit*ACK*ROA*W.spl+RESc
 - パターン: ORG-Phrase-<RESc>-spl
 -- 対象: hit*ACK*ORA*W.spl
--- program(仮,ORGの後半のみ残る): /home/kamano/gitsrc/XMLOP/extract_ORG-Phrase-+RES+-spl.pl
+-- program(ORGタグが残るものは対象外=>ROAパターン): /home/kamano/gitsrc/XMLOP/extract_ORG-Phrase-+RES+-spl.pl
 -- スクリプト: for file in hit*ACK*ORA*W.spl; do  /home/kamano/gitsrc/XMLOP/extract_ORG-Phrase-+RES+-spl.pl $file 3 > $file+RESc; done
 -- 中間結果: hit*ACK*ORA*W.spl+RESc
 #####===20161031===#####
