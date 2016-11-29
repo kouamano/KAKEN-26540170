@@ -113,11 +113,6 @@ cd /BANK/PMC/20140724/articles.pmid/exec_command
 - プログラム: /home/kamano/gitsrc/XMLOP/extract_pmid.pl
 cd /BANK/PMC/20140724/articles.pmid/exec_command
 /BANK/PMC/20140724/articles.pmid/exec_command/jour-split.pmid.aa.sh
-##TASK(check.user-data-pmid): RIKEN-BRC利用者成果よりpmidを抽出(20140904 移動)
-- 対象: /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/user-data/PMID/ALL.pmid.sort.uniq
-##TASK(check.PMC_VS_user-data): RIKEN-BRC利用者成果pmid　PMC-XML_pmid　をマッチング(20140904 移動)
-- ツール: Mathematica
-- 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/RIKEN-BRC_2012/user-data/PMID/ALL.pmid.sort.uniq.in_pmc.hit
 
 
 #TASK(element-tree)
@@ -1332,10 +1327,16 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 #####===いまここ===#####
 - パターン: <RESc>-Phrase-ORG-spl
 -- 対象: hit*ACK*ROA*W.spl+RESc
--- 基準: <ORG>タグが残るものは対象外
 -- program:
 --- /home/kamano/gitsrc/XMLOP/extract_element.pl
 --- /home/kamano/gitsrc/XMLOP/KO_element.pl
+-- 基準:
+ <ORG>タグが残るものは対象外
+ grantの文字列があるものは対象外
+ <italic>はほぼ間違いなくリソース
+ (カッコ)の処理: カッコ内の文字列区切りはカンマまたはセミコロン(スペースではない)
+-- 手順:
+
 - パターン: ORG-Phrase-<RESc>-spl
 -- 対象: hit*ACK*ORA*W.spl+RESc
 -- 基準: <ORG>タグが残るものは対象外
