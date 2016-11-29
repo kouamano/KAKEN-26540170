@@ -1331,7 +1331,7 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 -- program:
 --- /home/kamano/gitsrc/XMLOP/extract_element.pl
  [ex.] cat hit*ACK*ROA*W.spl+RESc | /home/kamano/gitsrc/XMLOP/extract_element.pl RESc /dev/stdin -E
---- /home/kamano/gitsrc/XMLOP/drop_personal-name.pl #作り中
+--- /home/kamano/gitsrc/XMLOP/drop_personal-name.pl
 --- /home/kamano/gitsrc/XMLOP/KO_element.pl
 -- 基準:
  1. [Drop:文]<ORG>タグが残るものは対象外
