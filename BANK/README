@@ -1330,8 +1330,9 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 -- 対象: hit*ACK*ROA*W.spl+RESc
 -- program:
 --- /home/kamano/gitsrc/XMLOP/extract_element.pl
---- /home/kamano/gitsrc/XMLOP/KO_element.pl
+ [ex.] cat hit*ACK*ROA*W.spl+RESc | /home/kamano/gitsrc/XMLOP/extract_element.pl RESc /dev/stdin -E
 --- /home/kamano/gitsrc/XMLOP/drop_personal-name.pl #作り中
+--- /home/kamano/gitsrc/XMLOP/KO_element.pl
 -- 基準:
  1. [Drop:文]<ORG>タグが残るものは対象外
  2. [Drop:文]grantの文字列があるものは対象外
@@ -1343,6 +1344,8 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 -- 手順:
 --- 候補文の選択
 --- リソース名候補(フレーズの可能性あり)の抜き出し
+ [test] cat hit*ACK*ROA*W.spl+RESc | /home/kamano/gitsrc/XMLOP/extract_element.pl RESc /dev/stdin -E | /home/kamano/gitsrc/XMLOP/drop_personal-name.pl f=/dev/stdin h=/BANK/Dictionary/PersonalTitle.sn/PersonalTitle.sn t=/BANK/Dictionary/PersonalTitle.sn/tail.sn
+ [test2] cat hit*ACK*ROA*W.spl+RESc | /home/kamano/gitsrc/XMLOP/extract_element.pl RESc /dev/stdin -E | /home/kamano/gitsrc/XMLOP/drop_personal-name.pl f=/dev/stdin h=/BANK/Dictionary/PersonalTitle.sn/PersonalTitle.sn t=/BANK/Dictionary/PersonalTitle.sn/tail.sn
 
 - パターン: ORG-Phrase-<RESc>-spl
 -- 対象: hit*ACK*ORA*W.spl+RESc
