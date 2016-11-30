@@ -1343,9 +1343,8 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
  7. [Drop:ターム]辞書でヒットするものは対象外
 -- 手順:
 --- 候補文の選択
- [test] cat hit*ACK*ROA*W.spl+RESc | /home/kamano/gitsrc/XMLOP/extract_element.pl RESc /dev/stdin -E | /home/kamano/gitsrc/XMLOP/drop_personal-name.pl f=/dev/stdin h=/BANK/Dictionary/PersonalTitle.sn/PersonalTitle.sn t=/BANK/Dictionary/PersonalTitle.sn/tail.sn
- [test2] cat hit*ACK*ROA*W.spl+RESc | /home/kamano/gitsrc/XMLOP/extract_element.pl RESc /dev/stdin -E | /home/kamano/gitsrc/XMLOP/drop_personal-name.pl f=/dev/stdin h=/BANK/Dictionary/PersonalTitle.sn/PersonalTitle.sn t=/BANK/Dictionary/PersonalTitle.sn/tail.sn
- [test3.sn] cat hit*ACK*ROA*W.spl+RESc | /home/kamano/gitsrc/XMLOP/extract_element.pl RESc /dev/stdin -E | grep -v 'ORG\>' | grep -iv ' grant' | /home/kamano/gitsrc/XMLOP/drop_personal-name.pl f=/dev/stdin h=/BANK/Dictionary/PersonalTitle.sn/PersonalTitle.sn t=/BANK/Dictionary/PersonalTitle.sn/tail.sn
+ [1--4] cat hit*ACK*ROA*W.spl+RESc | /home/kamano/gitsrc/XMLOP/extract_element.pl RESc /dev/stdin -E | grep -v 'ORG\>' | grep -iv ' grant' | /home/kamano/gitsrc/XMLOP/drop_personal-name.pl f=/dev/stdin h=/BANK/Dictionary/PersonalTitle.sn/PersonalTitle.sn t=/BANK/Dictionary/PersonalTitle.sn/tail.sn -T | /home/kamano/gitsrc/XMLOP/drop_personal-name.pl f=/dev/stdin h=/BANK/Dictionary/PersonalTitle.pl/PersonalTitle.pl t=/BANK/Dictionary/PersonalTitle.pl/tail.pl -T > ROA_RES_cand.sentence
+---- 中間結果: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/ROA_RES_cand.sentence
 --- リソース名候補(フレーズの可能性あり)の抜き出し
 
 - パターン: ORG-Phrase-<RESc>-spl
