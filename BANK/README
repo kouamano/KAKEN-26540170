@@ -1332,7 +1332,7 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 --- /home/kamano/gitsrc/XMLOP/extract_element.pl
  [ex.] cat hit*ACK*ROA*W.spl+RESc | /home/kamano/gitsrc/XMLOP/extract_element.pl RESc /dev/stdin -E
 --- /home/kamano/gitsrc/XMLOP/drop_personal-name.pl
---- /home/kamano/gitsrc/XMLOP/KO_element.pl
+--- /home/kamano/gitsrc/XMLOP/KO_element.pl #書き直し
 -- 基準:
  1. [Drop:文]<ORG>タグが残るものは対象外
  2. [Drop:文]grantの文字列があるものは対象外
@@ -1345,7 +1345,10 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 --- 候補文の選択
  [1--4] cat hit*ACK*ROA*W.spl+RESc | /home/kamano/gitsrc/XMLOP/extract_element.pl RESc /dev/stdin -E | grep -v 'ORG\>' | grep -iv ' grant' | /home/kamano/gitsrc/XMLOP/drop_personal-name.pl f=/dev/stdin h=/BANK/Dictionary/PersonalTitle.sn/PersonalTitle.sn t=/BANK/Dictionary/PersonalTitle.sn/tail.sn -T | /home/kamano/gitsrc/XMLOP/drop_personal-name.pl f=/dev/stdin h=/BANK/Dictionary/PersonalTitle.pl/PersonalTitle.pl t=/BANK/Dictionary/PersonalTitle.pl/tail.pl -T > ROA_RES_cand.sentence
 ---- 中間結果: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/ROA_RES_cand.sentence
---- リソース名候補(フレーズの可能性あり)の抜き出し
+--- イタリック部の抜き出し
+ 出力ファイルは２つ: 1.イタリック部, 2.イタリック部のKO
+--- カッコ部の抜き出し
+ 出力ファイルは２つ: 1.カッコ部, 2.カッコ部のKO
 
 - パターン: ORG-Phrase-<RESc>-spl #ORA
 -- 対象: hit*ACK*ORA*W.spl+RESc
