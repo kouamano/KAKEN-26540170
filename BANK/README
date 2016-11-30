@@ -1326,7 +1326,7 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 ##### <RESc>候補の抜き出し @ACK
 #####===いまここ===#####
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
-- パターン: <RESc>-Phrase-ORG-spl
+- パターン: <RESc>-Phrase-ORG-spl #ROA
 -- 対象: hit*ACK*ROA*W.spl+RESc
 -- program:
 --- /home/kamano/gitsrc/XMLOP/extract_element.pl
@@ -1347,7 +1347,7 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 ---- 中間結果: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/ROA_RES_cand.sentence
 --- リソース名候補(フレーズの可能性あり)の抜き出し
 
-- パターン: ORG-Phrase-<RESc>-spl
+- パターン: ORG-Phrase-<RESc>-spl #ORA
 -- 対象: hit*ACK*ORA*W.spl+RESc
 -- 基準: <ORG>タグが残るものは対象外
 ###TASK(4.1.2): NBRP-Matセレクションの拡張(リソース)
