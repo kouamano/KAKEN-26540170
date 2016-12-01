@@ -1341,7 +1341,7 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
  4. [Drop:フレーズ]{Dr.|Prof.|Mr.|Ms.} -- {[前置詞]|[接続詞]|\(|\<|\,|\;}
  5. [リソース候補]<italic>はほぼ間違いなくリソース
  6. [リソース候補](カッコ)の処理: カッコ内の文字列区切りはカンマまたはセミコロン(スペースではない)
- 7. [Drop:ターム]辞書でヒットするものは対象外
+ 7. [Drop:ターム]各セットにつき辞書でヒットするものは対象外
 -- 手順:
 --- 候補文の選択:
  [1--4] cat hit*ACK*ROA*W.spl+RESc | /home/kamano/gitsrc/XMLOP/extract_element.pl RESc /dev/stdin -E | grep -v 'ORG\>' | grep -iv ' grant' | /home/kamano/gitsrc/XMLOP/drop_personal-name.pl f=/dev/stdin h=/BANK/Dictionary/PersonalTitle.sn/PersonalTitle.sn t=/BANK/Dictionary/PersonalTitle.sn/tail.sn -T | /home/kamano/gitsrc/XMLOP/drop_personal-name.pl f=/dev/stdin h=/BANK/Dictionary/PersonalTitle.pl/PersonalTitle.pl t=/BANK/Dictionary/PersonalTitle.pl/tail.pl -T > ROA_RES_cand.sentence
