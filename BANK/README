@@ -1353,6 +1353,7 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 --- カッコ部の抜き出し/KO:
  出力ファイルは２つ: 1.カッコ部, 2.カッコ部のKO
  [6] cat ROA_RES_cand.sentence.KO | /home/kamano/gitsrc/XMLOP/KO_pattern.pl spat='\(' epat='\)' if=/dev/stdin of=ROA_RES_cand.BRK > ROA_RES_cand.sentence.KO.KO
+---- 組織名のKO
 
 - パターン: ORG-Phrase-<RESc>-spl #ORA
 -- 対象: hit*ACK*ORA*W.spl+RESc
