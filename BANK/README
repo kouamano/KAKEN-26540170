@@ -644,6 +644,7 @@ grep ';E' check_7.E.20151015 > check_7.E.20151015.E
 --- 各行におけるセンテンスレコード区切り: <タブ><セミコロン><セミコロン><タブ>
 --- レコードセンテンスの構成: <レコードID>、<コンテンツ>、<ヒットリソース>、<ヒット組織名>、<ヒットの順番>、<備考>、<質問>の<タブ>区切り
 --- <リソース名>と<組織名>の区切り: <スペース><セミコロン><スペース>
+- 最終結果(キュレーテッドコアコレクション:CCC/コメント付き): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.E.S.L.C
 - 最終結果(キュレーテッドコアコレクション:CCC): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.E.S.L
 - 結果の集計情報
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
@@ -1412,12 +1413,21 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 ##### <RESc>候補の抜き出し @Mat
 
 
-#TASK(4B): パターン検索によるコレクションの拡張:方法(B)
+#TASK(4B): パターン検索によるリソースコレクションの拡張:方法(B)
 #Bigram(Edge)の出現による拡張：<Org>..<Res>または<Res>..<Org>の「正解」パターンのBigram出現とAck/Mat全体のBigram出現を比較して高出現のものを採用。(20170401より開始)
-##<Org>..<Res>@ACK
-##<Res>..<Org>@ACK
-##<Org>..<Res>@Mat
-##<Res>..<Org>@Mat
+- ソースデータ: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.E.S.L
+##センテンス全体を利用
+###<Org>..<Res>@ACK
+#### 正解データのBigram
+###<Res>..<Org>@ACK
+###<Org>..<Res>@Mat
+###<Res>..<Org>@Mat
+##<Res>..<Org>または<Res>..<Org>間を利用
+###<Org>..<Res>@ACK
+#### 正解データのBigram
+###<Res>..<Org>@ACK
+###<Org>..<Res>@Mat
+###<Res>..<Org>@Mat
 
 #ペンディング
 ##TASK(2.2)[2](ペンディング) バイオリソース名の前後の出現文字(単語)パターンより正解バイオリソースかを判定(20150911)
