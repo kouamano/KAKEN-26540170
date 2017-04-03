@@ -1231,7 +1231,7 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 
 
 
-#TASK(3): 評価対象機関名拡張(/BANK/PMC/20140724/elements/aff)
+#TASK(3): 評価対象機関名拡張(未使用)(/BANK/PMC/20140724/elements/aff)
 #aff領域より得られた機関名(住所つき)をmaterial、ack領域に対して検索、存在を確認。
 #所属をカンマで区切り、各フレーズを対象領域に対してマッチング。
 #<tag1>,<tag2>,<tag3>
@@ -1269,11 +1269,10 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 - 件数(ドキュメント): 19091
 
 
-
-#TASK(4): パターン検索によるコレクションの拡張
-##TASK(4.1): NBRPセレクションの拡張
+#TASK(4A): パターン検索によるリソースコレクションの拡張:方法(A)
+##TASK(4A.1): NBRPセレクションの拡張
 ##ACKとMatでフォーマットが違うので注意
-###TASK(4.1.1): NBRP-ACKセレクションの拡張(リソース)
+###TASK(4A.1.1): NBRP-ACKセレクションの拡張(リソース)
 #### <ORG>、<W>タグの挿入 @ACK
 - 拡張される対象: リソース
 - 検索対象(機関名がヒットしたセクション): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_Org_from_ACK.tsv
@@ -1364,7 +1363,7 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 -- 対象: hit*ACK*ORA*W.spl+RESc
 -- 基準: <ORG>タグが残るものは対象外
 
-###TASK(4.1.2): NBRP-Matセレクションの拡張(リソース)
+###TASK(4A.1.2): NBRP-Matセレクションの拡張(リソース)
 #### <ORG>、<W>タグの挿入 @Mat
 - 拡張される対象: リソース
 - 検索対象: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_Org_from_Mat.au.tsv
@@ -1413,6 +1412,12 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 ##### <RESc>候補の抜き出し @Mat
 
 
+#TASK(4B): パターン検索によるコレクションの拡張:方法(B)
+#Bigram(Edge)の出現による拡張：<Org>..<Res>または<Res>..<Org>の「正解」パターンのBigram出現とAck/Mat全体のBigram出現を比較して高出現のものを採用。(20170401より開始)
+##<Org>..<Res>@ACK
+##<Res>..<Org>@ACK
+##<Org>..<Res>@Mat
+##<Res>..<Org>@Mat
 
 #ペンディング
 ##TASK(2.2)[2](ペンディング) バイオリソース名の前後の出現文字(単語)パターンより正解バイオリソースかを判定(20150911)
