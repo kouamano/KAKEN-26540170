@@ -645,7 +645,7 @@ grep ';E' check_7.E.20151015 > check_7.E.20151015.E
 --- レコードセンテンスの構成: <レコードID>、<コンテンツ>、<ヒットリソース>、<ヒット組織名>、<ヒットの順番>、<備考>、<質問>の<タブ>区切り
 --- <リソース名>と<組織名>の区切り: <スペース><セミコロン><スペース>
 - 最終結果(キュレーテッドコアコレクション:CCC/コメント付き): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.E.S.L.C
-- 最終結果(キュレーテッドコアコレクション:CCC): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.E.S.L
+- 最終結果(キュレーテッドコアコレクション:CCC): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.E.S
 - 結果の集計情報
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 -- 全論文数
