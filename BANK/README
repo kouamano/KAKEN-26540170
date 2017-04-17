@@ -647,40 +647,34 @@ grep ';E' check_7.E.20151015 > check_7.E.20151015.E
 -- 最終結果: addLabel_sentence.pl hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.S > hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.S.L
 - 結果の集計情報(暫定 20170401)
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
--- 全論文数
-grep '^	' hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.E.S | wc
-    954   39533  365305
--- センテンス数:
---- Total
-grep '^		' hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev | wc
-    983   36238  256870
+-- 論文数
 --- <ACK>
-grep 'ACK			' hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.L | wc
-    246   10376   71610
+grep '^ACK	' hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.S.L | wc
+    245   11405   96474
 --- <Mat>
-grep 'Mat			' hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.L | wc
-    737   26845  189192
+grep '^Mat	' hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.S.L | wc
+    731   29129  275967
 -- ヒットした<ORG>
 --- 述べ:
-/home/kamano/gitsrc/XMLOP/extract_element.pl ORG /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.E.S.L | wc
+/home/kamano/gitsrc/XMLOP/extract_element.pl ORG /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.S.L -E | wc
    1022    2168   27324
 --- ユニーク:
-/home/kamano/gitsrc/XMLOP/extract_element.pl ORG /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.E.S.L | sort | uniq | wc
+/home/kamano/gitsrc/XMLOP/extract_element.pl ORG /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.S.L -E | sort | uniq | wc
      38     112    1318
 --- カウント:
-/home/kamano/gitsrc/XMLOP/extract_element.pl ORG /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.E.S.L | sort | uniq -c | sort -nr > hit_ResOrg-120151015_ORG.sort.uniq.count
+/home/kamano/gitsrc/XMLOP/extract_element.pl ORG /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.S.L -E | sort | uniq -c | sort -nr > hit_ResOrg-120151015_ORG.sort.uniq.count
 -- ヒットした<RES>
 --- 述べ:
-/home/kamano/gitsrc/XMLOP/extract_element.pl RES /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.E.S.L | wc
-   1369    1541   25125
+/home/kamano/gitsrc/XMLOP/extract_element.pl RES /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.S.L -E | wc
+   1369    1541   25130
 --- ユニーク:
-/home/kamano/gitsrc/XMLOP/extract_element.pl RES /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.E.S.L | sort | uniq | wc
-    444     514    8401
+/home/kamano/gitsrc/XMLOP/extract_element.pl RES /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.S.L -E | sort | uniq | wc
+    445     515    8422
 --- カウント:
-/home/kamano/gitsrc/XMLOP/extract_element.pl RES /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.E.S.L | sort | uniq -c | sort -nr > hit_ResOrg-120151015_RES.sort.uniq.count
+/home/kamano/gitsrc/XMLOP/extract_element.pl RES /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.S.L -E | sort | uniq -c | sort -nr > hit_ResOrg-120151015_RES.sort.uniq.count
 ###ここまで完了
 ###TASK(2.1.8): 機関名、バイオリソース名が同時出現するセンテンスのパターン解析
-- 対象: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.E.S.L
+- 対象: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.S.L
 ###候補の洗い出しには、[1]タームの出現、[2]エッジ(バイグラム)の出現、が使えそう。まずは[1]を試す。[2]は考え中。
 #### 集計1 : </RES>...<ORG> or </ORG>...<RES> 間、単語数ごとの集計
 - パターン集計結果のまとめ: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/analysis/pattern-bunseki-kekka (図書館総合展)
@@ -1325,7 +1319,6 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 -- 中間結果: hit*ACK*ORA*W.spl+RESc
 #####===20161031===#####
 ##### <RESc>候補の抜き出し @ACK
-#####===いまここ===#####
 ###### ROA
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 - パターン: <RESc>-Phrase-ORG-spl #ROA
