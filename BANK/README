@@ -1414,7 +1414,7 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 
 #TASK(4B): パターン検索によるリソースコレクションの拡張:方法(B)
 #Bigram(Edge)の出現による拡張：<Org>..<Res>または<Res>..<Org>の「正解」パターンのBigram出現とAck/Mat全体のBigram出現を比較して高出現のものを採用。(20170401より開始)
-- ソースデータ: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.E.S.L
+- ソースデータ: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.S.L
 ##センテンス全体を利用
 ###<Org>..<Res>@ACK
 #### 正解データのBigram
