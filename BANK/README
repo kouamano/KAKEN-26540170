@@ -165,6 +165,9 @@ cd /BANK/PMC/20140724/elements/sec-type
 ###TASK(extract.ack) :  extract acknowledgement region
 -> 石川氏
 - コンテンツ: /BANK/PMC/20140724/elements/acknowledgement/PMC-ACK-v6_pmid.tsv
+####XMLタグのdrop
+####タグ部分はスペース等に変換せずにdrop
+いまここ
 ###TASK(extract.material) : extract *material* region ; (20140417)
 ###2段階で行なう: 1. ポインター情報作成, 2. ポインター情報を元にソースから抜き出す。
 ###ポインター作成は前段階で完了。
@@ -175,8 +178,8 @@ cd /BANK/PMC/20140724/elements/sec-type
 -- example: /home/kamano/gitsrc/XMLOP/extract_content_from_reg_allmaterial.pl /BANK/PMC/20140724/articles /BANK/PMC/20140724/elements/MERGED/allmaterials/allmaterials.au.reg
 - スクリプト: /BANK/PMC/20140724/elements/MERGED/allmaterials/exec_command/extract_cont_from_reg.au.sh
 - コンテンツ: /BANK/PMC/20140724/elements/MERGED/allmaterials/allmaterials.au.reg.cont
-###XMLタグのdrop
-###タグ部分はスペース等に変換せずにdrop
+####XMLタグのdrop
+####タグ部分はスペース等に変換せずにdrop
 いまここ
 ##TASK(ACKファイル名取り出し)
 cd /BANK/PMC/20140724/elements/acknowledgement
