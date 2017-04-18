@@ -152,39 +152,40 @@ cd /BANK/PMC/20140724/elements/sec-type
 - 結果: /BANK/PMC/20140724/elements/sec-type/ALL_sec-type.sort.count.sort
 
 
-#TASK(extract)
-##TASK(extract.aff) : extract affiliation region
-## -> 石川氏
-- コンテンツ: /BANK/PMC/20140724/elements/aff/PMC-AFF-v1.tsv (20141114)
-##TASK(extract.ack) :  extract acknowledgement region
-## -> 石川氏
-- コンテンツ: /BANK/PMC/20140724/elements/acknowledgement/PMC-ACK-v6_pmid.tsv
-##TASK(extract.material) : extract *material* region ; (20140417)
-##2段階で行なう: 1. ポインター情報作成, 2. ポインター情報を元にソースから抜き出す。
-### 領域のポインター情報作成(20140417)
+#TASK(extract) : 領域(セクション)の抽出
+##TASK(pointer) : 領域のポインター情報作成(20140417)
 - 対象: /BANK/PMC/20140724/elements/ALL/ALL_sort_pos_rev-au.reg+lv
 - プログラム: /home/kamano/gitsrc/XMLOP/extract_pos-tag-allmaterials.pl
  <*material*></>のリージョンを一発で取り出すスクリプト。
 - スクリプト: /BANK/PMC/20140724/elements/MERGED/allmaterials/exec_command/extract_all-materials-reg_from_reg.sh
 - 結果: /BANK/PMC/20140724/elements/MERGED/allmaterials/allmaterials.au.reg
-### 領域抽出(20150417)
+###TASK(extract.aff) : extract affiliation region
+-> 石川氏
+- コンテンツ: /BANK/PMC/20140724/elements/aff/PMC-AFF-v1.tsv (20141114)
+###TASK(extract.ack) :  extract acknowledgement region
+-> 石川氏
+- コンテンツ: /BANK/PMC/20140724/elements/acknowledgement/PMC-ACK-v6_pmid.tsv
+###TASK(extract.material) : extract *material* region ; (20140417)
+###2段階で行なう: 1. ポインター情報作成, 2. ポインター情報を元にソースから抜き出す。
+###ポインター作成は前段階で完了。
+###領域抽出:material/method(20150417)
 - 対象: /BANK/PMC/20140724/elements/MERGED/allmaterials/allmaterials.au.reg
 - プログラム: /home/kamano/gitsrc/XMLOP/extract_content_from_reg_allmaterial.pl
  extract_pos-tag-allmaterials.pl の出力から、直接対象領域を取り出す。
 -- example: /home/kamano/gitsrc/XMLOP/extract_content_from_reg_allmaterial.pl /BANK/PMC/20140724/articles /BANK/PMC/20140724/elements/MERGED/allmaterials/allmaterials.au.reg
 - スクリプト: /BANK/PMC/20140724/elements/MERGED/allmaterials/exec_command/extract_cont_from_reg.au.sh
 - コンテンツ: /BANK/PMC/20140724/elements/MERGED/allmaterials/allmaterials.au.reg.cont
-## TASK(ACKファイル名取り出し)
+##TASK(ACKファイル名取り出し)
 cd /BANK/PMC/20140724/elements/acknowledgement
 - 対象ack: /BANK/PMC/20140724/elements/acknowledgement/PMC-ACK-v6_pmid.tsv
 - nxmlファイル名取り出し: 
 awk -F '	' '{print $2}' PMC-ACK-v6_pmid.tsv | sed -e 's/^PMC\///' > PMC-ACK-v6_pmid.nxmlName
-## TASK(Matのファイル名取り出し)
+##TASK(Matのファイル名取り出し)
 cd /BANK/PMC/20140724/elements/MERGED/allmaterials/
 - 対象mat: /BANK/PMC/20140724/elements/MERGED/allmaterials/allmaterials.au.reg.cont
 - nxmlファイル取り出し:
 cat *cont | awk -F '	' '{print $1}' | sed -e 's/^\/BANK\/PMC\/20140724\/articles\///'  > allmaterials.nxmlNames
-## TASK(extract.xref): xrefを含む直上位のレベルを抜き出す。
+##TASK(extract.xref): xrefを含む直上位のレベルを抜き出す。
 ### 1. xrefと直上タグのポジションを抜き出し、必要なxref部分を特定、特定領域をプリント ver.2 (20150417)
 #### 1.1 xrefと直上タグのポジションを抜き出す (20150417)
 - 対象: /BANK/PMC/20140724/elements/ALL/ALL_sort_pos_rev-au.reg+lv
