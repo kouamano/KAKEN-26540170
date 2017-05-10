@@ -159,6 +159,7 @@ cd /BANK/PMC/20140724/elements/sec-type
  <*material*></>のリージョンを一発で取り出すスクリプト。
 - スクリプト: /BANK/PMC/20140724/elements/MERGED/allmaterials/exec_command/extract_all-materials-reg_from_reg.sh
 - 結果: /BANK/PMC/20140724/elements/MERGED/allmaterials/allmaterials.au.reg
+- 材料セクション表現のリスト: grep 'REGION_START' /BANK/PMC/20140724/elements/MERGED/allmaterials/allmaterials.a*.reg | awk -F ':' '{print $4}' | /home/kamano/gitsrc/XMLOP/extract_type_in_tag.pl  | sort | uniq -c > material_section_types.count
 ###TASK(extract.aff) : extract affiliation region
 -> 石川氏
 - コンテンツ: /BANK/PMC/20140724/elements/aff/PMC-AFF-v1.tsv (20141114)
