@@ -685,7 +685,10 @@ grep '^Mat	' hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark
 --- カウント:
 /home/kamano/gitsrc/XMLOP/extract_element.pl RES /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.S.L -E | sort | uniq -c | sort -nr > hit_ResOrg-120151015_RES.sort.uniq.count
 ###ここまで完了
-###TASK(2.1.8): 機関名、バイオリソース名が同時出現するセンテンスのパターン解析
+###TASK(2.1.8): e. 現行結果に対して機関 vs 機関の影響関係抽出
+- プログラム: /home/kamano/gitsrc/XMLOP/extract_element.pl
+
+###TASK(2.1.9): 機関名、バイオリソース名が同時出現するセンテンスのパターン解析
 - 対象: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.S.L
 ###候補の洗い出しには、[1]タームの出現、[2]エッジ(バイグラム)の出現、が使えそう。まずは[1]を試す。[2]は考え中。
 #### 集計1 : </RES>...<ORG> or </ORG>...<RES> 間、単語数ごとの集計
