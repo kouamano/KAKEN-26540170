@@ -699,8 +699,9 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/
 awk -F '	' '{print $3}' /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.S.L.ref | sed -e 's/^.* //g' > hit_ResOrg.sel.filenames
 --- ファイルリストから対応するaff抽出:
 while read ln; do /home/kamano/gitsrc/XMLOP/extract_element.pl aff  $ln -E ' ;; ';  echo ; done < hit_ResOrg.sel.filenames > hit_ResOrg.sel.aff
--- <RES>抽出
--- <ORG>抽出
+-- <RES>;<ORG>抽出
+cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
+awk -F '	' '{print $1"\t"$7"\t"$8"\t"$9}' /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.S.L > hit_ResOrg.odr
 ###いまここ###
 
 ###TASK(2.1.9): 機関名、バイオリソース名が同時出現するセンテンスのパターン解析
