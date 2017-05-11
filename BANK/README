@@ -541,6 +541,7 @@ while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; d
 - エスケープコマンド: escape_char sf=/BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt lf=/usr/local/var/perl_esc.list > /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt.esc
 - ほんとは、こっちのファイルを使う: /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt.sort.uniq.esc
 ####リソース名
+####TODO:文字列の長い順にソート
 - ncrコマンド: utf8_to_ncr /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_5 > /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_5.ncr
 - エスケープコマンド: escape_char sf=/BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_5.ncr lf=/usr/local/var/perl_esc.list > /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_5.ncr.esc
 ###TASK(2.0.1): a. 機関名hit論文の抽出 in ACK
@@ -692,11 +693,14 @@ grep '^Mat	' hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark
 - プログラム: /home/kamano/gitsrc/XMLOP/extract_element.pl
 - 手順:
 対象に対して一行ずつ対応させる。
--- ファイルリスト作成:
+-- <aff>抽出
+--- aff抽出対象ファイルリスト作成:
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/
 awk -F '	' '{print $3}' /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.S.L.ref | sed -e 's/^.* //g' > hit_ResOrg.sel.filenames
--- ファイルリストから対応するaff抽出:
+--- ファイルリストから対応するaff抽出:
 while read ln; do /home/kamano/gitsrc/XMLOP/extract_element.pl aff  $ln -E ' ;; ';  echo ; done < hit_ResOrg.sel.filenames > hit_ResOrg.sel.aff
+-- <RES>抽出
+-- <ORG>抽出
 ###いまここ###
 
 ###TASK(2.1.9): 機関名、バイオリソース名が同時出現するセンテンスのパターン解析
