@@ -690,6 +690,14 @@ grep '^Mat	' hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark
 ###TASK(2.1.8): e. 現行結果に対して機関 vs 機関の影響関係抽出
 - 対象: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.S.L
 - プログラム: /home/kamano/gitsrc/XMLOP/extract_element.pl
+- 手順:
+対象に対して一行ずつ対応させる。
+-- ファイルリスト作成:
+cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/
+awk -F '	' '{print $3}' /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.S.L.ref | sed -e 's/^.* //g' > hit_ResOrg.sel.filenames
+-- ファイルリストから対応するaff抽出:
+while read ln; do /home/kamano/gitsrc/XMLOP/extract_element.pl aff  $ln -E ' ;; ';  echo ; done < hit_ResOrg.sel.filenames > hit_ResOrg.sel.aff
+###いまここ###
 
 ###TASK(2.1.9): 機関名、バイオリソース名が同時出現するセンテンスのパターン解析
 - 対象: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.S.L
