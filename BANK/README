@@ -1358,8 +1358,8 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 --- /home/kamano/gitsrc/XMLOP/extract_element.pl
  [ex.] cat hit*ACK*ROA*W.spl+RESc | /home/kamano/gitsrc/XMLOP/extract_element.pl RESc /dev/stdin -E
 --- /home/kamano/gitsrc/XMLOP/drop_personal-name.pl
---- /home/kamano/gitsrc/XMLOP/KO_element.pl
---- /home/kamano/gitsrc/XMLOP/KO_pattern.pl
+--- /home/kamano/gitsrc/XMLOP/drop_element.pl
+--- /home/kamano/gitsrc/XMLOP/drop_pattern.pl
 -- 基準:
  1. [Drop:文]<ORG>タグが残るものは対象外
  2. [Drop:文]grantの文字列があるものは対象外
@@ -1374,11 +1374,11 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 ---- 中間結果: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/ROA_RES_cand.sentence
 --- イタリック部の抜き出し/KO:
  出力ファイルは２つ: 1.イタリック部, 2.イタリック部のKO
- [5] cat ROA_RES_cand.sentence | /home/kamano/gitsrc/XMLOP/KO_element.pl tag=italic if=/dev/stdin -E of=ROA_RES_cand.itl > ROA_RES_cand.sentence.KO
+ [5] cat ROA_RES_cand.sentence | /home/kamano/gitsrc/XMLOP/drop_element.pl tag=italic if=/dev/stdin -E of=ROA_RES_cand.itl > ROA_RES_cand.sentence.KO
 ---- 一般語のKO
 --- カッコ部の抜き出し/KO:
  出力ファイルは２つ: 1.カッコ部, 2.カッコ部のKO
- [6] cat ROA_RES_cand.sentence.KO | /home/kamano/gitsrc/XMLOP/KO_pattern.pl spat='\(' epat='\)' if=/dev/stdin of=ROA_RES_cand.BRK > ROA_RES_cand.sentence.KO.KO
+ [6] cat ROA_RES_cand.sentence.KO | /home/kamano/gitsrc/XMLOP/drop_pattern.pl spat='\(' epat='\)' if=/dev/stdin of=ROA_RES_cand.BRK > ROA_RES_cand.sentence.KO.KO
 ---- 組織名のKO
 ----- ファイル: /BANK/Dictionary/OrganizationPatt/Organization.patt
 #####===以上検討中===#####
