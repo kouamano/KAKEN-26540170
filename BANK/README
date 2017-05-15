@@ -703,14 +703,18 @@ while read ln; do /home/kamano/gitsrc/XMLOP/extract_element.pl aff  $ln -E ' ;; 
 -- <RES>-<ORG>抽出
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 awk -F '	' '{print $1"\t"$7"\t"$8"\t"$9}' /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.S.L > hit_ResOrg.odr
-###いまここ###
 -- 分配
---- プログラム: dist_patt_from_odr.pl (作り中)
---- <ORG>がひとつ => <ORG> x <RES>
---- <ORG>と<RES>の数が複数で同じ => <ORG><RES>,<ORG><RES>
---- <ORG>が複数連続、<RES>がひとつ => 隣接する<ORG><RES>/<RES><ORG>を抽出
---- <RES><ORG><RES> => <RES><ORG>
-###2017-05-12###
+--- プログラム: dist_patt_from_odr.pl
+---- <ORG>がひとつ => <ORG> x <RES>
+---- <ORG>と<RES>の数が複数で同じ => <ORG><RES>,<ORG><RES>
+---- <ORG>が複数連続、<RES>がひとつ => 隣接する<ORG><RES>/<RES><ORG>を抽出
+---- <RES><ORG><RES> => <RES><ORG>
+--- 分配実行: ./dist_patt_from_odr.pl hit_ResOrg.odr > hit_ResOrg.odr.dist
+--- 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.odr.dist
+###2017-05-15###
+###いまここ###
+
+
 
 ###TASK(2.1.9): 機関名、バイオリソース名が同時出現するセンテンスのパターン解析
 - 対象: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.S.L
