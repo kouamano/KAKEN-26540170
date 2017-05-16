@@ -624,7 +624,6 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015
 ./exec_command/extract_HitOrg_from_dropE.pl *dropE.html | ./exec_command/extract_redFontStr_from_HitRes.pl | sort | uniq | wc
      32      89     699
-###(20150730)完了###
 ###TASK(3.1.7): d. 機関名、バイオリソース名が同時出現するセンテンス(ピリオド区切り、場合によってはカンマ、セミコロン区切り)を人手で抜きだし(水野氏実行完了)
 - 対象: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_*.tsv.color2.sel.dropE.html
 - 手順
@@ -687,38 +686,13 @@ grep '^Mat	' hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark
     445     515    8422
 --- カウント:
 /home/kamano/gitsrc/XMLOP/extract_element.pl RES /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.S.L -E | sort | uniq -c | sort -nr > hit_ResOrg-120151015_RES.sort.uniq.count
-###TASK(3.1.8): e. 現行結果に対して機関 vs 機関の影響関係抽出
+
+
+
+
+#TASK(4): 機関名、バイオリソース名が同時出現するセンテンスのパターン解析
 - 対象: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.S.L
-- プログラム: /home/kamano/gitsrc/XMLOP/extract_element.pl
-- 手順:
-対象に対して一行ずつ対応させる。
--- <aff>抽出
---- aff抽出対象ファイルリスト作成:
-cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/
-awk -F '	' '{print $3}' /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.S.L.ref | sed -e 's/^.* //g' > hit_ResOrg.sel.filenames
---- ファイルリストから対応するaff抽出:
-while read ln; do /home/kamano/gitsrc/XMLOP/extract_element.pl aff  $ln -E ' ;; ';  echo ; done < hit_ResOrg.sel.filenames > hit_ResOrg.sel.aff
---- <aff>のリスト:
-/home/kamano/gitsrc/XMLOP/drop_element.pl tag=label if=hit_ResOrg.sel.aff  -E | /home/kamano/gitsrc/XMLOP/drop_htmltags.pl | sed -e 's/ ;; /\n/g' | sed -e 's/^ +//g' | sed -e 's/ +$//g' | sort | uniq -c | sort -nr > hit_ResOrg.sel.aff.list.sort.count
--- <RES>-<ORG>抽出
-cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
-awk -F '	' '{print $1"\t"$7"\t"$8"\t"$9}' /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.S.L > hit_ResOrg.odr
--- 分配
---- プログラム: dist_patt_from_odr.pl
----- <ORG>がひとつ => <ORG> x <RES>
----- <ORG>と<RES>の数が複数で同じ => <ORG><RES>,<ORG><RES>
----- <ORG>が複数連続、<RES>がひとつ => 隣接する<ORG><RES>/<RES><ORG>を抽出
----- <RES><ORG><RES> => <RES><ORG>
---- 分配実行: ./dist_patt_from_odr.pl hit_ResOrg.odr > hit_ResOrg.odr.dist
---- 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.odr.dist
-###2017-05-15###
-###いまここ###
-
-
-
-###TASK(3.1.9): 機関名、バイオリソース名が同時出現するセンテンスのパターン解析
-- 対象: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.S.L
-###候補の洗い出しには、[1]タームの出現、[2]エッジ(バイグラム)の出現、が使えそう。まずは[1]を試す。[2]は考え中。
+#候補の洗い出しには、[1]タームの出現、[2]エッジ(バイグラム)の出現、が使えそう。まずは[1]を試す。[2]は考え中。
 #### 集計1 : </RES>...<ORG> or </ORG>...<RES> 間、単語数ごとの集計
 - パターン集計結果のまとめ: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/analysis/pattern-bunseki-kekka (図書館総合展)
 #### 集計2 : </RES>...<ORG> or </ORG>...<RES> 間の単語数制限なし (20160801)
@@ -778,7 +752,7 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/
 /home/kamano/gitsrc/utility/split_terms.pl region_ORG-RES_ACK.droptags | sort | uniq -c | sort -nr > region_ORG-RES_ACK.droptags.term
 ###### 集計2.2.2 : 句読点カッコ類を落とす
 ####### 集計2.2.2.1 : RES-ORGまたはORG-RES間のワード集計:1term
-######## (1)カウント
+######## i. カウント
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/
 - RES-ORG@Mat
 /home/kamano/gitsrc/utility/split_terms.pl region_RES-ORG_Mat.droptags.drop1 | sort | uniq -c | sort -nr > region_RES-ORG_Mat.droptags.drop1.term
@@ -788,7 +762,7 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/
 /home/kamano/gitsrc/utility/split_terms.pl region_ORG-RES_Mat.droptags.drop1 | sort | uniq -c | sort -nr > region_ORG-RES_Mat.droptags.drop1.term
 - ORG-RES@ACK
 /home/kamano/gitsrc/utility/split_terms.pl region_ORG-RES_ACK.droptags.drop1 | sort | uniq -c | sort -nr > region_ORG-RES_ACK.droptags.drop1.term
-######## (2)RES-ORGまたはORG-RES間のワード集計:1term:region内の出現率と全体の出現確率の比に出現数をかけた値が高いtermから抽出
+######## ii. RES-ORGまたはORG-RES間のワード集計:1term:region内の出現率と全体の出現確率の比に出現数をかけた値が高いtermから抽出
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/
 - base
 -- file: /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1/Word_jour-ALL.sort.count
@@ -802,7 +776,7 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/
 -- スクリプト:
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 for file in *drop1.term; do /home/kamano/gitsrc/MATH_SCRIPT/SCRIPTS/count_to_wl.pl $file > $file.wl; done
-######## (3)出現率比と出現の積が高い順に一般語を取り出す(候補term)。
+######## iii. 出現率比と出現の積が高い順に一般語を取り出す(候補term)。
 - RES-ORG@Mat
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 -- program: Math
@@ -923,7 +897,7 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 --- Export["ORArateSelProdDicTopDelnoun.tsv",ORArateSelProdDicTopDelnoun]
 
 ####### 集計2.2.2.2 : RES-ORGまたはORG-RES間のワード集計:2term
-######## (1)カウント
+######## i. カウント
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/
 - RES-ORG@Mat
 -- /home/kamano/gitsrc/utility/split_phrase2W.pl region_RES-ORG_Mat.droptags.drop1 | sort | uniq -c | sort -nr > region_RES-ORG_Mat.droptags.drop1.2W
@@ -933,7 +907,7 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/
 -- /home/kamano/gitsrc/utility/split_phrase2W.pl region_ORG-RES_Mat.droptags.drop1 | sort | uniq -c | sort -nr > region_ORG-RES_Mat.droptags.drop1.2W
 - ORG-RES@ACK
 -- /home/kamano/gitsrc/utility/split_phrase2W.pl region_ORG-RES_ACK.droptags.drop1 | sort | uniq -c | sort -nr > region_ORG-RES_ACK.droptags.drop1.2W
-######## (2)RES-ORGまたはORG-RES間のフレーズ(2W)集計:region内の出現率と全体の出現確率の比に出現数をかけた値が高い2termから抽出
+######## ii. RES-ORGまたはORG-RES間のフレーズ(2W)集計:region内の出現率と全体の出現確率の比に出現数をかけた値が高い2termから抽出
 - base
 cd /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1
 -- file: /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1/Phrase_jour-ALL.2W.sort.count
@@ -944,7 +918,7 @@ cd /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1
 --- phrasecountratio2W=Map[{#[[1]],#[[1]]/total2W//N,#[[2]]}&,sp];
 --- Save["phrasecountratio2W.wl",phrasecountratio2W]
 --- phraseRule2W = Map[#[[3]]->{#[[1]],#[[2]]}&,phrasecountratio2W];
-######## (3)出現率比と出現の積が高い順に一般語を含むフレーズ(2W)取り出す(候補phrase)。
+######## iii. 出現率比と出現の積が高い順に一般語を含むフレーズ(2W)取り出す(候補phrase)。
 - RES-ORG@Mat
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 -- program: 
@@ -1094,7 +1068,7 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 --- Export["ORArateSelProdDicTop2WJDelnoun.tsv",ORArateSelProdDicTop2WJDelnoun]
 
 ####### 集計2.2.2.3 : RES-ORGまたはORG-RES間のワード集計:3term
-######## (1)カウント
+######## i. カウント
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/
 - RES-ORG@Mat
 -- /home/kamano/gitsrc/utility/split_phrase3W.pl region_RES-ORG_Mat.droptags.drop1 | sort | uniq -c | sort -nr > region_RES-ORG_Mat.droptags.drop1.3W
@@ -1104,7 +1078,7 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/
 -- /home/kamano/gitsrc/utility/split_phrase3W.pl region_ORG-RES_Mat.droptags.drop1 | sort | uniq -c | sort -nr > region_ORG-RES_Mat.droptags.drop1.3W
 - ORG-RES@ACK
 -- /home/kamano/gitsrc/utility/split_phrase3W.pl region_ORG-RES_ACK.droptags.drop1 | sort | uniq -c | sort -nr > region_ORG-RES_ACK.droptags.drop1.3W
-######## (2)RES-ORGまたはORG-RES間のフレーズ(3W)集計:region内の出現率と全体の出現確率の比に出現数をかけた値が高い3termから抽出
+######## ii. RES-ORGまたはORG-RES間のフレーズ(3W)集計:region内の出現率と全体の出現確率の比に出現数をかけた値が高い3termから抽出
 - base
 cd /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1
 -- file: /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1/Phrase_jour-ALL.3W.sort.count
@@ -1115,7 +1089,7 @@ cd /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1
 --- phrasecountratio3W=Map[{#[[1]],#[[1]]/total3W//N,#[[2]]}&,sp];
 --- Save["phrasecountratio3W.wl",phrasecountratio3W]
 --- phraseRule3W = Map[#[[3]]->{#[[1]],#[[2]]}&,phrasecountratio3W];
-######## (3)出現率比と出現の積が高い順に一般語を含むフレーズ(3W)取り出す(候補phrase)。
+######## iii. 出現率比と出現の積が高い順に一般語を含むフレーズ(3W)取り出す(候補phrase)。
 - RES-ORG@Mat
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 -- program: 
@@ -1268,7 +1242,37 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 
 
 
-#TASK(4): 評価対象機関名拡張(未使用)(/BANK/PMC/20140724/elements/aff)
+#TASK(5): 現行結果(拡張なし)に対して機関 vs 機関の影響関係抽出
+- 対象: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.S.L
+- プログラム: /home/kamano/gitsrc/XMLOP/extract_element.pl
+- 手順:
+対象に対して一行ずつ対応させる。
+-- <aff>抽出
+--- aff抽出対象ファイルリスト作成:
+cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/
+awk -F '	' '{print $3}' /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.S.L.ref | sed -e 's/^.* //g' > hit_ResOrg.sel.filenames
+--- ファイルリストから対応するaff抽出:
+while read ln; do /home/kamano/gitsrc/XMLOP/extract_element.pl aff  $ln -E ' ;; ';  echo ; done < hit_ResOrg.sel.filenames > hit_ResOrg.sel.aff
+--- <aff>のリスト:
+/home/kamano/gitsrc/XMLOP/drop_element.pl tag=label if=hit_ResOrg.sel.aff  -E | /home/kamano/gitsrc/XMLOP/drop_htmltags.pl | sed -e 's/ ;; /\n/g' | sed -e 's/^ +//g' | sed -e 's/ +$//g' | sort | uniq -c | sort -nr > hit_ResOrg.sel.aff.list.sort.count
+-- <RES>-<ORG>抽出
+cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
+awk -F '	' '{print $1"\t"$7"\t"$8"\t"$9}' /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.S.L > hit_ResOrg.odr
+-- 分配
+--- プログラム: dist_patt_from_odr.pl
+---- <ORG>がひとつ => <ORG> x <RES>
+---- <ORG>と<RES>の数が複数で同じ => <ORG><RES>,<ORG><RES>
+---- <ORG>が複数連続、<RES>がひとつ => 隣接する<ORG><RES>/<RES><ORG>を抽出
+---- <RES><ORG><RES> => <RES><ORG>
+--- 分配実行: ./dist_patt_from_odr.pl hit_ResOrg.odr > hit_ResOrg.odr.dist
+--- 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.odr.dist
+###2017-05-15###
+###いまここ###
+
+
+
+
+#TASK(6): 評価対象機関名拡張(未使用)(/BANK/PMC/20140724/elements/aff)
 #aff領域より得られた機関名(住所つき)をmaterial、ack領域に対して検索、存在を確認。
 #所属をカンマで区切り、各フレーズを対象領域に対してマッチング。
 #<tag1>,<tag2>,<tag3>
@@ -1278,7 +1282,7 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 -- 所属抽出結果より不要なタグ等を取り除きユニークソート: /BANK/PMC/20140724/elements/aff/PMC-AFF-plain-v4
 -- 上記データをカンマ区切りで切り出した第2カラムのデータ: /BANK/PMC/20140724/elements/aff/PMC-AFF-tag2
 -- 上記各ファイルの解説: /BANK/PMC/20140724/elements/aff/README.Gmail(2015-03-14).pdf
-##TASK(4.1): @ACK 機関名候補検索 in 謝辞 (20150508)
+##TASK(6.1): @ACK 機関名候補検索 in 謝辞 (20150508)
 ### 謝辞 vs. tag1, tag2 and tag3 (石川氏)
 - ヒット結果（ゴミ含む）: /BANK/PMC/20140724/elements/aff/AFFvsACK/AFFvsACK.log-tagALL-uniqsort
 - 大文字小文字スペース以外を含むフレーズファイル: /BANK/PMC/20140724/elements/aff/WIKIvsAFFvsACK+MAT/tokusyu-list/AFFvsACK.log-tagALL-tokusyu-list
@@ -1291,7 +1295,7 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 - スクリプト: grep -v -E '> [a-zA-Z][a-z0-9]+$' AFFvsACK.log-tagALL-wikifilterd.select_2 > AFFvsACK.log-tagALL-wikifilterd.select_3
 - 結果: /BANK/PMC/20140724/elements/aff/WIKIvsAFFvsACK/AFFvsACK.log-tagALL-wikifilterd.select_3
 - 件数(ドキュメント): 22530
-##TASK(4.2): @Mat  機関名候補検索 in  材料 (20150508)
+##TASK(6.2): @Mat  機関名候補検索 in  材料 (20150508)
 ### 材料 vs. tag1, tag2 and tag3 (石川氏)
 - ヒット結果（ゴミ含む）: /BANK/PMC/20140724/elements/aff/AFFvsMAT/AFFvsMAT.log-tagALL-uniqsort
 - 大文字小文字スペース以外を含むフレーズファイル: /BANK/PMC/20140724/elements/aff/WIKIvsAFFvsACK+MAT/tokusyu-list/AFFvsMAT.log-tagALL-tokusyu-list
@@ -1306,10 +1310,11 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 - 件数(ドキュメント): 19091
 
 
-#TASK(5A): パターン検索によるリソースコレクションの拡張:方法(A)
-##TASK(5A.1): NBRPセレクションの拡張
+
+#TASK(7A): パターン検索によるリソースコレクションの拡張:方法(A)
+##TASK(7A.1): NBRPセレクションの拡張
 ##ACKとMatでフォーマットが違うので注意
-###TASK(5A.1.1): NBRP-ACKセレクションの拡張(リソース)
+###TASK(7A.1.1): NBRP-ACKセレクションの拡張(リソース)
 #### <ORG>、<W>タグの挿入 @ACK
 - 拡張される対象: リソース
 - 検索対象(機関名がヒットしたセクション): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_Org_from_ACK.tsv
@@ -1399,7 +1404,7 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 -- 対象: hit*ACK*ORA*W.spl+RESc
 -- 基準: <ORG>タグが残るものは対象外
 
-###TASK(5A.1.2): NBRP-Matセレクションの拡張(リソース)
+###TASK(7A.1.2): NBRP-Matセレクションの拡張(リソース)
 #### <ORG>、<W>タグの挿入 @Mat
 - 拡張される対象: リソース
 - 検索対象: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_Org_from_Mat.au.tsv
@@ -1448,7 +1453,7 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 ##### <RESc>候補の抜き出し @Mat
 
 
-#TASK(5B): パターン検索によるリソースコレクションの拡張:方法(B)
+#TASK(7B): パターン検索によるリソースコレクションの拡張:方法(B)
 #Bigram(Edge)の出現による拡張：<Org>..<Res>または<Res>..<Org>の「正解」パターンのBigram出現とAck/Mat全体のBigram出現を比較して高出現のものを採用。(20170401より開始)
 - ソースデータ: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.S.L
 ##センテンス全体を利用
