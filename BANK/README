@@ -689,7 +689,6 @@ grep '^Mat	' hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark
 
 
 
-
 #TASK(4): 機関名、バイオリソース名が同時出現するセンテンスのパターン解析
 - 対象: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.S.L
 #候補の洗い出しには、[1]タームの出現、[2]エッジ(バイグラム)の出現、が使えそう。まずは[1]を試す。[2]は考え中。
@@ -1242,8 +1241,6 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 
 
 
-
-
 #TASK(6): 評価対象機関名拡張(未使用)(/BANK/PMC/20140724/elements/aff)
 #aff領域より得られた機関名(住所つき)をmaterial、ack領域に対して検索、存在を確認。
 #所属をカンマで区切り、各フレーズを対象領域に対してマッチング。
@@ -1425,6 +1422,7 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 ##### <RESc>候補の抜き出し @Mat
 
 
+
 #TASK(7B): パターン検索によるリソースコレクションの拡張:方法(B)
 #Bigram(Edge)の出現による拡張：<Org>..<Res>または<Res>..<Org>の「正解」パターンのBigram出現とAck/Mat全体のBigram出現を比較して高出現のものを採用。(20170401より開始)
 - ソースデータ: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.S.L
@@ -1440,6 +1438,7 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 ###<Res>..<Org>@ACK
 ###<Org>..<Res>@Mat
 ###<Res>..<Org>@Mat
+
 
 
 #TASK(8): 機関 vs 機関の影響関係抽出
