@@ -424,10 +424,10 @@ cd /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1
 
 
 
-##TASK(1): 対象機関名決定 -> 石川氏
-###TASK(1.1): 既知機関英名シノニム決定 -> 石川氏
-###石川氏 -> 水野氏に指示 (20150610)
-###上位機関を単位とする、ただし、下部機関も上位機関のシノニムとする
+#TASK(1): 対象機関名決定 -> 石川氏
+##TASK(1.1): 既知機関英名シノニム決定 -> 石川氏
+##石川氏 -> 水野氏に指示 (20150610)
+##上位機関を単位とする、ただし、下部機関も上位機関のシノニムとする
 - 手順書:
 -- /BANK/Organization/NBRP_2015/tejun-sho_201507.ods
 -- tejun-sho_242orgs.txt
@@ -472,8 +472,10 @@ while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; d
 -- 最終的に検索するターム(NBRP-ORGコレクション): /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt.sort.uniq
 -- 最終的に検索するターム(perl用エスケープ)(NBRP-ORG-Perlコレクション): /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt.sort.uniq.esc
 
+
+
 #TASK(2): 対象バイオリソース名決定(20140423)
-###TASK(2.1): NBRC利用者成果からバイオリソース名+請求番号を抜き出す(20140420)
+##TASK(2.1): NBRC利用者成果からバイオリソース名+請求番号を抜き出す(20140420)
 - 利用者成果ファイル: /BANK/BioResource/Organization/NBRP_2015/user-data/reference_list.tsv
 - Resource name カラムを抜き出したもの: /BANK/BioResource/Organization/NBRP_2015/user-data/Resnames.line
 - さらに個別のリソースに分割: /BANK/BioResource/Organization/NBRP_2015/user-data/Resnames
@@ -487,29 +489,29 @@ while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; d
 - リストをリソースネーム vs. リソース番号の形に整形
 -- プログラム: /home/kamano/gitsrc/utility/divide_lastBRK.pl
 -- 結果: /BANK/BioResource/Organization/NBRP_2015/user-data/ResnameVSid
-###TASK(2.2): 既知バイオリソース検索シノニム+ID決定
+##TASK(2.2): 既知バイオリソース検索シノニム+ID決定
 - 対象: /BANK/BioResource/Organization/NBRP_2015/user-data/ResnameVSid
 - ソートユニークカウント: /BANK/BioResource/Organization/NBRP_2015/user-data/ResnameVSid.sort.uniq.count
 - リフォーム: ./reform_sort-uniq-count.pl ResnameVSid.sort.uniq.count > ResnameVSid.sort.uniq.count.re
 - 文頭の空タームを除去: /BANK/BioResource/Organization/NBRP_2015/user-data/ResnameVSid.sort.uniq.count.re
-###TASK(2.3): 既知バイオリソース検索タームの絞り込み(行なわない)
-###materialおよびacknowledgementの出現タームを既知バイオリソース検索シノニムにヒットさせ、ヒットとなったバイオリソースを実際の検索タームとする。
+##TASK(2.3): 既知バイオリソース検索タームの絞り込み(行なわない)
+##materialおよびacknowledgementの出現タームを既知バイオリソース検索シノニムにヒットさせ、ヒットとなったバイオリソースを実際の検索タームとする。
 ###出現タームがリソース名のサブストリングであることを期待している。
 ###結局、ほとんどすべてのサブストリングにマッチしてしまい、意味が無かった。(20140422)
-###TASK(2.4): バイオリソース名+請求番号を検索用タームにばらし、例外的なタームを除去
-####シノニム+IDを検索タームにばらす
+##TASK(2.4): バイオリソース名+請求番号を検索用タームにばらし、例外的なタームを除去
+###シノニム+IDを検索タームにばらす
 - cd /BANK/BioResource/Organization/NBRP_2015/user-data
 - awk -F'	' '{print $2}' ResnameVSid.sort.uniq.count.re > resterms.search.pre
 - awk -F'	' '{print $3}' ResnameVSid.sort.uniq.count.re >> resterms.search.pre
 - ./exec_command/reform_resterms.pl resterms.search.pre > resterms.search.pre.re
 - sort resterms.search.pre.re | uniq > resterms.sort.uniq
 - 検索ターム: /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq
-####極端に短い、長いネームを除去
+###極端に短い、長いネームを除去
 - プログラム: /BANK/BioResource/Organization/NBRP_2015/user-data/exec_command/drop_suspicius-length.pl
 - 検索ターム候補: /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.1
-####material出現タームがサブ文字列になっているバイオリソースネーム(いみなし)
-###TASK(2.5): 最終的に使う検索タームのマニュアルチューニング
-####中間ファイル: <n>E、<n>D、<n>m、kwのサフィクスを使用、<n>は番号、Eはextract、Dはdelete
+###material出現タームがサブ文字列になっているバイオリソースネーム(いみなし)
+##TASK(2.5): 最終的に使う検索タームのマニュアルチューニング
+###中間ファイル: <n>E、<n>D、<n>m、kwのサフィクスを使用、<n>は番号、Eはextract、Dはdelete
 - 作業詳細: /BANK/BioResource/Organization/NBRP_2015/user-data/README
  生物種名については全て残す。
 -- 作業対象ファイル: /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.1
@@ -522,6 +524,7 @@ while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; d
 -- Perl検索用結果ファイル(utf8_to_ncr,escape_char): /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_5.ncr.esc
 -- Perl検索用結果ファイル(sort,utf8_to_ncr,escape_char): 
  escape_char sf=resterms.sort.uniq.select_5.sort.ncr lf=/home/kamano/gitsrc/utility/perl_esc.list > resterms.sort.uniq.select_5.sort.ncr.esc
+
 
 
 #TASK(3): 既知バイオリソース名・既知機関名の出現状況確認(NBRP)
