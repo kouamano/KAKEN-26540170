@@ -424,9 +424,8 @@ cd /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1
 
 
 
-#TASK(1): 機関名(NBRP)・既知バイオリソース名の決定と検索タームの定義
-##TASK(1.1): パターン定義用既知機関名決定 -> 石川氏
-###TASK(1.1.1): 既知機関英名シノニム決定 -> 石川氏
+##TASK(1): 対象機関名決定 -> 石川氏
+###TASK(1.1): 既知機関英名シノニム決定 -> 石川氏
 ###石川氏 -> 水野氏に指示 (20150610)
 ###上位機関を単位とする、ただし、下部機関も上位機関のシノニムとする
 - 手順書:
@@ -472,8 +471,9 @@ while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; d
 -- 上記に対して先頭と末尾のスペースを除去: /home/kamano/gitsrc/utility/drop_headtailSP.pl 17topOrgNameSearchTerm > /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt
 -- 最終的に検索するターム(NBRP-ORGコレクション): /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt.sort.uniq
 -- 最終的に検索するターム(perl用エスケープ)(NBRP-ORG-Perlコレクション): /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt.sort.uniq.esc
-##TASK(1.2): パターン定義用既知バイオリソース名決定(20140423)
-###TASK(1.2.1): NBRC利用者成果からバイオリソース名+請求番号を抜き出す(20140420)
+
+#TASK(2): 対象バイオリソース名決定(20140423)
+###TASK(2.1): NBRC利用者成果からバイオリソース名+請求番号を抜き出す(20140420)
 - 利用者成果ファイル: /BANK/BioResource/Organization/NBRP_2015/user-data/reference_list.tsv
 - Resource name カラムを抜き出したもの: /BANK/BioResource/Organization/NBRP_2015/user-data/Resnames.line
 - さらに個別のリソースに分割: /BANK/BioResource/Organization/NBRP_2015/user-data/Resnames
@@ -487,16 +487,16 @@ while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; d
 - リストをリソースネーム vs. リソース番号の形に整形
 -- プログラム: /home/kamano/gitsrc/utility/divide_lastBRK.pl
 -- 結果: /BANK/BioResource/Organization/NBRP_2015/user-data/ResnameVSid
-###TASK(1.2.2): 既知バイオリソース検索シノニム+ID決定
+###TASK(2.2): 既知バイオリソース検索シノニム+ID決定
 - 対象: /BANK/BioResource/Organization/NBRP_2015/user-data/ResnameVSid
 - ソートユニークカウント: /BANK/BioResource/Organization/NBRP_2015/user-data/ResnameVSid.sort.uniq.count
 - リフォーム: ./reform_sort-uniq-count.pl ResnameVSid.sort.uniq.count > ResnameVSid.sort.uniq.count.re
 - 文頭の空タームを除去: /BANK/BioResource/Organization/NBRP_2015/user-data/ResnameVSid.sort.uniq.count.re
-###TASK(1.2.3): 既知バイオリソース検索タームの絞り込み(行なわない)
+###TASK(2.3): 既知バイオリソース検索タームの絞り込み(行なわない)
 ###materialおよびacknowledgementの出現タームを既知バイオリソース検索シノニムにヒットさせ、ヒットとなったバイオリソースを実際の検索タームとする。
 ###出現タームがリソース名のサブストリングであることを期待している。
 ###結局、ほとんどすべてのサブストリングにマッチしてしまい、意味が無かった。(20140422)
-###TASK(1.2.4): バイオリソース名+請求番号を検索用タームにばらし、例外的なタームを除去
+###TASK(2.4): バイオリソース名+請求番号を検索用タームにばらし、例外的なタームを除去
 ####シノニム+IDを検索タームにばらす
 - cd /BANK/BioResource/Organization/NBRP_2015/user-data
 - awk -F'	' '{print $2}' ResnameVSid.sort.uniq.count.re > resterms.search.pre
@@ -508,11 +508,7 @@ while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; d
 - プログラム: /BANK/BioResource/Organization/NBRP_2015/user-data/exec_command/drop_suspicius-length.pl
 - 検索ターム候補: /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.1
 ####material出現タームがサブ文字列になっているバイオリソースネーム(いみなし)
-- 対象: /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.1
-- サブ文字列: /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.4/terms.search.esc
-- プログラム: /home/kamano/gitsrc/utility/match_substr.pl
-- スクリプト: /home/kamano/gitsrc/utility/match_substr.pl /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.1 /BANK/PMC/20140724/terms/MERGED/allmaterials/patt.4/terms.search.esc > /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.1.allmaterials-hit
-###TASK(1.2.5): 最終的に使う検索タームのマニュアルチューニング
+###TASK(2.5): 最終的に使う検索タームのマニュアルチューニング
 ####中間ファイル: <n>E、<n>D、<n>m、kwのサフィクスを使用、<n>は番号、Eはextract、Dはdelete
 - 作業詳細: /BANK/BioResource/Organization/NBRP_2015/user-data/README
  生物種名については全て残す。
@@ -528,7 +524,7 @@ while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; d
  escape_char sf=resterms.sort.uniq.select_5.sort.ncr lf=/home/kamano/gitsrc/utility/perl_esc.list > resterms.sort.uniq.select_5.sort.ncr.esc
 
 
-#TASK(2): 既知バイオリソース名・既知機関名の出現状況確認(NBRP)
+#TASK(3): 既知バイオリソース名・既知機関名の出現状況確認(NBRP)
 #4段階で行なう: a.機関名hit論文の抽出 b.さらにリソース名hitの論文抽出 c.文字色挿入 d. センテンスsplit
 #試験 -> 採用 -> 修正(20150729) -> OK(20150729)
 #修正状況: n-column以降をスキャンする処理に変更(20150729) <- カラム数が同じだと勘違いしていた。修正終了には<R> 。 -> OK(20150729)
@@ -539,70 +535,70 @@ while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; d
 --> waitは段階的に呼び出されるプロセスに対応していない。--> スクリプト修正完了
 --> 現在、いくつかのファイルが壊れたまま。--> 修正中 --> OK
 --> まだ実行していない。
-##TASK(2.0): 準備
-###TASK(2.0.0): 検索タームの特殊文字エスケープ
+##TASK(3.0): 準備
+###TASK(3.0.0): 検索タームの特殊文字エスケープ
 ####機関名
 - このファイルを使う: /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt.sort.uniq.esc
 ####リソース名
 - このファイルを使う: /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_5.ncr.esc
-###TASK(2.0.1): a. 機関名hit論文の抽出 in ACK
+###TASK(3.0.1): a. 機関名hit論文の抽出 in ACK
 - 検索対象: /BANK/PMC/20140724/elements/acknowledgement/PMC-ACK-v6_pmid.tsv
  3カラム以降に対して検索
 - 検索ターム(スケープ): /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt.esc
 - プログラム: /home/kamano/gitsrc/utility/hit_least.pl
 - スクリプト(5 min): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/hit_Org_from_ACK.sh
 - 結果(NBRP-ACKセレクション): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_Org_from_ACK.tsv
-###TASK(2.0.2): b. リソース名hitの確認抽出 in ACK with 機関名
+###TASK(3.0.2): b. リソース名hitの確認抽出 in ACK with 機関名
 - 検索対象: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_Org_from_ACK.tsv
 - 検索ターム(エスケープ): /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_4.ncr.esc
 - プログラム: /home/kamano/gitsrc/utility/hit_least.pl
 - スクリプト(5 min): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/hit_ResOrg_from_ACK.sh
 - 結果(20150729): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv
-###TASK(2.0.3): a. 機関名hit論文の抽出 in Mat
+###TASK(3.0.3): a. 機関名hit論文の抽出 in Mat
 - 検索対象: /BANK/PMC/20140724/elements/MERGED/allmaterials/*.cont
  2カラム以降に対して検索
 - 検索ターム(スケープ済み): /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt.esc
 - プログラム: /home/kamano/gitsrc/utility/hit_least.pl
 - スクリプト(3 min): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/hit_Org_from_Mat.sh
 - 結果(NBRP-Matセレクション): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_Org_from_Mat.a[a-u].tsv
-###TASK(2.0.4): b. リソース名hitの確認抽出 in Mat with 機関名
+###TASK(3.0.4): b. リソース名hitの確認抽出 in Mat with 機関名
 - 検索対象: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_Org_from_Mat.a[a-u].tsv
 - 検索ターム(ncr,エスケープ済み): /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_5.ncr.esc
 - プログラム: /home/kamano/gitsrc/utility/hit_least.pl
 - スクリプト(1 min): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/hit_ResOrg_from_Mat.sh
 - 結果(20150728): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_Mat.au.tsv
-##TASK(2.1): 既知機関名・リソース名同時出現(NBRP)検索(文字色挿入)
-###TASK(2.1.1): c. 既知機関名文字色挿入 in ACK
+##TASK(3.1): 既知機関名・リソース名同時出現(NBRP)検索(文字色挿入)
+###TASK(3.1.1): c. 既知機関名文字色挿入 in ACK
 - 対象(ソース): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv
 - 検索ターム(エスケープ済み): /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt.esc
 - プログラム: /home/kamano/gitsrc/XMLOP/insTxColor_to_html.pl
 - スクリプト: /home/kamano/gitsrc/XMLOP/insTxColor_to_html.pl src=/BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv clm=2 trm=/BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt.esc clr=red > /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv.color1
 - 結果(NBRP-ACKセレクション): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv.color1
-###TASK(2.1.2): c. バイオリソース名文字色挿入 in ACK
+###TASK(3.1.2): c. バイオリソース名文字色挿入 in ACK
 - 対象(すでに機関名の処理が終わったもの): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv.color1
 - 検索ターム(ncr、エスケープ済み): /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_5.ncr.esc
 - プログラム: /home/kamano/gitsrc/XMLOP/insTxColor_to_html.pl
 - スクリプト(15 min): time /home/kamano/gitsrc/XMLOP/insTxColor_to_html.pl src=/BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv.color1 clm=2 trm=/BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_5.ncr.esc clr=blue > /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv.color2
 - 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv.color2
-###TASK(2.1.3): c. 既知機関名文字色挿入 in Mat
+###TASK(3.1.3): c. 既知機関名文字色挿入 in Mat
 - 対象(ソース): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_Mat.au.tsv
 - 検索ターム(エスケープ済み): /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt.esc
 - プログラム: /home/kamano/gitsrc/XMLOP/insTxColor_to_html.pl
 - スクリプト: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/insTxColor_Org_in_Mat.sh
 - 結果(NBRP-Matコレクション): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_Mat.au.tsv.color1
-###TASK(2.1.4): c. バイオリソース名文字色挿入 in Mat (20150728)
+###TASK(3.1.4): c. バイオリソース名文字色挿入 in Mat (20150728)
 - 対象(すでに機関名の処理が終わったもの): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_Mat.au.tsv.color1
 - 検索ターム(ncr、エスケープ済み): /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_5.ncr.esc
 - プログラム: /home/kamano/gitsrc/XMLOP/insTxColor_to_html.pl
 - スクリプト(10 min): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/insTxColor_Res_in_Mat.sh
 - 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_Mat.au.tsv.color2
-###TASK(2.1.5): d. センテンスsplit & html化(プログラムによる) (20150804)
+###TASK(3.1.5): d. センテンスsplit & html化(プログラムによる) (20150804)
 - 対象: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from*color2
 - プログラム: /home/kamano/gitsrc/XMLOP/extract_hit_sentence_from_colored.pl
 - スクリプト(ACK): /home/kamano/gitsrc/XMLOP/extract_hit_sentence_from_colored.pl src=/BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv.color2 clm=2 terms=red,blue > /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_ACK.tsv.color2.sel.html
 - スクリプト(Mat): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/select_from_colored_Mat.sh
 - 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_*color2.sel.html
-###TASK(2.1.6): htmlより空のレコードを除去 (20150804)
+###TASK(3.1.6): htmlより空のレコードを除去 (20150804)
 - 対象: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_*color2.sel.html
 - プログラム: /home/kamano/gitsrc/XMLOP/drop_empty_hit_from_html.pl
 - スクリプト: 
@@ -626,7 +622,7 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015
 ./exec_command/extract_HitOrg_from_dropE.pl *dropE.html | ./exec_command/extract_redFontStr_from_HitRes.pl | sort | uniq | wc
      32      89     699
 ###(20150730)完了###
-###TASK(2.1.7): d. 機関名、バイオリソース名が同時出現するセンテンス(ピリオド区切り、場合によってはカンマ、セミコロン区切り)を人手で抜きだし(水野氏実行完了)
+###TASK(3.1.7): d. 機関名、バイオリソース名が同時出現するセンテンス(ピリオド区切り、場合によってはカンマ、セミコロン区切り)を人手で抜きだし(水野氏実行完了)
 - 対象: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_*.tsv.color2.sel.dropE.html
 - 手順
 -- 手作業で抜きだし
@@ -688,7 +684,7 @@ grep '^Mat	' hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark
     445     515    8422
 --- カウント:
 /home/kamano/gitsrc/XMLOP/extract_element.pl RES /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.S.L -E | sort | uniq -c | sort -nr > hit_ResOrg-120151015_RES.sort.uniq.count
-###TASK(2.1.8): e. 現行結果に対して機関 vs 機関の影響関係抽出
+###TASK(3.1.8): e. 現行結果に対して機関 vs 機関の影響関係抽出
 - 対象: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.S.L
 - プログラム: /home/kamano/gitsrc/XMLOP/extract_element.pl
 - 手順:
@@ -717,7 +713,7 @@ awk -F '	' '{print $1"\t"$7"\t"$8"\t"$9}' /BANK/PMC/20140724/Matching/BioResourc
 
 
 
-###TASK(2.1.9): 機関名、バイオリソース名が同時出現するセンテンスのパターン解析
+###TASK(3.1.9): 機関名、バイオリソース名が同時出現するセンテンスのパターン解析
 - 対象: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.S.L
 ###候補の洗い出しには、[1]タームの出現、[2]エッジ(バイグラム)の出現、が使えそう。まずは[1]を試す。[2]は考え中。
 #### 集計1 : </RES>...<ORG> or </ORG>...<RES> 間、単語数ごとの集計
@@ -1269,7 +1265,7 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 
 
 
-#TASK(3): 評価対象機関名拡張(未使用)(/BANK/PMC/20140724/elements/aff)
+#TASK(4): 評価対象機関名拡張(未使用)(/BANK/PMC/20140724/elements/aff)
 #aff領域より得られた機関名(住所つき)をmaterial、ack領域に対して検索、存在を確認。
 #所属をカンマで区切り、各フレーズを対象領域に対してマッチング。
 #<tag1>,<tag2>,<tag3>
@@ -1279,7 +1275,7 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 -- 所属抽出結果より不要なタグ等を取り除きユニークソート: /BANK/PMC/20140724/elements/aff/PMC-AFF-plain-v4
 -- 上記データをカンマ区切りで切り出した第2カラムのデータ: /BANK/PMC/20140724/elements/aff/PMC-AFF-tag2
 -- 上記各ファイルの解説: /BANK/PMC/20140724/elements/aff/README.Gmail(2015-03-14).pdf
-##TASK(3.1): @ACK 機関名候補検索 in 謝辞 (20150508)
+##TASK(4.1): @ACK 機関名候補検索 in 謝辞 (20150508)
 ### 謝辞 vs. tag1, tag2 and tag3 (石川氏)
 - ヒット結果（ゴミ含む）: /BANK/PMC/20140724/elements/aff/AFFvsACK/AFFvsACK.log-tagALL-uniqsort
 - 大文字小文字スペース以外を含むフレーズファイル: /BANK/PMC/20140724/elements/aff/WIKIvsAFFvsACK+MAT/tokusyu-list/AFFvsACK.log-tagALL-tokusyu-list
@@ -1292,7 +1288,7 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 - スクリプト: grep -v -E '> [a-zA-Z][a-z0-9]+$' AFFvsACK.log-tagALL-wikifilterd.select_2 > AFFvsACK.log-tagALL-wikifilterd.select_3
 - 結果: /BANK/PMC/20140724/elements/aff/WIKIvsAFFvsACK/AFFvsACK.log-tagALL-wikifilterd.select_3
 - 件数(ドキュメント): 22530
-##TASK(3.2): @Mat  機関名候補検索 in  材料 (20150508)
+##TASK(4.2): @Mat  機関名候補検索 in  材料 (20150508)
 ### 材料 vs. tag1, tag2 and tag3 (石川氏)
 - ヒット結果（ゴミ含む）: /BANK/PMC/20140724/elements/aff/AFFvsMAT/AFFvsMAT.log-tagALL-uniqsort
 - 大文字小文字スペース以外を含むフレーズファイル: /BANK/PMC/20140724/elements/aff/WIKIvsAFFvsACK+MAT/tokusyu-list/AFFvsMAT.log-tagALL-tokusyu-list
@@ -1307,10 +1303,10 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 - 件数(ドキュメント): 19091
 
 
-#TASK(4A): パターン検索によるリソースコレクションの拡張:方法(A)
-##TASK(4A.1): NBRPセレクションの拡張
+#TASK(5A): パターン検索によるリソースコレクションの拡張:方法(A)
+##TASK(5A.1): NBRPセレクションの拡張
 ##ACKとMatでフォーマットが違うので注意
-###TASK(4A.1.1): NBRP-ACKセレクションの拡張(リソース)
+###TASK(5A.1.1): NBRP-ACKセレクションの拡張(リソース)
 #### <ORG>、<W>タグの挿入 @ACK
 - 拡張される対象: リソース
 - 検索対象(機関名がヒットしたセクション): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_Org_from_ACK.tsv
@@ -1400,7 +1396,7 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 -- 対象: hit*ACK*ORA*W.spl+RESc
 -- 基準: <ORG>タグが残るものは対象外
 
-###TASK(4A.1.2): NBRP-Matセレクションの拡張(リソース)
+###TASK(5A.1.2): NBRP-Matセレクションの拡張(リソース)
 #### <ORG>、<W>タグの挿入 @Mat
 - 拡張される対象: リソース
 - 検索対象: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_Org_from_Mat.au.tsv
@@ -1449,7 +1445,7 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 ##### <RESc>候補の抜き出し @Mat
 
 
-#TASK(4B): パターン検索によるリソースコレクションの拡張:方法(B)
+#TASK(5B): パターン検索によるリソースコレクションの拡張:方法(B)
 #Bigram(Edge)の出現による拡張：<Org>..<Res>または<Res>..<Org>の「正解」パターンのBigram出現とAck/Mat全体のBigram出現を比較して高出現のものを採用。(20170401より開始)
 - ソースデータ: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.S.L
 ##センテンス全体を利用
@@ -1464,6 +1460,8 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 ###<Res>..<Org>@ACK
 ###<Org>..<Res>@Mat
 ###<Res>..<Org>@Mat
+
+
 
 #ペンディング
 ##TASK(2.2)[2](ペンディング) バイオリソース名の前後の出現文字(単語)パターンより正解バイオリソースかを判定(20150911)
