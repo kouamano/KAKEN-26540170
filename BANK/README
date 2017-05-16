@@ -518,10 +518,14 @@ while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; d
  生物種名については全て残す。
 -- 作業対象ファイル: /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.1
 -- 結果ファイル(20150710): /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_3
--- 結果ファイル(20150728): /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_5
--- C検索用結果ファイル(ncr): /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_5.ncr
--- Perl検索用結果ファイル(ncr,escape): /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_5.ncr.esc
-
+-- 中間結果ファイル(20150728): /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_5
+-- 結果ファイル: cat resterms.sort.uniq.select_5 | awk '{print length($0), $0}' | sort -nr | cut -d' ' -f2- > resterms.sort.uniq.select_5.sort
+-- C検索用結果ファイル(utf8_to_ncr): /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_5.ncr
+-- C検索用結果ファイル(sort,utf8_to_ncr): 
+ utf8_to_ncr resterms.sort.uniq.select_5.sort > resterms.sort.uniq.select_5.sort.ncr
+-- Perl検索用結果ファイル(utf8_to_ncr,escape_char): /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_5.ncr.esc
+-- Perl検索用結果ファイル(sort,utf8_to_ncr,escape_char): 
+ escape_char sf=resterms.sort.uniq.select_5.sort.ncr lf=/home/kamano/gitsrc/utility/perl_esc.list > resterms.sort.uniq.select_5.sort.ncr.esc
 
 
 #TASK(2): 既知バイオリソース名・既知機関名の出現状況確認(NBRP)
@@ -538,12 +542,9 @@ while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; d
 ##TASK(2.0): 準備
 ###TASK(2.0.0): 検索タームの特殊文字エスケープ
 ####機関名
-- エスケープコマンド: escape_char sf=/BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt lf=/usr/local/var/perl_esc.list > /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt.esc
-- ほんとは、こっちのファイルを使う: /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt.sort.uniq.esc
+- このファイルを使う: /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt.sort.uniq.esc
 ####リソース名
-####TODO:文字列の長い順にソート
-- ncrコマンド: utf8_to_ncr /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_5 > /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_5.ncr
-- エスケープコマンド: escape_char sf=/BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_5.ncr lf=/usr/local/var/perl_esc.list > /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_5.ncr.esc
+- このファイルを使う: /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_5.ncr.esc
 ###TASK(2.0.1): a. 機関名hit論文の抽出 in ACK
 - 検索対象: /BANK/PMC/20140724/elements/acknowledgement/PMC-ACK-v6_pmid.tsv
  3カラム以降に対して検索
@@ -566,7 +567,7 @@ while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; d
 - 結果(NBRP-Matセレクション): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_Org_from_Mat.a[a-u].tsv
 ###TASK(2.0.4): b. リソース名hitの確認抽出 in Mat with 機関名
 - 検索対象: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_Org_from_Mat.a[a-u].tsv
-- 検索ターム(エスケープ済み): /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_5.ncr.esc
+- 検索ターム(ncr,エスケープ済み): /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.select_5.ncr.esc
 - プログラム: /home/kamano/gitsrc/utility/hit_least.pl
 - スクリプト(1 min): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/exec_command/hit_ResOrg_from_Mat.sh
 - 結果(20150728): /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_Mat.au.tsv
