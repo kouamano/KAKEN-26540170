@@ -658,7 +658,7 @@ grep ';E' check_7.E.20151015 > check_7.E.20151015.E
 --- <リソース名>と<組織名>の区切り: <スペース><セミコロン><スペース>
 -- 結果のリフォーム(1): addLabel_sentence.pl hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.S > /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.S.L
 -- 結果のリフォーム(2):ACKのnxmlファイル名: vim /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.S.L
-- 最終結果: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.S.L.ref
+- 最終結果: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.S.L
 - 結果の集計情報(暫定 20170401)
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 -- 論文数
@@ -1450,7 +1450,8 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/
 対象に対して一行ずつ対応させる。
 -- <aff>抽出
 --- aff抽出対象ファイルリスト作成:
-awk -F '	' '{print $3}' /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.S.L.ref | sed -e 's/^.* //g' > hit_ResOrg.sel.filenames
+ awk -F '	' '{print $3}' /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.S.L | sed -e 's/^.* //g' > tmp
+ /home/kamano/gitsrc/KAKEN-26540170/BANK/PMC/20140724/bin/reform_PMC_filename.pl tmp  > hit_ResOrg.sel.filenames
 --- ファイルリストから対応するaff抽出:
 while read ln; do /home/kamano/gitsrc/XMLOP/extract_element.pl aff  $ln -E ' ;; ';  echo ; done < hit_ResOrg.sel.filenames > hit_ResOrg.sel.aff
 --- <aff>のリスト:
