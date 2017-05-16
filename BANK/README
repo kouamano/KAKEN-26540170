@@ -1454,7 +1454,7 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/
  /home/kamano/gitsrc/KAKEN-26540170/BANK/PMC/20140724/bin/reform_PMC_filename.pl tmp  > hit_ResOrg.sel.filenames
 --- ファイルリストから対応するaff抽出:
 while read ln; do /home/kamano/gitsrc/XMLOP/extract_element.pl aff  $ln -E ' ;; ';  echo ; done < hit_ResOrg.sel.filenames > hit_ResOrg.sel.aff
---- <aff>のリスト:
+--- <aff>のリスト(いまのところ使わない):
 /home/kamano/gitsrc/XMLOP/drop_element.pl tag=label if=hit_ResOrg.sel.aff  -E | /home/kamano/gitsrc/XMLOP/drop_htmltags.pl | sed -e 's/ ;; /\n/g' | sed -e 's/^ +//g' | sed -e 's/ +$//g' | sort | uniq -c | sort -nr > hit_ResOrg.sel.aff.list.sort.count
 -- <RES>-<ORG>抽出
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
