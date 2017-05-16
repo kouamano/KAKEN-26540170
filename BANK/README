@@ -43,8 +43,8 @@
 - 機関情報: /BANK/Organization/<機関名_日付>/ 配下
 - バイオリソース情報: /BANK/BioResource/Organization/<機関名_日付>/ 配下
 - マッチング(検索)結果: /BANK/PMC/<日付>/Matching/BioResource/Organization/<機関名>/ 配下
-- プログラム: github
-- 実行スクリプト: 各 exec_command フォルダ
+- プログラム: github : /home/kamano/gitsrc/<各フォルダ>
+- 実行スクリプト: 各 exec_command/
 #PMC概観
 - /BANK/PMC/20140724/articles : 54G, 843679 files
 - /BANK/PMC/20140724/elements/SKELTON/skelton-ALL.res.tag-count.rep.merge-sort.count : 282タグ
