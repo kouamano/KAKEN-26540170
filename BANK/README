@@ -1242,7 +1242,8 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 
 
 
-#TASK(5): 現行結果(拡張なし)に対して機関 vs 機関の影響関係抽出
+#TASK(5): 機関 vs 機関の影響関係抽出
+##TASK(5.1): 機関リソースともに拡張なし
 - 対象: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.S.L
 - プログラム: /home/kamano/gitsrc/XMLOP/extract_element.pl
 - 手順:
