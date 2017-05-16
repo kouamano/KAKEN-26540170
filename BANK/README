@@ -1242,35 +1242,6 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 
 
 
-#TASK(8): 機関 vs 機関の影響関係抽出
-##TASK(8.1): 機関リソースともに拡張なし
-- 対象: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.S.L
-- プログラム: /home/kamano/gitsrc/XMLOP/extract_element.pl
-- 手順:
-対象に対して一行ずつ対応させる。
--- <aff>抽出
---- aff抽出対象ファイルリスト作成:
-cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/
-awk -F '	' '{print $3}' /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.S.L.ref | sed -e 's/^.* //g' > hit_ResOrg.sel.filenames
---- ファイルリストから対応するaff抽出:
-while read ln; do /home/kamano/gitsrc/XMLOP/extract_element.pl aff  $ln -E ' ;; ';  echo ; done < hit_ResOrg.sel.filenames > hit_ResOrg.sel.aff
---- <aff>のリスト:
-/home/kamano/gitsrc/XMLOP/drop_element.pl tag=label if=hit_ResOrg.sel.aff  -E | /home/kamano/gitsrc/XMLOP/drop_htmltags.pl | sed -e 's/ ;; /\n/g' | sed -e 's/^ +//g' | sed -e 's/ +$//g' | sort | uniq -c | sort -nr > hit_ResOrg.sel.aff.list.sort.count
--- <RES>-<ORG>抽出
-cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
-awk -F '	' '{print $1"\t"$7"\t"$8"\t"$9}' /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.S.L > hit_ResOrg.odr
--- 分配
---- プログラム: dist_patt_from_odr.pl
----- <ORG>がひとつ => <ORG> x <RES>
----- <ORG>と<RES>の数が複数で同じ => <ORG><RES>,<ORG><RES>
----- <ORG>が複数連続、<RES>がひとつ => 隣接する<ORG><RES>/<RES><ORG>を抽出
----- <RES><ORG><RES> => <RES><ORG>
---- 分配実行: ./dist_patt_from_odr.pl hit_ResOrg.odr > hit_ResOrg.odr.dist
---- 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.odr.dist
-###2017-05-15###
-###いまここ###
-
-
 
 
 #TASK(6): 評価対象機関名拡張(未使用)(/BANK/PMC/20140724/elements/aff)
@@ -1469,6 +1440,35 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 ###<Res>..<Org>@ACK
 ###<Org>..<Res>@Mat
 ###<Res>..<Org>@Mat
+
+
+#TASK(8): 機関 vs 機関の影響関係抽出
+##TASK(8.1): 機関リソースともに拡張なし
+- 対象: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.S.L
+- プログラム: /home/kamano/gitsrc/XMLOP/extract_element.pl
+- 手順:
+対象に対して一行ずつ対応させる。
+-- <aff>抽出
+--- aff抽出対象ファイルリスト作成:
+cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/
+awk -F '	' '{print $3}' /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.S.L.ref | sed -e 's/^.* //g' > hit_ResOrg.sel.filenames
+--- ファイルリストから対応するaff抽出:
+while read ln; do /home/kamano/gitsrc/XMLOP/extract_element.pl aff  $ln -E ' ;; ';  echo ; done < hit_ResOrg.sel.filenames > hit_ResOrg.sel.aff
+--- <aff>のリスト:
+/home/kamano/gitsrc/XMLOP/drop_element.pl tag=label if=hit_ResOrg.sel.aff  -E | /home/kamano/gitsrc/XMLOP/drop_htmltags.pl | sed -e 's/ ;; /\n/g' | sed -e 's/^ +//g' | sed -e 's/ +$//g' | sort | uniq -c | sort -nr > hit_ResOrg.sel.aff.list.sort.count
+-- <RES>-<ORG>抽出
+cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
+awk -F '	' '{print $1"\t"$7"\t"$8"\t"$9}' /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.S.L > hit_ResOrg.odr
+-- 分配
+--- プログラム: dist_patt_from_odr.pl
+---- <ORG>がひとつ => <ORG> x <RES>
+---- <ORG>と<RES>の数が複数で同じ => <ORG><RES>,<ORG><RES>
+---- <ORG>が複数連続、<RES>がひとつ => 隣接する<ORG><RES>/<RES><ORG>を抽出
+---- <RES><ORG><RES> => <RES><ORG>
+--- 分配実行: ./dist_patt_from_odr.pl hit_ResOrg.odr > hit_ResOrg.odr.dist
+--- 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.odr.dist
+###2017-05-15###
+###いまここ###
 
 
 
