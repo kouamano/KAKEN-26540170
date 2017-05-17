@@ -1470,6 +1470,9 @@ awk -F '	' '{print $1"\t"$7"\t"$8"\t"$9}' /BANK/PMC/20140724/Matching/BioResourc
 ---- <RES><ORG><RES> => <RES><ORG>
 --- 分配実行: ./dist_patt_from_odr.pl hit_ResOrg.odr > hit_ResOrg.odr.dist
 --- 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.odr.dist
+- 2ファイルをペースト:
+ paste hit_ResOrg.odr hit_ResOrg.sel.aff.drop > ResOrgAff.drop
+- 最終結果: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/ResOrgAff.drop
 ###2017-05-15###
 ###いまここ###
 
