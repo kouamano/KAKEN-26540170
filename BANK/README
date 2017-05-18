@@ -1460,6 +1460,9 @@ while read ln; do /home/kamano/gitsrc/XMLOP/extract_element.pl aff  $ln -E ' ;; 
  /home/kamano/gitsrc/KAKEN-26540170/BANK/PMC/20140724/bin/reform_aff.pl hit_ResOrg.sel.aff > hit_ResOrg.sel.aff.ref
 --- タグのdrop:
  /home/kamano/gitsrc/KAKEN-26540170/BANK/PMC/20140724/bin/dropTag_aff.pl hit_ResOrg.sel.aff > hit_ResOrg.sel.aff.drop
+-- <pyear>(出版年)抽出 => 最も古い年を選択
+while read ln; do /home/kamano/gitsrc/XMLOP/extract_element.pl pub-date  $ln -E ' ;; ';  echo ; done < hit_ResOrg.sel.filenames > hit_ResOrg.sel.pub-date
+/home/kamano/gitsrc/XMLOP/extract_element.pl year hit_ResOrg.sel.pub-date -E ' ;; '  '\n' | /home/kamano/gitsrc/XMLOP/select_min.pl > hit_ResOrg.sel.pub-year
 -- <RES>-<ORG>抽出
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 awk -F '	' '{print $1"\t"$7"\t"$8"\t"$9}' /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.S.L > hit_ResOrg.odr
@@ -1471,9 +1474,9 @@ awk -F '	' '{print $1"\t"$7"\t"$8"\t"$9}' /BANK/PMC/20140724/Matching/BioResourc
 ---- <RES><ORG><RES> => <RES><ORG>
 --- 分配実行: ./dist_patt_from_odr.pl hit_ResOrg.odr > hit_ResOrg.odr.dist
 --- 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.odr.dist
-- 2ファイルをペースト:
- paste hit_ResOrg.odr.dist hit_ResOrg.sel.aff.drop > hit_ResOrgAff.drop
-- 最終結果: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrgAff.drop
+- 3ファイルをペースト:
+ paste hit_ResOrg.odr.dist hit_ResOrg.sel.aff.drop hit_ResOrg.sel.pub-year > hit_ResOrgAffYear
+- 最終結果: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrgAffYear
 ### 集計
 - 述べ出現件数
 -- 述べORG: 
