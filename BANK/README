@@ -513,6 +513,7 @@ while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; d
 ###material出現タームがサブ文字列になっているバイオリソースネーム(いみなし)
 ##TASK(2.5): 最終的に使う検索タームのマニュアルチューニング
 ###中間ファイル: <n>E、<n>D、<n>m、kwのサフィクスを使用、<n>は番号、Eはextract、Dはdelete
+cd /BANK/BioResource/Organization/NBRP_2015/user-data/
 - 作業詳細: /BANK/BioResource/Organization/NBRP_2015/user-data/README
  生物種名については全て残す。
 -- 作業対象ファイル: /BANK/BioResource/Organization/NBRP_2015/user-data/resterms.sort.uniq.1
