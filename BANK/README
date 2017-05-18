@@ -1471,9 +1471,10 @@ awk -F '	' '{print $1"\t"$7"\t"$8"\t"$9}' /BANK/PMC/20140724/Matching/BioResourc
 --- 分配実行: ./dist_patt_from_odr.pl hit_ResOrg.odr > hit_ResOrg.odr.dist
 --- 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.odr.dist
 - 2ファイルをペースト:
- paste hit_ResOrg.odr.dist hit_ResOrg.sel.aff.drop > ResOrgAff.drop
-- 最終結果: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/ResOrgAff.drop
-- 集計
+ paste hit_ResOrg.odr.dist hit_ResOrg.sel.aff.drop > hit_ResOrgAff.drop
+- 最終結果: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrgAff.drop
+### 集計
+- 述べ出現件数
 -- 述べORG: 
 awk -F '     ' '{print $3}' hit_ResOrg.odr | sed -e 's/ ; /\n/g' | egrep -v "^ *$" | wc
     975    2098   15618
@@ -1483,6 +1484,9 @@ awk -F '     ' '{print $2}' hit_ResOrg.odr | sed -e 's/ ; /\n/g' | egrep -v "^ *
 -- 述べ被提供期間
 cat hit_ResOrg.sel.aff.drop | sed -e 's/ ;; /\n/g' | egrep -v "^ *$" | wc
    3395   44534  356103
+- 提供機関内訳:
+awk -F '     ' '{print $3}' hit_ResOrg.odr | sed -e 's/ ; /\n/g' | egrep -v "^ *$" |  sed -e 's/[\\.,;}]$//' | sort | uniq -c > hit_Org.uchiwake
+vim Org.uchiwake
 ###2017-05-15###
 ###いまここ###
 
