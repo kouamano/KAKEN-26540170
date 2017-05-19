@@ -1493,7 +1493,6 @@ awk -F '	' '{print $3}' hit_ResOrg.odr | sed -e 's/ ; /\n/g' | egrep -v "^ *$" |
 vim hit_Org.uchiwake
 - バイリソース(RES)内訳:
 awk -F '	' '{print $2}' hit_ResOrg.odr | sed -e 's/ ; /\n/g' | egrep -v "^ *$" | sort | uniq -c | sort -nr > hit_Res.uchiwake
-[kamano@n007 doc]$ less hit_Res.uchiwake
 ###2017-05-15###
 ###いまここ###
 
