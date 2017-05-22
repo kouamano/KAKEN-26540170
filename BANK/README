@@ -1485,6 +1485,7 @@ awk -F '	' '{print $3}' hit_ResOrg.odr | sed -e 's/ ; /\n/g' | egrep -v "^ *$" |
 -- 内訳ORG:
 awk -F '	' '{print $3}' hit_ResOrg.odr | sed -e 's/ ; /\n/g' | egrep -v "^ *$" |  sed -e 's/[\\.,;}]$//' | sort | uniq -c > hit_Org.uchiwake
 vim hit_Org.uchiwake
+vim hit_Org.uchiwake.nayose
 -- 述べRES
 awk -F '	' '{print $2}' hit_ResOrg.odr | sed -e 's/ ; /\n/g' | egrep -v "^ *$" | wc
    1250    1418    9328
@@ -1495,7 +1496,6 @@ cat hit_ResOrg.sel.aff.drop | sed -e 's/ ;; /\n/g' | egrep -v "^ *$" | wc
    3395   44534  356103
 -- 内訳AFF:
 cat hit_ResOrg.sel.aff.drop | sed -e 's/ ;; /\n/g' | egrep -v "^ *$" | sort  | uniq -c | sort -nr > hit_Aff.uchiwake
-vim hit_Org.uchiwake.nayose
 ###2017-05-15###
 ###いまここ###
 
