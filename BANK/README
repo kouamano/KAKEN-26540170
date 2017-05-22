@@ -1478,21 +1478,24 @@ awk -F '	' '{print $1"\t"$7"\t"$8"\t"$9}' /BANK/PMC/20140724/Matching/BioResourc
 paste hit_ResOrg.odr.dist hit_ResOrg.sel.aff.drop hit_ResOrg.sel.pub-year > hit_ResOrgAffYear
 - 最終結果: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrgAffYear
 ### 集計
-- 述べ出現件数
+- 出現件数
 -- 述べORG: 
 awk -F '	' '{print $3}' hit_ResOrg.odr | sed -e 's/ ; /\n/g' | egrep -v "^ *$" | wc
     975    2098   15618
+-- 内訳ORG:
+awk -F '	' '{print $3}' hit_ResOrg.odr | sed -e 's/ ; /\n/g' | egrep -v "^ *$" |  sed -e 's/[\\.,;}]$//' | sort | uniq -c > hit_Org.uchiwake
+vim hit_Org.uchiwake
 -- 述べRES
 awk -F '	' '{print $2}' hit_ResOrg.odr | sed -e 's/ ; /\n/g' | egrep -v "^ *$" | wc
    1250    1418    9328
+-- 内訳RES:
+awk -F '	' '{print $2}' hit_ResOrg.odr | sed -e 's/ ; /\n/g' | egrep -v "^ *$" | sort | uniq -c | sort -nr > hit_Res.uchiwake
 -- 述べAFF
 cat hit_ResOrg.sel.aff.drop | sed -e 's/ ;; /\n/g' | egrep -v "^ *$" | wc
    3395   44534  356103
-- 提供機関(ORG)内訳:
-awk -F '	' '{print $3}' hit_ResOrg.odr | sed -e 's/ ; /\n/g' | egrep -v "^ *$" |  sed -e 's/[\\.,;}]$//' | sort | uniq -c > hit_Org.uchiwake
-vim hit_Org.uchiwake
-- バイリソース(RES)内訳:
-awk -F '	' '{print $2}' hit_ResOrg.odr | sed -e 's/ ; /\n/g' | egrep -v "^ *$" | sort | uniq -c | sort -nr > hit_Res.uchiwake
+-- 内訳AFF:
+cat hit_ResOrg.sel.aff.drop | sed -e 's/ ;; /\n/g' | egrep -v "^ *$" | sort  | uniq -c | sort -nr > hit_Aff.uchiwake
+
 ###2017-05-15###
 ###いまここ###
 
