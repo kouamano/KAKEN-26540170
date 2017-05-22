@@ -1495,7 +1495,7 @@ cat hit_ResOrg.sel.aff.drop | sed -e 's/ ;; /\n/g' | egrep -v "^ *$" | wc
    3395   44534  356103
 -- 内訳AFF:
 cat hit_ResOrg.sel.aff.drop | sed -e 's/ ;; /\n/g' | egrep -v "^ *$" | sort  | uniq -c | sort -nr > hit_Aff.uchiwake
-
+vim hit_Org.uchiwake.nayose
 ###2017-05-15###
 ###いまここ###
 
