@@ -1481,12 +1481,8 @@ paste hit_ResOrg.odr.dist hit_ResOrg.sel.aff.drop hit_ResOrg.sel.pub-year > hit_
 ### 集計: 出現数
 - 出現件数
 -- 述べORG: 
-awk -F '	' '{print $3}' hit_ResOrg.odr | sed -e 's/ ; /\n/g' | egrep -v "^ *$" | wc
-    975    2098   15618
+/BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/RES-ORG-aff.nb
 -- 内訳ORG:
-awk -F '	' '{print $3}' hit_ResOrg.odr | sed -e 's/ ; /\n/g' | egrep -v "^ *$" |  sed -e 's/[\\.,;}]$//' | sort | uniq -c > hit_Org.uchiwake
-vim hit_Org.uchiwake
-vim hit_Org.uchiwake.nayose
 -- 述べRES
 awk -F '	' '{print $2}' hit_ResOrg.odr | sed -e 's/ ; /\n/g' | egrep -v "^ *$" | wc
    1250    1418    9328
