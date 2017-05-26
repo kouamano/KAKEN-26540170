@@ -1,0 +1,4075 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[    176100,       4067]
+NotebookOptionsPosition[    169066,       3837]
+NotebookOutlinePosition[    169406,       3852]
+CellTagsIndexPosition[    169363,       3849]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["RES - ORG - aff extraction", "Title",
+ CellChangeTimes->{{3.703538945969205*^9, 3.703538986593952*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Program", "Chapter",
+ CellChangeTimes->{{3.7035390116691227`*^9, 3.703539018172924*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"odrPatt", "[", "s_String", "]"}], ":=", 
+  RowBox[{"Map", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"StringTake", "[", 
+      RowBox[{"#", ",", 
+       RowBox[{"-", "1"}]}], "]"}], "&"}], ",", 
+    RowBox[{"StringSplit", "[", 
+     RowBox[{"s", ",", "\"\<:\>\""}], "]"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.703535545986629*^9, 3.703535619598196*^9}, {
+  3.703535662102223*^9, 3.703535665806831*^9}, {3.703538911586803*^9, 
+  3.703538922968618*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"splitORG", "[", "s_String", "]"}], ":=", 
+  RowBox[{"Map", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"StringReplace", "[", 
+      RowBox[{"#", ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"RegularExpression", "[", "\"\<^ +\>\"", "]"}], "\[Rule]", 
+          "\"\<\>\""}], ",", 
+         RowBox[{
+          RowBox[{"RegularExpression", "[", "\"\< +$\>\"", "]"}], "\[Rule]", 
+          "\"\<\>\""}]}], "}"}]}], "]"}], "&"}], ",", 
+    RowBox[{"StringSplit", "[", 
+     RowBox[{"s", ",", "\"\< ; \>\""}], "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"-", "1"}], "}"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.7035540588906927`*^9, 3.703554091877523*^9}, {
+  3.703554251882246*^9, 3.7035543215137653`*^9}, {3.703554365277197*^9, 
+  3.70355441116265*^9}, {3.703554895791089*^9, 3.70355490299044*^9}, {
+  3.703554937318285*^9, 3.703554999182794*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"splitPair", "[", "s_String", "]"}], ":=", 
+  RowBox[{"StringSplit", "[", 
+   RowBox[{"s", ",", "\"\<<|/>\>\""}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.7039916531931953`*^9, 3.703991694199394*^9}, {
+  3.703991728541779*^9, 3.703991744053678*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"splitAffTx", "[", "s_String", "]"}], ":=", 
+  RowBox[{"StringSplit", "[", 
+   RowBox[{"s", ",", "\"\< ;; \>\""}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.703974368420075*^9, 3.7039744048432426`*^9}, {
+  3.703974449107218*^9, 3.703974458153916*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Data", "Chapter",
+ CellChangeTimes->{{3.703538997224928*^9, 3.703539005139209*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"$CharacterEncoding", "=", "\"\<UTF-8\>\""}]], "Input",
+ CellChangeTimes->{{3.703487417406077*^9, 3.7034874313912277`*^9}, 
+   3.7039944554574966`*^9}],
+
+Cell[BoxData["\<\"UTF-8\"\>"], "Output",
+ CellChangeTimes->{3.7034874329171743`*^9, 3.703488517763419*^9, 
+  3.703539056088443*^9, 3.703553935812204*^9, 3.7035728126072283`*^9, 
+  3.703826171695175*^9, 3.703973961530992*^9, 3.7039783463654203`*^9, 
+  3.7039906604038477`*^9, 3.7039908267750273`*^9, 3.7039909801073017`*^9, 
+  3.703991622119268*^9, 3.703994457455731*^9, 3.703996951679173*^9, 
+  3.7040020698730392`*^9, 3.704509398188842*^9, 3.704511406661557*^9, 
+  3.704762603500483*^9, 3.704768288936571*^9, 3.7047695699353037`*^9}]
+}, Open  ]],
+
+Cell["<RES> : <ORG> : <aff>", "Text",
+ CellChangeTimes->{{3.7034872121023912`*^9, 3.703487265175268*^9}, {
+  3.7039966668022213`*^9, 3.703996677753387*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(", 
+   RowBox[{"tsv", "=", 
+    RowBox[{"Import", "[", 
+     RowBox[{
+     "\"\</BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/\
+hit_ResOrgAffYear\>\"", ",", "\"\<TSV\>\""}], "]"}]}], ")"}], "//", 
+  "Dimensions"}]], "Input",
+ CellChangeTimes->{{3.703996681491437*^9, 3.703996768807556*^9}, {
+  3.704502845936697*^9, 3.704502859356778*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"977", ",", "4"}], "}"}]], "Output",
+ CellChangeTimes->{{3.703996744847499*^9, 3.7039967709640102`*^9}, 
+   3.7039969523379383`*^9, 3.704002070535142*^9, 3.704502865204775*^9, 
+   3.704509398974519*^9, 3.704511407503125*^9, 3.7047626043547077`*^9, 
+   3.704768290278027*^9, 3.7047695704866467`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"targetPos", "=", 
+   RowBox[{"Flatten", "[", 
+    RowBox[{"Position", "[", 
+     RowBox[{"tsv", ",", 
+      RowBox[{"x_", "/;", 
+       RowBox[{
+        RowBox[{"Head", "[", 
+         RowBox[{"x", "[", 
+          RowBox[{"[", "4", "]"}], "]"}], "]"}], "\[Equal]", "Integer"}]}], 
+      ",", 
+      RowBox[{"{", "1", "}"}]}], "]"}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.704503017154209*^9, 3.7045030284083776`*^9}, {
+  3.7045031402979927`*^9, 3.704503147492334*^9}, {3.704503179491631*^9, 
+  3.7045032886733227`*^9}}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","partd",
+   "\"Part specification \\!\\(\\*RowBox[{\\\"List\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"4\\\", \\\"\[RightDoubleBracket]\\\"}]\\) is \
+longer than depth of object.\"",2,65,46,32266517026412738849,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.704503247973467*^9, 3.704503289615602*^9, 
+  3.7045094001303864`*^9, 3.704511408117743*^9, 3.704762605589944*^9, 
+  3.704768291070175*^9, 3.7047695709464493`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(", 
+   RowBox[{"targetTSV", "=", 
+    RowBox[{"tsv", "[", 
+     RowBox[{"[", "targetPos", "]"}], "]"}]}], ")"}], "//", 
+  "Dimensions"}]], "Input",
+ CellChangeTimes->{{3.704503298893588*^9, 3.704503347543112*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"953", ",", "4"}], "}"}]], "Output",
+ CellChangeTimes->{{3.70450331795146*^9, 3.704503351697371*^9}, 
+   3.7045094009959993`*^9, 3.704511408762322*^9, 3.7047626065963917`*^9, 
+   3.7047682911382236`*^9, 3.704769571614184*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(", 
+   RowBox[{"resorg", "=", 
+    RowBox[{"Import", "[", 
+     RowBox[{
+     "\"\</BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/\
+hit_ResOrg.odr\>\"", ",", "\"\<TSV\>\""}], "]"}]}], ")"}], "//", 
+  "Dimensions"}]], "Input",
+ CellChangeTimes->{{3.704763654521483*^9, 3.704763715057849*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"977", ",", "4"}], "}"}]], "Output",
+ CellChangeTimes->{3.704763717670877*^9, 3.704768291951509*^9, 
+  3.704769572230777*^9}]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Analysis", "Chapter",
+ CellChangeTimes->{{3.7035390116691227`*^9, 3.7035390450665627`*^9}, {
+  3.703977844171442*^9, 3.703977850558383*^9}, {3.7039779420759706`*^9, 
+  3.703977947067276*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Organization", "Section",
+ CellChangeTimes->{{3.704503461534338*^9, 3.7045034996322327`*^9}, {
+  3.704763737976501*^9, 3.70476374269198*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"p2", "=", 
+   RowBox[{"Flatten", "[", 
+    RowBox[{"Position", "[", 
+     RowBox[{
+      RowBox[{"Map", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"#", "[", 
+          RowBox[{"[", "2", "]"}], "]"}], "&"}], ",", "resorg"}], "]"}], ",", 
+      
+      RowBox[{"x_", "/;", 
+       RowBox[{"x", "!=", "\"\<\>\""}]}]}], "]"}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.704763758740838*^9, 3.704763902938436*^9}, 
+   3.704764221522954*^9, {3.704764255716908*^9, 3.704764256196033*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"p1", "=", 
+   RowBox[{"Flatten", "[", 
+    RowBox[{"Position", "[", 
+     RowBox[{
+      RowBox[{"Map", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"#", "[", 
+          RowBox[{"[", "1", "]"}], "]"}], "&"}], ",", "resorg"}], "]"}], ",", 
+      
+      RowBox[{"(", 
+       RowBox[{"x_", "/;", 
+        RowBox[{
+         RowBox[{"x", "\[Equal]", "\"\<ACK\>\""}], " ", "||", " ", 
+         RowBox[{"x", "\[Equal]", "\"\<Mat\>\""}]}]}], ")"}]}], "]"}], 
+    "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.704763924516034*^9, 3.7047641136881037`*^9}, {
+  3.704764164023044*^9, 3.704764224296814*^9}, {3.7047642620846863`*^9, 
+  3.7047642623676157`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"p3", "=", 
+   RowBox[{"Flatten", "[", 
+    RowBox[{"Position", "[", 
+     RowBox[{
+      RowBox[{"Map", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"#", "[", 
+          RowBox[{"[", "3", "]"}], "]"}], "&"}], ",", "resorg"}], "]"}], ",", 
+      
+      RowBox[{"x_", "/;", 
+       RowBox[{"x", "\[NotEqual]", "\"\<\>\""}]}]}], "]"}], "]"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.7047642757445393`*^9, 3.70476428274428*^9}, {
+  3.704764342421995*^9, 3.704764413220213*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(", 
+   RowBox[{"OrgLine", "=", 
+    RowBox[{"Map", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"#", "[", 
+        RowBox[{"[", "3", "]"}], "]"}], "&"}], ",", 
+      RowBox[{"resorg", "[", 
+       RowBox[{"[", 
+        RowBox[{"Intersection", "[", 
+         RowBox[{"p1", ",", "p2", ",", "p3"}], "]"}], "]"}], "]"}]}], "]"}]}],
+    ")"}], "//", "Dimensions"}]], "Input",
+ CellChangeTimes->{{3.704764417788989*^9, 3.704764622439138*^9}, {
+  3.704764708123048*^9, 3.704764708491715*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", "954", "}"}]], "Output",
+ CellChangeTimes->{3.704764623643188*^9, 3.7047647097458076`*^9, 
+  3.704768293722434*^9, 3.704769573621619*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(", 
+   RowBox[{"OrgItems", "=", 
+    RowBox[{
+     RowBox[{"Map", "[", 
+      RowBox[{"splitORG", ",", "OrgLine"}], "]"}], "//", "Flatten"}]}], ")"}],
+   "//", "Length"}]], "Input",
+ CellChangeTimes->{{3.7047647505587063`*^9, 3.7047647707510157`*^9}, {
+  3.7047648017511053`*^9, 3.704764827577035*^9}}],
+
+Cell[BoxData["974"], "Output",
+ CellChangeTimes->{{3.704764693081478*^9, 3.7047647128781977`*^9}, {
+   3.704764761376631*^9, 3.704764772071938*^9}, 3.704764832375589*^9, 
+   3.704768294582489*^9, 3.7047695741703167`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"OrgTally", "=", 
+  RowBox[{"Tally", "[", "OrgItems", "]"}]}]], "Input",
+ CellChangeTimes->{{3.70476493212567*^9, 3.704764978863097*^9}, {
+  3.704765625273285*^9, 3.704765630377836*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"\<\"University of Tokyo\"\>", ",", "124"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Kyoto University\"\>", ",", "118"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"National Institute of Genetics\"\>", ",", "122"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Chiba University\"\>", ",", "18"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"The University of Tokyo\"\>", ",", "10"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Tokyo Women\\\\'s Medical University\"\>", ",", "20"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Nagoya University\"\>", ",", "28"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN\"\>", ",", "394"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Yamaguchi University\"\>", ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Kyoto Univ.\"\>", ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Tokyo University\"\>", ",", "14"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Okayama University\"\>", ",", "13"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Kyushu University\"\>", ",", "25"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Osaka City University\"\>", ",", "8"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Hiroshima University\"\>", ",", "14"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Kyoto University.\"\>", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"University of Miyazaki\"\>", ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"National Institute for Basic Biology\"\>", ",", "10"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"University of Tsukuba,\"\>", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Okayama Univ\"\>", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Tsukuba University\"\>", ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"University of Kyoto\"\>", ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Hiroshima Univ\"\>", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"National Institute of Genetics,\"\>", ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Institute of Physical and Chemical Research\"\>", ",", "9"}],
+     "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Osaka City University}\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Tokyo Women\\\\'s Medical College\"\>", ",", "3"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"National Institute for Environmental Studies\"\>", ",", 
+     "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Nagoya University,\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"University of Tsukuba\"\>", ",", "4"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"University of Nagoya\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"National Institute for Physiological Science\"\>", ",", 
+     "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"National Institute for Basic Biology,\"\>", ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN}\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Miyazaki University\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"University of Tokyo,\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Riken Institute\"\>", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Kyushu University;\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"National Institute for Physiological Sciences\"\>", ",", 
+     "1"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{{3.704764948716525*^9, 3.704764980488886*^9}, 
+   3.70476563478411*^9, 3.704768295652507*^9, 3.704769574796463*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Export", "[", 
+  RowBox[{
+  "\"\</BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/Org.\
+tally\>\"", ",", "OrgTally", ",", "\"\<TSV\>\""}], "]"}]], "Input",
+ CellChangeTimes->{{3.7047655722669573`*^9, 3.704765618265614*^9}, {
+  3.704765657416078*^9, 3.7047656613002863`*^9}}],
+
+Cell[BoxData["\<\"/BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_\
+2015/doc/Org.tally\"\>"], "Output",
+ CellChangeTimes->{3.704765663449582*^9, 3.704766488643321*^9, 
+  3.704768296894177*^9, 3.704769575451253*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(", 
+   RowBox[{"OrgTallyNayose", "=", 
+    RowBox[{"Import", "[", 
+     RowBox[{
+     "\"\</BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/\
+Org.tally.nayose\>\"", ",", "\"\<TSV\>\""}], "]"}]}], ")"}], "//", 
+  "Dimensions"}]], "Input",
+ CellChangeTimes->{{3.704766496355401*^9, 3.7047665771345453`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"39", ",", "3"}], "}"}]], "Output",
+ CellChangeTimes->{{3.704766551505015*^9, 3.704766581490095*^9}, 
+   3.704766698136361*^9, 3.7047682979518623`*^9, 3.704769538971138*^9, 
+   3.704769575993626*^9, 3.70476964051541*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(", 
+   RowBox[{"OrgGather", "=", 
+    RowBox[{"Gather", "[", 
+     RowBox[{
+      RowBox[{"Map", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"#", "[", 
+          RowBox[{"[", 
+           RowBox[{"{", 
+            RowBox[{"1", ",", "3"}], "}"}], "]"}], "]"}], "&"}], ",", 
+        "OrgTallyNayose"}], "]"}], ",", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"#1", "[", 
+         RowBox[{"[", "1", "]"}], "]"}], "\[Equal]", 
+        RowBox[{"#2", "[", 
+         RowBox[{"[", "1", "]"}], "]"}]}], "&"}]}], "]"}]}], ")"}], "//", 
+  "Length"}]], "Input",
+ CellChangeTimes->{{3.704766605284958*^9, 3.704766630964357*^9}, {
+  3.704766703827467*^9, 3.7047667608174953`*^9}, {3.704766794026026*^9, 
+  3.704766836445373*^9}, {3.704766902540018*^9, 3.7047669284553957`*^9}, {
+  3.704766986419546*^9, 3.704766990361096*^9}}],
+
+Cell[BoxData["17"], "Output",
+ CellChangeTimes->{{3.7047666251499023`*^9, 3.704766632503845*^9}, {
+   3.704766701585552*^9, 3.704766706915866*^9}, {3.704766742703061*^9, 
+   3.704766762587949*^9}, 3.7047668383241043`*^9, 3.70476691018573*^9, 
+   3.704766991012347*^9, 3.704768299141693*^9, 3.704769543545874*^9, 
+   3.7047695769167852`*^9, 3.704769643994362*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"distro", "=", 
+  RowBox[{"Table", "[", 
+   RowBox[{
+    RowBox[{"Tr", "[", 
+     RowBox[{"Map", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"#", "[", 
+         RowBox[{"[", "2", "]"}], "]"}], "&"}], ",", 
+       RowBox[{"OrgGather", "[", 
+        RowBox[{"[", "n", "]"}], "]"}]}], "]"}], "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"n", ",", "17"}], "}"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.704768371485526*^9, 3.7047684333449917`*^9}, {
+  3.704768539827114*^9, 3.7047685502271976`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "149", ",", "126", ",", "125", ",", "18", ",", "23", ",", "30", ",", "406", 
+   ",", "3", ",", "15", ",", "26", ",", "9", ",", "16", ",", "4", ",", "11", 
+   ",", "9", ",", "2", ",", "2"}], "}"}]], "Output",
+ CellChangeTimes->{{3.7047683731028433`*^9, 3.704768434422674*^9}, 
+   3.704768561431769*^9, 3.70476954673499*^9, 3.704769577578053*^9, 
+   3.704769648034912*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"OrgName", "=", 
+  RowBox[{"Map", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"#", "[", 
+      RowBox[{"[", 
+       RowBox[{"1", ",", "1"}], "]"}], "]"}], "&"}], ",", "OrgGather"}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.704768452712785*^9, 3.704768468569325*^9}, {
+  3.704768510888208*^9, 3.704768511502946*^9}, {3.704768554270049*^9, 
+  3.7047685575731564`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"The University of Tokyo\"\>", ",", "\<\"Kyoto University\"\>", 
+   ",", "\<\"National Institute of Genetics\"\>", 
+   ",", "\<\"Chiba University\"\>", 
+   ",", "\<\"Tokyo Women\\\\'s Medical University\"\>", 
+   ",", "\<\"Nagoya University\"\>", ",", "\<\"RIKEN\"\>", 
+   ",", "\<\"Yamaguchi University\"\>", ",", "\<\"Okayama University\"\>", 
+   ",", "\<\"Kyushu University\"\>", ",", "\<\"Osaka City University\"\>", 
+   ",", "\<\"Hiroshima University\"\>", ",", "\<\"University of Miyazaki\"\>",
+    ",", "\<\"National Institute for Basic Biology\"\>", 
+   ",", "\<\"University of Tsukuba\"\>", 
+   ",", "\<\"National Institute for Environmental Studies\"\>", 
+   ",", "\<\"National Institute for Physiological Sciences\"\>"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{
+  3.704768470424909*^9, 3.704768512486986*^9, 3.7047685653003273`*^9, {
+   3.70476955013072*^9, 3.704769578469558*^9}, 3.704769651975113*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Sort", "[", 
+   RowBox[{
+    RowBox[{"Transpose", "[", 
+     RowBox[{"{", 
+      RowBox[{"OrgName", ",", "distro"}], "}"}], "]"}], ",", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"#1", "[", 
+       RowBox[{"[", "2", "]"}], "]"}], "\[GreaterEqual]", 
+      RowBox[{"#2", "[", 
+       RowBox[{"[", "2", "]"}], "]"}]}], "&"}]}], "]"}], "//", 
+  "TableForm"}]], "Input",
+ CellChangeTimes->{{3.704768568736912*^9, 3.7047686382664127`*^9}}],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"\<\"RIKEN\"\>", "406"},
+    {"\<\"The University of Tokyo\"\>", "149"},
+    {"\<\"Kyoto University\"\>", "126"},
+    {"\<\"National Institute of Genetics\"\>", "125"},
+    {"\<\"Nagoya University\"\>", "30"},
+    {"\<\"Kyushu University\"\>", "26"},
+    {"\<\"Tokyo Women\\\\'s Medical University\"\>", "23"},
+    {"\<\"Chiba University\"\>", "18"},
+    {"\<\"Hiroshima University\"\>", "16"},
+    {"\<\"Okayama University\"\>", "15"},
+    {"\<\"National Institute for Basic Biology\"\>", "11"},
+    {"\<\"Osaka City University\"\>", "9"},
+    {"\<\"University of Tsukuba\"\>", "9"},
+    {"\<\"University of Miyazaki\"\>", "4"},
+    {"\<\"Yamaguchi University\"\>", "3"},
+    {"\<\"National Institute for Environmental Studies\"\>", "2"},
+    {"\<\"National Institute for Physiological Sciences\"\>", "2"}
+   },
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[2.0999999999999996`]}, 
+       Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.4]}, 
+       Offset[0.2]}, "RowsIndexed" -> {}}],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{
+  3.704768592593471*^9, {3.704768631268425*^9, 3.704768639096616*^9}, {
+   3.704769556521964*^9, 3.70476957938599*^9}, 3.704769655971781*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Tr", "[", "distro", "]"}]], "Input",
+ CellChangeTimes->{{3.704768710338584*^9, 3.704768718523438*^9}}],
+
+Cell[BoxData["974"], "Output",
+ CellChangeTimes->{3.704768719919586*^9, 3.704769580183773*^9, 
+  3.704769925260791*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Organization x Resource", "Section",
+ CellChangeTimes->{{3.704503461534338*^9, 3.7045034996322327`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(", 
+   RowBox[{"OrgVSRes", "=", 
+    RowBox[{"Map", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"Drop", "[", 
+        RowBox[{
+         RowBox[{"StringSplit", "[", 
+          RowBox[{
+           RowBox[{"#", "[", 
+            RowBox[{"[", "2", "]"}], "]"}], ",", "\"\<<|/>\>\""}], "]"}], ",",
+          "1"}], "]"}], "&"}], ",", "targetTSV"}], "]"}]}], ")"}], "//", 
+  "Dimensions"}]], "Input",
+ CellChangeTimes->{{3.704503507605608*^9, 3.7045036696670027`*^9}, {
+  3.704510322146491*^9, 3.704510333016473*^9}}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Drop","drop",
+   "\"Cannot drop positions \\!\\(\\*RowBox[{\\\"1\\\"}]\\) through \
+\\!\\(\\*RowBox[{\\\"1\\\"}]\\) in \\!\\(\\*RowBox[{\\\"{\\\", \
+\\\"}\\\"}]\\).\"",2,81,48,32266517026412738849,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7045035937855167`*^9, {3.70450362613768*^9, 3.704503637257148*^9}, 
+   3.7045036728057623`*^9, 3.7045094024502687`*^9, 3.704510335127379*^9, 
+   3.704511410200739*^9, 3.7047626078186893`*^9, 3.704768300513172*^9, 
+   3.704769580931782*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Drop","drop",
+   "\"Cannot drop positions \\!\\(\\*RowBox[{\\\"1\\\"}]\\) through \
+\\!\\(\\*RowBox[{\\\"1\\\"}]\\) in \\!\\(\\*RowBox[{\\\"{\\\", \
+\\\"}\\\"}]\\).\"",2,81,49,32266517026412738849,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7045035937855167`*^9, {3.70450362613768*^9, 3.704503637257148*^9}, 
+   3.7045036728057623`*^9, 3.7045094024502687`*^9, 3.704510335127379*^9, 
+   3.704511410200739*^9, 3.7047626078186893`*^9, 3.704768300513172*^9, 
+   3.704769580937251*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Drop","drop",
+   "\"Cannot drop positions \\!\\(\\*RowBox[{\\\"1\\\"}]\\) through \
+\\!\\(\\*RowBox[{\\\"1\\\"}]\\) in \\!\\(\\*RowBox[{\\\"{\\\", \
+\\\"}\\\"}]\\).\"",2,81,50,32266517026412738849,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7045035937855167`*^9, {3.70450362613768*^9, 3.704503637257148*^9}, 
+   3.7045036728057623`*^9, 3.7045094024502687`*^9, 3.704510335127379*^9, 
+   3.704511410200739*^9, 3.7047626078186893`*^9, 3.704768300513172*^9, 
+   3.704769580952098*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General","stop",
+   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"Drop\\\", \\\"::\\\", \
+\\\"drop\\\"}], \\\"MessageName\\\"]\\) will be suppressed during this \
+calculation.\"",2,81,51,32266517026412738849,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7045035937855167`*^9, {3.70450362613768*^9, 3.704503637257148*^9}, 
+   3.7045036728057623`*^9, 3.7045094024502687`*^9, 3.704510335127379*^9, 
+   3.704511410200739*^9, 3.7047626078186893`*^9, 3.704768300513172*^9, 
+   3.704769580959579*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", "953", "}"}]], "Output",
+ CellChangeTimes->{3.7045103353504972`*^9, 3.704511411025607*^9, 
+  3.704762608842239*^9, 3.704768301233089*^9, 3.704769580966707*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Sort", "[", 
+  RowBox[{
+   RowBox[{"Tally", "[", 
+    RowBox[{"Flatten", "[", "OrgVSRes", "]"}], "]"}], ",", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"#1", "[", 
+      RowBox[{"[", "2", "]"}], "]"}], "\[GreaterEqual]", 
+     RowBox[{"#2", "[", 
+      RowBox[{"[", "2", "]"}], "]"}]}], "&"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.704503677645019*^9, 3.704503783372072*^9}, {
+  3.704504160607246*^9, 3.704504165061513*^9}, {3.704504232054791*^9, 
+  3.704504235953336*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>Arabidopsis\"\>", ",", "25"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>HeLa\"\>", ",", "25"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>Mouse\"\>", ",", "25"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"University of Tokyo<;/>C57BL\\\\/6\"\>", ",", "21"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>C57BL\\\\/6\"\>", ",", "21"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"University of Tokyo<;/>IL\"\>", ",", "20"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"National Institute of Genetics<;/>Drosophila\"\>", ",", 
+     "18"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"National Institute of Genetics<;/>E. coli\"\>", ",", "15"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Kyoto University<;/>Mouse\"\>", ",", "10"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"National Institute of Genetics<;/>ASKA\"\>", ",", "9"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>201B7\"\>", ",", "9"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>HepG2\"\>", ",", "9"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"National Institute of Genetics<;/>medaka\"\>", ",", "8"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"Drop", "[", 
+      RowBox[{
+       RowBox[{"{", "}"}], ",", "1"}], "]"}], ",", "8"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>A549\"\>", ",", "8"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>MC3T3-E1\"\>", ",", "8"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Kyoto University<;/>C57BL\\\\/6\"\>", ",", "8"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"National Institute of Genetics<;/>C. elegans\"\>", ",", 
+     "7"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Kyoto University<;/>DT40\"\>", ",", "7"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Kyoto University<;/>KhES-3\"\>", ",", "7"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>ST2\"\>", ",", "7"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>CS\"\>", ",", "7"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Tokyo Women\\\\'s Medical University<;/>C. elegans\"\>", ",",
+      "6"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"National Institute of Genetics<;/>Tol2\"\>", ",", "6"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"National Institute of Genetics<;/>Keio collection\"\>", ",", 
+     "6"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>C2C12\"\>", ",", "6"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"University of Tokyo<;/>BALB\\\\/c\"\>", ",", "6"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Kyoto University<;/>HeLa\"\>", ",", "6"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Kyoto University<;/>pEF-BOS\"\>", ",", "6"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>NIH3T3\"\>", ",", "6"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>PC12\"\>", ",", "6"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>OP9\"\>", ",", "5"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"National Institute of Genetics<;/>Escherichia coli\"\>", ",",
+      "5"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"National Institute of Genetics<;/>NIG-Fly\"\>", ",", "5"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Kyoto University<;/>IL\"\>", ",", "5"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>pCAGGS\"\>", ",", "5"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Kyoto University<;/>MDCK\"\>", ",", "5"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>Tg\"\>", ",", "5"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Kyoto University<;/>201B7\"\>", ",", "5"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>IL\"\>", ",", "5"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"National Institute of Genetics<;/>MG1655\"\>", ",", "5"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>ATDC5\"\>", ",", "5"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>MKN45\"\>", ",", "5"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>Sa3\"\>", ",", "5"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>Ca9-22\"\>", ",", "5"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Okayama University<;/>Germplasm\"\>", ",", "4"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Hiroshima University<;/>E. coli\"\>", ",", "4"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"University of Tokyo<;/>pCAGGS\"\>", ",", "4"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"University of Tokyo<;/>293T\"\>", ",", "4"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>GCIY\"\>", ",", "4"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>PANC-1\"\>", ",", "4"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>293T\"\>", ",", "4"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>B6G-2\"\>", ",", "4"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>MKN74\"\>", ",", "4"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Kyoto University<;/>BALB\\\\/c\"\>", ",", "4"}], "}"}], ",", 
+   
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>K562\"\>", ",", "4"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"University of Tokyo<;/>Mouse\"\>", ",", "4"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Kyoto University<;/>pCAGGS\"\>", ",", "4"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Chiba University<;/>BALB\\\\/c\"\>", ",", "4"}], "}"}], ",", 
+   
+   RowBox[{"{", 
+    RowBox[{"\<\"Chiba University<;/>C57BL\\\\/6\"\>", ",", "4"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"University of Tokyo<;/>IRF-3\"\>", ",", "4"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>BALB\\\\/c\"\>", ",", "4"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>Escherichia coli\"\>", ",", "4"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"University of Tokyo<;/>JM109\"\>", ",", "4"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>Jurkat\"\>", ",", "4"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>HSC-4\"\>", ",", "4"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>HSC-3\"\>", ",", "4"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>293\"\>", ",", "4"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>Streptococcus\"\>", ",", "4"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"University of Tokyo<;/>medaka\"\>", ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>EB3\"\>", ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"University of Tokyo<;/>Drosophila\"\>", ",", "3"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>Puro\"\>", ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>E. coli\"\>", ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>p53\"\>", ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>pCMV-MAZ\"\>", ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>pBMSA\"\>", ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"University of Tokyo<;/>pEF-BOS\"\>", ",", "3"}], "}"}], ",", 
+   
+   RowBox[{"{", 
+    RowBox[{"\<\"<;/>\"\>", ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Kyoto University<;/>RBP-J\"\>", ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Kyoto University<;/>RIMD 2210633\"\>", ",", "3"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>Nanog-GFP\"\>", ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Chiba University<;/>IFM\"\>", ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>DT40\"\>", ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>MKN28\"\>", ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>ACC-MESO-1\"\>", ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>KP4\"\>", ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>PK-59\"\>", ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>RERF-LC-AI\"\>", ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Tokyo University<;/>Mouse\"\>", ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"University of Tokyo<;/>p53\"\>", ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"National Institute of Genetics<;/>MSM\\\\/Ms\"\>", ",", 
+     "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>THP-1\"\>", ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Kyoto University<;/>KhES-1\"\>", ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>J774.1\"\>", ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>A431\"\>", ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Kyoto University<;/>Escherichia coli\"\>", ",", "3"}], "}"}],
+    ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Nagoya University<;/>pEF-BOS\"\>", ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>MDCK\"\>", ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>MRC-5\"\>", ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"University of Tokyo<;/>Escherichia coli\"\>", ",", "3"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>K1\"\>", ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Kyoto University<;/>KhES-2\"\>", ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>C57BL\\\\/6J\"\>", ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>JCM 5491\"\>", ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Tokyo Women\\\\'s Medical University<;/>tm2182\"\>", ",", 
+     "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Okayama University<;/>Barley\"\>", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"National Institute of Genetics<;/>W0106\"\>", ",", "2"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"National Institute of Genetics<;/>O. rufipogon\"\>", ",", 
+     "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"National Institute of Genetics<;/>BW25113\"\>", ",", "2"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Osaka City University<;/>pTN-TH7\"\>", ",", "2"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"University of Miyazaki<;/>Lotus\"\>", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>RILs\"\>", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"National Institute of Genetics<;/>C9285\"\>", ",", "2"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Kyushu University<;/>l70\"\>", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>Zic2\"\>", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Nagoya University<;/>Drosophila\"\>", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Tsukuba University<;/>HeLa\"\>", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"National Institute of Genetics<;/>Mouse\"\>", ",", "2"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Tokyo University<;/>IL\"\>", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>C. elegans\"\>", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Kyushu University<;/>KGN\"\>", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>pda08126\"\>", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>pda07078\"\>", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"University of Tokyo<;/>Arabidopsis\"\>", ",", "2"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"University of Tokyo<;/>Ba\\\\/F3\"\>", ",", "2"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Osaka City University<;/>Yeast\"\>", ",", "2"}], "}"}], ",", 
+   
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>mouse ES cell line\"\>", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>pCMV-Sp1\"\>", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Nagoya University<;/>pCAGGS\"\>", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"University of Tokyo<;/>293\"\>", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>MC3T3-G2\\\\/PA6\"\>", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>HHUA\"\>", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Nagoya University<;/>37\"\>", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>ACC-MESO-4\"\>", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>PK-1\"\>", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>NOR-P1\"\>", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>WI-38\"\>", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>LC-1F\"\>", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>RERF-LC-KJ\"\>", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Tokyo University<;/>PC12\"\>", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"National Institute of Genetics<;/>1063R-2\"\>", ",", "2"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"University of Tokyo<;/>RIA\"\>", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"University of Tokyo<;/>p50\"\>", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"National Institute of Genetics,<;/>E. coli\"\>", ",", "2"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Kyoto University<;/>Germplasm\"\>", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Kyoto University<;/>Tg\"\>", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"National Institute of Genetics<;/>R2\"\>", ",", "2"}], "}"}],
+    ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Tokyo University<;/>C57BL\\\\/6\"\>", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>CW-2\"\>", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>PC-14\"\>", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Nagoya University<;/>Mouse\"\>", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Kyoto University<;/>Drosophila\"\>", ",", "2"}], "}"}], ",", 
+   
+   RowBox[{"{", 
+    RowBox[{"\<\"Nagoya University<;/>T24\"\>", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Kyushu University<;/>BL21\"\>", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Kyushu University<;/>DE3\"\>", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Kyushu University<;/>E. coli\"\>", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"University of Tokyo<;/>C. elegans\"\>", ",", "2"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>HuH-7\"\>", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>RGM1\"\>", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"University of Tsukuba<;/>C57BL\\\\/6\"\>", ",", "2"}], "}"}],
+    ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Kyoto University<;/>253G1\"\>", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Kyoto University<;/>293T\"\>", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"National Institute of Genetics<;/>W3110\"\>", ",", "2"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>iPS-MEF-Ng-20D-17\"\>", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>APS0001\"\>", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>Lu-134-A\"\>", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"National Institute of Genetics<;/>KH5402-1\"\>", ",", "2"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>MSC\"\>", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"National Institute for Basic Biology<;/>Oryzias latipes\"\>",
+      ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Hiroshima University<;/>Tg\"\>", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>RCB0150\"\>", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>OS-RC-2\"\>", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>MKN1\"\>", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>MKN7\"\>", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>JCM 5705\"\>", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>253G1\"\>", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Osaka City University<;/>Genome DNA clones\"\>", ",", "2"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>JCM 2413\"\>", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>S. aureus\"\>", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>HSC-2\"\>", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Kyoto University<;/>Nanog-GFP\"\>", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>Y79\"\>", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>RCB0536\"\>", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"University of Tokyo<;/>E. coli\"\>", ",", "2"}], "}"}], ",", 
+   
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>JCM 6119\"\>", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>Pseudomonas aeruginosa\"\>", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>HO-1-u-1\"\>", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Kyoto University<;/>E. coli\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"National Institute of Genetics<;/>ME8400\"\>", ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Chiba University<;/>E. coli\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"University of Tokyo<;/>AxCANCre\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"The University of Tokyo<;/>medaka\"\>", ",", "1"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"University of Tokyo<;/>pCALNLZ\"\>", ",", "1"}], "}"}], ",", 
+   
+   RowBox[{"{", 
+    RowBox[{"\<\"Nagoya University<;/>HeLa\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>R1\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Kyoto University<;/>ST\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Yamaguchi University<;/>strain 255\"\>", ",", "1"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Kyoto Univ.<;/>DT40\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Nagoya University<;/>C. elegans\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"National Institute of Genetics<;/>rosophila\"\>", ",", "1"}],
+     "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Tokyo Women\\\\'s Medical University<;/>tm326\"\>", ",", 
+     "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Tokyo Women\\\\'s Medical University<;/>tm331\"\>", ",", 
+     "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Tokyo Women\\\\'s Medical University<;/>tm1011\"\>", ",", 
+     "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Tokyo Women\\\\'s Medical University<;/>tm420\"\>", ",", 
+     "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Tokyo University<;/>R1\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Kyushu University<;/>IL\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Kyushu University<;/>T65\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Kyushu University<;/>RILs\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Okayama University<;/>Ae. tauschii\"\>", ",", "1"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Kyoto University<;/>YPH250\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>T4\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Osaka City University<;/>P. vivax\"\>", ",", "1"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Kyoto University<;/>E.coli\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"University of Tokyo<;/>S288C\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>pGEX-hMAZ\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"National Institute of Genetics<;/>T2\"\>", ",", "1"}], "}"}],
+    ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Chiba University<;/>HepG2\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"National Institute of Genetics<;/>Xenopus tropicalis\"\>", 
+     ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"University of Tokyo<;/>Medaka\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Kyoto University.<;/>KhES-1\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>D7\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>R2\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"National Institute of Genetics<;/>B. subtilis\"\>", ",", 
+     "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"National Institute of Genetics<;/>DH5\[CapitalIHat]\
+\[PlusMinus]\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>pst13453\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Nagoya University<;/>E. coli\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Kyoto University<;/>Arabidopsis\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"The University of Tokyo<;/>RIA\"\>", ",", "1"}], "}"}], ",", 
+   
+   RowBox[{"{", 
+    RowBox[{"\<\"Nagoya University<;/>RIA\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Tokyo University<;/>RIA\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"National Institute for Basic Biology<;/>medaka\"\>", ",", 
+     "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Okayama University<;/>E. coli\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Tokyo University<;/>AK23\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>ST\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"University of Tokyo<;/>ERAI\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"National Institute for Basic Biology<;/>Arabidopsis\"\>", 
+     ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"University of Miyazaki<;/>Glycine\"\>", ",", "1"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Kyoto Univ.<;/>wheat\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"The University of Tokyo<;/>Arabidopsis\"\>", ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"University of Tokyo<;/>F. oxysporum\"\>", ",", "1"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"University of Tsukuba,<;/>pCA24N\"\>", ",", "1"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>HPS0001\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Okayama Univ<;/>Ae. tauschii\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"National Institute of Genetics<;/>Drosophila library\"\>", 
+     ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"The University of Tokyo<;/>Medaka\"\>", ",", "1"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>Rice\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"University of Kyoto<;/>IL\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Kyoto University<;/>genomic library\"\>", ",", "1"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Kyoto University<;/>HOS\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Okayama Univ<;/>Arabidopsis\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"The University of Tokyo<;/>NA\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Hiroshima Univ<;/>HeLa\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"The University of Tokyo<;/>HeLa\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Tokyo Women\\\\'s Medical University<;/>tm322\"\>", ",", 
+     "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Tokyo Women\\\\'s Medical University<;/>tm336\"\>", ",", 
+     "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"National Institute of Genetics,<;/>tm2355, tm2394\"\>", ",", 
+     "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Hiroshima University<;/>S. cerevisiae NBW7\"\>", ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Tokyo Women\\\\'s Medical University<;/>tm1340\"\>", ",", 
+     "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>pR7\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>pGa981-6\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>SR\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Kyoto University<;/>TE-9\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Kyoto University<;/>TE-5\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Chiba University<;/>Tomato\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Chiba University<;/>Arabidopsis\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"National Institute of Genetics<;/>Rice\"\>", ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>ERAI\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"University of Kyoto<;/>HeLa\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>pUC19\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Hiroshima University<;/>X. tropicalis\"\>", ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Tokyo Women\\\\'s Medical University<;/>tm1298\"\>", ",", 
+     "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"The University of Tokyo<;/>CHO-K1\"\>", ",", "1"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Osaka City University}<;/>pCAGGS\"\>", ",", "1"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"University of Tokyo<;/>FM3A\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Kyoto University<;/>293\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Kyoto University<;/>CS\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Tokyo Women\\\\'s Medical College<;/>C. elegans\"\>", ",", 
+     "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>BRL\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>HUC-F2\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>CAG-FLPe\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>RBRC01834\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>Zebrafish\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"National Institute of Genetics<;/>GMR-GAL4\"\>", ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"University of Tokyo<;/>Sf9\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>Thermotoga maritima\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Okayama University<;/>Jurkat\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"University of Tokyo<;/>CHO-K1\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>RBRC03654\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>RBRC03661\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"National Institute for Basic Biology<;/>MG1655\"\>", ",", 
+     "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"National Institute for Basic Biology<;/>E. coli\"\>", ",", 
+     "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"The University of Tokyo<;/>CM 23216\"\>", ",", "1"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Kyushu University<;/>MKN7\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>JCM 12892\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>JCM 13587\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Tokyo Women\\\\'s Medical University<;/>C57BL\\\\/6\"\>", 
+     ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>JHSK-rec\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>TT1TKB\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Kyoto University<;/>LoVo\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Nagoya University<;/>Arabidopsis\"\>", ",", "1"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>JCM 1149\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Institute of Physical and Chemical Research<;/>C. albicans\"\
+\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Institute of Physical and Chemical Research<;/>JCM 1542\"\>",
+      ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>RCB1647\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>TUHR4TKB\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>RCC10RGB\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>B16 melanoma\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>TGBC24TKB\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>HuCCT1\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Nagoya University<;/>BALB\\\\/c\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>RCB2293\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>RCB0988\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>RCB0098\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>RCB2292\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>NOR-P\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>SCCKN, SCCTF\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Yamaguchi University<;/>T2\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Kyushu University<;/>5637\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Kyushu University<;/>T24\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>HuH-28\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>MS-1\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Kyushu University<;/>Q65\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Kyushu University<;/>Q931\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Kyushu University<;/>Q63\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Kyoto University<;/>Vero\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Nagoya University<;/>C57BL\\\\/6\"\>", ",", "1"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"University of Tokyo<;/>LEW\\\\/Jms\"\>", ",", "1"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>TUHR14TKB\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Kyoto University<;/>RILs\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>TCS\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"University of Tokyo<;/>Lotus\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"National Institute of Genetics<;/>HMI\\\\/Ms\"\>", ",", 
+     "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"National Institute of Genetics<;/>KJR\\\\/Ms\"\>", ",", 
+     "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Kyoto Univ.<;/>Mouse\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"National Institute for Environmental \
+Studies<;/>C57BL\\\\/6\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"National Institute for Environmental Studies<;/>medaka\"\>", 
+     ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"National Institute of Genetics<;/>JF1\\\\/Msf\"\>", ",", 
+     "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>pxCANCre\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Tokyo University<;/>MCF-7\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>Vero\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>A172\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>HeLa, 293T\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"National Institute of Genetics,<;/>W3110\"\>", ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Nagoya University,<;/>E. coli\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"University of Tsukuba<;/>Micro-Tom\"\>", ",", "1"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Okayama University<;/>OUH602\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Tokyo Women\\\\'s Medical University<;/>tm2261\"\>", ",", 
+     "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"National Institute of Genetics<;/>15905R-1\"\>", ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"National Institute of Genetics<;/>4316R-1\"\>", ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"National Institute of Genetics<;/>16884R-2\"\>", ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"National Institute of Genetics<;/>nigfly\"\>", ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"National Institute of Genetics<;/>C57BL\\\\/6\"\>", ",", 
+     "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"University of Tokyo<;/>p50T\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>MSM\\\\/Ms\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>Pyrococcus furiosus\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"National Institute of Genetics<;/>10572R-1\"\>", ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>AES0003\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Tokyo University<;/>p53\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Chiba University<;/>NA\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Okayama University<;/>Tg\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Okayama University<;/>C57BL\\\\/6\"\>", ",", "1"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"University of Tokyo<;/>Fusarium\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>RCB0778\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>RERF-LC-K\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Kyushu University<;/>37\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>COS-1\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"University of Tsukuba,<;/>Arabidopsis\"\>", ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Okayama University<;/>37\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"National Institute of Genetics<;/>1388R-1\"\>", ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"National Institute of Genetics<;/>4353R-3\"\>", ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"National Institute of Genetics<;/>5680R-1\"\>", ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"National Institute of Genetics<;/>4353R-2\"\>", ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"National Institute of Genetics<;/>2272R-1\"\>", ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Osaka City University<;/>E. coli\"\>", ",", "1"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Kyoto University<;/>K1\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Tsukuba University<;/>NIH3T3\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"National Institute of Genetics<;/>5092R-2\"\>", ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>MDBK, NBT-T1\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Kyoto University<;/>MCF7\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Institute of Physical and Chemical Research<;/>DE3\"\>", ",",
+      "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Kyoto University<;/>BL21\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>F-36P\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"University of Tokyo<;/>Ax1w1\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>AxCANCre\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Hiroshima University<;/>S. aureus\"\>", ",", "1"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Kyoto University<;/>M22\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Tokyo Women\\\\'s Medical University<;/>tm1845\"\>", ",", 
+     "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>NRK\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"University of Tokyo<;/>pAxCAwt\"\>", ",", "1"}], "}"}], ",", 
+   
+   RowBox[{"{", 
+    RowBox[{"\<\"University of Nagoya<;/>Mouse\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Tokyo Women\\\\'s Medical University<;/>tm1457\"\>", ",", 
+     "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"National Institute for Physiological Science<;/>MDCK\"\>", 
+     ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Institute of Physical and Chemical Research<;/>MEB4\"\>", 
+     ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Tokyo Women\\\\'s Medical University<;/>tm794\"\>", ",", 
+     "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"National Institute for Basic Biology<;/>Mouse\"\>", ",", 
+     "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Kyushu University<;/>CHO-K1\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"National Institute of Genetics<;/>actin-GAL4\"\>", ",", 
+     "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Okayama University<;/>HuH-7\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"National Institute for Basic Biology,<;/>pRS316\"\>", ",", 
+     "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>Emx1-Cre\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Institute of Physical and Chemical Research<;/>HeLa\"\>", 
+     ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN}<;/>B6.Cg-Tg\\\\(CAG-cre\\\\)CZ-MO2Osb\"\>", ",", 
+     "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Kyushu University<;/>tsBN2\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Okayama University<;/>BALB\\\\/c\"\>", ",", "1"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>T98G\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>JCM5803\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Kyushu University<;/>Rice\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Miyazaki University<;/>MG-20\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Miyazaki University<;/>L. japonicus\"\>", ",", "1"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>pda04138\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>pdp13251\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>pdp36135\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>pdp31562\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>pdp17798\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>pdp02416\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>pda06974\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Hiroshima Univ<;/>HSC-4\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Hiroshima Univ<;/>HSC-3\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Hiroshima Univ<;/>Ca9-22\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"University of Tokyo,<;/>C57BL\\\\/6\"\>", ",", "1"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Chiba University<;/>IL\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"University of Tokyo<;/>OP9\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"University of Tokyo<;/>Vero\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Chiba University<;/>Tg\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"The University of Tokyo<;/>IL\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Osaka City University<;/>3D7\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Kyoto University.<;/>BALB\\\\/c\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"University of Tokyo<;/>T4\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Institute of Physical and Chemical Research<;/>C57BL\\\\/6\"\
+\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Institute of Physical and Chemical Research<;/>MKN45\"\>", 
+     ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>L929\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Kyushu University<;/>mulberry\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>MC3T3-E\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>RCB0222\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>RCB0521\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>HFL-I\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>NB1RGB\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>CHO-K1\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>PC-12\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>HOUA-\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Nagoya University<;/>BL21\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Nagoya University<;/>Escherichia coli\"\>", ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"National Institute of Genetics<;/>16908R-1\"\>", ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Yamaguchi University<;/>p53\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>RBRC01835\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>DE3\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"University of Tokyo<;/>HeLa\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>Lu-140\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>Lu-139\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>Lu-135\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>Lu-130\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Hiroshima University<;/>BALB\\\\/c\"\>", ",", "1"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"National Institute of Genetics<;/>E.coli\"\>", ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>ASKA\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>IRAK027I21\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>JW0187\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Kyoto University<;/>p53\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Kyushu University<;/>HeLa\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"National Institute of Genetics<;/>JW3430\"\>", ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Kyoto University<;/>M1\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Kyushu University<;/>Mouse\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Nagoya University<;/>Rat-1\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Nagoya University<;/>NIH3T3\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>Arabidopsi\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"University of Tokyo<;/>CS\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>BALL-1\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>HAL-01\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>RBE\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>KP4}\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Hiroshima University<;/>p53\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>NUGC-4\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"National Institute for Basic Biology<;/>pRS316\"\>", ",", 
+     "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Kyoto University<;/>pGa981-6\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>pDUAL\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Tokyo Women\\\\'s Medical University<;/>tm355\"\>", ",", 
+     "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Tokyo Women\\\\'s Medical University<;/>tm1811\"\>", ",", 
+     "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Hiroshima University<;/>C57BL\\\\/6\"\>", ",", "1"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Riken Institute<;/>KGN\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>RBRC00821\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"National Institute of Genetics<;/>DH1\"\>", ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"National Institute of Genetics<;/>Wild rice\"\>", ",", "1"}],
+     "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>TgN\\\\(deGFP\\\\)18Imeg\"\>", ",", "1"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Tokyo Women\\\\'s Medical University<;/>tm764\"\>", ",", 
+     "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"National Institute of Genetics<;/>37\"\>", ",", "1"}], "}"}],
+    ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Kyushu University<;/>t011\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"University of Tokyo<;/>pRS316\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"National Institute of Genetics,<;/>BW25113\"\>", ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Tokyo Women\\\\'s Medical University<;/>tm2423\"\>", ",", 
+     "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"National Institute of Genetics<;/>rst-Gal4\"\>", ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Nagoya University<;/>HNI\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"National Institute of Genetics<;/>2981R-2\"\>", ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"National Institute of Genetics<;/>4584R-3\"\>", ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Tokyo University<;/>R2\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>FM3A\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"University of Tokyo<;/>Jurkat\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>LM8\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>COS-7\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"University of Tokyo<;/>P. falciparum\"\>", ",", "1"}], "}"}],
+    ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"University of Tokyo<;/>3D7}\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>pda01438\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Kyoto University<;/>J10\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Kyushu University<;/>C57BL\\\\/6\"\>", ",", "1"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Nagoya University<;/>medaka\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>Rat-1\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"National Institute for Basic Biology<;/>p21\"\>", ",", "1"}],
+     "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>NOS-1\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>RCB0007\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"University of Tsukuba<;/>Moneymaker, Aichi First, Ailsa \
+Craig, Micro-Tom, M82\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"National Institute of Genetics<;/>DH1}\"\>", ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>Saos-2\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"National Institute of Genetics<;/>7540R-1\"\>", ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"National Institute of Genetics<;/>7540R-2\"\>", ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"National Institute of Genetics<;/>JW5702\"\>", ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>pC\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"National Institute of Genetics<;/>2708R-2\"\>", ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"National Institute of Genetics<;/>2708R-1\"\>", ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Chiba University<;/>Glycine\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Tokyo Women\\\\'s Medical University<;/>tm2654}\"\>", ",", 
+     "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Tokyo Women\\\\'s Medical University<;/>tm2647\"\>", ",", 
+     "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Tokyo Women\\\\'s Medical University<;/>tm1325\"\>", ",", 
+     "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Okayama University<;/>Shinchunaga\"\>", ",", "1"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"University of Tokyo<;/>HepG2\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>RCB0208\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"University of Tokyo<;/>N4\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>WERI-Rb-1\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>Kato III\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>IA-5\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>TGBC2TKB\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Kyoto University<;/>HepG2\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"National Institute for Basic Biology<;/>p53\"\>", ",", "1"}],
+     "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>RCB1192\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Kyoto University<;/>Oregon-R\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>LC-2\\\\/ad\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"National Institute of Genetics<;/>7788R-1\"\>", ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>RCB1127\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"National Institute of Genetics<;/>pUAST-R57 vector\"\>", ",",
+      "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"National Institute for Basic Biology<;/>d-rR}\"\>", ",", 
+     "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"National Institute for Basic Biology<;/>Medaka\"\>", ",", 
+     "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Chiba University<;/>Mouse\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>HL60\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Tokyo Women\\\\'s Medical College<;/>E. coli\"\>", ",", 
+     "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>RBRC00806\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>pxCAG\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>pAxEFwtit2\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Kyoto University<;/>OT11\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"National Institute of Genetics<;/>11093R-3\"\>", ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"National Institute of Genetics<;/>11093R-1\"\>", ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>DNABook\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"National Institute for Physiological Sciences<;/>R1\"\>", 
+     ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"National Institute of Genetics<;/>np2631-Gal4\"\>", ",", 
+     "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"National Institute of Genetics<;/>16725R-2\"\>", ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Hiroshima University<;/>MDCK\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>JCM 1465\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>B. subtilis\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>JCM5707\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>37\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Kyoto University<;/>C57BL\\\\/6J\"\>", ",", "1"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"National Institute of Genetics<;/>2368R-1\"\>", ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Kyoto University<;/>DOB\\\\/Oda\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Kyoto University<;/>KFRS4\\\\/Kyo\"\>", ",", "1"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"University of Tokyo<;/>ST\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>EoL-1\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"University of Tokyo<;/>\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>JCM 1021\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"National Institute of Genetics<;/>E. coli.\"\>", ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"The University of Tokyo<;/>E. coli\"\>", ",", "1"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Nagoya University<;/>U251\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"University of Tokyo<;/>A. nidulans\"\>", ",", "1"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>KGN\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>MA104\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"University of Tokyo<;/>NA\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>8505C\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>GM95\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Tokyo Women\\\\'s Medical College<;/>tm2156\"\>", ",", "1"}],
+     "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"University of Kyoto<;/>201B7\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"University of Kyoto<;/>253G1\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>Zic1\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>KUSA-A1\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>RCB1153\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>RCB0218\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>P19C6\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"National Institute of Genetics<;/>9867R-3\"\>", ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Riken Institute<;/>LLC\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>pENTR4-H1\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>JCM 12189\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"National Institute of Genetics<;/>E. coli}\"\>", ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"University of Tokyo<;/>C57BL\\\\/6J\"\>", ",", "1"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>Arx-1 KO\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Nagoya University<;/>FLFII\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>wheat\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Hiroshima University<;/>P. aeruginosa\"\>", ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>10T1\\\\/2\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>pCMVluc+\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>Transgenic mouse\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Tokyo University<;/>p21\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"National Institute of Genetics<;/>4005R-2\"\>", ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"National Institute of Genetics<;/>12072R-2\"\>", ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"University of Tokyo<;/>T3M-4\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"University of Tokyo<;/>Escherichia coli}\"\>", ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"University of Tokyo<;/>Shigella\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"University of Tokyo<;/>Oryzias latipes\"\>", ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>JCM 7783\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>JCM 2434\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>JCM 5707\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"University of Tokyo<;/>MDCK\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>Ba\\\\/F3\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>KUSA-H1\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>RBRC01459\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>MCF-7\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>MDA-MB-453\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>PWK\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>HTOA\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>JHOS-2\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>JHOS-3\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>JHOC-5\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>OMC-3\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>HL-60\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>JCM2874\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>JCM11019\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>Penicillium\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>Fusarium\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>Alternaria\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Tokyo University<;/>293\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>RCB0806\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"University of Tokyo<;/>Vibrio\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Kyushu University<;/>mulberry leaves\"\>", ",", "1"}], "}"}],
+    ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Nagoya University<;/>p53\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"National Institute of Genetics<;/>NP1\"\>", ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"National Institute of Genetics<;/>NP3084\"\>", ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"University of Miyazaki<;/>L. japonicus\"\>", ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"University of Miyazaki<;/>Arabidopsis\"\>", ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Kyushu University<;/>L. monocytogenes\"\>", ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"National Institute for Basic Biology<;/>RAW 264\"\>", ",", 
+     "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>Oregon-R\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Nagoya University<;/>S. cerevisiae\"\>", ",", "1"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>pda02633\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>pda00743\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>pda07220\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>CTLL-2\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>RCB0637\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"RIKEN<;/>STO\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Kyushu University<;/>Escherichia coli\"\>", ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Kyushu University<;/>DH5\[CapitalIHat]\[PlusMinus]\"\>", ",",
+      "1"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.704503694806406*^9, {3.70450373075679*^9, 3.7045037482639523`*^9}, 
+   3.7045037848615093`*^9, 3.70450416687779*^9, 3.704504237348288*^9, 
+   3.704509403612344*^9, 3.7045114137230988`*^9, 3.704762610575824*^9, 
+   3.704768303137322*^9, 3.7047695817503433`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(", 
+   RowBox[{"OrgVSResList", "=", 
+    RowBox[{"Flatten", "[", "OrgVSRes", "]"}]}], ")"}], "//", 
+  "Length"}]], "Input",
+ CellChangeTimes->{{3.704522202517641*^9, 3.704522274969975*^9}}],
+
+Cell[BoxData["1233"], "Output",
+ CellChangeTimes->{{3.7045222543255653`*^9, 3.704522275823595*^9}, 
+   3.704762611901545*^9, 3.704768304112776*^9, 3.704769582379779*^9}]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Organization x Affiliation", "Section",
+ CellChangeTimes->{{3.704504989081094*^9, 3.7045050110752993`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"OrgVSResSplit", "=", 
+   RowBox[{"Map", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"StringSplit", "[", 
+       RowBox[{"#", ",", "\"\<<;/>\>\""}], "]"}], "&"}], ",", "OrgVSRes"}], 
+    "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.704505427430667*^9, 3.704505445183662*^9}, {
+  3.704505667962055*^9, 3.704505711303542*^9}, {3.704505741678624*^9, 
+  3.704505815242441*^9}}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "StringSplit","strse",
+   "\"String or list of strings expected at position \\!\\(\\*RowBox[{\\\"1\\\
+\"}]\\) in \\!\\(\\*RowBox[{\\\"StringSplit\\\", \\\"[\\\", \
+RowBox[{RowBox[{\\\"Drop\\\", \\\"[\\\", RowBox[{RowBox[{\\\"{\\\", \
+\\\"}\\\"}], \\\",\\\", \\\"1\\\"}], \\\"]\\\"}], \\\",\\\", \\\"\\\\\\\"<;/>\
+\\\\\\\"\\\"}], \\\"]\\\"}]\\).\"",2,84,52,32266517026412738849,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{{3.704505774700451*^9, 3.7045058165460167`*^9}, 
+   3.704509404389186*^9, 3.7045114143180847`*^9, 3.704762613982588*^9, 
+   3.704768304932263*^9, 3.7047695831832952`*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "StringSplit","strse",
+   "\"String or list of strings expected at position \\!\\(\\*RowBox[{\\\"1\\\
+\"}]\\) in \\!\\(\\*RowBox[{\\\"StringSplit\\\", \\\"[\\\", \
+RowBox[{RowBox[{\\\"Drop\\\", \\\"[\\\", RowBox[{RowBox[{\\\"{\\\", \
+\\\"}\\\"}], \\\",\\\", \\\"1\\\"}], \\\"]\\\"}], \\\",\\\", \\\"\\\\\\\"<;/>\
+\\\\\\\"\\\"}], \\\"]\\\"}]\\).\"",2,84,53,32266517026412738849,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{{3.704505774700451*^9, 3.7045058165460167`*^9}, 
+   3.704509404389186*^9, 3.7045114143180847`*^9, 3.704762613982588*^9, 
+   3.704768304932263*^9, 3.704769583187192*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "StringSplit","strse",
+   "\"String or list of strings expected at position \\!\\(\\*RowBox[{\\\"1\\\
+\"}]\\) in \\!\\(\\*RowBox[{\\\"StringSplit\\\", \\\"[\\\", \
+RowBox[{RowBox[{\\\"Drop\\\", \\\"[\\\", RowBox[{RowBox[{\\\"{\\\", \
+\\\"}\\\"}], \\\",\\\", \\\"1\\\"}], \\\"]\\\"}], \\\",\\\", \\\"\\\\\\\"<;/>\
+\\\\\\\"\\\"}], \\\"]\\\"}]\\).\"",2,84,54,32266517026412738849,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{{3.704505774700451*^9, 3.7045058165460167`*^9}, 
+   3.704509404389186*^9, 3.7045114143180847`*^9, 3.704762613982588*^9, 
+   3.704768304932263*^9, 3.704769583664661*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General","stop",
+   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"StringSplit\\\", \\\"::\
+\\\", \\\"strse\\\"}], \\\"MessageName\\\"]\\) will be suppressed during this \
+calculation.\"",2,84,55,32266517026412738849,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{{3.704505774700451*^9, 3.7045058165460167`*^9}, 
+   3.704509404389186*^9, 3.7045114143180847`*^9, 3.704762613982588*^9, 
+   3.704768304932263*^9, 3.7047695836808434`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"OrgList", "=", 
+   RowBox[{"Map", "[", 
+    RowBox[{"Union", ",", 
+     RowBox[{"Map", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"#", "[", 
+         RowBox[{"[", "1", "]"}], "]"}], "&"}], ",", "OrgVSResSplit", ",", 
+       RowBox[{"{", "2", "}"}]}], "]"}]}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.704505862072263*^9, 3.704505979489297*^9}, {
+  3.70450605076886*^9, 3.704506058282132*^9}, {3.704506099551453*^9, 
+  3.7045061051401453`*^9}, {3.704506152733089*^9, 3.7045061734596157`*^9}, {
+  3.704506206004941*^9, 3.704506218348542*^9}}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","partd",
+   "\"Part specification \\!\\(\\*RowBox[{\\\"\\\\\\\"<;/>\\\\\\\"\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"1\\\", \\\"\[RightDoubleBracket]\\\"}]\\) is \
+longer than depth of object.\"",2,85,56,32266517026412738849,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{{3.704505890927953*^9, 3.704505943245544*^9}, 
+   3.7045059815166597`*^9, 3.704506060716927*^9, 3.70450610854852*^9, 
+   3.704506176983404*^9, 3.704506221319344*^9, 3.704509406688466*^9, 
+   3.7045114150185328`*^9, 3.7047626195215607`*^9, 3.704768305723452*^9, 
+   3.7047695846308117`*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","partd",
+   "\"Part specification \\!\\(\\*RowBox[{\\\"\\\\\\\"<;/>\\\\\\\"\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"1\\\", \\\"\[RightDoubleBracket]\\\"}]\\) is \
+longer than depth of object.\"",2,85,57,32266517026412738849,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{{3.704505890927953*^9, 3.704505943245544*^9}, 
+   3.7045059815166597`*^9, 3.704506060716927*^9, 3.70450610854852*^9, 
+   3.704506176983404*^9, 3.704506221319344*^9, 3.704509406688466*^9, 
+   3.7045114150185328`*^9, 3.7047626195215607`*^9, 3.704768305723452*^9, 
+   3.704769584646304*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","partd",
+   "\"Part specification \\!\\(\\*RowBox[{\\\"\\\\\\\"<;/>\\\\\\\"\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"1\\\", \\\"\[RightDoubleBracket]\\\"}]\\) is \
+longer than depth of object.\"",2,85,58,32266517026412738849,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{{3.704505890927953*^9, 3.704505943245544*^9}, 
+   3.7045059815166597`*^9, 3.704506060716927*^9, 3.70450610854852*^9, 
+   3.704506176983404*^9, 3.704506221319344*^9, 3.704509406688466*^9, 
+   3.7045114150185328`*^9, 3.7047626195215607`*^9, 3.704768305723452*^9, 
+   3.704769584653154*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General","stop",
+   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"Part\\\", \\\"::\\\", \
+\\\"partd\\\"}], \\\"MessageName\\\"]\\) will be suppressed during this \
+calculation.\"",2,85,59,32266517026412738849,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{{3.704505890927953*^9, 3.704505943245544*^9}, 
+   3.7045059815166597`*^9, 3.704506060716927*^9, 3.70450610854852*^9, 
+   3.704506176983404*^9, 3.704506221319344*^9, 3.704509406688466*^9, 
+   3.7045114150185328`*^9, 3.7047626195215607`*^9, 3.704768305723452*^9, 
+   3.70476958466*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "StringExpression","invld",
+   "\"Element \\!\\(\\*RowBox[{\\\"\\\\\\\"<;/>\\\\\\\"\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"1\\\", \\\"\[RightDoubleBracket]\\\"}]\\) is \
+not a valid string or pattern element in \
+\\!\\(\\*RowBox[{\\\"\\\\\\\"<;/>\\\\\\\"\\\", \\\"\[LeftDoubleBracket]\\\", \
+\\\"1\\\", \\\"\[RightDoubleBracket]\\\"}]\\).\"",2,85,60,
+   32266517026412738849,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{{3.704505890927953*^9, 3.704505943245544*^9}, 
+   3.7045059815166597`*^9, 3.704506060716927*^9, 3.70450610854852*^9, 
+   3.704506176983404*^9, 3.704506221319344*^9, 3.704509406688466*^9, 
+   3.7045114150185328`*^9, 3.7047626195215607`*^9, 3.704768305723452*^9, 
+   3.704769584667879*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "StringExpression","invld",
+   "\"Element \\!\\(\\*RowBox[{\\\"\\\\\\\"<;/>\\\\\\\"\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"1\\\", \\\"\[RightDoubleBracket]\\\"}]\\) is \
+not a valid string or pattern element in \
+\\!\\(\\*RowBox[{\\\"\\\\\\\"<;/>\\\\\\\"\\\", \\\"\[LeftDoubleBracket]\\\", \
+\\\"1\\\", \\\"\[RightDoubleBracket]\\\"}]\\).\"",2,85,61,
+   32266517026412738849,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{{3.704505890927953*^9, 3.704505943245544*^9}, 
+   3.7045059815166597`*^9, 3.704506060716927*^9, 3.70450610854852*^9, 
+   3.704506176983404*^9, 3.704506221319344*^9, 3.704509406688466*^9, 
+   3.7045114150185328`*^9, 3.7047626195215607`*^9, 3.704768305723452*^9, 
+   3.7047695846745243`*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","partw",
+   "\"Part \\!\\(\\*RowBox[{\\\"1\\\"}]\\) of \\!\\(\\*RowBox[{\\\"{\\\", \
+\\\"}\\\"}]\\) does not exist.\"",2,85,62,32266517026412738849,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{{3.704505890927953*^9, 3.704505943245544*^9}, 
+   3.7045059815166597`*^9, 3.704506060716927*^9, 3.70450610854852*^9, 
+   3.704506176983404*^9, 3.704506221319344*^9, 3.704509406688466*^9, 
+   3.7045114150185328`*^9, 3.7047626195215607`*^9, 3.704768305723452*^9, 
+   3.7047695846809597`*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","partw",
+   "\"Part \\!\\(\\*RowBox[{\\\"1\\\"}]\\) of \\!\\(\\*RowBox[{\\\"{\\\", \
+\\\"}\\\"}]\\) does not exist.\"",2,85,63,32266517026412738849,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{{3.704505890927953*^9, 3.704505943245544*^9}, 
+   3.7045059815166597`*^9, 3.704506060716927*^9, 3.70450610854852*^9, 
+   3.704506176983404*^9, 3.704506221319344*^9, 3.704509406688466*^9, 
+   3.7045114150185328`*^9, 3.7047626195215607`*^9, 3.704768305723452*^9, 
+   3.704769584687714*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "StringExpression","invld",
+   "\"Element \\!\\(\\*RowBox[{\\\"\\\\\\\"<;/>\\\\\\\"\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"1\\\", \\\"\[RightDoubleBracket]\\\"}]\\) is \
+not a valid string or pattern element in \
+\\!\\(\\*RowBox[{\\\"\\\\\\\"<;/>\\\\\\\"\\\", \\\"\[LeftDoubleBracket]\\\", \
+\\\"1\\\", \\\"\[RightDoubleBracket]\\\"}]\\).\"",2,85,64,
+   32266517026412738849,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{{3.704505890927953*^9, 3.704505943245544*^9}, 
+   3.7045059815166597`*^9, 3.704506060716927*^9, 3.70450610854852*^9, 
+   3.704506176983404*^9, 3.704506221319344*^9, 3.704509406688466*^9, 
+   3.7045114150185328`*^9, 3.7047626195215607`*^9, 3.704768305723452*^9, 
+   3.704769584694283*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General","stop",
+   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"StringExpression\\\", \
+\\\"::\\\", \\\"invld\\\"}], \\\"MessageName\\\"]\\) will be suppressed \
+during this calculation.\"",2,85,65,32266517026412738849,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{{3.704505890927953*^9, 3.704505943245544*^9}, 
+   3.7045059815166597`*^9, 3.704506060716927*^9, 3.70450610854852*^9, 
+   3.704506176983404*^9, 3.704506221319344*^9, 3.704509406688466*^9, 
+   3.7045114150185328`*^9, 3.7047626195215607`*^9, 3.704768305723452*^9, 
+   3.704769584700665*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","partw",
+   "\"Part \\!\\(\\*RowBox[{\\\"1\\\"}]\\) of \\!\\(\\*RowBox[{\\\"{\\\", \
+\\\"}\\\"}]\\) does not exist.\"",2,85,66,32266517026412738849,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{{3.704505890927953*^9, 3.704505943245544*^9}, 
+   3.7045059815166597`*^9, 3.704506060716927*^9, 3.70450610854852*^9, 
+   3.704506176983404*^9, 3.704506221319344*^9, 3.704509406688466*^9, 
+   3.7045114150185328`*^9, 3.7047626195215607`*^9, 3.704768305723452*^9, 
+   3.704769585295137*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General","stop",
+   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"Part\\\", \\\"::\\\", \
+\\\"partw\\\"}], \\\"MessageName\\\"]\\) will be suppressed during this \
+calculation.\"",2,85,67,32266517026412738849,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{{3.704505890927953*^9, 3.704505943245544*^9}, 
+   3.7045059815166597`*^9, 3.704506060716927*^9, 3.70450610854852*^9, 
+   3.704506176983404*^9, 3.704506221319344*^9, 3.704509406688466*^9, 
+   3.7045114150185328`*^9, 3.7047626195215607`*^9, 3.704768305723452*^9, 
+   3.704769585324791*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"OrgList", "//", "Length"}]], "Input",
+ CellChangeTimes->{{3.7045059963587713`*^9, 3.704506005978137*^9}, {
+  3.704506239331786*^9, 3.7045062418210783`*^9}}],
+
+Cell[BoxData["953"], "Output",
+ CellChangeTimes->{{3.704505998289583*^9, 3.704506007569787*^9}, 
+   3.704506125939341*^9, 3.704506189767229*^9, {3.704506230521328*^9, 
+   3.704506242340795*^9}, 3.7045094084919043`*^9, 3.704511417385186*^9, 
+   3.7047626286165657`*^9, 3.704768307918639*^9, 3.704769586111815*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(", 
+   RowBox[{"AffList", "=", 
+    RowBox[{"Map", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"StringSplit", "[", 
+        RowBox[{
+         RowBox[{"#", "[", 
+          RowBox[{"[", "3", "]"}], "]"}], ",", "\"\< ;; \>\""}], "]"}], "&"}],
+       ",", "targetTSV"}], "]"}]}], ")"}], "//", "Length"}]], "Input",
+ CellChangeTimes->{{3.704506508753685*^9, 3.704506516401887*^9}, {
+  3.7045080776073093`*^9, 3.704508118615096*^9}}],
+
+Cell[BoxData["953"], "Output",
+ CellChangeTimes->{
+  3.704506517282117*^9, {3.704508096852894*^9, 3.704508119888179*^9}, 
+   3.7045094095108557`*^9, 3.7045114187577457`*^9, 3.704762633623623*^9, 
+   3.7047683085329933`*^9, 3.704769586868363*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(", 
+   RowBox[{"OrgVSAff", "=", 
+    RowBox[{"Table", "[", 
+     RowBox[{
+      RowBox[{"Outer", "[", 
+       RowBox[{"pair", ",", 
+        RowBox[{"OrgList", "[", 
+         RowBox[{"[", "n", "]"}], "]"}], ",", 
+        RowBox[{"AffList", "[", 
+         RowBox[{"[", "n", "]"}], "]"}]}], "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"n", ",", "953"}], "}"}]}], "]"}]}], ")"}], "//", 
+  "Length"}]], "Input",
+ CellChangeTimes->{{3.704508135834361*^9, 3.7045081468891897`*^9}, {
+  3.704508260966104*^9, 3.7045083429465113`*^9}, {3.7045083909303703`*^9, 
+  3.7045084343857307`*^9}, {3.704508464884671*^9, 3.7045084873444138`*^9}, {
+  3.7045087465004396`*^9, 3.7045087503513536`*^9}}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Outer","heads",
+   "\"Heads \\!\\(\\*RowBox[{\\\"List\\\"}]\\) and \
+\\!\\(\\*RowBox[{\\\"StringSplit\\\"}]\\) at positions \\!\\(\\*RowBox[{\\\"3\
+\\\"}]\\) and \\!\\(\\*RowBox[{\\\"2\\\"}]\\) are expected to be the same.\"",
+   2,88,68,32266517026412738849,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{{3.704508295764936*^9, 3.704508312123871*^9}, 
+   3.704508344965873*^9, {3.704508406909034*^9, 3.704508436601828*^9}, {
+   3.7045084679793367`*^9, 3.7045084901841307`*^9}, 3.704508752552043*^9, 
+   3.7045094138312902`*^9, 3.704511419615117*^9, 3.704762637391389*^9, 
+   3.704768309543556*^9, 3.7047695880261927`*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Outer","heads",
+   "\"Heads \\!\\(\\*RowBox[{\\\"List\\\"}]\\) and \
+\\!\\(\\*RowBox[{\\\"StringSplit\\\"}]\\) at positions \\!\\(\\*RowBox[{\\\"3\
+\\\"}]\\) and \\!\\(\\*RowBox[{\\\"2\\\"}]\\) are expected to be the same.\"",
+   2,88,69,32266517026412738849,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{{3.704508295764936*^9, 3.704508312123871*^9}, 
+   3.704508344965873*^9, {3.704508406909034*^9, 3.704508436601828*^9}, {
+   3.7045084679793367`*^9, 3.7045084901841307`*^9}, 3.704508752552043*^9, 
+   3.7045094138312902`*^9, 3.704511419615117*^9, 3.704762637391389*^9, 
+   3.704768309543556*^9, 3.704769588033476*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Outer","heads",
+   "\"Heads \\!\\(\\*RowBox[{\\\"List\\\"}]\\) and \
+\\!\\(\\*RowBox[{\\\"StringSplit\\\"}]\\) at positions \\!\\(\\*RowBox[{\\\"3\
+\\\"}]\\) and \\!\\(\\*RowBox[{\\\"2\\\"}]\\) are expected to be the same.\"",
+   2,88,70,32266517026412738849,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{{3.704508295764936*^9, 3.704508312123871*^9}, 
+   3.704508344965873*^9, {3.704508406909034*^9, 3.704508436601828*^9}, {
+   3.7045084679793367`*^9, 3.7045084901841307`*^9}, 3.704508752552043*^9, 
+   3.7045094138312902`*^9, 3.704511419615117*^9, 3.704762637391389*^9, 
+   3.704768309543556*^9, 3.704769588046268*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General","stop",
+   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"Outer\\\", \\\"::\\\", \
+\\\"heads\\\"}], \\\"MessageName\\\"]\\) will be suppressed during this \
+calculation.\"",2,88,71,32266517026412738849,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{{3.704508295764936*^9, 3.704508312123871*^9}, 
+   3.704508344965873*^9, {3.704508406909034*^9, 3.704508436601828*^9}, {
+   3.7045084679793367`*^9, 3.7045084901841307`*^9}, 3.704508752552043*^9, 
+   3.7045094138312902`*^9, 3.704511419615117*^9, 3.704762637391389*^9, 
+   3.704768309543556*^9, 3.704769588092704*^9}],
+
+Cell[BoxData["953"], "Output",
+ CellChangeTimes->{{3.704508296082016*^9, 3.704508313210245*^9}, 
+   3.704508345145612*^9, {3.704508407086934*^9, 3.7045084368414707`*^9}, {
+   3.704508468162991*^9, 3.704508490504088*^9}, 3.70450875284802*^9, 
+   3.7045094144128237`*^9, 3.704511419712287*^9, 3.7047626375901203`*^9, 
+   3.704768310559332*^9, 3.7047695881396637`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(", 
+   RowBox[{"OrgVSAffList", "=", 
+    RowBox[{"Flatten", "[", "OrgVSAff", "]"}]}], ")"}], "//", 
+  "Length"}]], "Input",
+ CellChangeTimes->{{3.704508563346471*^9, 3.704508694541883*^9}, {
+  3.704508788941122*^9, 3.704508845978924*^9}, {3.704509048704506*^9, 
+  3.704509063422411*^9}}],
+
+Cell[BoxData["3369"], "Output",
+ CellChangeTimes->{{3.704508608108481*^9, 3.704508698184085*^9}, {
+   3.704508797835855*^9, 3.704508808002803*^9}, 3.704508847194174*^9, {
+   3.704509056737574*^9, 3.704509064340569*^9}, 3.7045094152986603`*^9, 
+   3.704511420458802*^9, 3.7047626399007597`*^9, 3.7047683113869543`*^9, 
+   3.7047695888683777`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Sort", "[", 
+   RowBox[{
+    RowBox[{"Tally", "[", "OrgVSAffList", "]"}], ",", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"#1", "[", 
+       RowBox[{"[", "2", "]"}], "]"}], "\[GreaterEqual]", 
+      RowBox[{"#2", "[", 
+       RowBox[{"[", "2", "]"}], "]"}]}], "&"}]}], "]"}], "[", 
+  RowBox[{"[", 
+   RowBox[{"Range", "[", "15", "]"}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.704509075824494*^9, 3.704509142938862*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"pair", "[", 
+      RowBox[{"\<\"RIKEN\"\>", 
+       ",", "\<\"Baylor College of Medicine, United States of America\"\>"}], 
+      "]"}], ",", "5"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"pair", "[", 
+      RowBox[{"\<\"RIKEN\"\>", ",", "\<\"University of Bremen, Germany\"\>"}],
+       "]"}], ",", "4"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"pair", "[", 
+      RowBox[{"\<\"RIKEN\"\>", ",", "\<\"The Jackson Laboratory, US\"\>"}], 
+      "]"}], ",", "4"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"pair", "[", 
+      RowBox[{"\<\"RIKEN\"\>", 
+       ",", "\<\"Division of Clinical Neuroscience, Chiba University Center \
+for Forensic Mental Health, Chiba, Japan\"\>"}], "]"}], ",", "4"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"pair", "[", 
+      RowBox[{"\<\"RIKEN\"\>", 
+       ",", "\<\"Cell Engineering Division, RIKEN BioResource Center, \
+Tsukuba, Ibaraki, Japan\"\>"}], "]"}], ",", "4"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"pair", "[", 
+      RowBox[{"\<\"National Institute of Genetics\"\>", 
+       ",", "\<\"University of Washington, United States of America\"\>"}], 
+      "]"}], ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"pair", "[", 
+      RowBox[{"\<\"National Institute of Genetics\"\>", 
+       ",", "\<\"University of Texas MD Anderson Cancer Center, United States \
+of America\"\>"}], "]"}], ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"pair", "[", 
+      RowBox[{"\<\"RIKEN\"\>", 
+       ",", "\<\"Centre d'Immunologie de Marseille-Luminy, CNRS-Inserm, \
+France\"\>"}], "]"}], ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"pair", "[", 
+      RowBox[{"\<\"RIKEN\"\>", 
+       ",", "\<\"Department of Physiology, Keio University School of \
+Medicine, Tokyo, Japan\"\>"}], "]"}], ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"pair", "[", 
+      RowBox[{"\<\"National Institute of Genetics\"\>", 
+       ",", "\<\"University of Massachusetts Medical School, United States of \
+America\"\>"}], "]"}], ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"pair", "[", 
+      RowBox[{"\<\"RIKEN\"\>", 
+       ",", "\<\"University of Nevada School of Medicine, United States of \
+America\"\>"}], "]"}], ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"pair", "[", 
+      RowBox[{"\<\"RIKEN\"\>", ",", "\<\"Instituto Butantan, Brazil\"\>"}], 
+      "]"}], ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"pair", "[", 
+      RowBox[{"\<\"RIKEN\"\>", 
+       ",", "\<\"Department of Biosciences and Informatics, Keio University, \
+Yokohama, Japan\"\>"}], "]"}], ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"pair", "[", 
+      RowBox[{"\<\"RIKEN\"\>", 
+       ",", "\<\"University of California Merced, United States of \
+America\"\>"}], "]"}], ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"pair", "[", 
+      RowBox[{"\<\"National Institute of Genetics\"\>", 
+       ",", "\<\"Department of Physics, Graduate School of Science, \
+University of Tokyo, Hongo, Bunkyo-ku, Tokyo 113-0033, Japan\"\>"}], "]"}], 
+     ",", "2"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{{3.704509080190257*^9, 3.704509143702271*^9}, 
+   3.704509416082788*^9, 3.704511422413587*^9, 3.704762642332926*^9, 
+   3.704768312197672*^9, 3.704769589649338*^9}]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Resource x Affiliation", "Section",
+ CellChangeTimes->{{3.704504989081094*^9, 3.7045050110752993`*^9}, {
+  3.704510287790038*^9, 3.704510293344178*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"ResList", "=", 
+   RowBox[{"Map", "[", 
+    RowBox[{"Union", ",", 
+     RowBox[{"Map", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"#", "[", 
+         RowBox[{"[", "2", "]"}], "]"}], "&"}], ",", "OrgVSResSplit", ",", 
+       RowBox[{"{", "2", "}"}]}], "]"}]}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.704505862072263*^9, 3.704505979489297*^9}, {
+  3.70450605076886*^9, 3.704506058282132*^9}, {3.704506099551453*^9, 
+  3.7045061051401453`*^9}, {3.704506152733089*^9, 3.7045061734596157`*^9}, {
+  3.704506206004941*^9, 3.704506218348542*^9}, {3.7045103796111717`*^9, 
+  3.704510388427066*^9}}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","partd",
+   "\"Part specification \\!\\(\\*RowBox[{\\\"\\\\\\\"<;/>\\\\\\\"\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"2\\\", \\\"\[RightDoubleBracket]\\\"}]\\) is \
+longer than depth of object.\"",2,91,72,32266517026412738849,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.704510391313755*^9, 3.704511423635887*^9, 
+  3.704762644442196*^9, 3.7047683130983763`*^9, 3.70476959185428*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "StringSplit","strse",
+   "\"String or list of strings expected at position \\!\\(\\*RowBox[{\\\"1\\\
+\"}]\\) in \\!\\(\\*RowBox[{\\\"StringSplit\\\", \\\"[\\\", \
+RowBox[{\\\"1\\\", \\\",\\\", RowBox[{\\\"\\\\\\\"<;/>\\\\\\\"\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"2\\\", \\\"\[RightDoubleBracket]\\\"}]}], \\\"]\
+\\\"}]\\).\"",2,91,73,32266517026412738849,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.704510391313755*^9, 3.704511423635887*^9, 
+  3.704762644442196*^9, 3.7047683130983763`*^9, 3.7047695919058027`*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","partd",
+   "\"Part specification \\!\\(\\*RowBox[{\\\"\\\\\\\"<;/>\\\\\\\"\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"2\\\", \\\"\[RightDoubleBracket]\\\"}]\\) is \
+longer than depth of object.\"",2,91,74,32266517026412738849,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.704510391313755*^9, 3.704511423635887*^9, 
+  3.704762644442196*^9, 3.7047683130983763`*^9, 3.7047695919103813`*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "StringSplit","strse",
+   "\"String or list of strings expected at position \\!\\(\\*RowBox[{\\\"1\\\
+\"}]\\) in \\!\\(\\*RowBox[{\\\"StringSplit\\\", \\\"[\\\", \
+RowBox[{\\\"1\\\", \\\",\\\", RowBox[{\\\"\\\\\\\"<;/>\\\\\\\"\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"2\\\", \\\"\[RightDoubleBracket]\\\"}]}], \\\"]\
+\\\"}]\\).\"",2,91,75,32266517026412738849,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.704510391313755*^9, 3.704511423635887*^9, 
+  3.704762644442196*^9, 3.7047683130983763`*^9, 3.7047695919139643`*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","partw",
+   "\"Part \\!\\(\\*RowBox[{\\\"2\\\"}]\\) of \\!\\(\\*RowBox[{\\\"{\\\", \
+\\\"}\\\"}]\\) does not exist.\"",2,91,76,32266517026412738849,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.704510391313755*^9, 3.704511423635887*^9, 
+  3.704762644442196*^9, 3.7047683130983763`*^9, 3.704769591925758*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","partw",
+   "\"Part \\!\\(\\*RowBox[{\\\"2\\\"}]\\) of \\!\\(\\*RowBox[{\\\"{\\\", \
+\\\"}\\\"}]\\) does not exist.\"",2,91,77,32266517026412738849,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.704510391313755*^9, 3.704511423635887*^9, 
+  3.704762644442196*^9, 3.7047683130983763`*^9, 3.704769591930583*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","partd",
+   "\"Part specification \\!\\(\\*RowBox[{\\\"\\\\\\\"<;/>\\\\\\\"\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"2\\\", \\\"\[RightDoubleBracket]\\\"}]\\) is \
+longer than depth of object.\"",2,91,78,32266517026412738849,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.704510391313755*^9, 3.704511423635887*^9, 
+  3.704762644442196*^9, 3.7047683130983763`*^9, 3.704769591936504*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General","stop",
+   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"Part\\\", \\\"::\\\", \
+\\\"partd\\\"}], \\\"MessageName\\\"]\\) will be suppressed during this \
+calculation.\"",2,91,79,32266517026412738849,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.704510391313755*^9, 3.704511423635887*^9, 
+  3.704762644442196*^9, 3.7047683130983763`*^9, 3.70476959194046*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "StringSplit","strse",
+   "\"String or list of strings expected at position \\!\\(\\*RowBox[{\\\"1\\\
+\"}]\\) in \\!\\(\\*RowBox[{\\\"StringSplit\\\", \\\"[\\\", \
+RowBox[{\\\"1\\\", \\\",\\\", RowBox[{\\\"\\\\\\\"<;/>\\\\\\\"\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"2\\\", \\\"\[RightDoubleBracket]\\\"}]}], \\\"]\
+\\\"}]\\).\"",2,91,80,32266517026412738849,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.704510391313755*^9, 3.704511423635887*^9, 
+  3.704762644442196*^9, 3.7047683130983763`*^9, 3.704769591945792*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General","stop",
+   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"StringSplit\\\", \\\"::\
+\\\", \\\"strse\\\"}], \\\"MessageName\\\"]\\) will be suppressed during this \
+calculation.\"",2,91,81,32266517026412738849,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.704510391313755*^9, 3.704511423635887*^9, 
+  3.704762644442196*^9, 3.7047683130983763`*^9, 3.704769591949774*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","partw",
+   "\"Part \\!\\(\\*RowBox[{\\\"2\\\"}]\\) of \\!\\(\\*RowBox[{\\\"{\\\", \
+\\\"\\\\\\\"RIKEN\\\\\\\"\\\", \\\"}\\\"}]\\) does not exist.\"",2,91,82,
+   32266517026412738849,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.704510391313755*^9, 3.704511423635887*^9, 
+  3.704762644442196*^9, 3.7047683130983763`*^9, 3.704769591954405*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General","stop",
+   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"Part\\\", \\\"::\\\", \
+\\\"partw\\\"}], \\\"MessageName\\\"]\\) will be suppressed during this \
+calculation.\"",2,91,83,32266517026412738849,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.704510391313755*^9, 3.704511423635887*^9, 
+  3.704762644442196*^9, 3.7047683130983763`*^9, 3.704769592444935*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ResList", "//", "Length"}]], "Input",
+ CellChangeTimes->{{3.7045104052874193`*^9, 3.704510407115376*^9}}],
+
+Cell[BoxData["953"], "Output",
+ CellChangeTimes->{3.704510407663858*^9, 3.704511424723387*^9, 
+  3.704762645933769*^9, 3.704768313863495*^9, 3.704769595257951*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Map", "[", 
+  RowBox[{"Length", ",", "ResList"}], "]"}]], "Input",
+ CellChangeTimes->{{3.7045104544957438`*^9, 3.704510463002857*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "1", ",", "1", ",", "1", ",", "2", ",", "1", ",", "1", ",", "1", ",", "1", 
+   ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "2", ",", 
+   "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", 
+   ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", 
+   "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "2", ",", "1", 
+   ",", "1", ",", "1", ",", "4", ",", "1", ",", "1", ",", "2", ",", "1", ",", 
+   "2", ",", "1", ",", "2", ",", "1", ",", "1", ",", "1", ",", "2", ",", "1", 
+   ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", 
+   "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "2", ",", "2", ",", "1", 
+   ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "2", ",", "1", ",", 
+   "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", 
+   ",", "1", ",", "1", ",", "2", ",", "2", ",", "3", ",", "1", ",", "1", ",", 
+   "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "2", ",", "1", ",", "1", 
+   ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", 
+   "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", 
+   ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "2", ",", 
+   "1", ",", "1", ",", "1", ",", "1", ",", "2", ",", "1", ",", "1", ",", "1", 
+   ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", 
+   "1", ",", "1", ",", "2", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", 
+   ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", 
+   "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", 
+   ",", "1", ",", "1", ",", "1", ",", "2", ",", "1", ",", "2", ",", "1", ",", 
+   "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", 
+   ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "2", ",", 
+   "1", ",", "1", ",", "2", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", 
+   ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", 
+   "2", ",", "2", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", 
+   ",", "1", ",", "1", ",", "1", ",", "2", ",", "2", ",", "1", ",", "1", ",", 
+   "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", 
+   ",", "1", ",", "1", ",", "2", ",", "2", ",", "1", ",", "1", ",", "2", ",", 
+   "2", ",", "2", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", 
+   ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", 
+   "1", ",", "2", ",", "1", ",", "2", ",", "2", ",", "1", ",", "1", ",", "1", 
+   ",", "1", ",", "2", ",", "1", ",", "2", ",", "1", ",", "1", ",", "2", ",", 
+   "1", ",", "2", ",", "2", ",", "1", ",", "1", ",", "1", ",", "1", ",", "2", 
+   ",", "1", ",", "1", ",", "2", ",", "1", ",", "1", ",", "1", ",", "1", ",", 
+   "2", ",", "2", ",", "1", ",", "1", ",", "7", ",", "5", ",", "1", ",", "1", 
+   ",", "1", ",", "1", ",", "1", ",", "2", ",", "2", ",", "5", ",", "1", ",", 
+   "5", ",", "1", ",", "3", ",", "1", ",", "2", ",", "1", ",", "1", ",", "1", 
+   ",", "2", ",", "1", ",", "1", ",", "1", ",", "2", ",", "1", ",", "1", ",", 
+   "1", ",", "1", ",", "1", ",", "1", ",", "3", ",", "1", ",", "1", ",", "1", 
+   ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "3", ",", "1", ",", 
+   "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "2", ",", "1", 
+   ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", 
+   "1", ",", "1", ",", "2", ",", "1", ",", "2", ",", "1", ",", "1", ",", "1", 
+   ",", "1", ",", "1", ",", "1", ",", "1", ",", "3", ",", "1", ",", "1", ",", 
+   "2", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", 
+   ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "2", ",", 
+   "2", ",", "2", ",", "2", ",", "1", ",", "1", ",", "1", ",", "1", ",", "2", 
+   ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "2", ",", "1", ",", 
+   "1", ",", "2", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "3", 
+   ",", "1", ",", "5", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", 
+   "1", ",", "1", ",", "2", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", 
+   ",", "1", ",", "2", ",", "1", ",", "1", ",", "3", ",", "1", ",", "1", ",", 
+   "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", 
+   ",", "1", ",", "1", ",", "1", ",", "2", ",", "2", ",", "1", ",", "1", ",", 
+   "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "3", ",", "1", ",", "1", 
+   ",", "1", ",", "1", ",", "1", ",", "1", ",", "3", ",", "1", ",", "1", ",", 
+   "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", 
+   ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "2", ",", "1", ",", 
+   "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", 
+   ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", 
+   "2", ",", "1", ",", "1", ",", "1", ",", "1", ",", "5", ",", "1", ",", "3", 
+   ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", 
+   "1", ",", "2", ",", "1", ",", "1", ",", "1", ",", "3", ",", "2", ",", "1", 
+   ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", 
+   "1", ",", "1", ",", "2", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", 
+   ",", "1", ",", "1", ",", "1", ",", "2", ",", "1", ",", "1", ",", "1", ",", 
+   "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", 
+   ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "2", ",", "1", ",", 
+   "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", 
+   ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", 
+   "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", 
+   ",", "1", ",", "1", ",", "1", ",", "1", ",", "4", ",", "1", ",", "1", ",", 
+   "1", ",", "1", ",", "1", ",", "2", ",", "1", ",", "1", ",", "1", ",", "2", 
+   ",", "2", ",", "2", ",", "1", ",", "2", ",", "1", ",", "1", ",", "1", ",", 
+   "2", ",", "1", ",", "1", ",", "1", ",", "1", ",", "2", ",", "1", ",", "2", 
+   ",", "1", ",", "7", ",", "1", ",", "2", ",", "3", ",", "1", ",", "2", ",", 
+   "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", 
+   ",", "2", ",", "1", ",", "1", ",", "1", ",", "2", ",", "1", ",", "1", ",", 
+   "1", ",", "1", ",", "2", ",", "2", ",", "1", ",", "1", ",", "1", ",", "1", 
+   ",", "2", ",", "1", ",", "1", ",", "1", ",", "1", ",", "2", ",", "5", ",", 
+   "2", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", 
+   ",", "1", ",", "1", ",", "2", ",", "1", ",", "1", ",", "1", ",", "1", ",", 
+   "1", ",", "2", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", 
+   ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", 
+   "1", ",", "2", ",", "1", ",", "1", ",", "1", ",", "2", ",", "1", ",", "1", 
+   ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", 
+   "1", ",", "2", ",", "1", ",", "2", ",", "1", ",", "1", ",", "1", ",", "1", 
+   ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "3", ",", "1", ",", 
+   "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "2", ",", "1", ",", "1", 
+   ",", "1", ",", "2", ",", "1", ",", "2", ",", "1", ",", "2", ",", "1", ",", 
+   "1", ",", "2", ",", "1", ",", "2", ",", "1", ",", "2", ",", "1", ",", "5", 
+   ",", "1", ",", "1", ",", "2", ",", "1", ",", "1", ",", "3", ",", "1", ",", 
+   "1", ",", "1", ",", "1", ",", "2", ",", "1", ",", "1", ",", "1", ",", "1", 
+   ",", "1", ",", "1", ",", "1", ",", "2", ",", "1", ",", "2", ",", "2", ",", 
+   "1", ",", "13", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1",
+    ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",",
+    "1", ",", "1", ",", "2", ",", "1", ",", "4", ",", "1", ",", "2", ",", "1",
+    ",", "1", ",", "1", ",", "1", ",", "2", ",", "3", ",", "1", ",", "1", ",",
+    "3", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1",
+    ",", "1", ",", "1", ",", "1", ",", "2", ",", "1", ",", "1", ",", "2", ",",
+    "2", ",", "1", ",", "1", ",", "1", ",", "2", ",", "2", ",", "1", ",", "1",
+    ",", "1", ",", "1", ",", "6", ",", "1", ",", "2", ",", "2", ",", "1", ",",
+    "1", ",", "1", ",", "1", ",", "1", ",", "2", ",", "1", ",", "1", ",", "1",
+    ",", "1", ",", "1", ",", "1", ",", "1", ",", "2", ",", "2", ",", "1", ",",
+    "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1",
+    ",", "2", ",", "1", ",", "1", ",", "1", ",", "1", ",", "5", ",", "1", ",",
+    "2", ",", "2", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "3",
+    ",", "1", ",", "1", ",", "1", ",", "2", ",", "1", ",", "1", ",", "1", ",",
+    "1", ",", "1", ",", "1", ",", "2", ",", "1", ",", "3", ",", "1", ",", "2",
+    ",", "1", ",", "1", ",", "1", ",", "1", ",", "3", ",", "1", ",", "1", ",",
+    "1", ",", "1", ",", "1", ",", "1", ",", "2", ",", "1", ",", "1", ",", "1",
+    ",", "1", ",", "1", ",", "2", ",", "1", ",", "1", ",", "1", ",", "1", ",",
+    "1", ",", "1", ",", "1", ",", "2", ",", "1", ",", "1", ",", "1", ",", "1",
+    ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "2", ",", "1", ",",
+    "1", ",", "1", ",", "1", ",", "2", ",", "2", ",", "1", ",", "11", ",", 
+   "1", ",", "2", ",", "2", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", 
+   ",", "4", ",", "1", ",", "6", ",", "1", ",", "3", ",", "1", ",", "1", ",", 
+   "1", ",", "1", ",", "1", ",", "1", ",", "3", ",", "1", ",", "2", ",", "1", 
+   ",", "2", ",", "1", ",", "1", ",", "1", ",", "1", ",", "2", ",", "4", ",", 
+   "1", ",", "1", ",", "1", ",", "1", ",", "9", ",", "1", ",", "1", ",", "2", 
+   ",", "1", ",", "2", ",", "1", ",", "1", ",", "1", ",", "1", ",", "2", ",", 
+   "1", ",", "2", ",", "1", ",", "1", ",", "1", ",", "2", ",", "2", ",", "2", 
+   ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", 
+   "1", ",", "1", ",", "1", ",", "3", ",", "1", ",", "1", ",", "2", ",", "2", 
+   ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "2", ",", "1", ",", 
+   "2"}], "}"}]], "Output",
+ CellChangeTimes->{3.704510464365386*^9, 3.704511425624264*^9, 
+  3.70476264671912*^9, 3.704768314579316*^9, 3.704769596161482*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Map", "[", 
+  RowBox[{"Length", ",", "AffList"}], "]"}]], "Input",
+ CellChangeTimes->{{3.7045104544957438`*^9, 3.704510492572114*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "7", ",", "2", ",", "3", ",", "1", ",", "1", ",", "3", ",", "1", ",", "4", 
+   ",", "2", ",", "3", ",", "2", ",", "5", ",", "5", ",", "2", ",", "5", ",", 
+   "2", ",", "2", ",", "3", ",", "6", ",", "11", ",", "4", ",", "1", ",", "7",
+    ",", "12", ",", "3", ",", "4", ",", "3", ",", "12", ",", "1", ",", "3", 
+   ",", "5", ",", "6", ",", "10", ",", "3", ",", "2", ",", "4", ",", "2", ",",
+    "2", ",", "3", ",", "1", ",", "2", ",", "1", ",", "1", ",", "2", ",", "1",
+    ",", "2", ",", "4", ",", "0", ",", "7", ",", "1", ",", "1", ",", "1", ",",
+    "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1",
+    ",", "1", ",", "5", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",",
+    "5", ",", "2", ",", "7", ",", "4", ",", "1", ",", "2", ",", "1", ",", "2",
+    ",", "2", ",", "3", ",", "3", ",", "1", ",", "7", ",", "5", ",", "1", ",",
+    "6", ",", "4", ",", "4", ",", "11", ",", "2", ",", "6", ",", "1", ",", 
+   "4", ",", "1", ",", "2", ",", "2", ",", "1", ",", "2", ",", "2", ",", "2", 
+   ",", "1", ",", "0", ",", "0", ",", "0", ",", "2", ",", "1", ",", "4", ",", 
+   "5", ",", "2", ",", "1", ",", "1", ",", "1", ",", "1", ",", "2", ",", "2", 
+   ",", "5", ",", "3", ",", "6", ",", "1", ",", "1", ",", "4", ",", "3", ",", 
+   "3", ",", "4", ",", "3", ",", "4", ",", "6", ",", "3", ",", "2", ",", "3", 
+   ",", "2", ",", "0", ",", "7", ",", "6", ",", "5", ",", "6", ",", "6", ",", 
+   "4", ",", "4", ",", "7", ",", "1", ",", "0", ",", "2", ",", "1", ",", "3", 
+   ",", "1", ",", "4", ",", "7", ",", "4", ",", "4", ",", "5", ",", "8", ",", 
+   "4", ",", "6", ",", "1", ",", "2", ",", "5", ",", "2", ",", "3", ",", "3", 
+   ",", "8", ",", "3", ",", "2", ",", "3", ",", "3", ",", "4", ",", "3", ",", 
+   "3", ",", "8", ",", "3", ",", "2", ",", "0", ",", "3", ",", "1", ",", "8", 
+   ",", "5", ",", "3", ",", "3", ",", "6", ",", "0", ",", "2", ",", "1", ",", 
+   "3", ",", "3", ",", "2", ",", "3", ",", "3", ",", "2", ",", "4", ",", "11",
+    ",", "2", ",", "3", ",", "3", ",", "3", ",", "3", ",", "6", ",", "8", ",",
+    "7", ",", "2", ",", "7", ",", "2", ",", "3", ",", "4", ",", "4", ",", "3",
+    ",", "2", ",", "4", ",", "3", ",", "10", ",", "4", ",", "7", ",", "10", 
+   ",", "2", ",", "3", ",", "5", ",", "4", ",", "9", ",", "2", ",", "4", ",", 
+   "2", ",", "2", ",", "5", ",", "4", ",", "3", ",", "3", ",", "3", ",", "3", 
+   ",", "5", ",", "7", ",", "4", ",", "2", ",", "8", ",", "2", ",", "2", ",", 
+   "6", ",", "2", ",", "6", ",", "2", ",", "9", ",", "5", ",", "6", ",", "6", 
+   ",", "4", ",", "4", ",", "3", ",", "4", ",", "3", ",", "2", ",", "1", ",", 
+   "1", ",", "1", ",", "3", ",", "3", ",", "3", ",", "3", ",", "2", ",", "3", 
+   ",", "1", ",", "2", ",", "0", ",", "1", ",", "3", ",", "4", ",", "4", ",", 
+   "0", ",", "0", ",", "0", ",", "3", ",", "3", ",", "4", ",", "1", ",", "4", 
+   ",", "3", ",", "4", ",", "4", ",", "2", ",", "1", ",", "7", ",", "2", ",", 
+   "3", ",", "2", ",", "4", ",", "1", ",", "2", ",", "3", ",", "5", ",", "2", 
+   ",", "1", ",", "2", ",", "1", ",", "4", ",", "2", ",", "0", ",", "2", ",", 
+   "4", ",", "2", ",", "4", ",", "2", ",", "1", ",", "1", ",", "1", ",", "3", 
+   ",", "10", ",", "5", ",", "6", ",", "1", ",", "2", ",", "1", ",", "6", ",",
+    "1", ",", "2", ",", "4", ",", "3", ",", "3", ",", "5", ",", "5", ",", "6",
+    ",", "7", ",", "1", ",", "5", ",", "5", ",", "3", ",", "6", ",", "1", ",",
+    "4", ",", "2", ",", "2", ",", "2", ",", "1", ",", "2", ",", "7", ",", "1",
+    ",", "3", ",", "5", ",", "2", ",", "1", ",", "6", ",", "5", ",", "3", ",",
+    "1", ",", "1", ",", "3", ",", "2", ",", "4", ",", "1", ",", "3", ",", "4",
+    ",", "1", ",", "5", ",", "3", ",", "3", ",", "3", ",", "5", ",", "4", ",",
+    "3", ",", "3", ",", "4", ",", "5", ",", "5", ",", "4", ",", "5", ",", "4",
+    ",", "3", ",", "5", ",", "11", ",", "1", ",", "1", ",", "2", ",", "4", 
+   ",", "2", ",", "4", ",", "5", ",", "3", ",", "5", ",", "1", ",", "7", ",", 
+   "6", ",", "2", ",", "0", ",", "2", ",", "1", ",", "1", ",", "4", ",", "3", 
+   ",", "8", ",", "4", ",", "3", ",", "3", ",", "4", ",", "3", ",", "3", ",", 
+   "1", ",", "1", ",", "3", ",", "3", ",", "0", ",", "5", ",", "2", ",", "1", 
+   ",", "1", ",", "2", ",", "1", ",", "1", ",", "1", ",", "1", ",", "6", ",", 
+   "1", ",", "4", ",", "2", ",", "1", ",", "2", ",", "5", ",", "3", ",", "1", 
+   ",", "4", ",", "4", ",", "6", ",", "1", ",", "6", ",", "4", ",", "1", ",", 
+   "6", ",", "1", ",", "2", ",", "3", ",", "3", ",", "1", ",", "2", ",", "1", 
+   ",", "2", ",", "3", ",", "1", ",", "2", ",", "1", ",", "2", ",", "1", ",", 
+   "1", ",", "4", ",", "3", ",", "2", ",", "5", ",", "1", ",", "4", ",", "2", 
+   ",", "3", ",", "1", ",", "5", ",", "1", ",", "1", ",", "4", ",", "4", ",", 
+   "5", ",", "2", ",", "1", ",", "2", ",", "3", ",", "1", ",", "1", ",", "3", 
+   ",", "1", ",", "1", ",", "1", ",", "3", ",", "4", ",", "3", ",", "2", ",", 
+   "4", ",", "5", ",", "1", ",", "2", ",", "3", ",", "2", ",", "1", ",", "2", 
+   ",", "1", ",", "1", ",", "5", ",", "2", ",", "4", ",", "3", ",", "2", ",", 
+   "1", ",", "4", ",", "4", ",", "4", ",", "3", ",", "8", ",", "6", ",", "3", 
+   ",", "2", ",", "6", ",", "1", ",", "6", ",", "4", ",", "5", ",", "1", ",", 
+   "5", ",", "1", ",", "6", ",", "1", ",", "2", ",", "3", ",", "7", ",", "1", 
+   ",", "2", ",", "5", ",", "4", ",", "8", ",", "1", ",", "3", ",", "3", ",", 
+   "3", ",", "3", ",", "4", ",", "2", ",", "1", ",", "3", ",", "3", ",", "4", 
+   ",", "3", ",", "3", ",", "1", ",", "4", ",", "3", ",", "5", ",", "7", ",", 
+   "5", ",", "2", ",", "2", ",", "2", ",", "1", ",", "1", ",", "1", ",", "3", 
+   ",", "2", ",", "5", ",", "1", ",", "3", ",", "4", ",", "2", ",", "1", ",", 
+   "5", ",", "2", ",", "3", ",", "3", ",", "1", ",", "1", ",", "3", ",", "2", 
+   ",", "4", ",", "1", ",", "5", ",", "4", ",", "3", ",", "2", ",", "5", ",", 
+   "2", ",", "5", ",", "4", ",", "2", ",", "7", ",", "2", ",", "3", ",", "12",
+    ",", "3", ",", "3", ",", "3", ",", "0", ",", "6", ",", "7", ",", "2", ",",
+    "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "2", ",", "6",
+    ",", "1", ",", "1", ",", "1", ",", "2", ",", "2", ",", "1", ",", "1", ",",
+    "1", ",", "1", ",", "2", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1",
+    ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",",
+    "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1",
+    ",", "1", ",", "1", ",", "8", ",", "1", ",", "1", ",", "3", ",", "1", ",",
+    "5", ",", "5", ",", "1", ",", "5", ",", "12", ",", "4", ",", "3", ",", 
+   "1", ",", "1", ",", "4", ",", "4", ",", "3", ",", "7", ",", "7", ",", "9", 
+   ",", "4", ",", "5", ",", "4", ",", "6", ",", "2", ",", "5", ",", "5", ",", 
+   "5", ",", "2", ",", "10", ",", "4", ",", "2", ",", "7", ",", "5", ",", "3",
+    ",", "12", ",", "3", ",", "4", ",", "2", ",", "5", ",", "2", ",", "10", 
+   ",", "7", ",", "5", ",", "5", ",", "4", ",", "4", ",", "2", ",", "3", ",", 
+   "2", ",", "9", ",", "5", ",", "2", ",", "5", ",", "2", ",", "2", ",", "3", 
+   ",", "6", ",", "10", ",", "3", ",", "11", ",", "5", ",", "3", ",", "7", 
+   ",", "3", ",", "4", ",", "4", ",", "8", ",", "4", ",", "5", ",", "5", ",", 
+   "4", ",", "8", ",", "4", ",", "8", ",", "3", ",", "3", ",", "5", ",", "5", 
+   ",", "2", ",", "3", ",", "8", ",", "2", ",", "6", ",", "11", ",", "3", ",",
+    "4", ",", "3", ",", "7", ",", "4", ",", "3", ",", "9", ",", "3", ",", "2",
+    ",", "3", ",", "2", ",", "3", ",", "3", ",", "4", ",", "3", ",", "4", ",",
+    "2", ",", "3", ",", "4", ",", "4", ",", "8", ",", "4", ",", "4", ",", "3",
+    ",", "8", ",", "5", ",", "4", ",", "2", ",", "7", ",", "2", ",", "5", ",",
+    "6", ",", "5", ",", "10", ",", "2", ",", "2", ",", "2", ",", "4", ",", 
+   "2", ",", "7", ",", "3", ",", "5", ",", "6", ",", "5", ",", "7", ",", "5", 
+   ",", "4", ",", "4", ",", "3", ",", "5", ",", "4", ",", "7", ",", "6", ",", 
+   "3", ",", "2", ",", "2", ",", "2", ",", "4", ",", "6", ",", "3", ",", "4", 
+   ",", "6", ",", "3", ",", "5", ",", "3", ",", "5", ",", "3", ",", "6", ",", 
+   "3", ",", "2", ",", "2", ",", "3", ",", "2", ",", "3", ",", "3", ",", "3", 
+   ",", "5", ",", "6", ",", "2", ",", "3", ",", "2", ",", "3", ",", "2", ",", 
+   "5", ",", "8", ",", "6", ",", "6", ",", "2", ",", "5", ",", "6", ",", "2", 
+   ",", "5", ",", "3", ",", "6", ",", "3", ",", "7", ",", "2", ",", "3", ",", 
+   "3", ",", "6", ",", "2", ",", "1", ",", "3", ",", "5", ",", "4", ",", "5", 
+   ",", "11", ",", "2", ",", "3", ",", "4", ",", "3", ",", "10", ",", "5", 
+   ",", "3", ",", "5", ",", "6", ",", "5", ",", "6", ",", "3", ",", "4", ",", 
+   "4", ",", "9", ",", "5", ",", "4", ",", "5", ",", "8", ",", "6", ",", "4", 
+   ",", "11", ",", "2", ",", "3", ",", "6", ",", "2", ",", "2", ",", "2", ",",
+    "4", ",", "4", ",", "2", ",", "3", ",", "4", ",", "9", ",", "3", ",", "3",
+    ",", "4", ",", "12", ",", "3", ",", "5", ",", "6", ",", "5", ",", "5", 
+   ",", "3", ",", "5", ",", "6", ",", "5", ",", "13", ",", "6", ",", "4", ",",
+    "5", ",", "4", ",", "4", ",", "5", ",", "3", ",", "2", ",", "2", ",", "9",
+    ",", "3", ",", "6", ",", "3", ",", "4", ",", "6", ",", "7", ",", "2", ",",
+    "4", ",", "3", ",", "7", ",", "5", ",", "3", ",", "6", ",", "3", ",", "2",
+    ",", "9", ",", "2", ",", "3", ",", "2", ",", "7", ",", "6", ",", "4", ",",
+    "2", ",", "3", ",", "9", ",", "10", ",", "6", ",", "4", ",", "4", ",", 
+   "4", ",", "7", ",", "4", ",", "5", ",", "6", ",", "4", ",", "3", ",", "3", 
+   ",", "5", ",", "8", ",", "7", ",", "7", ",", "4", ",", "5", ",", "2", ",", 
+   "5", ",", "4", ",", "2", ",", "2", ",", "5", ",", "4", ",", "8", ",", "9", 
+   ",", "2", ",", "6", ",", "4", ",", "9", ",", "3", ",", "6", ",", "2", ",", 
+   "3", ",", "4", ",", "2", ",", "8", ",", "2", ",", "2", ",", "4", ",", "8", 
+   ",", "5", ",", "4", ",", "1", ",", "8", ",", "3", ",", "6", ",", "2", ",", 
+   "4", ",", "7", ",", "6", ",", "7", ",", "2", ",", "10", ",", "1", ",", "0",
+    ",", "3", ",", "3", ",", "6", ",", "1", ",", "2", ",", "3", ",", "5", ",",
+    "3", ",", "0", ",", "0", ",", "7", ",", "2", ",", "2"}], "}"}]], "Output",\
+
+ CellChangeTimes->{3.704510493166195*^9, 3.704511427410454*^9, 
+  3.704762647718795*^9, 3.704768315248608*^9, 3.704769597052374*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(", 
+   RowBox[{"ResVSAff", "=", 
+    RowBox[{"Table", "[", 
+     RowBox[{
+      RowBox[{"Outer", "[", 
+       RowBox[{"pair", ",", 
+        RowBox[{"ResList", "[", 
+         RowBox[{"[", "n", "]"}], "]"}], ",", 
+        RowBox[{"AffList", "[", 
+         RowBox[{"[", "n", "]"}], "]"}]}], "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"n", ",", "953"}], "}"}]}], "]"}]}], ")"}], "//", 
+  "Length"}]], "Input",
+ CellChangeTimes->{{3.704508135834361*^9, 3.7045081468891897`*^9}, {
+  3.704508260966104*^9, 3.7045083429465113`*^9}, {3.7045083909303703`*^9, 
+  3.7045084343857307`*^9}, {3.704508464884671*^9, 3.7045084873444138`*^9}, {
+  3.7045087465004396`*^9, 3.7045087503513536`*^9}, {3.704510542670192*^9, 
+  3.704510563647985*^9}}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Outer","heads",
+   "\"Heads \\!\\(\\*RowBox[{\\\"List\\\"}]\\) and \
+\\!\\(\\*RowBox[{\\\"StringSplit\\\"}]\\) at positions \\!\\(\\*RowBox[{\\\"3\
+\\\"}]\\) and \\!\\(\\*RowBox[{\\\"2\\\"}]\\) are expected to be the same.\"",
+   2,95,84,32266517026412738849,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.704510566140575*^9, 3.7045114281953297`*^9, 
+  3.70476264858035*^9, 3.704768316135326*^9, 3.704769597766552*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Outer","heads",
+   "\"Heads \\!\\(\\*RowBox[{\\\"List\\\"}]\\) and \
+\\!\\(\\*RowBox[{\\\"StringSplit\\\"}]\\) at positions \\!\\(\\*RowBox[{\\\"3\
+\\\"}]\\) and \\!\\(\\*RowBox[{\\\"2\\\"}]\\) are expected to be the same.\"",
+   2,95,85,32266517026412738849,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.704510566140575*^9, 3.7045114281953297`*^9, 
+  3.70476264858035*^9, 3.704768316135326*^9, 3.704769597775168*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Outer","heads",
+   "\"Heads \\!\\(\\*RowBox[{\\\"List\\\"}]\\) and \
+\\!\\(\\*RowBox[{\\\"StringSplit\\\"}]\\) at positions \\!\\(\\*RowBox[{\\\"3\
+\\\"}]\\) and \\!\\(\\*RowBox[{\\\"2\\\"}]\\) are expected to be the same.\"",
+   2,95,86,32266517026412738849,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.704510566140575*^9, 3.7045114281953297`*^9, 
+  3.70476264858035*^9, 3.704768316135326*^9, 3.704769597786845*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General","stop",
+   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"Outer\\\", \\\"::\\\", \
+\\\"heads\\\"}], \\\"MessageName\\\"]\\) will be suppressed during this \
+calculation.\"",2,95,87,32266517026412738849,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.704510566140575*^9, 3.7045114281953297`*^9, 
+  3.70476264858035*^9, 3.704768316135326*^9, 3.704769597793518*^9}],
+
+Cell[BoxData["953"], "Output",
+ CellChangeTimes->{3.704510566350994*^9, 3.704511428223418*^9, 
+  3.704762648658523*^9, 3.7047683161632023`*^9, 3.704769597800652*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"ResVSAffList", "=", 
+   RowBox[{"Flatten", "[", "ResVSAff", "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.704510595713305*^9, 3.704510615429451*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Sort", "[", 
+   RowBox[{
+    RowBox[{"Tally", "[", "ResVSAffList", "]"}], ",", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"#1", "[", 
+       RowBox[{"[", "2", "]"}], "]"}], "\[GreaterEqual]", 
+      RowBox[{"#2", "[", 
+       RowBox[{"[", "2", "]"}], "]"}]}], "&"}]}], "]"}], "[", 
+  RowBox[{"[", 
+   RowBox[{"Range", "[", "20", "]"}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.704510618864553*^9, 3.704510655807391*^9}, {
+  3.704510701269587*^9, 3.704510728715444*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"pair", "[", 
+      RowBox[{"\<\"C57BL\\\\/6\"\>", 
+       ",", "\<\"The Jackson Laboratory, US\"\>"}], "]"}], ",", "4"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"pair", "[", 
+      RowBox[{"\<\"PC12\"\>", 
+       ",", "\<\"Division of Clinical Neuroscience, Chiba University Center \
+for Forensic Mental Health, Chiba, Japan\"\>"}], "]"}], ",", "4"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"pair", "[", 
+      RowBox[{"\<\"Drosophila\"\>", 
+       ",", "\<\"Department of Physics, Graduate School of Science, \
+University of Tokyo, Hongo, Bunkyo-ku, Tokyo 113-0033, Japan\"\>"}], "]"}], 
+     ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"pair", "[", 
+      RowBox[{"\<\"Drosophila\"\>", 
+       ",", "\<\"Department of Complexity Science and Engineering, Graduate \
+School of Frontier Sciences, University of Tokyo, Kashiwanoha 5-1-5, Kashiwa, \
+Chiba 277-8561, Japan\"\>"}], "]"}], ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"pair", "[", 
+      RowBox[{"\<\"Drosophila\"\>", 
+       ",", "\<\"School of Life Science, Tokyo University of Pharmacy and \
+Life Sciences, Hachioji, Tokyo 192-0392, Japan\"\>"}], "]"}], ",", "2"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"pair", "[", 
+      RowBox[{"\<\"Drosophila\"\>", 
+       ",", "\<\"Research Center of Advanced Science and Technology, \
+University of Tokyo, Meguro-ku, Tokyo 153-8904, Japan\"\>"}], "]"}], ",", 
+     "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"pair", "[", 
+      RowBox[{"\<\"R1\"\>", 
+       ",", "\<\"Baylor College of Medicine, United States of America\"\>"}], 
+      "]"}], ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"pair", "[", 
+      RowBox[{"\<\"medaka\"\>", 
+       ",", "\<\"Division of Molecular Marine Biology, Ocean Research \
+Institute, University of Tokyo, Tokyo, Japan\"\>"}], "]"}], ",", "2"}], "}"}],
+    ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"pair", "[", 
+      RowBox[{"\<\"Puro\"\>", 
+       ",", "\<\"Laboratory for Developmental Genetics, RIKEN Research Center \
+for Allergy and Immunology, Yokohama, Japan\"\>"}], "]"}], ",", "2"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"pair", "[", 
+      RowBox[{"\<\"Puro\"\>", 
+       ",", "\<\"Core Research for Evolutional Science and Technology, Japan \
+Science and Technology Agency, Yokohama, Japan\"\>"}], "]"}], ",", "2"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"pair", "[", 
+      RowBox[{"\<\"Puro\"\>", 
+       ",", "\<\"RIKEN Bioinformatics and System Engineering Division, \
+Yokohama, Japan\"\>"}], "]"}], ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"pair", "[", 
+      RowBox[{"\<\"Puro\"\>", 
+       ",", "\<\"Laboratories for Immunogenomics, RIKEN Research Center for \
+Allergy and Immunology, Yokohama, Japan\"\>"}], "]"}], ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"pair", "[", 
+      RowBox[{"\<\"Puro\"\>", 
+       ",", "\<\"Department of Biochemistry, Nagasaki University School of \
+Medicine, Nagasaki, Japan\"\>"}], "]"}], ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"pair", "[", 
+      RowBox[{"\<\"Puro\"\>", 
+       ",", "\<\"MRC Human Genetics Unit, Institute of Genetics and Molecular \
+Medicine, University of Edinburgh, Edinburgh, United Kingdom\"\>"}], "]"}], 
+     ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"pair", "[", 
+      RowBox[{"\<\"Puro\"\>", 
+       ",", "\<\"Cell Proliferation and Development, Centro de \
+Investigaciones Biologicas, Consejo Superior de Investigaciones \
+Cient&#x000ed;ficas, Madrid, Spain\"\>"}], "]"}], ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"pair", "[", 
+      RowBox[{"\<\"Puro\"\>", 
+       ",", "\<\"Research Unit for Immunoepigenetics, RIKEN Research Center \
+for Allergy and Immunology, Yokohama, Japan\"\>"}], "]"}], ",", "2"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"pair", "[", 
+      RowBox[{"\<\"Puro\"\>", 
+       ",", "\<\"Molecular Pathology Unit and Center for Cancer Research, \
+Massachusetts General Hospital, Charlestown, Massachusetts, United States of \
+America\"\>"}], "]"}], ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"pair", "[", 
+      RowBox[{"\<\"Puro\"\>", 
+       ",", "\<\"Department of Pathology, Harvard Medical School, Boston, \
+Massachusetts, United States of America\"\>"}], "]"}], ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"pair", "[", 
+      RowBox[{"\<\"Puro\"\>", 
+       ",", "\<\"Broad Institute of Harvard and MIT, Cambridge, \
+Massachusetts, United States of America\"\>"}], "]"}], ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"pair", "[", 
+      RowBox[{"\<\"Puro\"\>", 
+       ",", "\<\"Friedrich Miescher Institute for Biomedical Research, \
+Switzerland\"\>"}], "]"}], ",", "2"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{{3.704510630081854*^9, 3.704510657841515*^9}, {
+   3.704510716516768*^9, 3.704510729523191*^9}, 3.70451142981045*^9, 
+   3.7047626497747107`*^9, 3.704768316906165*^9, 3.7047695993202877`*^9}]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Organization x Resource x Affiliation", "Section",
+ CellChangeTimes->{{3.704504989081094*^9, 3.7045050110752993`*^9}, {
+  3.704510287790038*^9, 3.704510293344178*^9}, {3.704511009979591*^9, 
+  3.704511023790538*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Map", "[", 
+  RowBox[{"Length", ",", "AffList"}], "]"}]], "Input",
+ CellChangeTimes->{{3.7045223039635468`*^9, 3.704522309769166*^9}, {
+  3.70452235989972*^9, 3.704522371533552*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "7", ",", "2", ",", "3", ",", "1", ",", "1", ",", "3", ",", "1", ",", "4", 
+   ",", "2", ",", "3", ",", "2", ",", "5", ",", "5", ",", "2", ",", "5", ",", 
+   "2", ",", "2", ",", "3", ",", "6", ",", "11", ",", "4", ",", "1", ",", "7",
+    ",", "12", ",", "3", ",", "4", ",", "3", ",", "12", ",", "1", ",", "3", 
+   ",", "5", ",", "6", ",", "10", ",", "3", ",", "2", ",", "4", ",", "2", ",",
+    "2", ",", "3", ",", "1", ",", "2", ",", "1", ",", "1", ",", "2", ",", "1",
+    ",", "2", ",", "4", ",", "0", ",", "7", ",", "1", ",", "1", ",", "1", ",",
+    "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1",
+    ",", "1", ",", "5", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",",
+    "5", ",", "2", ",", "7", ",", "4", ",", "1", ",", "2", ",", "1", ",", "2",
+    ",", "2", ",", "3", ",", "3", ",", "1", ",", "7", ",", "5", ",", "1", ",",
+    "6", ",", "4", ",", "4", ",", "11", ",", "2", ",", "6", ",", "1", ",", 
+   "4", ",", "1", ",", "2", ",", "2", ",", "1", ",", "2", ",", "2", ",", "2", 
+   ",", "1", ",", "0", ",", "0", ",", "0", ",", "2", ",", "1", ",", "4", ",", 
+   "5", ",", "2", ",", "1", ",", "1", ",", "1", ",", "1", ",", "2", ",", "2", 
+   ",", "5", ",", "3", ",", "6", ",", "1", ",", "1", ",", "4", ",", "3", ",", 
+   "3", ",", "4", ",", "3", ",", "4", ",", "6", ",", "3", ",", "2", ",", "3", 
+   ",", "2", ",", "0", ",", "7", ",", "6", ",", "5", ",", "6", ",", "6", ",", 
+   "4", ",", "4", ",", "7", ",", "1", ",", "0", ",", "2", ",", "1", ",", "3", 
+   ",", "1", ",", "4", ",", "7", ",", "4", ",", "4", ",", "5", ",", "8", ",", 
+   "4", ",", "6", ",", "1", ",", "2", ",", "5", ",", "2", ",", "3", ",", "3", 
+   ",", "8", ",", "3", ",", "2", ",", "3", ",", "3", ",", "4", ",", "3", ",", 
+   "3", ",", "8", ",", "3", ",", "2", ",", "0", ",", "3", ",", "1", ",", "8", 
+   ",", "5", ",", "3", ",", "3", ",", "6", ",", "0", ",", "2", ",", "1", ",", 
+   "3", ",", "3", ",", "2", ",", "3", ",", "3", ",", "2", ",", "4", ",", "11",
+    ",", "2", ",", "3", ",", "3", ",", "3", ",", "3", ",", "6", ",", "8", ",",
+    "7", ",", "2", ",", "7", ",", "2", ",", "3", ",", "4", ",", "4", ",", "3",
+    ",", "2", ",", "4", ",", "3", ",", "10", ",", "4", ",", "7", ",", "10", 
+   ",", "2", ",", "3", ",", "5", ",", "4", ",", "9", ",", "2", ",", "4", ",", 
+   "2", ",", "2", ",", "5", ",", "4", ",", "3", ",", "3", ",", "3", ",", "3", 
+   ",", "5", ",", "7", ",", "4", ",", "2", ",", "8", ",", "2", ",", "2", ",", 
+   "6", ",", "2", ",", "6", ",", "2", ",", "9", ",", "5", ",", "6", ",", "6", 
+   ",", "4", ",", "4", ",", "3", ",", "4", ",", "3", ",", "2", ",", "1", ",", 
+   "1", ",", "1", ",", "3", ",", "3", ",", "3", ",", "3", ",", "2", ",", "3", 
+   ",", "1", ",", "2", ",", "0", ",", "1", ",", "3", ",", "4", ",", "4", ",", 
+   "0", ",", "0", ",", "0", ",", "3", ",", "3", ",", "4", ",", "1", ",", "4", 
+   ",", "3", ",", "4", ",", "4", ",", "2", ",", "1", ",", "7", ",", "2", ",", 
+   "3", ",", "2", ",", "4", ",", "1", ",", "2", ",", "3", ",", "5", ",", "2", 
+   ",", "1", ",", "2", ",", "1", ",", "4", ",", "2", ",", "0", ",", "2", ",", 
+   "4", ",", "2", ",", "4", ",", "2", ",", "1", ",", "1", ",", "1", ",", "3", 
+   ",", "10", ",", "5", ",", "6", ",", "1", ",", "2", ",", "1", ",", "6", ",",
+    "1", ",", "2", ",", "4", ",", "3", ",", "3", ",", "5", ",", "5", ",", "6",
+    ",", "7", ",", "1", ",", "5", ",", "5", ",", "3", ",", "6", ",", "1", ",",
+    "4", ",", "2", ",", "2", ",", "2", ",", "1", ",", "2", ",", "7", ",", "1",
+    ",", "3", ",", "5", ",", "2", ",", "1", ",", "6", ",", "5", ",", "3", ",",
+    "1", ",", "1", ",", "3", ",", "2", ",", "4", ",", "1", ",", "3", ",", "4",
+    ",", "1", ",", "5", ",", "3", ",", "3", ",", "3", ",", "5", ",", "4", ",",
+    "3", ",", "3", ",", "4", ",", "5", ",", "5", ",", "4", ",", "5", ",", "4",
+    ",", "3", ",", "5", ",", "11", ",", "1", ",", "1", ",", "2", ",", "4", 
+   ",", "2", ",", "4", ",", "5", ",", "3", ",", "5", ",", "1", ",", "7", ",", 
+   "6", ",", "2", ",", "0", ",", "2", ",", "1", ",", "1", ",", "4", ",", "3", 
+   ",", "8", ",", "4", ",", "3", ",", "3", ",", "4", ",", "3", ",", "3", ",", 
+   "1", ",", "1", ",", "3", ",", "3", ",", "0", ",", "5", ",", "2", ",", "1", 
+   ",", "1", ",", "2", ",", "1", ",", "1", ",", "1", ",", "1", ",", "6", ",", 
+   "1", ",", "4", ",", "2", ",", "1", ",", "2", ",", "5", ",", "3", ",", "1", 
+   ",", "4", ",", "4", ",", "6", ",", "1", ",", "6", ",", "4", ",", "1", ",", 
+   "6", ",", "1", ",", "2", ",", "3", ",", "3", ",", "1", ",", "2", ",", "1", 
+   ",", "2", ",", "3", ",", "1", ",", "2", ",", "1", ",", "2", ",", "1", ",", 
+   "1", ",", "4", ",", "3", ",", "2", ",", "5", ",", "1", ",", "4", ",", "2", 
+   ",", "3", ",", "1", ",", "5", ",", "1", ",", "1", ",", "4", ",", "4", ",", 
+   "5", ",", "2", ",", "1", ",", "2", ",", "3", ",", "1", ",", "1", ",", "3", 
+   ",", "1", ",", "1", ",", "1", ",", "3", ",", "4", ",", "3", ",", "2", ",", 
+   "4", ",", "5", ",", "1", ",", "2", ",", "3", ",", "2", ",", "1", ",", "2", 
+   ",", "1", ",", "1", ",", "5", ",", "2", ",", "4", ",", "3", ",", "2", ",", 
+   "1", ",", "4", ",", "4", ",", "4", ",", "3", ",", "8", ",", "6", ",", "3", 
+   ",", "2", ",", "6", ",", "1", ",", "6", ",", "4", ",", "5", ",", "1", ",", 
+   "5", ",", "1", ",", "6", ",", "1", ",", "2", ",", "3", ",", "7", ",", "1", 
+   ",", "2", ",", "5", ",", "4", ",", "8", ",", "1", ",", "3", ",", "3", ",", 
+   "3", ",", "3", ",", "4", ",", "2", ",", "1", ",", "3", ",", "3", ",", "4", 
+   ",", "3", ",", "3", ",", "1", ",", "4", ",", "3", ",", "5", ",", "7", ",", 
+   "5", ",", "2", ",", "2", ",", "2", ",", "1", ",", "1", ",", "1", ",", "3", 
+   ",", "2", ",", "5", ",", "1", ",", "3", ",", "4", ",", "2", ",", "1", ",", 
+   "5", ",", "2", ",", "3", ",", "3", ",", "1", ",", "1", ",", "3", ",", "2", 
+   ",", "4", ",", "1", ",", "5", ",", "4", ",", "3", ",", "2", ",", "5", ",", 
+   "2", ",", "5", ",", "4", ",", "2", ",", "7", ",", "2", ",", "3", ",", "12",
+    ",", "3", ",", "3", ",", "3", ",", "0", ",", "6", ",", "7", ",", "2", ",",
+    "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "2", ",", "6",
+    ",", "1", ",", "1", ",", "1", ",", "2", ",", "2", ",", "1", ",", "1", ",",
+    "1", ",", "1", ",", "2", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1",
+    ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",",
+    "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1",
+    ",", "1", ",", "1", ",", "8", ",", "1", ",", "1", ",", "3", ",", "1", ",",
+    "5", ",", "5", ",", "1", ",", "5", ",", "12", ",", "4", ",", "3", ",", 
+   "1", ",", "1", ",", "4", ",", "4", ",", "3", ",", "7", ",", "7", ",", "9", 
+   ",", "4", ",", "5", ",", "4", ",", "6", ",", "2", ",", "5", ",", "5", ",", 
+   "5", ",", "2", ",", "10", ",", "4", ",", "2", ",", "7", ",", "5", ",", "3",
+    ",", "12", ",", "3", ",", "4", ",", "2", ",", "5", ",", "2", ",", "10", 
+   ",", "7", ",", "5", ",", "5", ",", "4", ",", "4", ",", "2", ",", "3", ",", 
+   "2", ",", "9", ",", "5", ",", "2", ",", "5", ",", "2", ",", "2", ",", "3", 
+   ",", "6", ",", "10", ",", "3", ",", "11", ",", "5", ",", "3", ",", "7", 
+   ",", "3", ",", "4", ",", "4", ",", "8", ",", "4", ",", "5", ",", "5", ",", 
+   "4", ",", "8", ",", "4", ",", "8", ",", "3", ",", "3", ",", "5", ",", "5", 
+   ",", "2", ",", "3", ",", "8", ",", "2", ",", "6", ",", "11", ",", "3", ",",
+    "4", ",", "3", ",", "7", ",", "4", ",", "3", ",", "9", ",", "3", ",", "2",
+    ",", "3", ",", "2", ",", "3", ",", "3", ",", "4", ",", "3", ",", "4", ",",
+    "2", ",", "3", ",", "4", ",", "4", ",", "8", ",", "4", ",", "4", ",", "3",
+    ",", "8", ",", "5", ",", "4", ",", "2", ",", "7", ",", "2", ",", "5", ",",
+    "6", ",", "5", ",", "10", ",", "2", ",", "2", ",", "2", ",", "4", ",", 
+   "2", ",", "7", ",", "3", ",", "5", ",", "6", ",", "5", ",", "7", ",", "5", 
+   ",", "4", ",", "4", ",", "3", ",", "5", ",", "4", ",", "7", ",", "6", ",", 
+   "3", ",", "2", ",", "2", ",", "2", ",", "4", ",", "6", ",", "3", ",", "4", 
+   ",", "6", ",", "3", ",", "5", ",", "3", ",", "5", ",", "3", ",", "6", ",", 
+   "3", ",", "2", ",", "2", ",", "3", ",", "2", ",", "3", ",", "3", ",", "3", 
+   ",", "5", ",", "6", ",", "2", ",", "3", ",", "2", ",", "3", ",", "2", ",", 
+   "5", ",", "8", ",", "6", ",", "6", ",", "2", ",", "5", ",", "6", ",", "2", 
+   ",", "5", ",", "3", ",", "6", ",", "3", ",", "7", ",", "2", ",", "3", ",", 
+   "3", ",", "6", ",", "2", ",", "1", ",", "3", ",", "5", ",", "4", ",", "5", 
+   ",", "11", ",", "2", ",", "3", ",", "4", ",", "3", ",", "10", ",", "5", 
+   ",", "3", ",", "5", ",", "6", ",", "5", ",", "6", ",", "3", ",", "4", ",", 
+   "4", ",", "9", ",", "5", ",", "4", ",", "5", ",", "8", ",", "6", ",", "4", 
+   ",", "11", ",", "2", ",", "3", ",", "6", ",", "2", ",", "2", ",", "2", ",",
+    "4", ",", "4", ",", "2", ",", "3", ",", "4", ",", "9", ",", "3", ",", "3",
+    ",", "4", ",", "12", ",", "3", ",", "5", ",", "6", ",", "5", ",", "5", 
+   ",", "3", ",", "5", ",", "6", ",", "5", ",", "13", ",", "6", ",", "4", ",",
+    "5", ",", "4", ",", "4", ",", "5", ",", "3", ",", "2", ",", "2", ",", "9",
+    ",", "3", ",", "6", ",", "3", ",", "4", ",", "6", ",", "7", ",", "2", ",",
+    "4", ",", "3", ",", "7", ",", "5", ",", "3", ",", "6", ",", "3", ",", "2",
+    ",", "9", ",", "2", ",", "3", ",", "2", ",", "7", ",", "6", ",", "4", ",",
+    "2", ",", "3", ",", "9", ",", "10", ",", "6", ",", "4", ",", "4", ",", 
+   "4", ",", "7", ",", "4", ",", "5", ",", "6", ",", "4", ",", "3", ",", "3", 
+   ",", "5", ",", "8", ",", "7", ",", "7", ",", "4", ",", "5", ",", "2", ",", 
+   "5", ",", "4", ",", "2", ",", "2", ",", "5", ",", "4", ",", "8", ",", "9", 
+   ",", "2", ",", "6", ",", "4", ",", "9", ",", "3", ",", "6", ",", "2", ",", 
+   "3", ",", "4", ",", "2", ",", "8", ",", "2", ",", "2", ",", "4", ",", "8", 
+   ",", "5", ",", "4", ",", "1", ",", "8", ",", "3", ",", "6", ",", "2", ",", 
+   "4", ",", "7", ",", "6", ",", "7", ",", "2", ",", "10", ",", "1", ",", "0",
+    ",", "3", ",", "3", ",", "6", ",", "1", ",", "2", ",", "3", ",", "5", ",",
+    "3", ",", "0", ",", "0", ",", "7", ",", "2", ",", "2"}], "}"}]], "Output",\
+
+ CellChangeTimes->{3.704522310147447*^9, 3.704522372418705*^9, 
+  3.704762650470372*^9, 3.704768317538413*^9, 3.704769600075955*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Map", "[", 
+  RowBox[{"Length", ",", "OrgVSRes"}], "]"}]], "Input",
+ CellChangeTimes->{{3.704522380416375*^9, 3.704522386572035*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "1", ",", "1", ",", "1", ",", "2", ",", "1", ",", "1", ",", "1", ",", "1", 
+   ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "2", ",", 
+   "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", 
+   ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", 
+   "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "2", ",", "1", 
+   ",", "1", ",", "1", ",", "4", ",", "1", ",", "1", ",", "2", ",", "1", ",", 
+   "2", ",", "1", ",", "2", ",", "1", ",", "1", ",", "1", ",", "2", ",", "1", 
+   ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", 
+   "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "2", ",", "2", ",", "1", 
+   ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "2", ",", "1", ",", 
+   "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", 
+   ",", "1", ",", "1", ",", "2", ",", "2", ",", "3", ",", "1", ",", "1", ",", 
+   "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "2", ",", "1", ",", "1", 
+   ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", 
+   "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", 
+   ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "2", ",", 
+   "1", ",", "1", ",", "1", ",", "1", ",", "2", ",", "1", ",", "1", ",", "1", 
+   ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", 
+   "1", ",", "1", ",", "2", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", 
+   ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", 
+   "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", 
+   ",", "1", ",", "1", ",", "1", ",", "3", ",", "1", ",", "2", ",", "1", ",", 
+   "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", 
+   ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "2", ",", 
+   "1", ",", "1", ",", "2", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", 
+   ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", 
+   "2", ",", "2", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", 
+   ",", "1", ",", "1", ",", "1", ",", "2", ",", "2", ",", "1", ",", "1", ",", 
+   "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", 
+   ",", "1", ",", "1", ",", "2", ",", "2", ",", "1", ",", "1", ",", "2", ",", 
+   "2", ",", "2", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", 
+   ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", 
+   "1", ",", "2", ",", "1", ",", "2", ",", "2", ",", "1", ",", "1", ",", "1", 
+   ",", "1", ",", "2", ",", "1", ",", "2", ",", "1", ",", "1", ",", "2", ",", 
+   "1", ",", "2", ",", "2", ",", "1", ",", "1", ",", "1", ",", "1", ",", "2", 
+   ",", "1", ",", "1", ",", "2", ",", "1", ",", "1", ",", "1", ",", "1", ",", 
+   "2", ",", "2", ",", "1", ",", "1", ",", "7", ",", "5", ",", "1", ",", "1", 
+   ",", "1", ",", "1", ",", "1", ",", "2", ",", "2", ",", "5", ",", "1", ",", 
+   "5", ",", "1", ",", "3", ",", "1", ",", "2", ",", "1", ",", "1", ",", "1", 
+   ",", "2", ",", "1", ",", "1", ",", "1", ",", "2", ",", "1", ",", "1", ",", 
+   "1", ",", "1", ",", "1", ",", "1", ",", "3", ",", "1", ",", "1", ",", "1", 
+   ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "3", ",", "1", ",", 
+   "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "2", ",", "1", 
+   ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", 
+   "1", ",", "1", ",", "2", ",", "1", ",", "2", ",", "1", ",", "1", ",", "1", 
+   ",", "1", ",", "1", ",", "1", ",", "1", ",", "3", ",", "1", ",", "1", ",", 
+   "2", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", 
+   ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "2", ",", 
+   "2", ",", "2", ",", "2", ",", "1", ",", "1", ",", "1", ",", "1", ",", "2", 
+   ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "2", ",", "1", ",", 
+   "1", ",", "2", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "3", 
+   ",", "1", ",", "5", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", 
+   "1", ",", "1", ",", "2", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", 
+   ",", "1", ",", "2", ",", "1", ",", "1", ",", "3", ",", "1", ",", "1", ",", 
+   "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", 
+   ",", "1", ",", "1", ",", "1", ",", "2", ",", "2", ",", "1", ",", "1", ",", 
+   "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "3", ",", "1", ",", "1", 
+   ",", "1", ",", "1", ",", "1", ",", "1", ",", "3", ",", "1", ",", "1", ",", 
+   "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", 
+   ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "2", ",", "1", ",", 
+   "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", 
+   ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", 
+   "2", ",", "1", ",", "1", ",", "1", ",", "1", ",", "5", ",", "1", ",", "3", 
+   ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", 
+   "1", ",", "2", ",", "1", ",", "1", ",", "1", ",", "3", ",", "2", ",", "1", 
+   ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", 
+   "1", ",", "1", ",", "2", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", 
+   ",", "1", ",", "1", ",", "1", ",", "2", ",", "1", ",", "1", ",", "1", ",", 
+   "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", 
+   ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "2", ",", "1", ",", 
+   "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", 
+   ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", 
+   "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", 
+   ",", "1", ",", "1", ",", "1", ",", "1", ",", "4", ",", "1", ",", "1", ",", 
+   "1", ",", "1", ",", "1", ",", "2", ",", "1", ",", "1", ",", "1", ",", "2", 
+   ",", "2", ",", "2", ",", "1", ",", "2", ",", "1", ",", "1", ",", "1", ",", 
+   "2", ",", "1", ",", "1", ",", "1", ",", "1", ",", "2", ",", "1", ",", "2", 
+   ",", "1", ",", "7", ",", "1", ",", "2", ",", "3", ",", "1", ",", "2", ",", 
+   "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", 
+   ",", "2", ",", "1", ",", "1", ",", "1", ",", "2", ",", "1", ",", "1", ",", 
+   "1", ",", "1", ",", "2", ",", "2", ",", "1", ",", "1", ",", "1", ",", "1", 
+   ",", "2", ",", "1", ",", "1", ",", "1", ",", "1", ",", "2", ",", "5", ",", 
+   "2", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", 
+   ",", "1", ",", "1", ",", "2", ",", "1", ",", "1", ",", "1", ",", "1", ",", 
+   "1", ",", "2", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", 
+   ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", 
+   "1", ",", "2", ",", "1", ",", "1", ",", "1", ",", "2", ",", "1", ",", "1", 
+   ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", 
+   "1", ",", "2", ",", "1", ",", "2", ",", "1", ",", "1", ",", "1", ",", "1", 
+   ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "3", ",", "1", ",", 
+   "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "2", ",", "1", ",", "1", 
+   ",", "1", ",", "2", ",", "1", ",", "2", ",", "1", ",", "2", ",", "1", ",", 
+   "1", ",", "2", ",", "1", ",", "2", ",", "1", ",", "2", ",", "1", ",", "5", 
+   ",", "1", ",", "1", ",", "2", ",", "1", ",", "1", ",", "3", ",", "1", ",", 
+   "1", ",", "1", ",", "1", ",", "2", ",", "1", ",", "1", ",", "1", ",", "1", 
+   ",", "1", ",", "1", ",", "1", ",", "2", ",", "1", ",", "2", ",", "2", ",", 
+   "1", ",", "13", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1",
+    ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",",
+    "1", ",", "1", ",", "2", ",", "1", ",", "4", ",", "1", ",", "2", ",", "1",
+    ",", "1", ",", "1", ",", "1", ",", "2", ",", "3", ",", "1", ",", "1", ",",
+    "3", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1",
+    ",", "1", ",", "1", ",", "1", ",", "2", ",", "1", ",", "1", ",", "2", ",",
+    "2", ",", "1", ",", "1", ",", "1", ",", "2", ",", "2", ",", "1", ",", "1",
+    ",", "1", ",", "1", ",", "6", ",", "1", ",", "2", ",", "2", ",", "1", ",",
+    "1", ",", "1", ",", "1", ",", "1", ",", "2", ",", "1", ",", "1", ",", "1",
+    ",", "1", ",", "1", ",", "1", ",", "1", ",", "2", ",", "2", ",", "1", ",",
+    "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1",
+    ",", "2", ",", "1", ",", "1", ",", "1", ",", "1", ",", "5", ",", "1", ",",
+    "2", ",", "2", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "3",
+    ",", "1", ",", "1", ",", "1", ",", "2", ",", "1", ",", "1", ",", "1", ",",
+    "1", ",", "1", ",", "1", ",", "2", ",", "1", ",", "3", ",", "1", ",", "2",
+    ",", "1", ",", "1", ",", "1", ",", "1", ",", "3", ",", "1", ",", "1", ",",
+    "1", ",", "1", ",", "1", ",", "1", ",", "2", ",", "1", ",", "1", ",", "1",
+    ",", "1", ",", "1", ",", "2", ",", "1", ",", "1", ",", "1", ",", "1", ",",
+    "1", ",", "1", ",", "1", ",", "2", ",", "1", ",", "1", ",", "1", ",", "1",
+    ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "2", ",", "1", ",",
+    "1", ",", "1", ",", "1", ",", "2", ",", "2", ",", "1", ",", "11", ",", 
+   "1", ",", "2", ",", "2", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", 
+   ",", "4", ",", "1", ",", "6", ",", "1", ",", "3", ",", "1", ",", "1", ",", 
+   "1", ",", "1", ",", "1", ",", "1", ",", "3", ",", "1", ",", "2", ",", "1", 
+   ",", "2", ",", "1", ",", "1", ",", "1", ",", "1", ",", "2", ",", "4", ",", 
+   "1", ",", "1", ",", "1", ",", "1", ",", "9", ",", "1", ",", "1", ",", "2", 
+   ",", "1", ",", "2", ",", "1", ",", "1", ",", "1", ",", "1", ",", "2", ",", 
+   "1", ",", "2", ",", "1", ",", "1", ",", "1", ",", "2", ",", "2", ",", "2", 
+   ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", 
+   "1", ",", "1", ",", "1", ",", "3", ",", "1", ",", "1", ",", "2", ",", "2", 
+   ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "2", ",", "1", ",", 
+   "2"}], "}"}]], "Output",
+ CellChangeTimes->{3.7045223872558517`*^9, 3.704762651407217*^9, 
+  3.704768318754507*^9, 3.7047696009236937`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"Outer", "[", 
+    RowBox[{"pair", ",", 
+     RowBox[{"OrgVSRes", "[", 
+      RowBox[{"[", "3", "]"}], "]"}], ",", 
+     RowBox[{"AffList", "[", 
+      RowBox[{"[", "3", "]"}], "]"}]}], "]"}], "//", "Flatten"}], "//", 
+  "Length"}]], "Input",
+ CellChangeTimes->{{3.7045223943318253`*^9, 3.704522485184874*^9}}],
+
+Cell[BoxData["3"], "Output",
+ CellChangeTimes->{{3.704522435415655*^9, 3.704522487167407*^9}, 
+   3.704762652274726*^9, 3.704768319540185*^9, 3.704769601650525*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(", 
+   RowBox[{"triple", "=", 
+    RowBox[{
+     RowBox[{"Table", "[", 
+      RowBox[{
+       RowBox[{"Outer", "[", 
+        RowBox[{"pair", ",", 
+         RowBox[{"OrgVSRes", "[", 
+          RowBox[{"[", "n", "]"}], "]"}], ",", 
+         RowBox[{"AffList", "[", 
+          RowBox[{"[", "n", "]"}], "]"}]}], "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"n", ",", "953"}], "}"}]}], "]"}], "//", "Flatten"}]}], ")"}],
+   "//", "Length"}]], "Input",
+ CellChangeTimes->{{3.7045223943318253`*^9, 3.704522470705558*^9}, {
+  3.704522500993619*^9, 3.704522583770063*^9}}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Outer","heads",
+   "\"Heads \\!\\(\\*RowBox[{\\\"List\\\"}]\\) and \
+\\!\\(\\*RowBox[{\\\"Drop\\\"}]\\) at positions \
+\\!\\(\\*RowBox[{\\\"3\\\"}]\\) and \\!\\(\\*RowBox[{\\\"2\\\"}]\\) are \
+expected to be the same.\"",2,101,88,32266517026412738849,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{{3.704522549828677*^9, 3.704522585869289*^9}, 
+   3.704762653260132*^9, 3.7047683202724648`*^9, 3.704769602598194*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Outer","heads",
+   "\"Heads \\!\\(\\*RowBox[{\\\"List\\\"}]\\) and \
+\\!\\(\\*RowBox[{\\\"Drop\\\"}]\\) at positions \
+\\!\\(\\*RowBox[{\\\"3\\\"}]\\) and \\!\\(\\*RowBox[{\\\"2\\\"}]\\) are \
+expected to be the same.\"",2,101,89,32266517026412738849,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{{3.704522549828677*^9, 3.704522585869289*^9}, 
+   3.704762653260132*^9, 3.7047683202724648`*^9, 3.704769602604712*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Outer","heads",
+   "\"Heads \\!\\(\\*RowBox[{\\\"List\\\"}]\\) and \
+\\!\\(\\*RowBox[{\\\"Drop\\\"}]\\) at positions \
+\\!\\(\\*RowBox[{\\\"3\\\"}]\\) and \\!\\(\\*RowBox[{\\\"2\\\"}]\\) are \
+expected to be the same.\"",2,101,90,32266517026412738849,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{{3.704522549828677*^9, 3.704522585869289*^9}, 
+   3.704762653260132*^9, 3.7047683202724648`*^9, 3.7047696026132317`*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General","stop",
+   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"Outer\\\", \\\"::\\\", \
+\\\"heads\\\"}], \\\"MessageName\\\"]\\) will be suppressed during this \
+calculation.\"",2,101,91,32266517026412738849,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{{3.704522549828677*^9, 3.704522585869289*^9}, 
+   3.704762653260132*^9, 3.7047683202724648`*^9, 3.704769602620126*^9}],
+
+Cell[BoxData["4394"], "Output",
+ CellChangeTimes->{{3.704522550087945*^9, 3.704522586173031*^9}, 
+   3.704762654261674*^9, 3.7047683204441357`*^9, 3.704769602626593*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"tripleTally", "=", 
+   RowBox[{"Sort", "[", 
+    RowBox[{
+     RowBox[{"Tally", "[", "triple", "]"}], ",", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"#1", "[", 
+        RowBox[{"[", "2", "]"}], "]"}], "\[GreaterEqual]", 
+       RowBox[{"#2", "[", 
+        RowBox[{"[", "2", "]"}], "]"}]}], "&"}]}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.704522622391775*^9, 3.704522719341928*^9}, {
+  3.704522755276575*^9, 3.704522755852828*^9}, {3.704523051855036*^9, 
+  3.704523113264724*^9}}]
+}, Closed]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{881, 846},
+WindowMargins->{{Automatic, 167}, {60, Automatic}},
+FrontEndVersion->"11.0 for Linux x86 (64-bit) (September 27, 2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 109, 1, 93, "Title"],
+Cell[CellGroupData[{
+Cell[714, 27, 94, 1, 67, "Chapter"],
+Cell[811, 30, 493, 13, 34, "Input"],
+Cell[1307, 45, 918, 23, 80, "Input"],
+Cell[2228, 70, 283, 6, 34, "Input"],
+Cell[2514, 78, 284, 6, 34, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2835, 89, 89, 1, 66, "Chapter"],
+Cell[CellGroupData[{
+Cell[2949, 94, 174, 3, 34, "Input"],
+Cell[3126, 99, 534, 7, 70, "Output"]
+}, Open  ]],
+Cell[3675, 109, 156, 2, 33, "Text"],
+Cell[CellGroupData[{
+Cell[3856, 115, 396, 10, 101, "Input"],
+Cell[4255, 127, 337, 6, 70, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4629, 138, 562, 15, 34, "Input"],
+Cell[5194, 155, 481, 9, 70, "Message"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5712, 169, 249, 7, 34, "Input"],
+Cell[5964, 178, 264, 5, 70, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6265, 188, 347, 9, 101, "Input"],
+Cell[6615, 199, 164, 4, 70, "Output"]
+}, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[6828, 209, 197, 3, 55, "Chapter"],
+Cell[CellGroupData[{
+Cell[7050, 216, 147, 2, 66, "Section"],
+Cell[7200, 220, 533, 15, 34, "Input"],
+Cell[7736, 237, 696, 20, 34, "Input"],
+Cell[8435, 259, 523, 16, 34, "Input"],
+Cell[CellGroupData[{
+Cell[8983, 279, 526, 15, 34, "Input"],
+Cell[9512, 296, 165, 3, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9714, 304, 338, 9, 34, "Input"],
+Cell[10055, 315, 220, 3, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10312, 323, 209, 4, 34, "Input"],
+Cell[10524, 329, 3706, 91, 370, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14267, 425, 316, 6, 57, "Input"],
+Cell[14586, 433, 224, 3, 34, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14847, 441, 359, 9, 102, "Input"],
+Cell[15209, 452, 259, 5, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15505, 462, 863, 24, 57, "Input"],
+Cell[16371, 488, 362, 5, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16770, 498, 529, 15, 34, "Input"],
+Cell[17302, 515, 412, 8, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[17751, 528, 393, 11, 34, "Input"],
+Cell[18147, 541, 958, 17, 147, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[19142, 563, 468, 14, 34, "Input"],
+Cell[19613, 579, 1477, 34, 352, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[21127, 618, 126, 2, 32, "Input"],
+Cell[21256, 622, 119, 2, 32, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[21424, 630, 110, 1, 66, "Section"],
+Cell[CellGroupData[{
+Cell[21559, 635, 553, 16, 34, "Input"],
+Cell[22115, 653, 543, 11, 70, "Message"],
+Cell[22661, 666, 543, 11, 70, "Message"],
+Cell[23207, 679, 543, 11, 70, "Message"],
+Cell[23753, 692, 559, 11, 70, "Message"],
+Cell[24315, 705, 187, 3, 70, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[24539, 713, 496, 13, 34, "Input"],
+Cell[25038, 728, 60980, 1498, 70, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[86055, 2231, 225, 6, 34, "Input"],
+Cell[86283, 2239, 169, 2, 70, "Output"]
+}, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[86501, 2247, 113, 1, 52, "Section"],
+Cell[CellGroupData[{
+Cell[86639, 2252, 413, 11, 34, "Input"],
+Cell[87055, 2265, 648, 11, 70, "Message"],
+Cell[87706, 2278, 646, 11, 70, "Message"],
+Cell[88355, 2291, 646, 11, 70, "Message"],
+Cell[89004, 2304, 493, 9, 70, "Message"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[89534, 2318, 592, 14, 34, "Input"],
+Cell[90129, 2334, 622, 11, 70, "Message"],
+Cell[90754, 2347, 620, 11, 70, "Message"],
+Cell[91377, 2360, 620, 11, 70, "Message"],
+Cell[92000, 2373, 599, 11, 70, "Message"],
+Cell[92602, 2386, 765, 14, 70, "Message"],
+Cell[93370, 2402, 767, 14, 70, "Message"],
+Cell[94140, 2418, 545, 10, 70, "Message"],
+Cell[94688, 2430, 543, 10, 70, "Message"],
+Cell[95234, 2442, 765, 14, 70, "Message"],
+Cell[96002, 2458, 615, 11, 70, "Message"],
+Cell[96620, 2471, 543, 10, 70, "Message"],
+Cell[97166, 2483, 603, 11, 70, "Message"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[97806, 2499, 180, 3, 34, "Input"],
+Cell[97989, 2504, 312, 4, 70, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[98338, 2513, 469, 13, 34, "Input"],
+Cell[98810, 2528, 245, 4, 70, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[99092, 2537, 719, 18, 34, "Input"],
+Cell[99814, 2557, 677, 12, 70, "Message"],
+Cell[100494, 2571, 675, 12, 70, "Message"],
+Cell[101172, 2585, 675, 12, 70, "Message"],
+Cell[101850, 2599, 631, 11, 70, "Message"],
+Cell[102484, 2612, 365, 5, 70, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[102886, 2622, 323, 8, 34, "Input"],
+Cell[103212, 2632, 345, 5, 70, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[103594, 2642, 459, 13, 34, "Input"],
+Cell[104056, 2657, 3523, 94, 70, "Output"]
+}, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[107628, 2757, 158, 2, 51, "Section"],
+Cell[CellGroupData[{
+Cell[107811, 2763, 643, 15, 34, "Input"],
+Cell[108457, 2780, 447, 8, 70, "Message"],
+Cell[108907, 2790, 578, 10, 70, "Message"],
+Cell[109488, 2802, 450, 8, 70, "Message"],
+Cell[109941, 2812, 578, 10, 70, "Message"],
+Cell[110522, 2824, 371, 7, 70, "Message"],
+Cell[110896, 2833, 371, 7, 70, "Message"],
+Cell[111270, 2842, 448, 8, 70, "Message"],
+Cell[111721, 2852, 430, 8, 70, "Message"],
+Cell[112154, 2862, 576, 10, 70, "Message"],
+Cell[112733, 2874, 438, 8, 70, "Message"],
+Cell[113174, 2884, 406, 8, 70, "Message"],
+Cell[113583, 2894, 431, 8, 70, "Message"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[114051, 2907, 129, 2, 34, "Input"],
+Cell[114183, 2911, 163, 2, 70, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[114383, 2918, 158, 3, 34, "Input"],
+Cell[114544, 2923, 10228, 132, 70, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[124809, 3060, 158, 3, 28, "Input"],
+Cell[124970, 3065, 10255, 133, 70, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[135262, 3203, 768, 19, 28, "Input"],
+Cell[136033, 3224, 475, 9, 70, "Message"],
+Cell[136511, 3235, 475, 9, 70, "Message"],
+Cell[136989, 3246, 475, 9, 70, "Message"],
+Cell[137467, 3257, 431, 8, 70, "Message"],
+Cell[137901, 3267, 165, 2, 70, "Output"]
+}, Open  ]],
+Cell[138081, 3272, 186, 4, 34, "Input"],
+Cell[CellGroupData[{
+Cell[138292, 3280, 508, 14, 34, "Input"],
+Cell[138803, 3296, 5278, 137, 70, "Output"]
+}, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[144130, 3439, 222, 3, 52, "Section"],
+Cell[CellGroupData[{
+Cell[144377, 3446, 206, 4, 34, "Input"],
+Cell[144586, 3452, 10255, 133, 70, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[154878, 3590, 157, 3, 34, "Input"],
+Cell[155038, 3595, 10211, 132, 70, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[165286, 3732, 356, 10, 34, "Input"],
+Cell[165645, 3744, 164, 2, 70, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[165846, 3751, 604, 17, 57, "Input"],
+Cell[166453, 3770, 471, 9, 70, "Message"],
+Cell[166927, 3781, 471, 9, 70, "Message"],
+Cell[167401, 3792, 473, 9, 70, "Message"],
+Cell[167877, 3803, 436, 8, 70, "Message"],
+Cell[168316, 3813, 169, 2, 70, "Output"]
+}, Open  ]],
+Cell[168500, 3818, 526, 14, 34, "Input"]
+}, Closed]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+

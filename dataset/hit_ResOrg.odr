@@ -1,0 +1,977 @@
+Label	Res	Org	order
+ACK			
+ACK	medaka	University of Tokyo	:89O:126R:
+ACK	IL	University of Tokyo	:65O:86R:
+ACK	E. coli	Kyoto University	:125O:138R:
+ACK	E. coli ; ME8400	National Institute of Genetics	:12R:74R:106O:
+ACK	E. coli	Chiba University	:128O:166R:
+ACK	AxCANCre	University of Tokyo	:149O:184R:
+ACK	medaka	The University of Tokyo	:61O:87R:
+ACK	Drosophila	National Institute of Genetics	:142R:211O:
+ACK	C. elegans	Tokyo Women\'s Medical University	:204O:304R:
+ACK	Tol2	National Institute of Genetics	:48O:89R:
+ACK	Drosophila	National Institute of Genetics	:35R:64R:127O:
+ACK	C. elegans	National Institute of Genetics	:56R:240R:395R:635O:
+ACK	pCALNLZ	University of Tokyo	:33O:60R:
+ACK	HeLa	Nagoya University	:60R:120O:
+ACK	R1 ; EB3	RIKEN	:39O:190R:210R:
+ACK	OP9	RIKEN	:41O:56R:
+ACK	medaka	National Institute of Genetics	:23R:121O:
+ACK	ST	Kyoto University	:32R:100O:
+ACK	Drosophila	University of Tokyo	:503O:1089R:1139R:
+ACK	Puro	Kyoto University ; RIKEN	:26O:161O:260R:
+ACK	strain 255	Yamaguchi University	:42R:112O:
+ACK	DT40	Kyoto University	:123R:159O:
+ACK	Arabidopsis	RIKEN	:102R:139O:
+ACK	Puro	RIKEN	:42O:91R:
+ACK	Arabidopsis	RIKEN	:9O:58R:
+ACK	C. elegans	National Institute of Genetics	:64O:161R:
+ACK	Escherichia coli	National Institute of Genetics	:119R:194O:
+ACK	DT40	Kyoto Univ.	:238O:248R:
+ACK	C. elegans	National Institute of Genetics	:156O:189R:
+ACK	C. elegans	Nagoya University	:145O:170R:
+ACK	tm2182	Tokyo Women\'s Medical University	:90O:129R:
+ACK	C. elegans	Tokyo Women\'s Medical University	:103O:149R:
+ACK	Drosophila	National Institute of Genetics	:323R:371O:
+ACK	Tol2	National Institute of Genetics	:140O:163R:
+ACK	Keio collection	National Institute of Genetics	:54O:78R:
+ACK	NIG-Fly	National Institute of Genetics	:43O:52R:
+ACK	NIG-Fly	National Institute of Genetics	:34O:
+ACK	medaka ; Zebrafish	National Institute of Genetics ; University of Tokyo	:173R:478O:510O:
+ACK	rosophila	National Institute of Genetics	:143R:191O:
+ACK	medaka	National Institute of Genetics ; University of Tokyo	:25R:95O:123O:
+ACK	tm326 ; tm331 ; tm1011 ; tm420	Tokyo Women\'s Medical University	:60O:162R:176R:190R:208R:
+ACK	R1	Tokyo University	:30O:41R:
+ACK	Drosophila	National Institute of Genetics	:123R:152R:200R:234R:294O:
+ACK	Barley ; Germplasm	Okayama University	:19R:29R:104O:
+ACK	IL	Kyushu University	:59O:70R:
+ACK	T65 ; RILs	Kyushu University	:4R:11R:87O:
+ACK	Ae. tauschii	Okayama University	:119O:137R:
+ACK	W0106 ; O. rufipogon	National Institute of Genetics	:43O:73R:89R:
+ACK	Arabidopsis	RIKEN	:68O:135R:
+ACK	medaka	National Institute of Genetics	:34R:175O:
+ACK	YPH250	Kyoto University	:309O:329R:
+ACK	T4 ; E. coli	RIKEN	:81R:105R:158O:
+ACK	Keio collection	National Institute of Genetics	:114O:171R:
+ACK	P. vivax	Osaka City University	:189R:381O:
+ACK	medaka	University of Tokyo	:53O:147R:
+ACK	DT40	Kyoto University	:55O:157R:
+ACK	E. coli	National Institute of Genetics	:70R:104O:
+ACK	E. coli	Hiroshima University	:134O:209R:
+ACK	p53	RIKEN	:3R:152O:
+ACK	E. coli	National Institute of Genetics	:59R:93O:128R:
+ACK	Arabidopsis	RIKEN ; Kyushu University	:118R:132O:175O:
+ACK	E.coli	Kyoto University	:109O:164R:
+ACK	S288C	University of Tokyo	:55O:124R:
+ACK	IL	Kyoto University	:50O:354R:
+ACK	E. coli	Hiroshima University	:206O:317R:
+ACK	pCMV-MAZ ; pGEX-hMAZ	RIKEN	:18R:31R:54O:
+ACK	Tol2 ; T2	National Institute of Genetics	:159O:210R:815R:
+ACK	KhES-3	Kyoto University	:109O:141R:
+ACK	NIG-Fly	National Institute of Genetics	:103O:112R:
+ACK	Drosophila	National Institute of Genetics	:22R:74R:136O:
+ACK	Drosophila	National Institute of Genetics	:50R:135O:
+ACK	pCAGGS	RIKEN	:125O:174R:
+ACK	HepG2	Chiba University	:109O:132R:
+ACK	Xenopus tropicalis ; Medaka	National Institute of Genetics ; University of Tokyo	:52R:68R:198O:222O:
+ACK	DT40	Kyoto University	:74O:186R:
+ACK	ASKA	National Institute of Genetics	:43O:87R:
+ACK	Arabidopsis	RIKEN	:18O:63R:
+ACK	KhES-1	Kyoto University.	:25R:153O:
+ACK	Tol2	National Institute of Genetics	:64O:87R:
+ACK	pCAGGS	University of Tokyo	:48O:74R:
+ACK	MDCK	Kyoto University	:227O:261R:
+ACK	Drosophila	University of Tokyo	:134O:177R:
+ACK	Tg	RIKEN	:91O:149R:
+ACK	D7	RIKEN	:59O:114R:
+ACK	R2	RIKEN	:119O:335R:
+ACK	Barley ; Germplasm	Okayama University	:37R:47R:74O:
+ACK	E. coli ; B. subtilis	National Institute of Genetics	:65O:139R:155R:
+ACK	BW25113 ; E. coli ; DH5α	National Institute of Genetics	:11R:19R:38R:107R:139O:
+ACK	pTN-TH7	Osaka City University	:33R:114O:
+ACK	Arabidopsis	RIKEN	:15R:86O:
+ACK	pst13453	RIKEN	:28O:135R:
+ACK	Arabidopsis	RIKEN	:14R:104O:151O:
+ACK	Lotus	University of Miyazaki	:15R:72O:107R:
+ACK	Arabidopsis	RIKEN	:112R:123O:
+ACK	Arabidopsis	RIKEN	:42R:150O:
+ACK	RILs ; Arabidopsis	RIKEN	:206R:247R:446O:
+ACK	E. coli	Nagoya University	:45O:80R:
+ACK	Arabidopsis	Kyoto University	:126O:176R:
+ACK	RIA	The University of Tokyo	:44O:172R:
+ACK	RIA	Nagoya University	:78R:91R:152O:
+ACK	RIA	Tokyo University	:131R:168O:
+ACK	C9285	National Institute of Genetics	:43O:81R:
+ACK	medaka	National Institute of Genetics	:43R:215O:
+ACK	medaka	National Institute for Basic Biology	:100O:122R:
+ACK	medaka	National Institute of Genetics ; University of Tokyo	:34R:112O:140O:
+ACK	medaka	National Institute of Genetics	:49R:197O:
+ACK	E. coli	Okayama University	:75O:112R:
+ACK	l70	Kyushu University	:46O:108R:
+ACK	ASKA	National Institute of Genetics	:43O:84R:
+ACK	ASKA	National Institute of Genetics	:43O:84R:
+ACK	ASKA	National Institute of Genetics	:37R:92O:
+ACK	Keio collection	National Institute of Genetics	:83O:159R:
+ACK	201B7	Kyoto University	:56O:71R:
+ACK	Tg	RIKEN	:47R:119O:
+ACK	AK23	Tokyo University	:83O:106R:
+ACK	pBMSA	RIKEN	:58R:98O:
+ACK	Zic2	RIKEN	:33O:83R:
+ACK	ST	RIKEN	:35O:141R:
+ACK	E. coli	National Institute of Genetics	:69O:85R:
+ACK	wheat;	Kyoto University	:44O:
+ACK	ERAI	University of Tokyo	:48O:58R:
+ACK	RILs	RIKEN	:8R:112O:140O:162O:185O:207O:
+ACK	Arabidopsis	National Institute for Basic Biology ; Kyoto University	:29R:83O:310O:
+ACK	Arabidopsis	RIKEN	:15R:86O:
+ACK	Lotus ; Glycine	University of Miyazaki	:66R:78R:102O:
+ACK	wheat	Kyoto Univ.	:153O:370R:
+ACK	IL	University of Tokyo	:153R:282O:
+ACK	Arabidopsis	RIKEN	:130R:166O:
+ACK	Arabidopsis	RIKEN	:73O:122R:
+ACK	Arabidopsis	The University of Tokyo	:124O:155R:
+ACK	F. oxysporum	University of Tokyo	:67O:222R:
+ACK	pCA24N	University of Tsukuba,	:212O:253R:
+ACK	C57BL\/6	University of Tokyo	:7R:96O:
+ACK	IL	University of Tokyo	:56O:99R:110R:
+ACK	ASKA	National Institute of Genetics	:40O:53R:
+ACK	C. elegans	Tokyo Women\'s Medical University	:81R:313O:
+ACK	IL	RIKEN	:8R:50O:
+ACK	HPS0001 ; 201B7	RIKEN	:7R:13R:39O:
+ACK	Ae. tauschii	Okayama Univ	:137O:160R:
+ACK	Drosophila	Nagoya University	:39O:81R:
+ACK	HeLa	Tsukuba University	:196O:313R:
+ACK	Drosophila library	National Institute of Genetics	:216R:252O:
+ACK	C. elegans	Tokyo Women\'s Medical University	:223R:305O:
+ACK	Medaka	The University of Tokyo	:81O:163R:
+ACK	Mouse	National Institute of Genetics	:33R:100O:
+ACK	Rice	RIKEN	:22R:106R:241O:
+ACK	IL	Tokyo University	:123O:159R:
+ACK	pEF-BOS	University of Tokyo	:155O:253R:
+ACK	IL	University of Kyoto	:76R:124O:
+ACK	genomic library	Kyoto University	:286O:329R:
+ACK	IL	University of Tokyo	:6R:76O:
+ACK	HOS	Kyoto University	:71O:116R:
+ACK	pEF-BOS	University of Tokyo	:41O:68R:
+ACK	KhES-3	Kyoto University	:70O:97R:
+ACK	Arabidopsis	Okayama Univ	:70O:152R:175R:
+ACK	NA	The University of Tokyo	:45O:86R:
+ACK	Drosophila	National Institute of Genetics	:81R:142R:270O:
+ACK	HeLa	Hiroshima Univ	:36O:173R:
+ACK	HeLa	The University of Tokyo	:152O:198R:
+ACK	ASKA	National Institute of Genetics	:43O:84R:
+ACK	Arabidopsis	RIKEN	:15R:72O:
+ACK	Arabidopsis	RIKEN	:113O:139O:164O:185R:244R:283R:
+ACK	Drosophila	National Institute of Genetics	:88O:136R:
+ACK	tm322 ; tm336	Tokyo Women\'s Medical University	:107O:144R:151R:162R:
+ACK	Drosophila	National Institute of Genetics	:50O:103R:139R:
+ACK	C57BL\/6	RIKEN	:65O:130R:
+ACK	tm2355, tm2394	National Institute of Genetics,	:153R:362O:
+ACK	RBP-J	Kyoto University	:153O:261R:
+ACK	C. elegans	National Institute of Genetics	:43O:182R:
+ACK	S. cerevisiae NBW7	Hiroshima University	:88R:151O:
+ACK	tm1340	Tokyo Women\'s Medical University	:180O:318R:
+ACK	IL	RIKEN	:74O:133R:
+ACK	Tol2	National Institute of Genetics	:8R:97O:
+ACK	C. elegans	RIKEN	:93O:350R:
+ACK	pR7	Institute of Physical and Chemical Research ; RIKEN	:42O:91O:125R:
+ACK	KGN	Kyushu University	:75O:138R:
+ACK	pGa981-6	RIKEN	:12R:53O:
+ACK	SR	RIKEN	:71R:110O:
+ACK	Drosophila	National Institute of Genetics	:34O:76R:
+ACK	TE-9 ; TE-5	Kyoto University	:93R:99R:156O:
+ACK	Tomato	Chiba University	:165O:240R:
+ACK	Arabidopsis	Kyoto University ; Chiba University	:52O:94O:142O:194R:
+ACK	pda08126 ; pda07078	RIKEN	:18O:80R:93R:
+ACK	NIG-Fly	National Institute of Genetics	:44O:53R:
+ACK	Rice	National Institute of Genetics	:77R:126O:
+ACK	ERAI	RIKEN	:87R:132O:
+ACK	ST2	RIKEN	:41O:143R:
+ACK	HeLa	University of Kyoto	:151O:172R:
+ACK	RIMD 2210633	Kyoto University	:60O:105R:
+ACK	Drosophila	National Institute of Genetics	:93R:129R:180O:
+ACK	RIMD 2210633	Kyoto University	:60O:101R:
+ACK	Nanog-GFP	Kyoto University ; RIKEN	:310O:437O:466R:
+ACK	E. coli	Hiroshima University	:105O:146R:
+ACK	pUC19	RIKEN	:51R:129O:
+ACK	CS	RIKEN	:285O:300R:367R:
+ACK	DNABook ; Arabidopsis	RIKEN	:5O:44O:56R:82R:118R:
+ACK	medaka ; hatching enzyme ; Medaka	Kyoto University ; University of Tokyo	:309O:373O:431R:460R:476R:
+ACK	E. coli	National Institute of Genetics	:65R:163O:
+ACK	X. tropicalis	Hiroshima University	:66O:95R:
+ACK	tm1298	Tokyo Women\'s Medical University	:16R:164O:
+ACK	Arabidopsis	Kyoto University ; University of Tokyo	:40O:95O:144R:
+ACK	Nanog-GFP	RIKEN	:57R:77O:
+ACK	Ba\/F3	University of Tokyo	:286O:325R:
+ACK	CHO-K1	The University of Tokyo	:142R:270O:
+ACK	pCAGGS	Osaka City University} ; Tsukuba University	:59O:332R:
+ACK	FM3A	University of Tokyo	:179O:229R:
+ACK	KhES-3 ; 293	Kyoto University	:67O:89R:217R:
+ACK	CS	Kyoto University ; RIKEN	:44O:84O:128R:145R:
+ACK	C. elegans	Tokyo Women\'s Medical College	:58R:137O:
+ACK	Yeast	Osaka City University	:117R:164O:
+ACK	C. elegans	Tokyo Women\'s Medical University	:71R:197R:307O:
+ACK	pBMSA	RIKEN	:64R:104O:
+ACK	ASKA	National Institute of Genetics	:48O:90R:
+ACK	mouse ES cell line	RIKEN	:100R:156O:
+ACK	Drosophila	National Institute of Genetics	:35R:84O:
+ACK	ASKA	National Institute of Genetics	:57O:89R:
+ACK	Drosophila	National Institute of Genetics	:28R:167R:245O:
+ACK	Drosophila	National Institute of Genetics	:131O:192R:
+ACK	Germplasm	Okayama University	:39R:66O:
+ACK	Germplasm	Okayama University	:45R:74O:
+ACK	pCMV-Sp1 ; pCMV-MAZ	RIKEN	:37R:50R:78O:
+ACK	E. coli ; Keio collection	National Institute of Genetics	:119O:141R:174R:
+ACK	HeLa	RIKEN	:38O:103R:
+ACK	pBMSA	RIKEN	:59R:100O:
+ACK	BRL ; HUC-F2	RIKEN	:14O:18R:95R:
+ACK	CAG-FLPe ; RBRC01834	RIKEN	:64O:148R:167R:
+ACK	Zebrafish ; p53	RIKEN	:71O:100R:165R:
+ACK	293T	University of Tokyo	:87O:97R:
+ACK	GMR-GAL4	National Institute of Genetics	:18R:78O:
+ACK	HeLa	RIKEN	:36O:80R:
+ACK	Sf9	University of Tokyo	:136O:247R:
+ACK	201B7	Kyoto University	:92O:126R:
+ACK	E. coli	National Institute of Genetics	:73O:134R:
+ACK	C. elegans	RIKEN	:58R:130O:
+ACK	Thermotoga maritima	RIKEN	:87R:216O:
+ACK	Jurkat	Okayama University	:180R:234O:
+ACK	CS	RIKEN	:131O:153R:
+ACK	pCAGGS	Nagoya University	:40O:62R:
+ACK	201B7	RIKEN	:29R:65O:
+ACK	CHO-K1	University of Tokyo	:50O:72R:
+ACK	RIMD 2210633	Kyoto University	:60O:161R:
+ACK	RBRC03654 ; RBRC03661	RIKEN	:81O:156R:170R:
+ACK	Mouse	RIKEN	:51R:91O:
+ACK	MG1655 ; E. coli	National Institute of Genetics	:11R:18R:83O:
+None			
+Mat			
+Mat	MG1655 ; E. coli	National Institute for Basic Biology	:7R:19R:100O:
+Mat	CM 23216	The University of Tokyo	:156O:173R:
+Mat	C2C12	RIKEN	:5R:40O:
+Mat	IFM	Chiba University	:18R:53R:95R:127R:159R:194R:250O:
+Mat			
+Mat	MKN7	Kyushu University	:9R:140O:
+Mat	JCM 12892 ; JCM 13587	RIKEN	:41R:81R:147O:
+Mat	DT40	RIKEN	:30R:55R:88O:
+Mat	BALB\/c ; IL	University of Tokyo	:2R:35R:60R:122O:
+Mat	C57BL\/6	Tokyo Women\'s Medical University	:43R:614O:
+Mat			
+Mat	MG1655	National Institute of Genetics	:18R:99O:
+Mat			
+Mat	JHSK-rec ; TT1TKB	RIKEN	:77R:100R:129O:
+Mat	293	University of Tokyo	:38R:107O:
+Mat	MG1655 ; E. coli	National Institute of Genetics	:11R:18R:71O:
+Mat	HeLa ; LoVo	Kyoto University	:4R:34R:236O:
+Mat	Arabidopsis	Nagoya University	:20R:143R:304R:538O:
+Mat	Drosophila	National Institute of Genetics	:55R:127O:
+Mat	ATDC5	RIKEN	:22R:58O:
+Mat	JCM 1149	RIKEN	:21R:93O:
+Mat	C. albicans ; JCM 1542	Institute of Physical and Chemical Research	:11R:21R:130O:
+Mat	RCB1647	RIKEN	:54R:77O:
+Mat	ATDC5	RIKEN	:18R:31O:
+Mat	TUHR4TKB ; RCC10RGB	RIKEN	:174R:203R:237O:
+Mat	B16 melanoma	RIKEN	:12R:53O:
+Mat	MC3T3-G2\/PA6	RIKEN	:39R:76O:
+Mat	GCIY	RIKEN	:217R:269O:
+Mat	HHUA	RIKEN	:129R:157O:
+Mat	TGBC24TKB ; HuCCT1	RIKEN	:92R:104R:131O:
+Mat	MKN45 ; MKN28	RIKEN	:49R:91R:228O:
+Mat	BALB\/c	Nagoya University	:13R:191O:
+Mat	37	Nagoya University	:87O:104R:
+Mat	RCB2293 ; ACC-MESO-1 ; A549 ; RCB0988 ; ACC-MESO-4 ; RCB0098 ; RCB2292	RIKEN	:32R:41R:57R:66R:132R:141R:203R:230O:
+Mat			
+Mat	PK-1 ; KP4 ; NOR-P ; PK-59 ; PANC-1	RIKEN	:43R:50R:54R:62R:73R:100O:
+Mat	RERF-LC-AI	RIKEN	:102R:109O:
+Mat	SCCKN, SCCTF	RIKEN	:141R:361O:
+Mat	293T	RIKEN	:127R:159O:
+Mat	HepG2	RIKEN	:38R:198O:
+Mat	T2	Yamaguchi University	:86R:199O:
+Mat	RERF-LC-AI ; A549	RIKEN	:45R:107R:184O:
+Mat	5637 ; T24	Kyushu University	:47R:78R:249O:
+Mat	KP4 ; NOR-P1 ; WI-38 ; PK-59 ; PANC-1	RIKEN	:39R:52R:62R:72R:107R:137O:
+Mat	HuH-28	RIKEN	:76R:101O:
+Mat	MS-1 ; LC-1F ; RERF-LC-AI ; A549 ; RERF-LC-KJ	RIKEN	:4R:135R:147R:195R:204R:233O:
+Mat	pEF-BOS	Kyoto University	:225R:282O:
+Mat	Q65 ; Q931 ; Q63	Kyushu University	:19R:24R:30R:89O:
+Mat	C9285	National Institute of Genetics	:5R:63O:
+Mat	W0106 ; O. rufipogon	National Institute of Genetics	:16R:33R:135O:
+Mat	HepG2	RIKEN	:5R:120O:
+Mat	C57BL\/6	University of Tokyo	:17R:119O:
+Mat	Sa3	RIKEN	:7R:74O:
+Mat	Tg ; C57BL\/6	RIKEN	:51R:91R:94R:160O:
+Mat	EB3	RIKEN	:30R:81O:
+Mat	Vero	Kyoto University	:83O:123R:
+Mat	IL	University of Tokyo	:10R:137O:
+Mat	PC12 ; Mouse	Tokyo University	:4R:372R:493R:662O:
+Mat	EB3	RIKEN	:30R:72O:
+Mat	HepG2	RIKEN	:70R:105O:
+Mat	C57BL\/6	Nagoya University	:36R:177O:
+Mat	p53	University of Tokyo	:39R:46R:277R:373O:
+Mat	Mouse	Kyoto University	:423R:592O:
+Mat	LEW\/Jms	University of Tokyo	:11R:67O:
+Mat			
+Mat	Mouse ; ST2 ; MC3T3-E1	RIKEN	:5R:37R:69R:95O:
+Mat	GCIY	RIKEN	:49R:89R:139O:
+Mat	TUHR14TKB	RIKEN	:30R:47O:
+Mat	C2C12	RIKEN	:5R:62O:
+Mat	HepG2	RIKEN	:5R:40O:
+Mat	BALB\/c	University of Tokyo	:6R:131O:
+Mat	RILs	Kyoto University	:57R:150O:
+Mat	TCS	RIKEN	:74R:500R:594O:
+Mat	Arabidopsis	RIKEN	:29O:41R:
+Mat	Lotus	University of Tokyo	:5R:99O:
+Mat	HMI\/Ms ; KJR\/Ms ; MSM\/Ms	National Institute of Genetics	:44R:76R:126R:377O:
+Mat	Drosophila	University of Tokyo	:10R:312O:
+Mat			
+Mat	1063R-2	National Institute of Genetics	:65R:115O:
+Mat	pCAGGS	RIKEN	:154R:186O:
+Mat	CS	RIKEN	:71R:78R:122O:
+Mat	Mouse	Kyoto Univ.	:5R:65O:
+Mat	C57BL\/6	National Institute for Environmental Studies	:38R:115O:
+Mat	medaka	National Institute for Environmental Studies	:29R:73R:136O:
+Mat	JF1\/Msf ; Mouse	National Institute of Genetics	:5R:251R:287O:
+Mat	RIA	University of Tokyo	:125R:383O:
+Mat	pxCANCre	RIKEN	:160R:285O:
+Mat			
+Mat	Tol2	National Institute of Genetics	:8R:150O:
+Mat	C57BL\/6	RIKEN	:7R:25R:83O:
+Mat	WI-38	RIKEN	:31R:58O:
+Mat	C57BL\/6	Kyoto University	:35R:48R:65R:134R:240R:373O:
+Mat	p50	University of Tokyo	:24R:104O:
+Mat	MCF-7	Tokyo University	:5R:110O:
+Mat	B6G-2	RIKEN	:5R:18O:
+Mat	201B7	RIKEN	:120O:156R:
+Mat	Vero ; A172	RIKEN	:4R:43R:99O:
+Mat	HeLa, 293T	RIKEN	:10R:77O:
+Mat	E. coli ; W3110	National Institute of Genetics,	:7R:13R:93O:
+Mat	MSM\/Ms	National Institute of Genetics	:10R:86O:
+Mat	E. coli	Nagoya University,	:52R:186O:
+Mat	Arabidopsis	RIKEN	:76R:128R:188O:
+Mat	Micro-Tom	University of Tsukuba	:29R:171O:
+Mat	OUH602	Okayama University	:58R:132O:
+Mat	tm2261	Tokyo Women\'s Medical University	:180R:276O:
+Mat	NIG-Fly	National Institute of Genetics	:52O:61R:93O:
+Mat	15905R-1 ; 4316R-1 ; 16884R-2	National Institute of Genetics	:45O:81R:104R:124R:
+Mat	nigfly	National Institute of Genetics	:30O:106R:170R:
+Mat	C57BL\/6	National Institute of Genetics	:11R:179O:
+Mat	MKN45 ; MKN74	RIKEN	:5R:87R:124O:
+Mat	MSM\/Ms	National Institute of Genetics	:6R:149O:
+Mat	Germplasm	Kyoto University	:133R:205O:
+Mat	Arabidopsis	RIKEN	:15R:99O:
+Mat	p50T	University of Tokyo	:32R:81O:
+Mat	Arabidopsis	RIKEN	:9O:21R:110O:
+Mat	C57BL\/6	RIKEN	:48R:92O:
+Mat	THP-1	RIKEN	:9R:43O:108O:
+Mat			
+Mat	MSM\/Ms	RIKEN	:163R:236O:
+Mat	Pyrococcus furiosus	RIKEN	:97O:256R:
+Mat	10572R-1	National Institute of Genetics	:201O:242R:
+Mat	Tg	Kyoto University	:50R:111O:
+Mat	R2	National Institute of Genetics	:124R:224O:
+Mat	BALB\/c	Kyoto University	:20R:181O:
+Mat	IL ; C57BL\/6	University of Tokyo	:2R:16R:77O:
+Mat	B6G-2 ; AES0003	RIKEN	:54R:68R:75O:
+Mat	KhES-1 ; KhES-3	Kyoto University	:16O:38R:45R:
+Mat	p53 ; C57BL\/6	Tokyo University	:12R:41R:134R:243O:
+Mat	KGN	Kyushu University	:37R:90O:
+Mat			
+Mat	mouse ES cell line	RIKEN	:48R:113O:
+Mat	C57BL\/6	RIKEN	:7R:75O:
+Mat	NA	Chiba University	:27R:129O:
+Mat	Tg ; C57BL\/6	Okayama University	:35R:38R:72R:116O:
+Mat	Fusarium	University of Tokyo	:32R:105O:
+Mat	J774.1	RIKEN	:94R:101O:
+Mat	J774.1	RIKEN	:95R:102O:
+Mat	A431	RIKEN	:38R:70O:
+Mat	ACC-MESO-1	RIKEN	:14R:88O:
+Mat	RCB0778 ; CW-2	RIKEN	:37R:46R:73O:
+Mat	K562	RIKEN	:45R:66O:
+Mat	RERF-LC-KJ	RIKEN	:10R:75O:
+Mat	PC-14 ; RERF-LC-K	RIKEN	:40R:54R:81O:
+Mat	37	Kyushu University	:121R:233O:
+Mat	p53	University of Tokyo	:293R:374O:
+Mat	COS-1	RIKEN	:130R:143O:
+Mat	KP4	RIKEN	:11R:28O:
+Mat	Arabidopsis	University of Tsukuba,	:22O:94R:
+Mat	HeLa ; Mouse ; MC3T3-E1	RIKEN	:5R:28R:117R:149O:
+Mat	37	Okayama University	:35R:181O:
+Mat			
+Mat	1388R-1 ; 4353R-3 ; 5680R-1 ; 4353R-2 ; 2272R-1	National Institute of Genetics	:20R:42R:63R:72R:97R:147O:
+Mat	pEF-BOS	Kyoto University	:266R:324O:
+Mat	E. coli	Osaka City University	:37R:94O:
+Mat	HeLa	Kyoto University	:83O:116R:
+Mat	pEF-BOS	University of Tokyo	:76R:133O:
+Mat	K1	Kyoto University	:8R:61O:
+Mat	Mouse	University of Tokyo	:5R:95O:
+Mat	Mouse	RIKEN	:133R:143O:
+Mat	HeLa ; NIH3T3	Tsukuba University	:6R:12R:63O:
+Mat	5092R-2	National Institute of Genetics	:26R:58O:
+Mat	MDBK, NBT-T1	RIKEN	:12R:19O:
+Mat	Mouse	Kyoto University	:5R:61O:
+Mat	MCF7	Kyoto University	:4R:55O:
+Mat	DE3	Institute of Physical and Chemical Research	:41R:205O:
+Mat	Mouse	RIKEN	:5R:72O:
+Mat	BL21 ; Escherichia coli	Kyoto University	:72R:77R:141O:
+Mat	pEF-BOS	Nagoya University	:26R:111O:
+Mat	Mouse	Kyoto University	:5R:92O:
+Mat	K562 ; F-36P ; IL	RIKEN	:10R:56R:99R:124O:
+Mat	Mouse	Kyoto University	:5R:136O:
+Mat	Ax1w1	University of Tokyo	:24R:82O:
+Mat	Mouse	Nagoya University	:5R:59O:
+Mat	Drosophila	Kyoto University	:39R:174O:
+Mat	PC12	Tokyo University	:4R:65O:
+Mat	MDCK	Kyoto University	:7R:124O:
+Mat	AxCANCre	RIKEN	:23R:30O:
+Mat	C. elegans	National Institute of Genetics	:49R:114O:
+Mat	Mouse	University of Tokyo	:5R:113O:
+Mat	S. aureus	Hiroshima University	:144R:188O:
+Mat	HeLa	Kyoto University	:4R:59O:
+Mat	M22	Kyoto University	:50R:113O:
+Mat	pEF-BOS	Nagoya University	:7R:186O:
+Mat	tm1845 ; C. elegans	Tokyo Women\'s Medical University	:37R:100R:154O:
+Mat	NRK ; MDCK	RIKEN	:4R:126R:201O:
+Mat	pAxCAwt	University of Tokyo	:29R:82O:
+Mat	Mouse	Tokyo University	:5R:128O:
+Mat	Mouse	Kyoto University	:5R:57O:
+Mat	Mouse	University of Nagoya	:5R:165O:
+Mat	pCAGGS	Kyoto University	:6R:159O:
+Mat	MDCK	Kyoto University	:4R:67O:
+Mat	T24	Nagoya University	:42R:136O:
+Mat	BL21 ; DE3 ; E. coli	Kyushu University	:7R:19R:24R:141O:
+Mat	Mouse	Nagoya University	:5R:142O:
+Mat	tm1457	Tokyo Women\'s Medical University	:26R:81O:121R:
+Mat	Drosophila	Kyoto University	:24R:78O:
+Mat	MDCK	National Institute for Physiological Science	:4R:96O:
+Mat	C. elegans	National Institute of Genetics	:49R:105O:
+Mat	C. elegans	University of Tokyo	:10R:91O:
+Mat	BL21 ; DE3 ; E. coli	Kyushu University	:7R:12R:17R:88O:
+Mat	MDCK	Kyoto University	:4R:67O:
+Mat	pEF-BOS	Nagoya University	:25R:76O:
+Mat	MEB4	Institute of Physical and Chemical Research	:4R:78O:
+Mat	tm794	Tokyo Women\'s Medical University	:15R:101O:
+Mat	ATDC5	RIKEN	:19R:51O:
+Mat	Mouse	National Institute for Basic Biology	:5R:89O:
+Mat	Mouse	Kyoto University	:5R:122O:
+Mat	T24	Nagoya University	:119R:254O:
+Mat	C. elegans	University of Tokyo	:195R:243O:
+Mat	CHO-K1	Kyushu University	:137R:205O:
+Mat	actin-GAL4	National Institute of Genetics	:10R:69O:
+Mat	Mouse	RIKEN	:5R:111O:
+Mat	pCAGGS	Kyoto University	:6R:23R:47R:100O:
+Mat	HuH-7	Okayama University	:9R:93O:
+Mat	pRS316	National Institute for Basic Biology,	:35R:157O:
+Mat	C57BL\/6 ; Emx1-Cre	RIKEN	:8R:17R:58O:
+Mat	MDCK	Kyoto University	:4R:87O:
+Mat	HeLa	Institute of Physical and Chemical Research ; RIKEN	:45R:177O:184O:
+Mat	B6.Cg-Tg\(CAG-cre\)CZ-MO2Osb	RIKEN} ; Institute of Physical and Chemical Research	:30R:184O:
+Mat	HeLa	Kyoto University	:8R:72O:
+Mat	tsBN2	Kyushu University	:5R:62O:
+Mat	HeLa ; RCB0007	RIKEN	:4R:54O:95R:
+Mat	pCAGGS	Kyoto University	:78R:132O:
+Mat	DT40	Kyoto University	:74R:125O:
+Mat	HuH-7	RIKEN	:28R:59O:
+Mat	BALB\/c	Okayama University	:11R:240O:
+Mat	RGM1	RIKEN	:61R:106O:
+Mat	HuH-7	RIKEN	:46R:70O:
+Mat	RGM1	RIKEN	:37R:113O:
+Mat	T98G	RIKEN	:8R:43O:
+Mat	JCM5803	RIKEN	:19R:97O:
+Mat	Rice	Kyushu University	:4R:132O:
+Mat	MG-20 ; L. japonicus	Miyazaki University	:21R:48R:119O:
+Mat	Arabidopsis	RIKEN	:21R:84O:100R:
+Mat	Arabidopsis	RIKEN	:143O:155R:
+Mat	Germplasm	Kyoto University	:75R:127O:
+Mat	pda04138	RIKEN	:19R:44O:
+Mat	pdp13251 ; pdp36135 ; pdp31562 ; pdp17798 ; pdp02416	RIKEN	:87R:97R:107R:117R:131R:173O:
+Mat	pda06974	RIKEN	:226R:233O:
+Mat	HSC-4 ; HSC-3 ; Ca9-22	Hiroshima Univ	:5R:12R:20R:56O:
+Mat	C57BL\/6	Kyoto University	:81O:124R:
+Mat	BALB\/c	Kyoto University	:84O:111R:
+Mat	C57BL\/6	University of Tokyo,	:47R:265O:
+Mat	C57BL\/6	RIKEN	:33R:77O:
+Mat	C57BL\/6	University of Tokyo	:7R:74O:
+Mat	BALB\/c	University of Tokyo	:50R:111O:
+Mat	C57BL\/6	RIKEN	:7R:55O:
+Mat	C57BL\/6	University of Tsukuba	:7R:90R:160O:
+Mat	KhES-1 ; 253G1	Kyoto University	:22R:56R:121O:
+Mat	C57BL\/6	Kyoto University	:26R:81O:
+Mat	C57BL\/6	University of Tokyo	:115R:224O:
+Mat	IL	University of Tokyo	:6R:76O:
+Mat	BALB\/c ; IL ; C57BL\/6	Chiba University	:2R:22R:56R:107R:202O:
+Mat	IL ; C57BL\/6	University of Tokyo	:25R:28R:156O:
+Mat	C57BL\/6	University of Tokyo	:14R:279O:
+Mat	C57BL\/6	Kyoto University	:90O:144R:191R:
+Mat	B6G-2	RIKEN	:5R:70O:
+Mat	IRF-3	University of Tokyo	:5R:126O:
+Mat	RBP-J	Kyoto University	:42R:90O:
+Mat			
+Mat	OP9	University of Tokyo	:7R:254O:
+Mat	BALB\/c	Chiba University	:61R:190O:
+Mat	RBP-J	Kyoto University	:101R:277O:
+Mat	IRF-3	University of Tokyo	:5R:66O:
+Mat	C57BL\/6	University of Tokyo	:7R:148O:
+Mat	IL ; C57BL\/6	University of Tokyo	:7R:111R:125R:178O:
+Mat	Vero	University of Tokyo	:69O:122R:
+Mat	C57BL\/6	University of Tokyo	:7R:165O:
+Mat	IL	Kyoto University	:26R:58R:108O:
+Mat	Escherichia coli	Kyoto University	:56O:218R:
+Mat	Tg	Chiba University	:65R:130O:
+Mat	Mouse	RIKEN	:5R:108O:
+Mat	Mouse	Kyoto University	:5R:153O:
+Mat	C57BL\/6	Kyoto University	:67O:114R:
+Mat	BALB\/c ; IL	Kyoto University	:18R:69O:
+Mat	293T	University of Tokyo	:4R:81O:
+Mat	C57BL\/6	RIKEN	:54R:102O:
+Mat	Mouse	Kyoto University	:5R:104O:
+Mat	BALB\/c	Chiba University	:18R:106O:
+Mat	IL	The University of Tokyo	:17R:139O:
+Mat	BALB\/c	University of Tokyo	:21R:111O:
+Mat	C57BL\/6	University of Tokyo	:21R:146O:
+Mat	NIH3T3	RIKEN	:55O:156R:
+Mat	3D7	Osaka City University	:3R:77O:
+Mat	Ba\/F3	University of Tokyo	:5R:57O:
+Mat	BALB\/c	Kyoto University	:57R:158O:
+Mat	Tg	Kyoto University	:41R:207O:
+Mat	BALB\/c	Chiba University	:6R:102O:
+Mat	IL	University of Tokyo	:76O:112R:
+Mat	IL	University of Tokyo	:6R:108O:
+Mat	C57BL\/6	Chiba University	:11R:48R:118O:
+Mat	253G1 ; 201B7	Kyoto University	:35R:42R:71O:
+Mat	IL	RIKEN	:72R:232O:
+Mat	C57BL\/6	Chiba University	:7R:87O:156R:
+Mat	BALB\/c	Kyoto University.	:6R:125O:
+Mat	T4	University of Tokyo	:30O:174R:
+Mat	293T	Kyoto University	:4R:181O:
+Mat	IL	Kyoto University	:16R:75R:139O:
+Mat	p50	University of Tokyo	:8R:54O:
+Mat	C57BL\/6	University of Tokyo	:7R:169O:
+Mat	IL	University of Tokyo	:8R:58O:
+Mat	C57BL\/6	Institute of Physical and Chemical Research	:7R:139O:
+Mat	C57BL\/6	RIKEN	:136R:184O:
+Mat	C57BL\/6	University of Tsukuba	:106R:280O:
+Mat	BALB\/c	RIKEN	:38R:89O:
+Mat	Mouse	RIKEN	:5R:141O:
+Mat	MKN45	Institute of Physical and Chemical Research	:125R:170O:
+Mat	C57BL\/6	RIKEN	:29R:69O:
+Mat	L929	RIKEN	:4R:45O:
+Mat	MKN28	RIKEN	:43R:148O:
+Mat	mulberry	Kyushu University	:69R:133O:
+Mat	l70	Kyushu University	:28R:63O:
+Mat	C57BL\/6	University of Tokyo	:77R:181O:
+Mat			
+Mat	C57BL\/6	University of Tokyo	:88R:210O:
+Mat	Mouse	University of Tokyo	:5R:95O:
+Mat	pTN-TH7	Osaka City University	:180R:258O:
+Mat	MC3T3-E	RIKEN	:39R:64O:
+Mat	HeLa	RIKEN	:4R:47O:74O:
+Mat	RIA	University of Tokyo	:125R:351O:
+Mat	K562	RIKEN	:28R:52O:
+Mat	RCB0222 ; RCB0521 ; HFL-I ; NB1RGB	RIKEN	:6R:68R:80R:146R:173O:
+Mat	DT40	Kyoto University	:37R:171O:
+Mat	MRC-5	RIKEN	:43R:67O:
+Mat	CHO-K1	RIKEN	:10R:56O:
+Mat			
+Mat	PC-12	RIKEN	:9R:46O:
+Mat	HepG2	RIKEN	:20R:52O:
+Mat	A431 ; Sa3	RIKEN	:4R:51R:117O:
+Mat	E. coli	National Institute of Genetics	:46R:160O:
+Mat	201B7	RIKEN	:24R:52O:
+Mat	IL	University of Tokyo	:2R:251O:
+Mat	HHUA ; HOUA-	RIKEN	:24R:53R:143O:
+Mat	BL21 ; Escherichia coli	Nagoya University	:89R:94R:148O:
+Mat	MG1655 ; W3110	National Institute of Genetics	:26R:37R:98O:
+Mat	16908R-1	National Institute of Genetics	:81R:191O:
+Mat	iPS-MEF-Ng-20D-17 ; APS0001	RIKEN	:45R:64R:94O:
+Mat	pEF-BOS	Kyoto University	:7R:65O:
+Mat			
+Mat	pEF-BOS	Kyoto University	:7R:100O:
+Mat	Escherichia coli	RIKEN	:62R:142O:
+Mat	Escherichia coli ; JM109	University of Tokyo	:16R:33R:207O:
+Mat	p53	Yamaguchi University	:17R:169O:
+Mat	RBRC01835	RIKEN	:39R:62O:
+Mat	HeLa	RIKEN	:4R:39O:
+Mat	IL	Kyoto University	:261R:311O:
+Mat	Escherichia coli ; JM109	University of Tokyo	:16R:33R:221O:
+Mat	THP-1	RIKEN	:43R:74O:
+Mat	DE3 ; Escherichia coli	RIKEN	:16R:28R:101O:
+Mat	HeLa	University of Tokyo	:4R:98O:
+Mat	Lu-140 ; Jurkat ; Lu-139 ; Lu-135 ; Lu-130 ; A549 ; Lu-134-A	RIKEN	:37R:47R:55R:63R:71R:110R:137R:167O:
+Mat	BALB\/c	Hiroshima University	:16R:88O:
+Mat	KH5402-1 ; E.coli	National Institute of Genetics	:6R:22R:144O:
+Mat	ASKA ; IRAK027I21 ; JW0187	RIKEN	:157R:172R:218R:242O:
+Mat	pCAGGS	RIKEN	:70R:143O:
+Mat	p53 ; Mouse	Kyoto University	:5R:36R:64R:96R:156O:
+Mat	HeLa	Kyushu University	:22R:112R:171O:
+Mat	DT40	RIKEN	:8R:42O:
+Mat	p53	RIKEN	:7R:21R:85O:
+Mat	HeLa	RIKEN	:4R:39O:
+Mat	Mouse	RIKEN	:12O:88R:
+Mat	JM109	University of Tokyo	:50R:183O:
+Mat	HeLa	RIKEN	:4R:36O:
+Mat	MSC	RIKEN	:121R:135O:
+Mat	JW3430 ; Keio collection	National Institute of Genetics	:10R:95R:166O:
+Mat	M1	Kyoto University	:38R:142O:
+Mat	Mouse	Kyushu University	:88R:201O:
+Mat	E. coli	Hiroshima University	:69R:184O:
+Mat	Rat-1 ; NIH3T3	Nagoya University	:5R:52R:135O:
+Mat	OP9	RIKEN	:55R:68O:
+Mat	Arabidopsi	RIKEN	:77R:125O:
+Mat	HepG2	RIKEN	:5R:36O:
+Mat	Escherichia coli	National Institute of Genetics	:16R:110O:
+Mat	Escherichia coli ; JM109	University of Tokyo	:16R:33R:175O:
+Mat	KH5402-1 ; Escherichia coli	National Institute of Genetics	:16R:32R:145O:
+Mat	HeLa	Institute of Physical and Chemical Research ; RIKEN	:131O:180O:263R:
+Mat	DT40	Kyoto University	:21R:82O:
+Mat	K1	RIKEN	:28R:35O:
+Mat	CS	University of Tokyo	:40O:110R:
+Mat	BALL-1 ; HAL-01	RIKEN	:47R:55R:91O:
+Mat	HepG2	RIKEN	:5R:62O:
+Mat	IRF-3	University of Tokyo	:5R:94O:
+Mat	C57BL\/6	Kyoto University	:36R:138O:
+Mat	RBE	RIKEN	:16R:55O:
+Mat	HSC-4 ; HSC-3	RIKEN	:16R:26R:49O:
+Mat	KP4} ; PK-1 ; NOR-P1 ; PK-59 ; PANC-1	RIKEN	:36R:55R:69R:76R:122O:
+Mat	HSC-3 ; Ca9-22	RIKEN	:62R:78R:108O:
+Mat	PANC-1	RIKEN	:47R:71O:
+Mat	p53	Hiroshima University	:107O:165R:
+Mat	NUGC-4	RIKEN	:137R:362O:
+Mat	C57BL\/6	University of Tokyo	:47R:121O:
+Mat	MC3T3-E1	RIKEN	:22R:50O:
+Mat	pRS316	National Institute for Basic Biology	:68R:152O:
+Mat	pGa981-6	Kyoto University	:50O:89R:
+Mat	Drosophila	National Institute of Genetics	:49R:98O:
+Mat	pDUAL ; leu1	RIKEN	:63R:78O:196R:
+Mat	tm355 ; tm1811	Tokyo Women\'s Medical University	:31R:47R:221O:
+Mat	C57BL\/6	Hiroshima University	:38R:290O:
+Mat			
+Mat	KGN	Riken Institute	:85R:108O:
+Mat	C. elegans	National Institute of Genetics	:14R:105O:
+Mat	DT40 ; RCB1464	RIKEN	:7R:82O:123R:
+Mat	RBRC00821	RIKEN	:81R:109O:
+Mat	DH1 ; E. coli	National Institute of Genetics	:24R:117R:128R:190O:
+Mat	Wild rice	National Institute of Genetics	:9R:71O:
+Mat	C57BL\/6	RIKEN	:18R:59O:
+Mat	C57BL\/6	RIKEN	:18R:59O:
+Mat	tm2182	Tokyo Women\'s Medical University	:61R:129O:
+Mat	TgN\(deGFP\)18Imeg	RIKEN	:101O:177R:
+Mat	ST2	RIKEN	:3R:34O:
+Mat	tm764	Tokyo Women\'s Medical University	:122R:267O:
+Mat	37	National Institute of Genetics	:34R:98O:266R:
+Mat	t011	Kyushu University	:24R:70O:
+Mat	C57BL\/6	RIKEN	:11R:110O:
+Mat	Oryzias latipes	National Institute for Basic Biology	:98R:193O:
+Mat	Puro	RIKEN	:159R:203O:
+Mat	pRS316	University of Tokyo	:19R:77O:
+Mat	Drosophila	Nagoya University	:70R:127O:
+Mat	BW25113 ; E. coli	National Institute of Genetics,	:7R:66R:151O:
+Mat	tm2423	Tokyo Women\'s Medical University	:12R:99O:
+Mat	rst-Gal4	National Institute of Genetics	:8R:57O:
+Mat	HNI	Nagoya University	:3R:24R:105R:170O:
+Mat	2981R-2 ; 4584R-3	National Institute of Genetics	:104R:160R:205O:
+Mat	K1	RIKEN	:132O:399R:
+Mat	R2	Tokyo University	:7R:102O:
+Mat	PC12	RIKEN	:4R:17O:
+Mat	BALB\/c	RIKEN	:32R:129O:
+Mat	OP9	RIKEN	:25R:154O:
+Mat	FM3A	RIKEN	:89R:128O:
+Mat	OP9	RIKEN	:3R:34O:
+Mat	Jurkat	University of Tokyo	:10R:109O:
+Mat	LM8	RIKEN	:38R:64O:
+Mat	PC12	RIKEN	:4R:17O:
+Mat	COS-7 ; MDCK	RIKEN	:5R:20R:33O:
+Mat	1063R-2	National Institute of Genetics	:59R:105O:
+Mat	P. falciparum ; 3D7}	University of Tokyo	:13R:73O:
+Mat	C57BL\/6	University of Tokyo	:48R:304O:
+Mat	293	RIKEN	:193R:233O:
+Mat	Drosophila	National Institute of Genetics	:42R:91R:178O:
+Mat	R2	National Institute of Genetics	:26R:67O:
+Mat	pda01438	RIKEN	:22R:47O:
+Mat	C57BL\/6	RIKEN	:55R:76O:
+Mat	HeLa	RIKEN	:4R:52O:
+Mat	J10	Kyoto University	:18R:50O:
+Mat	293	RIKEN	:7R:20O:
+Mat	KhES-1 ; KhES-3 ; KhES-2	Kyoto University	:41R:49R:61R:206O:
+Mat	C57BL\/6	Kyushu University	:94R:207O:
+Mat	medaka	Nagoya University	:10R:80O:
+Mat	MC3T3-E1	RIKEN	:185R:260O:
+Mat	p53	University of Tokyo	:156R:239O:251R:
+Mat	Mouse	RIKEN	:5R:29O:
+Mat	ST2	RIKEN	:3R:69O:
+Mat	HeLa ; MDCK	RIKEN	:4R:16R:81O:
+Mat	Rat-1	RIKEN	:24R:82O:
+Mat	p21	National Institute for Basic Biology	:75R:173R:257O:
+Mat	NOS-1	RIKEN	:5R:31O:
+Mat	HeLa ; RCB0007	RIKEN	:4R:19R:49O:
+Mat	Moneymaker, Aichi First, Ailsa Craig, Micro-Tom, M82	University of Tsukuba	:82R:153O:
+Mat	DH1} ; E. coli	National Institute of Genetics	:11R:95R:168O:
+Mat	PC12	RIKEN	:4R:17O:
+Mat	iPS-MEF-Ng-20D-17 ; APS0001	RIKEN	:18R:37R:66O:
+Mat	NIH3T3	RIKEN	:149R:156O:
+Mat	Saos-2	RIKEN	:10R:37O:
+Mat	C2C12 ; NIH3T3	RIKEN	:6R:23R:53O:
+Mat	ST2	RIKEN	:38R:108O:
+Mat	pda08126 ; pda07078	RIKEN	:67R:80R:111O:
+Mat	MC3T3-E1	RIKEN	:8R:43O:
+Mat	7540R-1 ; 7540R-2	National Institute of Genetics	:7R:19R:59O:
+Mat	C57BL\/6	RIKEN	:34O:89R:
+Mat	JW5702 ; BW25113 ; Escherichia coli ; Keio collection ; W3110	National Institute of Genetics	:16R:24R:31R:135R:176R:256O:
+Mat	pC	RIKEN	:14R:47O:
+Mat	201B7	Kyoto University	:34R:138O:
+Mat	2708R-2 ; 2708R-1	National Institute of Genetics	:82R:94R:165O:
+Mat	Glycine	Chiba University	:29R:78O:
+Mat	Tg	Hiroshima University	:96R:154O:
+Mat	tm2654} ; tm2647 ; tm1325	Tokyo Women\'s Medical University	:129R:145R:258O:
+Mat	B6G-2	RIKEN	:23R:112O:
+Mat	CS	RIKEN	:39R:46R:88O:
+Mat	HepG2	RIKEN	:5R:48O:
+Mat	PC12	RIKEN	:4R:35O:
+Mat	HeLa ; 293T ; NB1RGB	RIKEN	:8R:17R:146R:180O:403O:
+Mat	Mouse	Tokyo University	:78O:130R:
+Mat	pCAGGS	RIKEN	:44R:130O:
+Mat	Shinchunaga	Okayama University	:11R:127O:
+Mat	KhES-3	Kyoto University	:22R:101O:
+Mat	CS	RIKEN	:20R:36R:93O:
+Mat	Mouse	RIKEN	:5R:32O:
+Mat	HepG2	University of Tokyo	:5R:130O:
+Mat	pCMV-Sp1 ; pCMV-MAZ	RIKEN	:17R:41R:107O:
+Mat	RCB0208 ; Mouse	RIKEN	:5R:58O:77R:
+Mat	MCF7 ; HepG2 ; PANC-1	Kyushu University;	:62R:69R:80R:
+Mat	NIH3T3 ; RCB0150	RIKEN	:123R:132R:139O:
+Mat	N4	University of Tokyo	:17R:100O:
+Mat	WERI-Rb-1 ; Kato III ; LC-1F ; A431 ; OS-RC-2 ; HeLa ; IA-5 ; ACC-MESO-1 ; PC-14 ; A549 ; Lu-134-A ; TGBC2TKB ; ACC-MESO-4	RIKEN	:26R:38R:50R:76R:82R:92R:104R:118R:127R:144R:161R:171R:185R:213O:
+Mat	A549	RIKEN	:37O:303O:338R:
+Mat	37	Nagoya University	:49R:105O:
+Mat	HepG2	Kyoto University	:48R:146O:
+Mat	pCAGGS	Kyoto University	:46R:144O:
+Mat	p53	National Institute for Basic Biology	:3R:84O:
+Mat	293T	University of Tokyo	:27R:87O:
+Mat	pEF-BOS	Kyoto University	:202R:257O:
+Mat	K1	RIKEN	:61R:117O:
+Mat	Mouse	RIKEN	:5O:11R:
+Mat	MC3T3-E1	RIKEN	:16R:62O:
+Mat	HeLa	RIKEN	:70R:85O:
+Mat	HeLa	Kyoto University	:16R:131O:
+Mat			
+Mat	RCB1192	RIKEN	:116R:123O:
+Mat	BALB\/c	RIKEN	:10R:82O:
+Mat	Oregon-R	Kyoto University	:17R:136O:
+Mat	LC-2\/ad ; A549	RIKEN	:8R:20R:136O:
+Mat	C57BL\/6	Chiba University	:7R:105O:
+Mat	MKN1 ; MKN28 ; MKN45 ; MKN7	RIKEN	:39R:56R:75R:81R:204O:
+Mat	7788R-1 ; NIG-Fly ; 5680R-2	National Institute of Genetics	:21R:49R:132O:154R:
+Mat	MC3T3-G2\/PA6 ; RCB1127	RIKEN	:23R:32R:95O:
+Mat	HeLa	RIKEN	:56R:69O:
+Mat	pUAST-R57 vector	National Institute of Genetics	:51R:83O:
+Mat	201B7	RIKEN	:16R:100O:
+Mat	ATDC5	RIKEN	:28R:66O:
+Mat	Streptococcus ; JCM 5705	RIKEN	:38R:54R:115O:
+Mat	d-rR} ; Oryzias latipes ; Medaka	National Institute for Basic Biology	:6R:28R:233O:
+Mat	PC12	RIKEN	:4R:17O:
+Mat	Mouse	Chiba University	:5R:89O:
+Mat	HL60 ; Jurkat ; HeLa	RIKEN	:42R:55R:66R:99O:
+Mat	C57BL\/6J ; Tg ; RBRC02250	RIKEN	:41R:44R:86R:93O:127R:
+Mat	C57BL\/6	RIKEN	:12R:52R:173R:233O:
+Mat	Arabidopsis	University of Tokyo	:61R:200O:
+Mat	pCAGGS	Nagoya University	:6R:72O:
+Mat	E. coli	Tokyo Women\'s Medical College	:27R:204O:
+Mat	HeLa	RIKEN	:4R:17O:
+Mat	BALB\/c	RIKEN	:113R:202O:
+Mat	RBRC00806	RIKEN	:101O:131R:
+Mat	HeLa	RIKEN	:119R:159O:
+Mat	HeLa	RIKEN	:8R:40O:61O:
+Mat	pxCAG ; pAxEFwtit2	RIKEN	:60R:104R:129O:
+Mat	pEF-BOS	Kyoto University	:48R:120O:
+Mat	OT11	Kyoto University	:4R:80O:
+Mat	11093R-3 ; 11093R-1	National Institute of Genetics	:50R:63R:118O:
+Mat	DNABook ; Arabidopsis	RIKEN	:228O:240R:266R:
+Mat	R1	National Institute for Physiological Sciences	:2R:101O:
+Mat	np2631-Gal4	National Institute of Genetics	:49R:81O:
+Mat	Mouse	RIKEN	:5R:60O:
+Mat	201B7 ; 253G1	RIKEN	:9R:19R:62O:
+Mat	201B7 ; 253G1	RIKEN	:43R:53R:78O:
+Mat	16725R-2	National Institute of Genetics	:35R:75O:
+Mat	MDCK	Hiroshima University	:53R:127O:
+Mat	Genome DNA clones	Osaka City University	:17R:150O:
+Mat	MKN1	RIKEN	:33R:78O:
+Mat	JCM 1465 ; JCM 2413 ; B. subtilis ; JCM 5491 ; E. coli ; S. aureus	RIKEN	:34R:43R:52R:61R:78R:87R:149O:
+Mat	HeLa	RIKEN	:4R:17O:
+Mat	Streptococcus ; JCM5707	RIKEN	:13R:33R:59R:101R:154R:187R:223R:260R:309R:501O:
+Mat	293T ;RCB2202	RIKEN	:139O:
+Mat	37	RIKEN	:191O:284R:288R:
+Mat	C57BL\/6J	Kyoto University	:69R:147O:
+Mat	Mouse	Kyoto University	:5R:171O:282O:
+Mat	2368R-1	National Institute of Genetics	:33R:85O:
+Mat	C57BL\/6J	RIKEN	:8R:50O:
+Mat	DOB\/Oda ; KFRS4\/Kyo	Kyoto University	:9R:21R:178O:
+Mat	OS-RC-2	RIKEN	:7R:77O:
+Mat	Mouse	RIKEN ; Kyoto University	:5R:62O:94O:
+Mat	ST	University of Tokyo	:49R:198O:
+Mat	Tg	Hiroshima University	:96R:154O:
+Mat	Mouse	University of Tokyo	:5R:115O:
+Mat	EoL-1	RIKEN	:23R:150O:
+Mat	Mouse	RIKEN	:5R:59O:
+Mat	medaka	National Institute of Genetics ; University of Tokyo	:41R:116R:214O:248O:
+Mat	Streptococcus ; JCM 1021	RIKEN	:49O:105R:121R:
+Mat	E. coli.	National Institute of Genetics	:107O:134R:
+Mat	HeLa ; RCB0007	RIKEN	:18R:49O:55R:64R:
+Mat	E. coli	The University of Tokyo	:44R:114O:
+Mat	201B7	Kyoto University	:26R:82O:
+Mat	U251	Nagoya University	:23R:125O:
+Mat	A. nidulans	University of Tokyo	:156O:190R:
+Mat	KGN	RIKEN ; Kyushu University	:48R:88O:275O:
+Mat	IL	University of Tokyo	:126R:182O:
+Mat	MA104	RIKEN	:5R:170O:
+Mat	pCAGGS ; NA	University of Tokyo	:91R:179R:191R:202R:216R:342O:
+Mat	201B7	RIKEN	:28R:62O:
+Mat	8505C	RIKEN	:30R:54O:
+Mat	CS	RIKEN	:86R:143O:
+Mat	GM95	RIKEN	:4R:35O:
+Mat	HSC-3 ; Ca9-22 ; HSC-4 ; HSC-2 ; Sa3	RIKEN	:32R:39R:46R:54R:73R:104O:
+Mat	tm2156	Tokyo Women\'s Medical College	:17R:123O:
+Mat	201B7 ; 253G1	University of Kyoto	:22R:36R:117O:
+Mat	Zic2 ; Zic1	RIKEN	:277R:316R:372O:
+Mat	Mouse	RIKEN	:68O:74R:
+Mat	Nanog-GFP	RIKEN	:36R:71O:
+Mat	IL	University of Tokyo	:2R:16R:85O:
+Mat	HepG2 ; RCB1648	RIKEN	:20R:33O:52R:
+Mat	OP9	RIKEN	:32O:50O:66R:134O:
+Mat	Mouse ; KUSA-A1 ; MC3T3-E1	RIKEN	:5R:71R:124R:153O:
+Mat	Escherichia coli	Kyoto University	:138R:340O:
+Mat	RCB1153	RIKEN	:17R:24O:
+Mat	293T	RIKEN	:36R:176O:
+Mat	MRC-5 ; RCB0218	RIKEN	:5R:14R:48O:
+Mat	E. coli	National Institute of Genetics	:65R:163O:
+Mat	293T	University of Tokyo	:4R:100O:
+Mat	NIH3T3	RIKEN	:6R:37O:
+Mat	IL	University of Tokyo	:2R:68O:
+Mat	P19C6	RIKEN	:5R:29O:
+Mat	C57BL\/6	Kyoto University	:54R:142O:
+Mat	NIH3T3 ; RCB0150	RIKEN	:239R:248R:255O:
+Mat	THP-1	RIKEN	:34R:66O:
+Mat	GCIY ; MKN74 ; MKN45	RIKEN	:5R:12R:32R:58O:
+Mat	C57BL\/6J	RIKEN	:66R:149O:
+Mat	9867R-3 ; Drosophila	National Institute of Genetics	:10R:129R:183O:
+Mat	LLC	Riken Institute	:94R:158O:
+Mat	pENTR4-H1	RIKEN	:18R:25O:
+Mat	Mouse	RIKEN	:5R:51O:
+Mat	JCM 12189	RIKEN	:263R:279O:
+Mat	E. coli} ; ASKA ; MG1655	National Institute of Genetics	:21R:102R:164O:
+Mat	C57BL\/6	RIKEN	:7R:50O:
+Mat	C2C12	RIKEN	:12R:57O:83R:
+Mat	C57BL\/6J	University of Tokyo	:86R:157O:
+Mat	ST2	RIKEN	:14R:140O:
+Mat	293	RIKEN	:7R:36O:
+Mat	293 ; RCB1637	RIKEN	:72R:79O:116R:
+Mat	293T ; HeLa	Kyoto University	:19R:110R:295O:
+Mat	Arx-1 KO	RIKEN	:21R:58O:
+Mat	DT40	Kyoto University	:4R:61O:
+Mat	Nanog-GFP	Kyoto University	:74R:179O:
+Mat	pCAGGS	RIKEN	:23R:68R:110O:
+Mat	KhES-3	Kyoto University	:22R:104O:
+Mat	IL ; C57BL\/6	University of Tokyo	:2R:17R:78O:
+Mat	Mouse	RIKEN	:5R:110O:
+Mat	ST2	RIKEN	:47R:69O:
+Mat	FLFII ; medaka	Nagoya University	:5R:72O:122R:
+Mat	Y79	RIKEN	:23R:76O:
+Mat	wheat	RIKEN	:20R:106O:
+Mat	293T	RIKEN	:4R:83O:
+Mat	P. aeruginosa	Hiroshima University	:36R:129O:
+Mat	10T1\/2 ; Mouse	RIKEN	:5R:27R:62O:
+Mat	201B7	RIKEN	:24R:31O:
+Mat	HeLa	RIKEN	:8R:46O:
+Mat			
+Mat	pCMVluc+	RIKEN	:35R:62O:
+Mat	Transgenic mouse	RIKEN	:16R:93O:
+Mat	p21	Tokyo University	:107R:170O:
+Mat	HeLa	RIKEN	:4R:11O:
+Mat	Mouse	RIKEN	:5R:39O:
+Mat	MC3T3-E1	RIKEN	:39R:67O:
+Mat	MKN74	RIKEN	:35R:116O:
+Mat	4005R-2 ; 12072R-2	National Institute of Genetics	:43O:61R:91R:
+Mat	T3M-4	University of Tokyo	:26R:77O:
+Mat	RCB0536	RIKEN	:108O:146R:
+Mat	C57BL\/6	Kyoto University	:43R:92O:
+Mat	E. coli	University of Tokyo	:69R:174O:
+Mat	Escherichia coli} ; Shigella	University of Tokyo	:17R:163O:
+Mat	medaka ; Oryzias latipes	University of Tokyo	:185R:214R:356O:
+Mat	Mouse	RIKEN	:5R:66O:
+Mat	JCM 7783 ; Escherichia coli ; Streptococcus ; JCM 2413 ; JCM 6119 ; Pseudomonas aeruginosa ; JCM 5491 ; JCM 5705 ; JCM 2434 ; JCM 5707 ; S. aureus	RIKEN	:9R:18R:40R:58R:67R:82R:102R:126R:135R:155R:194R:256O:
+Mat	Mouse	RIKEN	:5R:32O:
+Mat	Yeast ; Genome DNA clones	Osaka City University	:17R:75R:150O:
+Mat	Mouse ; C2C12	RIKEN	:5R:11R:48O:
+Mat	E. coli	University of Tokyo	:28R:117O:
+Mat	pCAGGS	University of Tokyo	:42R:111O:
+Mat	MDCK	University of Tokyo	:62R:96O:
+Mat	Ba\/F3	RIKEN	:5R:23O:
+Mat	KUSA-H1	RIKEN	:37R:127O:
+Mat	Ca9-22 ; HO-1-u-1 ; HSC-4 ; Sa3	RIKEN	:5O:39R:49R:56R:68R:
+Mat	MRC-5	RIKEN	:9R:69O:
+Mat	HSC-3 ; Ca9-22 ; HO-1-u-1 ; HSC-4 ; HSC-2 ; Sa3	RIKEN	:49R:56R:63R:71R:76R:86R:185O:
+Mat	RBRC01459	RIKEN	:95O:125R:
+Mat	MCF-7 ; Y79 ; MDA-MB-453	RIKEN	:32R:83R:90R:115O:
+Mat	PWK	RIKEN	:3R:34O:
+Mat	K562	RIKEN	:4R:39O:
+Mat	BALB\/c	University of Tokyo	:6R:226O:
+Mat	KhES-2	Kyoto University	:26R:159O:
+Mat	HeLa	RIKEN	:4R:17O:
+Mat	HeLa	RIKEN	:28R:41O:
+Mat	HTOA ; JHOS-2 ; JHOS-3	RIKEN	:24R:32R:40R:93O:
+Mat	BALB\/c	University of Tokyo	:116R:214O:
+Mat	JHOC-5 ; OMC-3	RIKEN	:38R:49R:70O:
+Mat	C2C12	RIKEN	:5R:22O:
+Mat	BALB\/c ; IL	University of Tokyo	:2R:27R:93O:
+Mat	NIG-Fly	National Institute of Genetics	:91O:100R:
+Mat	J774.1	RIKEN	:6R:50O:67O:
+Mat	293	University of Tokyo	:10R:152O:
+Mat	Ca9-22	RIKEN	:39R:62O:
+Mat	HL-60 ; Mouse	RIKEN	:5R:48R:110O:
+Mat	GCIY ; MKN74 ; MKN45 ; MKN7	RIKEN	:68R:69R:75R:93R:104R:133O:
+Mat	Escherichia coli	National Institute of Genetics	:85R:217O:
+Mat	Tg	RIKEN	:29R:127O:
+Mat	ATDC5	RIKEN	:5R:50O:
+Mat	Jurkat	RIKEN	:16R:62O:
+Mat	JCM2874 ; Escherichia coli ; JCM11019 ; Penicillium ; JCM 6119 ; Pseudomonas aeruginosa ; Fusarium ; JCM 5491 ; Alternaria	RIKEN	:77R:86R:110R:119R:150R:246R:293R:320R:348R:373O:
+Mat	293	Tokyo University	:7R:88O:
+Mat	C57BL\/6	University of Tokyo	:29R:122O:
+Mat	Nanog-GFP	Kyoto University	:129O:224O:280R:353R:
+Mat	Arabidopsis	RIKEN	:80R:144O:
+Mat	Jurkat ; RCB0806	RIKEN	:6R:15R:49O:
+Mat	Vibrio	University of Tokyo	:13R:90O:
+Mat	KhES-2	Kyoto University	:10R:144O:
+Mat	mulberry leaves	Kyushu University	:63R:120O:
+Mat	C57BL\/6	RIKEN	:36O:139R:
+Mat	Mouse	Kyoto University	:106O:
+Mat	C57BL\/6	RIKEN	:11R:103O:
+Mat	IL ; C57BL\/6	Tokyo University	:2R:32R:99O:
+Mat	CW-2	RIKEN	:101R:122O:
+Mat	C57BL\/6	University of Tokyo	:177O:256R:
+Mat	p53	Nagoya University	:52R:176O:
+Mat	NP1 ; NP3084	National Institute of Genetics	:7R:18R:216O:
+Mat	IRF-3 ; C57BL\/6	University of Tokyo	:10R:132R:288O:
+Mat	L. japonicus ; Arabidopsis	University of Miyazaki	:58R:153R:271O:
+Mat	pCAGGS	University of Tokyo	:131R:158R:304O:
+Mat	L. monocytogenes	Kyushu University	:16R:64O:
+Mat	IL	University of Tokyo	:2R:157O:
+Mat	C57BL\/6	University of Tokyo	:7R:89O:
+Mat	RAW 264	National Institute for Basic Biology	:43R:216O:
+Mat	IL	RIKEN	:12R:54O:
+Mat	Oregon-R	RIKEN	:8R:115O:
+Mat	A549	RIKEN	:25R:55O:
+Mat			
+Mat	S. cerevisiae	Nagoya University	:13R:114O:
+Mat	Arabidopsis	RIKEN	:109O:121R:
+Mat	pda02633 ; pda00743 ; pda07220	RIKEN	:138O:160R:180R:200R:
+Mat	E. coli	RIKEN	:144R:268O:323O:
+Mat	Arabidopsis	RIKEN	:33O:49R:
+Mat	CTLL-2 ; RCB0637	RIKEN	:6R:54R:82O:
+Mat	STO ; RCB0536	RIKEN	:94R:121R:128O:
+Mat	293T	RIKEN	:121O:226R:
+Mat	CS	RIKEN	:51R:172O:
+Mat			
+Mat	MSC	RIKEN	:240R:297R:331O:
+Mat	IFM	Chiba University	:3R:83O:
+Mat	IFM	Chiba University	:3R:133O:
+Mat	Tg ; C57BL\/6	RIKEN	:6R:29R:43R:90O:
+Mat	PC12	RIKEN	:4R:17O:
+Mat	Escherichia coli ; DH5α	Kyushu University	:173O:229R:246R:
