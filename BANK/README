@@ -1483,6 +1483,7 @@ paste hit_ResOrg.odr.dist hit_ResOrg.sel.aff.drop hit_ResOrg.sel.pub-year > hit_
 -- 述べORG: 
 /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/RES-ORG-aff.nb
 -- 内訳ORG:
+/BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/Org.tally.nayose
 -- 述べRES
 awk -F '	' '{print $2}' hit_ResOrg.odr | sed -e 's/ ; /\n/g' | egrep -v "^ *$" | wc
    1250    1418    9328
