@@ -468,7 +468,7 @@ while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; d
 --- スクリプト: sort -t'       ' -k2 /BANK/Organization/NBRP_2015/17toporg_in_scopus.WoS.dic.m.s.csv.sort.dropDup | /BANK/Organization/NBRP_2015/drop_multi_name.pl > /BANK/Organization/NBRP_2015/17toporg_in_scopus.WoS.dic.m.s.csv.sort.dropDupx2
 --- 結果ファイル: /BANK/Organization/NBRP_2015/17toporg_in_scopus.WoS.dic.m.s.csv.sort.dropDupx2
 -- 上記に対してハンドサーチで上位機関名決定(20150702): /BANK/Organization/NBRP_2015/9oksotods17toporg_in_scopus.WoS.dic.m.s.csv.sort.dropDupx2
--- 上記に対して第5カラムを抜粋: /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm
+-- 上記に対して第5カラムを抜粋: /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt
 -- 上記に対して先頭と末尾のスペースを除去: /home/kamano/gitsrc/utility/drop_headtailSP.pl 17topOrgNameSearchTerm > /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt
 -- 最終的に検索するターム(NBRP-ORGコレクション): /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt.sort.uniq
 -- 最終的に検索するターム(perl用エスケープ)(NBRP-ORG-Perlコレクション): /BANK/Organization/NBRP_2015/17topOrgNameSearchTerm.txt.sort.uniq.esc
@@ -1446,6 +1446,7 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
 
 #TASK(8): 機関 vs 機関の影響関係抽出
 ##TASK(8.1): 機関リソースともに拡張なし
+##科研報告書の機関名寄せは手作業
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/
 - 対象: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.S.L
 - プログラム: /home/kamano/gitsrc/XMLOP/extract_element.pl
