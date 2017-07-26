@@ -1,0 +1,125 @@
+#NOTE
+## source URL
+ftp://ftp.ncbi.nlm.nih.gov/pub/pmc/
+##イタレータまとめ
+C: 0
+perl: 0
+Mathematica: 1
+Matlab: 1
+##ディレクトリ構成
+- root: /BANK/
+- XML情報: /BANK/PMC/<日付>/ 配下
+- 機関情報: /BANK/Organization/<機関名_日付>/ 配下
+- バイオリソース情報: /BANK/BioResource/Organization/<機関名_日付>/ 配下
+- マッチング(検索)結果: /BANK/PMC/<日付>/Matching/BioResource/Organization/<機関名>/ 配下
+- 一般プログラム: github : /home/kamano/gitsrc/<各フォルダ>
+- 特殊プログラム: github : /home/kamano/gitsrc/KAKEN-26540170/BANK/PMC/20140724/bin/
+- 実行スクリプト: 各 exec_command/
+
+
+#TASK(data)
+##ファイル名リスト
+/BANK/PMC/20170527/articles.fname/20/
+#TASK(element)
+##位置情報付きタグの抽出
+- プログラム: /home/kamano/gitsrc/XMLOP/elementPos_sequence_flag-lv.pl
+- スクリプト: /BANK/PMC/20170527/elements/ALL/exec_command/element_pos.sh
+- 結果: /BANK/PMC/20170527/elements/ALL/element_pos.a[a-u]
+##タグ(属性なし)名の抽出
+- プログラム: /home/kamano/gitsrc/XMLOP/extract_start-tag.pl
+- スクリプト: /BANK/PMC/20170527/elements/ALL/exec_command/extract_tag-name.sh
+- 結果: /BANK/PMC/20170527/elements/ALL/element_pos.tagname.au
+##タグ(属性なし)名のカウント
+- スクリプト(1): /BANK/PMC/20170527/elements/ALL/exec_command/sort-count.01.sh
+- スクリプト(2): cat *uniq | sed -e 's/^ *//' | sed -e 's/ /\t/' | sort -k2 > tagname.grcount
+- スクリプト(3): /home/kamano/gitsrc/utility/sum_count_from_mixed_phrase_sort.pl tagname.grcount > tagname.count
+##<sec>属性カウント
+cd /BANK/PMC/20170527/elements/ALL
+grep 'sec-type=' element_pos.* > sec-type.grep
+/home/kamano/gitsrc/XMLOP/extract_sec-types.pl sec-type.grep > sec-type.type
+sort sec-type.type | uniq -c > sec-type.type.sort.uniq
+sort -k1 -nr sec-type.type.sort.uniq > sec-type.type.sort.uniq.count
+
+#TASK(extract) : 領域コンテンツの抽出
+- 結果example: /BANK/PMC/20140724/elements/MERGED/allmaterials/allmaterials.au.reg.cont
+##TASK(extract:sec:materials|methods) : sec-type=materials|methods
+###対象sec-typeの決定
+- 元ファイル: /BANK/PMC/20170527/elements/ALL/sec-type.type.sort.uniq.count
+- 結果: /BANK/PMC/20170527/elements/ALL/sec-type.materials-methods.sel
+###対象secの抽出
+cd /BANK/PMC/20170527/elements/sec-materials+methods/exec_command
+- コードジェネレーター: /home/kamano/gitsrc/XMLOP/gencodepy_ext-sec-type.pl
+- スクリプト(tmp.exe.pyはb'<string>'の形式を出力):
+  /home/kamano/gitsrc/XMLOP/gencodepy_ext-sec-type.pl /BANK/PMC/20170527/elements/ALL/sec-type.materials-methods.sel > tmp.exe.py
+  chmod 755 tmp.exe.py
+  ./extract_sec-matrials.sh
+- 結果: /BANK/PMC/20170527/elements/sec-materials+methods/str.au.cont
+##TASK(extract:ack) 
+###ackエレメントのみを抽出
+cd /BANK/PMC/20170527/elements/ack/exec_command
+- プログラム: /home/kamano/gitsrc/XMLOP/ET-ext_ack.py
+- スクリプト: /BANK/PMC/20170527/elements/ack/exec_command/extract_ack.sh
+- 結果: /BANK/PMC/20170527/elements/ack/str.au.cont
+
+
+#TASK(1): 対象機関名決定
+##対象機関名リスト
+- 日本語機関名リスト(NBRPオリジナル): /BANK/Organization/NBRP_2015/nbrp.organization-names.J.20150409
+- 日本語正式機関名リスト: /BANK/Organization/NBRP_2015/orgnames-jp.tsv
+- 組織最上位名: /BANK/Organization/NBRP_2015/orgnames-jp-top.tsv
+- 組織最上位名英語(統合前の宮崎医科大学含む): /BANK/Organization/NBRP_2015/orgnames-en+id.tsv
+##NISTEP辞書
+-(A)代表／下位機関対応辞書: /BANK/NISTEP/organization_dictionary_ver_2014_1.utf8.insTAB.txt
+-(B)和英対応シノニム(WoS): /BANK/NISTEP/name_variations_WoS_Ver2014_1.utf8.txt
+-(C)和英対応シノニム(scopus): /BANK/NISTEP/name_variations_scopus_ver_2013_1.utf8.csv
+##機関名シノニムと下位機関名の取得
+###NISTEP辞書より下位機関ID所得
+- 上位機関名リスト: /BANK/Organization/NBRP_2015/orgnames-en+id.tsv
+- 下位機関名リスト: /BANK/NISTEP/organization_dictionary_ver_2014_1.utf8.insTAB.txt
+- NBRP参画機関シノニムリスト
+-- (1)下位機関名リストより代表機関IDがマッチするものを取得 <= (A)
+--- cd /BANK/Organization/NBRP_2015
+--- while read id name; do grep $id /BANK/NISTEP/organization_dictionary_ver_2014_1.utf8.insTAB.txt; done < /BANK/Organization/NBRP_2015/orgnames-en+id.tsv | awk -F '	' '{print $1"\t"$3"\t"$10}' > subname.grep
+ => {機関ID	機関名	代表機関ID}
+--- reform
+---- program: reform_submane-grep.pl
+---- script: ./reform_submane-grep.pl subname.grep > subname.reform
+--- merge: cat id-orgname-id subname.reform | sort | uniq > top+subname.uniq
+--- 中間ファイル: /BANK/Organization/NBRP_2015/top+subname.uniq
+-- (2)WoSシノニムの取得
+--- program: /BANK/Organization/NBRP_2015/get_synonym_WOS.pl
+--- script: 
+ cd /BANK/Organization/NBRP_2015
+ ./get_synonym_WOS.pl top+subname.uniq /BANK/NISTEP/name_variations_WoS_Ver2014_1.utf8.txt | sort|uniq > synonyms.WOS
+--- 中間ファイル: /BANK/Organization/NBRP_2015/synonyms.WOS
+-- (3)SCOPUSシノニムの取得
+--- program: /BANK/Organization/NBRP_2015/get_synonym_SCOPUS.pl
+--- script:
+ cd /BANK/Organization/NBRP_2015
+ ./get_synonym_SCOPUS.pl top+subname.uniq /BANK/NISTEP/name_variations_scopus_ver_2013_1.utf8.tsv > synonyms.SCOPUS
+--- 中間ファイル: /BANK/Organization/NBRP_2015/synonyms.SCOPUS
+-- (4)中間ファイルのmerge
+ cd /BANK/Organization/NBRP_2015
+ cat top+subname.uniq synonyms.WOS synonyms.SCOPUS | sort | uniq > top+subname.merge
+-- (5)ソート：文字列長さ順、名前順
+ sort -k 2 top+subname.merge | awk -F '	' '{print length($2)"\t"$1"\t"$2"\t"$3}' | sort -nr | cut -d'	' -f2,3,4 > top+subname.merge.lensort
+-- (6)検索用エスケープ挿入
+--- awk -F '	' '{print $2}' top+subname.merge.lensort > subname.merge.lensort
+--- escape_char sf=subname.merge.lensort lf=/usr/local/var/perl_esc.list > subname.merge.lensort.esc
+--- paste top+subname.merge.lensort subname.merge.lensort.esc | awk -F'	' '{print $1"\t"$2"\t"$4"\t"$3}' > top+subname+esc.merge.lensort
+-- 結果: 下位機関名リスト英語{機関ID 機関名 機関名検索用 代表機関ID}: /BANK/Organization/NBRP_2015/top+subname+esc.merge.lensort
+
+#TASK(2): 対象リソース名決定
+cd /BANK/BioResource/Organization/NBRP_2015/user-data
+/BANl/BioResource/Organization/NBRP_2015/user-data
+-- C検索用結果ファイル(sort,utf8_to_ncr):
+ utf8_to_ncr resterms.sort.uniq.select_5.sort > resterms.sort.uniq.select_5.sort.ncr
+-- Perl検索用結果ファイル(sort,utf8_to_ncr,escape_char):
+ escape_char sf=resterms.sort.uniq.select_5.sort.ncr lf=/home/kamano/gitsrc/utility/perl_esc.list > resterms.sort.uniq.select_5.sort.ncr.esc
+
+#TASK(3):機関名タグ挿入
+#参考プログラム: /home/kamano/gitsrc/XMLOP/insTxColor_to_html.pl
+- プログラム(作り中): /home/kamano/gitsrc/XMLOP/insDescription_to_html.pl
+
+#TASK(4):リソース名タグ挿入
+
