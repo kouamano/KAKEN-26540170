@@ -13,8 +13,8 @@ Matlab: 1
 - バイオリソース情報: /BANK/BioResource/Organization/<機関名_日付>/ 配下
 - マッチング(検索)結果: /BANK/PMC/<日付>/Matching/BioResource/Organization/<機関名>/ 配下
 - 一般プログラム: github : /home/kamano/gitsrc/<各フォルダ>
-- 特殊プログラム: github : /home/kamano/gitsrc/KAKEN-26540170/BANK/PMC/20140724/bin/
 - 実行スクリプト: 各 exec_command/
+
 
 
 #TASK(data)
@@ -40,6 +40,8 @@ grep 'sec-type=' element_pos.* > sec-type.grep
 sort sec-type.type | uniq -c > sec-type.type.sort.uniq
 sort -k1 -nr sec-type.type.sort.uniq > sec-type.type.sort.uniq.count
 
+
+
 #TASK(extract) : 領域コンテンツの抽出
 - 結果example: /BANK/PMC/20140724/elements/MERGED/allmaterials/allmaterials.au.reg.cont
 ##TASK(extract:sec:materials|methods) : sec-type=materials|methods
@@ -60,6 +62,7 @@ cd /BANK/PMC/20170527/elements/ack/exec_command
 - プログラム: /home/kamano/gitsrc/XMLOP/ET-ext_ack.py
 - スクリプト: /BANK/PMC/20170527/elements/ack/exec_command/extract_ack.sh
 - 結果: /BANK/PMC/20170527/elements/ack/str.au.cont
+
 
 
 #TASK(1): 対象機関名決定
@@ -108,18 +111,83 @@ cd /BANK/PMC/20170527/elements/ack/exec_command
 --- escape_char sf=subname.merge.lensort lf=/usr/local/var/perl_esc.list > subname.merge.lensort.esc
 --- paste top+subname.merge.lensort subname.merge.lensort.esc | awk -F'	' '{print $1"\t"$2"\t"$4"\t"$3}' > top+subname+esc.merge.lensort
 -- 結果: 下位機関名リスト英語{機関ID 機関名 機関名検索用 代表機関ID}: /BANK/Organization/NBRP_2015/top+subname+esc.merge.lensort
+-- 検索用{機関ID	機関名検索用	代表機関ID}: cut -f1,3,4 /BANK/Organization/NBRP_2015/top+subname+esc.merge.lensort > /BANK/Organization/NBRP_2015/top+subname+esc.merge.lensort.S
 
 #TASK(2): 対象リソース名決定
 cd /BANK/BioResource/Organization/NBRP_2015/user-data
-/BANl/BioResource/Organization/NBRP_2015/user-data
--- C検索用結果ファイル(sort,utf8_to_ncr):
+- C検索用結果ファイル(sort,utf8_to_ncr):
  utf8_to_ncr resterms.sort.uniq.select_5.sort > resterms.sort.uniq.select_5.sort.ncr
--- Perl検索用結果ファイル(sort,utf8_to_ncr,escape_char):
+- Perl検索用結果ファイル(sort,utf8_to_ncr,escape_char):
  escape_char sf=resterms.sort.uniq.select_5.sort.ncr lf=/home/kamano/gitsrc/utility/perl_esc.list > resterms.sort.uniq.select_5.sort.ncr.esc
 
 #TASK(3):機関名タグ挿入
-#参考プログラム: /home/kamano/gitsrc/XMLOP/insTxColor_to_html.pl
-- プログラム(作り中): /home/kamano/gitsrc/XMLOP/insDescription_to_html.pl
+cd /BANK/PMC/20170527/Matching/BioResource/Organization/NBRP_2015
+- program: /home/kamano/gitsrc/XMLOP/insWordDescription_to_html.pl
+- script例:
+ /home/kamano/gitsrc/XMLOP/insWordDescription_to_html.pl src=/BANK/PMC/20170527/elements/sec-materials+methods/str.au.cont trm=/BANK/Organization/NBRP_2015/top+subname+esc.merge.lensort.S col=1 tag=ORG -n
+ ./insWordDescription_to_html.pl src=test.riken trm=/BANK/Organization/NBRP_2015/top+subname+esc.merge.lensort.S col=1 tag=ORG -n
+##materials
+- script: /BANK/PMC/20170527/Matching/BioResource/Organization/NBRP_2015/exec_command/insORG.mat.sh
+- 結果: /BANK/PMC/20170527/Matching/BioResource/Organization/NBRP_2015/materials.au.ORG
+##acknoledgement
+- script: /BANK/PMC/20170527/Matching/BioResource/Organization/NBRP_2015/exec_command/insORG.ack.sh
+- 結果: /BANK/PMC/20170527/Matching/BioResource/Organization/NBRP_2015/ack.au.ORG
 
 #TASK(4):リソース名タグ挿入
+#プログラム insDescription_to_html.pl を改変 -> ターム前にスペース/カッコ、タームあとにスペースまたはカンマまたはセミコロン/カッコ
+cd /BANK/PMC/20170527/Matching/BioResource/Organization/NBRP_2015
+- program: /home/kamano/gitsrc/XMLOP/insWordDescription_to_html.pl
+##materials
+- script: /BANK/PMC/20170527/Matching/BioResource/Organization/NBRP_2015/exec_command/insRES.mat.sh
+- 結果: /BANK/PMC/20170527/Matching/BioResource/Organization/NBRP_2015/materials.au.ORG+RES
+##acknoledgement
+- script: /BANK/PMC/20170527/Matching/BioResource/Organization/NBRP_2015/exec_command/insRES.ack.sh
+- 結果: /BANK/PMC/20170527/Matching/BioResource/Organization/NBRP_2015/ack.au.ORG+RES
+
+#TASK(5):センテンスへのsplitタグ挿入
+- program:
+ /home/kamano/gitsrc/utility/split_sentence_byline.py
+ /home/kamano/gitsrc/utility/split_paragraph.pl
+##materials
+- script: /BANK/PMC/20170527/Matching/BioResource/Organization/NBRP_2015/exec_command/splitSent.mat.sh
+- 結果: /BANK/PMC/20170527/Matching/BioResource/Organization/NBRP_2015/materials.au.ORG+RES.stag
+##acknoledgement
+- script: /BANK/PMC/20170527/Matching/BioResource/Organization/NBRP_2015/exec_command/splitSent.ack.sh
+- 結果: /BANK/PMC/20170527/Matching/BioResource/Organization/NBRP_2015/ack.au.ORG+RES.stag
+
+#TASK(6):ORG-RESペアの抽出とパターン付与
+##センテンスを一行に分離
+- program: /home/kamano/gitsrc/XMLOP/insLF.pl
+###mat
+- script: /BANK/PMC/20170527/Matching/BioResource/Organization/NBRP_2015/exec_command/insLF.mat.sh
+- 結果: /BANK/PMC/20170527/Matching/BioResource/Organization/NBRP_2015/materials.au.ORG+RES.stag.LF
+###ack
+- script: /BANK/PMC/20170527/Matching/BioResource/Organization/NBRP_2015/exec_command/insLF.ack.sh
+- 結果: /BANK/PMC/20170527/Matching/BioResource/Organization/NBRP_2015/ack.au.ORG+RES.stag.LF
+
+##ペアの抽出
+###mat
+- script: /BANK/PMC/20170527/Matching/BioResource/Organization/NBRP_2015/exec_command/extract_pair.mat.sh
+- 結果: /BANK/PMC/20170527/Matching/BioResource/Organization/NBRP_2015/pair/materials.au.ORG+RES.stag.LF.pair
+###ack
+- script: /BANK/PMC/20170527/Matching/BioResource/Organization/NBRP_2015/exec_command/extract_pair.ack.sh
+- 結果: /BANK/PMC/20170527/Matching/BioResource/Organization/NBRP_2015/pair/ack.au.ORG+RES.stag.LF.pair
+
+##パターンの付与
+- program: /BANK/PMC/20170527/Matching/BioResource/Organization/NBRP_2015/exec_command/report_tag-pos.pl
+###mat
+- script: /BANK/PMC/20170527/Matching/BioResource/Organization/NBRP_2015/exec_command/report_tag-pos.mat.sh
+- 結果: /BANK/PMC/20170527/Matching/BioResource/Organization/NBRP_2015/pair/materials.au.ORG+RES.stag.LF.pair.patt
+###ack
+- script: /BANK/PMC/20170527/Matching/BioResource/Organization/NBRP_2015/exec_command/report_tag-pos.ack.sh
+- 結果: /BANK/PMC/20170527/Matching/BioResource/Organization/NBRP_2015/pair/ack.au.ORG+RES.stag.LF.pair.patt
+
+##パターンのグループ分け
+###mat
+###ack
+
+##マニュアルセレクション
+##リソース名と機関名が正しい文脈で入っていないものの先頭に#を付与
+###mat
+###ack
 
