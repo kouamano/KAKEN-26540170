@@ -242,8 +242,8 @@ cat *cont | awk -F '	' '{print $1}' | sed -e 's/^\/BANK\/PMC\/20140724\/articles
 ### (split pattern 0)
 - デリミター: /usr/local/var/perl_word_delimiter.patt
 - スクリプト: /BANK/PMC/20140724/terms/ALL/patt.0/exec_command/extract_1W_Jour-au.sh (のちにディレクトリ名変更のため無効)
-- 結果: /BANK/PMC/20140724/terms/ALL/patt.0/Word_Jour-au.sort.uniq.rep
-- 全集計結果: /BANK/PMC/20140724/terms/ALL/patt.0/Word_Jour-All.merge.count.nsort
+- 結果: /BANK/PMC/20140724/terms/ALL_ALL/patt.0/Word_Jour-au.sort.uniq.rep
+- 全集計結果: /BANK/PMC/20140724/terms/ALL_ALL/patt.0/Word_Jour-All.merge.count.nrsort
 ##TASK(term-count.ELM_VAL_ALL):タグ含まない
 ### (split pattern 1; single term) (20160804)
 cd /BANK/PMC/20140724/terms/ELM_VAL_ALL/patt.1
