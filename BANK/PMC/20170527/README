@@ -22,7 +22,7 @@ Matlab: 1
 /BANK/PMC/20170527/articles.fname/20/
 #TASK(element)
 ##位置情報付きタグの抽出
-- プログラム: /home/kamano/gitsrc/XMLOP/elementPos_sequence_flag-lv.pl
+- プログラム: /home/kamano/gitsrc/XMLOP/elementPos_sequence_flag-lv.pl (elementTagPos.pl)
 - スクリプト: /BANK/PMC/20170527/elements/ALL/exec_command/element_pos.sh
 - 結果: /BANK/PMC/20170527/elements/ALL/element_pos.a[a-u]
 ##タグ(属性なし)名の抽出
