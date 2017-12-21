@@ -613,10 +613,10 @@ cd /BANK/BioResource/Organization/NBRP_2015/user-data/
 - 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_*color2.sel.dropE.html
 -- 問題点: タグ内のResにマッチ、タグの破壊が起こっている。-> ar: [399] /BANK/PMC/20140724/articles/PLoS_Pathog/PLoS_Pathog_2007_Nov_23_3(11)_e173.nxml
 - 集計結果:
--- センテンス:
+-- 論文:
 grep nxml *dropE.html | wc
    1258  213409 2648070
--- 論文:
+-- センテンス:
 grep -o '<;/>' *dropE.html | wc
    1312    1312   69912
 -- Res: 
