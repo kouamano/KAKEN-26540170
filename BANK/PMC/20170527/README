@@ -144,17 +144,18 @@ cd /BANK/PMC/20170527/Matching/BioResource/Organization/NBRP_2015
 - script: /BANK/PMC/20170527/Matching/BioResource/Organization/NBRP_2015/exec_command/insRES.ack.sh
 - 結果: /BANK/PMC/20170527/Matching/BioResource/Organization/NBRP_2015/ack.au.ORG+RES
 
-#TASK(5):センテンスへのsplitタグ挿入(再考すべし、要素内でsplitされる;20180102)
+#TASK(5):センテンスへのsplitタグ挿入(要素内でsplitされる->余計なタグ削除2;0180102)
+##タグ挿入
 - program:
  /home/kamano/gitsrc/utility/split_sentence_byline.py
  /home/kamano/gitsrc/utility/split_paragraph.pl
-##materials
+###materials
 - script: /BANK/PMC/20170527/Matching/BioResource/Organization/NBRP_2015/exec_command/splitSent.mat.sh
 - 結果: /BANK/PMC/20170527/Matching/BioResource/Organization/NBRP_2015/materials.au.ORG+RES.stag
-##acknoledgement
+###acknoledgement
 - script: /BANK/PMC/20170527/Matching/BioResource/Organization/NBRP_2015/exec_command/splitSent.ack.sh
 - 結果: /BANK/PMC/20170527/Matching/BioResource/Organization/NBRP_2015/ack.au.ORG+RES.stag
-
+##余計なタグ削除
 #TASK(6):ORG-RESペアの抽出とパターン付与
 ##センテンスを一行に分離
 - program: /home/kamano/gitsrc/XMLOP/insLF.pl
