@@ -144,7 +144,7 @@ cd /BANK/PMC/20170527/Matching/BioResource/Organization/NBRP_2015
 - script: /BANK/PMC/20170527/Matching/BioResource/Organization/NBRP_2015/exec_command/insRES.ack.sh
 - 結果: /BANK/PMC/20170527/Matching/BioResource/Organization/NBRP_2015/ack.au.ORG+RES
 
-#TASK(5):センテンスへのsplitタグ挿入 (再考すべし;20180102)
+#TASK(5):センテンスへのsplitタグ挿入(再考すべし、要素内でsplitされる;20180102)
 - program:
  /home/kamano/gitsrc/utility/split_sentence_byline.py
  /home/kamano/gitsrc/utility/split_paragraph.pl
