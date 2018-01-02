@@ -490,7 +490,7 @@ while read org; do grep $org 86ce721f7f57938f73eab01b25d00ea1_sheet2.utf8.txt; d
 - リストをリソースネーム vs. リソース番号の形に整形
 -- プログラム: /home/kamano/gitsrc/utility/divide_lastBRK.pl
 -- 結果: /BANK/BioResource/Organization/NBRP_2015/user-data/ResnameVSid
-##TASK(2.2): 既知バイオリソース検索シノニム+ID決定
+##TASK(2.2): 既知バイオリソース検索シノニム+ID決定(報告に利用)
 - 対象: /BANK/BioResource/Organization/NBRP_2015/user-data/ResnameVSid
 - ソートユニークカウント: /BANK/BioResource/Organization/NBRP_2015/user-data/ResnameVSid.sort.uniq.count
 - リフォーム: ./reform_sort-uniq-count.pl ResnameVSid.sort.uniq.count > ResnameVSid.sort.uniq.count.re
