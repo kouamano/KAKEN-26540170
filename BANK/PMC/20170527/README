@@ -184,7 +184,7 @@ cd /BANK/PMC/20170527/Matching/BioResource/Organization/NBRP_2015
 - script: /BANK/PMC/20170527/Matching/BioResource/Organization/NBRP_2015/exec_command/extract_pair.ack.sh
 - 結果: /BANK/PMC/20170527/Matching/BioResource/Organization/NBRP_2015/pair/ack.au.ORG+RES.stag.D.LF.pair
 
-##パターンの付与
+##パターンの付与(20180103)
 - program: /BANK/PMC/20170527/Matching/BioResource/Organization/NBRP_2015/exec_command/report_tag-pos.pl
 ###mat
 - script: /BANK/PMC/20170527/Matching/BioResource/Organization/NBRP_2015/exec_command/report_tag-pos.mat.sh
