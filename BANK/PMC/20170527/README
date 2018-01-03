@@ -150,6 +150,7 @@ cd /BANK/PMC/20170527/Matching/BioResource/Organization/NBRP_2015
 - program:
  /home/kamano/gitsrc/utility/split_sentence_byline.py
  /home/kamano/gitsrc/utility/split_paragraph.pl
+ /home/kamano/gitsrc/utility/drop_extr-asplit_.pl
 ###materials
 - script: /BANK/PMC/20170527/Matching/BioResource/Organization/NBRP_2015/exec_command/splitSent.mat.sh
 - 結果: /BANK/PMC/20170527/Matching/BioResource/Organization/NBRP_2015/materials.au.ORG+RES.stag
