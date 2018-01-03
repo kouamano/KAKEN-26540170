@@ -176,7 +176,7 @@ cd /BANK/PMC/20170527/Matching/BioResource/Organization/NBRP_2015
 - script: /BANK/PMC/20170527/Matching/BioResource/Organization/NBRP_2015/exec_command/insLF.ack.sh
 - 結果: /BANK/PMC/20170527/Matching/BioResource/Organization/NBRP_2015/ack.au.ORG+RES.stag.D.LF
 
-##ペアの抽出
+##ペアの抽出(20180103)
 ###mat
 - script: /BANK/PMC/20170527/Matching/BioResource/Organization/NBRP_2015/exec_command/extract_pair.mat.sh
 - 結果: /BANK/PMC/20170527/Matching/BioResource/Organization/NBRP_2015/pair/materials.au.ORG+RES.stag.D.LF.pair
@@ -188,10 +188,10 @@ cd /BANK/PMC/20170527/Matching/BioResource/Organization/NBRP_2015
 - program: /BANK/PMC/20170527/Matching/BioResource/Organization/NBRP_2015/exec_command/report_tag-pos.pl
 ###mat
 - script: /BANK/PMC/20170527/Matching/BioResource/Organization/NBRP_2015/exec_command/report_tag-pos.mat.sh
-- 結果: /BANK/PMC/20170527/Matching/BioResource/Organization/NBRP_2015/pair/materials.au.ORG+RES.stag.LF.pair.patt
+- 結果: /BANK/PMC/20170527/Matching/BioResource/Organization/NBRP_2015/pair/materials.au.ORG+RES.stag.D.LF.pair.patt
 ###ack
 - script: /BANK/PMC/20170527/Matching/BioResource/Organization/NBRP_2015/exec_command/report_tag-pos.ack.sh
-- 結果: /BANK/PMC/20170527/Matching/BioResource/Organization/NBRP_2015/pair/ack.au.ORG+RES.stag.LF.pair.patt
+- 結果: /BANK/PMC/20170527/Matching/BioResource/Organization/NBRP_2015/pair/ack.au.ORG+RES.stag.D.LF.pair.patt
 
 ##パターンのグループ分け
 ###mat
