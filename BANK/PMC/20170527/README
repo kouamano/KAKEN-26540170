@@ -165,7 +165,6 @@ cd /BANK/PMC/20170527/Matching/BioResource/Organization/NBRP_2015
 - script: /BANK/PMC/20170527/Matching/BioResource/Organization/NBRP_2015/exec_command/drop_extr-split.ack.sh
 - 結果: /BANK/PMC/20170527/Matching/BioResource/Organization/NBRP_2015/ack.au.ORG+RES.stag.D
 
-
 #TASK(6):ORG-RESペアの抽出とパターン付与
 ##センテンスを一行に分離(20180103)
 - program: /home/kamano/gitsrc/XMLOP/insLF.pl
@@ -175,7 +174,6 @@ cd /BANK/PMC/20170527/Matching/BioResource/Organization/NBRP_2015
 ###ack
 - script: /BANK/PMC/20170527/Matching/BioResource/Organization/NBRP_2015/exec_command/insLF.ack.sh
 - 結果: /BANK/PMC/20170527/Matching/BioResource/Organization/NBRP_2015/ack.au.ORG+RES.stag.D.LF
-
 ##ペアの抽出(20180103)
 ###mat
 - script: /BANK/PMC/20170527/Matching/BioResource/Organization/NBRP_2015/exec_command/extract_pair.mat.sh
@@ -183,7 +181,6 @@ cd /BANK/PMC/20170527/Matching/BioResource/Organization/NBRP_2015
 ###ack
 - script: /BANK/PMC/20170527/Matching/BioResource/Organization/NBRP_2015/exec_command/extract_pair.ack.sh
 - 結果: /BANK/PMC/20170527/Matching/BioResource/Organization/NBRP_2015/pair/ack.au.ORG+RES.stag.D.LF.pair
-
 ##パターンの付与(20180103)
 - program: /BANK/PMC/20170527/Matching/BioResource/Organization/NBRP_2015/exec_command/report_tag-pos.pl
 ###mat
@@ -196,8 +193,7 @@ cd /BANK/PMC/20170527/Matching/BioResource/Organization/NBRP_2015
 cat ack*D.LF.pair.patt > ack.ALL.pat
 cat mat*D.LF.pair.patt > mat.ALL.pat
 
-
-#マニュアルセレクション
+#TASK(7):マニュアルセレクション
 #リソース名と機関名が正しい文脈で入っていないものの先頭に#を付与
 ##mat
 - 対象ファイル: /BANK/PMC/20170527/Matching/BioResource/Organization/NBRP_2015/pair/mat.ALL.pat
