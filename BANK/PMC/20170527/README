@@ -192,10 +192,10 @@ cd /BANK/PMC/20170527/Matching/BioResource/Organization/NBRP_2015
 ###ack
 - script: /BANK/PMC/20170527/Matching/BioResource/Organization/NBRP_2015/exec_command/report_tag-pos.ack.sh
 - 結果: /BANK/PMC/20170527/Matching/BioResource/Organization/NBRP_2015/pair/ack.au.ORG+RES.stag.D.LF.pair.patt
+###ALL
+cat ack*D.LF.pair.patt > ack.ALL.pat
+cat mat*D.LF.pair.patt > mat.ALL.pat
 
-##パターンのグループ分け
-###mat
-###ack
 
 ##マニュアルセレクション
 ##リソース名と機関名が正しい文脈で入っていないものの先頭に#を付与
