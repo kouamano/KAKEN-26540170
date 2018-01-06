@@ -195,8 +195,8 @@ cat mat*D.LF.pair.patt > mat.ALL.pat
 
 #TASK(7):マニュアルセレクション
 #リソース名と機関名が正しい文脈で入っていないものの先頭に#を付与
+##ack : 作業中
+- 対象ファイル: /BANK/PMC/20170527/Matching/BioResource/Organization/NBRP_2015/pair/ack.ALL.pat
 ##mat
 - 対象ファイル: /BANK/PMC/20170527/Matching/BioResource/Organization/NBRP_2015/pair/mat.ALL.pat
-##ack
-- 対象ファイル: /BANK/PMC/20170527/Matching/BioResource/Organization/NBRP_2015/pair/ack.ALL.pat
 
