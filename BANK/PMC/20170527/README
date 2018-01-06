@@ -156,7 +156,7 @@ cd /BANK/PMC/20170527/Matching/BioResource/Organization/NBRP_2015
 ###acknowledgement
 - script: /BANK/PMC/20170527/Matching/BioResource/Organization/NBRP_2015/exec_command/splitSent.ack.sh
 - 結果: /BANK/PMC/20170527/Matching/BioResource/Organization/NBRP_2015/ack.au.ORG+RES.stag
-##余計なタグ削除
+##余計なタグ削除(20170106)
 - program: /home/kamano/gitsrc/utility/drop_extr-split.pl
 ###materials
 - script: /BANK/PMC/20170527/Matching/BioResource/Organization/NBRP_2015/exec_command/drop_extr-split.mat.sh
