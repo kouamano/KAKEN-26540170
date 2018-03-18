@@ -673,7 +673,7 @@ grep ';E' check_7.E.20151015 > check_7.E.20151015.E
 - 最終結果: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.S.L
 - 結果の集計情報(暫定 20170401)
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc
--- 論文数
+-- 論文数(Scientometrics)
 --- <ACK>
 grep '^ACK	' hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.S.L | wc
     245   11405   96474
