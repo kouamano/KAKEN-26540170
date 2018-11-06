@@ -612,7 +612,7 @@ cd /BANK/BioResource/Organization/NBRP_2015/user-data/
  for file in *color2.sel.html; do  /home/kamano/gitsrc/XMLOP/drop_empty_hit_from_html.pl $file > ${file%.html}.dropE.html; done
 - 結果: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_*color2.sel.dropE.html
 -- 問題点: タグ内のResにマッチ、タグの破壊が起こっている。-> ar: [399] /BANK/PMC/20140724/articles/PLoS_Pathog/PLoS_Pathog_2007_Nov_23_3(11)_e173.nxml
-- 集計結果(Scientometrics):
+- 集計結果(Sentence extraction):
 -- 論文:
 grep nxml *dropE.html | wc
    1258  213409 2648070
@@ -627,7 +627,6 @@ grep -o '<;/>' *ACK*dropE.html | wc
     312     312    1560
 grep -o '<;/>' *Mat*dropE.html | wc
    1000    1000   54000
-
 -- Res
 --- Total:
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015
