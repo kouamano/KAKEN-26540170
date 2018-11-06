@@ -702,7 +702,7 @@ grep '^Mat	' hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark
 /home/kamano/gitsrc/XMLOP/extract_element.pl ORG /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.S.L -E | sort | uniq | wc
      38     112    1318
 --- カウント:
-/home/kamano/gitsrc/XMLOP/extract_element.pl ORG /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.S.L -E | sort | uniq -c | sort -nr > hit_ResOrg-120151015_ORG.sort.uniq.count
+/home/kamano/gitsrc/XMLOP/extract_element.pl ORG /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.S.L -E | sort | uniq -c | sort -nr > /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg-120151015_ORG.sort.uniq.count
 -- ヒットした<RES>
 --- 述べ:
 /home/kamano/gitsrc/XMLOP/extract_element.pl RES /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.S.L -E | wc
@@ -711,8 +711,10 @@ grep '^Mat	' hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark
 /home/kamano/gitsrc/XMLOP/extract_element.pl RES /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.S.L -E | sort | uniq | wc
     445     515    8422
 --- カウント:
-/home/kamano/gitsrc/XMLOP/extract_element.pl RES /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.S.L -E | sort | uniq -c | sort -nr > hit_ResOrg-120151015_RES.sort.uniq.count
+/home/kamano/gitsrc/XMLOP/extract_element.pl RES /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.S.L -E | sort | uniq -c | sort -nr > /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg-120151015_RES.sort.uniq.count
 
+
+//Scientometrics反映中(201811)
 
 
 #TASK(4): 機関名、バイオリソース名が同時出現するセンテンスのパターン解析
