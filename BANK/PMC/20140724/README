@@ -628,11 +628,19 @@ grep -o '<;/>' *ACK*dropE.html | wc
 grep -o '<;/>' *Mat*dropE.html | wc
    1000    1000   54000
 
--- Res: 
+-- Res
+--- Total:
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015
 ./exec_command/extract_HitRes_from_dropE.pl *dropE.html | ./exec_command/extract_blueFontStr_from_HitRes.pl | sort | uniq | wc
     327     376    2501
--- Org:
+--- Ack:
+./exec_command/extract_HitRes_from_dropE.pl hit_ResOrg_from_ACK.tsv.color2.sel.dropE.html | ./exec_command/extract_blueFontStr_from_HitRes.pl | sort | uniq | wc
+    118     138     863
+--- Mat:
+./exec_command/extract_HitRes_from_dropE.pl hit_ResOrg_from_Mat*tsv.color2.sel.dropE.html | ./exec_command/extract_blueFontStr_from_HitRes.pl | sort | uniq | wc
+    286     324    2145
+-- Org
+--- Total:
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015
 ./exec_command/extract_HitOrg_from_dropE.pl *dropE.html | ./exec_command/extract_redFontStr_from_HitRes.pl | sort | uniq | wc
      32      89     699
