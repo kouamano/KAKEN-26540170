@@ -644,6 +644,13 @@ cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015
 cd /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015
 ./exec_command/extract_HitOrg_from_dropE.pl *dropE.html | ./exec_command/extract_redFontStr_from_HitRes.pl | sort | uniq | wc
      32      89     699
+--- Ack:
+./exec_command/extract_HitOrg_from_dropE.pl hit_ResOrg_from_ACK.tsv.color2.sel.dropE.html | ./exec_command/extract_redFontStr_from_HitRes.pl | sort | uniq | wc
+     25      64     507
+--- Org:
+./exec_command/extract_HitOrg_from_dropE.pl hit_ResOrg_from_Mat*tsv.color2.sel.dropE.html | ./exec_command/extract_redFontStr_from_HitRes.pl | sort | uniq | wc
+     30      82     650
+
 ###TASK(3.1.7): d. 機関名、バイオリソース名が同時出現するセンテンス(ピリオド区切り、場合によってはカンマ、セミコロン区切り)を人手で抜きだし(水野氏実行完了)
 - 対象: /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/hit_ResOrg_from_*.tsv.color2.sel.dropE.html
 - 手順
