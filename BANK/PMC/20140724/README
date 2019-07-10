@@ -698,7 +698,7 @@ grep '^Mat	' hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark
 --- <ACK>
 grep '^ACK    ' hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.S.L | tr ";;" "\n" | wc
     845   11058   96115
---- <ACK>
+--- <Mat>
 grep '^Mat    ' hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.S.L | tr ";;" "\n" | wc
    2615   28009  275041
 -- ヒットした<ORG>
