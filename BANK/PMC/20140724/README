@@ -731,7 +731,23 @@ grep '^Mat    ' hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.M
   => 38
 -- ヒットした<RES>
 --- <ACK>
+---- 述べ:
+grep '^ACK    ' hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.S.L  | /home/kamano/gitsrc/XMLOP/extract_element.pl RES /dev/stdin | drop_multiLF.pl | wc
+    304     366    5770
+  => 303
+---- ユニーク:
+grep '^ACK    ' hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.S.L  | /home/kamano/gitsrc/XMLOP/extract_element.pl RES /dev/stdin | drop_multiLF.pl | sort | uniq | wc
+    126     148    2332
+  => 125
 --- <Mat>
+---- 述べ:
+grep '^Mat    ' hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.S.L  | /home/kamano/gitsrc/XMLOP/extract_element.pl RES /dev/stdin | drop_multiLF.pl | wc
+   1067    1175   19362
+  => 1066
+---- ユニーク:
+grep '^Mat    ' hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.S.L  | /home/kamano/gitsrc/XMLOP/extract_element.pl RES /dev/stdin | drop_multiLF.pl | sort | uniq | wc
+    395     450    7409
+  => 394
 --- <Total>
 ---- 述べ:
 /home/kamano/gitsrc/XMLOP/extract_element.pl RES /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.S.L -E | drop_multiLF.pl | wc
