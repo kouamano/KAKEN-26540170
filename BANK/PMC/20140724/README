@@ -702,20 +702,42 @@ grep '^ACK    ' hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.M
 grep '^Mat    ' hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.S.L | tr ";;" "\n" | wc
    2615   28009  275041
 -- ヒットした<ORG>
---- 述べ:
+--- <ACK>
+---- 述べ
+grep '^ACK    ' hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.S.L  | /home/kamano/gitsrc/XMLOP/extract_element.pl ORG /dev/stdin | drop_multiLF.pl | wc
+    269     675    8051
+  => 268(空行あり)
+---- ユニーク
+grep '^ACK    ' hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.S.L  | /home/kamano/gitsrc/XMLOP/extract_element.pl ORG /dev/stdin | drop_multiLF.pl | sort | uniq | wc
+     27      73     857
+  => 26
+--- <Mat>
+---- 述べ:
+grep '^Mat    ' hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.S.L  | /home/kamano/gitsrc/XMLOP/extract_element.pl ORG /dev/stdin | drop_multiLF.pl | wc
+    755    1493   19275
+  => 754
+---- ユニーク:
+grep '^Mat    ' hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.S.L  | /home/kamano/gitsrc/XMLOP/extract_element.pl ORG /dev/stdin | drop_multiLF.pl | sort | uniq | wc
+     38     110    1295
+  => 37
+--- <Total>
+---- 述べ:
 /home/kamano/gitsrc/XMLOP/extract_element.pl ORG /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.S.L -E | drop_multiLF.pl | wc
    1023    2168   27325
   => 1022 (空行がある)
---- ユニーク:
+---- ユニーク:
 /home/kamano/gitsrc/XMLOP/extract_element.pl ORG /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.S.L -E | sort | uniq | wc
      39     112    1319
   => 38
 -- ヒットした<RES>
---- 述べ:
+--- <ACK>
+--- <Mat>
+--- <Total>
+---- 述べ:
 /home/kamano/gitsrc/XMLOP/extract_element.pl RES /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.S.L -E | drop_multiLF.pl | wc
    1370    1541   25131
   => 1369
---- ユニーク:
+---- ユニーク:
 /home/kamano/gitsrc/XMLOP/extract_element.pl RES /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.S.L -E | sort | uniq | wc
     446     515    8423
   => 445
