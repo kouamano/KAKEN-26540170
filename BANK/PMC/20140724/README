@@ -697,7 +697,7 @@ grep '^Mat	' hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark
 -- ヒットした<ORG>
 --- 述べ:
 /home/kamano/gitsrc/XMLOP/extract_element.pl ORG /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.S.L -E | drop_multiLF.pl | wc
-   1023    2168   27324
+   1023    2168   27325
   => 1022 (空行がある)
 --- ユニーク:
 /home/kamano/gitsrc/XMLOP/extract_element.pl ORG /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.S.L -E | sort | uniq | wc
