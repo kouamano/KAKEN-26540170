@@ -694,6 +694,13 @@ grep '^ACK	' hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark
 --- <Mat>
 grep '^Mat	' hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.S.L | wc
     730   29013  275041
+-- サブセンテンス数(";;"でcut)
+--- <ACK>
+grep '^ACK    ' hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.S.L | tr ";;" "\n" | wc
+    845   11058   96115
+--- <ACK>
+grep '^Mat    ' hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.S.L | tr ";;" "\n" | wc
+   2615   28009  275041
 -- ヒットした<ORG>
 --- 述べ:
 /home/kamano/gitsrc/XMLOP/extract_element.pl ORG /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.S.L -E | drop_multiLF.pl | wc
@@ -712,7 +719,6 @@ grep '^Mat	' hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark
 /home/kamano/gitsrc/XMLOP/extract_element.pl RES /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.S.L -E | sort | uniq | wc
     446     515    8423
   => 445
--- サブセンテンス数(";;"でcut)、計算中
 //2019-07-10 調整
 //Scientometrics反映中(201811)
 
