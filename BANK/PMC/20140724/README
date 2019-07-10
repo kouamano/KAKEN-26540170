@@ -696,24 +696,24 @@ grep '^Mat	' hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark
     730   29013  275041
 -- ヒットした<ORG>
 --- 述べ:
-/home/kamano/gitsrc/XMLOP/extract_element.pl ORG /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.S.L -E | wc
-   1022    2168   27324
+/home/kamano/gitsrc/XMLOP/extract_element.pl ORG /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.S.L -E | drop_multiLF.pl | wc
+   1023    2168   27324
+  => 1022 (空行がある)
 --- ユニーク:
 /home/kamano/gitsrc/XMLOP/extract_element.pl ORG /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.S.L -E | sort | uniq | wc
-     38     112    1318
---- カウント:
-/home/kamano/gitsrc/XMLOP/extract_element.pl ORG /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.S.L -E | sort | uniq -c | sort -nr > /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg-120151015_ORG.sort.uniq.count
+     39     112    1319
+  => 38
 -- ヒットした<RES>
 --- 述べ:
-/home/kamano/gitsrc/XMLOP/extract_element.pl RES /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.S.L -E | wc
-   1369    1541   25130
+/home/kamano/gitsrc/XMLOP/extract_element.pl RES /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.S.L -E | drop_multiLF.pl | wc
+   1370    1541   25131
+  => 1369
 --- ユニーク:
 /home/kamano/gitsrc/XMLOP/extract_element.pl RES /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.S.L -E | sort | uniq | wc
-    445     515    8422
---- カウント:
-/home/kamano/gitsrc/XMLOP/extract_element.pl RES /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg.tsv.color2.sel.html.work.moto-120151015.csv.ref.rev.Mark.S.L -E | sort | uniq -c | sort -nr > /BANK/PMC/20140724/Matching/BioResource/Organization/NBRP_2015/doc/hit_ResOrg-120151015_RES.sort.uniq.count
+    446     515    8423
+  => 445
 -- サブセンテンス数(";;"でcut)、計算中
-
+//2019-07-10 調整
 //Scientometrics反映中(201811)
 
 
